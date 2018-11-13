@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:util="http://www.springframework.org/schema/util"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+     <bean id="transactionLimitDAO"
+		class="com.barclays.bmg.dao.impl.TransactionLimitDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+	<bean id="transactionCutOffDAO"
+		class="com.barclays.bmg.dao.impl.TransactionCutOffDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+
+	<!-- Beneficiary List DAO Layer Config Starts here-->
+
+	<bean id="retreivePayeeListDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.RetreivePayeeListDAO" />
+		<property name="daoFrontController" ref="billPaymentDaoFrontControllerImpl" />
+	</bean>
+
+	<bean id="retreivePayeeListDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.RetreivePayeeListDAOController">
+		<property name="retreivePayeeListReqAdptOperation" ref="retreivePayeeListReqAdptOperation" />
+		<property name="transmissionOperation" ref="reterivePayeeListTransmissionOperation" />
+		<property name="retreivePayeeListRespAdptOperation" ref="retreivePayeeListRespAdptOperation" />
+	</bean>
+
+	<bean id="retreivePayeeListReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.RetreivePayeeListReqAdptOperation">
+		<property name="retreiveIndvPayeeListHeaderAdapter" ref="retreiveIndvPayeeListHeaderAdapter" />
+		<property name="retreiveIndvPayeeListPayloadAdapter" ref="retreiveIndvPayeeListPayloadAdapter" />
+	</bean>
+
+	<bean id="retreiveIndvPayeeListHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.RetreiveIndvPayeeListHeaderAdapter">
+	</bean>
+
+	<bean id="retreiveIndvPayeeListPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.RetreiveIndvPayeeListPayloadAdapter">
+	</bean>
+
+	<bean id="retreivePayeeListRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.RetreivePayeeListRespAdptOperation">
+	</bean>
+
+	<bean id="reterivePayeeListTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="retreivePayeeListTransmissionService" />
+	</bean>
+
+	<bean id="retreivePayeeListTransmissionService" class="com.barclays.bmg.dao.service.impl.RetreivePayeeListTransmissionService">
+		<property name="remoteService" ref="retreivePayeeListWebServiceImpl" />
+	</bean>
+
+	<bean id="retreivePayeeListWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.BeneficiaryManagement.BeneficiaryManagement_PortType" />
+		<property name="portName" value="BeneficiaryManagementSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.BeneficiaryManagement.BeneficiaryManagement_Service" />
+		<property name="endpointAddress"
+			value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="BeneficiaryManagement_EndPoint" /><!--
+
+		for stub
+		<property name="endpointAddressName" value="RetrieveIndividualCustBeneficiaryList_EndPoint" />
+
+		--><property name="cacheKey" value="beneficiaryManagement" />
+	</bean>
+<!-- Beneficiary List DAO Layer Config Ends here-->
+
+<!-- Beneficiary Details DAO layer config starts here -->
+	<bean id="retreiveOrganizationBeneficiaryDetailsDAO"
+		class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.RetreiveOrganizationBeneficiaryDetailsDAO" />
+		<property name="daoFrontController" ref="billPaymentDaoFrontControllerImpl" />
+	</bean>
+
+
+
+	<bean id="retreiveOrganizationBeneficiaryDetailsDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.RetreiveOrganizationBeneficiaryDetailsDAOController">
+		<property name="retreiveOrgBeneficiaryDetailsReqAdptOperation" ref="retreiveOrgBeneficiaryDetailsReqAdptOperation" />
+		<property name="transmissionOperation" ref="retreiveOrgBenDtlsTransmissionOperation" />
+		<property name="retreiveOrgBeneficiaryDetailsRespAdptOperation" ref="retreiveOrgBeneficiaryDetailsRespAdptOperation" />
+	</bean>
+
+	<bean id="retreiveOrgBeneficiaryDtlsHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.RetreiveOrgBeneficiaryDtlsHeaderAdapter">
+	</bean>
+
+	<bean id="retreiveOrgBeneficiaryDtlsPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.RetreiveOrgBeneficiaryDtlsPayloadAdapter">
+	</bean>
+
+	<bean id="retreiveOrgBeneficiaryDetailsReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.RetreiveOrgBeneficiaryDetailsReqAdptOperation">
+		<property name="retreiveOrgBeneficiaryDtlsHeaderAdapter" ref="retreiveOrgBeneficiaryDtlsHeaderAdapter" />
+		<property name="retreiveOrgBeneficiaryDtlsPayloadAdapter" ref="retreiveOrgBeneficiaryDtlsPayloadAdapter" />
+	</bean>
+
+	<bean id = "retreiveOrgBeneficiaryDetailsRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.RetreiveOrgBeneficiaryDetailsRespAdptOperation">
+	</bean>
+
+	<bean id="retreiveOrgBenDtlsTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="retreiveOrgBenDtlsTransmissionService" />
+	</bean>
+
+	<bean id="retreiveOrgBenDtlsTransmissionService" class="com.barclays.bmg.dao.service.impl.RetreiveOrgBenDtlsTransmissionService">
+		<property name="remoteService" ref="retreivePayeeListWebServiceImpl" />
+	</bean>
+
+	<bean id="billPaymentDaoFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="RETREIVEPAYEELIST" value-ref="retreivePayeeListDAOController" />
+				<entry key="RETREIVEORGANIZATIONBENEFICIARYDETAILS" value-ref="retreiveOrganizationBeneficiaryDetailsDAOController" />
+				<entry key="INQUERYBILL" value-ref="inqueryBillDAOController" />
+				<entry key="RETREIVECHARGEDETAILS" value-ref="retreiveChargeDetailsDAOController" />
+				<entry key="PAYBILL" value-ref="payBillDAOController" />
+				<entry key="RETREIVEFXRATE" value-ref="fxRateDAOController" />
+				<entry key="RETREIVEFXBOARDRATE" value-ref="fxBoardRatesDAOController" />
+					<entry key="RETREIVEINDIVIDUALBENEFICIARYDETAILS" value-ref="retreiveIndividualBeneficiaryDetailsDAOController" />
+					<entry key="MAKECARDPAYMENT" value-ref="creditCardPaymentDAOController" />
+					<entry key ="RETREIVEINDVCUSTBYCCNUMBER" value-ref="retrIndvCustInfoByCCDAOController" />
+				<!--<entry key="RETREIVEINDIVIDUALBENEFICIARYDETAILS" value-ref="retreiveIndividualBeneficiaryDetailsDAOController" />
+			--></map>
+		</property>
+	</bean>
+
+<!-- Beneficiary Details DAO layer config Ends here -->
+
+<!-- Individual Beneficiart Information -->
+
+  <bean id="retreiveIndividualBeneficiaryDetailsDAO"
+		class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.RetreiveIndividualBeneficiaryDetailsDAO" />
+		<property name="daoFrontController" ref="billPaymentDaoFrontControllerImpl" />
+	</bean>
+
+  <bean id="retreiveIndividualBeneficiaryDetailsDAOController"
+    class="com.barclays.bmg.dao.processing.accountservices.RetreiveIndividualBeneficiaryDetailsDAOController">
+    <property name="retreiveIndvBeneficiaryDetailsReqAdptOperation" ref="retreiveIndvBeneficiaryDetailsReqAdptOperation" />
+    <property name="transmissionOperation" ref="retreiveIndvBenDtlsTransmissionOperation" />
+    <property name="retreiveIndvBeneficiaryDetailsRespAdptOperation" ref="retreiveIndvBeneficiaryDetailsRespAdptOperation" />
+  </bean>
+
+  <bean id="retreiveIndvBeneficiaryDetailsReqAdptOperation"
+    class="com.barclays.bmg.dao.operation.accountservices.RetreiveIndvBeneficiaryDetailsReqAdptOperation">
+    <property name="retreiveIndvBeneficiaryDtlsHeaderAdapter" ref="retreiveIndvBeneficiaryDtlsHeaderAdapter" />
+    <property name="retreiveIndvBeneficiaryDtlsPayloadAdapter" ref="retreiveIndvBeneficiaryDtlsPayloadAdapter" />
+  </bean>
+
+  <bean id="retreiveIndvBenDtlsTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+    <property name="transmissionService" ref="retreiveIndvBenDtlsTransmissionService" />
+  </bean>
+
+  <bean id="retreiveIndvBenDtlsTransmissionService"
+    class="com.barclays.bmg.dao.service.impl.RetreiveIndvBenDtlsTransmissionService">
+    <property name="remoteService" ref="retreivePayeeListWebServiceImpl" />
+  </bean>
+  <bean id="retreiveIndvBeneficiaryDtlsHeaderAdapter"
+    class="com.barclays.bmg.dao.accountservices.adapter.RetreiveIndvBeneficiaryDtlsHeaderAdapter">
+  </bean>
+  <bean id="retreiveIndvBeneficiaryDtlsPayloadAdapter"
+    class="com.barclays.bmg.dao.accountservices.adapter.RetreiveIndvBeneficiaryDtlsPayloadAdapter">
+  </bean>
+
+  <bean id="retreiveIndvBeneficiaryDetailsRespAdptOperation"
+    class="com.barclays.bmg.dao.operation.accountservices.RetreiveIndvBeneficiaryDetailsRespAdptOperation">
+  </bean>
+
+
+<!--  Charge Details DAO layer config -->
+
+<bean id="retreiveChargeDetailsDAO"
+		class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.RetreiveChargeDetailsDAO" />
+		<property name="daoFrontController" ref="billPaymentDaoFrontControllerImpl" />
+	</bean>
+
+	<bean id="retreiveChargeDetailsDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.RetreiveChargeDetailsDAOController">
+		<property name="retreiveChargeDetailsReqAdptOperation" ref="retreiveChargeDetailsReqAdptOperation" />
+		<property name="transmissionOperation" ref="retreiveChargeDetailsTransmissionOperation" />
+		<property name="retreiveChargeDetailsRespAdptOperation" ref="retreiveChargeDetailsRespAdptOperation" />
+	</bean>
+
+	<bean id="retreiveChargeDetailsTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="retreiveChargeDetailsTransmissionService" />
+	</bean>
+
+	<bean id="retreiveChargeDetailsTransmissionService"
+		class="com.barclays.bmg.dao.service.impl.RetreiveChargeDetailsTransmissionService">
+		<property name="remoteService" ref="fundTransferWebServiceImpl" />
+	</bean>
+
+	<bean id="retreiveChargeDetailsReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.RetreiveChargeDetailsReqAdptOperation">
+		<property name="retreiveChargeDetailsHeaderAdapter" ref="retreiveChargeDetailsHeaderAdapter" />
+		<property name="retreiveChargeDetailsPayloadAdapter" ref="retreiveChargeDetailsPayloadAdapter" />
+	</bean>
+	<bean id="retreiveChargeDetailsHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.RetreiveChargeDetailsHeaderAdapter">
+	</bean>
+	<bean id="retreiveChargeDetailsPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.RetreiveChargeDetailsPayloadAdapter">
+	</bean>
+
+	<bean id="retreiveChargeDetailsRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.RetreiveChargeDetailsRespAdptOperation" >
+	</bean>
+<!-- FX rate DAO layer config -->
+
+	<bean id="fxRateDAO"
+		class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.FxRateDAO" />
+		<property name="daoFrontController" ref="billPaymentDaoFrontControllerImpl" />
+	</bean>
+
+	<bean id="fxRateDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.FxRateDAOController">
+		<property name="fxRateReqAdptOperation" ref="fxRateReqAdptOperation" />
+		<property name="transmissionOperation" ref="fxRateTransmissionOperation" />
+		<property name="fxRateRespAdptOperation" ref="fxRateRespAdptOperation" />
+	</bean>
+
+	<bean id="fxRateReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.FxRateReqAdptOperation">
+		<property name="fxRateHeaderAdapter" ref="fxRateHeaderAdapter" />
+		<property name="fxRatePayloadAdapter" ref="fxRatePayloadAdapter" />
+	</bean>
+
+	<bean id="fxRateTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="fxRateTransmissionService" />
+	</bean>
+
+	<bean id="fxRateTransmissionService"
+		class="com.barclays.bmg.dao.service.impl.FxRateTransmissionService">
+		<property name="remoteService" ref="fundTransferWebServiceImpl" />
+	</bean>
+	<bean id="fxRateHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.FxRateHeaderAdapter">
+	</bean>
+	<bean id="fxRatePayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.FxRatePayloadAdapter">
+	</bean>
+
+	<bean id="fxRateRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.FxRateRespAdptOperation">
+	</bean>
+	<!--Fx BoardRates CR#51 Starts-->
+
+
+	<bean id="fxBoardRatesDAO"
+		class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.FxBoardRatesDAO" />
+		<property name="daoFrontController" ref="billPaymentDaoFrontControllerImpl" />
+	</bean>
+
+	<bean id="fxBoardRatesDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.FxBoardRatesDAOController">
+		<property name="fxBoardRatesReqAdptOperation" ref="fxBoardRatesReqAdptOperation" />
+		<property name="transmissionOperation" ref="fxBoardRatesTransmissionOperation" />
+		<property name="fxBoardRatesRespAdptOperation" ref="fxBoardRatesRespAdptOperation" />
+	</bean>
+
+	<bean id="fxBoardRatesReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.FxBoardRatesReqAdptOperation">
+		<property name="fxBoardRatesHeaderAdapter" ref="fxBoardRatesHeaderAdapter" />
+		<property name="fxBoardRatesPayloadAdapter" ref="fxBoardRatesPayloadAdapter" />
+	</bean>
+
+	<bean id="fxBoardRatesTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="fxBoardRatesTransmissionService" />
+	</bean>
+
+	<bean id="fxBoardRatesTransmissionService"
+		class="com.barclays.bmg.dao.service.impl.FxBoardRatesTransmissionService">
+		<property name="remoteService" ref="fundTransferWebServiceImpl" />
+	</bean>
+	<bean id="fxBoardRatesHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.FxBoardRatesHeaderAdapter">
+	</bean>
+	<bean id="fxBoardRatesPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.FxBoardRatesPayloadAdapter">
+	</bean>
+
+	<bean id="fxBoardRatesRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.FxBoardRatesRespAdptOperation">
+	</bean>
+		<!--Fx BoardRates CR#51 End-->
+
+
+	</beans>

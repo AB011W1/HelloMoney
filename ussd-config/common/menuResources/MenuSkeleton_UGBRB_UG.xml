@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<menuItems>
+	<version>1.0</version>
+
+	<pageHeader>
+		<countryCode>UG</countryCode>
+		<businessId>UGBRB</businessId>
+	</pageHeader>
+
+	<node id="ussd0.00" screenId="00" level="00" optionId="0000" labelId="label.select" headerId="label.select" MainMenu="true">
+			<node id="ussd0.1" screenId="1" level="1" optionId="1" labelId="menu.bkg.services" headerId="label.select" homeOptionReq="false" backOptionReq="true">
+				<node id="ussd0.1.1" screenId="2" level="2" optionId="1" labelId="menu.bkg.balance.enquirey" tranId="UG_BAL_ENQ" />
+				<node id="ussd0.1.2" screenId="2" level="2" optionId="2" labelId="menu.bkg.mini.stmt" tranId="UG_MINI_STMT" />
+				<node id="ussd0.1.3" screenId="2" level="2" optionId="3" labelId="menu.bkg.request.chequebok" tranId="UG_CHK_BK_REQ" />
+				<node id="ussd0.1.4" screenId="2" level="2" optionId="4" labelId="menu.bkg.request.prntstmt" tranId="UG_STMT_REQ" />
+				<node id="ussd0.1.5" screenId="2" level="2" optionId="5" labelId="menu.bkg.fixed.deposit.view.rates"  tranId="UG_VIEW_FD" />
+			</node>
+			<node id="ussd0.2" screenId="1" level="1" optionId="2" labelId="menu.pay.bills" headerId="label.select" backOptionReq="true">
+				<node id="ussd0.2.1" screenId="6" level="2" optionId="1" labelId="menu.pb.registered.biller" tranId="UG_PAY_BILLS" backOptionReq="true"/>
+				<node id="ussd0.2.2" screenId="6" level="2" optionId="2" labelId="menu.pb.onetime.payement" tranId="UG_ONE_TIME_PAYMNTS" backOptionReq="true"/>
+				<node id="ussd0.2.3" screenId="6" level="2" optionId="3" labelId="menu.pb.view.lastpaid.bills" tranId="UG_VIEW_LAST_PAID_BILLS" />
+				<node id="ussd0.2.4" screenId="6" level="2" optionId="4" labelId="menu.pb.register.biller" tranId="UG_REG_BILLERS" />
+				<node id="ussd0.2.5" screenId="6" level="2" optionId="5" labelId="menu.pb.view.mybillers" tranId="UG_VIEW_BILLERS" />
+				<node id="ussd0.2.6" screenId="6" level="2" optionId="6" labelId="menu.pb.delete.biller" tranId="UG_DEL_BILLERS" />
+			</node>
+			<node id="ussd0.3" screenId="1" level="1" optionId="3" labelId="menu.fund.transfer" headerId="label.select" backOptionReq="true">
+				<node id="ussd0.3.1" screenId="4" level="2" optionId="1" labelId="menu.ft.own.account" tranId="UG_OWN_LNK_FND_TX" />
+				<node id="ussd0.3.2" screenId="4" level="2" optionId="2" labelId="menu.ft.other.barclay" headerId="label.select" backOptionReq="true" >
+					<node id="ussd0.3.2.1" screenId="7" level="3" optionId="1" labelId="label.registered" tranId="UG_OTHER_BARC_FND_TX_REG" />
+					<node id="ussd0.3.2.2" screenId="7" level="3" optionId="2" labelId="label.unregistered" tranId="UG_OTHER_BARC_FND_TX_UNREG" />
+				</node>
+
+				<node id="ussd0.3.4" screenId="4" level="2" optionId="3" labelId="menu.ft.register.benef" headerId="label.select" backOptionReq="true">
+					<node id="ussd0.3.4.1" screenId="3" level="3" optionId="1" labelId="label.barclay.acc" tranId="UG_REG_BENF_INT" />
+
+				</node>
+				<node id="ussd0.3.5" screenId="4" level="2" optionId="4"
+					labelId="menu.ft.delete.benef" headerId="label.select" backOptionReq="true">
+					<node id="ussd0.3.5.1" screenId="9" level="3" optionId="1" labelId="label.barclay.acc" tranId="UG_DEL_BENF_BARCLAYS" />
+
+				</node>
+			</node>
+			<node id="ussd0.4" screenId="1" level="1" optionId="4" labelId="menu.cash.send" tranId="UG_CASH_SEND_ONE_TIME_PAYMNTS" />
+			<!-- Credit Card changes -->
+ 			<node id="ussd0.7" screenId="1" level="1" optionId="5" labelId="menu.credit.card.services" headerId="label.select" backOptionReq="true">
+         		<node id="ussd0.7.1" screenId="11" level="1" optionId="1" labelId="menu.at.glance" tranId="UG_AT_GLANCE" />
+         		<node id="ussd0.7.2" screenId="11" level="1" optionId="2" labelId="menu.card.statement" tranId="UG_CARD_STATEMENT" />
+         		<node id="ussd0.7.3" screenId="11" level="1" optionId="3" labelId="menu.unbilled.transaction" tranId="UG_UNBILLED_TRANSACTION" />
+         		<node id="ussd0.7.4" screenId="11" level="1" optionId="4" labelId="menu.credit.card.payment" headerId="label.select" backOptionReq="true">
+            		<node id="ussd0.7.4.1" screenId="12" level="2" optionId="1" labelId="label.own.barclaycard" tranId="UG_CARD_PAYMENT_INT"/>
+       		  	</node><!--CR#46 Credit card link-->
+         		<node id="ussd0.7.5" screenId="11" level="1" optionId="5" labelId="menu.credit.card.link" tranId="UG_CREDITCARD_LINK" />
+     		</node>
+			<!-- Credit Card changes -->
+			<node id="ussd0.5" screenId="1" level="1" optionId="6" labelId="menu.buy.airtimetopup" tranId="UG_AIRTIME_TOPUP" />
+
+			<node id="ussd0.6" screenId="1" level="1" optionId="7" labelId="menu.mwallet" tranId="UG_MOBILE_WALLET_TOP_UP" />
+
+			<node id="ussd0.9" screenId="1" level="1" optionId="8" labelId="menu.lead.generation" tranId="UG_LEAD_GENERATION" />
+
+			<node id="ussd0.8" screenId="1" level="1" optionId="9" labelId="menu.setting" headerId="label.select" backOptionReq="true">
+				<node id="ussd0.8.1" screenId="8" level="7" optionId="1" labelId="menu.change.pin" tranId="UG_CHNG_PIN" />
+				<node id="ussd0.8.2" screenId="8" level="7" optionId="2" labelId="menu.lang.pref" tranId="UG_LANG_PREF" />
+			</node>
+	</node>
+	<node id="ussd1.00" screenId="100" level="00" optionId="01" labelId="label.select" headerId="label.unreg.user.welcome">
+		<node id="ussd1.01" screenId="01" level="1" optionId="1" labelId="menu.self.registration" tranId="UG_SELF_REG" />
+		<node id="ussd1.02" screenId="01" level="1" optionId="2" labelId="menu.demo" tranId="UG_HM_DEMO"/>
+		<node id="ussd1.03" screenId="01" level="1" optionId="3" labelId="menu.contactus" tranId="UG_CONTACT_US"/>
+	</node>
+	<node id="ussd2.00" screenId="200" level="00" optionId="02" labelId="label.select" headerId="label.user.session.options">
+		<node id="ussd2.01" screenId="02" level="1" optionId="1" labelId="menu.user.session.old" tranId="UG_RETAIN_OLD_SESSION" />
+		<node id="ussd2.02" screenId="02" level="1" optionId="2" labelId="menu.user.session.new" tranId="UG_SWITCH_TO_NEW_SESSION"/>
+	</node>
+	<node id="ussd3.00" screenId="200" level="00" optionId="1" labelId="label.select" headerId="label.forgot.pin.instruction" tranId="UG_FOR_PIN"/>
+</menuItems>

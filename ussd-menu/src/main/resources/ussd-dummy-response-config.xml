@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:mvc="http://www.springframework.org/schema/mvc"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+  http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+  http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+  http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-3.0.xsd">
+
+	<bean id="ussdDummyResponseFactory" class="com.barclays.ussd.bmg.factory.response.USSDDummyResponseFactory" />
+
+  	<bean id="dummyResponse_TZBRB_TZ" class="com.barclays.ussd.dummy.responses.DummyBMGResponseImpl_TZBRB_TZ" />
+  	<bean id="dummyResponse_KEBRB_KE" class="com.barclays.ussd.dummy.responses.DummyBMGResponseImpl_KEBRB_KE" />
+  	<bean id="dummyResponse_UGBRB_UG" class="com.barclays.ussd.dummy.responses.DummyBMGResponseImpl_UGBRB_UG" />
+  	<bean id="dummyResponse_GHBRB_GH" class="com.barclays.ussd.dummy.responses.DummyBMGResponseImpl_GHBRB_GH" />
+	<bean id="dummyResponse_ZMBRB_ZM" class="com.barclays.ussd.dummy.responses.DummyBMGResponseImpl_ZMBRB_ZM" />
+	<bean id="dummyResponse_ZWBRB_ZW" class="com.barclays.ussd.dummy.responses.DummyBMGResponseImpl_ZWBRB_ZW" />
+	<bean id="dummyResponse_MZBRB_MZ" class="com.barclays.ussd.dummy.responses.DummyBMGResponseImpl_MZBRB_MZ" />
+	<bean id="dummyResponse_TZNBC_TZN" class="com.barclays.ussd.dummy.responses.DummyBMGResponseImpl_TZNBC_TZN" />
+	<bean id="dummyResponse_BWBRB_BW" class="com.barclays.ussd.dummy.responses.DummyBMGResponseImpl_BWBRB_BW" />
+</beans>

@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+	<!-- Bill Payment and MTP controller Starts here -->
+	<!--
+		<bean id="KEBRBretrievePayeeListController"
+		class="com.barclays.bmg.mvc.controller.billpayment.PayeeListController"
+		parent="bmbAbstractCommandController"> <property
+		name="retrievePayeeListOperation" ref="retrieveBPPayeeListOperation"
+		/> <property name="getOwnCreditCardAccountsOperation"
+		ref="getOwnCreditCardAccountsOperation" /> <property
+		name="commandName" value="payeeListCommand" /> <property
+		name="commandClass"
+		value="com.barclays.bmg.mvc.command.billpayment.PayeeListCommand" />
+		<property name="validator" ref="KEBRBpayeeListCommandValidator" />
+		<property name="bmbJSONBuilder" ref="KEBRBretreivePayeeListJSONBldr"
+		/> </bean> <bean id="KEBRBretrievePayeeInfoController"
+		class="com.barclays.bmg.mvc.controller.billpayment.RetrieveBPPayeeInformationController"
+		parent="bmbAbstractCommandController"> <property
+		name="retrievePayeeInfoOperation" ref="retrievePayeeInfoOperation" />
+		<property name="retrieveAccountListOperation"
+		ref="retrieveAccountListOperation" /> <property
+		name="mergeBillerInfoOperation" ref="KEBRBmergeBillerInfoOperation" />
+		<property name="transactionLimitOperation"
+		ref="transactionLimitOperation" /> <property
+		name="checkInqueryBillOperation" ref="KEBRBcheckInqueryBillOperation"
+		/> <property name="commandName" value="payeeInformationCommand" />
+		<property name="commandClass"
+		value="com.barclays.bmg.mvc.command.billpayment.PayeeInformationCommand"
+		/> <property name="validator"
+		ref="KEBRBpayeeInformationCommandValidator" /> <property
+		name="bmbJSONBuilder" ref="KEBRBretreivePayeeInfoJSONBldr" />
+		<property name="activityId" value="PMT_BP_BILLPAY_PAYEE" /> <property
+		name="txnType" value="BP" /> </bean>
+	-->
+	<!--
+		<bean id="KEBRBretrieveMTPPayeeInfoController"
+		class="com.barclays.bmg.mvc.controller.billpayment.RetrieveBPPayeeInformationController"
+		parent="bmbAbstractCommandController"> <property
+		name="retrievePayeeInfoOperation" ref="retrievePayeeInfoOperation" />
+		<property name="retrieveAccountListOperation"
+		ref="retrieveAccountListOperation" /> <property
+		name="mergeBillerInfoOperation" ref="mergeBillerInfoOperation" />
+		<property name="transactionLimitOperation"
+		ref="transactionLimitOperation" /> <property
+		name="checkInqueryBillOperation" ref="checkInqueryBillOperation" />
+		<property name="commandName" value="payeeInformationCommand" />
+		<property name="commandClass"
+		value="com.barclays.bmg.mvc.command.billpayment.PayeeInformationCommand"
+		/> <property name="validator" ref="payeeInformationCommandValidator"
+		/> <property name="bmbJSONBuilder" ref="retreivePayeeInfoJSONBldr" />
+		<property name="activityId" value="PMT_BP_MOBILE_TOPUP_PAYEE" />
+		<property name="txnType" value="MTP" /> </bean>
+	-->
+
+	<!--
+		<bean id="KEBRBpaymentFormSubmissionController"
+		class="com.barclays.bmg.mvc.controller.billpayment.BillPayFormSubmissionValidationController"
+		parent="bmbAbstractCommandController"> <property
+		name="getSelectedAccountOperation" ref="getSelectedAccountOperation"
+		/> <property name="formValidateOperation" ref="formValidateOperation"
+		/> <property name="billPayAmountValidationOperation"
+		ref="KEBRBbillPayAmountValidationOperation" /> <property
+		name="commandName" value="paymentFormSubmissionCommand" /> <property
+		name="commandClass"
+		value="com.barclays.bmg.mvc.command.billpayment.PaymentFormSubmissionCommand"
+		/> <property name="validator"
+		ref="KEBRBpaymentFormSubmissionCommandValidator" /> <property
+		name="bmbJSONBuilder" ref="KEBRBpaymentFormSubmissionJSONBldr" />
+		</bean>
+	-->
+
+	<bean id="KEBRBconfirmPaymentExecutionController"
+		class="com.barclays.bmg.mvc.controller.billpayment.BillPaymentExecutionController"
+		parent="bmbAbstractCommandController">
+		<property name="makeBillPaymentOperation" ref="KEBRBmakeBillPaymentOperation" />
+		<property name="bmbJSONBuilder" ref="KEBRBpaymentExecutionJSONBldr" />
+		<property name="otpAuthenticationOperation" ref="otpAuthenticationOperation" />
+		<property name="txnOTPSecondAuthJSONBldr" ref="txnOTPSecondAuthJSONBldr" />
+		<property name="sqaAuthenticationOperation" ref="sqaAuthenticationOperation" />
+		<property name="txnSQASecondAuthJSONBldr" ref="txnSQASecondAuthJSONBldr" />
+		<property name="commandName" value="paymentExecuteCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.BillPaymentExecuteCommand" />
+		<property name="validator" ref="KEBRBbillpaymentExecuteCommandValidator" />
+	</bean>
+
+
+	<!-- Bill Payment and MTP controller Ends here -->
+	<!--
+		<bean id="KEBRBpayeeListCommandValidator"
+		class="com.barclays.bmg.mvc.validator.billpayment.PayeeListCommandValidator">
+		</bean> <bean id="KEBRBretreivePayeeListJSONBldr"
+		class="com.barclays.bmg.json.model.builder.billpayment.RetreivePayeeListJSONBldr"
+		parent="bmbCommonJSONBuilder"> </bean> <bean
+		id="KEBRBpayeeInformationCommandValidator"
+		class="com.barclays.bmg.mvc.validator.billpayment.PayeeInformationCommandValidator">
+		</bean> <bean id="KEBRBpayeeInformationCommandValidatorVer1"
+		class="com.barclays.bmg.mvc.validator.billpayment.PayInfoRel1CommandValidator">
+		</bean> <bean id="KEBRBretreivePayeeInfoJSONBldr"
+		class="com.barclays.bmg.json.model.builder.billpayment.RetreivePayeeInfoJSONBldr"
+		parent="bmbCommonJSONBuilder"> </bean> <bean
+		id="KEBRBmergeBillerInfoOperation"
+		class="com.barclays.bmg.operation.beneficiary.MergeBillerInfoOperation"
+		parent="bmbPaymentsOperation"> </bean> <bean
+		id="KEBRBcheckInqueryBillOperation"
+		class="com.barclays.bmg.operation.beneficiary.CheckInqueryBillOperation"
+		parent="bmbPaymentsOperation"> <property name="inqueryBillService"
+		ref="KEBRBinqueryBillService" /> </bean> <bean
+		id="KEBRBbillPayAmountValidationOperation"
+		class="com.barclays.bmg.operation.formvalidation.BillPayAmountValidationOperation"
+		parent="bmbPaymentsOperation"> </bean> <bean
+		id="KEBRBpaymentFormSubmissionJSONBldr"
+		class="com.barclays.bmg.json.model.builder.billpayment.PaymentFormSubmissionJSONBldr"
+		parent="bmbCommonJSONBuilder"> </bean> <bean
+		id="KEBRBpaymentFormSubmissionCommandValidator"
+		class="com.barclays.bmg.mvc.validator.billpayment.PaymentFormSubmissionCommandValidator">
+		</bean>
+	-->
+
+	<bean id="KEBRBmakeBillPaymentOperation"
+		class="com.barclays.bmg.operation.payments.MakeBillPaymentOperation"
+		parent="bmbPaymentsOperation">
+		<property name="payBillService" ref="KEBRBpayBillService" />
+		<property name="retrieveIndCustBySCVIDService" ref="retrieveIndCustBySCVIDService" />
+		<property name="retreiveChargeDetailsService" ref="retreiveChargeDetailsService" />
+
+	</bean>
+
+	<bean id="KEBRBbillpaymentExecuteCommandValidator"
+		class="com.barclays.bmg.mvc.validator.billpayment.BillPaymentExecuteCommandValidator">
+	</bean>
+
+	<!--
+		<bean id="KEBRBbillPaymentExecuteCommandValidatorRel1"
+		class="com.barclays.bmg.mvc.validator.billpayment.BillPaymentExecuteCommandValidatorRel1">
+		</bean>
+	-->
+
+	<bean id="KEBRBpaymentExecutionJSONBldr"
+		class="com.barclays.bmg.json.model.builder.billpayment.PaymentExecutionJSONBldr">
+	</bean>
+
+
+	<!-- Biller Service -->
+
+	<bean id="KEBRBbillerService" class="com.barclays.bmg.service.impl.BillerServiceImpl">
+		<property name="billerListDAO" ref="KEBRBbillerDAO" />
+	</bean>
+	<bean id="KEBRBbillerDAO" class="com.barclays.bmg.dao.impl.BillerListDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+
+
+	<!--  Inquery Bill Service -->
+
+	<!--
+		<bean id="KEBRBinqueryBillService"
+		class="com.barclays.bmg.service.impl.InqueryBillServiceImpl">
+		<property name="inqueryBillDAO" ref="KEBRBinqueryBillDAO" /> </bean>
+	-->
+	<!--
+		<bean id="KEBRBinqueryBillDAO"
+		class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean"> <property
+		name="serviceInterface" value="com.barclays.bmg.dao.InqueryBillDAO" />
+		<property name="daoFrontController"
+		ref="billPaymentDaoFrontControllerImpl" /> </bean> <bean
+		id="KEBRBinqueryBillDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.InqueryBillDAOController">
+		<property name="inqueryBillReqAdptOperation"
+		ref="inqueryBillReqAdptOperation" /> <property
+		name="transmissionOperation"
+		ref="KEBRBinqueryBillTransmissionOperation" /> <property
+		name="inqueryBillRespAdptOperation" ref="inqueryBillRespAdptOperation"
+		/> </bean>
+	-->
+	<!--
+		<bean id="KEBRBinqueryBillTransmissionOperation"
+		class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService"
+		ref="KEBRBinqueryBillTransmissionService" /> </bean>
+	-->
+	<!--
+		<bean id="KEBRBinqueryBillTransmissionService"
+		class="com.barclays.bmg.dao.service.impl.InqueryBillTransmissionService">
+		<property name="remoteService" ref="fundTransferWebServiceImpl" />
+		</bean>
+	-->
+
+	<!--
+		<bean id="KEBRBinqueryBillReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.InqueryBillReqAdptOperation">
+		<property name="inqueryBillHeaderAdapter"
+		ref="KEBRBinqueryBillHeaderAdapter" /> <property
+		name="inqueryBillPayloadAdapter" ref="KEBRBinqueryBillPayloadAdapter"
+		/> </bean> <bean id="KEBRBinqueryBillHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.InqueryBillHeaderAdapter">
+		</bean> <bean id="KEBRBinqueryBillPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.InqueryBillPayloadAdapter">
+		</bean> <bean id="KEBRBinqueryBillRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.InqueryBillRespAdptOperation">
+		</bean>
+	-->
+	<!--  Make Bill Payment  -->
+
+	<bean id="KEBRBpayBillService" class="com.barclays.bmg.service.impl.PayBillServiceImpl">
+		<property name="payBillDAO" ref="KEBRBpayBillDAO" />
+		<property name="creditCardPaymentDAO" ref="creditCardPaymentDAO" />
+	</bean>
+
+	<bean id="KEBRBpayBillDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.PayBillDAO" />
+		<property name="daoFrontController" ref="KEBRBbillPaymentDaoFrontControllerImpl" />
+	</bean>
+
+
+
+	<!--  MAKE BILL PAYMENT -->
+
+	<!--
+		KEBRBpayBillDAOController reference in
+		bmb-payments-dao-config-kebrb.xml
+	-->
+	<bean id="KEBRBpayBillDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.MakeBillPaymentDAOController">
+		<property name="makePayBillReqAdptOperation" ref="KEBRBmakePayBillReqAdptOperation" />
+		<property name="transmissionOperation" ref="KEBRBmakePayBillTransmissionOperation" />
+		<property name="makePayBillRespAdptOperation" ref="KEBRBmakePayBillRespAdaptOperation" />
+	</bean>
+
+	<bean id="KEBRBmakePayBillReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.MakePayBillReqAdptOperation">
+		<property name="makePayBillHeaderAdapter" ref="KEBRBmakePayBillHeaderAdapter" />
+		<property name="makePayBillPayloadAdapter" ref="KEBRBmakePayBillPayloadAdapter" />
+	</bean>
+
+	<bean id="KEBRBmakePayBillTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="KEBRBMakePayBillTransmissionService" />
+	</bean>
+
+	<bean id="KEBRBMakePayBillTransmissionService"
+		class="com.barclays.bmg.dao.service.impl.MakePayBillTransmissionService">
+		<property name="remoteService" ref="fundTransferWebServiceImpl" />
+	</bean>
+
+	<bean id="KEBRBmakePayBillHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.MakePayBillHeaderAdapter">
+	</bean>
+
+	<bean id="KEBRBmakePayBillPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.MakePayBillPayloadAdapter">
+	</bean>
+
+	<bean id="KEBRBmakePayBillRespAdaptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.MakePayBillRespAdptOperation">
+	</bean>
+
+	<bean id="KEBRBbillPaymentDaoFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+
+				<entry key="PAYBILL" value-ref="KEBRBpayBillDAOController" />
+
+			</map>
+		</property>
+	</bean>
+
+</beans>

@@ -1,0 +1,5 @@
+-----------------------		URL INSERTION QUERY FOR TZBRB - PCT   --------------------------
+DELETE FROM S_URL_BUSINESS_MAP_MST  WHERE SYSTEM_ID='MB' AND BUSINESS_ID='TZBRB' AND URL_PATTERN='https://widd.wload.global:52255/bmg';
+
+INSERT INTO S_URL_BUSINESS_MAP_MST (SYSTEM_ID, BUSINESS_ID, URL_PATTERN, LANGUAGE_ID) VALUES ('MB','TZBRB','https://widd.wload.global:52255/bmg','EN');
+COMMIT;

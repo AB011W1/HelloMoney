@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="MCFE_APP_CACHE">
+	<typeAlias alias="ussdListValueResDTO"
+		type="com.barclays.ussd.sysprefs.services.ListValueResDTO" />
+
+	<typeAlias alias="billers"
+		type="com.barclays.ussd.bean.BillersListDO" />
+
+	<typeAlias alias="cacheController"
+		type="com.barclays.bmg.cache.IbatisCacheController" />
+
+	<cacheModel id="getBillrsLstCacheModel" type="cacheController"
+		readOnly="true" serialize="true">
+		<property name="configFile" value="/ehcache.xml" />
+		<property name="CacheSize" value="1000" />
+	</cacheModel>
+
+	<cacheModel id="getListValueCacheModel" type="cacheController"
+		readOnly="true" serialize="true">
+		<property name="configFile" value="/ehcache.xml" />
+		<property name="CacheSize" value="1000" />
+	</cacheModel>
+
+  	<resultMap id="billers" class="billers">
+		<result property="businessId" column="BUSINESS_ID" />
+		<result property="billerId" column="BILLER_ID" />
+		<result property="billerNm" column="BILLER_NM" />
+		<result property="billerCategoryId" column="BILLER_CATEGORY_ID" />
+		<result property="billerCategoryNm" column="BILLER_CATEGORY_NM" />
+		<result property="onlineBillerFlg" column="ONLINE_BILLER_FLG" />
+		<result property="billerAttributes" column="BILLER_ATTRIBUTES" />
+	</resultMap>
+
+<!--Kenya UBP Optimisation Start -->
+	<typeAlias alias="pilotBillerDTO" type="com.barclays.bmg.dto.PilotUserDTO" />
+	<resultMap id="pilotBillerInfo" class="pilotBillerDTO">
+		<result property="mobileNumber" column="MOBILE_NUMBER" />
+	</resultMap>
+
+	  <select id="getBillersUBP" resultMap="billers" cacheModel="getBillrsLstCacheModel">
+			SELECT billers.business_id, billers.biller_id, billers.biller_nm, billers.BILLER_CATEGORY_ID,
+			billers.BILLER_CATEGORY_NM, billers.ONLINE_BILLER_FLG, BILLERS.BILLER_ATTRIBUTES,BILLERS.PILOT_MODE from C_BILLER_MST billers, c_business_mst biz
+			where billers.business_id = biz.BUSINESS_ID and biz.ISO_COUNTRY_CD = #countryCd# and billers.business_id ='TZBRB'
+			and billers.BILLER_CATEGORY_ID !='MobileWallet'
+			and billers.BILLER_CATEGORY_ID !='MobileMoney'
+			AND billers.STATUS= #status#
+			AND billers.SHM_FLG='Y'
+			order by billers.biller_nm
+	  </select>
+
+	  <select id="getBillers" resultMap="billers" cacheModel="getBillrsLstCacheModel">
+			SELECT billers.business_id, billers.biller_id, billers.biller_nm, billers.BILLER_CATEGORY_ID,
+			billers.BILLER_CATEGORY_NM, billers.ONLINE_BILLER_FLG, BILLERS.BILLER_ATTRIBUTES,BILLERS.PILOT_MODE from C_BILLER_MST billers, c_business_mst biz
+			where billers.business_id = biz.BUSINESS_ID and biz.ISO_COUNTRY_CD = #countryCd# and billers.business_id ='TZBRB'
+			and billers.BILLER_CATEGORY_ID !='MobileWallet'
+			AND billers.BILLER_CATEGORY_ID !='MobileMoney'
+			AND (billers.PILOT_MODE = 'N' OR billers.PILOT_MODE is NULL)
+			AND billers.STATUS= #status#
+			AND billers.SHM_FLG='Y'
+			order by billers.biller_nm
+	  </select>
+
+<select id="getBillersNotTZUBP" resultMap="billers" cacheModel="getBillrsLstCacheModel">
+			SELECT billers.business_id, billers.biller_id, billers.biller_nm, billers.BILLER_CATEGORY_ID,
+			billers.BILLER_CATEGORY_NM, billers.ONLINE_BILLER_FLG, billers.BILLER_ATTRIBUTES from C_BILLER_MST billers, c_business_mst biz
+			where billers.business_id = biz.BUSINESS_ID and biz.ISO_COUNTRY_CD = #countryCd#
+			and billers.BILLER_CATEGORY_ID !='MobileWallet'
+			AND billers.BILLER_CATEGORY_ID !='MobileMoney'
+			and billers.BILLER_CATEGORY_ID != 'Telephone'
+			AND billers.STATUS= #status#
+			AND billers.SHM_FLG='Y'
+			order by billers.biller_nm
+	  </select>
+
+	  <select id="getBillersNotTZ" resultMap="billers" cacheModel="getBillrsLstCacheModel">
+			SELECT billers.business_id, billers.biller_id, billers.biller_nm, billers.BILLER_CATEGORY_ID,
+			billers.BILLER_CATEGORY_NM, billers.ONLINE_BILLER_FLG, billers.BILLER_ATTRIBUTES from C_BILLER_MST billers, c_business_mst biz
+			where billers.business_id = biz.BUSINESS_ID and biz.ISO_COUNTRY_CD = #countryCd#
+			and billers.BILLER_CATEGORY_ID !='MobileWallet'
+			and billers.BILLER_CATEGORY_ID != 'Telephone'
+			AND billers.BILLER_CATEGORY_ID !='MobileMoney'
+			AND (billers.PILOT_MODE = 'N' OR billers.PILOT_MODE is NULL)
+			AND billers.STATUS= #status#
+			AND billers.SHM_FLG='Y'
+			order by billers.biller_nm
+	  </select>
+
+  <!-- Modified for TZNBC Bill Pay Functionality -->
+  	  <select id="getBillersTZNUBP" resultMap="billers" cacheModel="getBillrsLstCacheModel">
+			SELECT billers.business_id, billers.biller_id, billers.biller_nm, billers.BILLER_CATEGORY_ID,
+			billers.BILLER_CATEGORY_NM, billers.ONLINE_BILLER_FLG, billers.BILLER_ATTRIBUTES from C_BILLER_MST billers, c_business_mst biz
+			where billers.business_id = biz.BUSINESS_ID and biz.ISO_COUNTRY_CD = #countryCd# and billers.business_id ='TZNBC'
+			and billers.BILLER_CATEGORY_ID !='MobileWallet'
+			and billers.BILLER_CATEGORY_ID != 'Telephone'
+			AND billers.BILLER_CATEGORY_ID !='MobileMoney'
+			AND billers.STATUS= #status#
+			AND billers.SHM_FLG='Y'
+			order by billers.biller_nm
+	  </select>
+
+	  <select id="getBillersTZN" resultMap="billers" cacheModel="getBillrsLstCacheModel">
+			SELECT billers.business_id, billers.biller_id, billers.biller_nm, billers.BILLER_CATEGORY_ID,
+			billers.BILLER_CATEGORY_NM, billers.ONLINE_BILLER_FLG, billers.BILLER_ATTRIBUTES from C_BILLER_MST billers, c_business_mst biz
+			where billers.business_id = biz.BUSINESS_ID and biz.ISO_COUNTRY_CD = #countryCd# and billers.business_id ='TZNBC'
+			and billers.BILLER_CATEGORY_ID !='MobileWallet'
+			and billers.BILLER_CATEGORY_ID != 'Telephone'
+			AND billers.BILLER_CATEGORY_ID !='MobileMoney'
+			AND( billers.PILOT_MODE = 'N' OR billers.PILOT_MODE is NULL)
+			AND billers.STATUS= #status#
+			AND billers.SHM_FLG='Y'
+			order by billers.biller_nm
+	  </select>
+
+	  <select id="getBillerInfoUBP" resultMap="billers" cacheModel="getBillrsLstCacheModel">
+			SELECT billers.business_id, billers.biller_id, billers.biller_nm, billers.BILLER_CATEGORY_ID,
+			billers.BILLER_CATEGORY_NM, billers.ONLINE_BILLER_FLG, billers.BILLER_ATTRIBUTES from C_BILLER_MST billers, c_business_mst biz
+			where billers.business_id = biz.BUSINESS_ID and biz.ISO_COUNTRY_CD = #countryCd#
+			and billers.biller_id = #billerId#
+			AND billers.STATUS= #status#
+			AND billers.SHM_FLG='Y'
+	  </select>
+
+	  <select id="getBillerInfo" resultMap="billers" cacheModel="getBillrsLstCacheModel">
+			SELECT billers.business_id, billers.biller_id, billers.biller_nm, billers.BILLER_CATEGORY_ID,
+			billers.BILLER_CATEGORY_NM, billers.ONLINE_BILLER_FLG, billers.BILLER_ATTRIBUTES from C_BILLER_MST billers, c_business_mst biz
+			where billers.business_id = biz.BUSINESS_ID and biz.ISO_COUNTRY_CD = #countryCd#
+			and billers.biller_id = #billerId#
+			AND (billers.PILOT_MODE = 'N' OR billers.PILOT_MODE is NULL)
+			AND billers.STATUS= #status#
+			AND billers.SHM_FLG='Y'
+	  </select>
+
+  <!-- Modified for TZNBC Bill Pay Functionality -->
+      <select id="getBillerInfoTZNUBP" resultMap="billers" cacheModel="getBillrsLstCacheModel">
+			SELECT billers.business_id, billers.biller_id, billers.biller_nm, billers.BILLER_CATEGORY_ID,
+			billers.BILLER_CATEGORY_NM, billers.ONLINE_BILLER_FLG, billers.BILLER_ATTRIBUTES from C_BILLER_MST billers, c_business_mst biz
+			where billers.business_id = biz.BUSINESS_ID and biz.ISO_COUNTRY_CD = #countryCd# and billers.business_id ='TZNBC'
+			and billers.biller_id = #billerId#
+			AND billers.STATUS= #status#
+			AND billers.SHM_FLG='Y'
+	  </select>
+
+      <select id="getBillerInfoTZN" resultMap="billers" cacheModel="getBillrsLstCacheModel">
+			SELECT billers.business_id, billers.biller_id, billers.biller_nm, billers.BILLER_CATEGORY_ID,
+			billers.BILLER_CATEGORY_NM, billers.ONLINE_BILLER_FLG, billers.BILLER_ATTRIBUTES from C_BILLER_MST billers, c_business_mst biz
+			where billers.business_id = biz.BUSINESS_ID and biz.ISO_COUNTRY_CD = #countryCd# and billers.business_id ='TZNBC'
+			and billers.biller_id = #billerId#
+			AND (billers.PILOT_MODE = 'N' OR billers.PILOT_MODE is NULL)
+			AND billers.STATUS= #status#
+			AND billers.SHM_FLG='Y'
+	  </select>
+<!--Kenya UBP Optimisation End -->
+
+<!-- Other Countries Billers Start-->
+<select id="otherCountriesGetBillers" resultMap="billers" cacheModel="getBillrsLstCacheModel">SELECT billers.business_id, billers.biller_id, billers.biller_nm, billers.BILLER_CATEGORY_ID, billers.BILLER_CATEGORY_NM, billers.ONLINE_BILLER_FLG, billers.BILLER_ATTRIBUTES from C_BILLER_MST billers, c_business_mst biz where billers.business_id = biz.BUSINESS_ID and biz.ISO_COUNTRY_CD = #countryCd# and billers.business_id ='TZBRB' and billers.payee_support='Y' and billers.BILLER_CATEGORY_ID !='MobileWallet' and billers.BILLER_CATEGORY_ID !='MobileMoney' order by billers.biller_nm</select>
+<select id="otherCountriesGetBillersNotTZ" resultMap="billers" cacheModel="getBillrsLstCacheModel">SELECT billers.business_id, billers.biller_id, billers.biller_nm, billers.BILLER_CATEGORY_ID, billers.BILLER_CATEGORY_NM, billers.ONLINE_BILLER_FLG, billers.BILLER_ATTRIBUTES from C_BILLER_MST billers, c_business_mst biz where billers.business_id = biz.BUSINESS_ID and biz.ISO_COUNTRY_CD = #countryCd# and billers.payee_support='Y' and billers.BILLER_CATEGORY_ID !='MobileWallet' and billers.BILLER_CATEGORY_ID != 'Telephone' and billers.BILLER_CATEGORY_ID !='MobileMoney' order by billers.biller_nm</select>
+<!-- Modified for TZNBC Bill Pay Functionality -->
+<select id="otherCountriesGetBillersTZN" resultMap="billers" cacheModel="getBillrsLstCacheModel">SELECT billers.business_id, billers.biller_id, billers.biller_nm, billers.BILLER_CATEGORY_ID, billers.BILLER_CATEGORY_NM, billers.ONLINE_BILLER_FLG, billers.BILLER_ATTRIBUTES from C_BILLER_MST billers, c_business_mst biz where billers.business_id = biz.BUSINESS_ID and biz.ISO_COUNTRY_CD = #countryCd# and billers.business_id ='TZNBC' and billers.payee_support='Y' and billers.BILLER_CATEGORY_ID !='MobileWallet' and billers.BILLER_CATEGORY_ID != 'Telephone' and billers.BILLER_CATEGORY_ID !='MobileMoney' order by billers.biller_nm</select>
+<select id="otherCountriesGetBillerInfo" resultMap="billers" cacheModel="getBillrsLstCacheModel">SELECT billers.business_id, billers.biller_id, billers.biller_nm, billers.BILLER_CATEGORY_ID, billers.BILLER_CATEGORY_NM, billers.ONLINE_BILLER_FLG, billers.BILLER_ATTRIBUTES from C_BILLER_MST billers, c_business_mst biz where billers.business_id = biz.BUSINESS_ID and biz.ISO_COUNTRY_CD = #countryCd# and billers.biller_id = #billerId#</select>
+<!-- Modified for TZNBC Bill Pay Functionality -->
+<select id="otherCountriesGetBillerInfoTZN" resultMap="billers" cacheModel="getBillrsLstCacheModel">SELECT billers.business_id, billers.biller_id, billers.biller_nm, billers.BILLER_CATEGORY_ID, billers.BILLER_CATEGORY_NM, billers.ONLINE_BILLER_FLG, billers.BILLER_ATTRIBUTES from C_BILLER_MST billers, c_business_mst biz where billers.business_id = biz.BUSINESS_ID and biz.ISO_COUNTRY_CD = #countryCd# and billers.business_id ='TZNBC' and billers.biller_id = #billerId#</select>
+<!-- Other Countries Billers End-->
+
+<!-- result map for ListValueResCacheDTO -->
+
+   <resultMap id="ussdListValueResCache" class="ussdListValueResDTO">
+   <result property="languageKey" column="LANGUAGE_ID" />
+    <!--		<result property="listId" column="LIST_VALUE_ID" />-->
+    <result property="listOrder" column="LIST_VALUE_ORDER" />
+    <result property="listValue" column="VALUE" />
+    <result property="listKey" column="LIST_VALUE_KEY" />
+    <result property="filterKey1" column="FILTER_KEY_1" />
+  </resultMap>
+
+  <statement id="ussdFindListValueResByGroupKits" resultMap="ussdListValueResCache" cacheModel="getListValueCacheModel">
+  SELECT a.LIST_VALUE_KEY, b.LANGUAGE_ID, b.LIST_VALUE_ORDER,b.VALUE,a.FILTER_KEY_1
+  FROM C_LISTVALUE_MST a ,C_LISTVALUE_RES_MST b
+  WHERE a.SYSTEM_ID=#systemId# AND a.BUSINESS_ID=#businessId#
+  AND a.SYSTEM_ID= b.SYSTEM_ID AND a.BUSINESS_ID=b.BUSINESS_ID and a.GROUP_ID=b.GROUP_ID
+  and a.LIST_VALUE_KEY=b.LIST_VALUE_KEY AND b.LANGUAGE_ID=#langId#
+  AND a.GROUP_ID=#group# AND UPPER(b.VALUE) like #bankCodeLetter#
+  ORDER BY b.LIST_VALUE_ORDER ASC, b.VALUE ASC
+  </statement>
+
+  <statement id="ussdFindListValueResByGroup" resultMap="ussdListValueResCache" cacheModel="getListValueCacheModel">
+    SELECT
+    a.LIST_VALUE_KEY,
+    b.LANGUAGE_ID, b.LIST_VALUE_ORDER,b.VALUE,a.FILTER_KEY_1 FROM
+    C_LISTVALUE_MST a ,C_LISTVALUE_RES_MST b WHERE
+    a.SYSTEM_ID=#systemId#
+    AND a.BUSINESS_ID=#businessId# AND a.SYSTEM_ID=
+    b.SYSTEM_ID AND a.BUSINESS_ID=b.BUSINESS_ID
+    and a.GROUP_ID=b.GROUP_ID
+    and a.LIST_VALUE_KEY=b.LIST_VALUE_KEY
+    AND
+    b.LANGUAGE_ID=#langId#
+    AND
+    a.GROUP_ID=#group# ORDER BY
+    b.LIST_VALUE_ORDER ASC, b.VALUE ASC
+    </statement>
+
+  <statement id="ussdFindListValueResByGroupKey" resultMap="ussdListValueResCache" cacheModel="getListValueCacheModel">
+    SELECT
+    a.LIST_VALUE_KEY,
+    b.LANGUAGE_ID,b.LIST_VALUE_ORDER,b.VALUE,a.FILTER_KEY_1 FROM
+    C_LISTVALUE_MST a ,C_LISTVALUE_RES_MST b WHERE
+    a.SYSTEM_ID=#systemId#
+    AND a.BUSINESS_ID=#businessId# AND
+    a.LIST_VALUE_KEY=#listValueKey# AND
+    b.LANGUAGE_ID=#langId# AND
+    a.SYSTEM_ID= b.SYSTEM_ID AND
+    a.BUSINESS_ID=b.BUSINESS_ID
+    and
+    a.GROUP_ID=b.GROUP_ID and
+    a.LIST_VALUE_KEY=b.LIST_VALUE_KEY
+    AND
+    a.GROUP_ID=#group#
+    <isNotNull prepend="AND" property="DELETE_FLG">
+        and a.DELETE_FLG != 'Y'
+        </isNotNull>
+    ORDER BY
+    b.LIST_VALUE_ORDER ASC,b.VALUE ASC
+    </statement>
+
+    <statement id="ussdFindListValueResByGroupWithFilter" resultMap="ussdListValueResCache" cacheModel="getListValueCacheModel">
+    SELECT
+    a.LIST_VALUE_KEY,
+    b.LANGUAGE_ID, b.LIST_VALUE_ORDER,b.VALUE,a.FILTER_KEY_1 FROM
+    C_LISTVALUE_MST a ,C_LISTVALUE_RES_MST b WHERE
+    a.SYSTEM_ID=#systemId#
+    AND a.BUSINESS_ID=#businessId# AND a.SYSTEM_ID=
+    b.SYSTEM_ID AND a.BUSINESS_ID=b.BUSINESS_ID
+    and a.GROUP_ID=b.GROUP_ID
+    and a.LIST_VALUE_KEY=b.LIST_VALUE_KEY
+    AND
+    b.LANGUAGE_ID=#langId#
+    AND
+    a.GROUP_ID=#group#
+    <isNotNull prepend="AND" property="filterKey1">
+        a.FILTER_KEY_1 = #filterKey1#
+    </isNotNull>
+    ORDER BY
+    b.LIST_VALUE_ORDER ASC,b.VALUE ASC
+    </statement>
+
+    <select id="ussdFindSupportedLang" resultMap="ussdListValueResCache" cacheModel="getListValueCacheModel">
+    SELECT a.LIST_VALUE_KEY,b.LANGUAGE_ID, b.LIST_VALUE_ORDER,b.VALUE,a.FILTER_KEY_1
+      FROM C_LISTVALUE_MST a ,C_LISTVALUE_RES_MST b, C_BIZ_LANG_MMAP c
+     WHERE a.SYSTEM_ID=#systemId#
+       AND a.BUSINESS_ID=#businessId#
+       AND a.SYSTEM_ID=b.SYSTEM_ID
+       AND a.BUSINESS_ID=b.BUSINESS_ID
+       AND a.GROUP_ID=b.GROUP_ID
+       AND a.LIST_VALUE_KEY=b.LIST_VALUE_KEY
+       AND b.LANGUAGE_ID=#langId#
+       AND a.GROUP_ID=#group#
+       AND a.BUSINESS_ID = c.BUSINESS_ID
+       AND a.LIST_VALUE_KEY = c.SUPPORTED_LANG_KEY
+  ORDER BY b.LIST_VALUE_ORDER ASC,b.VALUE ASC
+    </select>
+
+    <!-- UBP Optimisation Start
+    <select id="getPilotUser" resultMap="pilotBillerInfo">
+		SELECT * from
+		C_BILLER_PILOTUSER_SETUP
+		WHERE C_BILLER_PILOTUSER_SETUP.MOBILE_NUMBER = #mobilenumber#
+		AND C_BILLER_PILOTUSER_SETUP.BUSINESS_ID= #businessId#
+	</select>
+	 UBP Optimisation End -->
+</sqlMap>

@@ -1,0 +1,6 @@
+
+-----------------------		URL INSERTION QUERY FOR KEBRB - UAT   --------------------------
+DELETE FROM S_URL_BUSINESS_MAP_MST WHERE SYSTEM_ID='MB' AND BUSINESS_ID='KEBRB' AND URL_PATTERN='https://cs1t.wload.barclays.co.uk:341000000/bmg';
+
+INSERT INTO S_URL_BUSINESS_MAP_MST (SYSTEM_ID, BUSINESS_ID, URL_PATTERN, LANGUAGE_ID, SEGMENT_ID) VALUES ('MB','KEBRB','https://cs1t.wload.barclays.co.uk:341000000/bmg','EN','MASS');
+COMMIT;

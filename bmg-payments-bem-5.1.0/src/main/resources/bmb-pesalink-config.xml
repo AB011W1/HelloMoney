@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:util="http://www.springframework.org/schema/util"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+
+    <!-- KITS Look up API starts -->
+    <bean id="searchIndividualCustforDeDupCheckController"
+		class="com.barclays.bmg.mvc.controller.pesalink.SearchIndividualCustforDeDupCheckController"
+		parent="bmbAbstractCommandController">
+		<property name="searchIndividualCustforDeDupCheckOperation" ref="searchIndividualCustforDeDupCheckOperation" />
+		<property name="bmbJSONBuilder" ref="searchIndividualCustforDeDupCheckJSONBldr" />
+
+		<property name="commandName" value="searchIndividualCustforDeDupCheckCommand" />
+		<property name="commandClass" value="com.barclays.bmg.mvc.command.pesalink.SearchIndividualCustforDeDupCheckCommand" />
+		<property name="validator" ref="searchIndividualCustforDeDupCheckCommandValidator" />
+		<!--
+		<property name="activityId" value="KITS_LOOKUP" />
+
+	--></bean>
+
+
+    <bean id="searchIndividualCustforDeDupCheckCommandValidator"
+		class="com.barclays.bmg.mvc.validator.pesalink.SearchIndividualCustforDeDupCheckCommandValidator">
+	</bean>
+
+	<bean id="searchIndividualCustforDeDupCheckJSONBldr"
+		class="com.barclays.bmg.json.model.builder.pesalink.SearchIndividualCustforDeDupCheckJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<bean id="searchIndividualCustforDeDupCheckOperation"
+		class="com.barclays.bmg.operation.pesalink.SearchIndividualCustforDeDupCheckOperation" parent="bmbCommonOperation" >
+		<property name="searchIndividualCustforDeDupCheckService" ref="searchIndividualCustforDeDupCheckService" />
+
+	</bean>
+
+
+	<bean id="searchIndividualCustforDeDupCheckService"
+		class="com.barclays.bmg.service.impl.pesalink.SearchIndividualCustforDeDupCheckServiceImpl">
+		<property name="searchIndividualCustforDeDupCheckDAO" ref="searchIndividualCustforDeDupCheckDAO" />
+	</bean>
+
+
+	<bean id="searchIndividualCustforDeDupCheckDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface"
+			value="com.barclays.bmg.dao.pesalink.SearchIndividualCustforDeDupCheckDAO" />
+		<property name="daoFrontController" ref="searchIndividualCustforDeDupCheckDAOFrontControllerImpl" />
+	</bean>
+
+	<bean id="searchIndividualCustforDeDupCheckDAOFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="RETRIEVECUSTOMERINFO" value-ref="searchIndividualCustforDeDupCheckDAOController" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="searchIndividualCustforDeDupCheckDAOController"
+		class="com.barclays.bmg.dao.processing.pesalink.SearchIndividualCustforDeDupCheckDAOController">
+		<property name="searchIndividualCustforDeDupCheckReqAdptOperation" ref="searchIndividualCustforDeDupCheckReqAdptOperation" />
+		<property name="transmissionOperation"	ref="searchIndividualCustforDeDupCheckTransmissionOperation" />
+		<property name="searchIndividualCustforDeDupCheckResAdptOperation" ref="searchIndividualCustforDeDupCheckResAdptOperation" />
+	</bean>
+
+	<bean id="searchIndividualCustforDeDupCheckReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.pesalink.SearchIndividualCustforDeDupCheckReqAdptOperation">
+		<property name="searchIndividualCustforDeDupCheckHeaderAdapter" ref="searchIndividualCustforDeDupCheckHeaderAdapter" />
+		<property name="searchIndividualCustforDeDupCheckPayloadAdapter" ref="searchIndividualCustforDeDupCheckPayloadAdapter" />
+	</bean>
+
+
+	<bean id="searchIndividualCustforDeDupCheckHeaderAdapter"
+		class="com.barclays.bmg.dao.adapter.pesalink.SearchIndividualCustforDeDupCheckHeaderAdapter">
+	</bean>
+
+	<bean id="searchIndividualCustforDeDupCheckPayloadAdapter"
+		class="com.barclays.bmg.dao.adapter.pesalink.SearchIndividualCustforDeDupCheckPayloadAdapter">
+	</bean>
+
+	<bean id="searchIndividualCustforDeDupCheckResAdptOperation"
+		class="com.barclays.bmg.dao.operation.pesalink.SearchIndividualCustforDeDupCheckResAdptOperation">
+
+	</bean>
+
+	<bean id="searchIndividualCustforDeDupCheckTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="searchIndividualCustforDeDupCheckTransmissionService" />
+	</bean>
+	<bean id="searchIndividualCustforDeDupCheckTransmissionService" class="com.barclays.bmg.dao.service.impl.pesalink.SearchIndividualCustforDeDupCheckTransmissionService">
+		<property name="remoteService" ref="searchIndividualCustforDeDupCheckWebServiceImpl" />
+	</bean>
+
+	<bean id="searchIndividualCustforDeDupCheckWebServiceImpl" class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface" value="com.barclays.bem.IndividualCustomerManagement.IndividualCustomerManagement_PortType" />
+		<property name="portName" value="IndividualCustomerManagementSOAP" />
+		<property name="jaxRpcServiceInterface" value="com.barclays.bem.IndividualCustomerManagement.IndividualCustomerManagement_Service" />
+		<property name="endpointAddress" value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="IndividualCustomerManagement_EndPoint" />
+	</bean>
+    <!--KITS look up API ends  -->
+	<!--CreateIndividualCustomer service starts  -->
+
+	<bean id="createIndividualCustomerController"
+		class="com.barclays.bmg.mvc.controller.pesalink.CreateIndividualCustomerController"
+		parent="bmbAbstractCommandController">
+		<property name="createIndividualCustomerOperation" ref="createIndividualCustomerOperation" />
+		<property name="bmbJSONBuilder" ref="createIndividualCustomerJSONBldr" />
+		<property name="commandName" value="createIndividualCustomerCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.pesalink.CreateIndividualCustomerCommand" />
+		<property name="validator" ref="createIndividualCustomerCommandValidator" />
+		<!--<property name="activityId" value="SEC_ONLN_REG" />
+
+	--></bean>
+
+    <bean id="createIndividualCustomerCommandValidator"
+		class="com.barclays.bmg.mvc.validator.pesalink.CreateIndividualCustomerCommandValidator">
+	</bean>
+
+	<bean id="createIndividualCustomerJSONBldr"
+		class="com.barclays.bmg.json.model.builder.pesalink.CreateIndividualCustomerJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<bean id="createIndividualCustomerOperation"
+		class="com.barclays.bmg.operation.pesalink.CreateIndividualCustomerOperation" parent="bmbCommonOperation" >
+		<property name="createIndividualCustomerService" ref="createIndividualCustomerService" />
+
+	</bean>
+
+
+	<bean id="createIndividualCustomerService"
+		class="com.barclays.bmg.service.impl.pesalink.CreateIndividualCustomerServiceImpl">
+		<property name="createIndividualCustomerDAO" ref="createIndividualCustomerDAO" />
+	</bean>
+
+
+	<bean id="createIndividualCustomerDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface"
+			value="com.barclays.bmg.dao.pesalink.CreateIndividualCustomerDAO" />
+		<property name="daoFrontController" ref="createIndividualCustomerDAOFrontControllerImpl" />
+	</bean>
+
+	<bean id="createIndividualCustomerDAOFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="CREATEINDIVIDUALCUSTOMER" value-ref="createIndividualCustomerDAOController" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="createIndividualCustomerDAOController"
+		class="com.barclays.bmg.dao.processing.pesalink.CreateIndividualCustomerDAOController">
+		<property name="createIndividualCustomerReqAdptOperation" ref="createIndividualCustomerReqAdptOperation" />
+		<property name="transmissionOperation"	ref="createIndividualCustomerTransmissionOperation" />
+		<property name="createIndividualCustomerResAdptOperation" ref="createIndividualCustomerResAdptOperation" />
+	</bean>
+
+	<bean id="createIndividualCustomerReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.pesalink.CreateIndividualCustomerReqAdptOperation">
+		<property name="createIndividualCustomerHeaderAdapter" ref="createIndividualCustomerHeaderAdapter" />
+		<property name="createIndividualCustomerPayloadAdapter" ref="createIndividualCustomerPayloadAdapter" />
+	</bean>
+
+
+	<bean id="createIndividualCustomerHeaderAdapter"
+		class="com.barclays.bmg.dao.adapter.pesalink.CreateIndividualCustomerHeaderAdapter">
+	</bean>
+
+	<bean id="createIndividualCustomerPayloadAdapter"
+		class="com.barclays.bmg.dao.adapter.pesalink.CreateIndividualCustomerPayloadAdapter">
+	</bean>
+
+	<bean id="createIndividualCustomerResAdptOperation"
+		class="com.barclays.bmg.dao.operation.pesalink.CreateIndividualCustomerResAdptOperation">
+
+	</bean>
+
+	<bean id="createIndividualCustomerTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="createIndividualCustomerTransmissionService" />
+	</bean>
+	<bean id="createIndividualCustomerTransmissionService" class="com.barclays.bmg.dao.service.impl.pesalink.CreateIndividualCustomerTransmissionService">
+		<property name="remoteService" ref="createIndividualCustomerWebServiceImpl" />
+	</bean>
+
+	<bean id="createIndividualCustomerWebServiceImpl" class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface" value="com.barclays.bem.IndividualCustomerManagement.IndividualCustomerManagement_PortType" />
+		<property name="portName" value="IndividualCustomerManagementSOAP" />
+		<property name="jaxRpcServiceInterface" value="com.barclays.bem.IndividualCustomerManagement.IndividualCustomerManagement_Service" />
+		<property name="endpointAddress" value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="IndividualCustomerManagement_EndPoint" />
+
+	</bean>
+
+	<!--CreateIndividualCustomer service ends  -->
+
+	<!--Make Bill Payment API for outward payment starts -->
+
+	<bean id="kitsOutwardPaymentController"
+		class="com.barclays.bmg.mvc.controller.pesalink.KitsOutwardPaymentController"
+		parent="bmbAbstractCommandController">
+		<property name="kitsOutwardPaymentOperation" ref="KEBRBmakeBillPaymentOperation" />
+		<property name="bmbJSONBuilder" ref="KEBRBpaymentExecutionJSONBldr" />
+		<property name="commandName" value="kitsOutwardPaymentCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.pesalink.KitsOutwardPaymentCommand" />
+		<property name="validator" ref="kitsOutwardPaymentCommandValidator" />
+		</bean>
+
+		<!--
+
+	<bean id="kitsOutwardPaymentJsonBldr"
+		class="com.barclays.bmg.json.model.builder.pesalink.KitsOutwardPaymentJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+	-->
+	  <bean id="kitsOutwardPaymentCommandValidator"
+		class="com.barclays.bmg.mvc.validator.pesalink.KitsOutwardPaymentCommandValidator">
+	</bean>
+
+
+
+<!--	<bean id="kitsOutwardPaymentValidationController"-->
+<!--		class="com.barclays.bmg.mvc.controller.pesalink.KitsOutwardPaymentValidationController" parent="bmbAbstractCommandController">-->
+<!--		<property name="selectedAccountOperation" ref="getSelectedAccountOperation" />-->
+<!--		<property name="formValidateOperation" ref="formValidateOperation" />-->
+<!--		<property name="billPayAmountValidationOperation" ref="billPayAmountValidationOperation" />-->
+<!--		<property name="commandName" value="kitsOutwardPaymentValidationCommand" />-->
+<!--		<property name="commandClass" value="com.barclays.bmg.mvc.command.pesalink.KitsOutwardPaymentValidationCommand" />-->
+<!--		<property name="bmbJSONBuilder" ref="kitsOutwardPaymentValidationJSONBldr" />-->
+<!--	</bean>-->
+<!---->
+<!--	<bean id="KitsOutwardPaymentAmountValidateController"-->
+<!--		class="com.barclays.bmg.mvc.controller.fundtransfer.own.OwnFundTransferInitController" parent="bmbAbstractController">-->
+<!--		<property name="retrieveAccountListOperation" ref="retrieveAccountListOperation" />-->
+<!--		<property name="transactionLimitOperation" ref="transactionLimitOperation" />-->
+<!--		<property name="validateAccountListOperation" ref="validateAccountListOperation" />-->
+<!--		<property name="bmbJSONBuilder" ref="ownFundTransferInitJSONBldr" />-->
+<!--	</bean>-->
+<!---->
+<!---->
+<!---->
+<!---->
+<!--	<bean id="kitsOutwardPaymentValidationJSONBldr" class="com.barclays.bmg.json.model.builder.pesalink.KitsOutwardPaymentValidationJSONBldr" parent="bmbCommonJSONBuilder" />-->
+
+
+<bean id="KitsfundTransferInitController"
+		class="com.barclays.bmg.mvc.controller.pesalink.KitsfundTransferInitController" parent="bmbAbstractController">
+		<property name="retrieveAccountListOperation" ref="retrieveAccountListOperation" />
+		<property name="transactionLimitOperation" ref="transactionLimitOperation" />
+		<property name="validateAccountListOperation" ref="KitsValidateAccountListOperation" />
+		<property name="bmbJSONBuilder" ref="KITSFundTransferInitJSONBldr" />
+	</bean>
+
+	<bean id="KitsValidateAccountListOperation"
+		class="com.barclays.bmg.operation.pesalink.KitsValidateAccountListOperation" parent ="bmbCommonOperation">
+	</bean>
+
+	<bean id="KITSFundTransferInitJSONBldr"
+		class="com.barclays.bmg.json.model.builder.pesalink.KITSFundTransferInitJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+
+
+    <!--Make Bill Payment API for outward payment ends-->
+
+
+    <!-- CPB change starts -->
+	 <bean id="cpbPesaLinkSendToPhoneAccountController"
+		class="com.barclays.bmg.mvc.controller.pesalink.CpbPesaLinkSendToPhoneAccountController" parent="bmbAbstractController">
+		<property name="getSelectedAccountOperation" ref="getSelectedAccountOperation" />
+		<property name="getPesaLinkToPhoneAccountRetrievChargeOperation" ref="getPesaLinkToPhoneAccountRetrievChargeOperation" />
+		<property name="commandName" value="cpbPesaLinkCommand" />
+		<property name="commandClass" value="com.barclays.bmg.mvc.command.pesalink.CpbPesaLinkCommand" />
+		<property name="bmbJSONBuilder" ref="cpbValidateJsonBldr" />
+	</bean>
+
+	<bean id="getPesaLinkToPhoneAccountRetrievChargeOperation" class="com.barclays.bmg.operation.pesalink.GetPesaLinkToPhoneAccountRetrievChargeOperation"
+	parent="bmbCommonOperation">
+		<property name="retreiveChargeDetailsService" ref="retreiveChargeDetailsService" />
+		<!--<property name="fxRateService" ref="fxRateService" />
+		<property name="transactionLimitService" ref="transactionLimitService" />-->
+	</bean>
+
+	 <!--  <bean id="getPesaLinkToPhoneAccountRetrievChargeValidator"
+		class="com.barclays.bmg.mvc.validator.pesalink.GetPesaLinkToPhoneAccountRetrievChargeValidator">
+	</bean>-->
+
+	<bean id="cpbValidateJsonBldr"
+		class="com.barclays.bmg.json.model.builder.pesalink.CpbValidateJsonBldr"
+		parent="bmbCommonJSONBuilder">
+	</bean>
+
+
+	<!--CPB change ends  -->
+
+</beans>

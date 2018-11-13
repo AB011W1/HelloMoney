@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="target/classes" path="src/main/java"/>
+	<classpathentry kind="src" output="target/classes" path="src/main/resources"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SHM_Lib">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SHM_Server_Lib"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/bmg-ssa-payments-bem-5.1.0"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/bmg-ssa-acct-svc-bem-5.1.0"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/bmg-payments-bem-5.1.0"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/bmg-acct-svc-bem-5.1.0"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/bmg-auth-4.0.10"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/bmg-core-auditing"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/bmg-core-channel-controllers"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/bmg-core-channel-filters"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/bmg-core-channel-security"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/bmg-core-domain"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/bmg-core-logging"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/bmg-core-services"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/bmg-core-session-activity"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/bmg-core-utils"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/bmg-core-view"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/bmg-core-cache"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/bmg-dao-framework"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/bmg-response-model-2.0"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/bmg-core-ecrime"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/bmg-uae-interest-rates"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ussd-menu"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ussd-auth"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ussd-core-cache"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ussd-domain-objects"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ussd-services"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ussd-common"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ussd-bmg-adapter"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

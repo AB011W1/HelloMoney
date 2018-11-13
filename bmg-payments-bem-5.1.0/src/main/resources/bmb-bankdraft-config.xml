@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/util
+	 http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+	<!-- Manager's Cheque and Bank Draft Controller Starts here -->
+	<bean id="bankDraftStepOneController"
+		class="com.barclays.bmg.mvc.controller.bankdraft.BankDraftStepOneController"
+		parent="bmbAbstractController">
+		<property name="retrievePayeeListOperation" ref="retrieveFTPayeeListOperation" />
+		<property name="retrieveSourceAccountListOperation" ref="retrieveAccountListOperation" />
+		<property name="messageSource" ref="messageSource" />
+		<property name="bmbJSONBuilder" ref="payeeListAndAccountListJSONBldr" />
+		<property name="payGroup" value="BKD" />
+		<property name="activityId" value="PMT_FT_BKD_PAYEE" />
+	</bean>
+	<bean id="managersChequeStepOneController"
+		class="com.barclays.bmg.mvc.controller.bankdraft.BankDraftStepOneController"
+		parent="bmbAbstractController">
+		<property name="retrievePayeeListOperation" ref="retrieveFTPayeeListOperation" />
+		<property name="retrieveSourceAccountListOperation" ref="retrieveAccountListOperation" />
+		<property name="messageSource" ref="messageSource" />
+		<property name="bmbJSONBuilder" ref="mcPayeeListAndAccountListJSONBldr" />
+		<property name="payGroup" value="MC" />
+		<property name="activityId" value="PMT_FT_MRC_PAYEE" />
+	</bean>
+
+	<bean id="retreiveBankDraftPayeeInfoController"
+		class="com.barclays.bmg.mvc.controller.bankdraft.BankDraftRetrievePayeeInformationController"
+		parent="bmbAbstractCommandController">
+		<property name="retrievePayeeInfoOperation" ref="retrievePayeeInfoOperation" />
+		<property name="transactionLimitOperation" ref="transactionLimitOperation" />
+		<property name="getSelectedAccountOperation" ref="getSelectedAccountOperation" />
+		<property name="bmbJSONBuilder" ref="bankDraftRetrievePayeeInfoJSONBuilder" />
+		<property name="commandName" value="payeeInformationCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.ExternalFTPayInfoCommand" />
+		<property name="activityId" value="PMT_FT_BKD_PAYEE" />
+		<property name="transactionTypeKey" value="BKD" />
+		<property name="transactionType" value="PBC" />
+	</bean>
+
+	<bean id="retreiveManagersChequePayeeInfoController"
+		class="com.barclays.bmg.mvc.controller.bankdraft.BankDraftRetrievePayeeInformationController"
+		parent="bmbAbstractCommandController">
+		<property name="retrievePayeeInfoOperation" ref="retrievePayeeInfoOperation" />
+		<property name="transactionLimitOperation" ref="transactionLimitOperation" />
+		<property name="getSelectedAccountOperation" ref="getSelectedAccountOperation" />
+		<property name="bmbJSONBuilder" ref="managersChequeRetrievePayeeInfoJSONBuilder" />
+		<property name="commandName" value="payeeInformationCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.ExternalFTPayInfoCommand" />
+		<property name="activityId" value="PMT_FT_MRC_PAYEE" />
+		<property name="transactionTypeKey" value="MC" />
+		<property name="transactionType" value="PMC" />
+	</bean>
+
+	<bean id="retreiveBankDraftPayeeDetailsController"
+		class="com.barclays.bmg.mvc.controller.bankdraft.BankDraftPayeeDetailsController"
+		parent="bmbAbstractCommandController">
+		<property name="retrievePayeeInfoOperation" ref="retrievePayeeInfoOperation" />
+		<property name="bmbJSONBuilder" ref="bankDraftRetrievePayeeDetailsJSONBuilder" />
+		<property name="commandName" value="payeeDetailsCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.ExternalPayeeDetailsCommand" />
+		<property name="activityId" value="PMT_FT_BKD_PAYEE" />
+		<property name="transactionTypeKey" value="BKD" />
+		<property name="transactionType" value="PBC" />
+		<property name="validator" ref="externalPayeeDetailsCommandValidator" />
+	</bean>
+
+	<bean id="retreiveManagersChequePayeeDetailsController"
+		class="com.barclays.bmg.mvc.controller.bankdraft.BankDraftPayeeDetailsController"
+		parent="bmbAbstractCommandController">
+		<property name="retrievePayeeInfoOperation" ref="retrievePayeeInfoOperation" />
+		<property name="bmbJSONBuilder"
+			ref="managersChequeRetrievePayeeDetailsJSONBuilder" />
+		<property name="commandName" value="payeeDetailsCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.ExternalPayeeDetailsCommand" />
+		<property name="activityId" value="PMT_FT_MRC_PAYEE" />
+		<property name="transactionTypeKey" value="MC" />
+		<property name="transactionType" value="PMC" />
+		<property name="validator" ref="externalPayeeDetailsCommandValidator" />
+	</bean>
+
+	<bean id="bankDraftFormValidationController"
+		class="com.barclays.bmg.mvc.controller.bankdraft.BankDraftFormValidationController"
+		parent="bmbAbstractCommandController">
+		<property name="formValidateOperation" ref="formValidateOperation" />
+		<property name="bmbJSONBuilder" ref="bankDraftConfirmJsonBldr" />
+		<property name="commandName" value="bankDraftFormInputCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.bankdraft.BankDraftFormInputCommand" />
+		<property name="validator" ref="bankDraftFormInputCommandValidator" />
+		<property name="activityId" value="PMT_FT_BKD_PAYEE" />
+	</bean>
+
+	<bean id="managersChequeFormValidationController"
+		class="com.barclays.bmg.mvc.controller.bankdraft.BankDraftFormValidationController"
+		parent="bmbAbstractCommandController">
+		<property name="formValidateOperation" ref="formValidateOperation" />
+		<property name="bmbJSONBuilder" ref="managersChequeConfirmJsonBldr" />
+		<property name="commandName" value="bankDraftFormInputCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.bankdraft.BankDraftFormInputCommand" />
+		<property name="validator" ref="managersChequeFormInputCommandValidator" />
+		<property name="activityId" value="PMT_FT_MRC_PAYEE" />
+	</bean>
+
+
+	<bean id="executePurchaseBankDraftController"
+		class="com.barclays.bmg.mvc.controller.bankdraft.BankDraftExecuteController"
+		parent="bmbAbstractController">
+		<property name="listValueResServiceImpl" ref="listValueResService" />
+		<property name="purchaseBankDraftOperation" ref="purchaseBankDraftOperation"></property>
+		<property name="sqaAuthenticationOperation" ref="sqaAuthenticationOperation" />
+		<property name="txnSQASecondAuthJSONBldr" ref="txnSQASecondAuthJSONBldr" />
+		<property name="otpAuthenticationOperation" ref="otpAuthenticationOperation" />
+		<property name="txnOTPSecondAuthJSONBldr" ref="txnOTPSecondAuthJSONBldr" />
+		<property name="bmbJSONBuilder" ref="bankDraftExecJsonBldr" />
+		<property name="activityId" value="PMT_FT_BKD_PAYEE" />
+	</bean>
+
+	<bean id="executeManagersChequeDraftController"
+		class="com.barclays.bmg.mvc.controller.bankdraft.BankDraftExecuteController"
+		parent="bmbAbstractController">
+		<property name="listValueResServiceImpl" ref="listValueResService" />
+		<property name="purchaseBankDraftOperation" ref="purchaseBankDraftOperation"></property>
+		<property name="sqaAuthenticationOperation" ref="sqaAuthenticationOperation" />
+		<property name="txnSQASecondAuthJSONBldr" ref="txnSQASecondAuthJSONBldr" />
+		<property name="otpAuthenticationOperation" ref="otpAuthenticationOperation" />
+		<property name="txnOTPSecondAuthJSONBldr" ref="txnOTPSecondAuthJSONBldr" />
+		<property name="bmbJSONBuilder" ref="managersChequeExecJsonBldr" />
+		<property name="activityId" value="PMT_FT_MRC_PAYEE" />
+	</bean>
+
+	<!--  Manager's Cheque and Bank Draft Controller Ends here -->
+	<util:list id="deliveryTypeList" list-class="java.util.ArrayList">
+		<value>BRN</value>
+	</util:list>
+
+
+	<bean id="payeeListAndAccountListJSONBldr"
+		class="com.barclays.bmg.json.model.builder.bankdraft.PayeeListAndAccountListJSONBldr"
+		parent="bmbCommonJSONBuilder">
+		<property name="responseId" value="RES0540" />
+	</bean>
+
+	<bean id="mcPayeeListAndAccountListJSONBldr"
+		class="com.barclays.bmg.json.model.builder.bankdraft.PayeeListAndAccountListJSONBldr"
+		parent="bmbCommonJSONBuilder">
+		<property name="responseId" value="RES0544" />
+	</bean>
+
+	<bean id="bankDraftConfirmJsonBldr"
+		class="com.barclays.bmg.json.model.builder.bankdraft.BankDraftConfirmJsonBldr"
+		parent="bankDraftRetrievePayeeInfoJSONBuilder">
+		<property name="responseId" value="RES0542" />
+	</bean>
+	<bean id="managersChequeConfirmJsonBldr"
+		class="com.barclays.bmg.json.model.builder.bankdraft.BankDraftConfirmJsonBldr"
+		parent="bankDraftRetrievePayeeInfoJSONBuilder">
+		<property name="responseId" value="RES0546" />
+	</bean>
+
+	<bean id="bankDraftExecJsonBldr"
+		class="com.barclays.bmg.json.model.builder.bankdraft.BankDraftConfirmJsonBldr"
+		parent="bankDraftRetrievePayeeInfoJSONBuilder">
+		<property name="responseId" value="RES0543" />
+	</bean>
+	<bean id="managersChequeExecJsonBldr"
+		class="com.barclays.bmg.json.model.builder.bankdraft.BankDraftConfirmJsonBldr"
+		parent="bankDraftRetrievePayeeInfoJSONBuilder">
+		<property name="responseId" value="RES0547" />
+	</bean>
+
+	<bean id="bankDraftFormInputCommandValidator"
+		class="com.barclays.bmg.mvc.validator.bankdraft.BankDraftFormInputValidatorCommand">
+		<property name="bankDraftBRNCheckCountryList" ref="bankDraftBRNCheckCountryList" />
+	</bean>
+
+	<bean id="bankDraftBRNCheckCountryList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<value>KEBRB</value>
+				<value>UGBRB</value>
+			</list>
+		</constructor-arg>
+
+	</bean>
+
+
+	<bean id="managersChequeFormInputCommandValidator"
+		class="com.barclays.bmg.mvc.validator.bankdraft.ManagersChequeFormInputValidatorCommand" />
+
+	<bean id="bankDraftRetrievePayeeInfoJSONBuilder"
+		class="com.barclays.bmg.json.model.builder.bankdraft.BankDraftRetrievePayeeInfoJSONBldr"
+		parent="bmbCommonJSONBuilder">
+		<property name="listValueResServiceImpl" ref="listValueResService" />
+		<property name="responseId" value="RES0541" />
+		<property name="businessIDMap" ref="businessIDMap" />
+	</bean>
+
+	<util:map id="businessIDMap" map-class="java.util.HashMap">
+		<!-- Need to set businessIdMap to get the country name or list-->
+		<entry key="GHBRB" value="false" />
+		<entry key="MUBRB" value="false" />
+		<entry key="MUBOB" value="false" />
+		<entry key="BWBRB" value="false" />
+		<entry key="ZMBRB" value="false" />
+		<entry key="ZWBRB" value="false" />
+		<entry key="SCBRB" value="false" />
+		<entry key="EGBRB" value="false" />
+		<entry key="TZBRB" value="false" />
+		<entry key="KEBRB" value="true" />
+		<entry key="UGBRB" value="true" />
+		<entry key="AEBRB" value="true" />
+	</util:map>
+
+	<bean id="managersChequeRetrievePayeeInfoJSONBuilder"
+		class="com.barclays.bmg.json.model.builder.bankdraft.BankDraftRetrievePayeeInfoJSONBldr"
+		parent="bmbCommonJSONBuilder">
+		<property name="listValueResServiceImpl" ref="listValueResService" />
+		<property name="responseId" value="RES0545" />
+	</bean>
+
+	<bean id="bankDraftRetrievePayeeDetailsJSONBuilder"
+		class="com.barclays.bmg.json.model.builder.bankdraft.BankDraftPayeeDetailsJSONBldr"
+		parent="bmbCommonJSONBuilder">
+		<property name="listValueResServiceImpl" ref="listValueResService" />
+		<property name="responseId" value="RES0549" />
+	</bean>
+
+	<bean id="managersChequeRetrievePayeeDetailsJSONBuilder"
+		class="com.barclays.bmg.json.model.builder.bankdraft.BankDraftPayeeDetailsJSONBldr"
+		parent="bmbCommonJSONBuilder">
+		<property name="listValueResServiceImpl" ref="listValueResService" />
+		<property name="responseId" value="RES0550" />
+	</bean>
+
+	<bean id="purchaseBankDraftOperation"
+		class="com.barclays.bmg.mvc.operation.bankdraft.PurchaseBankDraftOperation"
+		parent="bmbPaymentsOperation">
+		<property name="purchaseBankDraftService" ref="purchaseBankDraftService" />
+	</bean>
+	<bean id="purchaseBankDraftService"
+		class="com.barclays.bmg.service.bankdraft.impl.PurchaseBankDraftServiceImpl">
+		<property name="purchaseBankDraftDAO" ref="purchaseBankDraftDAO" />
+	</bean>
+
+
+	<bean id="purchaseBankDraftDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.PurchaseBankDraftDAO" />
+		<property name="daoFrontController" ref="purchaseBankDraftDAOFrontController" />
+	</bean>
+
+	<bean id="purchaseBankDraftDAOFrontController"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="PURCHASEBANKDRAFT" value-ref="purchaseBankDraftDAOController" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="purchaseBankDraftDAOController"
+		class="com.barclays.bmg.dao.processing.bankdraft.PurchaseBankDraftDAOController">
+		<property name="bankDraftPayReqAdptOperation" ref="purchaseBankDraftPayReqAdptOperation" />
+		<property name="transmissionOperation" ref="purchaseBankDraftTransmissionOperation" />
+		<property name="bankDraftPayRespAdptOperation" ref="purchaseBankDraftPayRespAdptOperation" />
+	</bean>
+
+	<bean id="purchaseBankDraftPayReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.bankdraft.PurchaseBankDraftPayReqAdptOperation" />
+	<bean id="purchaseBankDraftPayRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.bankdraft.PurchaseBankDraftPayRespAdptOperation" />
+
+	<bean id="purchaseBankDraftTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="purchaseBankDraftTransmissionService" />
+	</bean>
+
+	<bean id="purchaseBankDraftTransmissionService"
+		class="com.barclays.bmg.dao.service.bankdraft.impl.PurchaseBankDraftTransmissionService">
+		<property name="remoteService" ref="purchaseBankDraftWebServiceImpl" />
+	</bean>
+
+	<bean id="purchaseBankDraftWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.FinancialTransactionProcessing.FinancialTransactionProcessing_PortType" />
+		<property name="portName" value="FinancialTransactionProcessingSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.FinancialTransactionProcessing.FinancialTransactionProcessing_Service" />
+		<property name="endpointAddress" value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="FinancialTransactionProcessing_EndPoint" />
+		<property name="cacheKey" value="financialService" />
+	</bean>
+
+</beans>

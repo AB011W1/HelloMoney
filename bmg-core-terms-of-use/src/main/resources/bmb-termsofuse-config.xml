@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <!-- Terms of Use Controller -->
+
+    <!-- Terms Of Use  -->
+	<bean id="termsOfUseDetailController"
+		class="com.barclays.bmg.mvc.controller.auth.TermsOfUseDetailController"  parent="bmbAbstractController">
+		<property name="termsOfUseDetailOperation" ref="termsOfUseDetailOperation" />
+		<property name="bmbJsonBuilder" ref="termsOfUseDetailsJSONBldr" />
+		<property name="supportedMethods" value="POST,GET" />
+	</bean>
+
+	<bean id="termsOfUseAcceptController"
+		class="com.barclays.bmg.mvc.controller.auth.TermsOfUseAcceptController" parent="bmbAbstractController">
+		<property name="termsOfUseAcceptOperation" ref="termsOfUseAcceptOperation" />
+		<property name="bmbJsonBuilder" ref="termsOfUseAcceptJSONBldr" />
+		<property name="requestUri" value="/dataserv?opCde=OP0200" />
+		<property name="supportedMethods" value="POST,GET" />
+	</bean>
+
+	<bean id="termsOfUseDetailsJSONBldr"	class="com.barclays.bmg.json.model.builder.termsofuse.TermsOfUseDetailsJSONBldr" />
+
+	<bean id="termsOfUseAcceptJSONBldr"	class="com.barclays.bmg.json.model.builder.termsofuse.TermsOfUseAcceptJSONBldr" />
+
+
+
+	<bean id="termsOfUseAcceptOperation"	class="com.barclays.bmg.operation.TermsOfUseAcceptOperation" parent="bmbCommonOperation">
+    	<property name="termsOfUseService" ref="termsOfUseServiceImpl"/>
+	</bean>
+
+	<bean id="termsOfUseServiceImpl"	class="com.barclays.bmg.service.impl.TermsOfUseServiceImpl">
+		<property name="termsOfUseDAO" ref="termsOfUseDAOImpl"/>
+	</bean>
+
+
+	<bean id="termsOfUseDAOImpl" class="com.barclays.bmg.dao.impl.TermsOfUseDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+ 	<bean id="termsOfUseDetailOperation"	class="com.barclays.bmg.operation.TermsOfUseDetailOperation" parent="bmbCommonOperation">
+    	<property name="termsOfUseService" ref="termsOfUseServiceImpl"/>
+    	<property name="resources" ref="termsOfUseDataFileList"/>
+	</bean>
+
+
+		<!--  Don't touch needed for externalized config -->
+	<bean id="customEditorConfigurer"
+		class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="customEditors">
+			<map>
+				<entry
+					key="com.barclays.bmg.config.externalization.io.ExternalizedFileSystemResource[]">
+					<bean
+						class="com.barclays.bmg.config.externalization.io.support.ExternalizedResourceArrayPropertyEditor">
+						<constructor-arg type="java.lang.String"
+							value="externalized.config.prop.root" />
+					</bean>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+
+</beans>

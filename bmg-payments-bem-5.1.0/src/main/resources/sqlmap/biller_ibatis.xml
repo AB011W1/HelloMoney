@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="MCFE">
+	<typeAlias alias="billerDTO"
+		type="com.barclays.bmg.dto.BillerDTO" />
+	<!--<typeAlias alias="booleanHandler"
+		type="com.barclays.mcfe.ssc.retail.common.ibatis.typehandler.StringBooleanHandler" />
+	--><resultMap id="fullBillerInfo" class="billerDTO">
+		<result property="businessId" column="BUSINESS_ID" />
+		<result property="billerId" column="BILLER_ID" />
+		<result property="billerName" column="BILLER_NM" />
+		<result property="billerCategoryId" column="BILLER_CATEGORY_ID" />
+		<result property="billerCategoryName" column="BILLER_CATEGORY_NM" />
+		<result property="presentmentFlag" column="PRESENTMENT_FLG"
+			typeHandler="booleanHandler" />
+		<result property="referenceNoText1" column="REF_NO_TEXT_1" />
+		<result property="referenceNoText2" column="REF_NO_TEXT_2" />
+		<result property="minPaymentAmount" column="MIN_PAYMENT_AMOUNT" />
+		<result property="transactionFee" column="TRANSACTION_FEE" />
+		<result property="billAggregatorId" column="BILL_AGGREGATOR_ID" />
+		<result property="currency" column="CURRENCY" />
+		<result property="supportCreditCardFlag" column="SUPPORT_CREDITCARD_FLG" />
+		<result property="onlineBillerFlag" column="ONLINE_BILLER_FLG" />
+		<result property="payeeReferenceFields" column="PAYEE_REF_FIELDS" />
+		<result property="mobileDenominaiton" column="MOBILE_DENOMINATION" />
+		<result property="serviceType" column="SERVICE_TYPE" />
+		<result property="externalBillerId" column="EXTERNAL_BILLER_ID" /><!--
+		  Commented as columns are not present in DB.
+		--><result property="branchCode" column="BRANCH_CODE" />
+		<result property="billerAccountNumber" column="BILLER_ACCOUNT_NUMBER" />
+
+		<!-- Changes Start for TZBRB Bill Payment By saurabh -->
+		<result property="referenceNoKey1" column="REF_NO_KEY_1" />
+		<result property="maxPaymentAmount" column="MAX_PAYMENT_AMOUNT" />
+		<!-- Changes ends for TZBRB Bill Payment By saurabh -->
+		<result property="pilotMode" column="PILOT_MODE" />
+	</resultMap>
+
+<!-- Kenya UBP Start -->
+	<typeAlias alias="pilotBillerDTO" type="com.barclays.bmg.dto.PilotUserDTO" />
+	<resultMap id="pilotBillerInfo" class="pilotBillerDTO">
+		<result property="mobileNumber" column="MOBILE_NUMBER" />
+	</resultMap>
+
+	<typeAlias alias="ubpBusinessIdsDTO" type="com.barclays.bmg.dto.UBPBusinessIdsDTO" />
+	<resultMap id="ubpBusinessIdsInfo" class="ubpBusinessIdsDTO">
+		<result property="paramValue" column="PARAM_VALUE" />
+	</resultMap>
+
+	<select id="getUBPBusinessIds" resultMap="ubpBusinessIdsInfo">
+		select param_value from s_sysparam_mst where param_id='UBP_BUSINESS_IDS'
+	</select>
+
+	<select id="getAllBilelrListUBP" resultMap="fullBillerInfo">
+		SELECT * from
+		C_BILLER_MST
+		WHERE C_BILLER_MST.BUSINESS_ID = #businessId#
+		AND C_BILLER_MST.STATUS= #status#
+
+		AND C_BILLER_MST.SHM_FLG='Y'
+	</select>
+
+	<select id="getAllBilelrList" resultMap="fullBillerInfo">
+		SELECT * from
+		C_BILLER_MST
+		WHERE C_BILLER_MST.BUSINESS_ID = #businessId#
+		AND C_BILLER_MST.STATUS= #status#
+
+		AND C_BILLER_MST.SHM_FLG='Y'
+		AND (C_BILLER_MST.PILOT_MODE = 'N'
+		OR C_BILLER_MST.PILOT_MODE is NULL)
+	</select>
+
+	<select id="getAllBilelrListNotTZUBP" resultMap="fullBillerInfo">
+		SELECT * from
+		C_BILLER_MST
+		WHERE C_BILLER_MST.BUSINESS_ID = #businessId#
+
+		and C_BILLER_MST.BILLER_CATEGORY_ID != 'Telephone'
+		AND C_BILLER_MST.STATUS= #status#
+		AND C_BILLER_MST.SHM_FLG='Y'
+	</select>
+
+	<select id="getAllBilelrListNotTZ" resultMap="fullBillerInfo">
+		SELECT * from
+		C_BILLER_MST
+		WHERE C_BILLER_MST.BUSINESS_ID = #businessId#
+
+		and C_BILLER_MST.BILLER_CATEGORY_ID != 'Telephone'
+		AND C_BILLER_MST.STATUS= #status#
+		AND C_BILLER_MST.SHM_FLG='Y'
+		AND (C_BILLER_MST.PILOT_MODE = 'N'
+		OR C_BILLER_MST.PILOT_MODE is NULL)
+	</select>
+
+	<select id="getBillerAsPerBillerIdUBP" resultMap="fullBillerInfo">
+		select * from C_BILLER_MST
+		where C_BILLER_MST.BUSINESS_ID= #businessId#
+		and C_BILLER_MST.BILLER_ID=#billerId#
+
+		AND C_BILLER_MST.STATUS= #status#
+		AND C_BILLER_MST.SHM_FLG='Y'
+	</select>
+
+	<select id="getBillerAsPerBillerId" resultMap="fullBillerInfo">
+		select * from C_BILLER_MST
+		where C_BILLER_MST.BUSINESS_ID= #businessId#
+		and C_BILLER_MST.BILLER_ID=#billerId#
+
+		AND C_BILLER_MST.STATUS= #status#
+		AND C_BILLER_MST.SHM_FLG='Y'
+		AND (C_BILLER_MST.PILOT_MODE = 'N'
+		OR C_BILLER_MST.PILOT_MODE is NULL)
+	</select>
+
+  	<select id="getBilerListAsPerCategIdUBP" resultMap="fullBillerInfo">
+		SELECT * from
+		C_BILLER_MST
+		WHERE C_BILLER_MST.BUSINESS_ID = #businessId#
+		AND C_BILLER_MST.BILLER_CATEGORY_ID = #billerCategoryId#
+
+		AND C_BILLER_MST.SHM_FLG='Y'
+		AND C_BILLER_MST.STATUS= #status#
+	</select>
+
+	<select id="getBilerListAsPerCategId" resultMap="fullBillerInfo">
+		SELECT * from
+		C_BILLER_MST
+		WHERE C_BILLER_MST.BUSINESS_ID = #businessId#
+		AND C_BILLER_MST.BILLER_CATEGORY_ID = #billerCategoryId#
+
+		AND C_BILLER_MST.STATUS= #status#
+		AND C_BILLER_MST.SHM_FLG='Y'
+		AND (C_BILLER_MST.PILOT_MODE = 'N'
+		OR C_BILLER_MST.PILOT_MODE is NULL)
+	</select>
+
+	<select id="getPilotUser" resultMap="pilotBillerInfo">
+		SELECT * from
+		C_BILLER_PILOTUSER_SETUP
+		WHERE C_BILLER_PILOTUSER_SETUP.MOBILE_NUMBER = #mobilenumber#
+		AND C_BILLER_PILOTUSER_SETUP.BUSINESS_ID= #businessId#
+		AND C_BILLER_PILOTUSER_SETUP.ACTIVE_STATUS='Y'
+	</select>
+<!-- Kenya UBP End -->
+
+<!-- Other Countries Start -->
+	<select id="otherCountriesGetAllBilelrList" resultMap="fullBillerInfo">
+		SELECT * from
+		C_BILLER_MST
+		WHERE C_BILLER_MST.BUSINESS_ID = #businessId# AND C_BILLER_MST.PAYEE_SUPPORT = 'Y'
+	</select>
+
+	<select id="otherCountriesGetAllBilelrListNotTZ" resultMap="fullBillerInfo">
+		SELECT * from
+		C_BILLER_MST
+		WHERE C_BILLER_MST.BUSINESS_ID = #businessId# AND C_BILLER_MST.PAYEE_SUPPORT = 'Y'
+		and C_BILLER_MST.BILLER_CATEGORY_ID != 'Telephone'
+	</select>
+
+	<select id="otherCountriesGetBillerAsPerBillerId" resultMap="fullBillerInfo">
+		select * from C_BILLER_MST where C_BILLER_MST.BUSINESS_ID= #businessId# and
+		C_BILLER_MST.BILLER_ID=#billerId# AND C_BILLER_MST.PAYEE_SUPPORT = 'Y'
+	</select>
+
+  	<select id="otherCountriesGetBilerListAsPerCategId" resultMap="fullBillerInfo">
+		SELECT * from
+		C_BILLER_MST
+		WHERE C_BILLER_MST.BUSINESS_ID = #businessId#   AND  C_BILLER_MST.BILLER_CATEGORY_ID = #billerCategoryId#
+		AND C_BILLER_MST.PAYEE_SUPPORT = 'Y'
+	</select>
+	<select id="otherCountriesGetBilerListAsPerCategIdForGhanaandZambia" resultMap="fullBillerInfo">
+		SELECT * from
+		C_BILLER_MST
+		WHERE C_BILLER_MST.BUSINESS_ID = #businessId#   AND  C_BILLER_MST.BILLER_CATEGORY_ID = #billerCategoryId#
+		AND C_BILLER_MST.PAYEE_SUPPORT = 'Y'
+	</select>
+<!-- Other Countries End -->
+</sqlMap>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecrime-configurations>
+
+    <global-configuration>
+        <property name="workManagerJndiName" value="wm/default" />
+    </global-configuration>
+
+	<ecrime-configuration business-id="GHBRB">
+		<property name="enableEcrimeLog" value="true" />
+		<property name="enableMultiThreadLogger" value="true" />
+		<maskRule name="maskRule1" value="usrNam" />
+		<maskRule name="maskRule2" value="pass" />
+		<!--<maskRule name="maskRule3" value="frmActNo" />
+		<maskRule name="maskRule4" value="toActNo" />
+		<maskRule name="maskRule5" value="actNo" />
+		<maskRule name="maskRule6" value="frActNo" />
+		--><maskRule name="maskRule7" value="crdNo" />
+		<maskRule name="maskRule8" value="otp" />
+		<maskRule name="maskRule9" value="sqa" />
+		<maskRule name="maskRule10" value="username" />
+		<maskRule name="maskRule11" value="password" />
+	</ecrime-configuration>
+
+	<ecrime-configuration business-id="BWBRB">
+		<property name="enableEcrimeLog" value="true" />
+		<property name="enableMultiThreadLogger" value="true" />
+		<maskRule name="maskRule1" value="usrNam" />
+		<maskRule name="maskRule2" value="pass" />
+		<!--<maskRule name="maskRule3" value="frmActNo" />
+		<maskRule name="maskRule4" value="toActNo" />
+		<maskRule name="maskRule5" value="actNo" />
+		<maskRule name="maskRule6" value="frActNo" />
+		--><maskRule name="maskRule7" value="crdNo" />
+		<maskRule name="maskRule8" value="otp" />
+		<maskRule name="maskRule9" value="sqa" />
+		<maskRule name="maskRule10" value="username" />
+		<maskRule name="maskRule11" value="password" />
+	</ecrime-configuration>
+
+	<ecrime-configuration business-id="MUBRB">
+		<property name="enableEcrimeLog" value="true" />
+		<property name="enableMultiThreadLogger" value="true" />
+		<maskRule name="maskRule1" value="usrNam" />
+		<maskRule name="maskRule2" value="pass" />
+		<!--<maskRule name="maskRule3" value="frmActNo" />
+		<maskRule name="maskRule4" value="toActNo" />
+		<maskRule name="maskRule5" value="actNo" />
+		<maskRule name="maskRule6" value="frActNo" />
+		--><maskRule name="maskRule7" value="crdNo" />
+		<maskRule name="maskRule8" value="otp" />
+		<maskRule name="maskRule9" value="sqa" />
+		<maskRule name="maskRule10" value="username" />
+		<maskRule name="maskRule11" value="password" />
+	</ecrime-configuration>
+
+	<ecrime-configuration business-id="MUBOB">
+		<property name="enableEcrimeLog" value="true" />
+		<property name="enableMultiThreadLogger" value="true" />
+		<maskRule name="maskRule1" value="usrNam" />
+		<maskRule name="maskRule2" value="pass" />
+		<!--<maskRule name="maskRule3" value="frmActNo" />
+		<maskRule name="maskRule4" value="toActNo" />
+		<maskRule name="maskRule5" value="actNo" />
+		<maskRule name="maskRule6" value="frActNo" />
+		--><maskRule name="maskRule7" value="crdNo" />
+		<maskRule name="maskRule8" value="otp" />
+		<maskRule name="maskRule9" value="sqa" />
+		<maskRule name="maskRule10" value="username" />
+		<maskRule name="maskRule11" value="password" />
+	</ecrime-configuration>
+
+
+	<ecrime-configuration business-id="ZWBRB">
+		<property name="enableEcrimeLog" value="true" />
+		<property name="enableMultiThreadLogger" value="true" />
+		<maskRule name="maskRule1" value="usrNam" />
+		<maskRule name="maskRule2" value="pass" />
+		<!--<maskRule name="maskRule3" value="frmActNo" />
+		<maskRule name="maskRule4" value="toActNo" />
+		<maskRule name="maskRule5" value="actNo" />
+		<maskRule name="maskRule6" value="frActNo" />
+		--><maskRule name="maskRule7" value="crdNo" />
+		<maskRule name="maskRule8" value="otp" />
+		<maskRule name="maskRule9" value="sqa" />
+		<maskRule name="maskRule10" value="username" />
+		<maskRule name="maskRule11" value="password" />
+	</ecrime-configuration>
+
+
+	<ecrime-configuration business-id="ZMBRB">
+		<property name="enableEcrimeLog" value="true" />
+		<property name="enableMultiThreadLogger" value="true" />
+		<maskRule name="maskRule1" value="usrNam" />
+		<maskRule name="maskRule2" value="pass" />
+		<!--<maskRule name="maskRule3" value="frmActNo" />
+		<maskRule name="maskRule4" value="toActNo" />
+		<maskRule name="maskRule5" value="actNo" />
+		<maskRule name="maskRule6" value="frActNo" />
+		--><maskRule name="maskRule7" value="crdNo" />
+		<maskRule name="maskRule8" value="otp" />
+		<maskRule name="maskRule9" value="sqa" />
+		<maskRule name="maskRule10" value="username" />
+		<maskRule name="maskRule11" value="password" />
+	</ecrime-configuration>
+
+
+	<ecrime-configuration business-id="TZBRB">
+		<property name="enableEcrimeLog" value="true" />
+		<property name="enableMultiThreadLogger" value="true" />
+		<maskRule name="maskRule1" value="usrNam" />
+		<maskRule name="maskRule2" value="pass" />
+		<!--<maskRule name="maskRule3" value="frmActNo" />
+		<maskRule name="maskRule4" value="toActNo" />
+		<maskRule name="maskRule5" value="actNo" />
+		<maskRule name="maskRule6" value="frActNo" />
+		--><maskRule name="maskRule7" value="crdNo" />
+		<maskRule name="maskRule8" value="otp" />
+		<maskRule name="maskRule9" value="sqa" />
+		<maskRule name="maskRule10" value="username" />
+		<maskRule name="maskRule11" value="password" />
+	</ecrime-configuration>
+
+
+	<ecrime-configuration business-id="SCBRB">
+		<property name="enableEcrimeLog" value="true" />
+		<property name="enableMultiThreadLogger" value="true" />
+		<maskRule name="maskRule1" value="usrNam" />
+		<maskRule name="maskRule2" value="pass" />
+		<!--<maskRule name="maskRule3" value="frmActNo" />
+		<maskRule name="maskRule4" value="toActNo" />
+		<maskRule name="maskRule5" value="actNo" />
+		<maskRule name="maskRule6" value="frActNo" />
+		--><maskRule name="maskRule7" value="crdNo" />
+		<maskRule name="maskRule8" value="otp" />
+		<maskRule name="maskRule9" value="sqa" />
+		<maskRule name="maskRule10" value="username" />
+		<maskRule name="maskRule11" value="password" />
+	</ecrime-configuration>
+
+
+	<ecrime-configuration business-id="EGBRB">
+		<property name="enableEcrimeLog" value="true" />
+		<property name="enableMultiThreadLogger" value="true" />
+		<maskRule name="maskRule1" value="usrNam" />
+		<maskRule name="maskRule2" value="pass" />
+		<!--<maskRule name="maskRule3" value="frmActNo" />
+		<maskRule name="maskRule4" value="toActNo" />
+		<maskRule name="maskRule5" value="actNo" />
+		<maskRule name="maskRule6" value="frActNo" />
+		--><maskRule name="maskRule7" value="crdNo" />
+		<maskRule name="maskRule8" value="otp" />
+		<maskRule name="maskRule9" value="sqa" />
+		<maskRule name="maskRule10" value="username" />
+		<maskRule name="maskRule11" value="password" />
+	</ecrime-configuration>
+
+	<ecrime-configuration business-id="KEBRB">
+		<property name="enableEcrimeLog" value="true" />
+		<property name="enableMultiThreadLogger" value="true" />
+		<maskRule name="maskRule1" value="usrNam" />
+		<maskRule name="maskRule2" value="pass" />
+		<!--<maskRule name="maskRule3" value="frmActNo" />
+		<maskRule name="maskRule4" value="toActNo" />
+		<maskRule name="maskRule5" value="actNo" />
+		<maskRule name="maskRule6" value="frActNo" />
+		--><maskRule name="maskRule7" value="crdNo" />
+		<maskRule name="maskRule8" value="otp" />
+		<maskRule name="maskRule9" value="sqa" />
+		<maskRule name="maskRule10" value="username" />
+		<maskRule name="maskRule11" value="password" />
+	</ecrime-configuration>
+
+</ecrime-configurations>
+

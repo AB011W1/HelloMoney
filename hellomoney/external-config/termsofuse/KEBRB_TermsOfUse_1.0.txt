@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style type="text/css">
+<!--
+body
+	{
+	margin		:0;
+	padding		:0;
+	font-family	:arial,helvetica,sans-serif;
+	color		:#006FA4;}
+
+#wrapper
+	{
+	padding		:10px;
+	margin		:0 auto;}
+
+#header
+	{
+	text-align	:center;}
+
+
+#wrapper #header p
+	{
+	font-size	:0.8em;
+	margin		:0px auto;
+	padding		:0 0 5px 0 ;}
+
+#wrapper #header h2
+	{
+	font-size	:0.8em;
+	margin		:0px auto;
+	padding		:5px 0 0 0;}
+
+.divider
+	{
+	border-bottom	:1px solid #006FA4;}
+
+
+h1
+	{
+	margin		:0;
+	padding		:0 0 5px 0;
+	font-size	:1.2em;
+	font-weight	:bold;}
+
+h2
+	{
+	margin		:0 0 5px 0;
+	padding		:8px 0 0 0;
+	font-size	:0.9em;
+	font-weight	:bold;}
+
+#wrapper p
+	{
+	font-size	:0.8em;
+	margin		:0 0 5px 15px;
+	padding		:8px 0 0 0;}
+
+ #wrapper ul, #wrapper ol
+	{
+	margin-top	:0px;
+	padding-top	:0px;}
+
+ #wrapper ul li, #wrapper ol li
+	{
+	font-size	:0.8em;
+	margin-top	:2px;}
+
+ #wrapper ol li ol li
+	{
+	font-size	:1em;
+	margin		:5px 0 5px 0;}
+
+ #wrapper p.subsection
+	{
+	margin-left	:15px;
+	margin-top	:2px;}
+
+ #wrapper p.subsection span
+	{
+	display		:block;
+	margin-left	:15px;}
+-->
+</style>
+
+</head>
+
+
+
+<body>
+<div id="wrapper">
+<div id="header">
+<h1>Terms and Conditions</h1>
+<p>This agreement applies if you have an account with Barclays Bank of Kenya and wish to subscribe to the mobile banking service and it explains our obligations to you and your obligations to us.</p>
+<div class="divider"></div>
+<h2>General Conditions</h2></div>
+
+<div id="text">
+
+
+<h2>Introduction</h2>
+
+<p>Your agreement with us is contained in these general terms and conditions, in the terms and conditions of your savings and/or current account and in the application form or
+appointment of banker signed by you. </p>
+
+<p>In this agreement "you" and "your" refer to any customer operating an account and includes (where appropriate) any person that you have authorised to give instructions on your
+account. "We" "us" "the Bank" and "our" refer to Barclays.</p>
+
+<h2>The Service</h2>
+
+<p>We will provide the mobile banking service ("the Service") to you through your mobile phone. You must be a subscriber of a mobile service provider with which the Bank has
+an agreement with for the provision of this service for you to access the Service.</p>
+
+<p>The Service is only available to Barclays account holders. The Bank reserves the right to accept or decline any application for the Service at its sole discretion.</p>
+
+<p>The Service will only be provided through the mobile service provider(s) which, the Bank at its sole discretion may determine from time to time. </p>
+
+<p>The processing of your application and the subsequent registration for the Service will be done within 5 working days of submitting your application.</p>
+
+<p>It is your sole responsibility to familiarize yourself with the operating procedures for the Service as will be provided by the Bank upon your registration to the Service. The Bank will
+not be liable for any losses incurred as a result of your errors either of commission and/or omission.</p>
+
+<p>You agree and undertake to be bound by and to comply with all of the Procedures as may be issued by the Bank from time to time. The Bank shall not be bound by or obliged
+to take any action on any instructions which do not properly comply with the procedures and the Bank may reject such non-compliant Instructions.</p>
+
+<p>The Bank will provide you with a Personal Identification Number (PIN) for use with this Service. You must keep this PIN secret and not disclose it. You must take all reasonable care to
+prevent unauthorized or fraudulent use of the Service. The Bank will not be held liable for any losses arising from the unauthorized use of Your PIN.</p>
+
+<p>The Provision of the Service is subject to the availability of the mobile telephony connectivity. The Bank will not be held liable for non-delivery or delay in delivery or wrongful
+delivery of the Service, as a result of the failure of the mobile telephony connectivity.</p>
+
+<p>You agree that the Bank shall not be held liable for any disputes that may arise between you and your mobile service provider.</p>
+
+<p>This service will be provided to you as long as you are the sole account holder of you account(s) or have the mandate to singularly operate the specified accounts. Should you change
+the mandates to any of the accounts you have under this service, it is your sole responsibility to notify us of the change(s). Such Changes will be made within seven working days.
+The Bank will not be held liable for any loss incurred by you as a result of you failing to notify us of such changes.</p>
+
+<p>The Bank will ensure as far as possible that any information supplied to You through the Service is accurate. We shall not be liable for any error which results in the provision of
+inaccurate information.</p>
+
+<p>The Service will only be available in geographical regions where the chosen mobile service provider(s) provide (s) mobile telephony connectivity.</p>
+
+<p>You undertake to keep your SIM card and cell phone safely. You must not leave your Mobile Phone unattended or permit any person access to your Mobile Phone in such a manner
+that he may use it and/or the Mobile Banking-Service, whether with or without your consent.</p>
+
+<p>You must notify the bank immediately of theft or loss of your mobile phone/SIM Card, any unauthorized access to the Service or upon your discontinuation of the telephony service
+with Your mobile service provider, through our Contact Centre at Bishops Gate. The Bank shall not be held liable for any losses resulting from the loss of the SIM card and/or cell phone
+howsoever caused.</p>
+
+<p>The Bank reserves the right to enhance the Services at anytime without notice to you. It is your responsibility to keep updated with these enhancements. The Bank will make all
+reasonable efforts to notify you of any changes or updates.</p>
+
+<p>The Bank reserves the right to charge a fee for the provision of the Service and for the use of all or part of the Service. You will be notified of these fees from time to time. You will be liable
+to pay the Bank for any fees levied for the use of the Service, unless the Bank in its sole discretion has waived such fees. By accepting these terms and conditions, you provide the
+Bank with the authority to debit these fees from your current account on a monthly basis. These charges will be reflected in your normal bank statement. The Bank reserves the right to
+revise the fees chargeable for this Service from time to time. The Bank reserves the right to terminate this Agreement in the event that you fail to pay any fees levied for the provision of
+the Service.</p>
+
+<p>The Bank shall not be held liable for the quality of service of the mobile service provider and gives no warranty with respect to the quality of service by the mobile service provider.</p>
+
+<p>You must notify the Bank of any changes in your account number, mobile telephone number, address and any other information that may affect your ability to access the
+Service. The Bank will not be held liable for sending information to Your mobile telephone number as contained in our records at any given time.</p>
+
+<p>You agree to bear all risks and consequences of the inability to send comply with any instruction sent using the Service due to errors in transmission of your instructions.</p>
+
+<h2>Non-repudiation</h2>
+
+<p>Until and unless you notify the Bank otherwise, all Instructions received by the Bank which are associated with your Mobile Phone details shall be deemed to have come from you, and the Bank
+shall be entitled to rely on such Instructions, whether they actually originated from you or not. You acknowledge that the Bank may not be able to reverse or annul any transaction executed
+based on Instructions received prior to your notice to the Bank.</p>
+
+<h2>Indemnity</h2>
+
+<p> You hereby indemnify and hold indemnified the Bank against any loss, claim and/or damage that may arise due to negligence, fraud collusion or violation of these Terms on your and/or a third
+party’s part.</p>
+
+
+<h2>Termination and Consequences of Termination</h2>
+
+<p>You may terminate the use of this Service through an application form available at Our branches. Such requests will be effected within 5 working days of receipt of the
+termination notice by Us. Any fees that may be outstanding at the time of such termination will remain payable and the Bank reserves the right to debit such fees from Your account.</p>
+
+<p>You will remain liable for any mobile service provider charges that may arise from the use of this Service, as per the mobile service provider’s terms and conditions.</p>
+
+
+<h2>Discontinuation of the Service</h2>
+
+<p>The Service may be discontinued by Us at Our sole discretion and at any time without prior notice to you. The Bank may also suspend the service temporarily, without any notice to
+you, for upgrade, expansion, maintenance and repair activities, or for any emergency reason as deemed necessary</p>
+
+<h2>Disclosure</h2>
+
+<p>Information and Instructions received from You through the Service, will be stored by the Bank and accessed by employees of the Bank (as is deemed necessary).</p>
+
+<h2>Force Majeure</h2>
+
+<p>Notwithstanding any provision contained in this Agreement, We shall not be liable to you to the extent fulfilment or performance of any terms
+or provisions of this Agreement is delayed or prevented by revolution or other civil disorders; wars; acts of enemies; strikes; lack of available
+resources from persons other than Us; labour disputes; electrical equipment or mobile network failure; fires; floods; acts of God; government or regulator action; or, without limiting the
+foregoing, any other causes not within its control, and which by the exercise of reasonable diligence We are unable to prevent, whether of the class of causes hereinbefore enumerated or not. If any
+force majeure event occurs, We will give prompt written notice to you and will use commercially reasonable efforts to minimize the impact of such event.</p>
+
+<h2>Right to Reserve</h2>
+
+<p>The Bank reserves the right to amend these Terms from time to time without reference to you.</p>
+
+<h2>Governed by the Laws</h2>
+
+<p>These Terms shall be governed by the laws of Kenya.</p>
+
+<p><strong>Terms and Conditions for Internet Banking are available at <a href="http://www.barclays.co.ke" target="_new">www.barclays.co.ke</a>. Kindly review
+these at first log-in.</strong></p>
+
+</div>
+</div>
+</body>
+</html>

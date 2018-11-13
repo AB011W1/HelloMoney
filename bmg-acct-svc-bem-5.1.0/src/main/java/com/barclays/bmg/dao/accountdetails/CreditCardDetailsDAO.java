@@ -1,0 +1,22 @@
+package com.barclays.bmg.dao.accountdetails;
+
+import com.barclays.bmg.service.accountdetails.request.CreditCardAccountActivityServiceRequest;
+import com.barclays.bmg.service.accountdetails.request.CreditCardAccountDetailsServiceRequest;
+import com.barclays.bmg.service.accountdetails.request.CreditCardStatementDatesServiceRequest;
+import com.barclays.bmg.service.accountdetails.request.CreditCardUnbilledTransServiceRequest;
+import com.barclays.bmg.service.accountdetails.response.CreditCardAccountDetailsServiceResponse;
+import com.barclays.bmg.service.accountdetails.response.CreditCardStatementDatesServiceResponse;
+import com.barclays.bmg.service.accountdetails.response.CreditCardTransActivityServiceResponse;
+import com.barclays.bmg.service.accountdetails.response.CreditCardUnbilledTransServiceResponse;
+
+public interface CreditCardDetailsDAO {
+
+    public CreditCardAccountDetailsServiceResponse retrieveCreditCardAccountDetails(CreditCardAccountDetailsServiceRequest request);
+
+    public CreditCardTransActivityServiceResponse retrieveCreditCardTransactionActivity(CreditCardAccountActivityServiceRequest request);
+
+    public CreditCardUnbilledTransServiceResponse retrieveCreditCardUnbilledTrans(CreditCardUnbilledTransServiceRequest request);
+
+    public CreditCardStatementDatesServiceResponse retrieveCreditCardStatementDates(CreditCardStatementDatesServiceRequest request);
+
+}

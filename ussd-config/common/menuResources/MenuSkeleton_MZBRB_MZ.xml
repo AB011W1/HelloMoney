@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<menuItems>
+	<version>1.0</version>
+
+	<pageHeader>
+		<countryCode>MZ</countryCode>
+		<businessId>MZBRB</businessId>
+	</pageHeader>
+
+   	   <node id="ussd0.00" screenId="00" level="00" optionId="0000" labelId="label.select" headerId="label.select" MainMenu="true">
+
+
+		      <node id="ussd0.1" screenId="1" level="0" optionId="1" labelId="menu.buy.airtimetopup" tranId="MZ_AIRTIME_TOPUP" />
+    		  <node id="ussd0.2" screenId="1" level="0" optionId="2" labelId="menu.bkg.services" headerId="label.select" backOptionReq="true" >
+
+				      		<node id="ussd0.2.1" screenId="2" level="1" optionId="1" labelId="menu.bkg.balance.enquirey" tranId="MZ_BAL_ENQ" />
+				            <node id="ussd0.2.2" screenId="2" level="1" optionId="2" labelId="menu.bkg.mini.stmt" tranId="MZ_MINI_STMT" />
+				            <node id="ussd0.2.3" screenId="2" level="1" optionId="3" labelId="menu.bkg.request" headerId="label.select" backOptionReq="true">
+				               <node id="ussd0.2.3.1" screenId="3" level="2" optionId="1" labelId="menu.bkg.request.chequebok" tranId="MZ_CHK_BK_REQ" />
+				               <node id="ussd0.2.3.2" screenId="3" level="2" optionId="2" labelId="menu.bkg.request.prntstmt" tranId="MZ_STMT_REQ" />
+				            </node>
+				            <node id="ussd0.2.4" screenId="2" level="1" optionId="4" labelId="menu.foreign.exchange" headerId="label.select" tranId="MZ_VIEW_FX_RATE" />
+					 		<node id="ussd0.2.5" screenId="2" level="1" optionId="5" labelId="menu.bkg.fixed.deposit" tranId="MZ_VIEW_FD" />
+			  </node>
+			 <!--<node id="ussd0.7" screenId="1" level="0" optionId="3" labelId="menu.mwallet" tranId="MZ_MOBILE_WALLET" />
+		     <node id="ussd0.3" screenId="1" level="0" optionId="4" labelId="menu.pay.bills" headerId="label.select" backOptionReq="true">
+		            <node id="ussd0.3.1" screenId="4" level="1" optionId="1" labelId="menu.pb.registered.biller" tranId="MZ_PAY_BILLS" backOptionReq="true" />
+		            <node id="ussd0.3.2" screenId="4" level="1" optionId="2" labelId="menu.pb.onetime.payement" tranId="MZ_ONE_TIME_PAYMNTS" backOptionReq="true" />
+		            <node id="ussd0.3.3" screenId="4" level="1" optionId="3" labelId="menu.pb.view.lastpaid.bills" tranId="MZ_VIEW_LAST_PAID_BILLS" />
+		            <node id="ussd0.3.4" screenId="4" level="1" optionId="4" labelId="menu.pb.register.biller" tranId="MZ_REG_BILLERS" />
+		            <node id="ussd0.3.5" screenId="4" level="1" optionId="5" labelId="menu.pb.view.mybillers" tranId="MZ_VIEW_BILLERS" />
+		            <node id="ussd0.3.6" screenId="4" level="1" optionId="6" labelId="menu.pb.delete.biller" tranId="MZ_DEL_BILLERS" />
+		      </node>
+
+
+			 --><node id="ussd0.4" screenId="1" level="0" optionId="3" labelId="menu.fund.transfer" headerId="label.select" backOptionReq="true">
+			          <node id="ussd0.4.1" screenId="5" level="1" optionId="1" labelId="menu.ft.own.account" tranId="MZ_OWN_LNK_FND_TX" />
+			          <node id="ussd0.4.2" screenId="5" level="1" optionId="2" labelId="menu.ft.other.barclay" headerId="label.select" backOptionReq="true">
+			             <node id="ussd0.4.2.1" screenId="6" level="2" optionId="1" labelId="label.registered" tranId="MZ_OTHER_BARC_FND_TX_REG" />
+			             <node id="ussd0.4.2.2" screenId="6" level="2" optionId="2" labelId="label.unregistered" tranId="MZ_OTHER_BARC_FND_TX_UNREG" />
+			          </node>
+			          <node id="ussd0.4.3" screenId="5" level="1" optionId="3" labelId="menu.ft.other.bank" tranId="MZ_SAVED_PAYEE_FND_TX" />
+
+  					  <node id="ussd0.4.4" screenId="5" level="1" optionId="4" labelId="menu.ft.register.benef" headerId="label.select" backOptionReq="true" >
+				          	 <node id="ussd0.4.4.1" screenId="8" level="1" optionId="1" labelId="label.barclay.acc" tranId="MZ_REG_BENF_INT" />
+				          	 <node id="ussd0.4.4.2" screenId="8" level="1" optionId="2" labelId="label.otherbank.acc" tranId="MZ_REG_BENF_OTHER_BANK_AC" />
+					  </node>
+				      <node id="ussd0.4.5" screenId="5" level="1" optionId="5" labelId="menu.ft.edit.benef" headerId="label.select" backOptionReq="true" >
+					       <node id="ussd0.4.5.1" screenId="9" level="3" optionId="1" labelId="label.barclay.acc" tranId="MZ_EDIT_BENF_INT" />
+			          </node>
+				      <node id="ussd0.4.6" screenId="5" level="1" optionId="6" labelId="menu.ft.delete.benef" headerId="label.select" backOptionReq="true" >
+					        <node id="ussd0.4.6.1" screenId="11" level="3" optionId="1" labelId="label.barclay.acc" tranId="MZ_DEL_BENF_BARCLAYS" />
+					        <node id="ussd0.4.6.2" screenId="11" level="3" optionId="2" labelId="label.otherbank.acc" tranId="MZ_DEL_BENF_OTHER" />
+					  </node>
+			   </node>
+
+			<node id="ussd0.5" screenId="1" level="0" optionId="4" labelId="menu.lead.generation" tranId="MZ_LEAD_GENERATION" />
+				<node id="ussd0.6" screenId="1" level="0" optionId="5" labelId="menu.others" headerId="label.select" backOptionReq="true">
+						<node id="ussd0.6.1" screenId="10" level="1" optionId="1" labelId="menu.change.pin" tranId="MZ_CHNG_PIN" />
+                        <node id="ussd0.6.2" screenId="10" level="1" optionId="2" labelId="menu.lang.pref" tranId="MZ_LANG_PREF" />
+						<node id="ussd0.6.3" screenId="10" level="1" optionId="3" labelId="menu.contactus" tranId="MZ_CONTACT_US" />
+				</node>
+       </node>
+	<node id="ussd1.00" screenId="100" level="00" optionId="01" labelId="label.select" headerId="label.unreg.user.welcome">
+		<!--<node id="ussd1.01" screenId="01" level="1" optionId="1" labelId="menu.self.registration" tranId="MZ_SELF_REG" />-->
+		<node id="ussd1.01" screenId="01" level="1" optionId="1" labelId="menu.demo" tranId="MZ_HM_DEMO"/>
+		<node id="ussd1.02" screenId="01" level="1" optionId="2" labelId="menu.contactus" tranId="MZ_SELFREG_CONTACT_US"/>
+	</node>
+	<node id="ussd2.00" screenId="200" level="00" optionId="02" labelId="label.select" headerId="label.user.session.options">
+		<node id="ussd2.01" screenId="02" level="1" optionId="1" labelId="menu.user.session.old" tranId="MZ_RETAIN_OLD_SESSION" />
+		<node id="ussd2.02" screenId="02" level="1" optionId="2" labelId="menu.user.session.new" tranId="MZ_SWITCH_TO_NEW_SESSION"/>
+	</node>
+	<!--<node id="ussd3.00" screenId="200" level="00" optionId="1" labelId="label.select" headerId="label.forgot.pin.instruction" tranId="MZ_FOR_PIN"/>
+--></menuItems>

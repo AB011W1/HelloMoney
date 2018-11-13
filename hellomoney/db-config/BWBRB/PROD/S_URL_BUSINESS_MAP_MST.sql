@@ -1,0 +1,13 @@
+
+-----------------------		URL INSERTION QUERY FOR BWBRB - PRODUCTION   --------------------------
+DELETE FROM S_URL_BUSINESS_MAP_MST WHERE SYSTEM_ID='MB' AND BUSINESS_ID='BWBRB' AND URL_PATTERN='https://www.bw.secure.barclays.com/bmg';
+
+INSERT INTO S_URL_BUSINESS_MAP_MST (SYSTEM_ID, BUSINESS_ID, URL_PATTERN, LANGUAGE_ID) VALUES ('MB','BWBRB','https://www.bw.secure.barclays.com/bmg','EN');
+
+DELETE FROM S_URL_BUSINESS_MAP_MST WHERE SYSTEM_ID='MB' AND BUSINESS_ID='BWBRB' AND URL_PATTERN='https://bwc2bir-dr.barclays.intranet/bmg';
+
+DELETE FROM S_URL_BUSINESS_MAP_MST WHERE SYSTEM_ID='MB' AND BUSINESS_ID='BWBRB' AND URL_PATTERN='https://bwc2bir-live.barclays.intranet/bmg';
+
+INSERT INTO S_URL_BUSINESS_MAP_MST (SYSTEM_ID, BUSINESS_ID, URL_PATTERN, LANGUAGE_ID) VALUES ('MB','BWBRB','https://bwc2bir-live.barclays.intranet/bmg','EN');
+
+COMMIT;

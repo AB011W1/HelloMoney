@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-3.0.xsd">
+	<bean id="welcomeScreenBalMainEnqJsonParser" class="com.barclays.ussd.utils.jsonparsers.welcomebalmain.WelcomeScreenBalMainEnqJsonParser" />
+	<bean id="retrieveSrcAccountPayeeListJsonParser" class="com.barclays.ussd.utils.jsonparsers.RetrieveSrcAccountPayeeListJsonParser" />
+	<bean id="retrievePayeeAccountListJsonParser" class="com.barclays.ussd.utils.jsonparsers.RetrievePayeeAccountListJsonParser" />
+	<bean id="retrieveSrcAccountListJsonParser" class="com.barclays.ussd.utils.jsonparsers.RetrieveSrcAccountListJsonParser" />
+	<bean id="ownFundTransferValidateJsonParser" class="com.barclays.ussd.utils.jsonparsers.OwnFundTransferValidateJsonParser" />
+	<bean id="ownFundTransferConfirmJsonParser" class="com.barclays.ussd.utils.jsonparsers.OwnFundTransferConfirmJsonParser" />
+	<bean id="oBAFTSrcPayeeListJsonParser" class="com.barclays.ussd.bmg.fundtransfer.otherbarclaysfundtx.request.OBAFTSrcPayeeListJsonParser" />
+	<bean id="retrieveOBAFTPayeeAcctListJsonParser" class="com.barclays.ussd.utils.jsonparsers.RetrieveOBAFTPayeeAcctListJsonParser" />
+	<bean id="oBAFTRetrieveSrcAccountListJsonParser" class="com.barclays.ussd.utils.jsonparsers.OBAFTRetrieveSrcAccountListJsonParser" />
+	<bean id="oBAFTGetAmountJsonParser" class="com.barclays.ussd.bmg.fundtransfer.otherbarclaysfundtx.request.OBAFTGetAmountJsonParser" />
+
+	<!-- WUC change 19/06/2017 -->
+	<bean id="oneTimeBillPayEnterWUCCustomerJsonParser" class="com.barclays.ussd.utils.jsonparsers.OneTimeWUCBillPayEnterCustomerNumRefParser" />
+
+	<!-- Kadikope -->
+	<bean id="oBAFTGetCreditORCasaResponseParser" class="com.barclays.ussd.bmg.fundtransfer.otherbarclaysfundtx.request.OBAFTGetCreditORCasaResponseParser" />
+	<bean id="oBAFTGetCreditListResponseParser" class="com.barclays.ussd.bmg.fundtransfer.otherbarclaysfundtx.request.OBAFTGetCreditListResponseParser" />
+	<!-- Kadikope -->
+	<bean id="oBAFTValidateJsonParser" class="com.barclays.ussd.utils.jsonparsers.OBAFTValidateJsonParser" />
+	<bean id="oBAFTConfirmJsonParser" class="com.barclays.ussd.bmg.fundtransfer.otherbarclaysfundtx.request.OBAFTConfirmJsonParser" />
+	<!-- Added for the Other Barclyas accnt -->
+	<bean id="oLAFTGetAmountJsonParser" class="com.barclays.ussd.utils.jsonparsers.OLAFTGetAmountJsonParser" />
+	<bean id="chequeBookAccountListDetailsResponseJSONParser" class="com.barclays.ussd.utils.jsonparsers.ChequeBookAccountListDetailsResponseJSONParser" />
+	<bean id="chequeBookAccountListResponseJSONParser" class="com.barclays.ussd.utils.jsonparsers.ChequeBookAccountListResponseJSONParser" />
+	<bean id="chequeBookSizeJsonParser" class="com.barclays.ussd.utils.jsonparsers.ChequeBookSizeJsonParser" />
+	<bean id="chequeBookBranchSearchLetterJsonParser" class="com.barclays.ussd.utils.jsonparsers.ChequeBookBranchSearchLetterJsonParser" />
+	<bean id="chequeBookBranchListJsonParser" class="com.barclays.ussd.utils.jsonparsers.ChequeBookBranchListJsonParser" />
+	<bean id="chequeBookValidationResponseJSONParser" class="com.barclays.ussd.utils.jsonparsers.ChequeBookValidationResponseJSONParser" />
+	<bean id="chequeBookExecuteResponseJSONParser" class="com.barclays.ussd.utils.jsonparsers.ChequeBookExecuteResponseJSONParser" />
+	<bean id="billPayGetBillerListJsonParser" class="com.barclays.ussd.bmg.paybills.request.BillPayGetBillerListJsonParser"/>
+	<bean id="billPayBillerListJsonParser" class="com.barclays.ussd.utils.jsonparsers.BillPayBillerListJsonParser" />
+	<bean id="billPayEnterAmountJsonParser" class="com.barclays.ussd.utils.jsonparsers.BillPayEnterAmountJsonParser" />
+	<!-- Kadikope -->
+	<bean id="payBillCreditORCasaJsonParser" class="com.barclays.ussd.utils.jsonparsers.PayBillCreditORCasaJsonParser" />
+	<bean id="payBillCreditListJsonParser" class="com.barclays.ussd.utils.jsonparsers.PayBillCreditListJsonParser" />
+	<!-- Kadikope -->
+	<bean id="billPayFromAcntLstJsonParser" class="com.barclays.ussd.utils.jsonparsers.BillPayFromAcntLstJsonParser" />
+	<bean id="billPaySubmitJsonParser" class="com.barclays.ussd.utils.jsonparsers.BillPaySubmitJsonParser" />
+	<bean id="billPayConfirmJsonParser" class="com.barclays.ussd.utils.jsonparsers.BillPayConfirmJsonParser" />
+	<bean id="oBADBRetrieveBenfAccountListJsonParser" class="com.barclays.ussd.utils.jsonparsers.OBADBRetrieveBenfAccountListJsonParser" />
+	<bean id="oBADBRenderPayeeAcctListJsonParser" class="com.barclays.ussd.bmg.fundtransfer.deletebenf.barclays.OBADBRenderPayeeAcctListJsonParser"/>
+	<bean id="oBADBValidateJsonParser" class="com.barclays.ussd.utils.jsonparsers.OBADBValidateJsonParser" />
+	<bean id="oBADBConfirmJsonParser" class="com.barclays.ussd.utils.jsonparsers.OBADBConfirmJsonParser" />
+	<bean id="nBADBGetBenfListJsonParser" class="com.barclays.ussd.bmg.fundtransfer.deletebenf.nonbarclays.NBADBGetBenfListJsonParser"/>
+	<bean id="nBADBRetrieveBenfAccountListJsonParser" class="com.barclays.ussd.utils.jsonparsers.NBADBRetrieveBenfAccountListJsonParser" />
+	<bean id="nBADBValidateJsonParser" class="com.barclays.ussd.utils.jsonparsers.NBADBValidateJsonParser" />
+	<bean id="nBADBConfirmJsonParser" class="com.barclays.ussd.utils.jsonparsers.NBADBConfirmJsonParser" />
+	<bean id="statementReqRetrieveSrcAccountListJsonParser" class="com.barclays.ussd.bmg.statementrequest.StatementReqRetrieveSrcAccountListJsonParser"/>
+	<bean id="statementReqAccountListResponseJSONParser" class="com.barclays.ussd.utils.jsonparsers.StatementReqAccountListResponseJSONParser" />
+	<bean id="validateStatementReqResponseJSONParser" class="com.barclays.ussd.utils.jsonparsers.ValidateStatementReqResponseJSONParser" />
+	<bean id="statementReqConfirmJsonParser" class="com.barclays.ussd.utils.jsonparsers.StatementReqConfirmJsonParser" />
+	<bean id="miniStmtAcListJSONParser" class="com.barclays.ussd.utils.jsonparsers.MiniStmtAcListJSONParser" />
+	<bean id="miniStmtAcSumJSONParser" class="com.barclays.ussd.utils.jsonparsers.MiniStmtAcSumJSONParser" />
+	<bean id="casaDetailJSONParser" class="com.barclays.ussd.utils.jsonparsers.CasaDetailJSONParser" />
+	<bean id="mainAcctMiniStmtJSONParser" class="com.barclays.ussd.utils.jsonparsers.MainAcctMiniStmtJSONParser" />
+	<bean id="accountSummaryListJSONParser" class="com.barclays.ussd.utils.jsonparsers.AccountSummaryListJSONParser" />
+	<bean id="accountSummaryJSONParser" class="com.barclays.ussd.utils.jsonparsers.AccountSummaryJSONParser" />
+	<bean id="balanceEnquiryJSONParser" class="com.barclays.ussd.utils.jsonparsers.BalanceEnquiryJSONParser" />
+	<bean id="wlcmScrnOthAcctAccountSummaryJSONParser" class="com.barclays.ussd.utils.jsonparsers.WlcmScrnOthAcctAccountSummaryJSONParser" />
+	<bean id="wlcmScrnOthAcctBalanceEnquiryJSONParser" class="com.barclays.ussd.utils.jsonparsers.WlcmScrnOthAcctBalanceEnquiryJSONParser" />
+	<bean id="othBnkRetrieveBenfListJsonParser" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.OthBnkRetrieveBenfListJsonParser"/>
+	<bean id="ebftPayeeListJsonParser" class="com.barclays.ussd.utils.jsonparsers.EBFTPayeeListJsonParser" />
+	<bean id="ebftSelFrmAcntJsonParser" class="com.barclays.ussd.utils.jsonparsers.EBFTSelFrmAcntJsonParser" />
+	<bean id="ebftPayeeInfoJsonParser" class="com.barclays.ussd.utils.jsonparsers.EBFTPayeeInfoJsonParser" />
+	<bean id="ebftEnterAmtJsonParser" class="com.barclays.ussd.utils.jsonparsers.EBFTEnterAmtJsonParser" />
+	<bean id="ebftFormValJsonParser" class="com.barclays.ussd.utils.jsonparsers.EBFTFormValJsonParser" />
+	<bean id="ebftExecuteJsonParser" class="com.barclays.ussd.utils.jsonparsers.EBFTExecuteJsonParser" />
+	<bean id="viewBillerBenfListJsonParser" class="com.barclays.ussd.bmg.paybills.request.ViewBillerBenfListJsonParser"/>
+	<bean id="viewBillerListJsonParser" class="com.barclays.ussd.utils.jsonparsers.ViewBillerListJsonParser" />
+	<bean id="viewBillerDetailsJsonParser" class="com.barclays.ussd.utils.jsonparsers.ViewBillerDetailsJsonParser" />
+	<bean id="vLPBRetrieveBillerLstJsonParser" class="com.barclays.ussd.bmg.vlpb.request.VLPBRetrieveBillerLstJsonParser"/>
+	<bean id="vLPBBillerLstJsonParser" class="com.barclays.ussd.utils.jsonparsers.VLPBBillerLstJsonParser" />
+	<bean id="vLPBBillDetJsonParser" class="com.barclays.ussd.utils.jsonparsers.VLPBBillDetJsonParser" />
+	<bean id="getLanguagesRetrieveLangListJsonParser" class="com.barclays.ussd.bmg.langpref.GetLanguagesRetrieveLangListJsonParser"/>
+	<bean id="getLanguagesListJsonParser" class="com.barclays.ussd.utils.jsonparsers.GetLanguagesListJsonParser" />
+	<bean id="getLanguagesValidateJsonParser" class="com.barclays.ussd.utils.jsonparsers.GetLanguagesValidateJsonParser" />
+	<bean id="getLanguagesConfirmJsonParser" class="com.barclays.ussd.utils.jsonparsers.GetLanguagesConfirmJsonParser" />
+	<bean id="changePinOldPassJsonParser" class="com.barclays.ussd.utils.jsonparsers.ChangePinOldPassJsonParser" />
+	<bean id="changePinNewPassJsonParser" class="com.barclays.ussd.utils.jsonparsers.ChangePinNewPassJsonParser" />
+	<bean id="changePinReenterNewPassJsonParser" class="com.barclays.ussd.utils.jsonparsers.ChangePinReenterNewPassJsonParser" />
+	<bean id="changePinConfirmJsonParser" class="com.barclays.ussd.utils.jsonparsers.ChangePinConfirmJsonParser" />
+	<bean id="firstLoginChangePinNewPassJsonParser" class="com.barclays.ussd.bmg.changepin.FirstLoginChangePinNewPassJsonParser" />
+	<bean id="firstLoginChangePinReenterNewPassJsonParser" class="com.barclays.ussd.bmg.changepin.FirstLoginChangePinReenterNewPassJsonParser" />
+	<bean id="firstLoginChangePinConfirmJsonParser" class="com.barclays.ussd.utils.jsonparsers.FirstLoginChangePinConfirmJsonParser" />
+	<bean id="regbGetBillersCheckJsonParser" class="com.barclays.ussd.utils.jsonparsers.REGBGetBillersCheckJsonParser" />
+	<bean id="regbGetBillersJsonParser" class="com.barclays.ussd.utils.jsonparsers.REGBGetBillersJsonParser" />
+	<bean id="regbGetRefNoJsonParser" class="com.barclays.ussd.utils.jsonparsers.REGBGetRefNoJsonParser" />
+	<bean id="regbGetBillerNickNameJsonParser" class="com.barclays.ussd.utils.jsonparsers.REGBGetBillerNickNameJsonParser" />
+	<bean id="regbValidateJsonParser" class="com.barclays.ussd.utils.jsonparsers.REGBValidateJsonParser" />
+	<bean id="regbConfirmJsonParser" class="com.barclays.ussd.utils.jsonparsers.REGBConfirmJsonParser" />
+	<bean id="regbGetBillerAreaSearchCharJsonParser" class="com.barclays.ussd.utils.jsonparsers.REGBGetBillerAreaSearchCharJsonParser" />
+	<bean id="regbGetBillerAreaCodeJsonParser" class="com.barclays.ussd.utils.jsonparsers.REGBGetBillerAreaCodeJsonParser" />
+	<!-- CR-57 -->
+	<bean id="regbGetDstvBillerJsonParser" class="com.barclays.ussd.utils.jsonparsers.REGBGetDstvBillerJsonParser" />
+	<!-- WUC change 19/06/2017 -->
+	<bean id="regbWUCCustomerJsonParser" class="com.barclays.ussd.utils.jsonparsers.REGBWUCBillPayEnterCustomerNumRefParser" />
+	<bean id="delBillrPayeeRetrLstParser" class="com.barclays.ussd.utils.jsonparsers.DelBillrPayeeRetrLstParser" />
+	<bean id="delBillrPayeeLstParser" class="com.barclays.ussd.utils.jsonparsers.DelBillrPayeeLstParser" />
+	<bean id="delBillrValParser" class="com.barclays.ussd.utils.jsonparsers.DelBillrValParser" />
+	<bean id="delBillrCnfParser" class="com.barclays.ussd.utils.jsonparsers.DelBillrCnfParser" />
+	<bean id="intNonRegFTEnterActJsonParser" class="com.barclays.ussd.utils.jsonparsers.IntNonRegFTEnterActJsonParser" />
+	<bean id="intNonRegBranchSearcherJsonParser" class="com.barclays.ussd.bmg.fundtransfer.internal.nonregistered.request.IntNonRegBranchSearcherJsonParser" />
+	<bean id="intNonRegEnterNickNameJsonParser" class="com.barclays.ussd.bmg.fundtransfer.internal.nonregistered.request.IntNonRegEnterNickNameJsonParser" />
+	<bean id="intNonRegFTEnterAmtJsonParser" class="com.barclays.ussd.bmg.fundtransfer.internal.nonregistered.request.IntNonRegFTEnterAmtJsonParser" />
+	<!-- Kadikope -->
+	<bean id="intNonRegCASAOrCreditJsonParser" class="com.barclays.ussd.bmg.fundtransfer.internal.nonregistered.request.IntNonRegCASAOrCreditJsonParser" />
+	<bean id="intNonRegFTCCListJsonParser" class="com.barclays.ussd.bmg.fundtransfer.internal.nonregistered.request.IntNonRegFTCCListJsonParser" />
+	<!-- Kadikope -->
+	<bean id="intNonRegFTBranchCodeListJsonParser" class="com.barclays.ussd.utils.jsonparsers.IntNonRegFTBranchCodeListJsonParser" />
+	<bean id="retrieveAccountListIntNRJsonParser" class="com.barclays.ussd.utils.jsonparsers.RetrieveAccountListIntNRJsonParser" />
+	<bean id="internalNonRegFundTransferValidateJsonParser" class="com.barclays.ussd.utils.jsonparsers.InternalNonRegFundTransferValidateJsonParser" />
+	<bean id="internalNonRegFundTransferConfirmJsonParser" class="com.barclays.ussd.utils.jsonparsers.InternalNonRegFundTransferConfirmJsonParser" />
+	<bean id="oneTimeCheckBillPayBillersJsonParser" class="com.barclays.ussd.bmg.paybills.request.OneTimeCheckBillPayBillersJsonParser"/>
+	<bean id="oneTimeBillPayBillersJsonParser" class="com.barclays.ussd.utils.jsonparsers.OneTimeBillPayBillersJsonParser" />
+	<!-- CR-57 -->
+	<bean id="oneTimeBillPayDstvTypeJsonParser" class="com.barclays.ussd.utils.jsonparsers.OneTimeBillPayDstvTypeJsonParser" />
+	<!--  	<bean id="oneTimeBillPayBillAreaSearcherJsonParser"   class="com.barclays.ussd.bmg.otbp.request.OneTimeBillPayBillAreaSearcherJsonParser"/>-->
+	<bean id="oneTimeBillPayBillAreaCodeJsonParser" class="com.barclays.ussd.bmg.otbp.request.OneTimeBillPayBillAreaCodeJsonParser"/>
+	<bean id="oneTimeBillPayBillerRefParser" class="com.barclays.ussd.utils.jsonparsers.OneTimeBillPayBillerRefParser" />
+	<bean id="oneTimeBillPayEnterAmountParser" class="com.barclays.ussd.utils.jsonparsers.OneTimeBillPayEnterAmountParser" />
+	<!-- Kadikope -->
+	<bean id="oneTimeBillPayEnterCreditORCasaJsonParser" class="com.barclays.ussd.utils.jsonparsers.OneTimeBillPayEnterCreditCardORCasaJsonParser" />
+	<bean id="oneTimeBillPayEnterCreditCardListJsonParser" class="com.barclays.ussd.utils.jsonparsers.OneTimeBillPayEnterCreditCardListJsonParser" />
+	<!-- Kadikope -->
+	<bean id="oneTimeBillPayAcctNumJsonParser" class="com.barclays.ussd.utils.jsonparsers.OneTimeBillPayAcctNumJsonParser" />
+	<bean id="oneTimeBillPayConfirmJsonParser" class="com.barclays.ussd.utils.jsonparsers.OneTimeBillPayConfirmJsonParser" />
+	<bean id="oneTimeBillPaySubmitJsonParser" class="com.barclays.ussd.utils.jsonparsers.OneTimeBillPaySubmitJsonParser" />
+	<bean id="fDViewEnterAmountParser" class="com.barclays.ussd.utils.jsonparsers.FDViewEnterAmountParser" />
+	<bean id="fdViewTenuresJsonParser" class="com.barclays.ussd.utils.jsonparsers.FdViewTenuresJsonParser" />
+	<bean id="fDViewRatesJsonParser" class="com.barclays.ussd.utils.jsonparsers.FDViewRatesJsonParser" />
+	<bean id="fDAccountSummaryJSONParser" class="com.barclays.ussd.utils.jsonparsers.FDAccountSummaryJSONParser" />
+	<bean id="fDApplyEnterAmountParser" class="com.barclays.ussd.utils.jsonparsers.FDApplyEnterAmountParser" />
+	<bean id="fDApplyEnterTenureParser" class="com.barclays.ussd.utils.jsonparsers.FDApplyEnterTenureParser" />
+	<bean id="fDApplySelectProductParser" class="com.barclays.ussd.utils.jsonparsers.FDApplySelectProductParser" />
+	<bean id="fDApplyConfirmParser" class="com.barclays.ussd.utils.jsonparsers.FDApplyConfirmParser" />
+	<bean id="fDApplyValidateParser" class="com.barclays.ussd.utils.jsonparsers.FDApplyValidateParser" />
+	<bean id="fDApplySubmitParser" class="com.barclays.ussd.utils.jsonparsers.FDApplySubmitParser" />
+	<bean id="registerBenfGetAccNoJsonParser" class="com.barclays.ussd.bmg.registerbenf.internal.RegisterBenfGetAccNoJsonParser" />
+	<bean id="registerBenfBranchCodeSearcherJsonParser" class="com.barclays.ussd.bmg.registerbenf.internal.RegisterBenfBranchCodeSearcherJsonParser" />
+	<bean id="registerBenfBranchListJsonParser" class="com.barclays.ussd.bmg.registerbenf.internal.RegisterBenfBranchListJsonParser"/>
+	<bean id="registerBenfInternalBranchCodeJsonParser" class="com.barclays.ussd.utils.jsonparsers.RegisterBenfInternalBranchCodeJsonParser" />
+	<bean id="registerBenfGetBenfNickNameJsonParser" class="com.barclays.ussd.bmg.registerbenf.internal.RegisterBenfGetBenfNickNameJsonParser" />
+	<bean id="registerBenfInternalValidateJsonParser" class="com.barclays.ussd.utils.jsonparsers.RegisterBenfInternalValidateJsonParser" />
+	<bean id="registerBenfInternalConfirmJsonParser" class="com.barclays.ussd.utils.jsonparsers.RegisterBenfInternalConfirmJsonParser" />
+	<bean id="registerBenfExtSelectBranchCodeJsonParser" class="com.barclays.ussd.utils.jsonparsers.RegisterBenfExtSelectBranchCodeJsonParser" />
+	<bean id="registerBenfExtEnterBranchCodeJsonParser" class="com.barclays.ussd.utils.jsonparsers.RegisterBenfExtEnterBranchCodeJsonParser" />
+	<bean id="registerBenfExternalValidateJsonParser" class="com.barclays.ussd.utils.jsonparsers.RegisterBenfExternalValidateJsonParser" />
+	<bean id="registerBenfExtGetBenfNickNameJsonParser" class="com.barclays.ussd.bmg.registerbenf.external.RegisterBenfExtGetBenfNickNameJsonParser" />
+	<bean id="registerBenfExtGetBankCodeJsonParser" class="com.barclays.ussd.bmg.registerbenf.external.RegisterBenfExtGetBankCodeJsonParser" />
+	<bean id="registerBenfExtGetBranchCodeJsonParser" class="com.barclays.ussd.bmg.registerbenf.external.RegisterBenfExtGetBranchCodeJsonParser" />
+	<bean id="registerBenfExtGetAccNoJsonParser" class="com.barclays.ussd.bmg.registerbenf.external.RegisterBenfExtGetAccNoJsonParser" />
+	<bean id="registerBenfExtGetBenfNameJsonParser" class="com.barclays.ussd.bmg.registerbenf.external.RegisterBenfExtGetBenfNameJsonParser" />
+	<bean id="registerBenfExtConfirmJsonParser" class="com.barclays.ussd.bmg.registerbenf.external.RegisterBenfExtConfirmJsonParser" />
+	<bean id="MobileWalletTopupSrcMnosJsonParser" class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletTopupSrcMnosJsonParser"/>
+	<bean id="mobileWalletTopupMnosJsonParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletTopupMnosJsonParser" />
+	<bean id="mobileWalletTopupAccountNumberJsonParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletTopupAccountNumberJsonParser" />
+	<!--CR#47 -->
+	<bean id="mobileWalletMsisdnTypeJsonParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletMsisdnTypeJsonParser" />
+	<!--CR#47 -->
+	<!-- Kadi Kope Credit Card -->
+	<bean id="mobileWalletTopupAmountJsonParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletTopupAmountJsonParser" />
+	<bean id="mobileWalletTopupCreditCardORCasaJsonParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletTopupCreditCardORCasaJsonParser" />
+    <bean id="mobileWalletTopupCreditCardListJsonParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletTopupCreditCardListJsonParser" />
+	<!-- Kadikope -->
+	<bean id="mobileWalletTopupFromAccountJsonParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletTopupFromAccountJsonParser" />
+	<bean id="mobileWalletTopupValidateJsonParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletTopupValidateJsonParser" />
+	<bean id="mobileWalletTopupConfirmJsonParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletTopupConfirmJsonParser" />
+	<bean id="verifyUserJsonParser" class="com.barclays.ussd.utils.jsonparsers.VerifyUserJsonParser" />
+	<bean id="authenticateUserJsonParser" class="com.barclays.ussd.utils.jsonparsers.AuthenticateUserJsonParser" />
+	<bean id="AirtimeTopupSrcMnosJsonParser" class="com.barclays.ussd.bmg.airtime.request.AirtimeTopupSrcMnosJsonParser"/>
+	<!--bean for CR78-->
+	<bean id="AirtimeTopupMsisdnTypeJsonParser" class="com.barclays.ussd.utils.jsonparsers.AirtimeTopupMsisdnTypeJsonParser"/>
+	<!--End CR78-->
+	<bean id="airtimeInitResponseParser" class="com.barclays.ussd.utils.jsonparsers.AirtimeInitResponseParser" />
+	<bean id="airtimeEnterMobileResponseParser" class="com.barclays.ussd.utils.jsonparsers.AirtimeEnterMobileResponseParser" />
+	<bean id="airtimeEnterAmountResponseParser" class="com.barclays.ussd.utils.jsonparsers.AirtimeEnterAmountResponseParser" />
+	<!-- Kadikope -->
+	<bean id="airtimeEnterCreditORCasaResponseParser" class="com.barclays.ussd.utils.jsonparsers.AirtimeEnterCreditORCasaResponseParser" />
+	<bean id="airtimeEnterCreditListResponseParser" class="com.barclays.ussd.utils.jsonparsers.AirtimeEnterCreditListResponseParser" />
+	<bean id="airtimeEnterCreditCardValidateResponseParser" class="com.barclays.ussd.utils.jsonparsers.AirtimeEnterCreditCardValidateResponseParser" />
+	<!-- Kadikope -->
+	<bean id="airtimeSelectAccountResponseParser" class="com.barclays.ussd.utils.jsonparsers.AirtimeSelectAccountResponseParser" />
+	<bean id="airtimeValidateResponseParser" class="com.barclays.ussd.utils.jsonparsers.AirtimeValidateResponseParser" />
+	<bean id="airtimeSubmitResponseParser" class="com.barclays.ussd.utils.jsonparsers.AirtimeSubmitResponseParser" />
+	<bean id="twoFactorAuthInitParser" class="com.barclays.ussd.utils.jsonparsers.TwoFactorAuthInitParser" />
+	<bean id="twoFactorAuthGenerateParser" class="com.barclays.ussd.utils.jsonparsers.TwoFactorAuthGenerateParser" />
+	<bean id="twoFactorAuthVerifyParser" class="com.barclays.ussd.utils.jsonparsers.TwoFactorAuthVerifyParser" />
+	<!--<bean id="selfRegistrationInitParser" class="com.barclays.ussd.utils.jsonparsers.SelfRegistrationInitParser" />
+	<bean id="selfRegistrationInputParser" class="com.barclays.ussd.utils.jsonparsers.SelfRegistrationInputParser" />
+	<bean id="selfRegistrationIDVQ1Parser" class="com.barclays.ussd.utils.jsonparsers.SelfRegistrationIDVQ1Parser" />
+	<bean id="selfRegistrationIDVQ2Parser" class="com.barclays.ussd.utils.jsonparsers.SelfRegistrationIDVQ2Parser" />
+	<bean id="selfRegistrationIDVQ3Parser" class="com.barclays.ussd.utils.jsonparsers.SelfRegistrationIDVQ3Parser" />
+	<bean id="selfRegistrationIDVQ4Parser" class="com.barclays.ussd.utils.jsonparsers.SelfRegistrationIDVQ4Parser" />
+	<bean id="selfRegistrationValidateParser" class="com.barclays.ussd.utils.jsonparsers.SelfRegistrationValidateParser" />-->
+	<bean id="selfRegisterBranchNameParser" class="com.barclays.ussd.utils.jsonparsers.SelfRegisterBranchNameParser" />
+	<bean id="selfRegisterBranchCodeParser" class="com.barclays.ussd.utils.jsonparsers.SelfRegisterBranchCodeParser" />
+	<bean id="selfRegisterAccountParser" class="com.barclays.ussd.utils.jsonparsers.SelfRegisterAccountParser" />
+	<bean id="selfRegisterTnC1Parser" class="com.barclays.ussd.utils.jsonparsers.SelfRegisterTnC1Parser" />
+	<bean id="selfRegisterInitParser" class="com.barclays.ussd.utils.jsonparsers.SelfRegisterInitParser" />
+	<bean id="selfRegisterChallengeQnParser" class="com.barclays.ussd.utils.jsonparsers.SelfRegisterChallengeQnParser" />
+	<bean id="selfRegisterChallengeAnsParser" class="com.barclays.ussd.utils.jsonparsers.SelfRegisterChallengeAnsParser" />
+	<bean id="selfRegisterExecuteParser" class="com.barclays.ussd.utils.jsonparsers.SelfRegisterExecuteParser" />
+	<!--ADDED TO INCLUDE DEBIT CARD VALIDATION IN SELF REGISTRATION	-->
+	<bean id="selfRegisterDebitCardNoParser" class="com.barclays.ussd.utils.jsonparsers.SelfRegisterDebitCardNoParser" />
+	<bean id="selfRegisterDebitExpiryDateParser" class="com.barclays.ussd.utils.jsonparsers.SelfRegisterDebitExpiryDateParser" />
+	<bean id="selfRegisterDebitCardVerificationParser" class="com.barclays.ussd.utils.jsonparsers.SelfRegisterDebitCardVerificationParser" />
+	<!--END DEBIT CARD VALIDATION IN SELF REGISTRATION	-->
+	<bean id="helloMoneyDemoJsonParser" class="com.barclays.ussd.utils.jsonparsers.hellomoney.demo.HelloMoneyDemoJsonParser" />
+	<bean id="contactUsJsonParser" class="com.barclays.ussd.utils.jsonparsers.contactus.ContactUsJsonParser" />
+	<bean id="changeLanguageListJsonParser" class="com.barclays.ussd.utils.jsonparsers.ChangeLanguageListJsonParser" />
+	<bean id="changeLanguagesExecuteJsonParser" class="com.barclays.ussd.utils.jsonparsers.ChangeLanguagesExecuteJsonParser" />
+	<bean id="oneTimeCashSendGetMobileNoJsonParser" class="com.barclays.ussd.utils.jsonparsers.OneTimeCashSendGetMobileNoJsonParser"/>
+	<bean id="oneTimeCashSendGetAmountJsonParser" class="com.barclays.ussd.utils.jsonparsers.OneTimeCashSendGetAmountJsonParser"/>
+	<bean id="oneTimeCashSendGetSrcAcctJsonParser" class="com.barclays.ussd.utils.jsonparsers.OneTimeCashSendGetSrcAcctJsonParser"/>
+	<bean id="oneTimeCashSendGetAtmPinJsonParser" class="com.barclays.ussd.utils.jsonparsers.OneTimeCashSendGetAtmPinJsonParser"/>
+	<bean id="oneTimeCashSendGetReenteredAtmPinJsonParser" class="com.barclays.ussd.utils.jsonparsers.OneTimeCashSendGetReenteredAtmPinJsonParser"/>
+	<bean id="oneTimeCashSendValidateJsonParser" class="com.barclays.ussd.utils.jsonparsers.OneTimeCashSendValidateJsonParser"/>
+	<bean id="oneTimeCashSendSubmitJsonParser" class="com.barclays.ussd.utils.jsonparsers.OneTimeCashSendSubmitJsonParser"/>
+	<bean id="editBenfInternalPayeeAcctListJsonParser" class="com.barclays.ussd.bmg.fundtransfer.internal.editbenf.EditBenfInternalPayeeAcctListJsonParser"/>
+	<bean id="editBenfInternalPayeeJsonParser" class="com.barclays.ussd.bmg.fundtransfer.internal.editbenf.EditBenfInternalPayeeJsonParser"/>
+	<bean id="editBenfInternalGetAccNoJsonParser" class="com.barclays.ussd.bmg.fundtransfer.internal.editbenf.EditBenfInternalGetAccNoJsonParser"/>
+	<bean id="editBenfInternalBranchCodeSearcherJsonParser" class="com.barclays.ussd.bmg.fundtransfer.internal.editbenf.EditBenfInternalBranchCodeSearcherJsonParser"/>
+	<bean id="editBenfInternalBranchListJsonParser" class="com.barclays.ussd.bmg.fundtransfer.internal.editbenf.EditBenfInternalBranchListJsonParser"/>
+	<bean id="editBenfInternalGetBenfNickNameJsonParser" class="com.barclays.ussd.bmg.fundtransfer.internal.editbenf.EditBenfInternalGetBenfNickNameJsonParser"/>
+	<bean id="editBenfInternalValidateJsonParser" class="com.barclays.ussd.bmg.fundtransfer.internal.editbenf.EditBenfInternalValidateJsonParser"/>
+	<bean id="editBenfInternalConfirmJsonParser" class="com.barclays.ussd.bmg.fundtransfer.internal.editbenf.EditBenfInternalConfirmJsonParser"/>
+	<bean id="fxRateGetCurrencyJsonParser" class="com.barclays.ussd.utils.jsonparsers.FxRateGetCurrencyJsonParser"/>
+	<bean id="fxRateConvertJsonParser" class="com.barclays.ussd.utils.jsonparsers.FxRateConvertJsonParser"/>
+	<bean id="oldSessionJsonParser" class="com.barclays.ussd.utils.jsonparsers.ussdsession.OldSessionJsonParser" />
+	<bean id="newSessionJsonParser" class="com.barclays.ussd.utils.jsonparsers.ussdsession.NewSessionJsonParser" />
+	<bean id="RetrieveNoOfCardListJsonParser" class="com.barclays.ussd.bmg.creditcard.at.a.glance.RetrieveNoOfCardListJsonParser"/>
+	<bean id="retrieveCreditCardListJsonParser" class="com.barclays.ussd.bmg.creditcard.at.a.glance.RetrieveCreditCardListJsonParser"/>
+	<bean id="retrieveCreditCardDetailsJsonParser" class="com.barclays.ussd.bmg.creditcard.at.a.glance.RetrieveCreditCardDetailsJsonParser"/>
+	<bean id="ccStatCreditCardListJsonParser" class="com.barclays.ussd.bmg.creditcard.statement.CcStatCreditCardListJsonParser"/>
+	<bean id="ccStatDateListJsonParser" class="com.barclays.ussd.bmg.creditcard.statement.CcStatDateListJsonParser"/>
+	<bean id="ccStatDetailsJsonParser" class="com.barclays.ussd.bmg.creditcard.statement.CcStatDetailsJsonParser"/>
+	<bean id="creditCardPaymentListJsonParser" class="com.barclays.ussd.bmg.creditcard.payment.CreditCardPaymentListJsonParser"/>
+	<bean id="creditCardPaymentDetailsJsonParser" class="com.barclays.ussd.bmg.creditcard.payment.CreditCardPaymentDetailsJsonParser"/>
+	<bean id="creditCardPaymentGetAmountJsonParser" class="com.barclays.ussd.bmg.creditcard.payment.CreditCardPaymentGetAmountJsonParser"/>
+	<bean id="creditCardPaymentGetSrcAcctJsonParser" class="com.barclays.ussd.bmg.creditcard.payment.CreditCardPaymentGetSrcAcctJsonParser"/>
+	<bean id="creditCardPaymentValidateJsonParser" class="com.barclays.ussd.bmg.creditcard.payment.CreditCardPaymentValidateJsonParser"/>
+	<bean id="creditCardPaymentSubmitJsonParser" class="com.barclays.ussd.bmg.creditcard.payment.CreditCardPaymentSubmitJsonParser"/>
+	<!--CR#46-->
+	<!--<bean id="creditCardLinkJsonParser"   class="com.barclays.ussd.bmg.creditcard.link.CreditCardLinkJsonParser"/>-->
+	<bean id="creditCardLinkConfirmJsonParser" class="com.barclays.ussd.bmg.creditcard.link.CreditCardLinkConfirmJsonParser"/>
+	<bean id="creditCardLinkSubmitJsonParser" class="com.barclays.ussd.bmg.creditcard.link.CreditCardLinkSubmitJsonParser"/>
+	<!--CR#46-->
+	<bean id="editBenfExtRetrieveBenfListJsonParser" class="com.barclays.ussd.bmg.fundtransfer.external.editbenf.EditBenfExtRetrieveBenfListJsonParser"/>
+	<bean id="editBenfExtGetBankSearchLetterJsonParser" class="com.barclays.ussd.bmg.fundtransfer.external.editbenf.EditBenfExtGetBankSearchLetterJsonParser"/>
+	<bean id="editBenfExtRetrieveBankListJsonParser" class="com.barclays.ussd.bmg.fundtransfer.external.editbenf.EditBenfExtRetrieveBankListJsonParser"/>
+	<bean id="editBenfExtGetBranchSearchLetterJsonParser" class="com.barclays.ussd.bmg.fundtransfer.external.editbenf.EditBenfExtGetBranchSearchLetterJsonParser"/>
+	<bean id="editBenfExtRetrieveBranchListJsonParser" class="com.barclays.ussd.bmg.fundtransfer.external.editbenf.EditBenfExtRetrieveBranchListJsonParser"/>
+	<bean id="editBenfExtGetAccountNoJsonParser" class="com.barclays.ussd.bmg.fundtransfer.external.editbenf.EditBenfExtGetAccountNoJsonParser"/>
+	<bean id="editBenfExtGetBenfNameJsonParser" class="com.barclays.ussd.bmg.fundtransfer.external.editbenf.EditBenfExtGetBenfNameJsonParser"/>
+	<bean id="editBenfExtGetBenfNickNameJsonParser" class="com.barclays.ussd.bmg.fundtransfer.external.editbenf.EditBenfExtGetBenfNickNameJsonParser"/>
+	<bean id="editBenfExtValidateJsonParser" class="com.barclays.ussd.bmg.fundtransfer.external.editbenf.EditBenfExtValidateJsonParser"/>
+	<bean id="editBenfExtConfirmJsonParser" class="com.barclays.ussd.bmg.fundtransfer.external.editbenf.EditBenfExtConfirmJsonParser"/>
+	<bean id="ccUnbilledTranCreditCardListJsonParser" class="com.barclays.ussd.bmg.creditcard.unbilled.transaction.CcUnbilledTranCreditCardListJsonParser"/>
+	<bean id="ccUnbilledTranMerchantListJsonParser" class="com.barclays.ussd.bmg.creditcard.unbilled.transaction.CcUnbilledTranMerchantListJsonParser"/>
+	<bean id="ccUnbilledTranDetailsJsonParser" class="com.barclays.ussd.bmg.creditcard.unbilled.transaction.CcUnbilledTranDetailsJsonParser"/>
+	<bean id="ccThirdPartyPayCardNoJsonParser" class="com.barclays.ussd.bmg.creditcard.third.party.payment.CCThirdPartyPayCardNoJsonParser"/>
+	<bean id="ccThirdPartyPayValidateCardNoJsonParser" class="com.barclays.ussd.bmg.creditcard.third.party.payment.CCThirdPartyPayValidateCardNoJsonParser"/>
+	<bean id="ccThirdPartyPayAmtJsonParser" class="com.barclays.ussd.bmg.creditcard.third.party.payment.CCThirdPartyPayAmtJsonParser"/>
+	<bean id="ccThirdPartyPayFrmAccJsonParser" class="com.barclays.ussd.bmg.creditcard.third.party.payment.CCThirdPartyPayFrmAccJsonParser"/>
+	<bean id="ccThirdPartyPayValidateJsonParser" class="com.barclays.ussd.bmg.creditcard.third.party.payment.CCThirdPartyPayValidateJsonParser"/>
+	<bean id="ccThirdPartyPayConfirmJsonParser" class="com.barclays.ussd.bmg.creditcard.third.party.payment.CCThirdPartyPayConfirmJsonParser"/>
+	<bean id="branchLocatorCityNameSearchLetterJsonParser" class="com.barclays.ussd.bmg.branchlocator.BranchLocatorCityNameSearchLetterJsonParser"/>
+	<bean id="branchLocatorCityNameListJsonParser" class="com.barclays.ussd.bmg.branchlocator.BranchLocatorCityNameListJsonParser"/>
+	<bean id="branchLocatorAreaNameSearchLetterJsonParser" class="com.barclays.ussd.bmg.branchlocator.BranchLocatorAreaNameSearchLetterJsonParser"/>
+	<bean id="branchLocatorAreaNameListJsonParser" class="com.barclays.ussd.bmg.branchlocator.BranchLocatorAreaNameListJsonParser"/>
+	<bean id="branchLocatorResponseJsonParser" class="com.barclays.ussd.bmg.branchlocator.BranchLocatorResponseJsonParser"/>
+	<bean id="atmLocatorCityNameSearchLetterJsonParser" class="com.barclays.ussd.bmg.atmlocator.AtmLocatorCityNameSearchLetterJsonParser"/>
+	<bean id="atmLocatorCityNameListJsonParser" class="com.barclays.ussd.bmg.atmlocator.AtmLocatorCityNameListJsonParser"/>
+	<bean id="atmLocatorAreaNameSearchLetterJsonParser" class="com.barclays.ussd.bmg.atmlocator.AtmLocatorAreaNameSearchLetterJsonParser"/>
+	<bean id="atmLocatorAreaNameListJsonParser" class="com.barclays.ussd.bmg.atmlocator.AtmLocatorAreaNameListJsonParser"/>
+	<bean id="atmLocatorResponseJsonParser" class="com.barclays.ussd.bmg.atmlocator.AtmLocatorResponseJsonParser"/>
+	<bean id="userMigrationBranchSearcherJsonParser" class="com.barclays.ussd.bmg.user.migration.UserMigrationBranchSearcherJsonParser"/>
+	<bean id="userMigrationBranchListJsonParser" class="com.barclays.ussd.bmg.user.migration.UserMigrationBranchListJsonParser"/>
+	<bean id="userMigrationAccountNoJsonParser" class="com.barclays.ussd.bmg.user.migration.UserMigrationAccountNoJsonParser"/>
+	<bean id="userMigrationInitiateJsonParser" class="com.barclays.ussd.bmg.user.migration.UserMigrationInitiateJsonParser"/>
+	<bean id="userMigrationDOBJsonParser" class="com.barclays.ussd.bmg.user.migration.UserMigrationDOBJsonParser"/>
+	<bean id="userMigrationVerifyDOBJsonParser" class="com.barclays.ussd.bmg.user.migration.UserMigrationVerifyDOBJsonParser"/>
+	<bean id="userMigrationNewPinJsonParser" class="com.barclays.ussd.bmg.user.migration.UserMigrationNewPinJsonParser"/>
+	<bean id="userMigrationReenterPinJsonParser" class="com.barclays.ussd.bmg.user.migration.UserMigrationReenterPinJsonParser"/>
+	<bean id="userMigrationSubmitJsonParser" class="com.barclays.ussd.bmg.user.migration.UserMigrationSubmitJsonParser"/>
+	<bean id="cityNameSearchLetterJsonParser" class="com.barclays.ussd.bmg.dinning.offer.CityNameSearchLetterJsonParser"/>
+	<bean id="diningOfferCityListJsonParser" class="com.barclays.ussd.bmg.dinning.offer.DiningOfferCityListJsonParser"/>
+	<bean id="restarantNameSearchLetterJsonParser" class="com.barclays.ussd.bmg.dinning.offer.RestarantNameSearchLetterJsonParser"/>
+	<bean id="diningOfferRestaurantListJsonParser" class="com.barclays.ussd.bmg.dinning.offer.DiningOfferRestaurantListJsonParser"/>
+	<bean id="diningOfferDetailsJsonParser" class="com.barclays.ussd.bmg.dinning.offer.DiningOfferDetailsJsonParser"/>
+	<bean id="partnerNameSearchLetterJsonParser" class="com.barclays.ussd.bmg.installment.offer.PartnerNameSearchLetterJsonParser"/>
+	<bean id="installmentOfferPartnerListJsonParser" class="com.barclays.ussd.bmg.installment.offer.InstallmentOfferPartnerListJsonParser"/>
+	<bean id="installmentOfferPartnerDetailsJsonParser" class="com.barclays.ussd.bmg.installment.offer.InstallmentOfferPartnerDetailsJsonParser"/>
+	<bean id="interestedProductListJsonParser" class="com.barclays.ussd.bmg.interested.InterestedProductListJsonParser"/>
+	<bean id="interestedSubProductListJsonParser" class="com.barclays.ussd.bmg.interested.InterestedSubProductListJsonParser"/>
+	<bean id="interestedProductDtlsJsonParser" class="com.barclays.ussd.bmg.interested.InterestedProductDtlsJsonParser"/>
+	<bean id="businessAreaListJsonParser" class="com.barclays.ussd.bmg.callmeback.BusinessAreaListJsonParser"/>
+	<bean id="serviceCategoryListJsonParser" class="com.barclays.ussd.bmg.callmeback.ServiceCategoryListJsonParser"/>
+	<bean id="serviceCategoryDetailsJsonParser" class="com.barclays.ussd.bmg.callmeback.ServiceCategoryDetailsJsonParser"/>
+	<!--  Forgot Pin Changes   -->
+	<bean id="forgotPinInstructionJsonParser" class="com.barclays.ussd.bmg.login.ForgotPinInstructionJsonParser"/>
+	<!-- Lead Generation -->
+	<bean id="leadGenerationProductListJsonParser" class="com.barclays.ussd.utils.jsonparsers.LeadGenerationProductListJsonParser"/>
+	<bean id="leadGenerationProductSubListJsonParser" class="com.barclays.ussd.utils.jsonparsers.LeadGenerationProductSubListJsonParser"/>
+	<bean id="leadGenerationConfirmJsonParser" class="com.barclays.ussd.utils.jsonparsers.LeadGenerationConfirmJsonParser"/>
+	<bean id="leadGenerationSubmitJsonParser" class="com.barclays.ussd.utils.jsonparsers.LeadGenerationSubmitJsonParser"/>
+<!-- KITS Changes Starts -->
+	<!--Registration-->
+	<bean id="kitsRegisterAccountNumberJsonParser" class="com.barclays.ussd.utils.jsonparsers.KitsRegisterAccountNumberJsonParser"/>
+	<bean id="kitsRegisterPrimaryAccountJsonParser" class="com.barclays.ussd.utils.jsonparsers.KitsRegisterPrimaryAccountJsonParser"/>
+	<bean id="kitsRegisterConfirmDetailsJsonParser" class="com.barclays.ussd.utils.jsonparsers.KitsRegisterConfirmDetailsJsonParser"/>
+	<bean id="kitsRegisterSubmitJsonParser" class="com.barclays.ussd.utils.jsonparsers.KitsRegisterSubmitJsonParser"/>
+	<!--Deregistration-->
+	<bean id="kitsDeregisterAccountNumberJsonParser" class="com.barclays.ussd.utils.jsonparsers.KitsDeregisterAccountNumberJsonParser"/>
+	<bean id="kitsDeregisterConfirmDetailsJsonParser" class="com.barclays.ussd.utils.jsonparsers.KitsDeregisterConfirmDetailsJsonParser"/>
+	<bean id="kitsDeregisterSubmitJsonParser" class="com.barclays.ussd.utils.jsonparsers.KitsDeregisterSubmitJsonParser"/>
+	<!--Pay To Phone -->
+	<bean id="kitsSendToPhoneAccountNumberJsonParser" class="com.barclays.ussd.utils.jsonparsers.KitsSendToPhoneAccountNumberJsonParser"/>
+	<bean id="kitsSendToPhoneMobileNumberJsonParser" class="com.barclays.ussd.utils.jsonparsers.KitsSendToPhoneMobileNumberJsonParser"/>
+	<bean id="kitsSendToPhoneBankListJsonParser" class="com.barclays.ussd.utils.jsonparsers.KitsSendToPhoneBankListJsonParser"/>
+	<bean id="kitsSendToPhoneAmountJsonParser" class="com.barclays.ussd.utils.jsonparsers.KitsSendToPhoneAmountJsonParser"/>
+	<bean id="kitsSendToPhoneReasonJsonParser" class="com.barclays.ussd.utils.jsonparsers.KitsSendToPhoneReasonJsonParser"/>
+	<bean id="kitsSendToPhoneConfirmDetailsJsonParser" class="com.barclays.ussd.utils.jsonparsers.KitsSendToPhoneConfirmDetailsJsonParser"/>
+	<bean id="kitsSendToPhoneSubmitJsonParser" class="com.barclays.ussd.utils.jsonparsers.KitsSendToPhoneSubmitJsonParser"/>
+	<!--Pay To Account -->
+	<bean id="kitsSendToAccountAccountNumberJsonParser" class="com.barclays.ussd.utils.jsonparsers.KitsSendToAccountAccountNumberJsonParser"/>
+	<bean id="kitsSendToAccountAccountNumJsonParser" class="com.barclays.ussd.utils.jsonparsers.KitsSendToAccountAccountNumJsonParser"/>
+	<bean id="kitsSendToAccountBankCodeJsonParser" class="com.barclays.ussd.utils.jsonparsers.KitsSendToAccountBankCodeJsonParser"/>
+	<bean id="kitsSendToAccountBankListJsonParser" class="com.barclays.ussd.utils.jsonparsers.KitsSendToAccountBankListJsonParser"/>
+	<bean id="kitsSendToAccountAmountJsonParser" class="com.barclays.ussd.utils.jsonparsers.KitsSendToAccountAmountJsonParser"/>
+	<bean id="kitsSendToAccountReasonJsonParser" class="com.barclays.ussd.utils.jsonparsers.KitsSendToAccountReasonJsonParser"/>
+	<bean id="kitsSendToAccountConfirmDetailsJsonParser" class="com.barclays.ussd.utils.jsonparsers.KitsSendToAccountConfirmDetailsJsonParser"/>
+	<bean id="kitsSendToAccountSubmitJsonParser" class="com.barclays.ussd.utils.jsonparsers.KitsSendToAccountSubmitJsonParser"/>
+	<!-- KITS Changes Ends -->
+	<!-- CR82 Airtime-->
+	<bean id="AirtimeTopUpPaymentTypeJsonParser"   class="com.barclays.ussd.utils.jsonparsers.AirtimeTopUpPaymentTypeJsonParser"/>
+	<bean id="AirtimeTopUpSavBnfNickNameJsonParser"   class="com.barclays.ussd.utils.jsonparsers.AirtimeTopUpSavBnfNickNameJsonParser"/>
+	<bean id="AirtimeTopUpSavBnfValidateJsonParser"   class="com.barclays.ussd.utils.jsonparsers.AirtimeTopUpSavBnfValidateJsonParser"/>
+	<bean id="AirtimeTopUpSavBnfConfirmJsonParser"   class="com.barclays.ussd.utils.jsonparsers.AirtimeTopUpSavBnfConfirmJsonParser"/>
+	<bean id="airtimeTopUpGetBillerListJsonParser"   class="com.barclays.ussd.utils.jsonparsers.AirtimeTopUpGetBillerListJsonParser"/>
+    <bean id="airtimeTopUpBillerListJsonParser"   class="com.barclays.ussd.utils.jsonparsers.AirtimeTopUpBillerListJsonParser"/>
+    <bean id="AirtimeTopUpBenfDtlsJsonParser"   class="com.barclays.ussd.utils.jsonparsers.AirtimeTopUpBenfDtlsJsonParser"/>
+	<!--Delete bene		-->
+	<bean id="airtimeTopUpDelBillrValParser" class="com.barclays.ussd.utils.jsonparsers.AirtimeTopupDelBillrValParser" />
+	<bean id="airtimeTopUpDelBillrCnfParser" class="com.barclays.ussd.utils.jsonparsers.AirtimeTopupDelBillrCnfParser" />
+	<!--Edit bene		-->
+	<bean id="AirtimeTopUpEditBnfValidateJsonParser"   class="com.barclays.ussd.utils.jsonparsers.AirtimeTopUpEditBnfValidateJsonParser"/>
+	<bean id="airtimeTopUpEditBillrCnfParser" class="com.barclays.ussd.utils.jsonparsers.AirtimeTopupEditBillrCnfParser" />
+
+	<!-- CR82 -->
+	<bean id="AirtimeTopupNewBeneficiarySrcMnosJsonParser"   class="com.barclays.ussd.bmg.airtime.request.AirtimeTopupNewBeneficiarySrcMnosJsonParser"/>
+	<bean id="AirtimeEnterMobileNewBeneficiaryResponseParser" class="com.barclays.ussd.utils.jsonparsers.AirtimeEnterMobileNewBeneficiaryResponseParser" />
+	<!-- CR82 End-->
+	<!-- CR82 Airtime End-->
+	<!-- CR82 Mwallet-->
+      <bean id="mobileWalletTopUpPaymentTypeJsonParser"   class="com.barclays.ussd.utils.jsonparsers.MobileWalletTopUpPaymentTypeJsonParser"/>
+      <bean id="mobileWalletTopUpSavBnfNickNameJsonParser"   class="com.barclays.ussd.utils.jsonparsers.MobileWalletTopUpSavBnfNickNameJsonParser"/>
+      <bean id="mobileWalletTopUpSavBnfValidateJsonParser"   class="com.barclays.ussd.utils.jsonparsers.MobileWalletTopUpSavBnfValidateJsonParser"/>
+      <bean id="mobileWalletTopUpSavBnfConfirmJsonParser"   class="com.barclays.ussd.utils.jsonparsers.MobileWalletTopUpSavBnfConfirmJsonParser"/>
+
+     <!--Delete bene		-->
+	<bean id="mobileWalletTopUpDelBillrValParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletTopUpDelBillrValParser" />
+	<bean id="mobileWalletTopUpDelBillrCnfParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletTopUpDelBillrCnfParser" />
+	<!--saved bene		-->
+	<bean id="mobileWalletTopUpGetBillerListJsonParser"   class="com.barclays.ussd.utils.jsonparsers.MobileWalletTopUpGetBillerListJsonParser"/>
+    <bean id="mobileWalletTopUpBillerListJsonParser"   class="com.barclays.ussd.utils.jsonparsers.MobileWalletTopUpBillerListJsonParser"/>
+    <bean id="mobileWalletTopUpBenfDtlsJsonParser"   class="com.barclays.ussd.utils.jsonparsers.MobileWalletTopUpBenfDtlsJsonParser"/>
+	<!-- CR82 -->
+	<bean id="MobileWalletNewBeneficiarySrcMnosJsonParser"   class="com.barclays.ussd.utils.jsonparsers.MobileWalletNewBeneficiarySrcMnosJsonParser"/>
+	<bean id="MobileWalletEnterMobileNewBeneficiaryResponseParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletEnterMobileNewBeneficiaryResponseParser" />
+	<!-- CR82 End-->
+    <!--Edit bene		-->
+	<bean id="mobileWalletTopUpEditBnfValidateJsonParser"   class="com.barclays.ussd.utils.jsonparsers.MobileWalletTopUpEditBnfValidateJsonParser"/>
+	<bean id="mobileWalletTopUpEditBillrCnfParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletTopUpEditBillrCnfParser" />
+
+    <!-- CR82 Mwallet End-->
+
+    <!-- CR85 Start -->
+    <!-- Register Beneficiary -->
+    <bean id="registerBenfExtGetAddressJsonParser" class="com.barclays.ussd.utils.jsonparsers.RegisterBenfExtGetAddressJsonParser" />
+    <bean id="registerBenfExtGetCityJsonParser" class="com.barclays.ussd.utils.jsonparsers.RegisterBenfExtGetCityJsonParser" />
+
+    <!-- Fund transfer Other Bank Account -->
+	<bean id="keOthBnkRetrieveBenfListJsonParser" class="com.barclays.ussd.utils.jsonparsers.KEOthBnkRetrieveBenfListJsonParser" />
+	<bean id="keftPayeeListJsonParser"	class="com.barclays.ussd.utils.jsonparsers.KEFTPayeeListJsonParser" />
+	<bean id="kebftEnterAmtJsonParser" class="com.barclays.ussd.utils.jsonparsers.KEBFTEnterAmtJsonParser" />
+	<bean id="keebftSelFrmAcntJsonParser" class="com.barclays.ussd.utils.jsonparsers.KEEBFTSelFrmAcntJsonParser" />
+	<bean id="keothBnkReasonOfPaymentJsonParser" class="com.barclays.ussd.utils.jsonparsers.KEOTHBnkReasonOfPaymentJsonParser" />
+	<bean id="keebftPayeeInfoJsonParser" class="com.barclays.ussd.utils.jsonparsers.KEEBFTPayeeInfoJsonParser" />
+	<bean id="keebftFormValJsonParser" class="com.barclays.ussd.utils.jsonparsers.KEEBFTFormValJsonParser" />
+	<bean id="keebftExecuteJsonParser" class="com.barclays.ussd.utils.jsonparsers.KEEBFTExecuteJsonParser" />
+
+	<!-- Edit Beneficiary -->
+	<bean id="editBenfExtGetBeneficiaryNameJsonParser" class="com.barclays.ussd.utils.jsonparsers.EditBenfExtGetBeneficiaryNameJsonParser" />
+	<bean id="editBenfExtGetBankCodeJsonParser" class="com.barclays.ussd.utils.jsonparsers.EditBenfExtGetBankCodeJsonParser" />
+	<bean id="editBenfExtSelectBankCodeJsonParser" class="com.barclays.ussd.utils.jsonparsers.EditBenfExtSelectBankCodeJsonParser" />
+	<bean id="editBenfExtGetBranchCodeJsonParser" class="com.barclays.ussd.utils.jsonparsers.EditBenfExtGetBranchCodeJsonParser" />
+	<bean id="editBenfExtEnterBranchCodeJsonParser" class="com.barclays.ussd.utils.jsonparsers.EditBenfExtEnterBranchCodeJsonParser" />
+	<bean id="editBenfExtGetAccNoJsonParser" class="com.barclays.ussd.utils.jsonparsers.EditBenfExtGetAccNoJsonParser" />
+	<bean id="editBenfExtGetAddressJsonParser" class="com.barclays.ussd.utils.jsonparsers.EditBenfExtGetAddressJsonParser" />
+	<bean id="editBenfExtGetBeneficiaryNickNameJsonParser" class="com.barclays.ussd.utils.jsonparsers.EditBenfExtGetBenfNickNameJsonParser" />
+	<bean id="editBenfExternalValidateJsonParser" class="com.barclays.ussd.utils.jsonparsers.EditBenfExternalValidateJsonParser" />
+	<bean id="editBenfExternalConfirmJsonParser" class="com.barclays.ussd.utils.jsonparsers.EditBenfExtConfirmJsonParser" />
+	<!-- CR85 End -->
+
+	<!-- Delete Beneficiary -->
+	<bean id="oBADBRGetBenfListJsonParser" class="com.barclays.ussd.utils.jsonparsers.OBADBRGetBenfListJsonParser" />
+	<bean id="obadbRPayeeLstJsonParser" class="com.barclays.ussd.utils.jsonparsers.OBADBRPayeeLstJsonParser" />
+	<bean id="obadbRValidateJsonParser" class="com.barclays.ussd.utils.jsonparsers.OBADBRValidateJsonParser" />
+	<bean id="obadbRConfirmJsonParser" class="com.barclays.ussd.utils.jsonparsers.OBADBRConfirmJsonParser" />
+
+	<!-- MZ DFT Start -->
+	<bean id="registerBeneficiaryGetNIBNoJsonParser" class="com.barclays.ussd.utils.jsonparsers.RegisterBeneficiaryGetNIBNoJsonParser" />
+
+	<!-- MZ DFT End -->
+	<!-- GHIPSS -->
+	<bean id="ghipsOneOffBnkSearchJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsOneOffBnkSearchJsonParser"/>
+	<bean id="ghipsOneOffBnkListJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsOneOffBnkListJsonParser" />
+	<bean id="ghipsOneOffBnkAcnoJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsOneOffBnkAcnoJsonParser" />
+	<bean id="ghipsOneOffTransferAmtJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsOneOffTransferAmtJsonParser" />
+	<bean id="ghipsOneOffFromAccListJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsOneOffFromAccListJsonParser" />
+	<bean id="ghipsOneOffPaymentReasonListJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsOneOffPaymentReasonListJsonParser" />
+	<bean id="ghipsOneOffPayeeInfoJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsOneOffPayeeInfoJsonParser" />
+	<bean id="ghipsOneOffFundTransferConfirmJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsOneOffFundTransferConfirmJsonParser" />
+	<bean id="ghipsOneOffFundTransferSubmitJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsOneOffFundTransferSubmitJsonParser" />
+	<bean id="ghipsOneOffBenefNickNameJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsOneOffBenefNickNameJsonParser"/>
+	<bean id="ghipsOneOffBenefConfirmJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsOneOffBenefConfirmJsonParser"/>
+	<bean id="ghipsOneOffBenefConfirmSuccessJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsOneOffBenefConfirmSuccessJsonParser"/>
+
+	<bean id="ghipsSaveBenfListJsonParser"  class="com.barclays.ussd.utils.jsonparsers.GhipsSaveBenfListJsonParser"/>
+	<bean id="ghipsSaveBenefOtherBankPayeeJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsSaveBenefOtherBankPayeeJsonParser" />
+	<bean id="ghipsSaveBenefOtherBankBenefInfoJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsSaveBenefOtherBankBenefInfoJsonParser" />
+	<bean id="ghipsSaveBenefEnterAmtJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsSaveBenefEnterAmtJsonParser" />
+   	<bean id="ghipsSaveBenefTransferAmtJsonParser"  class="com.barclays.ussd.utils.jsonparsers.GhipsSaveFromAccListJsonParser"/>
+	<bean id="ghipsSaveBenefReasonOfPaymentJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsSaveBenefReasonOfPaymentJsonParser" />
+	<bean id="ghipsSaveBenefPayeeInfoJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsSaveBenefPayeeInfoJsonParser" />
+	<bean id="ghipsSaveBenefConfirmJsonParser"  class="com.barclays.ussd.utils.jsonparsers.GhipsSaveBenefConfirmJsonParser"/>
+	<bean id="ghipsSaveBenefSubmitJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsSaveBenefSubmitJsonParser" />
+
+	<bean id="ghipsRegisterBenefSearchBankJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsRegisterBenfExtSearchBankJsonParser" />
+    <bean id="ghipsRegisterBenefSelectBankNameJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsRegisterBenfExtBankNameJsonParser" />
+	<bean id="ghipsRegisterBenefBnkAcnoJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsRegisterBenefBnkAcnoJsonParser" />
+	<bean id="ghipsRegisterBenefNickNameJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsRegisterBenefNickNameJsonParser" />
+	<bean id="ghipsRegisterBenefConfirmJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsRegisterBenefConfirmJsonParser" />
+	<bean id="ghipsRegisterBenefAddJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsRegisterBenefAddJsonParser" />
+
+	<bean id="ghipsDelBenfListJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsDelBenfListJsonParser" />
+	<bean id="ghipsDelBenfPayeeJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsDelBenfPayeeJsonParser" />
+	<bean id="ghipsDelBenfConfirmJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsDelBenfConfirmJsonParser" />
+	<bean id="ghipsDelBenfSubmitJsonParser" class="com.barclays.ussd.utils.jsonparsers.GhipsDelBenfSubmitJsonParser" />
+	<!--FreeDialUSSD STARTS  -->
+	<bean id="freeDialSrcMnoListJsonParser" class="com.barclays.ussd.bmg.freedialussd.FreeDialSrcMnoListJsonParser" />
+	<bean id="freeDialMnoListJsonParser" class="com.barclays.ussd.bmg.freedialussd.FreeDialMnoListJsonParser" />
+	<bean id="freeDialAmountJsonParser" class="com.barclays.ussd.bmg.freedialussd.FreeDialAmountJsonParser" />
+	<bean id="freeDialAccListJsonParser" class="com.barclays.ussd.bmg.freedialussd.FreeDialAccListJsonParser" />
+	<bean id="freeDialConfirmValidateJsonParser" class="com.barclays.ussd.bmg.freedialussd.FreeDialConfirmValidateJsonParser" />
+	<bean id="freeDialSubmitJsonParser" class="com.barclays.ussd.bmg.freedialussd.FreeDialSubmitJsonParser" />
+	<!--FreeDialUSSD ENDS  -->
+
+</beans>

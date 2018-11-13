@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cr="http://www.component.custom.com/bmb/controllerresolver"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+	http://www.component.custom.com/bmb/controllerresolver http://www.component.custom.com/bmb/controllerresolver/controller-resolver.xsd">
+
+	<cr:request-to-controller-mapper id="requestMapper">
+		<cr:resolver business-id="GHBRB" resolver-ref="GHBRBGeoResolver" />
+		<cr:resolver business-id="BWBRB" resolver-ref="BWBRBGeoResolver" />
+		<cr:resolver business-id="MUBRB" resolver-ref="MUBRBGeoResolver" />
+		<cr:resolver business-id="MUBOB" resolver-ref="MUBOBGeoResolver" />
+		<cr:resolver business-id="ZMBRB" resolver-ref="ZMBRBGeoResolver" />
+		<cr:resolver business-id="ZWBRB" resolver-ref="ZWBRBGeoResolver" />
+		<cr:resolver business-id="TZBRB" resolver-ref="TZBRBGeoResolver" />
+		<cr:resolver business-id="EGBRB" resolver-ref="EGBRBGeoResolver" />
+		<cr:resolver business-id="SCBRB" resolver-ref="SCBRBGeoResolver" />
+		<cr:resolver business-id="KEBRB" resolver-ref="KEBRBGeoResolver" />
+		<cr:resolver business-id="UGBRB" resolver-ref="UGBRBGeoResolver" />
+		<cr:resolver business-id="AEBRB" resolver-ref="AEBRBGeoResolver" />
+	</cr:request-to-controller-mapper>
+
+	<cr:controller-ref-resolver id="AEBRBGeoResolver">
+		<cr:controller op-code="OP0800" svc-ver="1.0"
+			ref="AEBRBgeoCodingControllerVer1" default="true" />
+		<cr:controller op-code="OP0800" svc-ver="2.0"
+			ref="AEBRBgeoCodingController" default="false" />
+		<cr:controller op-code="OP0800" ref="AEBRBgeoCodingController" />
+	</cr:controller-ref-resolver>
+
+	<cr:controller-ref-resolver id="GHBRBGeoResolver">
+		<cr:controller op-code="OP0800" svc-ver="1.0"
+			ref="GHBRBgeoCodingControllerVer1" default="true" />
+		<cr:controller op-code="OP0800" svc-ver="2.0"
+			ref="GHBRBgeoCodingController" default="false" />
+		<cr:controller op-code="OP0800" ref="GHBRBgeoCodingController" />
+	</cr:controller-ref-resolver>
+
+	<cr:controller-ref-resolver id="BWBRBGeoResolver">
+		<cr:controller op-code="OP0800" svc-ver="1.0"
+			ref="BWBRBgeoCodingControllerVer1" default="true" />
+		<cr:controller op-code="OP0800" svc-ver="2.0"
+			ref="BWBRBgeoCodingController" default="false" />
+		<cr:controller op-code="OP0800" ref="BWBRBgeoCodingController" />
+	</cr:controller-ref-resolver>
+
+	<cr:controller-ref-resolver id="MUBRBGeoResolver">
+		<cr:controller op-code="OP0800" svc-ver="1.0"
+			ref="MUBRBgeoCodingControllerVer1" default="true" />
+		<cr:controller op-code="OP0800" svc-ver="2.0"
+			ref="MUBRBgeoCodingController" default="false" />
+		<cr:controller op-code="OP0800" ref="MUBRBgeoCodingController" />
+	</cr:controller-ref-resolver>
+
+	<cr:controller-ref-resolver id="MUBOBGeoResolver">
+		<cr:controller op-code="OP0800" svc-ver="1.0"
+			ref="MUBOBgeoCodingControllerVer1" default="true" />
+		<cr:controller op-code="OP0800" svc-ver="2.0"
+			ref="MUBOBgeoCodingController" default="false" />
+		<cr:controller op-code="OP0800" ref="MUBOBgeoCodingController" />
+	</cr:controller-ref-resolver>
+
+
+	<cr:controller-ref-resolver id="ZWBRBGeoResolver">
+		<cr:controller op-code="OP0800" svc-ver="1.0"
+			ref="ZWBRBgeoCodingControllerVer1" default="true" />
+		<cr:controller op-code="OP0800" svc-ver="2.0"
+			ref="ZWBRBgeoCodingController" default="false" />
+		<cr:controller op-code="OP0800" ref="ZWBRBgeoCodingController" />
+	</cr:controller-ref-resolver>
+
+	<cr:controller-ref-resolver id="ZMBRBGeoResolver">
+		<cr:controller op-code="OP0800" svc-ver="1.0"
+			ref="ZMBRBgeoCodingControllerVer1" default="true" />
+		<cr:controller op-code="OP0800" svc-ver="2.0"
+			ref="ZMBRBgeoCodingController" default="false" />
+		<cr:controller op-code="OP0800" ref="ZMBRBgeoCodingController" />
+	</cr:controller-ref-resolver>
+
+	<cr:controller-ref-resolver id="TZBRBGeoResolver">
+		<cr:controller op-code="OP0800" svc-ver="1.0"
+			ref="TZBRBgeoCodingControllerVer1" default="true" />
+		<cr:controller op-code="OP0800" svc-ver="2.0"
+			ref="TZBRBgeoCodingController" default="false" />
+		<cr:controller op-code="OP0800" ref="TZBRBgeoCodingController" />
+	</cr:controller-ref-resolver>
+
+	<cr:controller-ref-resolver id="EGBRBGeoResolver">
+		<cr:controller op-code="OP0800" svc-ver="1.0"
+			ref="EGBRBgeoCodingControllerVer1" default="true" />
+		<cr:controller op-code="OP0800" svc-ver="2.0"
+			ref="EGBRBgeoCodingController" default="false" />
+		<cr:controller op-code="OP0800" ref="EGBRBgeoCodingController" />
+	</cr:controller-ref-resolver>
+
+	<cr:controller-ref-resolver id="SCBRBGeoResolver">
+		<cr:controller op-code="OP0800" svc-ver="1.0"
+			ref="SCBRBgeoCodingControllerVer1" default="true" />
+		<cr:controller op-code="OP0800" svc-ver="2.0"
+			ref="SCBRBgeoCodingController" default="false" />
+		<cr:controller op-code="OP0800" ref="SCBRBgeoCodingController" />
+	</cr:controller-ref-resolver>
+
+	<cr:controller-ref-resolver id="KEBRBGeoResolver">
+		<cr:controller op-code="OP0800" svc-ver="1.0"
+			ref="KEBRBgeoCodingControllerVer1" default="true" />
+		<cr:controller op-code="OP0800" svc-ver="2.0"
+			ref="KEBRBgeoCodingController" default="false" />
+		<cr:controller op-code="OP0800" ref="KEBRBgeoCodingController" />
+	</cr:controller-ref-resolver>
+
+	<cr:controller-ref-resolver id="UGBRBGeoResolver">
+		<cr:controller op-code="OP0800" svc-ver="1.0"
+			ref="UGBRBgeoCodingControllerVer1" default="true" />
+		<cr:controller op-code="OP0800" svc-ver="2.0"
+			ref="UGBRBgeoCodingController" default="false" />
+		<cr:controller op-code="OP0800" ref="UGBRBgeoCodingController" />
+	</cr:controller-ref-resolver>
+
+</beans>

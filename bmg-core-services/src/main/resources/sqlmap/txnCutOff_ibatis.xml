@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="MCFE">
+	<typeAlias alias="transactionCutOffTimeDTO"
+		type="com.barclays.bmg.dto.TransactionCutOffTimeDTO" />
+
+	<resultMap id="TransactionCutOffTime" class="transactionCutOffTimeDTO">
+		<result property="businessId" column="BUSINESS_ID" />
+		<result property="systemId" column="SYSTEM_ID" />
+		<result property="activityId" column="ACTIVITY_ID" />
+		<result property="cutOffTime" column="CUT_OFF_TIME" />
+
+	</resultMap>
+
+	<select id="getTransactionCutOffTime" resultMap="TransactionCutOffTime">
+		SELECT * from
+		S_TXN_CUT_OFF_MST t
+		WHERE t.BUSINESS_ID = #businessId#
+			and t.system_id= #systemId#
+			and t.activity_id = #activityId#
+	</select>
+
+</sqlMap>

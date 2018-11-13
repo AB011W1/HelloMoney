@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="47" version="2.0">
+<workbenchAdvisor/>
+<window height="728" maximized="true" width="1024" x="25" y="0">
+<fastViewData fastViewLocation="1024">
+<orientation position="512" view="org.maven.ide.eclipse.views.MavenIndexesView"/>
+</fastViewData>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout locked="0">
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="122" y="22"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="com.ibm.rational.clearcase.ActionSetBasic" itemType="typeToolBarContribution" x="222" y="22"/>
+<coolItem id="com_sysdeo_eclipse_tomcat_actionSet" itemType="typeToolBarContribution" x="84" y="22"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="129" y="22"/>
+<coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="122" y="22"/>
+<coolItem id="org.eclipse.jst.j2ee.J2eeMainActionSet" itemType="typeToolBarContribution" x="91" y="22"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="84" y="22"/>
+<coolItem id="org.eclipse.wst.server.ui.internal.webbrowser.actionSet" itemType="typeToolBarContribution" x="38" y="22"/>
+<coolItem id="org.eclipse.wst.ws.explorer.explorer" itemType="typeToolBarContribution" x="38" y="22"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="199" y="22"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page aggregateWorkingSetId="Aggregate for window 1524635640210" focus="true" label="Workspace - Java">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+<part id="9"/>
+<part id="10"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor id="org.eclipse.jdt.ui.PropertiesFileEditor" name="ussd_messages_en_KE.properties" partName="ussd_messages_en_KE.properties" path="C:/softtag/NFT_Prod/ussd-config/common/applicationResources/ussd_messages_en_KE.properties" title="ussd_messages_en_KE.properties" tooltip="ussd-config/common/applicationResources/ussd_messages_en_KE.properties" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ussd-config/common/applicationResources/ussd_messages_en_KE.properties"/>
+<editorState selectionLength="0" selectionOffset="3650"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.PropertiesFileEditor" name="ussd_messages_en_TZ.properties" partName="ussd_messages_en_TZ.properties" path="C:/softtag/NFT_Prod/ussd-config/common/applicationResources/ussd_messages_en_TZ.properties" title="ussd_messages_en_TZ.properties" tooltip="ussd-config/common/applicationResources/ussd_messages_en_TZ.properties" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ussd-config/common/applicationResources/ussd_messages_en_TZ.properties"/>
+<editorState selectionLength="0" selectionOffset="50008"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.PropertiesFileEditor" name="ussd_messages_en_MZ.properties" partName="ussd_messages_en_MZ.properties" path="C:/softtag/NFT_Prod/ussd-config/common/applicationResources/ussd_messages_en_MZ.properties" title="ussd_messages_en_MZ.properties" tooltip="ussd-config/common/applicationResources/ussd_messages_en_MZ.properties" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ussd-config/common/applicationResources/ussd_messages_en_MZ.properties"/>
+<editorState selectionLength="25" selectionOffset="54076"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.PropertiesFileEditor" name="ussd_messages_pr_MZ.properties" partName="ussd_messages_pr_MZ.properties" path="C:/softtag/NFT_Prod/ussd-config/common/applicationResources/ussd_messages_pr_MZ.properties" title="ussd_messages_pr_MZ.properties" tooltip="ussd-config/common/applicationResources/ussd_messages_pr_MZ.properties" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ussd-config/common/applicationResources/ussd_messages_pr_MZ.properties"/>
+<editorState selectionLength="0" selectionOffset="56118"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.PropertiesFileEditor" name="ussd_messages_sw_TZ.properties" partName="ussd_messages_sw_TZ.properties" path="C:/softtag/NFT_Prod/ussd-config/common/applicationResources/ussd_messages_sw_TZ.properties" title="ussd_messages_sw_TZ.properties" tooltip="ussd-config/common/applicationResources/ussd_messages_sw_TZ.properties" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ussd-config/common/applicationResources/ussd_messages_sw_TZ.properties"/>
+<editorState selectionLength="13" selectionOffset="15465"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DomesticFundTransferPayloadAdapter.java" partName="DomesticFundTransferPayloadAdapter.java" path="C:/softtag/NFT_Prod/bmg-ssa-payments-bem-5.1.0/src/main/java/com/barclays/bmg/dao/adapter/fundtransfer/domestic/ssa/DomesticFundTransferPayloadAdapter.java" title="DomesticFundTransferPayloadAdapter.java" tooltip="bmg-ssa-payments-bem-5.1.0/src/main/java/com/barclays/bmg/dao/adapter/fundtransfer/domestic/ssa/DomesticFundTransferPayloadAdapter.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/bmg-ssa-payments-bem-5.1.0/src/main/java/com/barclays/bmg/dao/adapter/fundtransfer/domestic/ssa/DomesticFundTransferPayloadAdapter.java"/>
+<editorState selectionLength="0" selectionOffset="7690"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BillPaySubmitJsonParser.java" partName="BillPaySubmitJsonParser.java" path="C:/softtag/NFT_Prod/ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/BillPaySubmitJsonParser.java" title="BillPaySubmitJsonParser.java" tooltip="ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/BillPaySubmitJsonParser.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/BillPaySubmitJsonParser.java"/>
+<editorState selectionLength="0" selectionOffset="11395"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.PropertiesFileEditor" name="ussd_messages_sw_GH.properties" partName="ussd_messages_sw_GH.properties" path="C:/softtag/NFT_Prod/ussd-config/common/applicationResources/ussd_messages_sw_GH.properties" title="ussd_messages_sw_GH.properties" tooltip="ussd-config/common/applicationResources/ussd_messages_sw_GH.properties" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ussd-config/common/applicationResources/ussd_messages_sw_GH.properties"/>
+<editorState selectionLength="13" selectionOffset="16979"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InternalNonRegFundTransferValidateJsonParser.java" partName="InternalNonRegFundTransferValidateJsonParser.java" path="C:/softtag/NFT_Prod/ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/InternalNonRegFundTransferValidateJsonParser.java" title="InternalNonRegFundTransferValidateJsonParser.java" tooltip="ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/InternalNonRegFundTransferValidateJsonParser.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/InternalNonRegFundTransferValidateJsonParser.java"/>
+<editorState selectionLength="0" selectionOffset="7639"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OBAFTValidateJsonParser.java" partName="OBAFTValidateJsonParser.java" path="C:/softtag/NFT_Prod/ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/OBAFTValidateJsonParser.java" title="OBAFTValidateJsonParser.java" tooltip="ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/OBAFTValidateJsonParser.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/OBAFTValidateJsonParser.java"/>
+<editorState selectionLength="0" selectionOffset="7218"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OwnFundTransferValidateJsonParser.java" partName="OwnFundTransferValidateJsonParser.java" path="C:/softtag/NFT_Prod/ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/OwnFundTransferValidateJsonParser.java" title="OwnFundTransferValidateJsonParser.java" tooltip="ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/OwnFundTransferValidateJsonParser.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/OwnFundTransferValidateJsonParser.java"/>
+<editorState selectionLength="0" selectionOffset="5901"/>
+</editor>
+</editors>
+<views>
+<view id="org.eclipse.wst.common.snippets.internal.ui.SnippetsView" partName="Snippets"/>
+<view id="org.eclipse.ui.views.PropertySheet" partName="Properties"/>
+<view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
+<view id="org.eclipse.jdt.ui.TypeHierarchy" partName="Hierarchy"/>
+<view id="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" partName="Data Source Explorer"/>
+<view id="org.springframework.ide.eclipse.ui.navigator.springExplorer" partName="Spring Explorer">
+<viewState CommonNavigator.LINKING_ENABLED="0" org.springframework.ide.eclipse.ui.navigator.workingsets.showTopLevelWorkingSets="0"/>
+</view>
+<view id="org.eclipse.team.svn.ui.repository.browser.RepositoryBrowser" partName="SVN Repository Browser ">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.TaskList" partName="Tasks"/>
+<view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
+<viewState group_libraries="1" isWindowWorkingSet="false" layout="2" linkWithEditor="0" rootMode="1" workingSetName="">
+<customFilters userDefinedPatternsEnabled="false">
+<xmlDefinedFilters>
+<child filterId="org.eclipse.ajdt.ui.editor.outline.PointcutFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.CuAndClassFileFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*" isEnabled="true"/>
+<child filterId="org.eclipse.ajdt.ui.editor.outline.AdviceFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.PackageDeclarationFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter" isEnabled="true"/>
+<child filterId="org.eclipse.pde.ui.BinaryProjectFilter1" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer_patternFilterId_RemoteSystemsTempFiles" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonPublicFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.HideInnerClassFilesFilter" isEnabled="true"/>
+<child filterId="org.eclipse.ajdt.javamodel.CompilationUnitFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter" isEnabled="true"/>
+<child filterId="_patternFilterId_*.ajsym" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer_patternFilterId_RemoteSystemsConnections" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaElementFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonJavaProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.NonSharedProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.internal.ui.PackageExplorer.EmptyPackageFilter" isEnabled="false"/>
+<child filterId="org.eclipse.ajdt.ui.editor.outline.IntroductionFilter" isEnabled="false"/>
+<child filterId="org.eclipse.pde.ui.ExternalPluginLibrariesFilter1" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.EmptyLibraryContainerFilter" isEnabled="true"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.FieldsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.LibraryFilter" isEnabled="false"/>
+<child filterId="org.maven.ide.eclipse.MavenModuleFilter" isEnabled="false"/>
+<child filterId="org.eclipse.mylyn.java.ui.MembersFilter" isEnabled="false"/>
+<child filterId="org.eclipse.ajdt.ui.editor.outline.DeclarationFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.ContainedLibraryFilter" isEnabled="false"/>
+<child filterId="org.eclipse.jdt.ui.PackageExplorer.StaticsFilter" isEnabled="false"/>
+</xmlDefinedFilters>
+</customFilters>
+</viewState>
+</view>
+<view id="org.eclipse.search.ui.views.SearchView" partName="Search">
+<viewState isPinned="false">
+<view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
+<view IMemento.internal.id="org.eclipse.search.text.FileSearchResultPage" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2" org.eclipse.search.resultpage.limit="1000" org.eclipse.search.resultpage.sorting="2"/>
+</viewState>
+</view>
+<view id="org.maven.ide.eclipse.views.MavenIndexesView" partName="Maven Indexes"/>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<viewState/>
+</view>
+<view id="org.eclipse.jdt.ui.SourceView" partName="Declaration"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
+<viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
+</view>
+<view id="org.eclipse.team.svn.ui.repository.RepositoriesView" partName="SVN Repositories">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.ProblemView" partName="Problems">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<columnWidths org.eclipse.ui.ide.locationField="64" org.eclipse.ui.ide.markerType="94" org.eclipse.ui.ide.pathField="124" org.eclipse.ui.ide.resourceField="94" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
+<view id="org.eclipse.team.ui.GenericHistoryView" partName="History"/>
+<view id="org.eclipse.team.svn.ui.properties.PropertiesView" partName="SVN Properties"/>
+<view id="org.eclipse.mylyn.tasks.ui.views.tasks" partName="Task List">
+<viewState linkWithEditor="true" presentation="org.eclipse.mylyn.tasks.ui.categorized">
+<org.eclipse.mylyn.tasklist.ui.views.tasklist.sortIndex>
+<sorter sortDirection="1" sortIndex="0"/>
+<sorter2 sortDirection="1" sortIndex="2"/>
+</org.eclipse.mylyn.tasklist.ui.views.tasklist.sortIndex>
+</viewState>
+</view>
+<view id="org.eclipse.wst.server.ui.ServersView" partName="Servers"/>
+</views>
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.jst.j2ee.internal.perspective.J2EEPerspective" id="org.eclipse.jst.j2ee.J2EEPerspective" label="Java EE"/>
+<alwaysOnActionSet id="com.ibm.rational.clearcase.ActionSetBasic"/>
+<alwaysOnActionSet id="com_sysdeo_eclipse_tomcat_actionSet"/>
+<alwaysOnActionSet id="AnyEdit.actionSet"/>
+<alwaysOnActionSet id="net.sourceforge.eclipseccase.ui.actionset"/>
+<alwaysOnActionSet id="ajcrosscutting"/>
+<alwaysOnActionSet id="org.eclipse.contribution.xref.ui.XRefActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jst.servlet.ui.internal.actions.ConvertToWebModuleTypeActionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.doc.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.tasks.ui.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.rse.core.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.team.svn.ui.menu.help"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.maven.ide.eclipse.ui.navigation"/>
+<alwaysOnActionSet id="org.maven.ide.eclipse.actionSet"/>
+<alwaysOnActionSet id="org.springframework.ide.eclipse.aop.ui.ActionSet"/>
+<alwaysOnActionSet id="org.springframework.ide.eclipse.aop.ui.matcher.actionSet"/>
+<alwaysOnActionSet id="org.springframework.ide.eclipse.beans.ui.actionSet"/>
+<alwaysOnActionSet id="org.springframework.ide.eclipse.beans.ui.ActionSet"/>
+<alwaysOnActionSet id="org.springframework.ide.eclipse.beans.search.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.jst.j2ee.J2eeMainActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.debugActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.wst.server.ui.internal.webbrowser.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.wst.ws.explorer.explorer"/>
+<show_view_action id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<show_view_action id="org.eclipse.wst.server.ui.ServersView"/>
+<show_view_action id="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator"/>
+<show_view_action id="org.eclipse.ui.views.BookmarkView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.PropertySheet"/>
+<show_view_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.wst.common.snippets.internal.ui.SnippetsView"/>
+<show_view_action id="org.eclipse.search.ui.views.SearchView"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<new_wizard_action id="org.eclipse.jst.j2ee.ui.project.facet.EarProjectWizard"/>
+<new_wizard_action id="org.eclipse.jst.servlet.ui.project.facet.WebProjectWizard"/>
+<new_wizard_action id="org.eclipse.jst.ejb.ui.project.facet.EjbProjectWizard"/>
+<new_wizard_action id="org.eclipse.jst.j2ee.jca.ui.internal.wizard.ConnectorProjectWizard"/>
+<new_wizard_action id="org.eclipse.jst.j2ee.ui.project.facet.appclient.AppClientProjectWizard"/>
+<new_wizard_action id="org.eclipse.wst.web.ui.internal.wizards.SimpleWebProjectWizard"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.file"/>
+<perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaPerspective"/>
+<perspective_action id="org.eclipse.ui.resourcePerspective"/>
+<perspective_action id="org.eclipse.wst.web.ui.webDevPerspective"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="org.eclipse.ui.views.TaskList"/>
+<view id="org.eclipse.ui.views.PropertySheet"/>
+<view id="org.eclipse.wst.server.ui.ServersView"/>
+<view id="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator"/>
+<view id="org.eclipse.wst.common.snippets.internal.ui.SnippetsView"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="topLeft">
+<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.PackagesView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@317b317b" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="topLeft">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.25" ratioLeft="250" ratioRight="750" relationship="2" relative="topLeft"/>
+<info folder="true" part="bottomRight" ratio="0.6985173" ratioLeft="424" ratioRight="183" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.views.ProblemView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
+<page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
+<page content="org.eclipse.wst.server.ui.ServersView" label="Servers"/>
+<page content="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" label="Data Source Explorer"/>
+<page content="org.eclipse.wst.common.snippets.internal.ui.SnippetsView" label="Snippets"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="topRight" ratio="0.7" ratioLeft="525" ratioRight="225" relationship="2" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.team.svn.ui.repository.RepositoryPerspective" id="org.eclipse.team.svn.ui.repository.RepositoryPerspective" label="SVN Repository Exploring"/>
+<alwaysOnActionSet id="com.ibm.rational.clearcase.ActionSetBasic"/>
+<alwaysOnActionSet id="com_sysdeo_eclipse_tomcat_actionSet"/>
+<alwaysOnActionSet id="AnyEdit.actionSet"/>
+<alwaysOnActionSet id="net.sourceforge.eclipseccase.ui.actionset"/>
+<alwaysOnActionSet id="ajcrosscutting"/>
+<alwaysOnActionSet id="org.eclipse.contribution.xref.ui.XRefActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jst.servlet.ui.internal.actions.ConvertToWebModuleTypeActionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.doc.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.tasks.ui.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.rse.core.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.team.svn.ui.menu.help"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.maven.ide.eclipse.ui.navigation"/>
+<alwaysOnActionSet id="org.maven.ide.eclipse.actionSet"/>
+<alwaysOnActionSet id="org.springframework.ide.eclipse.aop.ui.ActionSet"/>
+<alwaysOnActionSet id="org.springframework.ide.eclipse.aop.ui.matcher.actionSet"/>
+<alwaysOnActionSet id="org.springframework.ide.eclipse.beans.ui.actionSet"/>
+<alwaysOnActionSet id="org.springframework.ide.eclipse.beans.ui.ActionSet"/>
+<alwaysOnActionSet id="org.springframework.ide.eclipse.beans.search.actionSet"/>
+<show_view_action id="org.eclipse.team.svn.ui.repository.RepositoriesView"/>
+<show_view_action id="org.eclipse.team.svn.ui.repository.browser.RepositoryBrowser"/>
+<show_view_action id="org.eclipse.team.ui.GenericHistoryView"/>
+<show_view_action id="org.eclipse.team.svn.ui.properties.PropertiesView"/>
+<new_wizard_action id="org.eclipse.team.svn.ui.wizard.NewRepositoryLocationWizard"/>
+<perspective_action id="org.eclipse.team.svn.ui.repository.RepositoryPerspective"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaPerspective"/>
+<perspective_action id="org.eclipse.ui.resourcePerspective"/>
+<perspective_action id="org.eclipse.team.ui.TeamSynchronizingPerspective"/>
+<view id="org.eclipse.team.svn.ui.repository.RepositoriesView"/>
+<view id="org.eclipse.team.svn.ui.repository.browser.RepositoryBrowser"/>
+<view id="org.eclipse.team.ui.GenericHistoryView"/>
+<view id="org.eclipse.team.svn.ui.properties.PropertiesView"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="left">
+<folder activePageID="org.eclipse.team.svn.ui.repository.RepositoriesView" appearance="2" expanded="2">
+<page content="org.eclipse.team.svn.ui.repository.RepositoriesView" label="SVN Repositories"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="stickyFolderRight" ratio="0.7496318" ratioLeft="1018" ratioRight="340" relationship="2" relative="left">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.2599411" ratioLeft="353" ratioRight="1005" relationship="2" relative="left"/>
+<info folder="true" part="bottom" ratio="0.65971106" ratioLeft="411" ratioRight="212" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.team.svn.ui.repository.browser.RepositoryBrowser" appearance="2" expanded="2">
+<page content="org.eclipse.team.svn.ui.repository.browser.RepositoryBrowser" label="SVN Repository Browser "/>
+<page content="org.eclipse.team.ui.GenericHistoryView" label="History"/>
+<page content="org.eclipse.team.svn.ui.properties.PropertiesView" label="SVN Properties"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+<perspective editorAreaTrimState="1" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
+<alwaysOnActionSet id="com.ibm.rational.clearcase.ActionSetBasic"/>
+<alwaysOnActionSet id="com_sysdeo_eclipse_tomcat_actionSet"/>
+<alwaysOnActionSet id="AnyEdit.actionSet"/>
+<alwaysOnActionSet id="net.sourceforge.eclipseccase.ui.actionset"/>
+<alwaysOnActionSet id="ajcrosscutting"/>
+<alwaysOnActionSet id="org.eclipse.contribution.xref.ui.XRefActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jst.servlet.ui.internal.actions.ConvertToWebModuleTypeActionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.doc.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.tasks.ui.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.rse.core.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.team.svn.ui.menu.help"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.maven.ide.eclipse.ui.navigation"/>
+<alwaysOnActionSet id="org.maven.ide.eclipse.actionSet"/>
+<alwaysOnActionSet id="org.springframework.ide.eclipse.aop.ui.ActionSet"/>
+<alwaysOnActionSet id="org.springframework.ide.eclipse.aop.ui.matcher.actionSet"/>
+<alwaysOnActionSet id="org.springframework.ide.eclipse.beans.ui.actionSet"/>
+<alwaysOnActionSet id="org.springframework.ide.eclipse.beans.ui.ActionSet"/>
+<alwaysOnActionSet id="org.springframework.ide.eclipse.beans.search.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.ui.JavaElementCreationActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="ajelementCreation"/>
+<alwaysOnActionSet id="ajnavigation"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.debug.ui.JDTDebugActionSet"/>
+<alwaysOnActionSet id="org.eclipse.jdt.junit.JUnitActionSet"/>
+<show_view_action id="org.eclipse.jdt.ui.PackageExplorer"/>
+<show_view_action id="org.eclipse.jdt.ui.TypeHierarchy"/>
+<show_view_action id="org.eclipse.jdt.ui.SourceView"/>
+<show_view_action id="org.eclipse.jdt.ui.JavadocView"/>
+<show_view_action id="org.eclipse.search.ui.views.SearchView"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ui.views.ProgressView"/>
+<show_view_action id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<show_view_action id="org.eclipse.ui.texteditor.TemplatesView"/>
+<show_view_action id="org.eclipse.ant.ui.views.AntView"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<show_view_action id="org.eclipse.mylyn.tasks.ui.views.tasks"/>
+<show_view_action id="org.springframework.ide.eclipse.aop.ui.navigator.aopReferenceModelNavigator"/>
+<show_view_action id="org.springframework.ide.eclipse.aop.ui.tracing.eventTraceView"/>
+<show_view_action id="org.springframework.ide.eclipse.ui.navigator.springExplorer"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewPackageCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewClassCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewInterfaceCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewEnumCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewAnnotationCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewSourceFolderCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewSnippetFileCreationWizard"/>
+<new_wizard_action id="org.eclipse.jdt.ui.wizards.NewJavaWorkingSetWizard"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.file"/>
+<new_wizard_action id="org.eclipse.ui.editors.wizards.UntitledTextFileWizard"/>
+<new_wizard_action id="ajaspectwizard"/>
+<new_wizard_action id="ajprojectwizard"/>
+<new_wizard_action id="org.eclipse.birt.report.designer.ui.ide.wizards.NewReportWizard"/>
+<new_wizard_action id="org.eclipse.birt.report.designer.ui.ide.wizards.NewTemplateWizard"/>
+<new_wizard_action id="org.eclipse.birt.report.designer.ui.wizards.NewLibraryWizard"/>
+<new_wizard_action id="org.eclipse.jdt.junit.wizards.NewTestCaseCreationWizard"/>
+<new_wizard_action id="org.eclipse.mylyn.tasks.ui.wizards.new.repository.task"/>
+<new_wizard_action id="org.maven.ide.eclipse.wizards.Maven2ProjectWizard"/>
+<new_wizard_action id="org.springframework.ide.eclipse.beans.ui.wizards.newBeansConfig"/>
+<new_wizard_action id="org.springframework.ide.eclipse.webflow.ui.wizard.newWebflowConfigWizard"/>
+<perspective_action id="com.ibm.rational.clearcase.ui.perspective.CCPerspective"/>
+<perspective_action id="org.eclipse.ajdt.ui.visualiser.AspectVisualizationPerspective"/>
+<perspective_action id="org.eclipse.birt.report.designer.ui.ReportPerspective"/>
+<perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
+<fastViews>
+<view id="org.maven.ide.eclipse.views.MavenIndexesView" ratio="0.3"/>
+</fastViews>
+<fastViewBars>
+<fastViewBar fastViewLocation="131072" id="org.eclipse.ui.internal.ViewStack@24ae24ae" orientation="256" selectedTabId="org.eclipse.mylyn.tasks.ui.views.tasks" style="1">
+<fastViews>
+<view id="org.eclipse.mylyn.tasks.ui.views.tasks" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+<fastViewBar fastViewLocation="131072" id="org.eclipse.ui.internal.ViewStack@3c1a3c1a" orientation="256" selectedTabId="org.springframework.ide.eclipse.ui.navigator.springExplorer" style="1">
+<fastViews>
+<view id="org.springframework.ide.eclipse.ui.navigator.springExplorer" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+<fastViewBar fastViewLocation="16384" id="left" orientation="512" selectedTabId="org.eclipse.jdt.ui.PackageExplorer" style="1">
+<fastViews>
+<view id="org.eclipse.jdt.ui.PackageExplorer" ratio="0.3"/>
+<view id="org.eclipse.jdt.ui.TypeHierarchy" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+<fastViewBar fastViewLocation="1024" id="bottom" orientation="256" selectedTabId="org.eclipse.search.ui.views.SearchView" style="1">
+<fastViews>
+<view id="org.eclipse.ui.views.ProblemView" ratio="0.3"/>
+<view id="org.eclipse.jdt.ui.JavadocView" ratio="0.3"/>
+<view id="org.eclipse.jdt.ui.SourceView" ratio="0.3"/>
+<view id="org.eclipse.search.ui.views.SearchView" ratio="0.29855537"/>
+</fastViews>
+</fastViewBar>
+<fastViewBar fastViewLocation="131072" id="right" orientation="256" selectedTabId="org.eclipse.ui.views.ContentOutline" style="1">
+<fastViews>
+<view id="org.eclipse.ui.views.ContentOutline" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+</fastViewBars>
+<layout>
+<mainWindow>
+<info folder="true" part="left">
+<folder appearance="2" expanded="0">
+<page content="org.eclipse.jdt.ui.PackageExplorer" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.junit.ResultView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info folder="true" part="stickyFolderRight" ratio="0.7496318" ratioLeft="1018" ratioRight="340" relationship="2" relative="left">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.2496318" ratioLeft="339" ratioRight="1019" relationship="2" relative="left"/>
+<info folder="true" part="bottom" ratio="0.74959874" ratioLeft="467" ratioRight="156" relationship="4" relative="org.eclipse.ui.editorss">
+<folder appearance="2" expanded="0">
+<page content="org.eclipse.ui.views.ProblemView" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.JavadocView" label="LabelNotFound"/>
+<page content="org.eclipse.jdt.ui.SourceView" label="LabelNotFound"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@24ae24ae" ratio="0.74975467" ratioLeft="764" ratioRight="255" relationship="2" relative="org.eclipse.ui.editorss">
+<folder appearance="2" expanded="0">
+<page content="org.eclipse.mylyn.tasks.ui.views.tasks" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info part="org.eclipse.contribution.xref.ui.views.XReferenceView" ratio="0.5995717" ratioLeft="280" ratioRight="187" relationship="4" relative="org.eclipse.ui.internal.ViewStack@24ae24ae"/>
+<info folder="true" part="right" ratio="0.49892932" ratioLeft="233" ratioRight="234" relationship="4" relative="org.eclipse.ui.internal.ViewStack@24ae24ae">
+<folder appearance="2" expanded="0">
+<page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
+<page content="org.eclipse.ui.texteditor.TemplatesView" label="LabelNotFound"/>
+<page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info part="org.springframework.ide.eclipse.aop.ui.navigator.aopReferenceModelNavigator" ratio="0.5" ratioLeft="117" ratioRight="117" relationship="4" relative="right"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@3c1a3c1a" ratio="0.5" ratioLeft="117" ratioRight="117" relationship="4" relative="right">
+<folder appearance="2" expanded="0">
+<page content="org.springframework.ide.eclipse.ui.navigator.springExplorer" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/ussd-config/common/applicationResources/ussd_messages_en_KE.properties"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/ussd-config/common/applicationResources/ussd_messages_en_TZ.properties"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/BillPaySubmitJsonParser.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/InternalNonRegFundTransferValidateJsonParser.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/KitsSendToAccountConfirmDetailsJsonParser.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/OBAFTValidateJsonParser.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/ussd-config/common/applicationResources/ussd_messages_en_MZ.properties"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/ussd-config/common/applicationResources/ussd_messages_pr_MZ.properties"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/ussd-config/common/applicationResources/ussd_messages_sw_TZ.properties"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/bmg-ssa-payments-bem-5.1.0/src/main/java/com/barclays/bmg/dao/adapter/fundtransfer/domestic/ssa/DomesticFundTransferPayloadAdapter.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/ussd-config/common/applicationResources/ussd_messages_sw_GH.properties"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/MobileWalletTopupValidateJsonParser.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/OBAFTValidateJsonParser.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/OneTimeBillPayConfirmJsonParser.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/OneTimeCashSendValidateJsonParser.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/OwnFundTransferValidateJsonParser.java"/>
+</editors>
+<item historyLabel="ussd_messages_en_KE.properties" index="0">
+<position/>
+</item>
+<item historyLabel="ussd_messages_en_TZ.properties" index="1">
+<position/>
+</item>
+<item historyLabel="ussd_messages_en_KE.properties" index="0">
+<position info="not_deleted" x="61290" y="34"/>
+</item>
+<item historyLabel="BillPaySubmitJsonParser.java" index="2">
+<position info="not_deleted" x="2901" y="34"/>
+</item>
+<item historyLabel="InternalNonRegFundTransferValidateJsonParser.java" index="3">
+<position info="not_deleted" x="2150" y="34"/>
+</item>
+<item historyLabel="KitsSendToAccountConfirmDetailsJsonParser.java" index="4">
+<position info="not_deleted" x="9560" y="0"/>
+</item>
+<item historyLabel="KitsSendToAccountConfirmDetailsJsonParser.java" index="4">
+<position info="not_deleted" x="2636" y="34"/>
+</item>
+<item historyLabel="OBAFTValidateJsonParser.java" index="5">
+<position/>
+</item>
+<item historyLabel="OBAFTValidateJsonParser.java" index="5">
+<position/>
+</item>
+<item historyLabel="ussd_messages_en_MZ.properties" index="6">
+<position/>
+</item>
+<item historyLabel="ussd_messages_pr_MZ.properties" index="7">
+<position/>
+</item>
+<item historyLabel="ussd_messages_en_KE.properties" index="0">
+<position info="not_deleted" x="61290" y="34"/>
+</item>
+<item historyLabel="ussd_messages_en_KE.properties" index="0">
+<position info="not_deleted" x="60326" y="0"/>
+</item>
+<item historyLabel="ussd_messages_en_KE.properties" index="0">
+<position info="not_deleted" x="3650" y="0"/>
+</item>
+<item historyLabel="ussd_messages_sw_TZ.properties" index="8">
+<position/>
+</item>
+<item historyLabel="BillPaySubmitJsonParser.java" index="2">
+<position info="not_deleted" x="2775" y="24"/>
+</item>
+<item historyLabel="OBAFTValidateJsonParser.java" index="5">
+<position info="not_deleted" x="8589" y="0"/>
+</item>
+<item historyLabel="ussd_messages_pr_MZ.properties" index="7">
+<position info="not_deleted" x="56118" y="0"/>
+</item>
+<item historyLabel="OBAFTValidateJsonParser.java" index="5">
+<position info="not_deleted" x="8389" y="0"/>
+</item>
+<item historyLabel="DomesticFundTransferPayloadAdapter.java" index="9">
+<position/>
+</item>
+<item historyLabel="BillPaySubmitJsonParser.java" index="2">
+<position info="not_deleted" x="11395" y="0"/>
+</item>
+<item historyLabel="ussd_messages_sw_GH.properties" index="10">
+<position info="not_deleted" x="16979" y="13"/>
+</item>
+<item historyLabel="ussd_messages_sw_TZ.properties" index="8">
+<position info="not_deleted" x="15465" y="13"/>
+</item>
+<item historyLabel="InternalNonRegFundTransferValidateJsonParser.java" index="3">
+<position/>
+</item>
+<item historyLabel="MobileWalletTopupValidateJsonParser.java" index="11">
+<position/>
+</item>
+<item historyLabel="InternalNonRegFundTransferValidateJsonParser.java" index="3">
+<position info="not_deleted" x="7639" y="0"/>
+</item>
+<item historyLabel="OBAFTValidateJsonParser.java" index="12">
+<position/>
+</item>
+<item historyLabel="OneTimeBillPayConfirmJsonParser.java" index="13">
+<position/>
+</item>
+<item historyLabel="OneTimeCashSendValidateJsonParser.java" index="14">
+<position/>
+</item>
+<item historyLabel="OneTimeBillPayConfirmJsonParser.java" index="13">
+<position info="not_deleted" x="8883" y="0"/>
+</item>
+<item historyLabel="OBAFTValidateJsonParser.java" index="12">
+<position info="not_deleted" x="7218" y="0"/>
+</item>
+<item active="true" historyLabel="OwnFundTransferValidateJsonParser.java" index="15">
+<position/>
+</item>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="left"/>
+</trimArea>
+<trimArea IMemento.internal.id="131072">
+<trimItem IMemento.internal.id="org.eclipse.ui.editorss"/>
+<trimItem IMemento.internal.id="right"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@24ae24ae"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@3c1a3c1a"/>
+</trimArea>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="bottom"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OwnFundTransferValidateJsonParser.java" tooltip="ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/OwnFundTransferValidateJsonParser.java">
+<persistable path="/ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/OwnFundTransferValidateJsonParser.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OneTimeCashSendValidateJsonParser.java" tooltip="ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/OneTimeCashSendValidateJsonParser.java">
+<persistable path="/ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/OneTimeCashSendValidateJsonParser.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OneTimeBillPayConfirmJsonParser.java" tooltip="ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/OneTimeBillPayConfirmJsonParser.java">
+<persistable path="/ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/OneTimeBillPayConfirmJsonParser.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="OBAFTValidateJsonParser.java" tooltip="ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/OBAFTValidateJsonParser.java">
+<persistable path="/ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/OBAFTValidateJsonParser.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MobileWalletTopupValidateJsonParser.java" tooltip="ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/MobileWalletTopupValidateJsonParser.java">
+<persistable path="/ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/MobileWalletTopupValidateJsonParser.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InternalNonRegFundTransferValidateJsonParser.java" tooltip="ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/InternalNonRegFundTransferValidateJsonParser.java">
+<persistable path="/ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/InternalNonRegFundTransferValidateJsonParser.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="ussd_messages_sw_GH.properties" tooltip="ussd-config/common/applicationResources/ussd_messages_sw_GH.properties">
+<persistable path="/ussd-config/common/applicationResources/ussd_messages_sw_GH.properties"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BillPaySubmitJsonParser.java" tooltip="ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/BillPaySubmitJsonParser.java">
+<persistable path="/ussd-services/src/main/java/com/barclays/ussd/utils/jsonparsers/BillPaySubmitJsonParser.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="DomesticFundTransferPayloadAdapter.java" tooltip="bmg-ssa-payments-bem-5.1.0/src/main/java/com/barclays/bmg/dao/adapter/fundtransfer/domestic/ssa/DomesticFundTransferPayloadAdapter.java">
+<persistable path="/bmg-ssa-payments-bem-5.1.0/src/main/java/com/barclays/bmg/dao/adapter/fundtransfer/domestic/ssa/DomesticFundTransferPayloadAdapter.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="ussd_messages_sw_TZ.properties" tooltip="ussd-config/common/applicationResources/ussd_messages_sw_TZ.properties">
+<persistable path="/ussd-config/common/applicationResources/ussd_messages_sw_TZ.properties"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="ussd_messages_pr_MZ.properties" tooltip="ussd-config/common/applicationResources/ussd_messages_pr_MZ.properties">
+<persistable path="/ussd-config/common/applicationResources/ussd_messages_pr_MZ.properties"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="ussd_messages_en_MZ.properties" tooltip="ussd-config/common/applicationResources/ussd_messages_en_MZ.properties">
+<persistable path="/ussd-config/common/applicationResources/ussd_messages_en_MZ.properties"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="ussd_messages_en_TZ.properties" tooltip="ussd-config/common/applicationResources/ussd_messages_en_TZ.properties">
+<persistable path="/ussd-config/common/applicationResources/ussd_messages_en_TZ.properties"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="ussd_messages_en_KE.properties" tooltip="ussd-config/common/applicationResources/ussd_messages_en_KE.properties">
+<persistable path="/ussd-config/common/applicationResources/ussd_messages_en_KE.properties"/>
+</file>
+</mruList>
+</workbench>

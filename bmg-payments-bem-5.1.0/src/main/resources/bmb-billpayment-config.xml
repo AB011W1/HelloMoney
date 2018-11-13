@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:util="http://www.springframework.org/schema/util"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+<!-- Bill Payment and MTP controller Starts here -->
+	<bean id="retrievePayeeListController"
+		class="com.barclays.bmg.mvc.controller.billpayment.PayeeListController" parent="bmbAbstractCommandController">
+		<property name="retrievePayeeListOperation" ref="retrieveBPPayeeListOperation" />
+		<property name="getOwnCreditCardAccountsOperation" ref="getOwnCreditCardAccountsOperation" />
+		<property name="commandName" value="payeeListCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.PayeeListCommand" />
+		<property name="validator" ref="payeeListCommandValidator" />
+		<property name="bmbJSONBuilder" ref="retreivePayeeListJSONBldr" />
+	</bean>
+
+	<bean id="retrievePayeeInfoController"
+		class="com.barclays.bmg.mvc.controller.billpayment.RetrieveBPPayeeInformationController" parent="bmbAbstractCommandController">
+		<property name="retrievePayeeInfoOperation" ref="retrievePayeeInfoOperation" />
+		<property name="retrieveAccountListOperation" ref="retrieveAccountListOperation" />
+		<property name="mergeBillerInfoOperation" ref="mergeBillerInfoOperation" />
+		<property name="transactionLimitOperation" ref="transactionLimitOperation" />
+		<property name="checkInqueryBillOperation" ref="checkInqueryBillOperation" />
+		<property name="commandName" value="payeeInformationCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.PayeeInformationCommand" />
+		<property name="validator" ref="payeeInformationCommandValidator" />
+		<property name="bmbJSONBuilder" ref="retreivePayeeInfoJSONBldr" />
+		<property name="activityId" value="PMT_BP_BILLPAY_PAYEE" />
+		<property name="txnType" value="BP" />
+	</bean>
+
+	<bean id="retrieveCCDAccountController"
+		class="com.barclays.bmg.mvc.controller.billpayment.RetrieveCCDAccountController" parent="bmbAbstractController">
+		<property name="accountSummaryOperation" ref="accountSummaryOperation" />
+		<property name="bmbJsonBuilder" ref="accountSummaryJSONBldr" />
+		<property name="supportedMethods" value="POST,GET" />
+		</bean>
+
+	<bean id="retrieveMTPPayeeInfoController"
+		class="com.barclays.bmg.mvc.controller.billpayment.RetrieveBPPayeeInformationController" parent="bmbAbstractCommandController">
+		<property name="retrievePayeeInfoOperation" ref="retrievePayeeInfoOperation" />
+		<property name="retrieveAccountListOperation" ref="retrieveAccountListOperation" />
+		<property name="mergeBillerInfoOperation" ref="mergeBillerInfoOperation" />
+		<property name="transactionLimitOperation" ref="transactionLimitOperation" />
+		<property name="checkInqueryBillOperation" ref="checkInqueryBillOperation" />
+		<property name="commandName" value="payeeInformationCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.PayeeInformationCommand" />
+		<property name="validator" ref="payeeInformationCommandValidator" />
+		<property name="bmbJSONBuilder" ref="retreivePayeeInfoJSONBldr" />
+		<property name="activityId" value="PMT_BP_MOBILE_TOPUP_PAYEE" />
+		<property name="txnType" value="MTP" />
+	</bean>
+
+	<bean id="paymentFormSubmissionController"
+		class="com.barclays.bmg.mvc.controller.billpayment.BillPayFormSubmissionValidationController" parent="bmbAbstractCommandController">
+		<property name="getSelectedAccountOperation" ref="getSelectedAccountOperation" />
+		<property name="formValidateOperation" ref="formValidateOperation" />
+		<property name="billPayAmountValidationOperation" ref="billPayAmountValidationOperation" />
+		<property name="commandName" value="paymentFormSubmissionCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.PaymentFormSubmissionCommand" />
+		<property name="validator" ref="paymentFormSubmissionCommandValidator" />
+		<property name="bmbJSONBuilder" ref="paymentFormSubmissionJSONBldr" />
+	</bean>
+
+
+	<bean id="ccPaymentFormvalidationController"
+		class="com.barclays.bmg.mvc.controller.billpayment.CreditCardPayFormSubmissionValidationController" parent="bmbAbstractCommandController">
+		<property name="getSelectedAccountOperation" ref="getSelectedAccountOperation" />
+		<property name="formValidateOperation" ref="formValidateOperation" />
+		<property name="billPayAmountValidationOperation" ref="billPayAmountValidationOperation" />
+		<property name="commandName" value="paymentFormSubmissionCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.PaymentFormSubmissionCommand" />
+		<!--<property name="validator" ref="paymentFormSubmissionCommandValidator" />
+		--><property name="bmbJSONBuilder" ref="ccPaymentFormSubmissionJSONBldr" />
+	</bean>
+	<!-- FreeDialUSSD STARTS -->
+	<bean id="freeDilaAirTopUpPaymentExecutionController"
+		class="com.barclays.bmg.mvc.controller.billpayment.BillPaymentExecutionController" parent="bmbAbstractCommandController">
+		<property name="makeBillPaymentOperation" ref="makeBillPaymentOperation" />
+		<property name="bmbJSONBuilder" ref="paymentExecutionJSONBldr" />
+		<property name="otpAuthenticationOperation" ref="otpAuthenticationOperation" />
+		<property name="txnOTPSecondAuthJSONBldr" ref="txnOTPSecondAuthJSONBldr" />
+		<property name="sqaAuthenticationOperation" ref="sqaAuthenticationOperation" />
+		<property name="txnSQASecondAuthJSONBldr" ref="txnSQASecondAuthJSONBldr" />
+		<property name="commandName" value="paymentExecuteCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.BillPaymentExecuteCommand" />
+		<property name="validator" ref="billpaymentExecuteCommandValidator" />
+	</bean>
+	<!-- FreeDialUSSD ENDS -->
+
+	<bean id="confirmPaymentExecutionController"
+		class="com.barclays.bmg.mvc.controller.billpayment.BillPaymentExecutionController" parent="bmbAbstractCommandController">
+		<property name="makeBillPaymentOperation" ref="makeBillPaymentOperation" />
+		<property name="bmbJSONBuilder" ref="paymentExecutionJSONBldr" />
+		<property name="otpAuthenticationOperation" ref="otpAuthenticationOperation" />
+		<property name="txnOTPSecondAuthJSONBldr" ref="txnOTPSecondAuthJSONBldr" />
+		<property name="sqaAuthenticationOperation" ref="sqaAuthenticationOperation" />
+		<property name="txnSQASecondAuthJSONBldr" ref="txnSQASecondAuthJSONBldr" />
+		<property name="commandName" value="paymentExecuteCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.BillPaymentExecuteCommand" />
+		<property name="validator" ref="billpaymentExecuteCommandValidator" />
+	</bean>
+
+<!-- Bill Payment and MTP controller Ends here -->
+     <bean id="payeeListCommandValidator"
+		class="com.barclays.bmg.mvc.validator.billpayment.PayeeListCommandValidator">
+	</bean>
+
+	<bean id="retreivePayeeListJSONBldr"
+		class="com.barclays.bmg.json.model.builder.billpayment.RetreivePayeeListJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<bean id="payeeInformationCommandValidator"
+		class="com.barclays.bmg.mvc.validator.billpayment.PayeeInformationCommandValidator">
+	</bean>
+
+	<bean id="payeeInformationCommandValidatorVer1"
+		class="com.barclays.bmg.mvc.validator.billpayment.PayInfoRel1CommandValidator">
+	</bean>
+
+	<bean id="retreivePayeeInfoJSONBldr"
+	 	class="com.barclays.bmg.json.model.builder.billpayment.RetreivePayeeInfoJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+
+	<bean id="mergeBillerInfoOperation"
+		class="com.barclays.bmg.operation.beneficiary.MergeBillerInfoOperation" parent="bmbPaymentsOperation">
+	</bean>
+
+		<bean id="checkInqueryBillOperation"
+		class="com.barclays.bmg.operation.beneficiary.CheckInqueryBillOperation" parent="bmbPaymentsOperation">
+		<property name="inqueryBillService" ref="inqueryBillService" />
+	</bean>
+
+	<bean id="billPayAmountValidationOperation"
+		class="com.barclays.bmg.operation.formvalidation.BillPayAmountValidationOperation" parent="bmbPaymentsOperation">
+	</bean>
+
+	<bean id="paymentFormSubmissionJSONBldr"
+		class="com.barclays.bmg.json.model.builder.billpayment.PaymentFormSubmissionJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+
+	<bean id="ccPaymentFormSubmissionJSONBldr"
+		class="com.barclays.bmg.json.model.builder.billpayment.CCPaymentFormSubmissionJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<bean id="paymentFormSubmissionCommandValidator"
+		class="com.barclays.bmg.mvc.validator.billpayment.PaymentFormSubmissionCommandValidator">
+	</bean>
+
+	<bean id="makeBillPaymentOperation"
+		class="com.barclays.bmg.operation.payments.MakeBillPaymentOperation" parent="bmbPaymentsOperation">
+		<property name="retrieveIndCustBySCVIDService" ref="retrieveIndCustBySCVIDService" />
+		<property name="payBillService" ref="payBillService" />
+	</bean>
+
+
+
+	<bean id="billpaymentExecuteCommandValidator"
+		class="com.barclays.bmg.mvc.validator.billpayment.BillPaymentExecuteCommandValidator">
+	</bean>
+
+	<bean id="billPaymentExecuteCommandValidatorRel1"
+		class="com.barclays.bmg.mvc.validator.billpayment.BillPaymentExecuteCommandValidatorRel1">
+	</bean>
+
+	<bean id="paymentExecutionJSONBldr"
+		class="com.barclays.bmg.json.model.builder.billpayment.PaymentExecutionJSONBldr">
+	</bean>
+
+
+
+	<!-- Biller Service -->
+
+	<bean id="billerService"
+		class="com.barclays.bmg.service.impl.BillerServiceImpl">
+		<property name="billerListDAO" ref="billerDAO" />
+	</bean>
+	<bean id="billerDAO"
+		class="com.barclays.bmg.dao.impl.BillerListDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+
+
+	<!--  Inquery Bill Service -->
+
+	<bean id="inqueryBillService"
+		class="com.barclays.bmg.service.impl.InqueryBillServiceImpl">
+		<property name="inqueryBillDAO" ref="inqueryBillDAO" />
+	</bean>
+
+	<bean id="inqueryBillDAO"
+		class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.InqueryBillDAO" />
+		<property name="daoFrontController" ref="billPaymentDaoFrontControllerImpl" />
+	</bean>
+
+
+
+	<bean id="inqueryBillDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.InqueryBillDAOController">
+		<property name="inqueryBillReqAdptOperation" ref="inqueryBillReqAdptOperation" />
+		<property name="transmissionOperation" ref="inqueryBillTransmissionOperation" />
+		<property name="inqueryBillRespAdptOperation" ref="inqueryBillRespAdptOperation" />
+	</bean>
+
+	<bean id="inqueryBillTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="inqueryBillTransmissionService" />
+	</bean>
+
+	<bean id="inqueryBillTransmissionService"
+		class="com.barclays.bmg.dao.service.impl.InqueryBillTransmissionService">
+		<property name="remoteService" ref="fundTransferWebServiceImpl" />
+	</bean>
+	<bean id="inqueryBillHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.InqueryBillHeaderAdapter">
+	</bean>
+	<bean id="inqueryBillPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.InqueryBillPayloadAdapter">
+	</bean>
+
+	<bean id="inqueryBillReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.InqueryBillReqAdptOperation">
+		<property name="inqueryBillHeaderAdapter" ref="inqueryBillHeaderAdapter" />
+		<property name="inqueryBillPayloadAdapter" ref="inqueryBillPayloadAdapter" />
+	</bean>
+
+	<bean id="inqueryBillRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.InqueryBillRespAdptOperation">
+	</bean>
+
+	<!--  Make Bill Payment  -->
+
+	<bean id="payBillService"
+		class="com.barclays.bmg.service.impl.PayBillServiceImpl">
+		<property name="payBillDAO" ref="payBillDAO" />
+		<property name="creditCardPaymentDAO" ref="creditCardPaymentDAO" />
+	</bean>
+	<bean id="payBillDAO"
+		class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.PayBillDAO" />
+		<property name="daoFrontController" ref="billPaymentDaoFrontControllerImpl" />
+	</bean>
+
+
+
+	<!--  UAE MAKE BILL PAYMENT -->
+
+		<bean id="payBillDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.UAEPayBillDAOController">
+		<property name="uaePayBillReqAdptOperation" ref="uaePayBillReqAdptOperation" />
+		<property name="transmissionOperation" ref="uaePayBillTransmissionOperation" />
+		<property name="uaePayBillRespAdptOperation" ref="uaePayBillRespAdaptOperation" />
+	</bean>
+
+	<bean id="uaePayBillReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.UAEPayBillReqAdptOperation">
+		<property name="uaePayBillHeaderAdapter" ref="uaePayBillHeaderAdapter" />
+		<property name="uaePayBillPayloadAdapter" ref="uaePayBillPayloadAdapter" />
+	</bean>
+
+	<bean id="uaePayBillTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="uaePayBillTransmissionService" />
+	</bean>
+
+	<bean id="uaePayBillTransmissionService"
+		class="com.barclays.bmg.dao.service.impl.UAEPayBillTransmissionService">
+		<property name="remoteService" ref="fundTransferWebServiceImpl" />
+	</bean>
+	<bean id="uaePayBillHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.UAEPayBillHeaderAdapter">
+	</bean>
+	<bean id="uaePayBillPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.UAEPayBillPayloadAdapter">
+	</bean>
+
+	<bean id="uaePayBillRespAdaptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.UAEPayBillRespAdptOperation">
+	</bean>
+
+
+<!-- One Time Bill pay -->
+	<bean id="oneTimeBillPayInitController"
+		class="com.barclays.bmg.mvc.controller.billpayment.OneTimeBillPayInitController" parent="bmbAbstractCommandController">
+		<property name="retrieveAccountListOperation" ref="retrieveAccountListOperation" />
+		<property name="transactionLimitOperation" ref="transactionLimitOperation" />
+		<property name="oneTimeBillPayOperation" ref="oneTimeBillPayOperation" />
+		<property name="commandName" value="oneTimeBillPayInitCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.OneTimeBillPayInitCommand" />
+		<property name="validator" ref="oneTimeBillPayInitCommandValidator" />
+		<property name="bmbJSONBuilder" ref="oneTimeBillPayInitJSONBldr" />
+		<property name="activityId" value="PMT_BP_BILLPAY_ONETIME" />
+		<property name="txnType" value="BP_ONE_TIME" />
+	</bean>
+
+	<bean id="oneTimeBillPayFormSubmissionController"
+		class="com.barclays.bmg.mvc.controller.billpayment.OneTimeBillPayFormSubmissionController" parent="bmbAbstractCommandController">
+		<property name="getSelectedAccountOperation" ref="getSelectedAccountOperation" />
+		<property name="formValidateOperation" ref="formValidateOperation" />
+		<property name="oneTimeBillPayOperation" ref="oneTimeBillPayOperation" />
+		<property name="commandName" value="oneTimeBillPayFormSubmitCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.OneTimeBillPayFormSubmitCommand" />
+		<property name="validator" ref="oneTimeBillPayFormSubmitCommandValidator" />
+		<property name="bmbJSONBuilder" ref="oneTimeBillPayFormSubmitJSONBldr" />
+		<property name="activityId" value="PMT_BP_BILLPAY_ONETIME" />
+		<property name="txnType" value="BP_ONE_TIME" />
+	</bean>
+
+
+	<bean id="oneTimeBillPayInitJSONBldr"
+		class="com.barclays.bmg.json.model.builder.billpayment.OneTimeBillPayInitJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+     <bean id="oneTimeBillPayInitCommandValidator"
+		class="com.barclays.bmg.mvc.validator.billpayment.OneTimeBillPayInitCommandValidator">
+	</bean>
+
+	<bean id="oneTimeBillPayFormSubmitJSONBldr"
+		class="com.barclays.bmg.json.model.builder.billpayment.OneTimeBillPayFormSubmitJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+     <bean id="oneTimeBillPayFormSubmitCommandValidator"
+		class="com.barclays.bmg.mvc.validator.billpayment.OneTimeBillPayFormSubmitCommandValidator">
+	</bean>
+
+	<bean id="oneTimeBillPayOperation"
+		class="com.barclays.bmg.operation.payments.OneTimeBillPayOperation" parent="bmbPaymentsOperation">
+	</bean>
+
+</beans>

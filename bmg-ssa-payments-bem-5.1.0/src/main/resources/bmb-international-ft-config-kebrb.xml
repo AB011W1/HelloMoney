@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+	<!--  International Fund Transfer Controller Starts Here -->
+
+	<bean id="KEBRBretreiveInternationalPayeeInfoController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.external.RetrievePayeeInformationController"
+		parent="bmbAbstractCommandController">
+		<property name="retrievePayeeInfoOperation" ref="retrievePayeeInfoOperation" />
+		<property name="externalFundTransferDataOperation" ref="KEBRBinternationalFundTransferDataOperation" />
+		<property name="transactionLimitOperation" ref="transactionLimitOperation" />
+		<property name="getSelectedAccountOperation" ref="getSelectedAccountOperation" />
+		<property name="getPaymentReasonDetailsOperation" ref="getPaymentReasonDetailsOperation" />
+		<property name="bmbJSONBuilder" ref="KEBRBinternationalFundTransferPayInfoJSONBldr" />
+		<property name="commandName" value="payeeInformationCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.ExternalFTPayInfoCommand" />
+		<property name="validator" ref="internationalFTPayInfoCommandValidator" />
+		<property name="activityId" value="PMT_FT_INTL_PAYEE" />
+		<property name="payGrp" value="INTL" />
+		<property name="txnType" value="INTL" />
+	</bean>
+
+	<bean id="KEBRBgetInternationalBeneficiaryDetailsController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.external.GetBeneficiaryDetailsController"
+		parent="bmbAbstractCommandController">
+		<property name="retrievePayeeInfoOperation" ref="retrievePayeeInfoOperation" />
+		<property name="bmbJSONBuilder" ref="KEBRBinternationalBeneficiaryDetailsJSONBldr" />
+		<property name="commandName" value="payeeInformationCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.ExternalPayeeDetailsCommand" />
+		<property name="validator" ref="internationalPayeeDetailsCommandValidator" />
+		<property name="activityId" value="PMT_FT_INTL_PAYEE" />
+		<property name="payGrp" value="INTL" />
+	</bean>
+
+	<bean id="KEBRBinternationalFTPaymentFormSubmissionController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.external.PaymentFormSubmissionController"
+		parent="bmbAbstractCommandController">
+		<property name="externalFTFormSubmissionOperation" ref="externalFTFormSubmissionOperation" />
+		<property name="formValidateOperation" ref="formValidateOperation" />
+		<property name="commandName" value="paymentFormSubmissionCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.ExternalFundTransferCommand" />
+		<property name="bmbJSONBuilder"
+			ref="KEBRBinternationalFundTransferFormSubmissionJSONBldr" />
+		<property name="validator"
+			ref="internationalFTFormSubmissionCommandValidator" />
+		<property name="activityId" value="PMT_FT_EXTERNAL_PAYEE" />
+	</bean>
+
+
+
+	<bean id="KEBRBinternationalFundTransferExecutionController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.external.FundTransferExecutionController"
+		parent="bmbAbstractCommandController">
+		<property name="internationalFundTransferOperation" ref="internationalFundTransferOperation" />
+		<property name="bmbJSONBuilder" ref="internationalFundTransferDoneJSONBldr" />
+		<property name="otpAuthenticationOperation" ref="otpAuthenticationOperation" />
+		<property name="txnOTPSecondAuthJSONBldr" ref="txnOTPSecondAuthJSONBldr" />
+		<property name="sqaAuthenticationOperation" ref="sqaAuthenticationOperation" />
+		<property name="txnSQASecondAuthJSONBldr" ref="txnSQASecondAuthJSONBldr" />
+		<property name="commandName" value="paymentExecuteCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.fundtransfer.own.FundTransferExecuteCommand" />
+		<property name="validator" ref="internationalFTExecuteCommandValidator" />
+		<property name="activityId" value="PMT_FT_EXTERNAL_PAYEE" />
+	</bean>
+
+	<!-- International Fund Transfer Controller Ends H -->
+	<bean id="KEBRBinternationalFundTransferPayInfoJSONBldr"
+		class="com.barclays.bmg.json.model.builder.fundtransfer.international.KEBRBInternationalFundTransferPayInfoJSONBldr"
+		parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<bean id="KEBRBinternationalBeneficiaryDetailsJSONBldr"
+		class="com.barclays.bmg.json.model.builder.fundtransfer.international.KEBRBInternationalBeneficiaryDetailsJSONBldr"
+		parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<!-- NOT REQUIRED
+	<bean id="internationalFundTransferDoneJSONBldr"
+		class="com.barclays.bmg.json.model.builder.fundtransfer.international.InternationalFundTransferDoneJSONBldr"
+		parent="bmbCommonJSONBuilder">
+	</bean>-->
+
+
+	<bean id="KEBRBinternationalFundTransferFormSubmissionJSONBldr"
+		class="com.barclays.bmg.json.model.builder.fundtransfer.international.KEBRBInternationalFundTransferFormSubmissionJSONBldr"
+		parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<bean id="internationalFTPayInfoCommandValidator"
+		class="com.barclays.bmg.mvc.validator.fundtransfer.international.InternationalFTPayInfoCommandValidator">
+	</bean>
+
+	<bean id="internationalFTFormSubmissionCommandValidator"
+		class="com.barclays.bmg.mvc.validator.fundtransfer.international.InternationalFTFormSubmissionCommandValidator">
+	</bean>
+
+	<!-- NOT REQUIRED
+	<bean id="internationalFTExecuteCommandValidator"
+		class="com.barclays.bmg.mvc.validator.fundtransfer.international.InternationalFTExecuteCommandValidator">
+	</bean>-->
+
+	<bean id="internationalPayeeDetailsCommandValidator"
+		class="com.barclays.bmg.mvc.validator.fundtransfer.international.InternationalPayeeDetailsCommandValidator">
+	</bean>
+
+	<bean id="KEBRBinternationalFundTransferDataOperation"
+		class="com.barclays.bmg.operation.fundtransfer.external.ExternalFundTransferDataOperation"
+		parent="bmbCommonOperation">
+		<property name="listValueResService" ref="listValueResService" />
+		<property name="currLstKey" value="PMT_FT_INTL_SUPPORT_CURRENCY" />
+		<property name="currLstActId" value="PMT_FT_INTL_ONETIME" />
+	</bean>
+
+
+</beans>

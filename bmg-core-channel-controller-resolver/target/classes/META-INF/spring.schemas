@@ -1,0 +1,4 @@
+http\://www.component.custom.com/proxydao/proxy-dao-config.xsd=resources/proxy-dao-config.xsd
+http\://www.component.custom.com/bmb/jsonadapter/json-adapter.xsd=resources/json-adapter.xsd
+http\://www.component.custom.com/bmb/controllerresolver/controller-resolver.xsd=controller-resolver.xsd
+http\://www.component.custom.com/bmb/urlresolver/url-resolver.xsd=url-resolver.xsd

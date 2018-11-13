@@ -1,0 +1,97 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<import resource="classpath:promoffer-controller-resolver.xml" />
+	<import resource="classpath:bmb-promoffer-config.xml" />
+
+	<bean
+		class="com.barclays.bmg.mvc.handler.BMBRequestToControllerMappingHandler" />
+
+	<bean id="diningOffersController"
+		class="com.barclays.bmg.mvc.controller.offer.DiningOffersController">
+		<property name="diningOfferOperation" ref="diningOfferOperation" />
+		<property name="bmbJsonBuilder" ref="diningOffersJSONBldr" />
+	</bean>
+
+	<bean id="diningOfferDetailsController"
+		class="com.barclays.bmg.mvc.controller.offer.DiningOfferDetailsController"
+		parent="bmbAbstractCommandController">
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.offer.DiningOfferDetlsCommand" />
+		<property name="commandName" value="diningOfferDetlsCommand" />
+		<property name="diningOfferDetlsOperation" ref="diningOfferDetailsOperation" />
+		<property name="bmbJsonBuilder" ref="diningOfferDetailsJSONBldr" />
+	</bean>
+
+	<bean id="searchDiningOffersController"
+		class="com.barclays.bmg.mvc.controller.offer.SearchDiningOffersController" >
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.offer.SearchDiningOfferCommand" />
+		<property name="commandName" value="searchDiningOfferCommand" />
+		<property name="searchDiningOffersOperation" ref="searchDiningOffersOperation" />
+		<property name="bmbJsonBuilder" ref="searchDiningOffersJSONBldr" />
+	</bean>
+
+
+	<!-- EIP Offer -->
+	<bean id="eipOffersController"
+		class="com.barclays.bmg.mvc.controller.offer.EIPOffersController">
+		<property name="eipOfferOperation" ref="eipOfferOperation" />
+		<property name="bmbJsonBuilder" ref="eipOfferJSONBldr" />
+	</bean>
+
+
+	<bean id="eipOffersDetailController"
+		class="com.barclays.bmg.mvc.controller.offer.EIPOffersDetailController"
+		parent="bmbAbstractCommandController">
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.offer.EipOfferDetlsCommand" />
+		<property name="commandName" value="eipOfferDetlsCommand" />
+		<property name="eipOfferDetailOperation" ref="eipOfferDetailOperation" />
+		<property name="bmbJsonBuilder" ref="eipOfferDetailJSONBldr" />
+	</bean>
+
+	<bean id="searchEIPOffersController"
+		class="com.barclays.bmg.mvc.controller.offer.SearchEIPOffersController">
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.offer.SearchEipOfferCommand" />
+		<property name="commandName" value="searchEipOfferCommand" />
+		<property name="searchEIPOfferOperation" ref="searchEIPOfferOperation" />
+		<property name="bmbJsonBuilder" ref="searchEIPOffersJSONBldr" />
+	</bean>
+
+	<bean id="promoOfferTermsAndCondController"
+		class="com.barclays.bmg.mvc.controller.offer.PromoOfferTermsAndCondController">
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.offer.PromoOfferTermsAndConditionCommand" />
+		<property name="commandName" value="promoOfferTermsAndConditionCommand" />
+		<property name="operation" ref="promoOfferTermsAndCondOperation" />
+		<property name="bmbJsonBuilder" ref="promoOfferTermsOfUseJSONBldr" />
+	</bean>
+
+	<!-- Version 2 json -->
+
+	<bean id="diningOffersJSONBldr"
+		class="com.barclays.bmg.json.model.builder.offer.DiningOffersJSONBldr" />
+
+	<bean id="diningOfferDetailsJSONBldr"
+		class="com.barclays.bmg.json.model.builder.offer.DiningOfferDetailsJSONBldr" />
+
+	<bean id="searchDiningOffersJSONBldr"
+		class="com.barclays.bmg.json.model.builder.offer.SearchDiningOffersJSONBldr" />
+
+	<bean id="eipOfferJSONBldr"
+		class="com.barclays.bmg.json.model.builder.offer.EIPOffersJSONBldr" />
+
+	<bean id="eipOfferDetailJSONBldr"
+		class="com.barclays.bmg.json.model.builder.offer.EIPOfferDetailsJSONBldr" />
+
+	<bean id="searchEIPOffersJSONBldr"
+		class="com.barclays.bmg.json.model.builder.offer.SearchEIPOffersJSONBldr" />
+
+	<bean id="promoOfferTermsOfUseJSONBldr"
+		class="com.barclays.bmg.json.model.builder.offer.PromoOfferTermsOfUseJSONBldr" />
+
+
+</beans>

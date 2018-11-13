@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+	<bean id="bmbCommonJSONBuilder"
+		class="com.barclays.bmg.json.model.builder.BMBCommonJSONBuilder"
+		abstract="true">
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="listValueResService" ref="listValueResService" />
+		<property name="componentResService" ref="componentResService" />
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="scriptResourceService" ref="scriptResourceService" />
+		<property name="rel1ErrCdeMap" ref="rel1ErrCdeBean" />
+		<property name="cardMaskingTypeMap" ref="cardMaskingTypeMap" />
+		<property name="brnCdeAppendingInMaskingMap" ref="brnCdeAppendingInMaskingMap" />
+		<property  name="branchCodeCountryList" ref="branchCodeCountryList"/>
+		<!--<property name="logOutMsgMap" ref="logOutMsgMap" />-->
+	</bean>
+
+	<util:map id="rel1ErrCdeBean" map-class="java.util.HashMap">
+		<entry key="ATH00111" value="ATH00111_REL1" />
+		<entry key="otpFooter" value="otpFooter_REL2" />
+	</util:map>
+
+	<util:map id="cardMaskingTypeMap" map-class="java.util.HashMap">
+		<!--
+			Set 'true', if want DB configured account number masking pattern for
+			credit card masking otherwise set it to 'false'. If you set 'false'
+			then default credit card masking pattern is applied that is code
+			based, not configured in database.
+		-->
+		<entry key="GHBRB" value="false" />
+		<entry key="MUBRB" value="true" />
+		<entry key="MUBOB" value="false" />
+		<entry key="BWBRB" value="false" />
+		<entry key="AEBRB" value="false" />
+		<entry key="ZMBRB" value="false" />
+		<entry key="ZWBRB" value="false" />
+		<entry key="SCBRB" value="false" />
+		<entry key="TZBRB" value="false" />
+		<entry key="EGBRB" value="false" />
+		<entry key="KEBRB" value="true" />
+		<entry key="UGBRB" value="true" />
+		<entry key="MZBRB" value="true" />
+	</util:map>
+
+
+	<util:map id="brnCdeAppendingInMaskingMap" map-class="java.util.HashMap">
+		<!--
+			Set true - to allow countries have masking pattern appending Branch
+			Code
+		-->
+		<entry key="GHBRB" value="true" />
+		<entry key="MUBRB" value="true" />
+		<entry key="MUBOB" value="true" />
+		<entry key="BWBRB" value="true" />
+		<entry key="ZMBRB" value="true" />
+		<entry key="ZWBRB" value="true" />
+		<entry key="SCBRB" value="true" />
+		<entry key="TZBRB" value="true" />
+		<entry key="SCBRB" value="true" />
+		<entry key="AEBRB" value="false" />
+		<entry key="KEBRB" value="true" />
+		<entry key="UGBRB" value="true" />
+		<entry key="MZBRB" value="true" />
+		<entry key="EGBRB" value="false" />
+	</util:map>
+
+
+
+	<!-- Spring MVC xml view resolver -->
+	<!--<bean id="viewResolver" class="org.springframework.web.servlet.view.XmlViewResolver">
+		<property name="order" value="1" />
+		<property name="location" value="/WEB-INF/views.xml" />
+	</bean>
+--></beans>

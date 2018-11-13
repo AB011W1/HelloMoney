@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/util
+	 http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+<!-- Brnch Look Up -->
+	<bean id="KEBRBbranchLookUpController"
+		class="com.barclays.bmg.mvc.controller.lookup.BranchLookUpController"
+		parent="bmbAbstractCommandController">
+		<property name="branchLookUpOperation" ref="branchLookUpOperation" />
+		<property name="bmbBuilder" ref="branchLookUpJsonBldr" />
+		<property name="commandName" value="branchLookUpInputCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.lookup.BranchLookUpCommand" />
+		<property name="validator"
+			ref="branchLookUpValidator" />
+	</bean>
+
+	<bean id="KEBRBbranchLookUpValidator" class="com.barclays.bmg.mvc.validator.bankdraft.BranchLookUpValidator"/>
+
+	<bean id="KEBRBbranchLookUpJsonBldr"
+		class="com.barclays.bmg.json.model.builder.lookup.BranchLookUpJSONBldr" />
+
+	<bean id="KEBRBbranchLookUpOperation"
+		class="com.barclays.bmg.mvc.operation.lookup.BranchLookUpOperation"
+		parent="bmbPaymentsOperation">
+		<property name="branchLookUpService" ref="KEBRBbranchLookUpService" />
+	</bean>
+
+	<bean id="KEBRBbranchLookUpService"
+		class="com.barclays.bmg.service.lookup.impl.BranchLookUpServiceImpl">
+		<property name="branchLookUpDAO" ref="KEBRBbranchLookUpDAO"></property>
+	</bean>
+
+	<bean id="KEBRBbranchLookUpDAO" class="com.barclays.bmg.dao.lookup.impl.BranchLookUpDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+
+</beans>

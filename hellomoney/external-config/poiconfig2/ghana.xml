@@ -1,0 +1,4523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<POICollection>
+  <pointOfInterest>
+    <id>1</id>
+    <latitude>5.609029</latitude>
+    <longitude>-0.241324</longitude>
+    <name>Abeka Lapaz</name>
+    <imageFileName/>
+    <fax>030 2408347</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>030 2408818, 030 2410882, 030 2408347</phoneNumber>
+    <address>Akrogate Towers, N1 Highway, Lapaz  ,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>2</id>
+    <latitude>5.609029</latitude>
+    <longitude>-0.241324</longitude>
+    <name>Abeka Lapaz</name>
+    <imageFileName/>
+    <fax>030 2408347</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>030 2408818, 030 2410882, 030 2408347</phoneNumber>
+    <address>Akrogate Towers, N1 Highway, Lapaz  ,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>3</id>
+    <latitude>5.558838</latitude>
+    <longitude>-0.230906</longitude>
+    <name>Abossey Okai</name>
+    <imageFileName/>
+    <fax>030 2672907</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>030 2672919, 030 2672904</phoneNumber>
+    <address>Korle Bu - Mortuary Road, opposite Central Mosque, Abossey Okai ,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>4</id>
+    <latitude>5.558838</latitude>
+    <longitude>-0.230906</longitude>
+    <name>Abossey Okai</name>
+    <imageFileName/>
+    <fax>030 2672907</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>030 2672919, 030 2672904</phoneNumber>
+    <address>Korle Bu - Mortuary Road, opposite Central Mosque, Abossey Okai ,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>5</id>
+    <latitude>5.541298</latitude>
+    <longitude>-0.206857</longitude>
+    <name>Accra High Street Branch</name>
+    <imageFileName/>
+    <fax>030 2660579</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>030 2665382/7, 030 2669259, 030 2669257</phoneNumber>
+    <address>Barclays House, High Street, Accra,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>6</id>
+    <latitude>5.541298</latitude>
+    <longitude>-0.206857</longitude>
+    <name>Accra High Street Branch</name>
+    <imageFileName/>
+    <fax>030 2660579</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>030 2665382/7, 030 2669259, 030 2669257</phoneNumber>
+    <address>Barclays House, High Street, Accra,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>7</id>
+    <latitude>5.621196</latitude>
+    <longitude>-0.173743</longitude>
+    <name>Accra Mall</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>030 2823009, 030 2823008</phoneNumber>
+    <address>Accra Mall, Tetteh Quarshie Interchange,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>8</id>
+    <latitude>5.621196</latitude>
+    <longitude>-0.173743</longitude>
+    <name>Accra Mall</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>030 2823009, 030 2823008</phoneNumber>
+    <address>Accra Mall, Tetteh Quarshie Interchange,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>9</id>
+    <latitude>5.632535</latitude>
+    <longitude>-0.237579</longitude>
+    <name>Achimota Branch</name>
+    <imageFileName/>
+    <fax>030 2403370</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>030 2402640, 030 2402650</phoneNumber>
+    <address>Sonnidom Plaza, Mile 7, Achimota,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>10</id>
+    <latitude>5.632535</latitude>
+    <longitude>-0.237579</longitude>
+    <name>Achimota Branch</name>
+    <imageFileName/>
+    <fax>030 2403370</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>030 2402640, 030 2402650</phoneNumber>
+    <address>Sonnidom Plaza, Mile 7, Achimota,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>11</id>
+    <latitude>6.660537</latitude>
+    <longitude>-1.618971</longitude>
+    <name>Ahodwo</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>028-9518584, 024-4432062</phoneNumber>
+    <address>West African Hardware opposite Prime Plaza, Old Bekwai Street, Nhyirafie,,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>12</id>
+    <latitude>6.660537</latitude>
+    <longitude>-1.618971</longitude>
+    <name>Ahodwo</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>028-9518584, 024-4432062</phoneNumber>
+    <address>West African Hardware opposite Prime Plaza, Old Bekwai Street, Nhyirafie,,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>13</id>
+    <latitude>5.600904</latitude>
+    <longitude>-0.176543</longitude>
+    <name>Airport City Branch</name>
+    <imageFileName/>
+    <fax>030 2761930</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>030 2761894, 030 2761929</phoneNumber>
+    <address>Holiday Inn, Airport City, Accra,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>14</id>
+    <latitude>5.600904</latitude>
+    <longitude>-0.176543</longitude>
+    <name>Airport City Branch</name>
+    <imageFileName/>
+    <fax>030 2761930</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>030 2761894, 030 2761929</phoneNumber>
+    <address>Holiday Inn, Airport City, Accra,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>15</id>
+    <latitude>5.693562</latitude>
+    <longitude>-0.021962</longitude>
+    <name>Ashaiman</name>
+    <imageFileName/>
+    <fax>030 3305148</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>030 3305136, 028 9516581</phoneNumber>
+    <address>Near Ashaiman Secondary School,Ashaiman,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>16</id>
+    <latitude>5.693562</latitude>
+    <longitude>-0.021962</longitude>
+    <name>Ashaiman</name>
+    <imageFileName/>
+    <fax>030 3305148</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>030 3305136, 028 9516581</phoneNumber>
+    <address>Near Ashaiman Secondary School,Ashaiman,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>17</id>
+    <latitude>5.573379</latitude>
+    <longitude>-0.250089</longitude>
+    <name>Atico (Darkuman)</name>
+    <imageFileName/>
+    <fax>030 2303880</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>030 2303884, 030 2303881</phoneNumber>
+    <address>Obrapa House, Atico Junction, Odorkor - Mallam Road,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>18</id>
+    <latitude>5.573379</latitude>
+    <longitude>-0.250089</longitude>
+    <name>Atico (Darkuman)</name>
+    <imageFileName/>
+    <fax>030 2303880</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>030 2303884, 030 2303881</phoneNumber>
+    <address>Obrapa House, Atico Junction, Odorkor - Mallam Road,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>19</id>
+    <latitude>5.555805</latitude>
+    <longitude>-0.211508</longitude>
+    <name>Avenue Central Branch</name>
+    <imageFileName/>
+    <fax>030 2223118</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>030 2221571, 030 2223118, 030 2221546</phoneNumber>
+    <address>Nana Asoba House (near Farisco Traffic Light), Kwame Nkrumah Avenue,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>20</id>
+    <latitude>5.555805</latitude>
+    <longitude>-0.211508</longitude>
+    <name>Avenue Central Branch</name>
+    <imageFileName/>
+    <fax>030 2223118</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>030 2221571, 030 2223118, 030 2221546</phoneNumber>
+    <address>Nana Asoba House (near Farisco Traffic Light), Kwame Nkrumah Avenue,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>21</id>
+    <latitude>6.706613</latitude>
+    <longitude>-1.636341</longitude>
+    <name>Bantama</name>
+    <imageFileName/>
+    <fax>032 2083719</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032 2083704, 032 2083702</phoneNumber>
+    <address>Opposite the Presby Church, Main Bantama High Street,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>22</id>
+    <latitude>6.706613</latitude>
+    <longitude>-1.636341</longitude>
+    <name>Bantama</name>
+    <imageFileName/>
+    <fax>032 2083719</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032 2083704, 032 2083702</phoneNumber>
+    <address>Opposite the Presby Church, Main Bantama High Street,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>23</id>
+    <latitude>7.450263</latitude>
+    <longitude>-2.584534</longitude>
+    <name>Berekum</name>
+    <imageFileName/>
+    <fax>035 2222557</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>035 2222557, 035 2222550, 035 2222510</phoneNumber>
+    <address>Adjacent to Presby Mission,Berekum,Brong Ahafo Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>24</id>
+    <latitude>7.450263</latitude>
+    <longitude>-2.584534</longitude>
+    <name>Berekum</name>
+    <imageFileName/>
+    <fax>035 2222557</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>035 2222557, 035 2222550, 035 2222510</phoneNumber>
+    <address>Adjacent to Presby Mission,Berekum,Brong Ahafo Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>25</id>
+    <latitude>10.784739</latitude>
+    <longitude>-0.851918</longitude>
+    <name>Bolgatanga</name>
+    <imageFileName/>
+    <fax>038 2022797</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>038 2023258, 038 2022085</phoneNumber>
+    <address>Commercial Street, Next to Danlandi Palace No.1,Bolgatanga,Upper East Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>26</id>
+    <latitude>10.784739</latitude>
+    <longitude>-0.851918</longitude>
+    <name>Bolgatanga</name>
+    <imageFileName/>
+    <fax>038 2022797</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>038 2023258, 038 2022085</phoneNumber>
+    <address>Commercial Street, Next to Danlandi Palace No.1,Bolgatanga,Upper East Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>27</id>
+    <latitude>5.10606</latitude>
+    <longitude>-1.241214</longitude>
+    <name>Cape Coast Branch</name>
+    <imageFileName/>
+    <fax>033 2132538</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>033 2132581, 033 2132168</phoneNumber>
+    <address>Russel/Anafu ST. Junction,Cape Coast,Central Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>28</id>
+    <latitude>5.10606</latitude>
+    <longitude>-1.241214</longitude>
+    <name>Cape Coast Branch</name>
+    <imageFileName/>
+    <fax>033 2132538</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>033 2132581, 033 2132168</phoneNumber>
+    <address>Russel/Anafu ST. Junction,Cape Coast,Central Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>29</id>
+    <latitude>5.568491</latitude>
+    <longitude>-0.214856</longitude>
+    <name>Circle Branch</name>
+    <imageFileName/>
+    <fax>030 2227421</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>030 2228730, 030 2227421, 030 2228720</phoneNumber>
+    <address>Kwame Nkrumah Avenue, near Kwame Nkrumah Circle),Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>30</id>
+    <latitude>5.568491</latitude>
+    <longitude>-0.214856</longitude>
+    <name>Circle Branch</name>
+    <imageFileName/>
+    <fax>030 2227421</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>030 2228730, 030 2227421, 030 2228720</phoneNumber>
+    <address>Kwame Nkrumah Avenue, near Kwame Nkrumah Circle),Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>31</id>
+    <latitude>5.557172</latitude>
+    <longitude>-0.264466</longitude>
+    <name>Dansoman</name>
+    <imageFileName/>
+    <fax>0302 302462</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302 302460/ 1-3</phoneNumber>
+    <address>Dansoman Roundabout,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>32</id>
+    <latitude>5.557172</latitude>
+    <longitude>-0.264466</longitude>
+    <name>Dansoman</name>
+    <imageFileName/>
+    <fax>0302 302462</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302 302460/ 1-3</phoneNumber>
+    <address>Dansoman Roundabout,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>33</id>
+    <latitude>5.634148</latitude>
+    <longitude>-0.002114</longitude>
+    <name>GNPC</name>
+    <imageFileName/>
+    <fax>030 3 214255</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>030 3 214254</phoneNumber>
+    <address>GNPC Building, Old Meridian Road,Tema,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>34</id>
+    <latitude>5.634148</latitude>
+    <longitude>-0.002114</longitude>
+    <name>GNPC</name>
+    <imageFileName/>
+    <fax>030 3 214255</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>030 3 214254</phoneNumber>
+    <address>GNPC Building, Old Meridian Road,Tema,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>35</id>
+    <latitude>5.665441</latitude>
+    <longitude>-0.204148</longitude>
+    <name>Haatso</name>
+    <imageFileName/>
+    <fax>0302 520525</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302 520524, 0302 520525</phoneNumber>
+    <address>Abrefi Plaza, near Haatso Station, West Legon,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>36</id>
+    <latitude>5.665441</latitude>
+    <longitude>-0.204148</longitude>
+    <name>Haatso</name>
+    <imageFileName/>
+    <fax>0302 520525</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302 520524, 0302 520525</phoneNumber>
+    <address>Abrefi Plaza, near Haatso Station, West Legon,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>37</id>
+    <latitude>6.612847</latitude>
+    <longitude>0.464709</longitude>
+    <name>Ho Branch</name>
+    <imageFileName/>
+    <fax>036 2028090</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>036-2026702, 036-2026233</phoneNumber>
+    <address>Main Accra – Ho Road, Near Goil Filling Station,Ho,Volta Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>38</id>
+    <latitude>6.612847</latitude>
+    <longitude>0.464709</longitude>
+    <name>Ho Branch</name>
+    <imageFileName/>
+    <fax>036 2028090</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>036-2026702, 036-2026233</phoneNumber>
+    <address>Main Accra – Ho Road, Near Goil Filling Station,Ho,Volta Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>39</id>
+    <latitude>7.153452</latitude>
+    <longitude>0.478367</longitude>
+    <name>Hohoe</name>
+    <imageFileName/>
+    <fax>036 2720270</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>036-2722022, 036-2722029</phoneNumber>
+    <address>OLA Road, Adjacent Asubonteng Rural Bank,Hohoe,Volta Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>40</id>
+    <latitude>7.153452</latitude>
+    <longitude>0.478367</longitude>
+    <name>Hohoe</name>
+    <imageFileName/>
+    <fax>036 2720270</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>036-2722022, 036-2722029</phoneNumber>
+    <address>OLA Road, Adjacent Asubonteng Rural Bank,Hohoe,Volta Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>41</id>
+    <latitude>5.558785</latitude>
+    <longitude>-0.198119</longitude>
+    <name>Ridge Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302 677579,</phoneNumber>
+    <address>Liberation Square, Ridge, Accra,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>42</id>
+    <latitude>5.558785</latitude>
+    <longitude>-0.198119</longitude>
+    <name>Ridge Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302 677579,</phoneNumber>
+    <address>Liberation Square, Ridge, Accra,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>43</id>
+    <latitude>5.565181</latitude>
+    <longitude>-0.224941</longitude>
+    <name>Kaneshie Branch</name>
+    <imageFileName/>
+    <fax>0302-224058</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302-220776, 0302-220792, 0302-224058</phoneNumber>
+    <address>Ring Road West  adjacent STC,  Awudome,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>44</id>
+    <latitude>5.565181</latitude>
+    <longitude>-0.224941</longitude>
+    <name>Kaneshie Branch</name>
+    <imageFileName/>
+    <fax>0302-224058</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302-220776, 0302-220792, 0302-224058</phoneNumber>
+    <address>Ring Road West  adjacent STC,  Awudome,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>45</id>
+    <latitude>5.551272</latitude>
+    <longitude>-0.435789</longitude>
+    <name>Kasoa</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>024 3122655, 028 9521443</phoneNumber>
+    <address>Near the New Market, Kasoa,Kasoa,Central Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>46</id>
+    <latitude>5.551272</latitude>
+    <longitude>-0.435789</longitude>
+    <name>Kasoa</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>024 3122655, 028 9521443</phoneNumber>
+    <address>Near the New Market, Kasoa,Kasoa,Central Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>47</id>
+    <latitude>5.546045</latitude>
+    <longitude>-0.21256</longitude>
+    <name>Knutsford Avenue</name>
+    <imageFileName/>
+    <fax>0302-662076</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302-662076, 0302-664506, 0302-664507</phoneNumber>
+    <address>41  Knutsford Avenue, Accra,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>48</id>
+    <latitude>5.546045</latitude>
+    <longitude>-0.21256</longitude>
+    <name>Knutsford Avenue</name>
+    <imageFileName/>
+    <fax>0302-662076</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302-662076, 0302-664506, 0302-664507</phoneNumber>
+    <address>41  Knutsford Avenue, Accra,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>49</id>
+    <latitude>6.091568</latitude>
+    <longitude>-0.254445</longitude>
+    <name>Koforidua Branch</name>
+    <imageFileName/>
+    <fax>034 2022459</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>034 2022354, 034 2022228</phoneNumber>
+    <address>B2, Station Road,Koforidua,Eastern Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>50</id>
+    <latitude>6.091568</latitude>
+    <longitude>-0.254445</longitude>
+    <name>Koforidua Branch</name>
+    <imageFileName/>
+    <fax>034 2022459</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>034 2022354, 034 2022228</phoneNumber>
+    <address>B2, Station Road,Koforidua,Eastern Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>51</id>
+    <latitude>6.713491</latitude>
+    <longitude>-1.615983</longitude>
+    <name>Krofrom</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032 20-83707</phoneNumber>
+    <address>Krofrom Main Street, Opposite Pollux Hotel,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>52</id>
+    <latitude>6.713491</latitude>
+    <longitude>-1.615983</longitude>
+    <name>Krofrom</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032 20-83707</phoneNumber>
+    <address>Krofrom Main Street, Opposite Pollux Hotel,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>53</id>
+    <latitude>6.684828</latitude>
+    <longitude>-1.614277</longitude>
+    <name>Asafo</name>
+    <imageFileName/>
+    <fax>032 20-45993</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032 20- 45995, 032 20- 45884</phoneNumber>
+    <address>Alhaji Salia Building, Starlets 91 Road, Logging Area, Asafo,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>54</id>
+    <latitude>6.684828</latitude>
+    <longitude>-1.614277</longitude>
+    <name>Asafo</name>
+    <imageFileName/>
+    <fax>032 20-45993</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032 20- 45995, 032 20- 45884</phoneNumber>
+    <address>Alhaji Salia Building, Starlets 91 Road, Logging Area, Asafo,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>55</id>
+    <latitude>6.698248</latitude>
+    <longitude>-1.621631</longitude>
+    <name>Kejetia</name>
+    <imageFileName/>
+    <fax>032 2035241</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032 2024789, 032 2022734</phoneNumber>
+    <address>Kejetia Circle, Kumasi,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>56</id>
+    <latitude>6.698248</latitude>
+    <longitude>-1.621631</longitude>
+    <name>Kejetia</name>
+    <imageFileName/>
+    <fax>032 2035241</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032 2024789, 032 2022734</phoneNumber>
+    <address>Kejetia Circle, Kumasi,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>57</id>
+    <latitude>6.689905</latitude>
+    <longitude>-1.622892</longitude>
+    <name>Prempeh II St. Branch</name>
+    <imageFileName/>
+    <fax>032 2035241</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032 2023458, 032 2023504, 26211/3, 032 2023440</phoneNumber>
+    <address>No. 1 Prempeh II Street, Adum,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>58</id>
+    <latitude>6.689905</latitude>
+    <longitude>-1.622892</longitude>
+    <name>Prempeh II St. Branch</name>
+    <imageFileName/>
+    <fax>032 2035241</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032 2023458, 032 2023504, 26211/3, 032 2023440</phoneNumber>
+    <address>No. 1 Prempeh II Street, Adum,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>59</id>
+    <latitude>5.6509</latitude>
+    <longitude>-0.186328</longitude>
+    <name>Legon (Campus) Branch</name>
+    <imageFileName/>
+    <fax>0302-501114</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302-501114, 0302-518914</phoneNumber>
+    <address>University of Ghana campus, Legon,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>60</id>
+    <latitude>5.6509</latitude>
+    <longitude>-0.186328</longitude>
+    <name>Legon (Campus) Branch</name>
+    <imageFileName/>
+    <fax>0302-501114</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302-501114, 0302-518914</phoneNumber>
+    <address>University of Ghana campus, Legon,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>61</id>
+    <latitude>5.654007</latitude>
+    <longitude>-0.178978</longitude>
+    <name>Legon Main</name>
+    <imageFileName/>
+    <fax>030 2520741</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302 520738, 0302 520739</phoneNumber>
+    <address>Opposite Legon ECG, Legon – Madina Road, Legon,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>62</id>
+    <latitude>5.654007</latitude>
+    <longitude>-0.178978</longitude>
+    <name>Legon Main</name>
+    <imageFileName/>
+    <fax>030 2520741</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302 520738, 0302 520739</phoneNumber>
+    <address>Opposite Legon ECG, Legon – Madina Road, Legon,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>63</id>
+    <latitude>5.597407</latitude>
+    <longitude>-0.194793</longitude>
+    <name>Maamobi</name>
+    <imageFileName/>
+    <fax>0302 255802</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302 252166, 0302 251556</phoneNumber>
+    <address>At the Accra Girl's Junction on the Maamobi road, Maamobi,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>64</id>
+    <latitude>5.597407</latitude>
+    <longitude>-0.194793</longitude>
+    <name>Maamobi</name>
+    <imageFileName/>
+    <fax>0302 255802</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302 252166, 0302 251556</phoneNumber>
+    <address>At the Accra Girl's Junction on the Maamobi road, Maamobi,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>65</id>
+    <latitude>5.677932</latitude>
+    <longitude>-0.16766</longitude>
+    <name>Madina</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302 521131, 028 9543001, 028 9543002</phoneNumber>
+    <address>Near Madina Market, Old Road, Madina,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>66</id>
+    <latitude>5.677932</latitude>
+    <longitude>-0.16766</longitude>
+    <name>Madina</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302 521131, 028 9543001, 028 9543002</phoneNumber>
+    <address>Near Madina Market, Old Road, Madina,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>67</id>
+    <latitude>5.545276</latitude>
+    <longitude>-0.206423</longitude>
+    <name>Makola Branch</name>
+    <imageFileName/>
+    <fax>0302-665756</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302-665756, 0302-666721,0302-665756</phoneNumber>
+    <address>Makola Square,  Pagan Road, Accra,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>68</id>
+    <latitude>5.545276</latitude>
+    <longitude>-0.206423</longitude>
+    <name>Makola Branch</name>
+    <imageFileName/>
+    <fax>0302-665756</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302-665756, 0302-666721,0302-665756</phoneNumber>
+    <address>Makola Square,  Pagan Road, Accra,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>69</id>
+    <latitude>5.621645</latitude>
+    <longitude>-0.182755</longitude>
+    <name>Motorway Extension</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302-520255, 0302-520256</phoneNumber>
+    <address>Off the Tetteh Quarshie Interchange, N1 Highway,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>70</id>
+    <latitude>5.621645</latitude>
+    <longitude>-0.182755</longitude>
+    <name>Motorway Extension</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302-520255, 0302-520256</phoneNumber>
+    <address>Off the Tetteh Quarshie Interchange, N1 Highway,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>71</id>
+    <latitude>5.579383</latitude>
+    <longitude>-0.200071</longitude>
+    <name>Nima</name>
+    <imageFileName/>
+    <fax>0302 258228</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302 224777, 0302 258228</phoneNumber>
+    <address>Nima Highway, Opposite Shell Filling Station, Nima,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>72</id>
+    <latitude>5.579383</latitude>
+    <longitude>-0.200071</longitude>
+    <name>Nima</name>
+    <imageFileName/>
+    <fax>0302 258228</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302 224777, 0302 258228</phoneNumber>
+    <address>Nima Highway, Opposite Shell Filling Station, Nima,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>73</id>
+    <latitude>6.550955</latitude>
+    <longitude>-0.764494</longitude>
+    <name>Nkawkaw</name>
+    <imageFileName/>
+    <fax>0842 22379</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0842 22076, 0842 22379</phoneNumber>
+    <address>Behind Market Square, Off the Accra-Kumasi Road,Nkawkaw,Eastern Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>74</id>
+    <latitude>6.550955</latitude>
+    <longitude>-0.764494</longitude>
+    <name>Nkawkaw</name>
+    <imageFileName/>
+    <fax>0842 22379</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0842 22076, 0842 22379</phoneNumber>
+    <address>Behind Market Square, Off the Accra-Kumasi Road,Nkawkaw,Eastern Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>75</id>
+    <latitude>5.579177</latitude>
+    <longitude>-0.228208</longitude>
+    <name>North Kaneshie</name>
+    <imageFileName/>
+    <fax>0302 241924</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302 241114, 0302 241194, 0302 241963</phoneNumber>
+    <address>Near St. Theresa's School ,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>76</id>
+    <latitude>5.579177</latitude>
+    <longitude>-0.228208</longitude>
+    <name>North Kaneshie</name>
+    <imageFileName/>
+    <fax>0302 241924</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302 241114, 0302 241194, 0302 241963</phoneNumber>
+    <address>Near St. Theresa's School ,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>77</id>
+    <latitude>6.204011</latitude>
+    <longitude>-1.677217</longitude>
+    <name>Obuasi Branch</name>
+    <imageFileName/>
+    <fax>032 2541293</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032 2541292, 032 2541293</phoneNumber>
+    <address>Mangoase Street, North Bidieso (opposite Shell Filling Station),Obuasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>78</id>
+    <latitude>6.204011</latitude>
+    <longitude>-1.677217</longitude>
+    <name>Obuasi Branch</name>
+    <imageFileName/>
+    <fax>032 2541293</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032 2541292, 032 2541293</phoneNumber>
+    <address>Mangoase Street, North Bidieso (opposite Shell Filling Station),Obuasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>79</id>
+    <latitude>5.923998</latitude>
+    <longitude>-0.988327</longitude>
+    <name>Oda Branch</name>
+    <imageFileName/>
+    <fax>034 2922050</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>034 2922050, 034 2922070</phoneNumber>
+    <address>House No. 21, Abirem, Akim Oda,Oda,Eastern Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>80</id>
+    <latitude>5.923998</latitude>
+    <longitude>-0.988327</longitude>
+    <name>Oda Branch</name>
+    <imageFileName/>
+    <fax>034 2922050</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>034 2922050, 034 2922070</phoneNumber>
+    <address>House No. 21, Abirem, Akim Oda,Oda,Eastern Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>81</id>
+    <latitude>6.714178</latitude>
+    <longitude>-1.62897</longitude>
+    <name>Old Suame</name>
+    <imageFileName/>
+    <fax>032 2049626</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032 2049808, 032 2049628</phoneNumber>
+    <address>On the Suame Magazine Street,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>82</id>
+    <latitude>6.714178</latitude>
+    <longitude>-1.62897</longitude>
+    <name>Old Suame</name>
+    <imageFileName/>
+    <fax>032 2049626</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032 2049808, 032 2049628</phoneNumber>
+    <address>On the Suame Magazine Street,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>83</id>
+    <latitude>5.564658</latitude>
+    <longitude>-0.181076</longitude>
+    <name>Osu Branch</name>
+    <imageFileName/>
+    <fax>0302-778127</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302-778127, 0302-777710,0302-770086, 0302-769182</phoneNumber>
+    <address>Danawi House, Cantonments Road (Oxford Street), Osu,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>84</id>
+    <latitude>5.564658</latitude>
+    <longitude>-0.181076</longitude>
+    <name>Osu Branch</name>
+    <imageFileName/>
+    <fax>0302-778127</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302-778127, 0302-777710,0302-770086, 0302-769182</phoneNumber>
+    <address>Danawi House, Cantonments Road (Oxford Street), Osu,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>85</id>
+    <latitude>5.572143</latitude>
+    <longitude>-0.203784</longitude>
+    <name>Ring Road Central Branch</name>
+    <imageFileName/>
+    <fax>030 2254405</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302 254405, 0302 254392</phoneNumber>
+    <address>Randolph House, Ring Road Central, Assylum Down,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>86</id>
+    <latitude>5.572143</latitude>
+    <longitude>-0.203784</longitude>
+    <name>Ring Road Central Branch</name>
+    <imageFileName/>
+    <fax>030 2254405</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302 254405, 0302 254392</phoneNumber>
+    <address>Randolph House, Ring Road Central, Assylum Down,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>87</id>
+    <latitude>6.104882</latitude>
+    <longitude>-0.013733</longitude>
+    <name>Somanya</name>
+    <imageFileName/>
+    <fax>0882-2050</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>028 9528705, 028 9528704</phoneNumber>
+    <address>Ground floor Jimmy Green Building opposite GCB,Somanya,Eastern Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>88</id>
+    <latitude>6.104882</latitude>
+    <longitude>-0.013733</longitude>
+    <name>Somanya</name>
+    <imageFileName/>
+    <fax>0882-2050</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>028 9528705, 028 9528704</phoneNumber>
+    <address>Ground floor Jimmy Green Building opposite GCB,Somanya,Eastern Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>89</id>
+    <latitude>5.635002</latitude>
+    <longitude>-0.100937</longitude>
+    <name>Spintex Main Branch</name>
+    <imageFileName/>
+    <fax>0302 815809</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302-815805, 0302-815804</phoneNumber>
+    <address>Coastal Estates Junction, Spintex Road,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>90</id>
+    <latitude>5.635002</latitude>
+    <longitude>-0.100937</longitude>
+    <name>Spintex Main Branch</name>
+    <imageFileName/>
+    <fax>0302 815809</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302-815805, 0302-815804</phoneNumber>
+    <address>Coastal Estates Junction, Spintex Road,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>91</id>
+    <latitude>7.335424</latitude>
+    <longitude>-2.326677</longitude>
+    <name>Sunyani Branch</name>
+    <imageFileName/>
+    <fax>035 2027154</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>035 2027048</phoneNumber>
+    <address>Sunyani High Street, opposite Likers Supermarket,Sunyani,Brong Ahafo Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>92</id>
+    <latitude>7.335424</latitude>
+    <longitude>-2.326677</longitude>
+    <name>Sunyani Branch</name>
+    <imageFileName/>
+    <fax>035 2027154</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>035 2027048</phoneNumber>
+    <address>Sunyani High Street, opposite Likers Supermarket,Sunyani,Brong Ahafo Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>93</id>
+    <latitude>6.738541</latitude>
+    <longitude>-1.611332</longitude>
+    <name>Tafo</name>
+    <imageFileName/>
+    <fax>032 2071558</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032 20-71528</phoneNumber>
+    <address>Between the market and the Total Filling Station,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>94</id>
+    <latitude>6.738541</latitude>
+    <longitude>-1.611332</longitude>
+    <name>Tafo</name>
+    <imageFileName/>
+    <fax>032 2071558</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032 20-71528</phoneNumber>
+    <address>Between the market and the Total Filling Station,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>95</id>
+    <latitude>4.882396</latitude>
+    <longitude>-1.75144</longitude>
+    <name>Takoradi High Street Branch</name>
+    <imageFileName/>
+    <fax>031 2024080</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>031 2022151, 031 2022152</phoneNumber>
+    <address>Takoradi High Street,Takoradi,Western Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>96</id>
+    <latitude>4.882396</latitude>
+    <longitude>-1.75144</longitude>
+    <name>Takoradi High Street Branch</name>
+    <imageFileName/>
+    <fax>031 2024080</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>031 2022151, 031 2022152</phoneNumber>
+    <address>Takoradi High Street,Takoradi,Western Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>97</id>
+    <latitude>4.896463</latitude>
+    <longitude>-1.75807</longitude>
+    <name>Takoradi Liberation Road</name>
+    <imageFileName/>
+    <fax>031 2024080</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>031 20 20-23458, 031 20 22880 </phoneNumber>
+    <address>Plot 104, Liberation Road,Takoradi,Western Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>98</id>
+    <latitude>4.896463</latitude>
+    <longitude>-1.75807</longitude>
+    <name>Takoradi Liberation Road</name>
+    <imageFileName/>
+    <fax>031 2024080</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>031 20 20-23458, 031 20 22880 </phoneNumber>
+    <address>Plot 104, Liberation Road,Takoradi,Western Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>99</id>
+    <latitude>9.402312</latitude>
+    <longitude>-0.83922</longitude>
+    <name>Tamale Branch</name>
+    <imageFileName/>
+    <fax>037 2022278</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>037 20-22141, 037 20-22278, 037 20 24088</phoneNumber>
+    <address>Plot 22, Yendi Road, Tamale,Tamale,Northern Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>100</id>
+    <latitude>9.402312</latitude>
+    <longitude>-0.83922</longitude>
+    <name>Tamale Branch</name>
+    <imageFileName/>
+    <fax>037 2022278</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>037 20-22141, 037 20-22278, 037 20 24088</phoneNumber>
+    <address>Plot 22, Yendi Road, Tamale,Tamale,Northern Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>101</id>
+    <latitude>9.43661</latitude>
+    <longitude>-0.84282</longitude>
+    <name>Tamale Gumanni</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Rice City Residential Area, Gumani,Tamale,Northern Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>102</id>
+    <latitude>9.43661</latitude>
+    <longitude>-0.84282</longitude>
+    <name>Tamale Gumanni</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Rice City Residential Area, Gumani,Tamale,Northern Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>103</id>
+    <latitude>6.696789</latitude>
+    <longitude>-1.665003</longitude>
+    <name>Tanoso</name>
+    <imageFileName/>
+    <fax>032 2052282</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032 2052231, 032 2052245, 028 9512878</phoneNumber>
+    <address>Opposite Kumasi Campus, University of Education,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>104</id>
+    <latitude>6.696789</latitude>
+    <longitude>-1.665003</longitude>
+    <name>Tanoso</name>
+    <imageFileName/>
+    <fax>032 2052282</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032 2052231, 032 2052245, 028 9512878</phoneNumber>
+    <address>Opposite Kumasi Campus, University of Education,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>105</id>
+    <latitude>5.300878</latitude>
+    <longitude>-1.987839</longitude>
+    <name>Tarkwa Branch</name>
+    <imageFileName/>
+    <fax>031 2320486</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>031 2320223, 031 2320527</phoneNumber>
+    <address>On the Commercial Street, near Ghana Post,Tarkwa,Western Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>106</id>
+    <latitude>5.300878</latitude>
+    <longitude>-1.987839</longitude>
+    <name>Tarkwa Branch</name>
+    <imageFileName/>
+    <fax>031 2320486</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>031 2320223, 031 2320527</phoneNumber>
+    <address>On the Commercial Street, near Ghana Post,Tarkwa,Western Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>107</id>
+    <latitude>7.586422</latitude>
+    <longitude>-1.937596</longitude>
+    <name>Techiman</name>
+    <imageFileName/>
+    <fax>035 2522429</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>035 2522430, 035 2522428</phoneNumber>
+    <address>Opposite Busumfo Fie, Sunyani Road, ,Techiman,Brong Ahafo Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>108</id>
+    <latitude>7.586422</latitude>
+    <longitude>-1.937596</longitude>
+    <name>Techiman</name>
+    <imageFileName/>
+    <fax>035 2522429</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>035 2522430, 035 2522428</phoneNumber>
+    <address>Opposite Busumfo Fie, Sunyani Road, ,Techiman,Brong Ahafo Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>109</id>
+    <latitude>5.642876</latitude>
+    <longitude>0.015728</longitude>
+    <name>Tema Fishing Harbour</name>
+    <imageFileName/>
+    <fax>030 3-206350</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>030 3-206350, 030 3-202506, </phoneNumber>
+    <address>Tema Fishing Harbour,Tema,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>110</id>
+    <latitude>5.642876</latitude>
+    <longitude>0.015728</longitude>
+    <name>Tema Fishing Harbour</name>
+    <imageFileName/>
+    <fax>030 3-206350</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>030 3-206350, 030 3-202506, </phoneNumber>
+    <address>Tema Fishing Harbour,Tema,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>111</id>
+    <latitude>5.64673</latitude>
+    <longitude>-8.31E-4</longitude>
+    <name>Tema Main Branch</name>
+    <imageFileName/>
+    <fax>030 3-202315</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>030 3-204051/2, 030 3-205430</phoneNumber>
+    <address>Central Market Area , Community 1,Tema,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>112</id>
+    <latitude>5.64673</latitude>
+    <longitude>-8.31E-4</longitude>
+    <name>Tema Main Branch</name>
+    <imageFileName/>
+    <fax>030 3-202315</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>030 3-204051/2, 030 3-205430</phoneNumber>
+    <address>Central Market Area , Community 1,Tema,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>113</id>
+    <latitude>5.596147</latitude>
+    <longitude>-0.08589</longitude>
+    <name>Teshie Nungua</name>
+    <imageFileName/>
+    <fax>(0302) 714388</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>028 9535862, 0302 714387, 0302 714288</phoneNumber>
+    <address>Opposite Nungua Cold Store, Teshie-Nungua Road,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>114</id>
+    <latitude>5.596147</latitude>
+    <longitude>-0.08589</longitude>
+    <name>Teshie Nungua</name>
+    <imageFileName/>
+    <fax>(0302) 714388</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>028 9535862, 0302 714387, 0302 714288</phoneNumber>
+    <address>Opposite Nungua Cold Store, Teshie-Nungua Road,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>115</id>
+    <latitude>10.06172</latitude>
+    <longitude>-2.500699</longitude>
+    <name>Wa</name>
+    <imageFileName/>
+    <fax>039 2021056</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>039 2021057, 039 2021058</phoneNumber>
+    <address>Wa Main Street, Opposite Central Market,Wa,Upper West Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>116</id>
+    <latitude>10.06172</latitude>
+    <longitude>-2.500699</longitude>
+    <name>Wa</name>
+    <imageFileName/>
+    <fax>039 2021056</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>039 2021057, 039 2021058</phoneNumber>
+    <address>Wa Main Street, Opposite Central Market,Wa,Upper West Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>117</id>
+    <latitude>5.541298</latitude>
+    <longitude>-0.206857</longitude>
+    <name>Accra High Street Premier Life Centre</name>
+    <imageFileName/>
+    <fax>0302-676352</fax>
+    <openingHours>
+      <mon>0800-1830</mon>
+      <tue>0800-1830</tue>
+      <wed>0800-1830</wed>
+      <thu>0800-1830</thu>
+      <fri>0800-1830</fri>
+      <sat>0900-1400</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302-676351, 0302-676354</phoneNumber>
+    <address>Barclays House, High Street,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Extended Opening Hours</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>118</id>
+    <latitude>5.541298</latitude>
+    <longitude>-0.206857</longitude>
+    <name>Accra High Street Premier Life Centre</name>
+    <imageFileName/>
+    <fax>0302-676352</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302-676351, 0302-676354</phoneNumber>
+    <address>Barclays House, High Street,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Extended Opening Hours</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>119</id>
+    <latitude>5.632535</latitude>
+    <longitude>-0.237579</longitude>
+    <name>Achimota Premier Life Centre</name>
+    <imageFileName/>
+    <fax>0302-403360</fax>
+    <openingHours>
+      <mon>0800-1830</mon>
+      <tue>0800-1830</tue>
+      <wed>0800-1830</wed>
+      <thu>0800-1830</thu>
+      <fri>0800-1830</fri>
+      <sat>0900-1400</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302-403360</phoneNumber>
+    <address>Sonnidom Plaza, Mile 7, Achimota,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Extended Opening Hours</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>120</id>
+    <latitude>5.632535</latitude>
+    <longitude>-0.237579</longitude>
+    <name>Achimota Premier Life Centre</name>
+    <imageFileName/>
+    <fax>0302-403360</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302-403360</phoneNumber>
+    <address>Sonnidom Plaza, Mile 7, Achimota,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Extended Opening Hours</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>121</id>
+    <latitude>5.600904</latitude>
+    <longitude>-0.176543</longitude>
+    <name>Airport City Premier Life Centre</name>
+    <imageFileName/>
+    <fax>030 2761703</fax>
+    <openingHours>
+      <mon>0800-1830</mon>
+      <tue>0800-1830</tue>
+      <wed>0800-1830</wed>
+      <thu>0800-1830</thu>
+      <fri>0800-1830</fri>
+      <sat>0900-1400</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302-761745</phoneNumber>
+    <address>Holiday Inn, Airport City,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Extended Opening Hours</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>122</id>
+    <latitude>5.600904</latitude>
+    <longitude>-0.176543</longitude>
+    <name>Airport City Premier Life Centre</name>
+    <imageFileName/>
+    <fax>030 2761703</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302-761745</phoneNumber>
+    <address>Holiday Inn, Airport City,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Extended Opening Hours</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>123</id>
+    <latitude>5.568491</latitude>
+    <longitude>-0.214856</longitude>
+    <name>Circle Premier Life Centre</name>
+    <imageFileName/>
+    <fax>0302-224545</fax>
+    <openingHours>
+      <mon>0800-1830</mon>
+      <tue>0800-1830</tue>
+      <wed>0800-1830</wed>
+      <thu>0800-1830</thu>
+      <fri>0800-1830</fri>
+      <sat>0900-1400</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302-240299</phoneNumber>
+    <address>Kwame Nkrumah Avenue, near Kwame Nkrumah Circle),Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Extended Opening Hours</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>124</id>
+    <latitude>5.568491</latitude>
+    <longitude>-0.214856</longitude>
+    <name>Circle Premier Life Centre</name>
+    <imageFileName/>
+    <fax>0302-224545</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302-240299</phoneNumber>
+    <address>Kwame Nkrumah Avenue, near Kwame Nkrumah Circle),Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Extended Opening Hours</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>125</id>
+    <latitude>6.689905</latitude>
+    <longitude>-1.622892</longitude>
+    <name>Prempeh II St. Premier Life Centre</name>
+    <imageFileName/>
+    <fax>03 22021021</fax>
+    <openingHours>
+      <mon>0800-1830</mon>
+      <tue>0800-1830</tue>
+      <wed>0800-1830</wed>
+      <thu>0800-1830</thu>
+      <fri>0800-1830</fri>
+      <sat>0900-1400</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032-2021021, 032 2020827</phoneNumber>
+    <address>No. 1 Prempeh II Street, Adum,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Extended Opening Hours</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>126</id>
+    <latitude>6.689905</latitude>
+    <longitude>-1.622892</longitude>
+    <name>Prempeh II St. Premier Life Centre</name>
+    <imageFileName/>
+    <fax>03 22021021</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032-2021021, 032 2020827</phoneNumber>
+    <address>No. 1 Prempeh II Street, Adum,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Extended Opening Hours</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>127</id>
+    <latitude>6.669493</latitude>
+    <longitude>-1.61609</longitude>
+    <name>Nhyiaeso Premier Life Centre</name>
+    <imageFileName/>
+    <fax>032-2035731</fax>
+    <openingHours>
+      <mon>0800-1830</mon>
+      <tue>0800-1830</tue>
+      <wed>0800-1830</wed>
+      <thu>0800-1830</thu>
+      <fri>0800-1830</fri>
+      <sat>0900-1400</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032-2035730, 032-2035731</phoneNumber>
+    <address>Hotel Georgia, Nhyiaeso,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Extended Opening Hours</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>128</id>
+    <latitude>6.669493</latitude>
+    <longitude>-1.61609</longitude>
+    <name>Nhyiaeso Premier Life Centre</name>
+    <imageFileName/>
+    <fax>032-2035731</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032-2035730, 032-2035731</phoneNumber>
+    <address>Hotel Georgia, Nhyiaeso,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Extended Opening Hours</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>129</id>
+    <latitude>5.564658</latitude>
+    <longitude>-0.181076</longitude>
+    <name>Osu Premier Life Centre</name>
+    <imageFileName/>
+    <fax>030 2769179</fax>
+    <openingHours>
+      <mon>0800-1830</mon>
+      <tue>0800-1830</tue>
+      <wed>0800-1830</wed>
+      <thu>0800-1830</thu>
+      <fri>0800-1830</fri>
+      <sat>0900-1400</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302-769181, 0302 769182</phoneNumber>
+    <address>1st Floor, Danawi House, Cantonments Road, Osu,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Extended Opening Hours</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>130</id>
+    <latitude>5.564658</latitude>
+    <longitude>-0.181076</longitude>
+    <name>Osu Premier Life Centre</name>
+    <imageFileName/>
+    <fax>030 2769179</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302-769181, 0302 769182</phoneNumber>
+    <address>1st Floor, Danawi House, Cantonments Road, Osu,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Extended Opening Hours</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>131</id>
+    <latitude>5.579177</latitude>
+    <longitude>-0.228208</longitude>
+    <name>North Kaneshie Premier Life Centre</name>
+    <imageFileName/>
+    <fax>0302 241924</fax>
+    <openingHours>
+      <mon>0800-1830</mon>
+      <tue>0800-1830</tue>
+      <wed>0800-1830</wed>
+      <thu>0800-1830</thu>
+      <fri>0800-1830</fri>
+      <sat>0900-1400</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302 241114, 0302 241194, 0302 241963</phoneNumber>
+    <address>Near St. Theresa's School ,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Extended Opening Hours</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>132</id>
+    <latitude>5.579177</latitude>
+    <longitude>-0.228208</longitude>
+    <name>North Kaneshie Premier Life Centre</name>
+    <imageFileName/>
+    <fax>0302 241924</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302 241114, 0302 241194, 0302 241963</phoneNumber>
+    <address>Near St. Theresa's School ,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Extended Opening Hours</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>133</id>
+    <latitude>5.633267</latitude>
+    <longitude>-0.097514</longitude>
+    <name>Spintex Premier Life Centre</name>
+    <imageFileName/>
+    <fax>030 2811980</fax>
+    <openingHours>
+      <mon>0800-1830</mon>
+      <tue>0800-1830</tue>
+      <wed>0800-1830</wed>
+      <thu>0800-1830</thu>
+      <fri>0800-1830</fri>
+      <sat>0900-1400</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302-811979, 0302-811978, 0302-811980</phoneNumber>
+    <address>Near First Choice Saloon, Spintex Road,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Extended Opening Hours</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>134</id>
+    <latitude>5.633267</latitude>
+    <longitude>-0.097514</longitude>
+    <name>Spintex Premier Life Centre</name>
+    <imageFileName/>
+    <fax>030 2811980</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302-811979, 0302-811978, 0302-811980</phoneNumber>
+    <address>Near First Choice Saloon, Spintex Road,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Extended Opening Hours</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>135</id>
+    <latitude>9.43661</latitude>
+    <longitude>-0.84282</longitude>
+    <name>Tamale Premier Life Centre</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>0800-1830</mon>
+      <tue>0800-1830</tue>
+      <wed>0800-1830</wed>
+      <thu>0800-1830</thu>
+      <fri>0800-1830</fri>
+      <sat>0900-1400</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>037 2025646</phoneNumber>
+    <address>Rice City Residential Area, Gumani,Tamale,Northern Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Extended Opening Hours</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>136</id>
+    <latitude>9.43661</latitude>
+    <longitude>-0.84282</longitude>
+    <name>Tamale Premier Life Centre</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>037 2025646</phoneNumber>
+    <address>Rice City Residential Area, Gumani,Tamale,Northern Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Extended Opening Hours</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>137</id>
+    <latitude>6.683234</latitude>
+    <longitude>-1.575723</longitude>
+    <name>KNUST Agency</name>
+    <imageFileName/>
+    <fax>032 2035240</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032 20 60196</phoneNumber>
+    <address>Commercial Area, KNUST Campus,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>138</id>
+    <latitude>6.683234</latitude>
+    <longitude>-1.575723</longitude>
+    <name>KNUST Agency</name>
+    <imageFileName/>
+    <fax>032 2035240</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032 20 60196</phoneNumber>
+    <address>Commercial Area, KNUST Campus,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>139</id>
+    <latitude>6.697785</latitude>
+    <longitude>-1.61498</longitude>
+    <name>Central Market Agency</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>028 9515008</phoneNumber>
+    <address>Solid FM Building, Main Roman Hill - Asafo Market Road,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>140</id>
+    <latitude>6.697785</latitude>
+    <longitude>-1.61498</longitude>
+    <name>Central Market Agency</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>028 9515008</phoneNumber>
+    <address>Solid FM Building, Main Roman Hill - Asafo Market Road,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>141</id>
+    <latitude>6.700603</latitude>
+    <longitude>-1.618252</longitude>
+    <name>Ashanti Newtown Agency</name>
+    <imageFileName/>
+    <fax>032 2083664</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032 2083664-5, 028 9515007</phoneNumber>
+    <address>Apadwahene Road, near Dr. Mensah Traffic Light,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>142</id>
+    <latitude>6.700603</latitude>
+    <longitude>-1.618252</longitude>
+    <name>Ashanti Newtown Agency</name>
+    <imageFileName/>
+    <fax>032 2083664</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032 2083664-5, 028 9515007</phoneNumber>
+    <address>Apadwahene Road, near Dr. Mensah Traffic Light,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>143</id>
+    <latitude>6.698845</latitude>
+    <longitude>-1.631244</longitude>
+    <name>Bantama Agency</name>
+    <imageFileName/>
+    <fax>032 2083719</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032 2083704, 032 20 83702</phoneNumber>
+    <address>Opposite roundabout at KATH,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>144</id>
+    <latitude>6.698845</latitude>
+    <longitude>-1.631244</longitude>
+    <name>Bantama Agency</name>
+    <imageFileName/>
+    <fax>032 2083719</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>032 2083704, 032 20 83702</phoneNumber>
+    <address>Opposite roundabout at KATH,Kumasi,Ashanti Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>145</id>
+    <latitude>5.536691</latitude>
+    <longitude>-0.26526</longitude>
+    <name>Dansoman Last Stop Agency</name>
+    <imageFileName/>
+    <fax>030 2308140</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302 308122, 028 9543083/4 </phoneNumber>
+    <address>Near Exhibition Roundabout,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>146</id>
+    <latitude>5.536691</latitude>
+    <longitude>-0.26526</longitude>
+    <name>Dansoman Last Stop Agency</name>
+    <imageFileName/>
+    <fax>030 2308140</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302 308122, 028 9543083/4 </phoneNumber>
+    <address>Near Exhibition Roundabout,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>147</id>
+    <latitude>5.569185</latitude>
+    <longitude>-0.183726</longitude>
+    <name>UNDP Agency</name>
+    <imageFileName/>
+    <fax>0302 785190</fax>
+    <openingHours>
+      <mon>0830-1630</mon>
+      <tue>0830-1630</tue>
+      <wed>0830-1630</wed>
+      <thu>0830-1630</thu>
+      <fri>0830-1630</fri>
+      <sat>closed</sat>
+      <sun>closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302 769922, / 767571</phoneNumber>
+    <address>United Nations Offices in Ghana, 7 Ring Road East,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>148</id>
+    <latitude>5.569185</latitude>
+    <longitude>-0.183726</longitude>
+    <name>UNDP Agency</name>
+    <imageFileName/>
+    <fax>0302 785190</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>0302 769922, / 767571</phoneNumber>
+    <address>United Nations Offices in Ghana, 7 Ring Road East,Accra,Greater Accra Region</address>
+    <services>
+      <service>Retail Banking</service>
+      <service>Account Opening</service>
+      <service>24/7 Cash</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>149</id>
+    <latitude>5.558841</latitude>
+    <longitude>-0.200391</longitude>
+    <name>Ridge Towers</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Security Gate, Ridge Towers building,Accra,Greater Accra Region</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>150</id>
+    <latitude>5.569612</latitude>
+    <longitude>-0.286535</longitude>
+    <name>Mallam Junction (Total)</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Total Filling Station, Mallam Junction,Accra,Greater Accra Region</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>151</id>
+    <latitude>5.576799</latitude>
+    <longitude>-0.254456</longitude>
+    <name>Darkuman Junction (Total)</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Total Filling Station, Darkuman Junction,Accra,Greater Accra Region</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>152</id>
+    <latitude>5.557375</latitude>
+    <longitude>-0.165227</longitude>
+    <name>La Road (Total)</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Total Filling Station, La  ,Accra,Greater Accra Region</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>153</id>
+    <latitude>5.576217</latitude>
+    <longitude>-0.216862</longitude>
+    <name>Caprice -Accra North -Goil</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Goil Filling Station, Caprice,Accra,Greater Accra Region</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>154</id>
+    <latitude>5.66731</latitude>
+    <longitude>-0.238523</longitude>
+    <name>Atomic Energy Roundabout - Goil</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Goil Filling Station, Atomic Roundabout,Accra,Greater Accra Region</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>155</id>
+    <latitude>6.688765</latitude>
+    <longitude>-1.596456</longitude>
+    <name>Anloga Junction (Total)</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Total Filling Station, Anloga,Kumasi,Ashanti Region</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>156</id>
+    <latitude>6.689559</latitude>
+    <longitude>-1.613574</longitude>
+    <name>Labour- Asafo (Total)</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Total Filling Station, Labour Roundabout, Asafo,Kumasi,Ashanti Region</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>157</id>
+    <latitude>6.709463</latitude>
+    <longitude>-1.599272</longitude>
+    <name>Airport Roundabout - K'si (Total)</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Total Filling Station, Airport Roundabout,Kumasi,Ashanti Region</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>158</id>
+    <latitude>6.672653</latitude>
+    <longitude>-1.64045</longitude>
+    <name>Bekwai- Santasi (Total)</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Total Filling Station, Santasi,Kumasi,Ashanti Region</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>159</id>
+    <latitude>6.714583</latitude>
+    <longitude>-1.592739</longitude>
+    <name>Kumasi Airport</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Total Filling Station, Kumasi Airport,Kumasi,Ashanti Region</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>160</id>
+    <latitude>5.280366</latitude>
+    <longitude>-2.0014</longitude>
+    <name>Tarkwa - UMAT</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>University of Mines &amp; Technology, Tarkwa,Tarkwa,Western Region</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>161</id>
+    <latitude>5.598539</latitude>
+    <longitude>-0.180717</longitude>
+    <name>Millenium Heights</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Millennium Heights Building, Airport,Accra,Greater Accra Region</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>162</id>
+    <latitude>5.537267</latitude>
+    <longitude>-0.226604</longitude>
+    <name>Korle Bu Hospital</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>OPD, Korle Bu Teaching Hospital, Korle Bu,Accra,Greater Accra Region</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>163</id>
+    <latitude>5.625195</latitude>
+    <longitude>-0.068402</longitude>
+    <name>Sakumono</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>20 metres from Sakumono Junction,Accra,Greater Accra Region</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>164</id>
+    <latitude>5.59336</latitude>
+    <longitude>-0.202968</longitude>
+    <name>Kotobabi</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Adjacent Kotobabi Police Station,Accra,Greater Accra Region</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>165</id>
+    <latitude>5.116025</latitude>
+    <longitude>-1.292771</longitude>
+    <name>Unniversity of Cape Coast</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Science Workshop, University of Cape Coast, Cape Coast,Cape Coast,Central Region</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>166</id>
+    <latitude>5.622115</latitude>
+    <longitude>-0.17296</longitude>
+    <name>Accra Mall</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>ATM Hall, Accra Mall, Tetteh-Quarshie Interchange,Accra,Greater Accra Region</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>167</id>
+    <latitude>5.566323</latitude>
+    <longitude>-0.189638</longitude>
+    <name>Barclays Club House</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>House No. 16, Gamel Abdul Nasser Rd, Ringway Estates, Osu,Accra,Greater Accra Region</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>168</id>
+    <latitude>5.585074</latitude>
+    <longitude>-0.231501</longitude>
+    <name>Swanlake</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Swanlake Area, North Kaneshie,Accra,Greater Accra Region</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>169</id>
+    <latitude>6.683234</latitude>
+    <longitude>-1.575723</longitude>
+    <name>KNUST</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Commercial Area, Kwame Nkrumah University of Science and Technology,Kumasi,Ashanti Region</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>170</id>
+    <latitude>5.548378</latitude>
+    <longitude>-0.378487</longitude>
+    <name>Shoprite, Weija</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Shoprite, Weija,Accra,Greater Accra Region</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+</POICollection>

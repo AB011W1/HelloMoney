@@ -1,0 +1,65 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="ecrimeFacadeFilter" class="com.barclays.bmg.ecrime.EcrimeFacadeFilter">
+
+		<property name="flowManager" ref="ecrimeFlowManager" />
+		<property name="ecrimeConfig" ref="ecrimeConfig" />
+	</bean>
+
+	<bean id="ecrimeFlowManager" class="com.barclays.bmg.ecrime.EcrimeFlowManager">
+		<property name="beansFactory" ref="springBeansFactory" />
+		<property name="workManger" ref="workManager" />
+	</bean>
+
+
+
+	<bean id="ecrimeService"
+		class="com.barclays.bmg.ecrime.impl.EcrimeServiceImpl">
+        <property name="ecrimeConfig" ref="ecrimeConfig" />
+	</bean>
+
+	<bean id="ecrimeConfig"
+		class="com.barclays.bmg.ecrime.EcrimeConfigurationImpl">
+		<property name="configuratonReader" ref="configuratonReader" />
+	</bean>
+
+	<bean id="configuratonReader" class="com.barclays.bmg.ecrime.ConfigurationReader">
+		<property name="listNode" value="ecrime-configuration" />
+		<property name="fileNamePattern">
+			<value>ecrime/ecrime-*config.xml</value>
+		</property>
+	</bean>
+
+	<bean id="workManager"
+		class="com.barclays.bmg.ecrime.EcrimeWorkManager">
+		<property name="ecrimeConfig" ref="ecrimeConfig" />
+		<property name="resourceRef" value="true" />
+	</bean>
+
+
+	<bean id="ecrimeMethodInterceptor"
+		class="com.barclays.bmg.ecrime.interceptor.EcrimeMethodInterceptor"/>
+
+	<bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+
+		<property name="proxyTargetClass"><value>true</value></property>
+		<property name="beanNames">
+			<list>
+				<!--<value>otpAuthenticationJSONBldr</value>
+				<value>sqaAuthenticationJSONBldr</value>
+				--><value>*Bldr</value>
+				<value>*Builder</value>
+			</list>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>ecrimeMethodInterceptor</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>

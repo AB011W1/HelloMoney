@@ -1,0 +1,2926 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<POICollection>
+
+	<pointOfInterest>
+		<id>3003</id>
+		<latitude>-21.977981</latitude>
+		<longitude>28.419957</longitude>
+		<address>Bobonong</address>
+		<fax>2414758</fax>
+		<imageFileName></imageFileName>
+		<name>Bobonong (Express)</name>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>09:06</mon>
+			<tue>09:06</tue>
+			<thu>09:06</thu>
+			<wed>09:06</wed>
+			<fri>09:06</fri>
+			<sat>Week-Off</sat>
+			<sun>Week-Off</sun>
+		</openingHours>
+		<phoneNumber>2414776</phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+	<pointOfInterest>
+		<id>3004</id>
+		<latitude>-21.977981</latitude>
+		<longitude>28.419957</longitude>
+		<address>Bobonong</address>
+		<fax>2414758</fax>
+		<imageFileName></imageFileName>
+		<name>Bobonong (Express)</name>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<phoneNumber>2414776</phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+	<pointOfInterest>
+		<id>3005</id>
+		<latitude>-21.977981</latitude>
+		<longitude>28.419957</longitude>
+		<address>Lot 430 Bobonong, Bobonong</address>
+		<fax>2619140</fax>
+		<imageFileName></imageFileName>
+		<name>Bobonong Branch</name>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<tue>0830 - 1530 hrs</tue>
+			<thu>0830 - 1530 hrs</thu>
+			<wed>0830 - 1530 hrs</wed>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+		</openingHours>
+		<phoneNumber>2619117</phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+	<pointOfInterest>
+		<id>3006</id>
+		<latitude>-22.38874</latitude>
+		<longitude>26.6977</longitude>
+		<address>Plot 2461 Serowe Junction, Serowe</address>
+		<fax>4630872</fax>
+		<imageFileName></imageFileName>
+		<name>Boiteko SSC</name>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<tue>0830 - 1530 hrs</tue>
+			<thu>0830 - 1530 hrs</thu>
+			<wed>0830 - 1530 hrs</wed>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+		</openingHours>
+		<phoneNumber>4630872</phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+	<pointOfInterest>
+		<id>3008</id>
+		<latitude>-24.629385</latitude>
+		<longitude>25.914833</longitude>
+		<name>Broadhurst Branch</name>
+		<address>Plot 4748, P O Box 316 Kubu Road, Gaborone</address>
+		<phoneNumber>3912671</phoneNumber>
+		<fax>3913891</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<tue>0830 - 1530 hrs</tue>
+			<thu>0830 - 1530 hrs</thu>
+			<wed>0830 - 1530 hrs</wed>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+	<pointOfInterest>
+		<id>3009</id>
+		<name>Carbo Centre Prestige (B&amp;M)</name>
+		<latitude>-24.658772</latitude>
+		<longitude>25.900628</longitude>
+		<address>Gaborone</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3010</id>
+		<name>Carbo Prestige Centre</name>
+		<latitude>-24.676424</latitude>
+		<longitude>25.935706</longitude>
+		<address>Plot 54518, RiverWalk Mall, Gaborone</address>
+		<phoneNumber>3188714</phoneNumber>
+		<fax>3188713</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0800 - 1700 hrs</mon>
+			<tue>0800 - 1700 hrs</tue>
+			<thu>0800 - 1700 hrs</thu>
+			<wed>0800 - 1700 hrs</wed>
+			<fri>0800 - 1700 hrs</fri>
+			<sat>0800 - 1700 hrs</sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3011</id>
+		<name>Corporate (Sales Centre)</name>
+		<latitude>-24.661585</latitude>
+		<longitude>25.910783</longitude>
+		<address>Plot 54518, RiverWalk Mall, Gaborone</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3012</id>
+		<name>Donga Service Centre</name>
+		<latitude>-21.174888</latitude>
+		<longitude>27.546973</longitude>
+		<address>BDF Portion 2, Francistown</address>
+		<phoneNumber>2413439</phoneNumber>
+		<fax>2413439</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<tue>0830 - 1530 hrs</tue>
+			<thu>0830 - 1530 hrs</thu>
+			<wed>0830 - 1530 hrs</wed>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3013</id>
+		<name>Francistown (B&amp;M)</name>
+		<latitude>-21.169545</latitude>
+		<longitude>27.511756</longitude>
+		<address>Francistown</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3014</id>
+		<name>Francistown (Express)</name>
+		<latitude>-21.174888</latitude>
+		<longitude>27.546973</longitude>
+		<address>Francistown</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3016</id>
+		<name>Francistown(B&amp;M)</name>
+		<latitude>-21.169545</latitude>
+		<longitude>27.511793</longitude>
+		<address>Francistown</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3017</id>
+		<name>Francistown(B&amp;M)</name>
+		<latitude>-21.169545</latitude>
+		<longitude>27.511793</longitude>
+		<address>Francistown</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3018</id>
+		<name>Francistown(B&amp;M)</name>
+		<latitude>-21.170346</latitude>
+		<longitude>27.51403</longitude>
+		<address>Francistown</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3019</id>
+		<name>Francistown(B&amp;M)</name>
+		<latitude>-21.170346</latitude>
+		<longitude>27.51403</longitude>
+		<address>Francistown</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<wed></wed>
+			<thu></thu>
+			<tue></tue>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3020</id>
+		<name>Francistown(Sales Centre)</name>
+		<latitude>-21.177514</latitude>
+		<longitude>27.511514</longitude>
+		<address>Francistown</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<wed></wed>
+			<thu></thu>
+			<tue></tue>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3021</id>
+		<name>Gab Station Branch</name>
+		<latitude>-24.662345</latitude>
+		<longitude>25.906738</longitude>
+		<address>Next to SuperSave, Gaborone</address>
+		<phoneNumber>3930264</phoneNumber>
+		<fax>3930287</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+		</openingHours>
+		<services>
+			<service>Cash Withdrawal</service>
+			<service>Cash Deposit</service>
+			<service>...</service>
+		</services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3022</id>
+		<name>Gaborone</name>
+		<latitude>-24.643258</latitude>
+		<longitude>25.885093</longitude>
+		<address>Gaborone</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<wed></wed>
+			<thu></thu>
+			<tue></tue>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3023</id>
+		<name>Gaborone</name>
+		<latitude>-24.662048</latitude>
+		<longitude>25.930899</longitude>
+		<address>Gaborone</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<wed></wed>
+			<thu></thu>
+			<tue></tue>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3025</id>
+		<name>Gaborone Industrial</name>
+		<latitude>-24.670214</latitude>
+		<longitude>25.906792</longitude>
+		<address>Plot 17952/3, Old Lobatse Rd, Gaborone</address>
+		<phoneNumber>3912711</phoneNumber>
+		<fax>3957051</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3026</id>
+		<name>Gaborone Mall Prestige</name>
+		<latitude>-24.658128</latitude>
+		<longitude>25.915557</longitude>
+		<address>Debswana House, Main Mall, Gaborone</address>
+		<phoneNumber>3953682</phoneNumber>
+		<fax>3170826</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0800 - 1700 hrs</mon>
+			<wed>0800 - 1700 hrs</wed>
+			<thu>0800 - 1700 hrs</thu>
+			<tue>0800 - 1700 hrs</tue>
+			<fri>0800 - 1700 hrs</fri>
+			<sat>0800 - 1700 hrs</sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3027</id>
+		<name>Gaborone OK Foods    (Sales Centre)</name>
+		<latitude>-24.637192</latitude>
+		<longitude>25.893257</longitude>
+		<address>Gaborone</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<wed></wed>
+			<thu></thu>
+			<tue></tue>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3028</id>
+		<name>Gaborone Station</name>
+		<latitude>-24.66254</latitude>
+		<longitude>25.905971</longitude>
+		<address>Gaborone</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<wed></wed>
+			<thu></thu>
+			<tue></tue>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3029</id>
+		<name>Gaborone Station (B&amp;M)</name>
+		<latitude>-24.662345</latitude>
+		<longitude>25.906738</longitude>
+		<address>Gaborone</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<wed></wed>
+			<thu></thu>
+			<tue></tue>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3030</id>
+		<name>Gaborone Sun Prestige (B&amp;M)</name>
+		<latitude>-24.65201</latitude>
+		<longitude>25.929751</longitude>
+		<address>Gaborone</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<wed></wed>
+			<thu></thu>
+			<tue></tue>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3031</id>
+		<name>Gaborone Sun Prestige (B&amp;M)</name>
+		<latitude>-24.65201</latitude>
+		<longitude>25.929751</longitude>
+		<address>Gaborone</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<wed></wed>
+			<thu></thu>
+			<tue></tue>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3032</id>
+		<name>Gaborone SunPrestige</name>
+		<latitude>-24.65201</latitude>
+		<longitude>25.929751</longitude>
+		<address>Gaborone Sun Building Nyerere Drive, Gaborone</address>
+		<phoneNumber>3170502</phoneNumber>
+		<fax>3953316</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0800 - 1700 hrs</mon>
+			<wed>0800 - 1700 hrs</wed>
+			<thu>0800 - 1700 hrs</thu>
+			<tue>0800 - 1700 hrs</tue>
+			<fri>0800 - 1700 hrs</fri>
+			<sat>0800 - 1700 hrs</sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3033</id>
+		<name>Gaborone West Industrial (B&amp;M)</name>
+		<latitude>-24.670214</latitude>
+		<longitude>25.906792</longitude>
+		<address>Gaborone</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<wed></wed>
+			<thu></thu>
+			<tue></tue>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3034</id>
+		<name>Gaborone West Industrial (B&amp;M)</name>
+		<latitude>-24.670214</latitude>
+		<longitude>25.906792</longitude>
+		<address>Gaborone</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<wed></wed>
+			<thu></thu>
+			<tue></tue>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3037</id>
+		<name>Game City Prestige</name>
+		<latitude>-24.687771</latitude>
+		<longitude>25.881042</longitude>
+		<address>Game City, P.O. Box 478, Gaborone</address>
+		<phoneNumber>3180061</phoneNumber>
+		<fax>3180068</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0800 - 1700 hrs</mon>
+			<wed>0800 - 1700 hrs</wed>
+			<thu>0800 - 1700 hrs</thu>
+			<tue>0800 - 1700 hrs</tue>
+			<fri>0800 - 1700 hrs</fri>
+			<sat>0800 - 1700 hrs</sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3038</id>
+		<name>Game City Prestige (B&amp;M)</name>
+		<latitude>-24.687771</latitude>
+		<longitude>25.881042</longitude>
+		<address>Gaborone</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<wed></wed>
+			<thu></thu>
+			<tue></tue>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>3039</id>
+		<name>Game City Prestige (B&amp;M)</name>
+		<latitude>-24.687771</latitude>
+		<longitude>25.881042</longitude>
+		<address>Gaborone</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<wed></wed>
+			<thu></thu>
+			<tue></tue>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3040</id>
+		<name>Ghanzi (B&amp;M)</name>
+		<latitude>-21.698724</latitude>
+		<longitude>21.644536</longitude>
+		<address>Ghanzi</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<wed></wed>
+			<thu></thu>
+			<tue></tue>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>3041</id>
+		<name>Ghanzi (B&amp;M)</name>
+		<latitude>-21.698724</latitude>
+		<longitude>21.644536</longitude>
+		<address>Ghanzi</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<wed></wed>
+			<thu></thu>
+			<tue></tue>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3042</id>
+		<name>Ghanzi Branch</name>
+		<latitude>-21.698724</latitude>
+		<longitude>21.644536</longitude>
+		<address>Plot 29, The Mall, Ghanzi</address>
+		<phoneNumber>6596144</phoneNumber>
+		<fax>6596318</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<wed>0830 - 1530 hrs</wed>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3043</id>
+		<name>Glen Valley (Sales Centre</name>
+		<latitude>-24.594105</latitude>
+		<longitude>25.955468</longitude>
+		<address>Gaborone</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3045</id>
+		<name>GlenValley SSC</name>
+		<latitude>-24.594105</latitude>
+		<longitude>25.955468</longitude>
+		<address>BDF, GlenValley, Gaborone, Gaborone</address>
+		<phoneNumber>3952421</phoneNumber>
+		<fax>3972364</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3046</id>
+		<name>Gumare (Express)</name>
+		<latitude>-19.369859</latitude>
+		<longitude>22.157965</longitude>
+		<address>Gumare</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<wed></wed>
+			<thu></thu>
+			<tue></tue>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3047</id>
+		<name>Gumare Branch</name>
+		<latitude>-19.369859</latitude>
+		<longitude>22.157965</longitude>
+		<address>Plot 76 Gumare, Gumare</address>
+		<phoneNumber>6874217</phoneNumber>
+		<fax>6874240</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3048</id>
+		<name>Jwaneng (B&amp;M)</name>
+		<latitude>-24.59868</latitude>
+		<longitude>24.728411</longitude>
+		<address>Jwaneng</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<wed></wed>
+			<thu></thu>
+			<tue></tue>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>3049</id>
+		<name>Jwaneng (B&amp;M)</name>
+		<latitude>-24.59868</latitude>
+		<longitude>24.728411</longitude>
+		<address>Jwaneng</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<wed></wed>
+			<thu></thu>
+			<tue></tue>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3050</id>
+		<name>Jwaneng Branch</name>
+		<latitude>-24.59868</latitude>
+		<longitude>24.728411</longitude>
+		<address>Plot 5477, Private Bag 7, Jwaneng</address>
+		<phoneNumber>5880341</phoneNumber>
+		<fax>5880644</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3051</id>
+		<name>Kanye (B&amp;M)</name>
+		<latitude>-24.979785</latitude>
+		<longitude>25.337801</longitude>
+		<address>Kanye</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<wed></wed>
+			<thu></thu>
+			<tue></tue>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3052</id>
+		<name>Kanye (B&amp;M)</name>
+		<latitude>-24.979785</latitude>
+		<longitude>25.337801</longitude>
+		<address>Kanye</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<wed></wed>
+			<thu></thu>
+			<tue></tue>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3053</id>
+		<name>Kanye Branch</name>
+		<latitude>-24.979785</latitude>
+		<longitude>25.337801</longitude>
+		<address>Plot 89, Kanye</address>
+		<phoneNumber>5440229</phoneNumber>
+		<fax>5440457</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3054</id>
+		<name>Kasane (B&amp;M)</name>
+		<latitude>-17.802367</latitude>
+		<longitude>25.161089</longitude>
+		<address>Kasane</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<wed></wed>
+			<thu></thu>
+			<tue></tue>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3055</id>
+		<name>Kasane (B&amp;M)</name>
+		<latitude>-17.802367</latitude>
+		<longitude>25.161089</longitude>
+		<address>Kasane</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<wed></wed>
+			<thu></thu>
+			<tue></tue>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3056</id>
+		<name>Kasane Branch</name>
+		<latitude>-17.802367</latitude>
+		<longitude>25.161089</longitude>
+		<address>Plot 2208, Shop 8 Kasane, Kasane</address>
+		<phoneNumber>6250221</phoneNumber>
+		<fax>6250269</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3057</id>
+		<name>Letlhakane Branch</name>
+		<latitude>-21.42269</latitude>
+		<longitude>25.583746</longitude>
+		<address>Plot 5377, Millenuim Tower Bldg, Letlhakane</address>
+		<phoneNumber>2971227</phoneNumber>
+		<fax>2971287</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3058</id>
+		<name>Lobatse Branch</name>
+		<latitude>-25.201709</latitude>
+		<longitude>25.681009</longitude>
+		<address>Plot 4649, Lobatse</address>
+		<phoneNumber>5330295</phoneNumber>
+		<fax>5330966</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3059</id>
+		<name>Mahalapye  Branch</name>
+		<latitude>-23.113528</latitude>
+		<longitude>26.833763</longitude>
+		<address>Plot 62, Mahalapye</address>
+		<phoneNumber>4710281</phoneNumber>
+		<fax>4710467</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3061</id>
+		<name>Masunga Branch</name>
+		<latitude>-20.624842</latitude>
+		<longitude>27.444931</longitude>
+		<address>Lot 1107 Masunga</address>
+		<phoneNumber>2489024</phoneNumber>
+		<fax>2489084</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3062</id>
+		<name>Maun Branch</name>
+		<latitude>-19.998777</latitude>
+		<longitude>23.417176</longitude>
+		<address>Plot D4/66 Maun</address>
+		<phoneNumber>6860210</phoneNumber>
+		<fax>6860274</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3063</id>
+		<name>Mochudi Branch</name>
+		<latitude>-24.39151</latitude>
+		<longitude>26.245337</longitude>
+		<address>Plot 76 P O Box 59 Mochudi, Mochudi</address>
+		<phoneNumber>5777276</phoneNumber>
+		<fax>5777440</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3064</id>
+		<name>Mogoditshane Branch</name>
+		<latitude>-24.617077</latitude>
+		<longitude>25.866151</longitude>
+		<address>Lot 5483-5 Mogoditshane, Gaborone</address>
+		<phoneNumber>3930403</phoneNumber>
+		<fax>3930408</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3065</id>
+		<name>Molepolole Branch</name>
+		<latitude>-24.40567</latitude>
+		<longitude>25.506174</longitude>
+		<address>Plot 136 P O Box 234, Molepolole</address>
+		<phoneNumber>5920234</phoneNumber>
+		<fax>5920346</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3066</id>
+		<name>Moshupa Branch</name>
+		<latitude>-24.779609</latitude>
+		<longitude>25.416138</longitude>
+		<address>Lot 1016 Moshupa, Moshupa</address>
+		<phoneNumber>5449127</phoneNumber>
+		<fax>5449133</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3068</id>
+		<name>Orapa Branch</name>
+		<latitude>-21.42269</latitude>
+		<longitude>25.583746</longitude>
+		<address>P.O. Box 1745, Sabie Street, Orapa</address>
+		<phoneNumber>2971277</phoneNumber>
+		<fax>2971287</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0800 - 1700 hrs</mon>
+			<tue>0800 - 1700 hrs</tue>
+			<thu>0800 - 1700 hrs</thu>
+			<wed>0800 - 1700 hrs</wed>
+			<fri>0800 - 1700 hrs</fri>
+			<sat>0800 - 1700 hrs</sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3069</id>
+		<name>Otse SSC</name>
+		<latitude>-25.038191</latitude>
+		<longitude>25.741916</longitude>
+		<address>Otse Police College, Otse</address>
+		<phoneNumber>5337059</phoneNumber>
+		<fax>5337056</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3070</id>
+		<name>Letlhakane (B&amp;M)</name>
+		<latitude>-21.42269</latitude>
+		<longitude>25.583746</longitude>
+		<address>Letlhakane</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>3071</id>
+		<name>Letlhakane (B&amp;M)</name>
+		<latitude>-21.42269</latitude>
+		<longitude>25.583746</longitude>
+		<address>Letlhakane</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3072</id>
+		<name>Lobatse (B&amp;M)</name>
+		<latitude>-25.201709</latitude>
+		<longitude>25.681009</longitude>
+		<address>Lobatse</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>3073</id>
+		<name>Lobatse (B&amp;M)</name>
+		<latitude>-25.201709</latitude>
+		<longitude>25.681009</longitude>
+		<address>Lobatse</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3074</id>
+		<name>Mahalapye (B&amp;M)</name>
+		<latitude>-23.113528</latitude>
+		<longitude>26.833763</longitude>
+		<address>Mahalapye</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>3075</id>
+		<name>Mahalapye (B&amp;M)</name>
+		<latitude>-23.113528</latitude>
+		<longitude>26.833763</longitude>
+		<address>Mahalapye</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3076</id>
+		<name>Masunga (Masunga)</name>
+		<latitude>-20.624842</latitude>
+		<longitude>27.444931</longitude>
+		<address>Masunga</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>3077</id>
+		<name>Masunga (Masunga)</name>
+		<latitude>-20.624842</latitude>
+		<longitude>27.444931</longitude>
+		<address>Masunga</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3078</id>
+		<name>Maun (B&amp;M)</name>
+		<latitude>-19.998777</latitude>
+		<longitude>23.417176</longitude>
+		<address>Maun</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>3079</id>
+		<name>Maun (B&amp;M)</name>
+		<latitude>-19.998777</latitude>
+		<longitude>23.417176</longitude>
+		<address>Maun</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3080</id>
+		<name>Mochudi(B&amp;M)</name>
+		<latitude>-24.39151</latitude>
+		<longitude>26.245337</longitude>
+		<address>Mochudi</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>3081</id>
+		<name>Mochudi(B&amp;M)</name>
+		<latitude>-24.39151</latitude>
+		<longitude>26.245337</longitude>
+		<address>Mochudi</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3082</id>
+		<name>Mogoditshane (Sales Centre)</name>
+		<latitude>-24.617077</latitude>
+		<longitude>25.866151</longitude>
+		<address>Gaborone</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>3083</id>
+		<name>Mogoditshane (Sales Centre)</name>
+		<latitude>-24.617077</latitude>
+		<longitude>25.866151</longitude>
+		<address>Gaborone</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3084</id>
+		<name>Molepolole (B&amp;M)</name>
+		<latitude>-24.40841</latitude>
+		<longitude>25.514991</longitude>
+		<address>Molepolole</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>3085</id>
+		<name>Molepolole (B&amp;M)</name>
+		<latitude>-24.40841</latitude>
+		<longitude>25.514991</longitude>
+		<address>Molepolole</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3086</id>
+		<name>Molepolole(B&amp;M)</name>
+		<latitude>-24.40567</latitude>
+		<longitude>25.506174</longitude>
+		<address>Molepolole</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>3087</id>
+		<name>Molepolole(B&amp;M)</name>
+		<latitude>-24.40567</latitude>
+		<longitude>25.506174</longitude>
+		<address>Molepolole</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3088</id>
+		<name>Moshupa (Express)</name>
+		<latitude>-24.779609</latitude>
+		<longitude>25.416138</longitude>
+		<address>Moshupa</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>3089</id>
+		<name>Moshupa (Express)</name>
+		<latitude>-24.779609</latitude>
+		<longitude>25.416138</longitude>
+		<address>Moshupa</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3090</id>
+		<name>Orapa (B&amp;M)</name>
+		<latitude>-21.42269</latitude>
+		<longitude>25.583746</longitude>
+		<address>Orapa</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>3091</id>
+		<name>Orapa (B&amp;M)</name>
+		<latitude>-21.42269</latitude>
+		<longitude>25.583746</longitude>
+		<address>Orapa</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3092</id>
+		<name>Otse (Sales Centre)</name>
+		<latitude>-25.038191</latitude>
+		<longitude>25.741916</longitude>
+		<address>Otse</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>3093</id>
+		<name>Otse (Sales Centre)</name>
+		<latitude>-25.038191</latitude>
+		<longitude>25.741916</longitude>
+		<address>Otse</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3094</id>
+		<name>Carbo Centre Prestige (B&amp;M)</name>
+		<latitude>-24.658772</latitude>
+		<longitude>25.900628</longitude>
+		<address>Gaborone</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3095</id>
+		<name>Francistown (B&amp;M)</name>
+		<latitude>-21.169545</latitude>
+		<longitude>27.511756</longitude>
+		<address>Francistown</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3096</id>
+		<name>Francistown (Express)</name>
+		<latitude>-21.174888</latitude>
+		<longitude>27.546973</longitude>
+		<address>Francistown</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3097</id>
+		<name>Palapye</name>
+		<latitude>-22.536763</latitude>
+		<longitude>27.111232</longitude>
+		<address>Palapye</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>3098</id>
+		<name>Palapye</name>
+		<latitude>-22.536763</latitude>
+		<longitude>27.111232</longitude>
+		<address>Palapye</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3099</id>
+		<name>Palapye Branch</name>
+		<latitude>-22.536763</latitude>
+		<longitude>27.111232</longitude>
+		<address>Plot 47, Palapye</address>
+		<phoneNumber>4920352</phoneNumber>
+		<fax>4920220</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3100</id>
+		<name>Phakalane Prestige</name>
+		<latitude>-24.563239</latitude>
+		<longitude>25.976234</longitude>
+		<address>Plot 63724, Mowana Shopping Cnt, Gaborone</address>
+		<phoneNumber>3903739</phoneNumber>
+		<fax>3903702</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3101</id>
+		<name>Phakalane Prestige (B&amp;M)</name>
+		<latitude>-24.563239</latitude>
+		<longitude>25.976234</longitude>
+		<address>Mowana Park</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>3102</id>
+		<name>Phakalane Prestige (B&amp;M)</name>
+		<latitude>-24.563239</latitude>
+		<longitude>25.976234</longitude>
+		<address>Mowana Park</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3103</id>
+		<name>Phakalane Prestige (B&amp;M)</name>
+		<latitude>-24.563477</latitude>
+		<longitude>25.976062</longitude>
+		<address>Mowana Park</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3104</id>
+		<name>Pitsane SSC</name>
+		<latitude>-20.624842</latitude>
+		<longitude>27.444931</longitude>
+		<address>Plot 1742 Pitsane, Pitsane</address>
+		<phoneNumber>5400344</phoneNumber>
+		<fax>5400344</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3105</id>
+		<name>Ramotswa (Express)</name>
+		<latitude>-24.857303</latitude>
+		<longitude>25.873967</longitude>
+		<address>Mowana Park</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>3106</id>
+		<name>Ramotswa (Express)</name>
+		<latitude>-24.857303</latitude>
+		<longitude>25.873967</longitude>
+		<address>Mowana Park</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3107</id>
+		<name>Ramotswa Branch</name>
+		<latitude>-24.857303</latitude>
+		<longitude>25.873967</longitude>
+		<address>Plot 861-3 &amp; 2990 Score Mall, Ramotswa</address>
+		<phoneNumber>5390569</phoneNumber>
+		<fax>5390578</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3108</id>
+		<name>Selibe Phikwe</name>
+		<latitude>-21.978807</latitude>
+		<longitude>27.842778</longitude>
+		<address>Botshabelo</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3109</id>
+		<name>Selibe Phikwe Branch</name>
+		<latitude>-21.975783</latitude>
+		<longitude>27.841265</longitude>
+		<address>Plot 2579 S/Phikwe, Selibe-Phikwe</address>
+		<phoneNumber>2610338</phoneNumber>
+		<fax>2611075</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3110</id>
+		<name>Selibe Phikwe Main Branch (B&amp;M)</name>
+		<latitude>-21.975723</latitude>
+		<longitude>27.840021</longitude>
+		<address>Selibe-Phikwe</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>3111</id>
+		<name>Selibe Phikwe Main Branch (B&amp;M)</name>
+		<latitude>-21.975723</latitude>
+		<longitude>27.840021</longitude>
+		<address>Selibe-Phikwe</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3112</id>
+		<name>Selibe Phikwe Prestige</name>
+		<latitude>-21.975783</latitude>
+		<longitude>27.841265</longitude>
+		<address>Plot 2579 S/Phikwe, Selibe-Phikwe</address>
+		<phoneNumber>2622970</phoneNumber>
+		<fax>2611075</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0800 - 1700 hrs</mon>
+			<tue>0800 - 1700 hrs</tue>
+			<thu>0800 - 1700 hrs</thu>
+			<wed>0800 - 1700 hrs</wed>
+			<fri>0800 - 1700 hrs</fri>
+			<sat>0800 - 1700 hrs</sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3113</id>
+		<name>Selibe Phikwe Prestige (B&amp;M)</name>
+		<latitude>-21.975783</latitude>
+		<longitude>27.841265</longitude>
+		<address>Selibe-Phikwe</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>3114</id>
+		<name>Selibe Phikwe Prestige (B&amp;M)</name>
+		<latitude>-21.975783</latitude>
+		<longitude>27.841265</longitude>
+		<address>Selibe-Phikwe</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+     <pointOfInterest>
+		<id>3115</id>
+		<name>Serowe (B&amp;M)</name>
+		<latitude>-22.389067</latitude>
+		<longitude>26.704609</longitude>
+		<address>Serowe</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>3116</id>
+		<name>Serowe (B&amp;M)</name>
+		<latitude>-22.389067</latitude>
+		<longitude>26.704609</longitude>
+		<address>Serowe</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3117</id>
+		<name>Serowe (Sales Centre)</name>
+		<latitude>-22.38874</latitude>
+		<longitude>26.6977</longitude>
+		<address>Serowe</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3118</id>
+		<name>Serowe Branch </name>
+		<latitude>-22.389067</latitude>
+		<longitude>26.704609</longitude>
+		<address>Plot 40/5 Serowe</address>
+		<phoneNumber>4630264</phoneNumber>
+		<fax>4630144</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3119</id>
+		<name>Shakawe (Express)</name>
+		<latitude>-18368178</latitude>
+		<longitude>21.84928</longitude>
+		<address>Shakawe</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3120</id>
+		<name>Shakawe Branch </name>
+		<latitude>-18368178</latitude>
+		<longitude>21.84928</longitude>
+		<address>Lot 186, Shakawe</address>
+		<phoneNumber>6875108</phoneNumber>
+		<fax>6875188</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3122</id>
+		<name>Sowa</name>
+		<latitude>41.878003</latitude>
+		<longitude>-93.097702</longitude>
+		<address>Sowa Town, Sowa</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0800 - 1700 hrs</mon>
+			<tue>0800 - 1700 hrs</tue>
+			<thu>0800 - 1700 hrs</thu>
+			<wed>0800 - 1700 hrs</wed>
+			<fri>0800 - 1700 hrs</fri>
+			<sat>0800 - 1700 hrs</sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3123</id>
+		<name>Sowa (Express)</name>
+		<latitude>41.878003</latitude>
+		<longitude>-93.097702</longitude>
+		<address>Sowa</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3124</id>
+		<name>Thamaga SSC</name>
+		<latitude>-24.66878</latitude>
+		<longitude>25.536759</longitude>
+		<address>Lot 1742 Thamaga, Thamaga</address>
+		<phoneNumber>5999405</phoneNumber>
+		<fax>5999405</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3125</id>
+		<name>Thebephatshwa (Sales Centre)</name>
+		<latitude>-24.244421</latitude>
+		<longitude>25.326726</longitude>
+		<address>Molepolole</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3126</id>
+		<name>Thebephatshwa SSC</name>
+		<latitude>-24.244421</latitude>
+		<longitude>25.326726</longitude>
+		<address>BDF, TAB Supermarket, Molepolole</address>
+		<phoneNumber>5920234</phoneNumber>
+		<fax>5920234</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3127</id>
+		<name>Tlokweng</name>
+		<latitude>-24.667162</latitude>
+		<longitude>25.940443</longitude>
+		<address>Gaborone</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3128</id>
+		<name>Tlokweng Branch</name>
+		<latitude>-24.672739</latitude>
+		<longitude>25.977366</longitude>
+		<address>Plot 5778 Tlokweng,Next to Police, Gaborone</address>
+		<phoneNumber>3935126</phoneNumber>
+		<fax>3935131</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3129</id>
+		<name>Tonota SSC</name>
+		<latitude>-21.460922</latitude>
+		<longitude>27.474264</longitude>
+		<address>Tonota</address>
+		<phoneNumber>2484924</phoneNumber>
+		<fax>2484923</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3130</id>
+		<name>Tsabong Branch</name>
+		<latitude>-26.02262</latitude>
+		<longitude>22.401059</longitude>
+		<address>Plot 545 Tsabong, Tsabong</address>
+		<phoneNumber>6540442</phoneNumber>
+		<fax>6540841</fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon>0830 - 1530 hrs</mon>
+			<wed>0830 - 1530 hrs</wed>
+			<thu>0830 - 1530 hrs</thu>
+			<tue>0830 - 1530 hrs</tue>
+			<fri>0830 - 1530 hrs</fri>
+			<sat>0830 - 1530 hrs</sat>
+			<sun>-</sun>
+        </openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3132</id>
+		<name>Tutume(Express)</name>
+		<latitude>-20.497698</latitude>
+		<longitude>27.019351</longitude>
+		<address>Tutume</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3133</id>
+		<name>Thamaga(Sales Centre)</name>
+		<latitude>-24.66878</latitude>
+		<longitude>25.536759</longitude>
+		<address>Thamaga</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>3134</id>
+		<name>Thamaga(Sales Centre)</name>
+		<latitude>-24.66878</latitude>
+		<longitude>25.536759</longitude>
+		<address>Thamaga</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3135</id>
+		<name>Tlokweng (Express)</name>
+		<latitude>-24.672739</latitude>
+		<longitude>25.977366</longitude>
+		<address>Gaborone</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>3136</id>
+		<name>Tlokweng (Express)</name>
+		<latitude>-24.672739</latitude>
+		<longitude>25.977366</longitude>
+		<address>Gaborone</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3137</id>
+		<name>Tonota (Sales Centre)</name>
+		<latitude>-21.460922</latitude>
+		<longitude>27.474264</longitude>
+		<address>Tonota</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>3138</id>
+		<name>Tonota (Sales Centre)</name>
+		<latitude>-21.460922</latitude>
+		<longitude>27.474264</longitude>
+		<address>Tonota</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>3139</id>
+		<name>Tsabong (B&amp;M)</name>
+		<latitude>-26.02262</latitude>
+		<longitude>22.401059</longitude>
+		<address>Tsabong</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>3140</id>
+		<name>Tsabong (B&amp;M)</name>
+		<latitude>-26.02262</latitude>
+		<longitude>22.401059</longitude>
+		<address>Tsabong</address>
+		<phoneNumber></phoneNumber>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<openingHours>
+			<holidayNote>Closed on public holidays</holidayNote>
+			<mon></mon>
+			<tue></tue>
+			<thu></thu>
+			<wed></wed>
+			<fri></fri>
+			<sat></sat>
+			<sun>-</sun>
+		</openingHours>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+</POICollection>
+

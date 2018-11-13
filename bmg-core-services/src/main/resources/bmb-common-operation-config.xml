@@ -1,0 +1,94 @@
+<!--<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+
+	<bean id="bmbCommonOperation" class="com.barclays.bmg.operation.BMBCommonOperation">
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="featureBlackoutService" ref="featureBlackoutServiceImpl" />
+		<property name="listValueResService" ref="listValueResService" />
+		<property name="currLstFilterMap" ref="currLstFilterMap" />
+		<property name="groupIdAsCurr" value="CURRENCY" />
+		<property  name="branchCodeCountryList" ref="branchCodeCountryList"/>
+		<property  name="inprogressErrorCodeList" ref="inprogressErrorCodeList"/>
+	</bean>
+
+
+	<util:map id="currLstFilterMap" map-class="java.util.HashMap">
+		<entry key="GHBRB" value="false" />
+		<entry key="MUBRB" value="false" />
+		<entry key="MUBOB" value="false" />
+		<entry key="BWBRB" value="false" />
+		<entry key="AEBRB" value="false" />
+		<entry key="ZMBRB" value="false" />
+		<entry key="ZWBRB" value="false" />
+		<entry key="SCBRB" value="false" />
+		<entry key="EGBRB" value="false" />
+		<entry key="KEBRB" value="true" />
+		<entry key="TZBRB" value="false" />
+	</util:map>
+
+   <!-- START BRANCH CODE VALIDATION #UMESH  -->
+	 <bean id="branchCodeCountryList" class="java.util.ArrayList">
+			<constructor-arg>
+				<list>
+					<value>TZBRB</value>
+					<value>GHBRB</value>
+					<value>ZWBRB</value>
+					<value>ZMBRB</value>
+					<value>BWBRB</value>
+				</list>
+			</constructor-arg>
+
+		</bean>
+
+		 <bean id="brainsCountryList" class="java.util.ArrayList">
+			<constructor-arg>
+				<list>
+					<value>TZ</value>
+					<value>GH</value>
+					<value>ZW</value>
+					<value>ZM</value>
+					<value>BW</value>
+				</list>
+			</constructor-arg>
+		</bean>
+
+		<bean id="inprogressErrorCodeList" class="java.util.ArrayList">
+			<constructor-arg>
+				<list>
+					<value>175</value>
+					<value>219</value>
+					<value>210</value>
+					<value>013</value>
+					<value>014</value>
+				</list>
+			</constructor-arg>
+		</bean>
+
+ <!-- END BRANCH CODE VALIDATION #UMESH  -->
+	<bean id="bmbRetailRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.BMBRetailTxnRespAdptOperation">
+		<property name="reportProblemService" ref="reportProblemService" />
+	</bean>
+	<!--
+
+		<bean id="bmbPaymentsOperation"
+		class="com.barclays.bmg.operation.BMBPaymentsOperation"
+		parent="bmbCommonOperation"> <property name="allAccountService"
+		ref="allAccountService" /> <property name="productEligibilityService"
+		ref="productEligibilityServiceImpl" /> <property
+		name="retreivePayeeListService" ref="retreivePayeeListService" />
+		<property name="retreiveBeneficiaryDetailsService" ref
+		="retreiveBeneficiaryDetailsService" /> <property
+		name="transactionLimitService" ref="transactionLimitService" />
+		<property name="transactionAbilityService"
+		ref="transactionAbilityService" /> </bean>
+	-->
+</beans>

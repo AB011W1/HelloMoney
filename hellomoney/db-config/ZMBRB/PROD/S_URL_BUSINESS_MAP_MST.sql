@@ -1,0 +1,14 @@
+
+-----------------------		URL INSERTION QUERY FOR ZMBRB - PRODUCTION   --------------------------
+
+DELETE FROM S_URL_BUSINESS_MAP_MST WHERE SYSTEM_ID='MB' AND BUSINESS_ID='ZMBRB' AND URL_PATTERN='https://www.zm.secure.barclays.com/bmg';
+
+INSERT INTO S_URL_BUSINESS_MAP_MST (SYSTEM_ID, BUSINESS_ID, URL_PATTERN, LANGUAGE_ID) VALUES ('MB','ZMBRB','https://www.zm.secure.barclays.com/bmg','EN');
+
+DELETE FROM S_URL_BUSINESS_MAP_MST WHERE SYSTEM_ID='MB' AND BUSINESS_ID='ZMBRB' AND URL_PATTERN='https://zmc2bir-dr.barclays.intranet/bmg';
+
+DELETE FROM S_URL_BUSINESS_MAP_MST WHERE SYSTEM_ID='MB' AND BUSINESS_ID='ZMBRB' AND URL_PATTERN='https://zmc2bir-live.barclays.intranet/bmg';
+
+INSERT INTO S_URL_BUSINESS_MAP_MST (SYSTEM_ID, BUSINESS_ID, URL_PATTERN, LANGUAGE_ID) VALUES ('MB','ZMBRB','https://zmc2bir-live.barclays.intranet/bmg','EN');
+
+COMMIT;

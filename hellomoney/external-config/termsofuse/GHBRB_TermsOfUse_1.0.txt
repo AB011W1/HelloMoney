@@ -1,0 +1,241 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style type="text/css">
+<!--
+body
+	{
+	margin		:0;
+	padding		:0;
+	font-family	:arial,helvetica,sans-serif;
+	color		:#006FA4;}
+
+#wrapper
+	{
+	padding		:10px;
+	margin		:0 auto;}
+
+#header
+	{
+	text-align	:center;}
+
+
+#wrapper #header p
+	{
+	font-size	:0.8em;
+	margin		:0px auto;
+	padding		:0 0 5px 0 ;}
+
+#wrapper #header h2
+	{
+	font-size	:0.8em;
+	margin		:0px auto;
+	padding		:5px 0 0 0;}
+
+.divider
+	{
+	border-bottom	:1px solid #006FA4;}
+
+
+h1
+	{
+	margin		:0;
+	padding		:0 0 5px 0;
+	font-size	:1.2em;
+	font-weight	:bold;}
+
+h2
+	{
+	margin		:0 0 5px 0;
+	padding		:8px 0 0 0;
+	font-size	:0.9em;
+	font-weight	:bold;}
+
+#wrapper p
+	{
+	font-size	:0.8em;
+	margin		:0 0 5px 15px;
+	padding		:8px 0 0 0;}
+
+ #wrapper ul, #wrapper ol
+	{
+	margin-top	:0px;
+	padding-top	:0px;}
+
+ #wrapper ul li, #wrapper ol li
+	{
+	font-size	:0.8em;
+	margin-top	:2px;}
+
+ #wrapper ol li ol li
+	{
+	font-size	:1em;
+	margin		:5px 0 5px 0;}
+
+ #wrapper p.subsection
+	{
+	margin-left	:15px;
+	margin-top	:2px;}
+
+ #wrapper p.subsection span
+	{
+	display		:block;
+	margin-left	:15px;}
+-->
+
+</style>
+
+</head>
+
+
+
+
+<body>
+
+<div id="wrapper">
+<div id="header">
+<h1>Terms and Conditions</h1>
+<div class="divider"></div></div>
+
+<div id="text">
+<h2>Internet Banking Terms of Use</h2>
+
+<p>This agreement applies if you have an account with Barclays Bank of Ghana Limited and wish to subscribe to the Retail Internet Banking service. It explains our obligations to you and your obligations to us.</p>
+
+<p>These terms and conditions come into effect when you register for or access the Barclays Internet Banking service.</p>
+
+<p>Please read the following terms and conditions carefully.</p>
+
+<h2>Definitions</h2>
+
+<p>In these terms and conditions the following definitions will apply: </p>
+
+<ul>
+<li>"You" or "your" means any customer accessing this App ("application").</li>
+<li>"The Bank, we", "us" or "our" means Barclays Bank of Ghana Limited.</li>
+<li>"Barclays Group" means Barclays and its affiliates</li>
+<li>"Password" means any secret and confidential code for access to this Application and/or to avail any products and services provided by us to you and/or selected by you and/or subsequently changed by you at your discretion.
+</li>
+<li>"Application" means the Barclays web Application.
+</li>
+<li>"The Service" means the Barclays Mobile Banking service.
+</li>
+<li>"Username" means and includes an identification code which is selected by us and/or you for operating the Application and/or to avail of any products or services provided by us to you.</li></ul>
+
+<h2>Application Terms</h2>
+
+<p>These terms and conditions govern your use of this application and by accessing this application and acknowledging receipt of the Username and Password you agree to be bound by them.</p>
+
+<p>Please note that if you are an existing Barclays customer, these terms and conditions will apply in addition to those of your savings and/or current account and those contained in the application form or appointment of banker signed by you.</p>
+
+<p>We reserve the right to change these terms and conditions at any time and without notice by updating this posting and your continued access to or use of this application following any such change will constitute your acceptance of the revised terms and conditions.</p>
+
+<p>The Bank reserves the right to accept or decline any application for the Service at its sole discretion.</p>
+<p>It is your sole responsibility to familiarize yourself with the operating procedures for the Service as will be provided by the Bank upon your registration. The Bank will not be liable for any losses incurred as a result of your errors either of commission and/or omission.</p>
+
+<p>You agree and undertake to be bound by and to comply with all of the operating procedures as may be issued by the Bank from time to time. The Bank shall not be bound by or obliged to take any action on any instructions which do not properly comply with the procedures and the Bank may reject such non-compliant Instructions.</p>
+
+<p>The Bank will provide you with a Username and Password for your access to this Service. You must keep your login details secret and not disclose them. You must take all reasonable care to prevent unauthorized or fraudulent use of the Service. The Bank will not be held liable for any losses arising from the unauthorized use of your Username and Password.</p>
+
+<p>You must notify the bank immediately should you feel your login details have been compromised, through our Contact Centre at 0302 300 258.</p>
+
+<p>This Service will be provided to you as long as you are the sole account holder of your account(s) or have the mandate to singularly operate the specified accounts.</p>
+
+<p>The Bank reserves the right to charge a fee for your access and use of all or part of the services offered through this application. You will be notified of these fees from time to time. You will be liable to pay the Bank for any fees levied for the use of the application, unless the Bank in its sole discretion has waived such fees. By accepting these terms and conditions, you provide the Bank with the authority to debit these fees from your current account on a monthly basis. These charges will be reflected in your normal bank statement. The Bank reserves the right to revise the fees chargeable for this service from time to time. The Bank reserves the right to terminate this Agreement in the event that you fail to pay any fees levied for the provision of the Service.</p>
+
+<p>Please refer to the bank's tariff guide for further details regarding the bank's charges.</p>
+
+
+<h2>Use of this Application</h2>
+
+<p>You may not misuse this Application (including, without limitation, by hacking). We may in our sole discretion terminate your access to or use of this application for any reason, including without limitation where we believe that you have not acted in accordance with the terms and conditions of this application.</p>
+
+<p>This Application is designed to be accessed from its homepage. Accessing a specific page within this Application via a hypertext link may mean that you do not see important information about this Application, the conditions for its use and the Barclays Group.
+</p>
+
+<p>While we will endeavour to ensure that this Application is normally available 24 hours a day, we shall not be liable if for any reason this Application is unavailable at any time or for any period. Also, your access to this Application may be suspended temporarily or restricted without notice to allow for repairs, maintenance, or the introduction of new facilities or services or for reasons beyond our control.</p>
+
+<p>The Bank reserves the right to enhance the Application at anytime without notice to you. It is your responsibility to keep updated with these enhancements. The Bank will make all reasonable efforts to notify you of any changes or updates.</p>
+
+<h2>Copyright, All Rights Reserved</h2>
+
+<p>The entire design and content of this Application is the copyright of Barclays Bank PLC. The Barclays eagle logo and Barclays name are registered trade marks of Barclays Bank PLC. All trade marks, brand names, logos and designs used on this Application are our intellectual property. All our rights are reserved and the information held is for your personal security. You may not download (all or in part), transmit, reproduce, distribute or modify this Application without our prior written permission. However, you may print out part or all of this Application for your own personal use.</p>
+
+<h2>Third Party Products and Services</h2>
+
+<p>Where we provide hypertext links to third party internet web Applications, such links are provided for your information and convenience and the inclusion of any link is not an endorsement by us in any way of any products or services in such web Applications.</p>
+
+<p>You use such links entirely at your own risk and we accept no responsibility or liability for the content, use or availability of such web Applications or for any loss or damage, however arising, suffered, as a result of their use. We have not verified the truth or accuracy of any content of such web Applications.
+</p>
+
+<p>This Application may also contain some material provided by third parties and we accept no responsibility or liability for the accuracy of such material.</p>
+
+<p>No third party is permitted to link any other web Application to this Application without obtaining our prior written consent.</p>
+
+<h2>No Offer</h2>
+
+<p>Nothing on this Application should be construed as a solicitation or offer, or recommendation, to acquire or dispose of any investment or to engage in any other transaction, or to provide any investment advice or service.</p>
+
+<h2>No Warranty </h2>
+
+<p>Although we have taken all reasonable care to ensure that the information provided on this Application is accurate and up-to-date, we make no representations or warranties of any kind, express or implied, with regard to the accuracy, timeliness, reliability or completeness of any such information.</p>
+
+<p>Opinions and any other contents on this Application are provided by us for personal use and informational purposes only and are subject to change without notice. If you are in any doubt as to the validity of information made available within these pages, you may contact us by any of the means described under "Contact Us" in the top menu bar on this Application.</p>
+
+<p>Nothing contained on this Application constitutes investment, legal, tax or other advice and is not to be relied on in making an investment or other decision. You should obtain relevant and specific professional advice before making any investment decision.</p>
+
+<h2>No Liability </h2>
+
+<p>To the maximum extent permitted by law, we will accept no liability in any event including (without limitation) for negligence, and/or for any damages or loss of any kind, including (without limitation) direct, indirect, incidental, special or consequential damages, expenses or losses that may result to you or a third party arising out of, or in connection with:</p>
+
+<ul>
+<li>Your use or inability to use this Application, or your downloading of any material from the Application or in connection with any error, omission, defect, computer virus (including but not limited to loss or damage due to viruses that may infect your computer equipment, software, data or other property, or system failure), loss of any profit, goodwill or reputation, even if expressly advised of the possibility of such loss or damage, arising out of or in connection with the access of, use of, performance of, browsing in, or linking to other Applications from this Application or the material on such webApplications;</li>
+<li>Any action based on the content of this Application or any use or application of the same or any error or omission relating to the transmission of the content of this Application.</li></ul>
+
+<p>The Bank shall not be held liable for the quality of service, any interruptions, malfunctions or disruptions from your internet service provider, telecommunications provider or any other third party.</p>
+
+<h2>Discontinuation of the Service</h2>
+
+<p>We reserve the right to modify, suspend or discontinue, temporarily or permanently, this Application or any part of it, with or without notice, at any time. You agree that we shall not be liable to you or to any third party for any such modification, suspension or discontinuance of this Application.</p>
+
+<h2>Termination and consequences of termination</h2>
+
+<p>You may terminate the use of this service through an application form available at our branches. Such requests will be effected within five (5) working days of receipt of the termination notice by us. Any fees that may be outstanding at the time of such termination will remain payable and the Bank reserves the right to debit such fees from your account.</p>
+
+<p>You will remain liable for any internet service provider charges that may arise from the use of this service.</p>
+
+<h2>Disclosure</h2>
+
+<p>Information and Instructions received from you through the Application will be stored by the Bank and accessed by employees of the Bank (as is deemed necessary).</p>
+
+<h2>Force Majeure</h2>
+
+<p>Notwithstanding any provision contained in this Agreement, the Bank shall not be liable to you to the extent fulfilment or performance of any terms or provisions of this Agreement is delayed or prevented by revolution or other civil disorders; wars; acts of enemies; strikes; lack of available resources from persons other than us; labour disputes; electrical equipment or mobile network failure; fires; floods; acts of God; government or regulator action; or, without limiting the foregoing, any other causes not within its control, and which by the exercise of reasonable diligence we are unable to prevent, whether of the class of causes hereinbefore enumerated or not.</p>
+
+<p>If any force majeure event occurs, we will give written notice to you and will use commercially reasonable efforts to minimize the impact of such event.</p>
+
+<h2>Governing Law</h2>
+
+<p>The Laws of the Republic of Ghana shall govern these terms and conditions and you agree that the Ghanaian Courts shall have exclusive jurisdiction to determine any matter or dispute in connection with or arising out of this Application and these terms and conditions.</p>
+
+<p>This Application is designed for use in the Republic of Ghana only and is not directed to, nor intended for distribution to or use by, any person or entity in any jurisdiction or country where the publication or availability of this Application or such distribution or use would be contrary to local law or regulation.</p>
+
+<p>If you choose to access information on this Application, it is your responsibility to comply with the applicable local, national or international laws and any use of this Application outside the Republic of Ghana is entirely at your own risk. For guidance relating to your specific situation, please contact your legal adviser.</p>
+
+<p>The products and services represented within this Application are intended for customers in the Republic of Ghana only.</p>
+
+<p>If any provision of this terms and conditions (or part of any provision) is found by any court or other authority of competent jurisdiction to be invalid, unenforceable or illegal, the other provisions shall remain in force.</p>
+
+<h2>Contacting Us About This Application</h2>
+
+<p>Any questions or comments about this Application or these terms and conditions may be directed to us in writing to our Barclays Contact Center, Sonnidom House, Achimota, P.O. Box AT 1219, Achimota, Accra or by such other ways as described under "Contact Us" in the top menu bar on this Application</p>
+
+
+</div>
+</div>
+</body>
+</html>

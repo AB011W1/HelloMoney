@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="MCFE">
+
+	<typeAlias alias="businessAreaLookUpDTO" type="com.barclays.ussd.dto.BusinessAreaLookUpDTO" />
+
+	<resultMap id="businessAreaInfo" class="businessAreaLookUpDTO">
+		<result property="businessAreaName" column="BUSINESS_AREA_NAME" />
+	</resultMap>
+
+	<resultMap id="serviceCategoryInfo" class="businessAreaLookUpDTO">
+		<result property="serviceCategoryName" column="SERVICE_CATEGORY_NAME" />
+	</resultMap>
+
+
+	<select id="businessAreaList" resultMap="businessAreaInfo">
+		SELECT DISTINCT(BUSINESS_AREA_NAME) FROM SERVICE_CATEGORY_MST SCM
+		where
+		SCM.SYSTEM_ID = 'UB'
+		AND SCM.BUSINESS_ID = #businessId#
+	</select>
+
+	<select id="serviceCategoryList" resultMap="serviceCategoryInfo">
+		SELECT DISTINCT(SERVICE_CATEGORY_NAME) FROM SERVICE_CATEGORY_MST SCM
+		where
+		SCM.SYSTEM_ID = 'UB'
+		AND SCM.BUSINESS_ID = #businessId#
+		<dynamic prepend="">
+			<isNotNull prepend="AND" property="businessAreaName">
+				UPPER(SCM.BUSINESS_AREA_NAME) like UPPER(#businessAreaName#)
+	        </isNotNull>
+		</dynamic>
+	</select>
+</sqlMap>

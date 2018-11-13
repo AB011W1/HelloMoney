@@ -1,0 +1,1002 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- Challenge Question With Position -->
+	<bean id="challengeQuestionAndPositionController"
+		class="com.barclays.bmg.ussd.mvc.controller.auth.ChallengeQuestionAndPositionController"
+		parent="bmbAbstractController">
+		<property name="challengeQuestionAndPositionOperation" ref="challengeQuestionAndPositionOperation" />
+		<property name="selfRegistrationExecutionOperation" ref="selfRegistrationExecutionOperation" />
+		<property name="retrieveAllCustAcctOperation" ref="retrieveAllCustAcctOperation" />
+		<property name="challengeQuestionAndPositionJSONBldr" ref="challengeQuestionAndPositionJSONBldr" />
+		<property name="commandName" value="challengeQuestionAndPositionCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.ussd.mvc.command.auth.ChallengeQuestionAndPositionCommand" />
+		<property name="validator" ref="challengeQuestionAndPositionCommandValidator" />
+		<property name="verifyChallengeURL" value="/dataserv?opCde=OP0115" />
+		<property name="activityId" value="GENERATE_CHALLENGE" />
+	</bean>
+
+	<bean id="challengeQuestionAndPositionCommandValidator"
+		class="com.barclays.bmg.ussd.mvc.validator.auth.ChallengeQuestionAndPositionCommandValidator">
+	</bean>
+
+	<bean id="challengeQuestionAndPositionJSONBldr"
+		class="com.barclays.bmg.json.model.builder.auth.ChallengeQuestionAndPositionJSONBldr">
+	</bean>
+
+
+	<bean id="challengeQuestionAndPositionOperation"
+		class="com.barclays.bmg.ussd.operation.ChallengeQuestionAndPositionOperation"
+		parent="bmbCommonOperation">
+		<property name="challengeQuestionAndPositionService" ref="challengeQuestionAndPositionService" />
+	</bean>
+	<bean id="challengeQuestionAndPositionService"
+		class="com.barclays.bmg.ussd.service.impl.ChallengeQuestionAndPositionServiceImpl">
+		<!--<property name="challengeQuesWithPosDAO" ref="challengeQuesWithPosDAO" />
+		-->
+		<property name="challengeQuestionAndPositionDAO" ref="challengeQuestionAndPositionDAO" />
+	</bean>
+
+
+	<bean id="challengeQuestionAndPositionDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface"
+			value="com.barclays.bmg.ussd.dao.ChallengeQuestionAndPositionDAO" />
+		<property name="daoFrontController" ref="challengeQuestionAndPositionDAOFrontControllerImpl" />
+	</bean>
+
+	<bean id="challengeQuestionAndPositionDAOFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="GETCHALLENGEPOSITIONS" value-ref="challengeQuestionAndPositionDAOController" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="challengeQuestionAndPositionDAOController"
+		class="com.barclays.bmg.ussd.dao.processing.ChallengeQuestionAndPositionDAOController">
+		<property name="challengeQuestionAndPositionReqAdptOperation" ref="challengeQuestionAndPositionReqAdptOperation" />
+
+			<property name="transmissionOperation"	ref="generateChallengeQuestionTransmissionOperation" />
+
+		<property name="challengeQuestionAndPositionResAdptOperation" ref="challengeQuestionAndPositionResAdptOperation" />
+	</bean>
+
+	<bean id="challengeQuestionAndPositionReqAdptOperation"
+		class="com.barclays.bmg.ussd.dao.operation.ChallengeQuestionAndPositionReqAdptOperation">
+		<property name="challengeQuestionAndPositionHeaderAdapter" ref="challengeQuestionAndPositionHeaderAdapter" />
+		<property name="challengeQuestionAndPositionPayloadAdapter" ref="challengeQuestionAndPositionPayloadAdapter" />
+	</bean>
+
+
+	<bean id="challengeQuestionAndPositionHeaderAdapter"
+		class="com.barclays.bmg.ussd.dao.adapter.ChallengeQuestionAndPositionHeaderAdapter">
+	</bean>
+
+	<bean id="challengeQuestionAndPositionPayloadAdapter"
+		class="com.barclays.bmg.ussd.dao.adapter.ChallengeQuestionAndPositionPayloadAdapter">
+	</bean>
+
+	<bean id="challengeQuestionAndPositionResAdptOperation"
+		class="com.barclays.bmg.ussd.dao.operation.ChallengeQuestionAndPositionResAdptOperation">
+
+	</bean>
+
+	<bean id="generateChallengeQuestionWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.IndividualCustomerManagement.IndividualCustomerManagement_PortType" />
+		<property name="portName" value="IndividualCustomerManagementSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.IndividualCustomerManagement.IndividualCustomerManagement_Service" />
+		<property name="endpointAddress"
+			value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="IndividualCustomerManagement_EndPoint" />
+		<!--<property name="endpointAddressName" value="CreateHMCustomerStub_EndPoint" />
+		--><property name="cacheKey" value="generateQuesService" />
+	</bean>
+
+	<bean id="generateChallengeQuestionTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="generateChallengeQuestionTransmissionService" />
+	</bean>
+	<bean id="generateChallengeQuestionTransmissionService" class="com.barclays.bmg.ussd.service.impl.ChallengeQuestionAndPositionTransmissionService">
+		<property name="remoteService" ref="generateChallengeQuestionWebServiceImpl" />
+	</bean>
+
+	<!-- Challenge Question With Position -->
+
+	<!-- Second Authentication -->
+
+	<bean id="secondAuthController"
+		class="com.barclays.bmg.ussd.mvc.controller.auth.SecondAuthenticationController"
+		parent="bmbAbstractCommandController">
+		<property name="secondAuthOperation" ref="secondAuthOperation" />
+		<property name="retrieveAllCustAcctOperation" ref="retrieveAllCustAcctOperation" />
+		<property name="selfRegistrationExecutionOperation" ref="selfRegistrationExecutionOperation" />
+
+		<property name="secondAuthJSONBldr" ref="secondAuthJSONBldr" />
+		<property name="commandName" value="secondAuthCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.ussd.mvc.command.auth.SecondAuthenticationCommand" />
+		<property name="validator" ref="secondAuthCommandValidator" />
+		<property name="fundTransferURL" value="/dataserv?opCde=OP0502" />
+		<property name="billPaymentURL" value="/dataserv?opCde=OP0603" />
+		<property name="internationalURL" value="/dataserv?opCde=OP0533" />
+		<property name="externalURL" value="/dataserv?opCde=OP0523" />
+		<property name="selfRegistrationURL" value="/dataserv?opCde=OP0117" />
+		<property name="activityId" value="SECOND_AUTH" />
+	</bean>
+
+	<bean id="secondAuthCommandValidator"
+		class="com.barclays.bmg.ussd.mvc.validator.auth.SecondAuthenticationCommandValidator">
+	</bean>
+
+	<bean id="secondAuthJSONBldr"
+		class="com.barclays.bmg.json.model.builder.auth.SecondAuthenticationJSONBldr">
+	</bean>
+
+	<bean id="secondAuthOperation"
+		class="com.barclays.bmg.ussd.operation.SecondAuthenticationOperation" parent="bmbCommonOperation" >
+		<property name="secondAuthService" ref="secondAuthService" />
+
+	</bean>
+	<bean id="secondAuthService"
+		class="com.barclays.bmg.ussd.service.impl.SecondAuthenticationServiceImpl">
+		<property name="secondAuthDAO" ref="secondAuthDAO" />
+	</bean>
+
+
+	<bean id="secondAuthDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface"
+			value="com.barclays.bmg.ussd.dao.SecondAuthenticationDAO" />
+		<property name="daoFrontController" ref="secondAuthDAOFrontControllerImpl" />
+	</bean>
+
+	<bean id="secondAuthDAOFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="VERIFYCHALLENGEANSWERS" value-ref="secondAuthDAOController" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="secondAuthDAOController"
+		class="com.barclays.bmg.ussd.dao.processing.SecondAuthenticationDAOController">
+		<property name="secondAuthReqAdptOperation" ref="secondAuthReqAdptOperation" />
+		<property name="transmissionOperation"	ref="secondAuthTransmissionOperation" />
+		<property name="secondAuthResAdptOperation" ref="secondAuthResAdptOperation" />
+	</bean>
+
+	<bean id="secondAuthReqAdptOperation"
+		class="com.barclays.bmg.ussd.dao.operation.SecondAuthenticationReqAdptOperation">
+		<property name="secondAuthHeaderAdapter" ref="secondAuthMessageHeaderAdapter" />
+		<property name="secondAuthPayloadAdapter" ref="secondAuthPayloadAdapter" />
+	</bean>
+
+
+	<bean id="secondAuthMessageHeaderAdapter"
+		class="com.barclays.bmg.ussd.dao.adapter.SecondAuthenticationHeaderAdapter">
+	</bean>
+
+	<bean id="secondAuthPayloadAdapter"
+		class="com.barclays.bmg.ussd.dao.adapter.SecondAuthenticationPayloadAdapter">
+	</bean>
+
+	<bean id="secondAuthResAdptOperation"
+		class="com.barclays.bmg.ussd.dao.operation.SecondAuthenticationResAdptOperation">
+
+	</bean>
+
+	<bean id="secondAuthTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="secondAuthTransmissionService" />
+	</bean>
+	<bean id="secondAuthTransmissionService" class="com.barclays.bmg.ussd.service.impl.SecondAuthenticationTransmissionService">
+		<property name="remoteService" ref="secondAuthWebServiceImpl" />
+	</bean>
+
+	<bean id="secondAuthWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.IndividualCustomerManagement.IndividualCustomerManagement_PortType" />
+		<property name="portName" value="IndividualCustomerManagementSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.IndividualCustomerManagement.IndividualCustomerManagement_Service" />
+		<property name="endpointAddress"
+			value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="IndividualCustomerManagement_EndPoint" />
+		<property name="cacheKey" value="secondAuthService" />
+	</bean>
+
+
+
+	<!-- Second Authentication (2FA)-->
+	<!-- Start Bmg call added to minimize response time for confirm screen	-->
+	<bean id="selfRegistrationAccountValidationController"
+		class="com.barclays.bmg.ussd.mvc.controller.auth.SelfRegistrationAccountValidationController"
+		parent="bmbAbstractCommandController">
+		<property name="selfRegistrationInitOperation" ref="selfRegistrationInitOperation" />
+		<property name="selfRegistrationInitJSONBldr" ref="selfRegistrationInitJSONBldr" />
+		<property name="commandName" value="selfRegistrationInitCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.ussd.mvc.command.auth.SelfRegistrationInitCommand" />
+		<property name="validator" ref="selfRegistrationInitCommandValidator" />
+				<property name="activityId" value="SELF_REG_ACCOUNT_VALIDATION" />
+	</bean>
+
+	<!--End Bmg call added to minimize response time for confirm screen	-->
+	<!-- Retreive Cust Card List -->
+
+<bean id="selfRegistrationDebitCardController"
+		class="com.barclays.bmg.ussd.mvc.controller.auth.SelfRegistrationDebitCardController"
+		parent="bmbAbstractCommandController">
+		<!--	ADDED TO INCLUDE DEBIT CARD VALIDATION IN SELF REGISTRATION		-->
+		<property name="retrieveindividualCustCardListOperation" ref="retrieveindividualCustCardListOperation" />
+		<property name="selfRegistrationDebitCardJSONBldr" ref="selfRegistrationDebitCardJSONBldr" />
+		<property name="commandName" value="selfRegistrationDebitCardCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.ussd.mvc.command.auth.SelfRegistrationDebitCardCommand" />
+		<property name="validator" ref="selfRegistrationDebitCardCommandValidator" />
+		<property name="activityId" value="DEBIT_CARD_AUTH" />
+	</bean>
+
+<bean id="selfRegistrationDebitCardCommandValidator"
+		class="com.barclays.bmg.ussd.mvc.validator.auth.SelfRegistrationDebitCardCommandValidator">
+	</bean>
+
+	<bean id="selfRegistrationDebitCardJSONBldr"
+		class="com.barclays.bmg.json.model.builder.auth.SelfRegistrationDebitCardJSONBldr">
+	</bean>
+
+	<bean id="retrieveindividualCustCardListOperation"
+		class="com.barclays.bmg.ussd.operation.RetrieveindividualCustCardListOperation" parent="bmbCommonOperation" >
+		<property name="retrieveindividualCustCardListService" ref="retrieveindividualCustCardListService" />
+
+	</bean>
+	<bean id="retrieveindividualCustCardListService"
+		class="com.barclays.bmg.ussd.service.impl.RetrieveindividualCustCardListServiceImpl">
+		<property name="retrieveindividualCustCardListDAO" ref="retrieveindividualCustCardListDAO" />
+	</bean>
+
+
+	<bean id="retrieveindividualCustCardListDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface"
+			value="com.barclays.bmg.ussd.dao.RetrieveindividualCustCardListDAO" />
+		<property name="daoFrontController" ref="retrieveindividualCustCardListDAOFrontControllerImpl" />
+	</bean>
+
+	<bean id="retrieveindividualCustCardListDAOFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="RETRIEVECUSTCARDLIST" value-ref="retrieveindividualCustCardListDAOController" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="retrieveindividualCustCardListDAOController"
+		class="com.barclays.bmg.ussd.dao.processing.RetrieveindividualCustCardListDAOController">
+		<property name="retrieveindividualCustCardListReqAdptOperation" ref="retrieveindividualCustCardListReqAdptOperation" />
+		<property name="transmissionOperation"	ref="retrieveindividualCustCardListTransmissionOperation" />
+		<property name="retrieveindividualCustCardListResAdptOperation" ref="retrieveindividualCustCardListResAdptOperation" />
+	</bean>
+
+	<bean id="retrieveindividualCustCardListReqAdptOperation"
+		class="com.barclays.bmg.ussd.dao.operation.RetrieveindividualCustCardListReqAdptOperation">
+		<property name="retrieveindividualCustCardListHeaderAdapter" ref="retrieveindividualCustCardListHeaderAdapter" />
+		<property name="retrieveindividualCustCardListPayloadAdapter" ref="retrieveindividualCustCardListPayloadAdapter" />
+	</bean>
+
+
+	<bean id="retrieveindividualCustCardListHeaderAdapter"
+		class="com.barclays.bmg.ussd.dao.adapter.RetrieveindividualCustCardListHeaderAdapter">
+	</bean>
+
+	<bean id="retrieveindividualCustCardListPayloadAdapter"
+		class="com.barclays.bmg.ussd.dao.adapter.RetrieveindividualCustCardListPayloadAdapter">
+	</bean>
+
+	<bean id="retrieveindividualCustCardListResAdptOperation"
+		class="com.barclays.bmg.ussd.dao.operation.RetrieveindividualCustCardListResAdptOperation">
+
+	</bean>
+
+	<bean id="retrieveindividualCustCardListTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="retrieveindividualCustCardListTransmissionService" />
+	</bean>
+	<bean id="retrieveindividualCustCardListTransmissionService" class="com.barclays.bmg.ussd.service.impl.RetrieveindividualCustCardListTransmissionService">
+		<property name="remoteService" ref="retrieveindividualCustCardListWebServiceImpl" />
+	</bean>
+	<!--TODO Uncomment	-->
+	<bean id="retrieveindividualCustCardListWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.FinancialTransactionCardManagment.FinancialTransactionCardManagment_PortType" />
+		<property name="portName" value="FinancialTransactionCardManagmentSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.FinancialTransactionCardManagment.FinancialTransactionCardManagment_Service" />
+		<property name="endpointAddress"
+			value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="FinancialTransactionCardManagment_EndPoint" />
+		<!--<property name="endpointAddressName" value="Stub_FinancialTransactionCardManagment_EndPoint" />
+		--><property name="cacheKey" value="retrieveindividualCustCardListService" />
+	</bean>
+<!-- Retreive Cust Card List -->
+	<!-- Self Registration Initialization-->
+
+	<bean id="selfRegistrationInitController"
+		class="com.barclays.bmg.ussd.mvc.controller.auth.SelfRegistrationInitController"
+		parent="bmbAbstractCommandController">
+		<property name="selfRegistrationInitOperation" ref="selfRegistrationInitOperation" />
+		<property name="selfRegistrationInitJSONBldr" ref="selfRegistrationInitJSONBldr" />
+		<property name="commandName" value="selfRegistrationInitCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.ussd.mvc.command.auth.SelfRegistrationInitCommand" />
+		<property name="validator" ref="selfRegistrationInitCommandValidator" />
+		<property name="generateChallengeURL" value="/dataserv?opCde=OP0114" />
+		<property name="activityId" value="SEC_ONLN_REG" />
+	</bean>
+
+	<bean id="selfRegistrationInitCommandValidator"
+		class="com.barclays.bmg.ussd.mvc.validator.auth.SelfRegistrationInitCommandValidator">
+		<property  name="branchCodeCountryList" ref="branchCodeCountryList"/>
+	</bean>
+
+	<bean id="selfRegistrationInitJSONBldr"
+		class="com.barclays.bmg.json.model.builder.auth.SelfRegistrationInitJSONBldr">
+	</bean>
+
+	<bean id="selfRegistrationInitOperation"
+		class="com.barclays.bmg.ussd.operation.SelfRegistrationInitOperation" parent="bmbCommonOperation">
+		<property name="selfRegistrationInitService" ref="selfRegistrationInitService" />
+		<!-- Added for Validation -->
+		<property name="selfRegistrationExecutionService" ref="selfRegistrationExecutionService" />
+		<property name="allAccountService" ref="allAccountService" />
+		<property name="retrieveCustomerDetailsService" ref="retrieveCustomerDetailsService" />
+		<property name="addDetailstoMCEService" ref="addDetailstoMCEService" />
+
+	</bean>
+	<bean id="selfRegistrationInitService"
+		class="com.barclays.bmg.ussd.service.impl.SelfRegistrationInitServiceImpl">
+		<property name="selfRegistrationInitDAO" ref="selfRegistrationInitDAO" />
+	</bean>
+
+
+	<bean id="selfRegistrationInitDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface"
+			value="com.barclays.bmg.ussd.dao.SelfRegistrationInitDAO" />
+		<property name="daoFrontController" ref="selfRegistrationInitDAOFrontControllerImpl" />
+	</bean>
+
+	<bean id="selfRegistrationInitDAOFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="CREATECUSTOMERINCRYPTO" value-ref="selfRegistrationInitDAOController" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="selfRegistrationInitDAOController"
+		class="com.barclays.bmg.ussd.dao.processing.SelfRegistrationInitDAOController">
+		<property name="selfRegistrationInitReqAdptOperation" ref="selfRegistrationInitReqAdptOperation" />
+
+		<property name="transmissionOperation"	ref="selfRegistrationInitTransmissionOperation" />
+
+		<property name="selfRegistrationInitResAdptOperation" ref="selfRegistrationInitResAdptOperation" />
+	</bean>
+
+	<bean id="selfRegistrationInitReqAdptOperation"
+		class="com.barclays.bmg.ussd.dao.operation.SelfRegistrationInitReqAdptOperation">
+		<property name="selfRegistrationInitHeaderAdapter" ref="selfRegistrationInitHeaderAdapter" />
+		<property name="selfRegistrationInitPayloadAdapter" ref="selfRegistrationInitPayloadAdapter" />
+	</bean>
+
+
+	<bean id="selfRegistrationInitHeaderAdapter"
+		class="com.barclays.bmg.ussd.dao.adapter.SelfRegistrationInitHeaderAdapter">
+	</bean>
+
+	<bean id="selfRegistrationInitPayloadAdapter"
+		class="com.barclays.bmg.ussd.dao.adapter.SelfRegistrationInitPayloadAdapter">
+	</bean>
+
+	<bean id="selfRegistrationInitResAdptOperation"
+		class="com.barclays.bmg.ussd.dao.operation.SelfRegistrationInitResAdptOperation">
+
+	</bean>
+
+	<bean id="selfRegistrationInitTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="selfRegistrationInitTransmissionService" />
+	</bean>
+	<bean id="selfRegistrationInitTransmissionService" class="com.barclays.bmg.ussd.service.impl.SelfRegistrationInitTransmissionService">
+		<property name="remoteService" ref="selfRegistrationInitWebServiceImpl" />
+	</bean>
+
+	<bean id="selfRegistrationInitWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.HMCustomerManagement.HelloMoneyCustomerManagement_PortType" />
+		<property name="portName" value="HelloMoneyCustomerManagementSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.HMCustomerManagement.HelloMoneyCustomerManagement_Service" />
+		<property name="endpointAddress"
+			value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="HelloMoneyCustomerManagement_EndPoint" />
+		<property name="cacheKey" value="selfRegistrationInitService" />
+	</bean>
+
+	<!-- Self Registration Initialization-->
+
+
+	<!-- Self Registration Execution -->
+
+	<bean id="selfRegistrationExecutionController"
+		class="com.barclays.bmg.ussd.mvc.controller.auth.SelfRegistrationExecutionController"
+		parent="bmbAbstractCommandController">
+		<property name="selfRegistrationExecutionOperation" ref="selfRegistrationExecutionOperation" />
+
+		<property name="selfRegistrationExecutionJSONBldr" ref="selfRegistrationExecutionJSONBldr" />
+		<property name="commandName" value="selfRegistrationExecutionCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.ussd.mvc.command.auth.SelfRegistrationExecutionCommand" />
+		<property name="validator" ref="selfRegistrationExecutionCommandValidator" />
+		<property name="activityId" value="SEC_ONLN_REG" />
+
+
+
+	</bean>
+
+	<bean id="selfRegistrationExecutionCommandValidator"
+		class="com.barclays.bmg.ussd.mvc.validator.auth.SelfRegistrationExecutionCommandValidator">
+	</bean>
+
+
+	<bean id="selfRegistrationExecutionJSONBldr"
+		class="com.barclays.bmg.json.model.builder.auth.SelfRegistrationExecutionJSONBldr">
+	</bean>
+
+	<bean id="selfRegistrationExecutionOperation"
+		class="com.barclays.bmg.ussd.operation.SelfRegistrationExecutionOperation" parent="bmbCommonOperation" >
+		<property name="selfRegistrationExecutionService" ref="selfRegistrationExecutionService" />
+		<property name="listValueResService" ref="listValueResService" />
+		<property name="allAccountService" ref="allAccountService" />
+		<property name="retrieveCustomerDetailsService" ref="retrieveCustomerDetailsService" />
+		<property name="addDetailstoMCEService" ref="addDetailstoMCEService" />
+		<property name="updateDetailstoMCEService" ref="updateDetailstoMCEService" />
+		<property name="reissuePinService" ref="reissuePinService" />
+		<property name="smsDetailsService" ref="smsDetailsService" />
+		<property name="retrieveAllCustAcctService" ref="retrieveAllCustAcctService" />
+	</bean>
+
+
+	<bean id="selfRegistrationExecutionService"
+		class="com.barclays.bmg.ussd.service.impl.SelfRegistrationExecutionServiceImpl">
+		<property name="selfRegistrationExecutionDAO" ref="selfRegistrationExecutionDAO" />
+	</bean>
+
+	<bean id="retrieveCustomerDetailsService"
+		class="com.barclays.bmg.ussd.service.impl.RetrieveCustomerDetailsServiceImpl">
+		<property name="retrieveCustomerDetailsDAO" ref="retrieveCustomerDetailsDAO" />
+	</bean>
+
+	<bean id="addDetailstoMCEService"
+		class="com.barclays.bmg.ussd.service.impl.AddDetailstoMCEServiceImpl">
+		<property name="addDetailstoMCEDAO" ref="addDetailstoMCEDAO" />
+	</bean>
+
+	<bean id="updateDetailstoMCEService"
+		class="com.barclays.bmg.ussd.service.impl.UpdateDetailstoMCEServiceImpl">
+		<property name="updateDetailstoMCEDAO" ref="updateDetailstoMCEDAO" />
+	</bean>
+
+	<bean id="reissuePinService"
+		class="com.barclays.bmg.ussd.service.impl.ReissuePinServiceImpl">
+		<property name="reissuePinDAO" ref="reissuePinDAO" />
+	</bean>
+
+	<bean id="smsDetailsService"
+		class="com.barclays.bmg.ussd.service.impl.SMSDetailsServiceImpl">
+		<property name="smsDetailsDAO" ref="smsDetailsDAO" />
+	</bean>
+
+
+	<bean id="selfRegistrationExecutionDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface"
+			value="com.barclays.bmg.ussd.dao.SelfRegistrationExecutionDAO" />
+		<property name="daoFrontController" ref="selfRegistrationExecutionDAOFrontControllerImpl" />
+	</bean>
+
+	<bean id="selfRegistrationExecutionDAOFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="GETCUSTOMERDETAILSANDREGISTER" value-ref="selfRegistrationExecutionDAOController" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="selfRegistrationExecutionDAOController"
+		class="com.barclays.bmg.ussd.dao.processing.SelfRegistrationExecutionDAOController">
+		<property name="selfRegistrationExecutionReqAdptOperation" ref="selfRegistrationExecutionReqAdptOperation" />
+		<property name="transmissionOperation"		ref="selfRegistrationExecutionTransmissionOperation" />
+
+		<property name="selfRegistrationExecutionResAdptOperation" ref="selfRegistrationExecutionResAdptOperation" />
+	</bean>
+
+	<bean id="selfRegistrationExecutionReqAdptOperation"
+		class="com.barclays.bmg.ussd.dao.operation.SelfRegistrationExecutionReqAdptOperation">
+		<property name="selfRegistrationExecutionHeaderAdapter" ref="selfRegistrationExecutionHeaderAdapter" />
+		<property name="selfRegistrationExecutionPayloadAdapter" ref="selfRegistrationExecutionPayloadAdapter" />
+	</bean>
+
+
+	<bean id="selfRegistrationExecutionHeaderAdapter"
+		class="com.barclays.bmg.ussd.dao.adapter.SelfRegistrationExecutionHeaderAdapter">
+	</bean>
+
+	<bean id="selfRegistrationExecutionPayloadAdapter"
+		class="com.barclays.bmg.ussd.dao.adapter.SelfRegistrationExecutionPayloadAdapter">
+	</bean>
+
+	<bean id="selfRegistrationExecutionResAdptOperation"
+		class="com.barclays.bmg.ussd.dao.operation.SelfRegistrationExecutionResAdptOperation">
+
+	</bean>
+
+	<bean id="selfRegistrationExecutionTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="selfRegistrationExecutionTransmissionService" />
+	</bean>
+	<bean id="selfRegistrationExecutionTransmissionService" class="com.barclays.bmg.ussd.service.impl.SelfRegistrationExecutionTransmissionService">
+		<property name="remoteService" ref="selfRegistrationExecutionWebServiceImpl" />
+	</bean>
+
+	<bean id="selfRegistrationExecutionWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.IndividualCustomerManagement.IndividualCustomerManagement_PortType" />
+		<property name="portName" value="IndividualCustomerManagementSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.IndividualCustomerManagement.IndividualCustomerManagement_Service" />
+		<property name="endpointAddress"
+			value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="IndividualCustomerManagement_EndPoint" />
+		<property name="cacheKey" value="selfRegistrationExecutionService" />
+	</bean>
+
+
+	<bean id="retrieveCustomerDetailsDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface"
+			value="com.barclays.bmg.ussd.dao.RetrieveCustomerDetailsDAO" />
+		<property name="daoFrontController" ref="retrieveCustomerDetailsDAOFrontControllerImpl" />
+	</bean>
+
+	<bean id="retrieveCustomerDetailsDAOFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="RETRIEVECUSTOMERDETAILS" value-ref="retrieveCustomerDetailsDAOFrontController" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="retrieveCustomerDetailsDAOFrontController"
+		class="com.barclays.bmg.ussd.dao.processing.RetrieveCustomerDetailsDAOController">
+		<property name="retrieveCustomerDetailsReqAdptOperation" ref="retrieveCustomerDetailsReqAdptOperation" />
+
+			<property name="transmissionOperation"
+			ref="retrieveCustomerDetailsTransmissionOperation" />
+
+
+			<property name="retrieveCustomerDetailsResAdptOperation" ref="retrieveCustomerDetailsResAdptOperation" />
+	</bean>
+
+	<bean id="retrieveCustomerDetailsReqAdptOperation"
+		class="com.barclays.bmg.ussd.dao.operation.RetrieveCustomerDetailsReqAdptOperation">
+		<property name="retrieveCustomerDetailsHeaderAdapter" ref="retrieveCustomerDetailsHeaderAdapter" />
+		<property name="retrieveCustomerDetailsPayloadAdapter" ref="retrieveCustomerDetailsPayloadAdapter" />
+	</bean>
+
+
+	<bean id="retrieveCustomerDetailsHeaderAdapter"
+		class="com.barclays.bmg.ussd.dao.adapter.RetrieveCustomerDetailsHeaderAdapter">
+	</bean>
+
+	<bean id="retrieveCustomerDetailsPayloadAdapter"
+		class="com.barclays.bmg.ussd.dao.adapter.RetrieveCustomerDetailsPayloadAdapter">
+	</bean>
+
+	<bean id="retrieveCustomerDetailsResAdptOperation"
+		class="com.barclays.bmg.ussd.dao.operation.RetrieveCustomerDetailsResAdptOperation">
+
+	</bean>
+
+	<bean id="retrieveCustomerDetailsTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="retrieveCustomerDetailsTransmissionService" />
+	</bean>
+	<bean id="retrieveCustomerDetailsTransmissionService" class="com.barclays.bmg.ussd.service.impl.RetrieveCustomerDetailsTransmissionService">
+		<property name="remoteService" ref="retrieveCustomerDetailsWebServiceImpl" />
+	</bean>
+
+	<bean id="retrieveCustomerDetailsWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.IndividualCustomerManagement.IndividualCustomerManagement_PortType" />
+		<property name="portName" value="IndividualCustomerManagementSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.IndividualCustomerManagement.IndividualCustomerManagement_Service" />
+		<property name="endpointAddress"
+			value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="IndividualCustomerManagement_EndPoint" />
+		<property name="cacheKey" value="retrieveCustomerDetailsService" />
+	</bean>
+
+	<bean id="addDetailstoMCEDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface"
+			value="com.barclays.bmg.ussd.dao.AddDetailstoMCEDAO" />
+		<property name="daoFrontController" ref="addDetailstoMCEDAOFrontControllerImpl" />
+	</bean>
+
+	<bean id="addDetailstoMCEDAOFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="ADDDETAILSTOMCE" value-ref="addDetailstoMCEDAOFrontController" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="addDetailstoMCEDAOFrontController"
+		class="com.barclays.bmg.ussd.dao.processing.AddDetailstoMCEDAOController">
+		<property name="addDetailstoMCEReqAdptOperation" ref="addDetailstoMCEReqAdptOperation" />
+
+			<property name="transmissionOperation"
+			ref="addDetailstoMCETransmissionOperation" />
+
+
+			<property name="addDetailstoMCEResAdptOperation" ref="addDetailstoMCEResAdptOperation" />
+	</bean>
+
+	<bean id="addDetailstoMCEReqAdptOperation"
+		class="com.barclays.bmg.ussd.dao.operation.AddDetailstoMCEReqAdptOperation">
+		<property name="addDetailstoMCEHeaderAdapter" ref="addDetailstoMCEHeaderAdapter" />
+		<property name="addDetailstoMCEPayloadAdapter" ref="addDetailstoMCEPayloadAdapter" />
+	</bean>
+
+
+	<bean id="addDetailstoMCEHeaderAdapter"
+		class="com.barclays.bmg.ussd.dao.adapter.AddDetailstoMCEHeaderAdapter">
+	</bean>
+
+	<bean id="addDetailstoMCEPayloadAdapter"
+		class="com.barclays.bmg.ussd.dao.adapter.AddDetailstoMCEPayloadAdapter">
+	</bean>
+
+
+	<bean id="addDetailstoMCEResAdptOperation"
+		class="com.barclays.bmg.ussd.dao.operation.AddDetailstoMCEResAdptOperation">
+
+	</bean>
+
+	<bean id="addDetailstoMCETransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="addDetailstoMCETransmissionService" />
+	</bean>
+	<bean id="addDetailstoMCETransmissionService" class="com.barclays.bmg.ussd.service.impl.AddDetailstoMCETransmissionService">
+		<property name="remoteService" ref="addDetailstoMCEWebServiceImpl" />
+	</bean>
+
+	<bean id="addDetailstoMCEWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.HMCustomerManagement.HelloMoneyCustomerManagement_PortType" />
+		<property name="portName" value="HelloMoneyCustomerManagementSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.HMCustomerManagement.HelloMoneyCustomerManagement_Service" />
+		<property name="endpointAddress"
+			value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="HelloMoneyCustomerManagement_EndPoint" />
+		<property name="cacheKey" value="addDetailstoMCEService" />
+	</bean>
+
+	<bean id="updateDetailstoMCEDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface"
+			value="com.barclays.bmg.ussd.dao.UpdateDetailstoMCEDAO" />
+		<property name="daoFrontController" ref="updateDetailstoMCEDAOFrontControllerImpl" />
+	</bean>
+
+	<bean id="updateDetailstoMCEDAOFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="UPDATEDETAILSTOMCE" value-ref="updateDetailstoMCEDAOFrontController" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="updateDetailstoMCEDAOFrontController"
+		class="com.barclays.bmg.ussd.dao.processing.UpdateDetailstoMCEDAOController">
+		<property name="updateDetailstoMCEReqAdptOperation" ref="updateDetailstoMCEReqAdptOperation" />
+
+			<property name="transmissionOperation"
+			ref="updateDetailstoMCETransmissionOperation" />
+
+
+			<property name="updateDetailstoMCEResAdptOperation" ref="updateDetailstoMCEResAdptOperation" />
+	</bean>
+
+	<bean id="updateDetailstoMCEReqAdptOperation"
+		class="com.barclays.bmg.ussd.dao.operation.UpdateDetailstoMCEReqAdptOperation">
+		<property name="updateDetailstoMCEHeaderAdapter" ref="updateDetailstoMCEHeaderAdapter" />
+		<property name="updateDetailstoMCEPayloadAdapter" ref="updateDetailstoMCEPayloadAdapter" />
+	</bean>
+
+
+	<bean id="updateDetailstoMCEHeaderAdapter"
+		class="com.barclays.bmg.ussd.dao.adapter.UpdateDetailstoMCEHeaderAdapter">
+	</bean>
+
+	<bean id="updateDetailstoMCEPayloadAdapter"
+		class="com.barclays.bmg.ussd.dao.adapter.UpdateDetailstoMCEPayloadAdapter">
+	</bean>
+
+
+	<bean id="updateDetailstoMCEResAdptOperation"
+		class="com.barclays.bmg.ussd.dao.operation.UpdateDetailstoMCEResAdptOperation">
+
+	</bean>
+
+	<bean id="updateDetailstoMCETransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="updateDetailstoMCETransmissionService" />
+	</bean>
+	<bean id="updateDetailstoMCETransmissionService" class="com.barclays.bmg.ussd.service.impl.UpdateDetailstoMCETransmissionService">
+		<property name="remoteService" ref="updateDetailstoMCEWebServiceImpl" />
+	</bean>
+
+	<bean id="updateDetailstoMCEWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.HMCustomerManagement.HelloMoneyCustomerManagement_PortType" />
+		<property name="portName" value="HelloMoneyCustomerManagementSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.HMCustomerManagement.HelloMoneyCustomerManagement_Service" />
+		<property name="endpointAddress"
+			value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="HelloMoneyCustomerManagement_EndPoint" />
+		<property name="cacheKey" value="updateDetailstoMCEService" />
+	</bean>
+
+	<bean id="reissuePinDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface"
+			value="com.barclays.bmg.ussd.dao.ReissuePinDAO" />
+		<property name="daoFrontController" ref="reissuePinDAOFrontControllerImpl" />
+	</bean>
+
+	<bean id="reissuePinDAOFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="REISSUEPIN" value-ref="reissuePinDAOController" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="reissuePinDAOController"
+		class="com.barclays.bmg.ussd.dao.processing.ReissuePinDAOController">
+		<property name="reissuePinReqAdptOperation" ref="reissuePinReqAdptOperation" />
+
+			<property name="transmissionOperation"
+			ref="reissuePinTransmissionOperation" />
+
+		<property name="reissuePinResAdptOperation" ref="reissuePinResAdptOperation" />
+	</bean>
+
+
+	<bean id="reissuePinReqAdptOperation"
+		class="com.barclays.bmg.ussd.dao.operation.ReissuePinReqAdptOperation">
+		<property name="reissuePinHeaderAdapter" ref="reissuePinHeaderAdapter" />
+		<property name="reissuePinPayloadAdapter" ref="reissuePinPayloadAdapter" />
+	</bean>
+
+
+	<bean id="reissuePinHeaderAdapter"
+		class="com.barclays.bmg.ussd.dao.adapter.ReissuePinHeaderAdapter">
+	</bean>
+
+	<bean id="reissuePinPayloadAdapter"
+		class="com.barclays.bmg.ussd.dao.adapter.ReissuePinPayloadAdapter">
+	</bean>
+
+	<bean id="reissuePinResAdptOperation"
+		class="com.barclays.bmg.ussd.dao.operation.ReissuePinResAdptOperation">
+
+	</bean>
+
+	<bean id="reissuePinTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="reissuePinTransmissionService" />
+	</bean>
+	<bean id="reissuePinTransmissionService" class="com.barclays.bmg.ussd.service.impl.ReissuePinTransmissionService">
+		<property name="remoteService" ref="reissuePinWebServiceImpl" />
+	</bean>
+
+	<bean id="reissuePinWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.PinManagement.PinManagement_PortType" />
+		<property name="portName" value="PinManagementSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.PinManagement.PinManagement_Service" />
+		<property name="endpointAddress"
+			value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="PinManagement_EndPoint" />
+		<property name="cacheKey" value="reissuePinService" />
+	</bean>
+	<!-- Self Registration Execution -->
+
+	<!-- SMS Service -->
+
+	<bean id="smsDetailsDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface"
+			value="com.barclays.bmg.ussd.dao.SMSDetailsDAO" />
+		<property name="daoFrontController" ref="smsDetailsDAOFrontControllerImpl" />
+	</bean>
+
+	<bean id="smsDetailsDAOFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="GETSMSDETAILS" value-ref="smsDetailsDAOController" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="smsDetailsDAOController"
+		class="com.barclays.bmg.ussd.dao.processing.SMSDetailsDAOController">
+		<property name="smsDetailsReqAdptOperation" ref="smsDetailsReqAdptOperation" />
+
+		<property name="transmissionOperation"	ref="smsDetailsTransmissionOperation" />
+
+		<property name="smsDetailsResAdptOperation" ref="smsDetailsResAdptOperation" />
+	</bean>
+
+
+	<bean id="smsDetailsReqAdptOperation"
+		class="com.barclays.bmg.ussd.dao.operation.SMSDetailsReqAdptOperation">
+		<property name="smsDetailsHeaderAdapter" ref="smsDetailsHeaderAdapter" />
+		<property name="smsDetailsPayloadAdapter" ref="smsDetailsPayloadAdapter" />
+	</bean>
+
+
+	<bean id="smsDetailsHeaderAdapter"
+		class="com.barclays.bmg.ussd.dao.adapter.SMSDetailsHeaderAdapter">
+	</bean>
+
+	<bean id="smsDetailsPayloadAdapter"
+		class="com.barclays.bmg.ussd.dao.adapter.SMSDetailsPayloadAdapter">
+	</bean>
+
+	<bean id="smsDetailsResAdptOperation"
+		class="com.barclays.bmg.ussd.dao.operation.SMSDetailsResAdptOperation">
+
+	</bean>
+
+	<bean id="smsDetailsTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="smsDetailsTransmissionService" />
+	</bean>
+	<bean id="smsDetailsTransmissionService" class="com.barclays.bmg.ussd.service.impl.SMSDetailsTransmissionService">
+		<property name="remoteService" ref="smsDetailsWebServiceImpl" />
+	</bean>
+
+	<bean id="smsDetailsWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="uk.co.barclays.www.rbb.tcvm.NotificationService.NotificationService_PortType" />
+		<property name="portName" value="NotificationServiceSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="uk.co.barclays.www.rbb.tcvm.NotificationService.NotificationService_Service" />
+		<property name="endpointAddress"
+			value="http://gbrdsr000000307.intranet.barcapint.com:8800/BXX5_SSA_sendNotificationOneWay" />
+		<property name="endpointAddressName" value="NotificationService_EndPoint" />
+		<property name="cacheKey" value="notificationService" />
+	</bean>
+
+	<!-- SMS Service -->
+
+	<bean id="verifyUSSDUserController"
+		class="com.barclays.bmg.ussd.mvc.controller.auth.VerifyUSSDUserController"
+		parent="bmbAbstractController">
+		<property name="verifyUSSDUserOperation" ref="verifyUSSDUserOperation" />
+		<property name="retrieveAllCustAcctOperation" ref="retrieveAllCustAcctOperation" />
+		<property name="verifyUSSDUserJSONBldr" ref="verifyUSSDUserJSONBldr" />
+		<property name="commandName" value="challengeQuestionAndPositionCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.ussd.mvc.command.auth.ChallengeQuestionAndPositionCommand" />
+		<property name="validator" ref="challengeQuestionAndPositionCommandValidator" />
+		<property name="verifyChallengeURL" value="/dataserv?opCde=OP0115" />
+		<property name="activityId" value="GENERATE_CHALLENGE" />
+	</bean>
+
+	<bean id="verifyUSSDUserOperation"
+		class="com.barclays.bmg.ussd.operation.VerifyUSSDUserOperation"
+		parent="bmbCommonOperation">
+		<property name="challengeQuestionAndPositionService" ref="challengeQuestionAndPositionService" />
+		<property name="retrieveAllCustAcctService" ref="retrieveAllCustAcctService" />
+	</bean>
+
+<bean id="verifyUSSDUserJSONBldr"
+		class="com.barclays.bmg.json.model.builder.auth.VerifyUSSDUserJSONBldr">
+	</bean>
+
+	<bean id="verifyUSSDUserJSONResponseModel"
+		class="com.barclays.bmg.json.model.builder.auth.VerifyUSSDUserJSONResponseModel">
+	</bean>
+
+
+<!-- START : Added for Migrated user related functionality -->
+	<bean id="verifyMigratedUserController" class="com.barclays.bmg.ussd.mvc.controller.auth.VerifyMigratedUserController"
+		  parent="bmbAbstractCommandController">
+		<property name="verifyMigratedUserOperation" ref="verifyMigratedUserOperation" />
+		<property name="verifyMigratedUserJSONBldr" ref="verifyMigratedUserJSONBldr" />
+		<property name="commandName" value="verifyMigratedUserCommand" />
+		<property name="commandClass" value="com.barclays.bmg.ussd.mvc.command.auth.VerifyMigratedUserCommand" />
+		<property name="activityId" value="VERIFY_MIGRATED_USER" />
+	</bean>
+	<bean id="verifyMigratedUserOperation" class="com.barclays.bmg.ussd.operation.VerifyMigratedUserOperation"
+		parent="bmbCommonOperation">
+		<property name="selfRegistrationExecutionService" ref="selfRegistrationExecutionService" />
+		<property name="allAccountService" ref="allAccountService" />
+		<property name="retrieveCustomerDetailsService" ref="retrieveCustomerDetailsService" />
+	</bean>
+	<bean id="verifyMigratedUserJSONBldr"
+		class="com.barclays.bmg.json.model.builder.auth.VerifyMigratedUserJSONBldr">
+	</bean>
+	<bean id="updateMigratedUserPinController" class="com.barclays.bmg.ussd.mvc.controller.auth.UpdateMigratedUserPinController"
+		  parent="bmbAbstractCommandController">
+		<property name="thmLgnVrfyUsrPnOperation" ref="thmLgnVrfyUsrPnOperation"/>
+		<property name="retrieveAllCustAcctOperation" ref="retrieveAllCustAcctOperation" />
+		<property name="changePasswordOperation" ref="changePasswordOperation" />
+		<property name="updateDetailstoMCEOperation" ref="updateDetailstoMCEOperation" />
+		<property name="verifyMigratedUserJSONBldr" ref="verifyMigratedUserJSONBldr" />
+		<property name="commandName" value="verifyMigratedUserCommand" />
+		<property name="commandClass" value="com.barclays.bmg.ussd.mvc.command.auth.VerifyMigratedUserCommand" />
+		<property name="activityId" value="VERIFY_MIGRATED_USER_PIN" />
+	</bean>
+
+	<bean id="challengeQuePosForMigUserController"
+		class="com.barclays.bmg.ussd.mvc.controller.auth.ChallengeQuePosForMigUserController"
+		parent="bmbAbstractController">
+		<property name="challengeQuestionAndPositionOperation" ref="challengeQuestionAndPositionOperation" />
+		<property name="challengeQuestionAndPositionJSONBldr" ref="challengeQuestionAndPositionJSONBldr" />
+		<property name="commandName" value="challengeQuestionAndPositionCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.ussd.mvc.command.auth.ChallengeQuestionAndPositionCommand" />
+		<property name="validator" ref="challengeQuestionAndPositionCommandValidator" />
+		<property name="verifyChallengeURL" value="/dataserv?opCde=OP0963" />
+		<property name="activityId" value="GENERATE_CHALLENGE" />
+	</bean>
+
+	<bean id="authForMigratedUserController"
+		class="com.barclays.bmg.ussd.mvc.controller.auth.AuthenticationForMigratedUserController"
+		parent="bmbAbstractCommandController">
+		<property name="secondAuthOperation" ref="secondAuthOperation" />
+		<property name="secondAuthJSONBldr" ref="secondAuthJSONBldr" />
+		<property name="commandName" value="secondAuthCommand" />
+		<property name="commandClass" value="com.barclays.bmg.ussd.mvc.command.auth.SecondAuthenticationCommand" />
+		<property name="validator" ref="secondAuthCommandValidator" />
+		<property name="activityId" value="SECOND_AUTH" />
+	</bean>
+
+
+<!-- END : Added for Migrated user related functionality -->
+
+<!-- GHIPS -->
+	<bean id="searchIndividualCustByAcctCtrl" class="com.barclays.bmg.ussd.mvc.controller.auth.SearchIndividualCustByAcctCtrl" parent="bmbAbstractCommandController">
+		<property name="selfRegistrationInitOperation" ref="selfRegistrationInitOperation" />
+		<property name="selfRegistrationInitJSONBldr" ref="selfRegistrationInitJSONBldr" />
+		<property name="commandName" value="selfRegistrationInitCommand" />
+		<property name="commandClass" value="com.barclays.bmg.ussd.mvc.command.auth.SelfRegistrationInitCommand" />
+	</bean>
+
+</beans>

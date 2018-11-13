@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+          "http://ibatis.apache.org/dtd/sql-map-custsvc-2.dtd">
+
+<sqlMapConfig>
+	<settings cacheModelsEnabled="true" useStatementNamespaces="false" />
+
+	<sqlMap resource="sqlmap/systemparameter_ibatis.xml" />
+	<sqlMap resource="sqlmap/urlbusinessmap_ibatis.xml" />
+	<sqlMap resource="sqlmap/prod_eligibility_query.xml" />
+	<sqlMap resource="sqlmap/dynamicitem_ibatis.xml" />
+	<sqlMap resource="sqlmap/listvalueres_ibatis.xml" />
+	<sqlMap resource="sqlmap/entitlement_ibatis.xml" />
+	<sqlMap resource="sqlmap/txnCutOff_ibatis.xml" />
+	<sqlMap resource="sqlmap/transactionLimit_ibatis_UB.xml" />
+	<sqlMap resource="sqlmap/messageres_ibatis.xml" />
+	<sqlMap resource="sqlmap/biller_ibatis.xml" />
+	<sqlMap resource="sqlmap/sessionsummary_ibatis.xml" />
+	<sqlMap resource="sqlmap/sessionregistry_ibatis.xml" />
+	<sqlMap resource="sqlmap/componentres_ibatis.xml" />
+	<sqlMap resource="sqlmap/branch_ibatis.xml" />
+	<sqlMap resource="sqlmap/common_ibatis.xml" />
+	<sqlMap resource="sqlmap/intrates_ibatis.xml" />
+	<sqlMap resource="sqlmap/ussd_branch_locator_ibatis.xml" />
+	<sqlMap resource="sqlmap/promo_offer_ibatis.xml" />
+	<sqlMap resource="sqlmap/ussd_barclays_offer_ibatis.xml" />
+	<sqlMap resource="sqlmap/ussd_call_me_back_ibatis.xml" />
+	<sqlMap resource="sqlmap/ussd_interested_product_ibatis.xml" />
+	<sqlMap resource="sqlmap/ussd_branch_ibatis.xml" />
+	<sqlMap resource="sqlmap/ussd_lead_generation_ibatis.xml" />
+	<sqlMap resource="sqlmap/billerCredit_ibatis.xml" />
+
+</sqlMapConfig>

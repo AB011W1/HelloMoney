@@ -1,0 +1,254 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style type="text/css">
+<!--
+body
+	{
+	margin		:0;
+	padding		:0;
+	font-family	:arial,helvetica,sans-serif;
+	color		:#006FA4;}
+
+#wrapper
+	{
+	padding		:10px;
+	margin		:0 auto;}
+
+#header
+	{
+	text-align	:center;}
+
+
+#wrapper #header p
+	{
+	font-size	:0.8em;
+	margin		:0px auto;
+	padding		:0 0 5px 0 ;}
+
+#wrapper #header h2
+	{
+	font-size	:0.8em;
+	margin		:0px auto;
+	padding		:5px 0 0 0;}
+
+.divider
+	{
+	border-bottom	:1px solid #006FA4;}
+
+
+h1
+	{
+	margin		:0;
+	padding		:0 0 5px 0;
+	font-size	:1.2em;
+	font-weight	:bold;}
+
+h2
+	{
+	margin		:0 0 5px 0;
+	padding		:8px 0 0 0;
+	font-size	:0.9em;
+	font-weight	:bold;}
+
+#wrapper p
+	{
+	font-size	:0.8em;
+	margin		:0 0 5px 15px;
+	padding		:8px 0 0 0;}
+
+ #wrapper ul, #wrapper ol
+	{
+	margin-top	:0px;
+	padding-top	:0px;}
+
+ #wrapper ul li, #wrapper ol li
+	{
+	font-size	:0.8em;
+	margin-top	:2px;}
+
+ #wrapper ol li ol li
+	{
+	font-size	:1em;
+	margin		:5px 0 5px 0;}
+
+ #wrapper p.subsection
+	{
+	margin-left	:15px;
+	margin-top	:2px;}
+
+ #wrapper p.subsection span
+	{
+	display		:block;
+	margin-left	:15px;}
+-->
+</style>
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+<div id="header">
+<h1>Terms and Conditions</h1>
+<p>Applicable to Electronic Channels Banking</p>
+<div class="divider"></div></div>
+
+<h2>Terms of Use</h2>
+
+<div id="text">
+<p>Please read the following Terms and Conditions carefully. By using this website and its related services, you acknowledge that you have read the Terms and Conditions and that you accept and will be bound by them, as they may be modified by Barclays Bank of Botswana (BBB) from time to time, as posted on this application. If you do not agree to the Terms and Conditions of use, you may not use this application.
+</p>
+
+<h2>Definitions</h2>
+
+<p>In these Terms and Conditions, the following words will have the following meanings:</p>
+
+<p><strong>Electronic Channels Banking</strong> is provided by the Bank to offer the following services:</p>
+<ul>
+<li>Obtaining information relating to the Account, including transactions and standing instruction; </li>
+<li>Transferring funds;</li>
+<li>Paying accounts;</li>
+<li>Making own defined payments where the Customer provides the beneficiary's details;</li>
+<li>Requesting from the Bank statements and replies to enquiries which relate to the Account;</li>
+<li>Creating stop orders; and</li>
+<li>Using any other service, which may be available through Internet Banking.</li></ul>
+
+<p><strong>Account</strong> means any account held in the name of the Customer together with any accounts in respect of which the Customer holds a Valid Mandate.</p>
+
+<p><strong>Bank</strong> means Barclays Bank of Botswana Company Registration Number: C01732.</p>
+
+<p><strong>Billing Account</strong> means the Customer's nominated account used for the purpose of debiting the fees payable in terms of this agreement.</p>
+
+<p><strong>Electronic Channels Banking</strong> includes Internet Banking and Mobile Banking.</p>
+
+<p><strong>Commencement Date</strong> means the date of submitting or signing the application for registration, whichever occurs first.</p>
+
+<p><strong>Customer</strong> means the person who has registered to use Electronic Channels Banking.</p>
+
+<p><strong>Main User/s,</strong> means any person/s authorised or deemed to be authorised by the Customer to use the Electronic Channels Banking.</p>
+
+<p><strong>Password</strong> means alphanumeric (both letters and numbers) characters chosen by the Customer or Main User, as the case may be, used as an additional security and authentication when accessing the Electronic Channels Banking. </p>
+
+<p><strong>PIN</strong> means numeric digits (Personal Identification Number), chosen by the Customer or Main User and used as a security and authentication when accessing the Electronic Channels Banking.</p>
+
+<p><strong>One Time Pin (OTP)</strong> is a unique code that acts as a once-off password that is required when performing particular transactions on Internet Banking. Internet Banking customers will receive the OTP via SMS. There is no additional charge for this service.</p>
+
+<h2>Use of Electronic Channels Banking</h2>
+
+<p>The use of Electronic Channels Banking is subject to Terms and Conditions as provided by the bank. This agreement governs your and our rights and obligations when you use any of the Electronic Channels Banking. You will become bound to the most recent version of this agreement when you register to use any of the Electronic Channels Banking. Before you can use the Electronic Banking Channels you must register for the said Channel. Refer to <a href="http://www.barclays.com" target="_blank">www.barclays.com</a>  for more information on how to register for the different Electronic Channels Banking. To use the Electronic Channels Banking, you must be at least 18 years old or have your parent/legal guardian's consent or be emancipated. By registering to use the Electronic Banking Channels you confirm that you are at least 18 years old or have your parent/legal guardian's consent or have been emancipated, as the case may be.</p>
+
+<p>The customer acknowledges that information transmitted through the Internet or any other communication system, including wireless communication system, is susceptible to unlawful access, distortion and monitoring and that the Customer uses the Electronic Channels Banking at its own risk.</p>
+
+<p>The customer authorises the Bank to carry out any and all instructions given via the Electronic Channels Banking,
+including the debiting of and transfer of funds from the Account and the furnishing of information on the Account,
+provided that the instructions are authenticated by the use of:</p>
+<ul>
+<li>The PIN and/or Password</li>
+<li>Any other procedures which may be agreed to in writing between the Customer and the Bank</li></ul>
+
+<p>The provision of the Electronic Channels Banking will not entitle the Customer to overdraw the Account if borrowing arrangements have not been made with the Bank, or to overdraw in excess of any borrowing limit agreed with the Bank.</p>
+
+<p>The customer should comply with Barclays Bank of Botswana security tips as published on the website from time to time.</p>
+
+<h2>Unauthorised Use of the PIN and Password - Access Codes</h2>
+
+<p>The Bank deals with the customer remotely when using Electronic Banking Channels (no face to face interaction), as such the Customer authorises the Bank to act on and accept all instructions and transactions that occur after your PIN, Password or OTP have been entered or applied. We are entitled to assume that all such transactions have been authorised by you, even if such transactions took place without your knowledge or consent or were not authorised. This will apply to transactions that occur after you have requested that the Bank disable any access code. The Customer must inform the Bank immediately if he/she knows or suspects that his/her access code (s) have been lost, stolen or may be misused. If any unauthorised person obtains the Access Codes in any manner whatsoever, such a person will be regarded as the Customer's duly authorised agent with full authority to use the Electronic Channels Banking on the Customer's behalf, unless the Customer is able to prove that the person has obtained the Access Codes fraudulently or due to the Bank's negligence.</p>
+
+<h2>Indemnity and Warranty by the Customer</h2>
+<p>The Customer indemnifies the Bank against any damage, loss and/or consequential damage that the Bank may suffer as a result of incorrect, wrong, unauthorised and/or wrongful instructions or information given by the customer or any other person authorised or deemed to be authorised to act on behalf of the customer.</p>
+
+<p>The Customer hereby warrants to the Bank that the Customer has the required legal capacity to enter into and be bound by these Terms and Conditions.
+</p>
+
+<h2>Duties of the Customer</h2>
+
+<p>The Customer must keep his/her PIN, Password or OTP secret. The Customer must not disclose the PIN, Password or OTP, thereby giving access to any unauthorised person. The Customer must take all reasonable precautions to prevent unauthorised use of the Electronic Channels Banking and unauthorised access to the Account.</p>
+
+<p>If the Customer suspects that the PIN, Password or OTP has become known to someone else, the Customer must immediately notify the Bank and immediately change the PIN or Password.</p>
+
+<p>The Customer must provide the correct account number as well as the correct branch clearing code, where required, of all beneficiaries when instructing the Bank to make payments, pay accounts and to transfer funds to such beneficiaries. The Bank does not at any stage verify an account number and branch clearing code against the name of a beneficiary.</p>
+
+<h2>Other Agreements That Also Applies to You</h2>
+
+<p>Certain products and services that you use or access via Electronic Channels Banking are subject to their own terms and conditions, such as the bank account or services you access, your ATM Debit card and Credit card. This agreement (governing the use of Electronic Channels Banking) must be read together with, and forms part of each product agreement. In the event of conflict between this agreement and such other terms, the provisions of such other terms will prevail to the extent of the conflict.</p>
+
+<h2>Fees</h2>
+
+<p>Any fees and charges in respect of the Electronic Channels Banking will be debited to the Customer's nominated bank account (Billing Account). A copy can be obtained from <a href="http://www.barclays.com" target="_blank">www.barclays.com</a>  or from any Barclays Bank Botswana's branch. Should the Bank be unable to recover any fees/charges from the nominated bank account on the due date, due to insufficient or for any other reason whatsoever, the Bank shall be entitled to recover such fees/charges as and when the funds may be become available in the customer's nominated bank account, alternatively from any other Barclays Bank' account belonging to the Customer.</p>
+
+<p>Should the Bank be unable to recover any fees/charges as per 7.1 above, the Bank reserves the right to suspend the Internet and/or Cellphone Banking service with immediate effect, with or without notice.</p>
+
+<p>The Bank may vary the fees/charges in respect of Electronic Channels Banking by giving a month's notice of such amendments to the Customer by posting a notification of amendments on the website and selected media.</p>
+
+<h2>Availablility of Electronic Channels Banking</h2>
+
+<p>The Electronic Channels Banking will be available at all times, subject to the availability of the Internet and Mobile Networks connections and to any periods required for necessary maintenance of the Internet and Mobile networks connections.<br/>Should the Electronic Channels Banking be unavailable for whatever reason, the Customer must use the Bank's other available service channels and take reasonable steps to minimise and/or prevent loss or risk.</p>
+
+<h2>Internet Requirements</h2>
+
+<p>Should the Customer obtain access to the Electronic Channels Banking via the Internet, the customer must register with an Internet Service Provider before the commencement date. The Customer will be solely responsible for the acquisition, installation and maintenance of the connection to the Internet or any related costs or expenses will be borne by the Customer.</p>
+
+<p>Should the Internet software and hardware requirements be modified with a view to improving or upgrading the Internet, the resultant cost of any hardware, software or Internet connection required for use of the system will be for the Customer's own account. In the event that the Customer experiences problems with the Internet and Internet connection, it is the Customer's responsibility to liaise with the Internet Service Providers prior to contacting the Bank.</p>
+
+<h2>Cellphone Requirements</h2>
+
+<p>Should the Customer obtain access to the Electronic Channels Banking via the Cellphone, the Customer must register with Mobile Network Operator before the commencement date. The customer will be solely responsible for obtaining of the prescribed cellphone and the connection to the Mobile Network Operator and any related costs or expenses will be borne by the Customer.</p>
+
+<p>Should the cellphone requirements be modified with a view to improving or upgrading the Mobile Banking (Hello Money), the resultant costs of any new cellphone or service provider connection required so as to use the Electronic Channels Banking will be for the Customer's own account.</p>
+
+<p>In the event that the Customers experiences problems with the Cellphone and/or Mobile Network Operator, it is the Customer's responsibility to liaise with the Mobile Network Operator prior to contacting the Bank.
+</p>
+
+<h2>Liability for Loss or Damage</h2>
+
+<p>The Customer acknowledges that the use of the Electronic Channels Banking and the Account is at the Customer's own risk.</p>
+
+<p>The Bank will not be responsible for any damage, loss or consequential damage which the Customer may suffer as a result of :</p>
+
+<ul>
+<li>Any malfunction or defect in the hardware used by the Customer (which includes the personal computer or cellphone).</li>
+<li>Any defect in the software used by the Customer to gain access to the Electronic Channels Banking.</li>
+<li>Any act or omission by the Internet or Mobile Network Operator or any defect in the Electronic Channels Banking or any other medium by which access is gained to the system.</li>
+<li>The Electronic Channels Banking being off-line or unavailable</li>
+<li>Any industrial action</li>
+<li>Any other circumstances not reasonably within the Bank's control</li>
+<li>Erroneous, unauthorised, incomplete or unlawful instruction from the Customer</li>
+<li>Unlawful or unauthorised access by another person(s)</li>
+<li>Incorrect or late execution on non-payment of any instruction given by the Customer, due to the circumstances set out in 11.3 to 11.10.</li></ul>
+
+<h2>Intellectual Property</h2>
+
+<p>The Bank retains all copyright and other intellectual property rights in all material, including logos and other graphics and multimedia works published on or through this website. The customer is authorised to view and download a copy of these Terms and Conditions to a local hard drive or disk, print and make copies of such printouts, provided that the material is used for considering use of the Electronic Channels Banking and for no other commercial purposes.</p>
+
+<p>
+Any reproduction of the Bank's proprietary material from the website or portion of it, must include the Bank's copyright notice in its entirety. Nothing on this website should be construed as granting any license or right to use any trademark without the Bank's prior written consent and/or the prior written consent of the third parties, as the case may be. The customer may not without the Bank's prior written consent, use the Bank's intellectual property or the intellectual property of third parties for any purposes whatsoever.</p>
+
+<h2>Termination, Suspension or Withdrawal of the Electronic Channels Banking</h2>
+
+<p>The Customer may terminate the Electronic Channels Banking by giving the Bank 30 (thirty) days' written notice. The notice should be signed by the customer. The Bank is entitled, at its discretion, to terminate the Electronic Channels Banking at any time the Bank deems it necessary.</p>
+
+<p>In order to protect the Customer, the Bank and the banking systems, the Bank is entitled to immediately suspend or withdraw all or part of the Electronic Channels Banking if the Channel is being used contrary to the Terms and Conditions of this agreement; the Bank has reasonable grounds to believe that the channel may be used negligently, illegally or fraudulently or the Bank believes that the security of the system used to provide the Electronic Channels Banking may be compromised.</p>
+
+<p>In the event that the Electronic Channels Banking not being used for a period of 6 (six) months or longer, the Bank reserves the right to terminate the agreement without prior notice. The Customer may reapply for the Electronic Channels Banking at any time.
+The customer is liable for all transactions and/or obligations (and related charges) which are incurred up to and including the date of termination.</p>
+
+<h2>General</h2>
+<p>
+All information on this website is only intended to provide the Customer with general information about the Bank, Bank products and services and the Bank will endeavour to ensure that the information provided is up to date. BBB will periodically amend, change, add, delete, update or alter the information, including without limitation, the Terms and Conditions of use at the website, without notice. Further, BBB assumes no responsibility for any errors or omissions in the content of the website.</p>
+
+<p>Users agrees to indemnify, defend and hold BBB harmless from any liability, loss, claim and expense, including legal fees related to a user's violation of these Terms and Conditions or unauthorised use of the services and information provided at this website.</p>
+
+<p>The Terms and Conditions will be governed by and construed in accordance with the applicable laws of the Republic of Botswana and users agree that all legal proceedings relating to the matters herein shall be adjudicated solely in the courts of the Republic of Botswana.</p>
+
+<p>To the extent that any portion of these Terms and Conditions shall be determined to be unenforceable by a court of competent jurisdiction, such portion will be modified by the court solely to the extent necessary to cause such portion to be enforceable, and these Terms and Conditions as so modified will remain in full force and effect. Any waiver of any provisions contained in these Terms and Conditions by BBB shall not be deemed to be a waiver of any other right, term or provision of these Terms and Conditions.</p>
+
+</div>
+</div>
+</body>
+</html>

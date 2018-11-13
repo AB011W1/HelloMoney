@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<serviceMappings>
+	<version>1.0</version>
+
+	<pageHeader>
+		<countryCode>UG</countryCode>
+		<isdCode>256</isdCode>
+		<businessId>UGBRB</businessId>
+	</pageHeader>
+
+	<srv tranId="UG_BAL_ENQ" importTran="BalanceEnquiry" firstScreenSequencerId="1"/>
+	<srv tranId="UG_CHK_BK_REQ" importTran="ChequeBookRequest" firstScreenSequencerId="1"/>
+	<srv tranId="UG_OWN_LNK_FND_TX" importTran="OwnLinkedAcctFundTx" firstScreenSequencerId="1"/>
+	<srv tranId="UG_OT_BNK_FND_TX" importTran="ExtBankAcctFundTx" firstScreenSequencerId="1"/>
+	<srv tranId="UG_MINI_STMT" importTran="MiniStatement" firstScreenSequencerId="1"/>
+	<srv tranId="UG_PAY_BILLS" importTran="BillPay" firstScreenSequencerId="1"/>
+	<srv tranId="UG_VIEW_BILLERS" importTran="ViewMyBillers" firstScreenSequencerId="1"/>
+	<srv tranId="UG_OTHER_BARC_FND_TX_REG" importTran="OtherBarclaysAcctFundTxReg" firstScreenSequencerId="1" />
+	<!--CR#48 -->
+	<srv tranId="UG_OTHER_BARC_FND_TX_UNREG" importTran="OtherBarclaysAcctFundTxUnReg" firstScreenSequencerId="4"/>
+	<srv tranId="UG_DEL_BENF_BARCLAYS" importTran="OtherBarcAcctDelBenef" firstScreenSequencerId="1" />
+	<srv tranId="UG_DEL_BENF_NON_BARCLAYS" importTran="NonBarcAcctDelBenef" />
+	<srv tranId="UG_STMT_REQ" importTran="StatementRequest" firstScreenSequencerId="1" />
+	<!--CR#48 -->
+	<srv tranId="UG_REG_BENF_INT" importTran="RegisterBarclaysBenf" firstScreenSequencerId="5" />
+	<srv tranId="UG_REG_BENF_EXT" importTran="RegisterOtherBankBenf" firstScreenSequencerId="1"/>
+	<srv tranId="UG_VIEW_LAST_PAID_BILLS" importTran="ViewLastPaidBills" firstScreenSequencerId="1" />
+	<srv tranId="UG_LANG_PREF" importTran="LanguagePreference" firstScreenSequencerId="1" />
+	<srv tranId="UG_CHNG_PIN" importTran="ChangePin" firstScreenSequencerId="1" />
+	<srv tranId="UG_REG_BILLERS" importTran="RegisterBillers" firstScreenSequencerId="1"/>
+	<srv tranId="UG_DEL_BILLERS" importTran="DeleteBillers" firstScreenSequencerId="1"/>
+	<srv tranId="UG_ONE_TIME_PAYMNTS" importTran="OneTimePayments" firstScreenSequencerId="1"/>
+	<srv tranId="UG_VIEW_FD" importTran="ViewFd" firstScreenSequencerId="1" />
+	<srv tranId="UG_APPLY_FD" importTran="ApplyFd" firstScreenSequencerId="1"/>
+	<srv tranId="UG_MOBILE_WALLET_TOP_UP" importTran="MobileWalletTopUp" firstScreenSequencerId="1" />
+	<srv tranId="UG_BAL_ENQ_MAIN_ACCT" importTran="BalanceEnquiryMainAccount" firstScreenSequencerId="1" />
+	<srv tranId="UG_MINI_STMT_MAIN_ACCT" importTran="MiniStatementMainAccount" firstScreenSequencerId="1" />
+	<srv tranId="UG_AIRTIME_TOPUP" importTran="AirtimeTopup" firstScreenSequencerId="1" />
+	<srv tranId="UG_SELF_REG" importTran="SelfRegistration" firstScreenSequencerId="3"/>
+	<srv tranId="UG_TWO_FACTOR" importTran="TwoFactorVerify" firstScreenSequencerId="1"/>
+	<srv tranId="UG_WELCOME_BAL_ENQ" importTran="WelcomeScreenBalanceEnquiry" firstScreenSequencerId="1"/>
+	<srv tranId="UG_CASH_SEND_ADD_BENEFICIARY" importTran="CSAddBeneficiary" firstScreenSequencerId="1"/>
+	<srv tranId="UG_CASH_SEND_BENEF_LIST" importTran="CSBeneficiaryList" firstScreenSequencerId="1"/>
+	<srv tranId="UG_CASH_SEND_DELETE_BENEF" importTran="CSDeleteBeneficiary" firstScreenSequencerId="1"/>
+	<srv tranId="UG_CASH_SEND_ONE_TIME_PAYMNTS" importTran="CashSendOneTimePayment" firstScreenSequencerId="1"/>
+	<srv tranId="UG_HM_DEMO" importTran="HelloMoneyDemo" firstScreenSequencerId="1"/>
+	<srv tranId="UG_CONTACT_US" importTran="ContactUs" firstScreenSequencerId="1"/>
+	<srv tranId="UG_USER_MIGRATION" importTran="UserMigration" firstScreenSequencerId="3"/>
+	<srv tranId="UG_RETAIN_OLD_SESSION" importTran="OldSession" firstScreenSequencerId="1"/>
+	<srv tranId="UG_SWITCH_TO_NEW_SESSION" importTran="NewSession" firstScreenSequencerId="1"/>
+
+	<!-- Credit Card changes -->
+	<srv tranId="UG_AT_GLANCE" importTran="CreditCardAtAGlance" firstScreenSequencerId="1"/>
+	<srv tranId="UG_CARD_STATEMENT" importTran="CreditCardStatement" firstScreenSequencerId="1"/>
+	<srv tranId="UG_UNBILLED_TRANSACTION" importTran="CreditCardUnbillerTxDetails" firstScreenSequencerId="1"/>
+	<srv tranId="UG_CARD_PAYMENT_INT" importTran="CreditCardPaymentInternal" firstScreenSequencerId="1"/>
+	<srv tranId="UG_CREDITCARD_LINK"  importTran="CreditCardLink" firstScreenSequencerId="1"/>
+	<!-- Credit Card changes -->
+
+	<!-- Forgot Pin changes -->
+	<srv tranId="UG_FOR_PIN" importTran="ForgotPin"  firstScreenSequencerId="1"/>
+	<!-- Lead Generation -->
+	<srv tranId="UG_LEAD_GENERATION"  importTran="LeadGeneration" firstScreenSequencerId="1"/>
+	<!--Skip Nodes Syntax Starts-->
+	<!--
+	<srv tranId="GH_REG_BENF_EXT" importTran="RegisterOtherBankBenf">
+	  <skipNode tranDataId="ROTHBB003" defaultValue="" />
+	  <skipNode tranDataId="ROTHBB004" defaultValue="" />
+  	</srv>
+  	-->
+  	<!--Skip Nodes Syntax Endss-->
+
+	<!--<skippedScreens>
+		<srv tranId="UG_REG_BENF_INT" importTran="RegisterBarclaysBenf">
+			<skipNode tranDataId="RBB0002" defaultValue="" />
+			<skipNode tranDataId="RBB002" defaultValue="" />
+		</srv>
+		<srv tranId="UG_OTHER_BARC_FND_TX_UNREG" importTran="OtherBarclaysAcctFundTxUnReg">
+			<skipNode tranDataId="OBAFTNR0012" defaultValue="" />
+			<skipNode tranDataId="OBAFTNR012" defaultValue="" />
+		</srv>
+		<srv tranId="UG_SELF_REG" importTran="SelfRegistration">
+			<skipNode tranDataId="SLR0001" defaultValue="" />
+			<skipNode tranDataId="SLR001" defaultValue="" />
+		</srv>
+	</skippedScreens>
+
+
+	--><!-- Supported Languages -->
+	<languages displayLabelId="LANG01">
+		<lang locale="en_UG" default="true"/>
+		<lang locale="sw_UG"/><!--  Nyankole language -->
+	</languages>
+
+	<navigationOptions>
+		<back option="*"/>
+		<home option="#"/>
+		<scrollUp option="**"/>
+		<scrollDown option="##"/>
+	</navigationOptions>
+
+	<msisdn>
+		<cclen>3</cclen>
+		<snlen>9</snlen>
+		<ccvalue>256</ccvalue>
+	</msisdn>
+
+	<twoFactQuesSet>
+		<question quesId="Q4"/>
+	</twoFactQuesSet>
+
+	<selfRegQuesSet>
+		<question quesId="Q5"/>
+	</selfRegQuesSet>
+
+	<customizedServices>
+		<tx id="tx0.3" tranId="MiniStatement">
+			<transaction tranDataId="MS000" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true"  />
+			<transaction tranDataId="MS001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MS001"  headerId="label.select.accnum"  backOptionReq="true"/>
+			<transaction tranDataId="MS002" type="endTran" bmgOpCode="OP0404" tranDataOpCode="MS002"  headerId="LBL9999" homeOptionReq="true" backOptionReq="true"/>
+		</tx>
+		<tx id="1.35" tranId="UserMigration">
+			<transaction tranDataId="UM001" type="searcher" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="UM001"  headerId="label.um.enter.branch.code" />
+			<transaction tranDataId="UM002" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="UM002"  headerId="label.um.select.branch.name"  />
+			<transaction tranDataId="UM003" type="accountNo" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="UM003"  headerId="label.um.acc.num" />
+			<transaction tranDataId="UM004" type="NA" bmgOpCode="OP0961" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"/>
+			<transaction tranDataId="UM005" type="twoFactAnsDOB" bmgOpCode="OP0962" tranDataOpCode="UM005"  headerId="LBL9999" backOptionReq="true" />
+			<transaction tranDataId="UM006" type="NA" bmgOpCode="OP0963" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999" />
+			<transaction tranDataId="UM007" type="password" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="UM007"  headerId="label.um.enter.new.pin"  backOptionReq="true" />
+			<transaction tranDataId="UM008" type="password" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="UM008"  headerId="label.um.reenter.new.pin"  backOptionReq="true" />
+			<transaction tranDataId="UM009" type="endTran" bmgOpCode="OP0964" tranDataOpCode="UM009"  headerId="label.um.success" />
+		</tx>
+		  <tx id="tx2.3" tranId="MobileWalletTopUp">
+			<transaction tranDataId="MWTU000" type="NA" bmgOpCode="OP0670" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true"  />
+			<transaction tranDataId="MWTU001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU001" headerId="label.select.mobileWallet.operator"  backOptionReq="true"/>
+			<!-- CR#47 -->
+			<transaction tranDataId="MWTU0021" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU0021"  headerId="label.select.won.oth.option"  backOptionReq="true" />
+			<!-- CR#47 -->
+			<!-- CR82 -->
+			<transaction tranDataId="MWTU0022" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU0022"  headerId="label.select.payment.option"  backOptionReq="true" />
+			<transaction tranDataId="MWTU1022" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU1022"  headerId="label.select.new.beneficiary.youroperator"  backOptionReq="true"  />
+			<transaction tranDataId="MWTU1023" type="msisdn" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU1023"  headerId="LBL9999"  backOptionReq="true"  />
+
+			<!-- CR82 End -->
+			<transaction tranDataId="MWTU002" type="msisdn" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU002" headerId="LBL9999"  backOptionReq="true" />
+
+			<transaction tranDataId="MWTU003" type="amount" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU003"  headerId="LBL9999"  backOptionReq="true" />
+			<transaction tranDataId="MWTU004" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU004"  headerId="LBL9999"  backOptionReq="true" />
+			<!-- CR#60 -->
+			<transaction tranDataId="MWTU005" type="confirm" bmgOpCode="OP0671" tranDataOpCode="MWTU005" headerId="LBL9999"  backOptionReq="true" />
+			<!-- CR#60 -->
+			<transaction tranDataId="MWTU006" type="confirm" bmgOpCode="OP0603" tranDataOpCode="MWTU006"  headerId="LBL9999" homeOptionReq="true" />
+			<!-- CR82 -->
+			<transaction tranDataId="MWTU0023" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU0023"  headerId="LBL9999"  backOptionReq="true" />
+			<transaction tranDataId="MWTU0024" type="confirm" bmgOpCode="OP0612" tranDataOpCode="MWTU0024"  headerId="LBL9999"  backOptionReq="true" />
+			<transaction tranDataId="MWTU0025" type="endTran" bmgOpCode="OP0613" tranDataOpCode="MWTU0025"  headerId="LBL9999" homeOptionReq="true" />
+
+			<!-- CR82 Delete BenF -->
+			<transaction tranDataId="MWTU1024" type="confirm" bmgOpCode="OP0601" tranDataOpCode="MWTU1024"  headerId="label.airtime.biller.deletion.askconfirm"  backOptionReq="true" homeOptionReq="true"/>
+			<transaction tranDataId="MWTU1025" type="endTran" bmgOpCode="OP0640" tranDataOpCode="MWTU1025"  headerId="LBL9999" homeOptionReq="true"  />
+			<!-- CR82 Saved BenF -->
+			<transaction tranDataId="MWTU0026" type="NA" bmgOpCode="OP0600" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999" />
+			<transaction tranDataId="MWTU0027" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU0027"  headerId="LBL9999"  backOptionReq="true" />
+			<transaction tranDataId="MWTU0028" type="NA" bmgOpCode="OP0601" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999" />
+			<!-- CR82 Edit BenF -->
+		<transaction tranDataId="MWTU1026" type="confirm" bmgOpCode="OP0612" tranDataOpCode="MWTU1026"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="MWTU1027" type="endTran" bmgOpCode="OP0613" tranDataOpCode="MWTU1027"  headerId="LBL9999" homeOptionReq="true"  />
+
+			<!-- CR82 End -->
+		</tx>
+	</customizedServices>
+
+</serviceMappings>

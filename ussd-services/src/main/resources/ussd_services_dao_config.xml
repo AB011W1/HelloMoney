@@ -1,0 +1,38 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<bean id="billersLstDAOImpl" class="com.barclays.ussd.services.dao.impl.BillersLstDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+	<bean id="listValueResDAOImpl" class="com.barclays.ussd.sysprefs.services.ListValueResDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+	<bean id="ussdBranchLookUpDAOImpl" class="com.barclays.ussd.services.dao.impl.UssdBranchLookUpDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+	<bean id="ussdBranchLocatorLookUpDAOImpl" class="com.barclays.ussd.services.dao.impl.UssdBranchLocatorLookUpDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+	<bean id="ussdAtmLocatorLookUpDAOImpl" class="com.barclays.ussd.services.dao.impl.UssdAtmLocatorLookUpDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+	<bean id="ussdBarclaysOfferLookUpDAOImpl" class="com.barclays.ussd.services.dao.impl.UssdBarclaysOfferLookUpDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	<bean id="interestedProductDAOImpl" class="com.barclays.ussd.services.dao.impl.InterestedProductDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+	<bean id="callMeBackLookUpDAOImpl" class="com.barclays.ussd.services.dao.impl.CallMeBackLookUpDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+
+</beans>

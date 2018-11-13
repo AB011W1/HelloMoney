@@ -1,0 +1,4908 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<POICollection>
+
+  <pointOfInterest>
+    <id>30</id>
+    <latitude>5.641931</latitude>
+    <longitude>-0.151834</longitude>
+    <name>A&amp;amp;C Mall</name>
+    <imageFileName/>
+    <fax>030 2520410</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302 520411, 0302 520412, 0302 520410</phoneNumber>
+    <adddress> A&amp;amp;C Shopping Mall, No. 783, Jungle Rd, East Legon,East Legon</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>30</id>
+    <latitude>5.641931</latitude>
+    <longitude>-0.151834</longitude>
+    <name>A&amp;amp;C Mall</name>
+    <imageFileName/>
+    <fax>030 2520410</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302 520411, 0302 520412, 0302 520410</phoneNumber>
+    <adddress> A&amp;amp;C Shopping Mall, No. 783, Jungle Rd, East Legon,East Legon</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>31</id>
+    <latitude>5.609029</latitude>
+    <longitude>-0.241324</longitude>
+    <name>Abeka Lapaz</name>
+    <imageFileName/>
+    <fax>0302 408347</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302 408818, 0302 410882, 0302 408347</phoneNumber>
+    <adddress>Akrogate Towers, Motorway Extension, Lapaz  Walker Bush Way,Abeka Lapaz</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>31</id>
+    <latitude>5.609029</latitude>
+    <longitude>-0.241324</longitude>
+    <name>Abeka Lapaz</name>
+    <imageFileName/>
+    <fax>0302 408347</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302 408818, 0302 410882, 0302 408347</phoneNumber>
+    <adddress>Akrogate Towers, Motorway Extension, Lapaz  Walker Bush Way,Abeka Lapaz</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>32</id>
+    <latitude>5.558838</latitude>
+    <longitude>-0.230906</longitude>
+    <name>Abossey Okai</name>
+    <imageFileName/>
+    <fax>0302 672907</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302 672919, 0302 672904</phoneNumber>
+    <adddress>Korle Bu - Mortuary Road, opposite Central Mosque, Abossey Okai ,Abossey Okai</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>32</id>
+    <latitude>5.558838</latitude>
+    <longitude>-0.230906</longitude>
+    <name>Abossey Okai</name>
+    <imageFileName/>
+    <fax>0302 672907</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302 672919, 0302 672904</phoneNumber>
+    <adddress>Korle Bu - Mortuary Road, opposite Central Mosque, Abossey Okai ,Abossey Okai</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>33</id>
+    <latitude>5.541298</latitude>
+    <longitude>-0.206857</longitude>
+    <name>Accra High Street Branch</name>
+    <imageFileName/>
+    <fax>0302-660579</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302-665382/7, 0302-669259, 0302-669257</phoneNumber>
+    <adddress>Barclays House, D695/2, High Street,Accra</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>33</id>
+    <latitude>5.541298</latitude>
+    <longitude>-0.206857</longitude>
+    <name>Accra High Street Branch</name>
+    <imageFileName/>
+    <fax>0302-660579</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302-665382/7, 0302-669259, 0302-669257</phoneNumber>
+    <adddress>Barclays House, D695/2, High Street,Accra</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>34</id>
+    <latitude>5.621196</latitude>
+    <longitude>-0.173743</longitude>
+    <name>Accra Mall</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>030 2823009, 030 2823008</phoneNumber>
+    <adddress>Accra Mall Shopping Centre, Plot C11  Spintex Road, Tetteh Quarshie Interchange,Accra</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>34</id>
+    <latitude>5.621196</latitude>
+    <longitude>-0.173743</longitude>
+    <name>Accra Mall</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>030 2823009, 030 2823008</phoneNumber>
+    <adddress>Accra Mall Shopping Centre, Plot C11  Spintex Road, Tetteh Quarshie Interchange,Accra</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>35</id>
+    <latitude>5.632535</latitude>
+    <longitude>-0.237579</longitude>
+    <name>Achimota Branch</name>
+    <imageFileName/>
+    <fax>0302-403370</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302-402640, 0302-402650</phoneNumber>
+    <adddress>Sonnidom Plaza, Mile 7, Achimota,Accra</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>35</id>
+    <latitude>5.632535</latitude>
+    <longitude>-0.237579</longitude>
+    <name>Achimota Branch</name>
+    <imageFileName/>
+    <fax>0302-403370</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302-402640, 0302-402650</phoneNumber>
+    <adddress>Sonnidom Plaza, Mile 7, Achimota,Accra</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>36</id>
+    <latitude>5.694929</latitude>
+    <longitude>-0.171297</longitude>
+    <name>Adenta</name>
+    <imageFileName/>
+    <fax>0302 520619</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302 520619, 0302 520618</phoneNumber>
+    <adddress>West African Hardware Building, Adenta ­ Madina road,Adenta</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>36</id>
+    <latitude>5.694929</latitude>
+    <longitude>-0.171297</longitude>
+    <name>Adenta</name>
+    <imageFileName/>
+    <fax>0302 520619</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302 520619, 0302 520618</phoneNumber>
+    <adddress>West African Hardware Building, Adenta ­ Madina road,Adenta</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>37</id>
+    <name>Agogo</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>032 20 94467, 032 20 94468, 032 20 94469</phoneNumber>
+    <adddress>200 Metres from Collins Senior High Sch, 5th Avenue,Agogo</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>37</id>
+    <name>Agogo</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>032 20 94467, 032 20 94468, 032 20 94469</phoneNumber>
+    <adddress>200 Metres from Collins Senior High Sch, 5th Avenue,Agogo</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>38</id>
+    <latitude>5.533492</latitude>
+    <longitude>-0.694107</longitude>
+    <name>Agona Swedru</name>
+    <imageFileName/>
+    <fax>033 2021806</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>033 2021255, 033 2020771</phoneNumber>
+    <adddress>Near Swedru Government Hospital, at Swedru Sch. Of Business Jtn,Agona Swedru</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>38</id>
+    <latitude>5.533492</latitude>
+    <longitude>-0.694107</longitude>
+    <name>Agona Swedru</name>
+    <imageFileName/>
+    <fax>033 2021806</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>033 2021255, 033 2020771</phoneNumber>
+    <adddress>Near Swedru Government Hospital, at Swedru Sch. Of Business Jtn,Agona Swedru</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>39</id>
+    <name>Ahodwo</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>028-9518584, 024-4432062</phoneNumber>
+    <adddress>West African Hardware opposite Prime Plaza, Old Bekwai Street, Nhyirafie,,Kumasi</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>39</id>
+    <name>Ahodwo</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>028-9518584, 024-4432062</phoneNumber>
+    <adddress>West African Hardware opposite Prime Plaza, Old Bekwai Street, Nhyirafie,,Kumasi</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>40</id>
+    <latitude>5.601993</latitude>
+    <longitude>-0.175905</longitude>
+    <name>Airport City Branch</name>
+    <imageFileName/>
+    <fax>0302-761930</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302-761894, 0302-761929</phoneNumber>
+    <adddress>Una Home Building, Airport City,Accra</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>40</id>
+    <latitude>5.601993</latitude>
+    <longitude>-0.175905</longitude>
+    <name>Airport City Branch</name>
+    <imageFileName/>
+    <fax>0302-761930</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302-761894, 0302-761929</phoneNumber>
+    <adddress>Una Home Building, Airport City,Accra</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>41</id>
+    <name>Asankragwa</name>
+    <imageFileName/>
+    <fax>(0392) 22090</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0392 22080, 0392 22025</phoneNumber>
+    <adddress>Opposite Ghana Fire Service Office, Main Street,Asankragwa</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>41</id>
+    <name>Asankragwa</name>
+    <imageFileName/>
+    <fax>(0392) 22090</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0392 22080, 0392 22025</phoneNumber>
+    <adddress>Opposite Ghana Fire Service Office, Main Street,Asankragwa</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>42</id>
+    <latitude>5.693562</latitude>
+    <longitude>-0.021962</longitude>
+    <name>Ashaiman</name>
+    <imageFileName/>
+    <fax>030 3 305148</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>030 3 305136, 028 9516581</phoneNumber>
+    <adddress>After Ashaiman Secondary School,Ashaiman</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>42</id>
+    <latitude>5.693562</latitude>
+    <longitude>-0.021962</longitude>
+    <name>Ashaiman</name>
+    <imageFileName/>
+    <fax>030 3 305148</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>030 3 305136, 028 9516581</phoneNumber>
+    <adddress>After Ashaiman Secondary School,Ashaiman</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>43</id>
+    <latitude>5.573379</latitude>
+    <longitude>-0.250089</longitude>
+    <name>Atico (Darkuman)</name>
+    <imageFileName/>
+    <fax>0302 303880</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302 303884, 0302 303881</phoneNumber>
+    <adddress>Obrapa House, Atico Junction, Odorkor - Mallam Road,Darkuman</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>43</id>
+    <latitude>5.573379</latitude>
+    <longitude>-0.250089</longitude>
+    <name>Atico (Darkuman)</name>
+    <imageFileName/>
+    <fax>0302 303880</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302 303884, 0302 303881</phoneNumber>
+    <adddress>Obrapa House, Atico Junction, Odorkor - Mallam Road,Darkuman</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>44</id>
+    <latitude>5.555805</latitude>
+    <longitude>-0.211508</longitude>
+    <name>Avenue Central Branch</name>
+    <imageFileName/>
+    <fax>030 2223118</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302-221571, 0302 223118, 0302 221546</phoneNumber>
+    <adddress>Nana Asoba House, Kwame Nkrumah Avenue,Accra</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>44</id>
+    <latitude>5.555805</latitude>
+    <longitude>-0.211508</longitude>
+    <name>Avenue Central Branch</name>
+    <imageFileName/>
+    <fax>030 2223118</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302-221571, 0302 223118, 0302 221546</phoneNumber>
+    <adddress>Nana Asoba House, Kwame Nkrumah Avenue,Accra</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>45</id>
+    <name>Bantama</name>
+    <imageFileName/>
+    <fax>032 20-83719</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>032 20-83704, 032 20 83702</phoneNumber>
+    <adddress>Opposite the Presby Church, Main Bantama High Street,Bantama</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>45</id>
+    <name>Bantama</name>
+    <imageFileName/>
+    <fax>032 20-83719</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>032 20-83704, 032 20 83702</phoneNumber>
+    <adddress>Opposite the Presby Church, Main Bantama High Street,Bantama</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>46</id>
+    <name>Berekum</name>
+    <imageFileName/>
+    <fax>035 2222557</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>035 2222557, 035 2222550, 035 2222510</phoneNumber>
+    <adddress>Plot No. 59B, Sector 2,Berekum</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>46</id>
+    <name>Berekum</name>
+    <imageFileName/>
+    <fax>035 2222557</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>035 2222557, 035 2222550, 035 2222510</phoneNumber>
+    <adddress>Plot No. 59B, Sector 2,Berekum</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>47</id>
+    <name>Bolgatanga</name>
+    <imageFileName/>
+    <fax>038 2022797</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>038 2023258, 038 2022085</phoneNumber>
+    <adddress>Plot No. 321,  Commercial Street,Bolgatanga</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>47</id>
+    <name>Bolgatanga</name>
+    <imageFileName/>
+    <fax>038 2022797</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>038 2023258, 038 2022085</phoneNumber>
+    <adddress>Plot No. 321,  Commercial Street,Bolgatanga</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>48</id>
+    <latitude>5.10606</latitude>
+    <longitude>-1.241214</longitude>
+    <name>Cape Coast Branch</name>
+    <imageFileName/>
+    <fax>033-2132538</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>033-2132581, 033-2132168</phoneNumber>
+    <adddress>Russel/Anafu St. Junction,Cape Coast</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>48</id>
+    <latitude>5.10606</latitude>
+    <longitude>-1.241214</longitude>
+    <name>Cape Coast Branch</name>
+    <imageFileName/>
+    <fax>033-2132538</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>033-2132581, 033-2132168</phoneNumber>
+    <adddress>Russel/Anafu St. Junction,Cape Coast</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>49</id>
+    <latitude>5.568491</latitude>
+    <longitude>-0.214856</longitude>
+    <name>Circle Branch</name>
+    <imageFileName/>
+    <fax>0302-227421</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302-228730, 0302-227421, 0302-228720</phoneNumber>
+    <adddress>NO.13/3  Kwame Nkrumah Avenue,Accra</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>49</id>
+    <latitude>5.568491</latitude>
+    <longitude>-0.214856</longitude>
+    <name>Circle Branch</name>
+    <imageFileName/>
+    <fax>0302-227421</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302-228730, 0302-227421, 0302-228720</phoneNumber>
+    <adddress>NO.13/3  Kwame Nkrumah Avenue,Accra</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>50</id>
+    <latitude>5.557172</latitude>
+    <longitude>-0.264466</longitude>
+    <name>Dansoman</name>
+    <imageFileName/>
+    <fax>0302 302462</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302 302460/ 1-3</phoneNumber>
+    <adddress>Dansoman Roundabout,Accra</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>50</id>
+    <latitude>5.557172</latitude>
+    <longitude>-0.264466</longitude>
+    <name>Dansoman</name>
+    <imageFileName/>
+    <fax>0302 302462</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302 302460/ 1-3</phoneNumber>
+    <adddress>Dansoman Roundabout,Accra</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>51</id>
+    <latitude>5.289554</latitude>
+    <longitude>-2.777824</longitude>
+    <name>Elubo</name>
+    <imageFileName/>
+    <fax>(345) 22195</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0345 22194</phoneNumber>
+    <adddress>Close to the main Ghana/Ivory Coast border,Elubo</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>51</id>
+    <latitude>5.289554</latitude>
+    <longitude>-2.777824</longitude>
+    <name>Elubo</name>
+    <imageFileName/>
+    <fax>(345) 22195</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0345 22194</phoneNumber>
+    <adddress>Close to the main Ghana/Ivory Coast border,Elubo</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>52</id>
+    <latitude>5.634148</latitude>
+    <longitude>-0.002114</longitude>
+    <name>GNPC</name>
+    <imageFileName/>
+    <fax>030 3 214255</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>030 3 214254</phoneNumber>
+    <adddress>GNPC Building, Meridian Road,Tema</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>52</id>
+    <latitude>5.634148</latitude>
+    <longitude>-0.002114</longitude>
+    <name>GNPC</name>
+    <imageFileName/>
+    <fax>030 3 214255</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>030 3 214254</phoneNumber>
+    <adddress>GNPC Building, Meridian Road,Tema</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>53</id>
+    <name>Goaso</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>035 2094567, 035 2094568, 035 2094623</phoneNumber>
+    <adddress>Near G. K Boakye Enterprise, Goaso Market,Goaso</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>53</id>
+    <name>Goaso</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>035 2094567, 035 2094568, 035 2094623</phoneNumber>
+    <adddress>Near G. K Boakye Enterprise, Goaso Market,Goaso</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>54</id>
+    <latitude>5.665441</latitude>
+    <longitude>-0.204148</longitude>
+    <name>Haatso</name>
+    <imageFileName/>
+    <fax>0302 520525</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302 520524, 0302 520525</phoneNumber>
+    <adddress>Appiah Kofi B Shop, Papao Haatso,Accra</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>54</id>
+    <latitude>5.665441</latitude>
+    <longitude>-0.204148</longitude>
+    <name>Haatso</name>
+    <imageFileName/>
+    <fax>0302 520525</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302 520524, 0302 520525</phoneNumber>
+    <adddress>Appiah Kofi B Shop, Papao Haatso,Accra</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>55</id>
+    <latitude>6.612847</latitude>
+    <longitude>0.464709</longitude>
+    <name>Ho Branch</name>
+    <imageFileName/>
+    <fax>036 2028090</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>036-2026702, 036-2026233</phoneNumber>
+    <adddress>NO.B18/86, Goil Down,Ho</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>55</id>
+    <latitude>6.612847</latitude>
+    <longitude>0.464709</longitude>
+    <name>Ho Branch</name>
+    <imageFileName/>
+    <fax>036 2028090</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>036-2026702, 036-2026233</phoneNumber>
+    <adddress>NO.B18/86, Goil Down,Ho</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>56</id>
+    <latitude>7.153452</latitude>
+    <longitude>0.478367</longitude>
+    <name>Hohoe</name>
+    <imageFileName/>
+    <fax>036 2720270</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>036-2722022, 036-2722029</phoneNumber>
+    <adddress>Gbi-Blah Road/Zongo Lane Intersection, Adjacent Asubonteng Rural Bank,Hohoe</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>56</id>
+    <latitude>7.153452</latitude>
+    <longitude>0.478367</longitude>
+    <name>Hohoe</name>
+    <imageFileName/>
+    <fax>036 2720270</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>036-2722022, 036-2722029</phoneNumber>
+    <adddress>Gbi-Blah Road/Zongo Lane Intersection, Adjacent Asubonteng Rural Bank,Hohoe</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>57</id>
+    <latitude>5.568448</latitude>
+    <longitude>-0.192947</longitude>
+    <name>Independence Avenue</name>
+    <imageFileName/>
+    <fax>0302 768461</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302 772938, 0302 770508, 0302 769205</phoneNumber>
+    <adddress>Independence Ave.</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>57</id>
+    <latitude>5.568448</latitude>
+    <longitude>-0.192947</longitude>
+    <name>Independence Avenue</name>
+    <imageFileName/>
+    <fax>0302 768461</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302 772938, 0302 770508, 0302 769205</phoneNumber>
+    <adddress>Independence Ave.</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>58</id>
+    <latitude>5.565181</latitude>
+    <longitude>-0.224941</longitude>
+    <name>Kaneshie Branch</name>
+    <imageFileName/>
+    <fax>0302-224058</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302-220776, 0302-220792, 0302-224058</phoneNumber>
+    <adddress>Ring Road West  adjacent STC,Accra</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>58</id>
+    <latitude>5.565181</latitude>
+    <longitude>-0.224941</longitude>
+    <name>Kaneshie Branch</name>
+    <imageFileName/>
+    <fax>0302-224058</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302-220776, 0302-220792, 0302-224058</phoneNumber>
+    <adddress>Ring Road West  adjacent STC,Accra</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>59</id>
+    <name>Kasoa</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>024 3122655, 028 9521443</phoneNumber>
+    <adddress>Near the new market, city centre, Kasoa,Kasoa</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>59</id>
+    <name>Kasoa</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>024 3122655, 028 9521443</phoneNumber>
+    <adddress>Near the new market, city centre, Kasoa,Kasoa</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>60</id>
+    <latitude>5.546045</latitude>
+    <longitude>-0.21256</longitude>
+    <name>Knutsford Avenue</name>
+    <imageFileName/>
+    <fax>0302-662076</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302-662076, 0302-664506, 0302-664507</phoneNumber>
+    <adddress>41, Knutsford Avenue,Accra</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>60</id>
+    <latitude>5.546045</latitude>
+    <longitude>-0.21256</longitude>
+    <name>Knutsford Avenue</name>
+    <imageFileName/>
+    <fax>0302-662076</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302-662076, 0302-664506, 0302-664507</phoneNumber>
+    <adddress>41, Knutsford Avenue,Accra</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>61</id>
+    <latitude>6.091568</latitude>
+    <longitude>-0.254445</longitude>
+    <name>Koforidua Branch</name>
+    <imageFileName/>
+    <fax>034 2022459</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>034 2022354, 034 2022228</phoneNumber>
+    <adddress>B2, Station Road,Koforidua</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>61</id>
+    <latitude>6.091568</latitude>
+    <longitude>-0.254445</longitude>
+    <name>Koforidua Branch</name>
+    <imageFileName/>
+    <fax>034 2022459</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>034 2022354, 034 2022228</phoneNumber>
+    <adddress>B2, Station Road,Koforidua</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>62</id>
+    <name>Krofrom</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>032 20-83707</phoneNumber>
+    <adddress>Krofrom Main Street, Opposite Pollux Hotel</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>62</id>
+    <name>Krofrom</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>032 20-83707</phoneNumber>
+    <adddress>Krofrom Main Street, Opposite Pollux Hotel</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>63</id>
+    <name>Kumasi Asafo</name>
+    <imageFileName/>
+    <fax>032 20-45993</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>032 20- 45995, 032 20- 45884</phoneNumber>
+    <adddress>Alhaji Salia Building, Starlets 91 Road, Logging Area, Asafo,Kumasi</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>63</id>
+    <name>Kumasi Asafo</name>
+    <imageFileName/>
+    <fax>032 20-45993</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>032 20- 45995, 032 20- 45884</phoneNumber>
+    <adddress>Alhaji Salia Building, Starlets 91 Road, Logging Area, Asafo,Kumasi</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>64</id>
+    <name>Kumasi Kejetia</name>
+    <imageFileName/>
+    <fax>032 2035241</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>032 2024789, 032 2022734</phoneNumber>
+    <adddress>Kejetia Circle,Kumasi</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>64</id>
+    <name>Kumasi Kejetia</name>
+    <imageFileName/>
+    <fax>032 2035241</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>032 2024789, 032 2022734</phoneNumber>
+    <adddress>Kejetia Circle,Kumasi</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>65</id>
+    <name>Kumasi Prempeh II St. Branch</name>
+    <imageFileName/>
+    <fax>032 2035241</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>032 2023458, 032 2023504, 26211/3, 032 2023440</phoneNumber>
+    <adddress>No. 1 Prempeh II Street, Adum,Kumasi</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>65</id>
+    <name>Kumasi Prempeh II St. Branch</name>
+    <imageFileName/>
+    <fax>032 2035241</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>032 2023458, 032 2023504, 26211/3, 032 2023440</phoneNumber>
+    <adddress>No. 1 Prempeh II Street, Adum,Kumasi</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>66</id>
+    <latitude>5.6509</latitude>
+    <longitude>-0.186328</longitude>
+    <name>Legon (Campus) Branch</name>
+    <imageFileName/>
+    <fax>0302-501114</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302-501114, 0302-518914</phoneNumber>
+    <adddress>University of Ghana, Legon,Accra</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>66</id>
+    <latitude>5.6509</latitude>
+    <longitude>-0.186328</longitude>
+    <name>Legon (Campus) Branch</name>
+    <imageFileName/>
+    <fax>0302-501114</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302-501114, 0302-518914</phoneNumber>
+    <adddress>University of Ghana, Legon,Accra</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>67</id>
+    <latitude>5.654007</latitude>
+    <longitude>-0.178978</longitude>
+    <name>Legon Main</name>
+    <imageFileName/>
+    <fax>030 2520741</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302 520738, 0302 520739</phoneNumber>
+    <adddress>Legon Junction, Independence Avenue, Legon,Legon</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>67</id>
+    <latitude>5.654007</latitude>
+    <longitude>-0.178978</longitude>
+    <name>Legon Main</name>
+    <imageFileName/>
+    <fax>030 2520741</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302 520738, 0302 520739</phoneNumber>
+    <adddress>Legon Junction, Independence Avenue, Legon,Legon</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>68</id>
+    <latitude>5.597407</latitude>
+    <longitude>-0.194793</longitude>
+    <name>Maamobi</name>
+    <imageFileName/>
+    <fax>0302 255802</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302 252166, 0302 251556</phoneNumber>
+    <adddress>At the Accra Girl's Junction on the Maamobi road, NO. 106 BLK 1 SECTION 011, MAAMOBI,Accra</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>68</id>
+    <latitude>5.597407</latitude>
+    <longitude>-0.194793</longitude>
+    <name>Maamobi</name>
+    <imageFileName/>
+    <fax>0302 255802</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302 252166, 0302 251556</phoneNumber>
+    <adddress>At the Accra Girl's Junction on the Maamobi road, NO. 106 BLK 1 SECTION 011, MAAMOBI,Accra</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>69</id>
+    <latitude>5.677932</latitude>
+    <longitude>-0.16766</longitude>
+    <name>Madina </name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302 521131, 028 9543001, 028 9543002</phoneNumber>
+    <adddress>After Madina Market, Old Road, Madina,Accra</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>69</id>
+    <latitude>5.677932</latitude>
+    <longitude>-0.16766</longitude>
+    <name>Madina </name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302 521131, 028 9543001, 028 9543002</phoneNumber>
+    <adddress>After Madina Market, Old Road, Madina,Accra</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>70</id>
+    <latitude>5.545276</latitude>
+    <longitude>-0.206423</longitude>
+    <name>Makola Branch</name>
+    <imageFileName/>
+    <fax>0302-665756</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302-665756, 0302-666721,0302-665756</phoneNumber>
+    <adddress>Makola Square,  Pagan Road,Accra</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>70</id>
+    <latitude>5.545276</latitude>
+    <longitude>-0.206423</longitude>
+    <name>Makola Branch</name>
+    <imageFileName/>
+    <fax>0302-665756</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302-665756, 0302-666721,0302-665756</phoneNumber>
+    <adddress>Makola Square,  Pagan Road,Accra</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>71</id>
+    <name>Mataheko</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302 303896,  028 9518584</phoneNumber>
+    <adddress>Asoredanho - In Kasapa Building,Mataheko</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>71</id>
+    <name>Mataheko</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302 303896,  028 9518584</phoneNumber>
+    <adddress>Asoredanho - In Kasapa Building,Mataheko</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>72</id>
+    <latitude>5.621645</latitude>
+    <longitude>-0.182755</longitude>
+    <name>Motorway Extension</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302-520255, 0302-520256</phoneNumber>
+    <adddress>Off the Tetteh Quarshie Interchange towards North Dzorwulu, PLOT NO. 22B, MOTORWAY EXT.,Accra</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>72</id>
+    <latitude>5.621645</latitude>
+    <longitude>-0.182755</longitude>
+    <name>Motorway Extension</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302-520255, 0302-520256</phoneNumber>
+    <adddress>Off the Tetteh Quarshie Interchange towards North Dzorwulu, PLOT NO. 22B, MOTORWAY EXT.,Accra</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>73</id>
+    <latitude>5.579383</latitude>
+    <longitude>-0.200071</longitude>
+    <name>Nima</name>
+    <imageFileName/>
+    <fax>0302 258228</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302 224777, 0302 258228</phoneNumber>
+    <adddress>Nima Highway, Opposite Shell Filling Station, PLT NO. E76/11, NIMA,Accra</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>73</id>
+    <latitude>5.579383</latitude>
+    <longitude>-0.200071</longitude>
+    <name>Nima</name>
+    <imageFileName/>
+    <fax>0302 258228</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302 224777, 0302 258228</phoneNumber>
+    <adddress>Nima Highway, Opposite Shell Filling Station, PLT NO. E76/11, NIMA,Accra</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>74</id>
+    <latitude>6.550955</latitude>
+    <longitude>-0.764494</longitude>
+    <name>Nkawkaw</name>
+    <imageFileName/>
+    <fax>0842 22379</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0842 22076, 0842 22379</phoneNumber>
+    <adddress>Behind Market Square, Off the Accra-Kumasi Road,Nkawkaw</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>74</id>
+    <latitude>6.550955</latitude>
+    <longitude>-0.764494</longitude>
+    <name>Nkawkaw</name>
+    <imageFileName/>
+    <fax>0842 22379</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0842 22076, 0842 22379</phoneNumber>
+    <adddress>Behind Market Square, Off the Accra-Kumasi Road,Nkawkaw</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>75</id>
+    <latitude>5.579177</latitude>
+    <longitude>-0.228208</longitude>
+    <name>North Kaneshie</name>
+    <imageFileName/>
+    <fax>0302 241924</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302 241114, 0302 241194, 0302 241963</phoneNumber>
+    <adddress>Near St. Theresa's School ,North Kaneshie</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>75</id>
+    <latitude>5.579177</latitude>
+    <longitude>-0.228208</longitude>
+    <name>North Kaneshie</name>
+    <imageFileName/>
+    <fax>0302 241924</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302 241114, 0302 241194, 0302 241963</phoneNumber>
+    <adddress>Near St. Theresa's School ,North Kaneshie</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>76</id>
+    <name>Obuasi Branch</name>
+    <imageFileName/>
+    <fax>032 2541293</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>032 2541292, 032 2541293</phoneNumber>
+    <adddress>NO.1 BLK D, Mangoase Street, North Bidieso, Obuasi,Kumasi</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>76</id>
+    <name>Obuasi Branch</name>
+    <imageFileName/>
+    <fax>032 2541293</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>032 2541292, 032 2541293</phoneNumber>
+    <adddress>NO.1 BLK D, Mangoase Street, North Bidieso, Obuasi,Kumasi</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>77</id>
+    <name>Oda Branch</name>
+    <imageFileName/>
+    <fax>034 2922050</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>034 2922050, 034 2922070</phoneNumber>
+    <adddress>House No. 21, Abirem, Akim Oda,Abirem</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>77</id>
+    <name>Oda Branch</name>
+    <imageFileName/>
+    <fax>034 2922050</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>034 2922050, 034 2922070</phoneNumber>
+    <adddress>House No. 21, Abirem, Akim Oda,Abirem</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>78</id>
+    <name>Old Suame</name>
+    <imageFileName/>
+    <fax>032 20-49626</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>032 20 49808, 032 20 49628</phoneNumber>
+    <adddress>On the Suame Magazine Street, PLOT 2, BLK A, TARKWA MAARKRO,Kumasi</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>78</id>
+    <name>Old Suame</name>
+    <imageFileName/>
+    <fax>032 20-49626</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>032 20 49808, 032 20 49628</phoneNumber>
+    <adddress>On the Suame Magazine Street, PLOT 2, BLK A, TARKWA MAARKRO,Kumasi</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>79</id>
+    <latitude>5.564658</latitude>
+    <longitude>-0.181076</longitude>
+    <name>Osu Branch</name>
+    <imageFileName/>
+    <fax>0302-778127</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302-778127, 0302-777710,0302-770086, 0302-769182</phoneNumber>
+    <adddress>Danawi House, Cantonments Road, Osu,Accra</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>79</id>
+    <latitude>5.564658</latitude>
+    <longitude>-0.181076</longitude>
+    <name>Osu Branch</name>
+    <imageFileName/>
+    <fax>0302-778127</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302-778127, 0302-777710,0302-770086, 0302-769182</phoneNumber>
+    <adddress>Danawi House, Cantonments Road, Osu,Accra</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>80</id>
+    <latitude>5.572143</latitude>
+    <longitude>-0.203784</longitude>
+    <name>Ring Road Central Branch</name>
+    <imageFileName/>
+    <fax>030 2254405</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302 254405, 0302 254392</phoneNumber>
+    <adddress>Randolph House, House No. C920/3, Assylum Down,Accra</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>80</id>
+    <latitude>5.572143</latitude>
+    <longitude>-0.203784</longitude>
+    <name>Ring Road Central Branch</name>
+    <imageFileName/>
+    <fax>030 2254405</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302 254405, 0302 254392</phoneNumber>
+    <adddress>Randolph House, House No. C920/3, Assylum Down,Accra</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>81</id>
+    <latitude>6.104882</latitude>
+    <longitude>-0.013733</longitude>
+    <name>Somanya</name>
+    <imageFileName/>
+    <fax>0882-2050</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>028 9528705, 028 9528704</phoneNumber>
+    <adddress>Ground floor Jimmy Green Building opposite GCB,Somanya</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>81</id>
+    <latitude>6.104882</latitude>
+    <longitude>-0.013733</longitude>
+    <name>Somanya</name>
+    <imageFileName/>
+    <fax>0882-2050</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>028 9528705, 028 9528704</phoneNumber>
+    <adddress>Ground floor Jimmy Green Building opposite GCB,Somanya</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>82</id>
+    <latitude>5.635002</latitude>
+    <longitude>-0.100937</longitude>
+    <name>Spintex Main Branch</name>
+    <imageFileName/>
+    <fax>0302 815809</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302-815805, 0302-815804</phoneNumber>
+    <adddress>Coastal Junction, Spintex Road, Okpoi Gonno,Accra</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>82</id>
+    <latitude>5.635002</latitude>
+    <longitude>-0.100937</longitude>
+    <name>Spintex Main Branch</name>
+    <imageFileName/>
+    <fax>0302 815809</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302-815805, 0302-815804</phoneNumber>
+    <adddress>Coastal Junction, Spintex Road, Okpoi Gonno,Accra</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>83</id>
+    <name>Sunyani Branch</name>
+    <imageFileName/>
+    <fax>035-2027154</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>035-2027048</phoneNumber>
+    <adddress>House NO. 201/1, Sunyani High Street, opposite Likers Supermarket,Sunyani</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>83</id>
+    <name>Sunyani Branch</name>
+    <imageFileName/>
+    <fax>035-2027154</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>035-2027048</phoneNumber>
+    <adddress>House NO. 201/1, Sunyani High Street, opposite Likers Supermarket,Sunyani</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>84</id>
+    <name>Tafo</name>
+    <imageFileName/>
+    <fax>032 20-71558</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>032 20-71528</phoneNumber>
+    <adddress>Between the market and the Total Filling Station,Tafo</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>84</id>
+    <name>Tafo</name>
+    <imageFileName/>
+    <fax>032 20-71558</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>032 20-71528</phoneNumber>
+    <adddress>Between the market and the Total Filling Station,Tafo</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>85</id>
+    <latitude>4.882396</latitude>
+    <longitude>-1.75144</longitude>
+    <name>Takoradi High Street Branch</name>
+    <imageFileName/>
+    <fax>031 2024080</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>031 20-22151, 031 20-22152</phoneNumber>
+    <adddress>PLT. 10 COMM. Area, Takoradi High Street,Takoradi</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>85</id>
+    <latitude>4.882396</latitude>
+    <longitude>-1.75144</longitude>
+    <name>Takoradi High Street Branch</name>
+    <imageFileName/>
+    <fax>031 2024080</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>031 20-22151, 031 20-22152</phoneNumber>
+    <adddress>PLT. 10 COMM. Area, Takoradi High Street,Takoradi</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>86</id>
+    <latitude>4.891867</latitude>
+    <longitude>-1.766471</longitude>
+    <name>Takoradi Kokompe</name>
+    <imageFileName/>
+    <fax>(31) 22741</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>031 20 24369, 031 20 23706</phoneNumber>
+    <adddress>400 Metres behind STC, Before Top Oil Filling Station, Kokompe,Takoradi</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>86</id>
+    <latitude>4.891867</latitude>
+    <longitude>-1.766471</longitude>
+    <name>Takoradi Kokompe</name>
+    <imageFileName/>
+    <fax>(31) 22741</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>031 20 24369, 031 20 23706</phoneNumber>
+    <adddress>400 Metres behind STC, Before Top Oil Filling Station, Kokompe,Takoradi</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>87</id>
+    <latitude>4.896463</latitude>
+    <longitude>-1.75807</longitude>
+    <name>Takoradi Liberation Road</name>
+    <imageFileName/>
+    <fax>031 2024080</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>031 20 20-23458, 031 20 22880 </phoneNumber>
+    <adddress>Plot 104, Liberation Road,Takoradi</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>87</id>
+    <latitude>4.896463</latitude>
+    <longitude>-1.75807</longitude>
+    <name>Takoradi Liberation Road</name>
+    <imageFileName/>
+    <fax>031 2024080</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>031 20 20-23458, 031 20 22880 </phoneNumber>
+    <adddress>Plot 104, Liberation Road,Takoradi</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>88</id>
+    <latitude>9.402312</latitude>
+    <longitude>-0.83922</longitude>
+    <name>Tamale Branch</name>
+    <imageFileName/>
+    <fax>037 2022278</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>037 20-22141, 037 20-22278, 037 20 24088</phoneNumber>
+    <adddress>Plot 22, Yendi Road,Tamale</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>88</id>
+    <latitude>9.402312</latitude>
+    <longitude>-0.83922</longitude>
+    <name>Tamale Branch</name>
+    <imageFileName/>
+    <fax>037 2022278</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>037 20-22141, 037 20-22278, 037 20 24088</phoneNumber>
+    <adddress>Plot 22, Yendi Road,Tamale</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>89</id>
+    <latitude>9.43661</latitude>
+    <longitude>-0.84282</longitude>
+    <name>Tamale Gumanni</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber/>
+    <adddress>Plot No. 84, Rice City Residential Area, Gumani,Tamale</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>89</id>
+    <latitude>9.43661</latitude>
+    <longitude>-0.84282</longitude>
+    <name>Tamale Gumanni</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <adddress>Plot No. 84, Rice City Residential Area, Gumani,Tamale</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>90</id>
+    <name>Tanoso</name>
+    <imageFileName/>
+    <fax>032 20-52282</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>032 20-52231, 032 20 52245, 028 9512878</phoneNumber>
+    <adddress>Opposite Kumasi Campus, University of Education,Winneba</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>90</id>
+    <name>Tanoso</name>
+    <imageFileName/>
+    <fax>032 20-52282</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>032 20-52231, 032 20 52245, 028 9512878</phoneNumber>
+    <adddress>Opposite Kumasi Campus, University of Education,Winneba</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>91</id>
+    <latitude>5.300878</latitude>
+    <longitude>-1.987839</longitude>
+    <name>Tarkwa Branch</name>
+    <imageFileName/>
+    <fax>031 2320486</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>031 23-20223, 031 23-20527</phoneNumber>
+    <adddress>20 SR4 1 Post Office Street,Tarkwa</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>91</id>
+    <latitude>5.300878</latitude>
+    <longitude>-1.987839</longitude>
+    <name>Tarkwa Branch</name>
+    <imageFileName/>
+    <fax>031 2320486</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>031 23-20223, 031 23-20527</phoneNumber>
+    <adddress>20 SR4 1 Post Office Street,Tarkwa</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>92</id>
+    <latitude>5.3031</latitude>
+    <longitude>-1.983461</longitude>
+    <name>Tarkwa Hospital Rd.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>031 23 22602, 020 8188971</phoneNumber>
+    <adddress>Hospital Road,Tarkwa</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>92</id>
+    <latitude>5.3031</latitude>
+    <longitude>-1.983461</longitude>
+    <name>Tarkwa Hospital Rd.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>031 23 22602, 020 8188971</phoneNumber>
+    <adddress>Hospital Road,Tarkwa</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>93</id>
+    <name>Techiman</name>
+    <imageFileName/>
+    <fax>035 2522429</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>035 2522430, 035 2522428</phoneNumber>
+    <adddress>Opposite Busumfo Fie, Techiman - Sunyani Road,Techiman</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>93</id>
+    <name>Techiman</name>
+    <imageFileName/>
+    <fax>035 2522429</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>035 2522430, 035 2522428</phoneNumber>
+    <adddress>Opposite Busumfo Fie, Techiman - Sunyani Road,Techiman</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>94</id>
+    <latitude>5.642876</latitude>
+    <longitude>0.015728</longitude>
+    <name>Tema Fishing Harbour</name>
+    <imageFileName/>
+    <fax>030 3-206350</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>030 3-206350, 030 3-202506, </phoneNumber>
+    <adddress>Tema Fishing Harbour,Tema</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>94</id>
+    <latitude>5.642876</latitude>
+    <longitude>0.015728</longitude>
+    <name>Tema Fishing Harbour</name>
+    <imageFileName/>
+    <fax>030 3-206350</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>030 3-206350, 030 3-202506, </phoneNumber>
+    <adddress>Tema Fishing Harbour,Tema</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>95</id>
+    <latitude>5.64673</latitude>
+    <longitude>-8.31E-4</longitude>
+    <name>Tema Main Branch</name>
+    <imageFileName/>
+    <fax>030 3-202315</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>030 3-204051/2, 030 3-205430</phoneNumber>
+    <adddress>Central Market Area , No.1/MKT/A/3C1, Community 1,Tema</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>95</id>
+    <latitude>5.64673</latitude>
+    <longitude>-8.31E-4</longitude>
+    <name>Tema Main Branch</name>
+    <imageFileName/>
+    <fax>030 3-202315</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>030 3-204051/2, 030 3-205430</phoneNumber>
+    <adddress>Central Market Area , No.1/MKT/A/3C1, Community 1,Tema</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>96</id>
+    <name>Teshie Nungua</name>
+    <imageFileName/>
+    <fax>(0302) 714388</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>028 9535862, 0302 714387, 0302 714288</phoneNumber>
+    <adddress>Opposite Nungua Cold Store, near Kasapa, Teshie-Nungua Road,Teshie</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>96</id>
+    <name>Teshie Nungua</name>
+    <imageFileName/>
+    <fax>(0302) 714388</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>028 9535862, 0302 714387, 0302 714288</phoneNumber>
+    <adddress>Opposite Nungua Cold Store, near Kasapa, Teshie-Nungua Road,Teshie</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>97</id>
+    <latitude>5.665823</latitude>
+    <longitude>0.008666</longitude>
+    <name>TOR</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>030 3 205037, 030 3 205039</phoneNumber>
+    <adddress>Opposite Tema Oil Refinery,Tema</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>97</id>
+    <latitude>5.665823</latitude>
+    <longitude>0.008666</longitude>
+    <name>TOR</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>030 3 205037, 030 3 205039</phoneNumber>
+    <adddress>Opposite Tema Oil Refinery,Tema</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>98</id>
+    <latitude>5.610006</latitude>
+    <longitude>-1.541691</longitude>
+    <name>Twifo Praso</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>042 94020</phoneNumber>
+    <adddress>In the town centre opposite the Twifo Praso Hospital,Twifo Praso</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>98</id>
+    <latitude>5.610006</latitude>
+    <longitude>-1.541691</longitude>
+    <name>Twifo Praso</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>042 94020</phoneNumber>
+    <adddress>In the town centre opposite the Twifo Praso Hospital,Twifo Praso</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>99</id>
+    <latitude>5.569185</latitude>
+    <longitude>-0.183726</longitude>
+    <name>UNDP</name>
+    <imageFileName/>
+    <fax>(0302) 785190</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302 769922, / 767571</phoneNumber>
+    <adddress>United Nations Offices in Ghana, 7 Ring Road East</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>99</id>
+    <latitude>5.569185</latitude>
+    <longitude>-0.183726</longitude>
+    <name>UNDP</name>
+    <imageFileName/>
+    <fax>(0302) 785190</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302 769922, / 767571</phoneNumber>
+    <adddress>United Nations Offices in Ghana, 7 Ring Road East</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>100</id>
+    <name>Wa</name>
+    <imageFileName/>
+    <fax>039 2021056</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>039 2021057, 039 2021058</phoneNumber>
+    <adddress>Wa Main Street, Opposite Central Market,Wa</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>100</id>
+    <name>Wa</name>
+    <imageFileName/>
+    <fax>039 2021056</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>039 2021057, 039 2021058</phoneNumber>
+    <adddress>Wa Main Street, Opposite Central Market,Wa</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>101</id>
+    <latitude>5.357634</latitude>
+    <longitude>-0.632744</longitude>
+    <name>Winneba</name>
+    <imageFileName/>
+    <fax>033 2320579</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>033 2320578, 033 2320577</phoneNumber>
+    <adddress>400 Metres from North Campus of UEW, Kojo Badu Road,Winneba</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Ezwich Services</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>101</id>
+    <latitude>5.357634</latitude>
+    <longitude>-0.632744</longitude>
+    <name>Winneba</name>
+    <imageFileName/>
+    <fax>033 2320579</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>033 2320578, 033 2320577</phoneNumber>
+    <adddress>400 Metres from North Campus of UEW, Kojo Badu Road,Winneba</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>102</id>
+    <latitude>5.541298</latitude>
+    <longitude>-0.206857</longitude>
+    <name>Accra High Street Premier Life Centre</name>
+    <imageFileName/>
+    <fax>0302-676352</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8:00 am to 6:30 pm</mon>
+      <tue> 8:00 am to 6:30 pm</tue>
+      <wed> 8:00 am to 6:30 pm</wed>
+      <thu> 8:00 am to 6:30 pm</thu>
+      <fri> 8:00 am to 6:30 pm</fri>
+      <sat> 9:00 am to 2:00 pm</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302-676351, 0302-676354</phoneNumber>
+    <adddress>D695/2, High Street,Accra</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Extended Opening Hours</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>102</id>
+    <latitude>5.541298</latitude>
+    <longitude>-0.206857</longitude>
+    <name>Accra High Street Premier Life Centre</name>
+    <imageFileName/>
+    <fax>0302-676352</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302-676351, 0302-676354</phoneNumber>
+    <adddress>D695/2, High Street,Accra</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>103</id>
+    <latitude>5.632535</latitude>
+    <longitude>-0.237579</longitude>
+    <name>Achimota Premier Life Centre</name>
+    <imageFileName/>
+    <fax>0302-403360</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8:00 am to 6:30 pm</mon>
+      <tue> 8:00 am to 6:30 pm</tue>
+      <wed> 8:00 am to 6:30 pm</wed>
+      <thu> 8:00 am to 6:30 pm</thu>
+      <fri> 8:00 am to 6:30 pm</fri>
+      <sat> 9:00 am to 2:00 pm</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302-403360</phoneNumber>
+    <adddress>Sonnidom Plaza, Mile 7,Achimota</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Extended Opening Hours</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>103</id>
+    <latitude>5.632535</latitude>
+    <longitude>-0.237579</longitude>
+    <name>Achimota Premier Life Centre</name>
+    <imageFileName/>
+    <fax>0302-403360</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302-403360</phoneNumber>
+    <adddress>Sonnidom Plaza, Mile 7,Achimota</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>104</id>
+    <latitude>5.601993</latitude>
+    <longitude>-0.175905</longitude>
+    <name>Airport City Premier Life Centre</name>
+    <imageFileName/>
+    <fax>030 2761703</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8:00 am to 6:30 pm</mon>
+      <tue> 8:00 am to 6:30 pm</tue>
+      <wed> 8:00 am to 6:30 pm</wed>
+      <thu> 8:00 am to 6:30 pm</thu>
+      <fri> 8:00 am to 6:30 pm</fri>
+      <sat> 9:00 am to 2:00 pm</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302-761745</phoneNumber>
+    <adddress>UNA Home, Airport City,Accra</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Extended Opening Hours</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>104</id>
+    <latitude>5.601993</latitude>
+    <longitude>-0.175905</longitude>
+    <name>Airport City Premier Life Centre</name>
+    <imageFileName/>
+    <fax>030 2761703</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302-761745</phoneNumber>
+    <adddress>UNA Home, Airport City,Accra</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>105</id>
+    <latitude>5.568491</latitude>
+    <longitude>-0.214856</longitude>
+    <name>Circle Premier Life Centre</name>
+    <imageFileName/>
+    <fax>0302-224545</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8:00 am to 6:30 pm</mon>
+      <tue> 8:00 am to 6:30 pm</tue>
+      <wed> 8:00 am to 6:30 pm</wed>
+      <thu> 8:00 am to 6:30 pm</thu>
+      <fri> 8:00 am to 6:30 pm</fri>
+      <sat> 9:00 am to 2:00 pm</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302-240299</phoneNumber>
+    <adddress>NO.13/3  Kwame Nkrumah Avenue,Accra</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Extended Opening Hours</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>105</id>
+    <latitude>5.568491</latitude>
+    <longitude>-0.214856</longitude>
+    <name>Circle Premier Life Centre</name>
+    <imageFileName/>
+    <fax>0302-224545</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302-240299</phoneNumber>
+    <adddress>NO.13/3  Kwame Nkrumah Avenue,Accra</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>106</id>
+    <name>Kumasi Prempeh II St. Premier Life Centre</name>
+    <imageFileName/>
+    <fax>03 22021021</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8:00 am to 6:30 pm</mon>
+      <tue> 8:00 am to 6:30 pm</tue>
+      <wed> 8:00 am to 6:30 pm</wed>
+      <thu> 8:00 am to 6:30 pm</thu>
+      <fri> 8:00 am to 6:30 pm</fri>
+      <sat> 9:00 am to 2:00 pm</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>032-2021021, 032 2020827</phoneNumber>
+    <adddress>No. 1 Prempeh II Street, Adum,Kumasi</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Extended Opening Hours</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>106</id>
+    <name>Kumasi Prempeh II St. Premier Life Centre</name>
+    <imageFileName/>
+    <fax>03 22021021</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>032-2021021, 032 2020827</phoneNumber>
+    <adddress>No. 1 Prempeh II Street, Adum,Kumasi</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>107</id>
+    <name>Nhyiaeso Premier Life Centre</name>
+    <imageFileName/>
+    <fax>032-2035731</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8:00 am to 6:30 pm</mon>
+      <tue> 8:00 am to 6:30 pm</tue>
+      <wed> 8:00 am to 6:30 pm</wed>
+      <thu> 8:00 am to 6:30 pm</thu>
+      <fri> 8:00 am to 6:30 pm</fri>
+      <sat> 9:00 am to 2:00 pm</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>032-2035730, 032-2035731</phoneNumber>
+    <adddress>Hotel Georgia, Nhyiaeso,Kumasi</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Extended Opening Hours</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>107</id>
+    <name>Nhyiaeso Premier Life Centre</name>
+    <imageFileName/>
+    <fax>032-2035731</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>032-2035730, 032-2035731</phoneNumber>
+    <adddress>Hotel Georgia, Nhyiaeso,Kumasi</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>108</id>
+    <latitude>5.564658</latitude>
+    <longitude>-0.181076</longitude>
+    <name>Osu Premier Life Centre</name>
+    <imageFileName/>
+    <fax>030 2769179</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8:00 am to 6:30 pm</mon>
+      <tue> 8:00 am to 6:30 pm</tue>
+      <wed> 8:00 am to 6:30 pm</wed>
+      <thu> 8:00 am to 6:30 pm</thu>
+      <fri> 8:00 am to 6:30 pm</fri>
+      <sat> 9:00 am to 2:00 pm</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302-769181, 0302 769182</phoneNumber>
+    <adddress>1st Floor, Danawi House, Cantonments Road, Osu,Accra</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Extended Opening Hours</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>108</id>
+    <latitude>5.564658</latitude>
+    <longitude>-0.181076</longitude>
+    <name>Osu Premier Life Centre</name>
+    <imageFileName/>
+    <fax>030 2769179</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302-769181, 0302 769182</phoneNumber>
+    <adddress>1st Floor, Danawi House, Cantonments Road, Osu,Accra</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>109</id>
+    <latitude>5.633753</latitude>
+    <longitude>-0.098577</longitude>
+    <name>Spintex Premier Life Centre</name>
+    <imageFileName/>
+    <fax>030 2811980</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8:00 am to 6:30 pm</mon>
+      <tue> 8:00 am to 6:30 pm</tue>
+      <wed> 8:00 am to 6:30 pm</wed>
+      <thu> 8:00 am to 6:30 pm</thu>
+      <fri> 8:00 am to 6:30 pm</fri>
+      <sat> 9:00 am to 2:00 pm</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302-811979, 0302-811978, 0302-811980</phoneNumber>
+    <adddress>Spintex Road,Accra</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Extended Opening Hours</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>109</id>
+    <latitude>5.633753</latitude>
+    <longitude>-0.098577</longitude>
+    <name>Spintex Premier Life Centre</name>
+    <imageFileName/>
+    <fax>030 2811980</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302-811979, 0302-811978, 0302-811980</phoneNumber>
+    <adddress>Spintex Road,Accra</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>110</id>
+    <name>Tamale Premier Life Centre</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8:00 am to 6:30 pm</mon>
+      <tue> 8:00 am to 6:30 pm</tue>
+      <wed> 8:00 am to 6:30 pm</wed>
+      <thu> 8:00 am to 6:30 pm</thu>
+      <fri> 8:00 am to 6:30 pm</fri>
+      <sat> 9:00 am to 2:00 pm</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>037 20 25646</phoneNumber>
+    <adddress>Plot 22, Yendi Road,Tamale</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+      <service>Extended Opening Hours</service>
+      <service>Saturday Banking</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>110</id>
+    <name>Tamale Premier Life Centre</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>037 20 25646</phoneNumber>
+    <adddress>Plot 22, Yendi Road,Tamale</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>111</id>
+    <name>KNUST Agency</name>
+    <imageFileName/>
+    <fax>032 2035240</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>032 20 60196</phoneNumber>
+    <adddress>Commercial Area, KNUST Campus</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>111</id>
+    <name>KNUST Agency</name>
+    <imageFileName/>
+    <fax>032 2035240</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>032 20 60196</phoneNumber>
+    <adddress>Commercial Area, KNUST Campus</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>112</id>
+    <latitude>5.607316</latitude>
+    <longitude>-0.171361</longitude>
+    <name>Airport Agency</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302 777478, 0302 776004</phoneNumber>
+    <adddress>Departure Hall, KIA</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>112</id>
+    <latitude>5.607316</latitude>
+    <longitude>-0.171361</longitude>
+    <name>Airport Agency</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302 777478, 0302 776004</phoneNumber>
+    <adddress>Departure Hall, KIA</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>113</id>
+    <latitude>5.571865</latitude>
+    <longitude>-0.146384</longitude>
+    <name>Trade Fair Agency</name>
+    <imageFileName/>
+    <fax>030 2777074</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302 781749, 028-9511697</phoneNumber>
+    <adddress>Pavillion L, Office No. 4, Trade Fair Site,Accra</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>113</id>
+    <latitude>5.571865</latitude>
+    <longitude>-0.146384</longitude>
+    <name>Trade Fair Agency</name>
+    <imageFileName/>
+    <fax>030 2777074</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302 781749, 028-9511697</phoneNumber>
+    <adddress>Pavillion L, Office No. 4, Trade Fair Site,Accra</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>114</id>
+    <name>Central Market Agency</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>028 9515008</phoneNumber>
+    <adddress>Solid FM Building, Main Roman Hill - Asafo Market Road</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>114</id>
+    <name>Central Market Agency</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>028 9515008</phoneNumber>
+    <adddress>Solid FM Building, Main Roman Hill - Asafo Market Road</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>115</id>
+    <name>Ashanti Newtown Agency</name>
+    <imageFileName/>
+    <fax>032 2083664</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>032 20 83664-5, (28) 9515007</phoneNumber>
+    <adddress>Apadwahene Road, near Dr. Mensah Traffic Light</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>115</id>
+    <name>Ashanti Newtown Agency</name>
+    <imageFileName/>
+    <fax>032 2083664</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>032 20 83664-5, (28) 9515007</phoneNumber>
+    <adddress>Apadwahene Road, near Dr. Mensah Traffic Light</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>116</id>
+    <name>Bantama Agency</name>
+    <imageFileName/>
+    <fax>032 2083719</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>032 20 83704, 032 20 83702</phoneNumber>
+    <adddress>Opposite roundabout at KATH</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>116</id>
+    <name>Bantama Agency</name>
+    <imageFileName/>
+    <fax>032 2083719</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>032 20 83704, 032 20 83702</phoneNumber>
+    <adddress>Opposite roundabout at KATH</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>117</id>
+    <latitude>5.536691</latitude>
+    <longitude>-0.26526</longitude>
+    <name>Dansoman Last Stop Agency</name>
+    <imageFileName/>
+    <fax>030 2308140</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon> 8.00 am to 4:30 pm</mon>
+      <tue> 8.00 am to 4:30 pm</tue>
+      <wed> 8.00 am to 4:30 pm</wed>
+      <thu> 8.00 am to 4:30 pm</thu>
+      <fri> 8.00 am to 4:30 pm</fri>
+      <sat>-</sat>
+      <sun>-</sun>
+    </openingHours>
+    <phoneNumber>0302 308122, (28) 9543083/4 </phoneNumber>
+    <adddress>Near Exhibition Roundabout</adddress>
+    <services>
+      <service>Wheelchair access</service>
+      <service>Tellers</service>
+      <service>ATM</service>
+      <service>Parking Facilities</service>
+      <service>Balance Enquiry</service>
+      <service>Cash / Cheque Deposit</service>
+      <service>Payment Services</service>
+      <service>Personal Banking</service>
+      <service>Mini statement</service>
+      <service>Cheque book request</service>
+      <service>Instant Debit Card Issuing</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>117</id>
+    <latitude>5.536691</latitude>
+    <longitude>-0.26526</longitude>
+    <name>Dansoman Last Stop Agency</name>
+    <imageFileName/>
+    <fax>030 2308140</fax>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00 - 23:59</mon>
+      <tue>00:00 - 23:59</tue>
+      <wed>00:00 - 23:59</wed>
+      <thu>00:00 - 23:59</thu>
+      <fri>00:00 - 23:59</fri>
+      <sat>00:00 - 23:59</sat>
+      <sun>00:00 - 23:59</sun>
+    </openingHours>
+    <phoneNumber>0302 308122, (28) 9543083/4 </phoneNumber>
+    <adddress>Near Exhibition Roundabout</adddress>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+
+</POICollection>

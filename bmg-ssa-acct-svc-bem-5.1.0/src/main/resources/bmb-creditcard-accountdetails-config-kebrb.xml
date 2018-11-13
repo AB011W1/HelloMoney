@@ -1,0 +1,310 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+ Credit Card Account Details Controller Starts
+	<bean id="KEBRBcreditCardAccoutDetailsController"
+		class="com.barclays.bmg.mvc.controller.accountdetails.CreditCardAccountDetailsController" parent="bmbAbstractCommandController">
+		<property name="commandName" value="accountCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.accountdetails.CreditCardAccountDetailsCommand" />
+		<property name="validator" ref="creditCardAccountDetailsValidator" />
+
+		<property name="creditCardDetailsOperation" ref="creditCardDetailsOperation" />
+		<property name="bmbJsonBuilder" ref="KEBRBcreditCardAccoutDetailsJSONBldr" />
+	</bean>
+
+
+	<bean id="KEBRBcreditCardUnbilledTransController"
+		class="com.barclays.bmg.mvc.controller.accountdetails.CreditCardUnbilledTransController" parent="bmbAbstractCommandController">
+		<property name="commandName" value="accountCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.accountdetails.CreditCardUnbilledTransCommand" />
+		<property name="validator" ref="creditCardUnbilledTransValidator" />
+
+		<property name="creditCardUnbilledTransOperation" ref="creditCardUnbilledTransOperation" />
+		<property name="bmbJsonBuilder" ref="KEBRBcreditCardUnbilledTransJSONBldr" />
+	</bean>
+
+	<bean id="KEBRBcreditCardStmtTransController"
+		class="com.barclays.bmg.mvc.controller.accountdetails.CreditCardStmtTransController" parent="bmbAbstractCommandController">
+		<property name="commandName" value="accountCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.accountdetails.CreditCardStmtTransCommand" />
+		<property name="validator" ref="creditCardStmtTransValidator" />
+
+		<property name="creditCardStmtTransOperation" ref="creditCardStmtTransOperation" />
+		<property name="bmbJsonBuilder" ref="KEBRBcreditCardStmtTransJSONBldr" />
+	</bean>
+
+ Credit Card Account Details Controller Ends
+
+	 Credit Card Account Details
+	<bean name="creditCardAccountDetailsValidator"
+		class="com.barclays.bmg.mvc.validator.accountdetails.CreditCardAccountDetailsValidator" />
+
+
+	 Credit Card Unbilled  Transaction
+	<bean name="creditCardUnbilledTransValidator"
+		class="com.barclays.bmg.mvc.validator.accountdetails.CreditCardUnbilledTransValidator" />
+
+
+
+	 Credit Card Statemented  Transaction
+	<bean name="creditCardStmtTransValidator"
+		class="com.barclays.bmg.mvc.validator.accountdetails.CreditCardStmtTransValidator" />
+
+
+	<bean id="KEBRBcreditCardAccoutDetailsJSONBldr"	class="com.barclays.bmg.json.model.builder.accountdetails.CreditCardDetailsJSONBldr" parent="bmbCommonJSONBuilder" />
+
+	<bean id="KEBRBcreditCardUnbilledTransJSONBldr"	class="com.barclays.bmg.json.model.builder.accountdetails.CreditCardUnbilledTransJSONBldr" parent="bmbCommonJSONBuilder" />
+
+	<bean id="KEBRBcreditCardStmtTransJSONBldr"	class="com.barclays.bmg.json.model.builder.accountdetails.CreditCardStmtTransJSONBldr" parent="bmbCommonJSONBuilder" />
+
+	 credit Card Details Operation
+    <bean id="KEBRBcreditCardDetailsOperation"	class="com.barclays.bmg.operation.accountdetails.CreditCardDetailsOperation" parent="bmbCommonOperation">
+    	<property name="creditCardDetailsService" ref="KEBRBcreditCardDetailsServiceImpl"/>
+	</bean>
+
+	 credit Card Unbilled Transaction Operation
+	<bean id="KEBRBcreditCardUnbilledTransOperation"	class="com.barclays.bmg.operation.accountdetails.CreditCardUnbilledTransOperation" parent="bmbCommonOperation">
+    	<property name="creditCardDetailsService" ref="KEBRBcreditCardDetailsServiceImpl"/>
+	</bean>
+
+	 credit Card Statemented Transaction Operation
+	<bean id="KEBRBcreditCardStmtTransOperation"	class="com.barclays.bmg.operation.accountdetails.CreditCardStmtTransOperation" parent="bmbCommonOperation">
+		<property name="creditCardDetailsService" ref="KEBRBcreditCardDetailsServiceImpl"/>
+	</bean>
+
+
+	<bean id="KEBRBcreditCardDetailsServiceImpl"	class="com.barclays.bmg.service.accountdetails.impl.CreditCardDetailsServiceImpl">
+		<property name="creditCardDetailsDAO" ref="KEBRBcreditCardDetailsDAO"/>
+	</bean>
+
+
+	<bean id="KEBRBcreditCardDetailsDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.accountdetails.CreditCardDetailsDAO" />
+		<property name="daoFrontController" ref="KEBRBcreditCardDetailsDaoFrontControllerImpl" />
+	</bean>
+
+	<bean id="KEBRBcreditCardDetailsDaoFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				 retrieveCreditCardTransactionActivity
+				<entry key="RETRIEVECREDITCARDACCOUNTDETAILS" value-ref="KEBRBcreditCardAccounDetailsDAOController" />
+				<entry key="RETRIEVECREDITCARDTRANSACTIONACTIVITY" value-ref="KEBRBcreditCardTransActivityDAOController" />
+				<entry key="RETRIEVECREDITCARDUNBILLEDTRANS" value-ref="KEBRBcreditCardUnbilledTransDAOController" />
+				<entry key="RETRIEVECREDITCARDSTATEMENTDATES" value-ref="KEBRBcreditCardStatementDatesDAOController" />
+			</map>
+		</property>
+	</bean>
+
+	 Credit Card Account Details DAO Controller
+
+	<bean id="KEBRBcreditCardAccounDetailsDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.CreditCardAccountDetailsDAOController">
+		<property name="creditCardAccountDetailsReqAdptOperation" ref="KEBRBcreditCardAccountDetailsReqAdptOperation" />
+		<property name="transmissionOperation" ref="KEBRBcreditCardDetailsTransmissionOperation" />
+		<property name="creditCardAccountDetailsRespAdptOperation" ref="KEBRBcreditCardAccountDetailsRespAdptOperation" />
+	</bean>
+
+	<bean id="KEBRBcreditCardAccountDetailsReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.creditcard.CreditCardAccountDetailsReqAdptOperation">
+		<property name="creditCardAccountDetailsHeaderAdapter" ref="KEBRBcreditCardAccountDetailsHeaderAdapter" />
+		<property name="creditCardAccountDetailsPayloadAdapter" ref="KEBRBcreditCardAccountDetailsPayloadAdapter" />
+	</bean>
+
+	<bean id="KEBRBcreditCardAccountDetailsRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.creditcard.CreditCardAccountDetailsRespAdptOperation">
+	</bean>
+
+	<bean id="KEBRBcreditCardAccountDetailsPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.CreditCardAccountDetailsPayloadAdapter">
+	</bean>
+
+	<bean id="KEBRBcreditCardAccountDetailsHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.CreditCardAccountDetailsHeaderAdapter">
+	</bean>
+
+	<bean id="KEBRBcreditCardDetailsTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="KEBRBcreditCardDetailsTransmissionService" />
+	</bean>
+	<bean id="KEBRBcreditCardDetailsTransmissionService" class="com.barclays.bmg.dao.service.impl.CreditCardAccountDetailsTransmissionService">
+		<property name="remoteService" ref="KEBRBcreditCardDetailsWebServiceImpl" />
+	</bean>
+
+	 Credit Card Account Details WEB Service Implementation
+
+	<bean id="KEBRBcreditCardDetailsWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.AccountManagement.AccountManagement_PortType" />
+		<property name="portName" value="AccountManagementSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.AccountManagement.AccountManagement_Service" />
+		<property name="endpointAddress"
+			value="https://mb9t.wload.barclays.co.uk:8800/bem/AccountManagement/" />
+		<property name="endpointAddressName" value="AccountManagement_EndPoint" />
+		<property name="cacheKey" value="creditCardAccountDetails" />
+	</bean>
+
+
+
+ Credit Card Account Activity DAO Controller
+
+	<bean id="KEBRBcreditCardTransActivityWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.AccountReporting.AccountReporting_PortType" />
+		<property name="portName" value="AccountReportingSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.AccountReporting.AccountReporting_Service" />
+		<property name="endpointAddress"
+			value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="AccountReporting_EndPoint" />
+		<property name="cacheKey" value="creditCardTransActivity" />
+	</bean>
+
+	<bean id="KEBRBcreditCardTransActivityDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.CreditCardTransActivityDAOController">
+		<property name="creditCardTransActivityReqAdptOperation" ref="KEBRBcreditCardTransActivityReqAdptOperation" />
+		<property name="creditCardTransActivityRespAdptOperation" ref="KEBRBcreditCardTransActivityRespAdptOperation" />
+		<property name="transmissionOperation" ref="KEBRBcreditCardTransActivityTransmissionOperation" />
+	</bean>
+
+	<bean id="KEBRBcreditCardTransActivityReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.creditcard.CreditCardTransActivityReqAdptOperation">
+		<property name="creditCardTransActivityHeaderAdapter" ref="KEBRBcreditCardTransActivityHeaderAdapter" />
+		<property name="creditCardTransActivityPayloadAdapter" ref="KEBRBcreditCardTransActivityPayloadAdapter" />
+	</bean>
+
+	<bean id="KEBRBcreditCardTransActivityHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.CreditCardTransActivityHeaderAdapter">
+	</bean>
+
+	<bean id="KEBRBcreditCardTransActivityPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.CreditCardTransActivityPayloadAdapter">
+	</bean>
+
+	<bean id="KEBRBcreditCardTransActivityRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.creditcard.CreditCardTransActivityRespAdptOperation">
+	</bean>
+
+	<bean id="KEBRBcreditCardTransActivityTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="KEBRBcreditCardTransActivityTransmissionService" />
+	</bean>
+	<bean id="KEBRBcreditCardTransActivityTransmissionService" class="com.barclays.bmg.dao.service.impl.CreditCardTransActivityTransmissionService">
+		<property name="remoteService" ref="KEBRBcreditCardTransActivityWebServiceImpl" />
+	</bean>
+
+
+
+ Credit Card Account Unbilled Transaction Activity DAO Controller
+
+	<bean id="KEBRBcreditCardUnbilledTransDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.CreditCardUnbilledTransDAOController">
+		<property name="creditCardUnbilledTransReqAdptOperation" ref="KEBRBcreditCardUnbilledTransReqAdptOperation" />
+		<property name="creditCardUnbilledTransRespAdptOperation" ref="KEBRBcreditCardUnbilledTransRespAdptOperation" />
+		<property name="transmissionOperation" ref="KEBRBcreditCardUnbilledTransTransmissionOperation" />
+	</bean>
+
+	<bean id="KEBRBcreditCardUnbilledTransReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.creditcard.CreditCardUnbilledTransReqAdptOperation">
+		<property name="creditCardUnbilledTransHeaderAdapter" ref="KEBRBcreditCardUnbilledTransHeaderAdapter" />
+		<property name="creditCardUnbilledTransPayloadAdapter" ref="KEBRBcreditCardUnbilledTransPayloadAdapter" />
+	</bean>
+
+	<bean id="KEBRBcreditCardUnbilledTransHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.CreditCardUnbilledTransHeaderAdapter">
+	</bean>
+
+	<bean id="KEBRBcreditCardUnbilledTransPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.CreditCardUnbilledTransPayloadAdapter">
+	</bean>
+
+
+	<bean id="KEBRBcreditCardUnbilledTransRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.creditcard.CreditCardUnbilledTransRespAdptOperation">
+	</bean>
+
+
+	<bean id="KEBRBcreditCardUnbilledTransTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="KEBRBcreditCardUnbilledTransTransmissionService" />
+	</bean>
+
+	<bean id="KEBRBcreditCardUnbilledTransTransmissionService" class="com.barclays.bmg.dao.service.impl.CreditCardUnbilledTransTransmissionService">
+		<property name="remoteService" ref="KEBRBcreditCardUnbilledTransWebServiceImpl" />
+	</bean>
+
+
+	<bean id="KEBRBcreditCardUnbilledTransWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.AccountReporting.AccountReporting_PortType" />
+		<property name="portName" value="AccountReportingSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.AccountReporting.AccountReporting_Service" />
+		<property name="endpointAddress"
+			value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="AccountReporting_EndPoint" />
+		<property name="cacheKey" value="creditCardUnbilledTrans" />
+	</bean>
+
+
+	 Credit Card Account Statement Dates DAO Controller
+
+	<bean id="KEBRBcreditCardStatementDatesDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.CreditCardStatementDatesDAOController">
+		<property name="creditCardStatementDatesReqAdptOperation" ref="KEBRBcreditCardStatementDatesReqAdptOperation" />
+		<property name="creditCardStatementDatesRespAdptOperation" ref="KEBRBcreditCardStatementDatesRespAdptOperation" />
+		<property name="transmissionOperation" ref="KEBRBcreditCardStatementDatesTransmissionOperation" />
+	</bean>
+
+	<bean id="KEBRBcreditCardStatementDatesReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.creditcard.CreditCardStatementDatesReqAdptOperation">
+		<property name="creditCardStatementDatesHeaderAdapter" ref="KEBRBcreditCardStatementDatesHeaderAdapter" />
+		<property name="creditCardStatementDatesPayloadAdapter" ref="KEBRBcreditCardStatementDatesPayloadAdapter" />
+	</bean>
+
+	<bean id="KEBRBcreditCardStatementDatesHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.CreditCardStatementDatesHeaderAdapter">
+	</bean>
+
+	<bean id="KEBRBcreditCardStatementDatesPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.CreditCardStatementDatesPayloadAdapter">
+	</bean>
+
+
+	<bean id="KEBRBcreditCardStatementDatesRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.creditcard.CreditCardStatementDatesRespAdptOperation">
+	</bean>
+
+
+	<bean id="KEBRBcreditCardStatementDatesTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="KEBRBcreditCardStatementDatesTransmissionService" />
+	</bean>
+
+	<bean id="KEBRBcreditCardStatementDatesTransmissionService" class="com.barclays.bmg.dao.service.impl.CreditCardStatementDatesTransmissionService">
+		<property name="remoteService" ref="KEBRBcreditCardStatementDatesWebServiceImpl" />
+	</bean>
+
+
+	<bean id="KEBRBcreditCardStatementDatesWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.AccountReporting.AccountReporting_PortType" />
+		<property name="portName" value="AccountReportingSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.AccountReporting.AccountReporting_Service" />
+		<property name="endpointAddress"
+			value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="AccountReporting_EndPoint" />
+		<property name="cacheKey" value="creditCardStatementDates" />
+	</bean>
+
+
+</beans>-->

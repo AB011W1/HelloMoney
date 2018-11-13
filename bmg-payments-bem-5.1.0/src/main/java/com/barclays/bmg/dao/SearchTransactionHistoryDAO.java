@@ -1,0 +1,9 @@
+package com.barclays.bmg.dao;
+
+import com.barclays.bmg.service.request.SearchTransactionHistoryServiceRequest;
+import com.barclays.bmg.service.response.SearchTransactionHistoryServiceResponse;
+
+public interface SearchTransactionHistoryDAO {
+
+	SearchTransactionHistoryServiceResponse searchTransactionHistory(SearchTransactionHistoryServiceRequest searchTransactionHistoryServiceRequest);
+}

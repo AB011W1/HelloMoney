@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:Q1="http://www.component.custom.com/bmb/controllerresolver"
+	targetNamespace="http://www.component.custom.com/bmb/controllerresolver"
+	elementFormDefault="qualified">
+	<xsd:element name="request-to-controller-mapper">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element maxOccurs="unbounded" ref="Q1:resolver" />
+			</xsd:sequence>
+			<xsd:attribute name="id" type="xsd:string" />
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="controller">
+		<xsd:complexType>
+			<xsd:attribute name="op-code" type="xsd:string" />
+			<xsd:attribute name="svc-ver" type="xsd:string" />
+			<xsd:attribute name="ref" type="xsd:string" />
+			<xsd:attribute name="default" type="xsd:string" />
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="resolver">
+		<xsd:complexType>
+			<xsd:attribute name="resolver-ref" type="xsd:string" />
+			<xsd:attribute name="business-id" type="xsd:string" />
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="beans">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="Q1:request-to-controller-mapper" />
+				<xsd:element ref="Q1:controller-ref-resolver" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="controller-ref-resolver">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element minOccurs="0"  maxOccurs="unbounded" ref="Q1:controller" />
+			</xsd:sequence>
+			<xsd:attribute name="id" type="xsd:string" />
+			<xsd:attribute name="extends" type="xsd:string" use="optional" />
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

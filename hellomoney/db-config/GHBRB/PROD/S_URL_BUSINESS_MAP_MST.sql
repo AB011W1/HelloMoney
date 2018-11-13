@@ -1,0 +1,13 @@
+
+-----------------------		URL INSERTION QUERY FOR GHBRB - PRODUCTION   --------------------------
+DELETE FROM S_URL_BUSINESS_MAP_MST WHERE SYSTEM_ID='MB' AND BUSINESS_ID='GHBRB' AND URL_PATTERN='https://www.gh.secure.barclays.com/bmg';
+
+INSERT INTO S_URL_BUSINESS_MAP_MST (SYSTEM_ID, BUSINESS_ID, URL_PATTERN, LANGUAGE_ID) VALUES ('MB','GHBRB','https://www.gh.secure.barclays.com/bmg','EN');
+
+DELETE FROM S_URL_BUSINESS_MAP_MST WHERE SYSTEM_ID='MB' AND BUSINESS_ID='GHBRB' AND URL_PATTERN='https://ghc2bir-dr.barclays.intranet/bmg';
+
+DELETE FROM S_URL_BUSINESS_MAP_MST WHERE SYSTEM_ID='MB' AND BUSINESS_ID='GHBRB' AND URL_PATTERN='https://ghc2bir-live.barclays.intranet/bmg';
+
+INSERT INTO S_URL_BUSINESS_MAP_MST (SYSTEM_ID, BUSINESS_ID, URL_PATTERN, LANGUAGE_ID) VALUES ('MB','GHBRB','https://ghc2bir-live.barclays.intranet/bmg','EN');
+
+COMMIT;

@@ -1,0 +1,4 @@
+http\://www.component.custom.com/proxydao=com.barclays.bmg.dao.config.handler.ProxyDaoHandler
+http\://www.component.custom.com/bmb/jsonadapter=com.barclays.bmg.channel.adapter.handler.JSONAdapterHandler
+http\://www.component.custom.com/bmb/controllerresolver=com.barclays.bmg.channel.resolver.handler.ControllerResolverHandler
+http\://www.component.custom.com/bmb/urlresolver=com.barclays.bmg.channel.resolver.handler.UrlResolverHandler

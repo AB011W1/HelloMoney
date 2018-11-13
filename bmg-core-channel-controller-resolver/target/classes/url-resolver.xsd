@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:Q1="http://www.component.custom.com/bmb/urlresolver"
+	targetNamespace="http://www.component.custom.com/bmb/urlresolver"
+	elementFormDefault="qualified">
+	<xsd:element name="application-url-resolver">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element maxOccurs="unbounded" ref="Q1:function-url-resolver" />
+			</xsd:sequence>
+			<xsd:attribute name="id" type="xsd:string" />
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="function-url-resolver">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element minOccurs="0" maxOccurs="unbounded" ref="Q1:parameter-mapping" />
+			</xsd:sequence>
+			<xsd:attribute name="id" type="xsd:string" />
+			<xsd:attribute name="opCde" type="xsd:string" />
+
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="parameter-mapping">
+		<xsd:complexType>
+			<xsd:attribute name="actual" type="xsd:string" />
+			<xsd:attribute name="change-to" type="xsd:string" />
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

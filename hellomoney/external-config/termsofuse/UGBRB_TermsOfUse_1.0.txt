@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style type="text/css">
+<!--
+body
+	{
+	margin		:0;
+	padding		:0;
+	font-family	:arial,helvetica,sans-serif;
+	color		:#006FA4;}
+
+#wrapper
+	{
+	padding		:10px;
+	margin		:0 auto;}
+
+#header
+	{
+	text-align	:center;}
+
+
+#wrapper #header p
+	{
+	font-size	:0.8em;
+	margin		:0px auto;
+	padding		:0 0 5px 0 ;}
+
+#wrapper #header h2
+	{
+	font-size	:0.8em;
+	margin		:0px auto;
+	padding		:5px 0 0 0;}
+
+.divider
+	{
+	border-bottom	:1px solid #006FA4;}
+
+
+h1
+	{
+	margin		:0;
+	padding		:0 0 5px 0;
+	font-size	:1.2em;
+	font-weight	:bold;}
+
+h2
+	{
+	margin		:0 0 5px 0;
+	padding		:8px 0 0 0;
+	font-size	:0.9em;
+	font-weight	:bold;}
+
+#wrapper p
+	{
+	font-size	:0.8em;
+	margin		:0 0 5px 15px;
+	padding		:8px 0 0 0;}
+
+ #wrapper ul, #wrapper ol
+	{
+	margin-top	:0px;
+	padding-top	:0px;}
+
+ #wrapper ul li, #wrapper ol li
+	{
+	font-size	:0.8em;
+	margin-top	:2px;}
+
+ #wrapper ol li ol li
+	{
+	font-size	:1em;
+	margin		:5px 0 5px 0;}
+
+ #wrapper p.subsection
+	{
+	margin-left	:15px;
+	margin-top	:2px;}
+
+ #wrapper p.subsection span
+	{
+	display		:block;
+	margin-left	:15px;}
+-->
+
+</style>
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+<div id="header">
+<h1>Terms and Conditions</h1>
+<div class="divider"></div></div>
+
+<div id="text">
+<h2>Please read the following terms and conditions carefully.</h2>
+
+<p>References to "you" or "your" are references to any person accessing this web site ("Site"). References to "we", "us" or "our" are references to Barclays Bank of Uganda Ltd. References to "Barclays Group" are references to us, our parent company and any companies we and/or our parent company totally or partly own at any time.</p>
+
+<p>References to "Password" means any secret and confidential code for using this Site and/or to avail of any products and services provided by us to you and/or selected by you and/or subsequently changed by you at your discretion.</p>
+
+<p>Reference to "Username" means and includes an identification code which is selected by us and/or you for operating the Site and/or to avail of any products or services provided by us to you.</p>
+
+<h2>Company Information</h2>
+
+<p>Barclays Bank of Uganda Limited. Registered in Uganda. Registered office: Plot 16 Kampala Road and having its head offices on plot 2 / 4 Hannington Road, P.O. Box 2971, Kampala, Uganda</p>
+
+<h2>Site Terms</h2>
+
+<p>These terms and conditions govern your use of this Site and by accessing this Site and acknowledging receipt of the Username and Password you agree to be bound by them.</p>
+
+<p>Please note that if you are an existing Barclays customer, these terms will apply in addition to those contained in your Customer Agreement, an additional copy of which can be obtained from your local branch or from this Site. Barclays products and services may also be subject to separate terms and conditions which govern their use.</p>
+
+<p>We reserve the right to change these terms and conditions at any time and without notice by updating this posting and your continued access to or use of this Site following any such change will constitute your acceptance of the revised terms and conditions.</p>
+
+<h2>Use of This Site</h2>
+
+<p>You may not misuse this Site (including, without limitation, by hacking). We may in our sole discretion terminate your access to or use of this Site for any reason, including without limitation where we believe that you have not acted in accordance with the terms and conditions of this Site.</p>
+
+<p>This Site is designed to be accessed from its homepage. Accessing a specific page within this Site via a hypertext link may mean that you do not see important information about this Site, the conditions for its use and the Barclays Group.</p>
+
+<p>While we will endeavour to ensure that this Site is normally available 24 hours a day, we shall not be liable if for any reason this Site is unavailable at any time or for any period. Also, your access to this Site may also be suspended temporarily or restricted without notice to allow for repairs, maintenance, or the introduction of new facilities or services or for reasons beyond our control.</p>
+
+<h2>Copyright, All Rights Reserved</h2>
+
+<p>The entire design and content of this Site is the copyright of Barclays Bank of Uganda Ltd. The Barclays eagle logo and Barclays name are registered trade marks of Barclays Bank. All trade marks, brand names, logos and designs used on this Site are our intellectual property. All our rights are reserved and the information held is for your personal security. You may not download (all or in part), transmit, reproduce, distribute or modify this Site without our prior written permission. However, you may print out part or all of this Site for your own personal use.</p>
+
+
+<h2>Third Party Products and Services</h2>
+
+<p>Where we provide hypertext links to third party internet web sites, such links are provided for your information and convenience and the inclusion of any link it is not an endorsement by us in any way of any products or services in such web sites.</p>
+
+<p>You use such links entirely at your own risk and we accept no responsibility or liability for the content, use or availability of such web sites or for any loss or damage, however arising, suffered as a result of their use. We have not verified the truth or accuracy of any content of such web sites.</p>
+
+<p>This Site may also contain some material provided by third parties and we accept no responsibility or liability for the accuracy of such material. No third party is permitted to link any other web site to this Site without obtaining our prior written consent.</p>
+
+<h2>No Offer</h2>
+
+<p>Nothing on this Site should be construed as a solicitation or offer, or recommendation, to acquire or dispose of any investment or to engage in any other transaction, or to provide any investment advice or service.</p>
+
+
+<h2>No Warranty</h2>
+
+<p>Although we have taken all reasonable care to ensure that the information provided on this Site is accurate and up-to-date, we make no representations or warranties of any kind, express or implied, with regard to the accuracy, timeliness, reliability or completeness of any such information.</p>
+
+<p>Opinions and any other contents on this Site are provided by us for personal use and informational purposes only and are subject to change without notice. If you are in any doubt as to the validity of information made available within these pages then feel free to check this with us.</p>
+
+<p>Nothing contained on this Site constitutes investment, legal, tax or other advice and is not to be relied on in making an investment or other decision. You should obtain relevant and specific professional advice before making any investment decision.</p>
+
+<h2>No Liability</h2>
+
+<p>To the maximum extent permitted by law, we will accept no liability in any event including (without limitation) for negligence, and/or for any damages or loss of any kind, including (without limitation) direct, indirect, incidental, special or consequential damages, expenses or losses that may result to you or a third party arising out of, or in connection with,</p>
+
+<ol>
+
+<li>your use or inability to use this Site, or your downloading of any material from the Site or in connection with any error, omission, defect, computer virus( including but not limited to loss or damage due to viruses that may infect your computer equipment, software, data or other property, or system failure), loss of any profit, goodwill or reputation, even if expressly advised of the possibility of such loss or damages, arising out of or in connection with the access of, use of, performance of, browsing in, or linking to other sites from this Site or the material on such websites;</li>
+
+<li>any action based on the content of this Site or any use or application of the same or any error or omission relating to the transmission of the content of this Site.</li></ol>
+
+<p>We do not exclude our duties or liabilities under the Financial Institutions Act 2004 and the regulations thereto of the Laws of the Republic of Uganda and the Financial Services and Markets Act 2000 or the rules of the Financial Services Authority ("FSA") for the conduct of business.</p>
+
+<p>We reserve the right to modify, suspend or discontinue, temporarily or permanently, this Site or any part of it, with or without notice, at any time. You agree that we shall not be liable to you or to any third party for any such modification, suspension or discontinuance of this Site.</p>
+
+
+<h2>Governing Law</h2>
+
+<p>The Laws of the Republic of Uganda shall govern these terms and conditions and you agree that the Ugandan Courts shall have exclusive jurisdiction to determine any matter or dispute in connection with or arising out of this Site and these terms and conditions.</p>
+
+<p>This Site is designed for use in Uganda and is not directed to, nor intended for distribution to or use by, any person or entity in any jurisdiction or country where the publication or availability of this Site or such distribution or use would be contrary to local law or regulation. If you choose to access information on this Site, it is your responsibility to comply with the applicable local, national or international laws and any use of this Site outside Uganda is entirely at your own risk. For guidance relating to your specific situation, please contact your legal adviser.</p>
+
+<p>The products and services represented within this Site are intended for customers in Uganda only.</p>
+
+<p>If any provision of this terms and conditions (or part of any provision) is found by any court or other authority of competent jurisdiction to be invalid, unenforceable or illegal, the other provisions shall remain in force.</p>
+
+
+<h2>Contacting Us About This Site</h2>
+
+<p>If you have any questions or comments about this Site or these terms and conditions, please contact us by sending a letter to our Uganda office address set out above or by such other ways as described under "Contact Us" in the top menu bar on this Site.</p>
+
+</div>
+</div>
+</body>
+</html>

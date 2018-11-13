@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="payBillDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.ssa.PayBillDAOController">
+		<property name="payBillReqAdptOperation" ref="payBillReqAdptOperation" />
+		<property name="transmissionOperation" ref="payBillTransmissionOperation" />
+		<property name="payBillRespAdptOperation" ref="payBillRespAdaptOperation" />
+	</bean>
+
+	<bean id="payBillReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.ssa.PayBillReqAdptOperation">
+		<property name="payBillHeaderAdapter" ref="payBillHeaderAdapter" />
+		<property name="payBillPayloadAdapter" ref="payBillPayloadAdapter" />
+	</bean>
+
+	<bean id="payBillTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="payBillTransmissionService" />
+	</bean>
+
+	<bean id="payBillTransmissionService"
+		class="com.barclays.bmg.dao.service.impl.ssa.PayBillTransmissionService">
+		<property name="remoteService" ref="fundTransferWebServiceImpl" />
+	</bean>
+	<bean id="payBillHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.ssa.PayBillHeaderAdapter">
+	</bean>
+	<bean id="payBillPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.ssa.PayBillPayloadAdapter">
+	</bean>
+
+	<bean id="payBillRespAdaptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.ssa.PayBillRespAdptOperation">
+	</bean>
+
+</beans>

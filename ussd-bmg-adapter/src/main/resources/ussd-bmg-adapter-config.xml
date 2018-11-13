@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+        xmlns:p="http://www.springframework.org/schema/p"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xsi:schemaLocation="
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+            http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd"
+        default-destroy-method="destroy"
+        default-init-method="afterPropertiesSet"
+        default-autowire="byName" >
+
+<aop:aspectj-autoproxy />
+<!--	<bean id="logAspect" class="com.barclays.ussd.adapter.EcrimeLogAroundAdvice"  init-method="initEcrimeLogAround">-->
+<!--	    <property name="flowManager" ref="ecrimeFlowManager" />-->
+<!--	 	<property name="ecrimeConfig" ref="ecrimeConfig" />-->
+<!--	</bean>-->
+
+	<util:map id="countryMap" map-class="java.util.HashMap">
+		<entry key="UGBRB" value-ref="UGBRBResolver" />
+		<entry key="TZBRB" value-ref="TZBRBResolver" />
+		<entry key="KEBRB" value-ref="KEBRBResolver" />
+		<entry key="GHBRB" value-ref="GHBRBResolver" />
+		<entry key="ZMBRB" value-ref="ZMBRBResolver" />
+		<entry key="ZWBRB" value-ref="ZWBRBResolver" />
+		<entry key="BWBRB" value-ref="BWBRBResolver" />
+		<entry key="MZBRB" value-ref="MZBRBResolver" />
+		<entry key="TZNBC" value-ref="TZNBCResolver" />
+	</util:map>
+	<util:map id="UGBRBResolver" map-class="java.util.HashMap">
+		<entry key="OP0603" value-ref="KEBRBconfirmPaymentExecutionController" />
+	</util:map>
+	<util:map id="KEBRBResolver" map-class="java.util.HashMap">
+		<entry key="OP0603" value-ref="KEBRBconfirmPaymentExecutionController" />
+	</util:map>
+	<util:map id="TZNBCResolver" map-class="java.util.HashMap">
+		<entry key="OP0603" value-ref="KEBRBconfirmPaymentExecutionController" />
+	</util:map>
+	<util:map id="MZBRBResolver" map-class="java.util.HashMap">
+		<entry key="OP0603" value-ref="KEBRBconfirmPaymentExecutionController" />
+	</util:map>
+	<util:map id="GHBRBResolver" map-class="java.util.HashMap" />
+	<util:map id="ZWBRBResolver" map-class="java.util.HashMap" />
+	<util:map id="ZMBRBResolver" map-class="java.util.HashMap" />
+	<util:map id="TZBRBResolver" map-class="java.util.HashMap" />
+	<util:map id="BWBRBResolver" map-class="java.util.HashMap" />
+
+	<bean id="ussdBmgAdapter" class="com.barclays.ussd.adapter.BMGAdapter">
+
+	<property name="countryMap" ref="countryMap" />
+		<property name="bmgControllerMap">
+			<map>
+				<entry key="OP0100" value-ref="loginController" />
+				<entry key="OP0101" value-ref="otpValidationController" />
+				<entry key="OP0103" value-ref="resendOTPController" />
+				<entry key="OP0104" value-ref="logoutController" />
+				<entry key="OP0105" value-ref="inValidateSessionController" />
+				<entry key="OP0107" value-ref="txnSecondAuthOTPController" />
+				<entry key="OP0108" value-ref="txnSecondAuthSQAController" />
+				<entry key="postLogin" value-ref="postLoginController" />
+				<entry key="OP0111" value-ref="cancelLoginController" />
+				<entry key="OP0112" value-ref="changePasswordController" />
+				<entry key="OP0113" value-ref="updateLangPrefController" />
+				<entry key="OP0114" value-ref="challengeQuestionAndPositionController" />
+				<entry key="OP0115" value-ref="secondAuthController" />
+
+				<entry key="OP0116" value-ref="selfRegistrationInitController" />
+				<entry key="OP0117" value-ref="selfRegistrationExecutionController" />
+				<!-- ADDED TO INCLUDE DEBIT CARD VALIDATION IN SELF REGISTRATION		-->
+				<entry key="OP0118" value-ref="selfRegistrationDebitCardController" />
+				<!-- Bmg call added to minimize response time for confirm screen	-->
+				<entry key="OP0119" value-ref="selfRegistrationAccountValidationController" />
+
+				<entry key="OP0301" value-ref="casaAccoutDetailsController" />
+				<entry key="OP0302" value-ref="tdAccountDetailsController" />
+				<entry key="OP0401" value-ref="casaTrnxnActivityController" />
+				<entry key="OP0500" value-ref="fundTransferInitController" />
+				<entry key="OP0501" value-ref="fTValidationController" />
+
+				<entry key="OP0510" value-ref="internalFTInitController" />
+				<entry key="OP0511" value-ref="internalFTValidationController" />
+				<entry key="OP0513" value-ref="internalFTDetailsController" />
+
+				<entry key="OP0502" value-ref="fundTransferExecutionController" />
+				<entry key="OP0600" value-ref="retrievePayeeListController" />
+				<entry key="OP0601" value-ref="retrievePayeeInfoController" />
+				<entry key="OP0602" value-ref="paymentFormSubmissionController" />
+				<entry key="OP0603" value-ref="confirmPaymentExecutionController" />
+				<entry key="OP9901" value-ref="branchLookUpController" />
+
+				<entry key="OP0520" value-ref="retreiveFTExternalPayeeListController" />
+				<entry key="OP0521" value-ref="retreiveFTExternalPayeeInfoController" />
+
+				<entry key="OP0522" value-ref="externalFTPaymentFormSubmissionController" />
+				<entry key="OP0523" value-ref="externalFundTransferExecutionController" />
+
+				<entry key="OP0524" value-ref="getExternalBeneficiaryDetailsController" />
+				<entry key="OP0568" value-ref="internalNonRegisteredOneTimeFundTransferInitController" />
+
+				<entry key="OP0901" value-ref="chequeBookRequestInitController" />
+				<entry key="OP0902" value-ref="chequeBookRequestValidationController" />
+				<entry key="OP0903" value-ref="chequeBookRequestExecuteController" />
+
+				<entry key="OP0611" value-ref="addOrgBeneficiaryFormSubmissionController" />
+				<entry key="OP0612" value-ref="addOrgFormSubmissionValidationController" />
+				<entry key="OP0613" value-ref="addOrgBenefeciaryExecutionController" />
+
+				<entry key="OP0110" value-ref="validateUserController" />
+				<entry key="OP0198" value-ref="verifyUserController" />
+
+				<entry key="OP1234" value-ref="applyTDInitController" />
+				<entry key="OP1235" value-ref="applyTDValidationController" />
+				<entry key="OP1236" value-ref="applyTDExecutionController" />
+
+				<entry key="OP05068" value-ref="internalNonRegisteredOneTimeFundTransferInitController" />
+				<entry key="OP0569"	value-ref="internalNonRegisteredOneTimeFTFormSubmissionController" />
+				<entry key="OP0570"	value-ref="internalNonRegisteredOneTimeFundTransferExecutionController" />
+
+				<entry key="OP0640" value-ref="deleteBeneficiaryController" />
+
+				<entry key="OP0641" value-ref="addBeneficiaryFormSubmissionController" />
+				<entry key="OP0642" value-ref="addBeneficiaryExecutionController" />
+
+				<entry key="OP0643" value-ref="searchTransactionHistoryController" />
+				<entry key="OP0644" value-ref="viewBillPaymentDetailsController" />
+
+				<entry key="OP0650" value-ref="oneTimeBillPayInitController" />
+				<entry key="OP0651" value-ref="oneTimeBillPayFormSubmissionController" />
+
+				<entry key="OP0660" value-ref="airTimeTopUpInItController" />
+				<entry key="OP0661" value-ref="airTimeTopUpValidateController" />
+
+				<entry key="OP0670" value-ref="mWalletUpInItController" />
+				<entry key="OP0671" value-ref="mWalletValidateController" />
+
+				<entry key="OP0109" value-ref="ussdLgnVrfyUsrPnController" />
+				<entry key="OP0201" value-ref="retrieveAllCustAcctController" />
+				<entry key="OP0202" value-ref="retrieveAllCustAcctController" />
+
+				<entry key="OP0910" value-ref="statmentInitRequestController" />
+				<entry key="OP0911" value-ref="statmentRequestController" />
+				<entry key="OP0912" value-ref="statmentExcecuteRequestController" />
+
+				<entry key="OP0701" value-ref="interestRatesController" />
+
+				<entry key="OP0580" value-ref="cashSendOneTimeInitController" />
+				<entry key="OP0581" value-ref="cashSendOneTimeValidateController" />
+				<entry key="OP0582" value-ref="cashSendOneTimeExecuteController" />
+
+				<entry key="OP0404" value-ref="casaTrnxnHistoryActivityController" />
+
+				<entry key="OP0750" value-ref="fxRateController"/>
+
+				<entry key="OP0214" value-ref="verifyUSSDUserController" />
+
+				<entry key="OP1010" value-ref="updateBeneficiaryFormSubmissionController" />
+				<entry key="OP1011" value-ref="updateBeneficiaryExecutionController" />
+
+				<entry key="OP0950" value-ref="atAGlanceController" />
+				<entry key="OP0951" value-ref="creditCardStmtTransController" />
+				<entry key="OP0952" value-ref="creditCardUnbilledTransController" />
+				<entry key="OP0954" value-ref="ownPaymentController" />
+				<entry key="OP0955" value-ref="creditCardValidationController" />
+				<entry key="OP0956" value-ref="ccPaymentFormvalidationController" />
+
+				<entry key="OP0957" value-ref="retrieveCCDAccountController" />
+				<entry key="OP0958" value-ref="otherBarclayPaymentController" />
+				<!--	CR#46 Credit Card Link-->
+				<entry key="OP0959" value-ref="creditCardLinkConfirmController" />
+
+				<entry key="OP0960" value-ref="atmBranchLocatorController" />
+
+
+				<entry key="OP0961" value-ref="verifyMigratedUserController" />
+				<entry key="OP0962" value-ref="challengeQuePosForMigUserController" />
+				<entry key="OP0963" value-ref="authForMigratedUserController" />
+				<entry key="OP0964" value-ref="updateMigratedUserPinController" />
+				<entry key="OP0975" value-ref="searchDiningOffersController" />
+				<entry key="OP0976" value-ref="searchEIPOffersController" />
+
+				<!-- <entry key="OP0977" value-ref="addProspectController" /> -->
+
+				<!--	CR#83 ApplyProduct-->
+				<entry key="OP0984" value-ref="applyProductConfirmController" />
+
+				<!-- KITS Changes starts -->
+				<entry key="OP0978" value-ref="searchIndividualCustforDeDupCheckController" />
+				<entry key="OP0979" value-ref="createIndividualCustomerController" />
+				<entry key="OP0980" value-ref="kitsOutwardPaymentController" />
+
+				<entry key="OP0981" value-ref="searchIndividualCustforDeDupCheckController" />
+				<entry key="OP0982" value-ref="createIndividualCustomerController" />
+				<entry key="OP0983" value-ref="searchIndividualCustforDeDupCheckController" />
+<!--				<entry key="OP0984" value-ref="kitsOutwardPaymentValidationController" />-->
+				<entry key="OP0985" value-ref="KitsfundTransferInitController" />
+				<!-- KITS Changes ends -->
+				<!-- CR85 Start -->
+				<entry key="OP0986" value-ref="KEBRBinternationalFTPaymentFormSubmissionController" />
+				<entry key="OP0987" value-ref="KEBRBinternationalFundTransferExecutionController" />
+				<!-- CR85 End -->
+				<entry key="OP0988" value-ref="retreiveGhipsPayeeListController" />
+				<entry key="OP0989" value-ref="ghippsFundTransferInformationController" />
+				<entry key="OP0990" value-ref="searchIndividualCustByAcctCtrl" />
+				<entry key="OP0991" value-ref="ghippsExternalFundTransferExecutionController" />
+				<entry key="OP0992" value-ref="retrieveSourceAccountListController" />
+
+				<!-- FreeDialUSSD STARTS -->
+				<entry key="OP0672" value-ref="freeDilaAirTopUpInItController" />
+				<entry key="OP0673" value-ref="freeDilaAirTopUpValidateController" />
+				<entry key="OP0674" value-ref="freeDilaAirTopUpPaymentExecutionController" />
+				<!-- FreeDialUSSD ENDs -->
+
+
+				<!-- CPB Starts -->
+				<entry key="OP0797" value-ref="cpbPesaLinkSendToPhoneAccountController" />
+				<!-- CPB Ends -->
+			</map>
+		</property>
+	</bean>
+
+</beans>

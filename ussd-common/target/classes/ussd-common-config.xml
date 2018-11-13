@@ -1,0 +1,18 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
+
+ 	<bean id="configMgr" class="com.barclays.ussd.common.configuration.ConfigurationManager" />
+
+	<bean id="bmgResponseContainer" class="com.barclays.ussd.bean.BMGResponseContainer" />
+
+	<bean id="screen" class="com.barclays.ussd.bean.Screen" />
+
+	<bean id="commonHttpClientExecutor"
+		class="com.barclays.ussd.svc.httpclient.CommonHttpClientExecutor" >
+ 	</bean>
+
+</beans>

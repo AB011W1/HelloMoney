@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cr="http://www.component.custom.com/bmb/controllerresolver"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+	http://www.component.custom.com/bmb/controllerresolver http://www.component.custom.com/bmb/controllerresolver/controller-resolver.xsd">
+
+
+
+	<cr:request-to-controller-mapper id="requestMapper">
+	<cr:resolver business-id="AEBRB" resolver-ref="AEBRBPromotOfferResolver" />
+	</cr:request-to-controller-mapper>
+
+	<cr:controller-ref-resolver id="AEBRBPromotOfferResolver">
+		<!-- Dining offer -->
+		<cr:controller op-code="OP1000" svc-ver="1.0" ref="diningOffersControllerVer1" default="true" />
+		<cr:controller op-code="OP1000" svc-ver="2.0" ref="diningOffersController" default="false" />
+		<cr:controller op-code="OP1000" ref="diningOffersControllerVer1" />
+
+		<cr:controller op-code="OP1001" svc-ver="1.0" ref="diningOfferDetailsControllerVer1" default="true" />
+		<cr:controller op-code="OP1001" svc-ver="2.0" ref="diningOfferDetailsController" default="false" />
+		<cr:controller op-code="OP1001" ref="diningOfferDetailsControllerVer1" />
+
+		<cr:controller op-code="OP1002" svc-ver="1.0" ref="searchDiningOffersControllerVer1" default="true" />
+		<cr:controller op-code="OP1002" svc-ver="2.0" ref="searchDiningOffersController" default="false" />
+		<cr:controller op-code="OP1002" ref="searchDiningOffersControllerVer1" />
+
+		<cr:controller op-code="OP1003" svc-ver="1.0" ref="diningSearchDataControllerVer1" default="true" />
+		<cr:controller op-code="OP1003" svc-ver="2.0" ref="diningSearchDataController" default="false" />
+		<cr:controller op-code="OP1003" ref="diningSearchDataControllerVer1" />
+
+		<!-- EIP Offer -->
+		<cr:controller op-code="OP1010" svc-ver="1.0"	ref="eipOffersControllerVer1" default="true" />
+		<cr:controller op-code="OP1010" svc-ver="2.0"	ref="eipOffersController" default="false" />
+		<cr:controller op-code="OP1010" ref="eipOffersControllerVer1" />
+
+		<cr:controller op-code="OP1011" svc-ver="1.0"	ref="eipOffersDetailControllerVer1" default="true" />
+		<cr:controller op-code="OP1011" svc-ver="2.0"	ref="eipOffersDetailController" default="false" />
+		<cr:controller op-code="OP1011" ref="eipOffersDetailControllerVer1" />
+
+		<cr:controller op-code="OP1012" svc-ver="1.0"	ref="searchEIPOffersControllerVer1" default="true" />
+		<cr:controller op-code="OP1012" svc-ver="2.0"	ref="searchEIPOffersController" default="false" />
+		<cr:controller op-code="OP1012" ref="searchEIPOffersControllerVer1" />
+
+		<!-- terms and condition -->
+		<cr:controller op-code="OP1020" svc-ver="1.0"	ref="promoOfferTermsAndCondControllerVer1" default="true" />
+		<cr:controller op-code="OP1020" svc-ver="2.0"	ref="promoOfferTermsAndCondController" default="false" />
+		<cr:controller op-code="OP1020" ref="promoOfferTermsAndCondControllerVer1" />
+
+	</cr:controller-ref-resolver>
+
+</beans>

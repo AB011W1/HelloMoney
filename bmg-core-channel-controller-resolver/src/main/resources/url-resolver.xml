@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:url="http://www.component.custom.com/bmb/urlresolver"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+	http://www.component.custom.com/bmb/urlresolver http://www.component.custom.com/bmb/urlresolver/url-resolver.xsd">
+
+	<url:application-url-resolver id="1.0">
+		<url:function-url-resolver id="login.json" opCde="OP0100">
+			<url:parameter-mapping actual="username" change-to="usrNam" />
+			<url:parameter-mapping actual="password" change-to="pass" />
+		</url:function-url-resolver>
+
+		<url:function-url-resolver id="otp.json" opCde="OP0101" />
+
+		<url:function-url-resolver id="sqa.json" opCde="OP0102" />
+
+
+		<url:function-url-resolver id="accountSummary.json" opCde="OP0200" />
+
+		<url:function-url-resolver id="IntLogout.json" opCde="OP0105" />
+
+	<!--  OWN Fund Transfer -->
+		<url:function-url-resolver id="ownftinit.json" opCde="OP0500" />
+
+
+		<url:function-url-resolver id="ownftvalidate.json" opCde="OP0501">
+			<url:parameter-mapping actual="fromAccountNo" change-to="frActNo" />
+			<url:parameter-mapping actual="toAccountNo" change-to="toActNo" />
+			<url:parameter-mapping actual="txAmount" change-to="txnAmt" />
+			<url:parameter-mapping actual="txDate" change-to="txnDt" />
+			<url:parameter-mapping actual="txNote" change-to="txnNot" />
+		</url:function-url-resolver>
+
+		<url:function-url-resolver id="ownftexecute.json" opCde="OP0502">
+			<url:parameter-mapping actual="txrefky" change-to="txnRefNo" />
+		</url:function-url-resolver>
+
+	<!-- Bill Payment Flow -->
+
+		<url:function-url-resolver id="retrievePayeeList.json" opCde="OP0600" />
+
+		<url:function-url-resolver id="retrievePayTransactionInfo.json" opCde="OP0601">
+			<url:parameter-mapping actual="payeeId" change-to="payId" />
+			<url:parameter-mapping actual="toAccountNumber" change-to="toActNo" />
+		</url:function-url-resolver>
+
+		<url:function-url-resolver id="pymntTrnfFormSubmn.json" opCde="OP0602">
+			<url:parameter-mapping actual="amount" change-to="amt" />
+			<url:parameter-mapping actual="fromAccountNumber" change-to="frActNo" />
+			<url:parameter-mapping actual="paymentRemarks" change-to="pmtRem" />
+		</url:function-url-resolver>
+
+		<url:function-url-resolver id="confirmPymnt.json" opCde="OP0603" />
+
+	<!-- Casa Details And Activity -->
+
+		<url:function-url-resolver id="casaAcctDetails.json" opCde="OP0301">
+			<url:parameter-mapping actual="accountNumber" change-to="actNo" />
+		</url:function-url-resolver>
+
+		<url:function-url-resolver id="casaAcctActivity.json" opCde="OP0401">
+			<url:parameter-mapping actual="accountNumber" change-to="actNo" />
+		</url:function-url-resolver>
+
+	<!-- TD Details And Activity -->
+
+		<url:function-url-resolver id="tdAcctDetails.json" opCde="OP0302">
+			<url:parameter-mapping actual="accountNumber" change-to="actNo" />
+		</url:function-url-resolver>
+
+	<!-- Credit card Details And Activity -->
+
+		<url:function-url-resolver id="casaAcctDetails.json" opCde="OP0301">
+			<url:parameter-mapping actual="accountNumber" change-to="actNo" />
+		</url:function-url-resolver>
+
+		<url:function-url-resolver id="casaAcctActivity.json" opCde="OP0401">
+			<url:parameter-mapping actual="accountNumber" change-to="actNo" />
+		</url:function-url-resolver>
+
+
+	<!-- GeoCoding -->
+
+		<url:function-url-resolver id="geocoding.json" opCde="OP0800">
+			<url:parameter-mapping actual="latitude" change-to="lati" />
+			<url:parameter-mapping actual="longitude" change-to="longi" />
+		</url:function-url-resolver>
+
+
+	<!-- Promotional Offers -->
+		<url:function-url-resolver id="diningOffers.json" opCde="OP1000"/>
+		<url:function-url-resolver id="diningOfferDetails.json" opCde="OP1001"/>
+		<url:function-url-resolver id="searchDiningOffers.json" opCde="OP1002"/>
+		<url:function-url-resolver id="diningSearchData.json" opCde="OP1003"/>
+
+		<url:function-url-resolver id="eipOffers.json" opCde="OP1010"/>
+		<url:function-url-resolver id="eipOfferDetails.json" opCde="OP1011"/>
+		<url:function-url-resolver id="searchEipOffers.json" opCde="OP1012"/>
+
+		<url:function-url-resolver id="promoTermsAndCond.json" opCde="OP1020"/>
+
+
+	</url:application-url-resolver>
+</beans>

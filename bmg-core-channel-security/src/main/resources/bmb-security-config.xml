@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+    http://www.springframework.org/schema/security
+    http://www.springframework.org/schema/security/spring-security-2.0.xsd">
+
+
+
+	<!--<http auto-config="false" entry-point-ref="authenticationProcessingFilterEntryPoint">
+
+		<intercept-url pattern="/dataserv/login.json" filters="none" />
+		<intercept-url pattern="/dataserv/otp.json" filters="none" />
+		<intercept-url pattern="/dataserv/sqa.json" filters="none" />
+		<intercept-url pattern="/dataserv/**" access="ROLE_USER" />
+	</http>
+
+
+
+
+
+	<beans:bean id="sessionRegistryService"
+		class="com.barclays.bmg.security.service.impl.SessionRegistryServiceImpl">
+		<beans:property name="sessionRegistryDAO" ref="sessionRegistryDAO"></beans:property>
+	</beans:bean>
+
+	<beans:bean id="sessionRegistryDAO"
+		class="com.barclays.bmg.security.dao.impl.SessionRegistryDAOImpl" parent="baseDao">
+
+	</beans:bean>
+
+
+
+
+	<beans:bean id="portMapper"
+		class="org.springframework.security.util.PortMapperImpl" />
+
+	<beans:bean id="portResolver"
+		class="org.springframework.security.util.PortResolverImpl" />
+
+
+
+--></beans:beans>

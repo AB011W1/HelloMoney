@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="localeScreenBuilder" class="com.barclays.ussd.utils.LocaleScreenBuilder" >
+		<property name="ussdResourceBundle" ref="ussdResourceBundle" />
+	</bean>
+
+	<bean id="ussdResourceBundle" class="com.barclays.ussd.utils.UssdResourceBundle" >
+		<property name="resourceBundle" ref="resourceBundle" />
+	</bean>
+
+	<!-- Application Message Bundle -->
+	<bean id="resourceBundle"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="classpath:applicationResources/ussd_messages" />
+		<property name="cacheSeconds" value="3600"/>
+		<property name="defaultEncoding" value="UTF-8" />
+    	<property name="fileEncodings" value="UTF-8" />
+	</bean>
+
+	<bean id="localeChangeInterceptor"
+		class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+	</bean>
+
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver" >
+		<property name="defaultLocale" value="en" />
+		</bean>
+
+	<bean id="handlerMapping"
+		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+		<property name="interceptors">
+			<ref bean="localeChangeInterceptor" />
+		</property>
+	</bean>
+
+
+
+</beans>

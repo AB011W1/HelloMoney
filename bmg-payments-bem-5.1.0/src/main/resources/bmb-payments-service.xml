@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:util="http://www.springframework.org/schema/util"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+     <bean id="transactionLimitService"
+		class="com.barclays.bmg.service.impl.TransactionLimitServiceImpl">
+		<property name="transactionLimitDAO" ref="transactionLimitDAO" />
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="listValueResService" ref="listValueResService" />
+	</bean>
+
+	<bean id="transactionAbilityService"
+		class="com.barclays.bmg.service.impl.TransactionAbilityServiceImpl">
+		<property name="transactionCutOffDAO" ref="transactionCutOffDAO" />
+	</bean>
+
+
+	<bean id="retreivePayeeListService"
+		class="com.barclays.bmg.service.impl.RetreivePayeeListServiceImpl">
+		<property name="retreivePayeeListDAO" ref="retreivePayeeListDAO" />
+	</bean>
+
+	<bean id="retreiveBeneficiaryDetailsService"
+		class="com.barclays.bmg.service.impl.RetreiveBeneficiaryDetailsServiceImpl">
+		<property name="retreiveOrganizationBeneficiaryDetailsDAO" ref="retreiveOrganizationBeneficiaryDetailsDAO" />
+		<property name="retreiveIndividualBeneficiaryDetailsDAO" ref="retreiveIndividualBeneficiaryDetailsDAO" />
+	</bean>
+
+		<bean id="retreiveChargeDetailsService"
+		class="com.barclays.bmg.service.impl.RetreiveChargeDetailsServiceImpl">
+		<property name="retreiveChargeDetailsDAO" ref="retreiveChargeDetailsDAO" />
+	</bean>
+
+		<bean id="fxRateService"
+		class="com.barclays.bmg.service.impl.FxRateServiceImpl">
+		<property name="fxRateDAO" ref="fxRateDAO" />
+	</bean>
+
+
+</beans>

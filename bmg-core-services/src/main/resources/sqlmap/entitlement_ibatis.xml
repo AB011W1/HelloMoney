@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="MCFE_APP_CACHE">
+  <typeAlias alias="entitlementDTO"
+    type="com.barclays.bmg.dto.EntitlementDTO" />
+
+  <resultMap id="entitlement" class="entitlementDTO">
+    <result property="activityId" column="ACTIVITY_ID" />
+    <result property="relationship" column="RELN_TYPE_NOTALLOWED" />
+    <result property="cardHolderType" column="CARD_HOLDER_TYPE" />
+
+
+  </resultMap>
+
+   <typeAlias alias="cacheController"
+    type="com.barclays.bmg.cache.IbatisCacheController" />
+
+  <cacheModel id="entitlementCacheModel" type="cacheController"
+    readOnly="true" serialize="true">
+    <property name="configFile" value="/ehcache.xml" />
+    <property name="CacheSize" value="1000" />
+  </cacheModel>
+
+  <select id="retrieveEntitlement" resultMap="entitlement"
+    cacheModel="entitlementCacheModel">
+    select ACTIVITY_ID, RELN_TYPE_NOTALLOWED, CARD_HOLDER_TYPE
+    from c_enhanced_entitlement_mst
+    WHERE  SYSTEM_ID=#systemId#
+    and BUSINESS_ID=#businessId#
+    and ROLE_CATEGORY_CD=#systemId#
+    and ACTIVITY_ID=#activityId#
+  </select>
+
+</sqlMap>

@@ -1,0 +1,9 @@
+package com.barclays.bmg.dao;
+
+import com.barclays.bmg.service.request.RetreiveBeneficiaryDetailsServiceRequest;
+import com.barclays.bmg.service.response.RetreiveBeneficiaryDetailsServiceResponse;
+
+public interface RetreiveOrganizationBeneficiaryDetailsDAO {
+
+	public RetreiveBeneficiaryDetailsServiceResponse retreiveOrganizationBeneficiaryDetails(RetreiveBeneficiaryDetailsServiceRequest request);
+}

@@ -1,0 +1,1392 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<POICollection>
+
+	<pointOfInterest>
+		<id>2001</id>
+		<latitude>-20.25823</latitude>
+		<longitude>57.75446</longitude>
+		<address>Royal Road, Riviere Seche</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Super Savers Supermarket</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>2002</id>
+		<latitude>-20.24189</latitude>
+		<longitude>57.4896</longitude>
+		<address>68/68A Cybercity, Ebene</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays House</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2003</id>
+		<latitude>-20.28037</latitude>
+		<longitude>57.37084</longitude>
+		<address>Coastal Road, Flic en Flacq</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Residence Hoteliere Les Peupliers</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2004</id>
+		<latitude>-20.28605</latitude>
+		<longitude>57.51224</longitude>
+		<address>Phoenix les Halle, Phoenix</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Les Halles</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2005</id>
+		<latitude>-20.43173</latitude>
+		<longitude>57.67508</longitude>
+		<address>Sir Seewoosagur Ramgoolam International Airport, Plaisance</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>SSR International Airport</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2006</id>
+		<latitude>-20.17422</latitude>
+		<longitude>57.44858</longitude>
+		<address>London Way, Point Aux Sables</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays ATM</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+     <pointOfInterest>
+		<id>2007</id>
+		<latitude>-20.16573</latitude>
+		<longitude>57.50726</longitude>
+		<address>37 Sir William Newton Street, Port Louis</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Happy World House Shopping Centre</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2008</id>
+		<latitude>-20.16573</latitude>
+		<longitude>57.50726</longitude>
+		<address>President John Kennedy Street, Port Louis</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Harbour Front Building</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2009</id>
+		<latitude>-20.16889</latitude>
+		<longitude>57.51049</longitude>
+		<address>Champ de Mars, Port Louis</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Mauritius Turf Club</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2010</id>
+		<latitude>-20.26026</latitude>
+		<longitude>57.47101</longitude>
+		<address>St Jeans Roudabout, Quatre Bornes</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Shoprite</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2011</id>
+		<latitude>-20.23333</latitude>
+		<longitude>57.46667</longitude>
+		<address>Windsor Shopping Centre, Beau Bassin</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>09:00 - 15:30</tue>
+			<holidayNote></holidayNote>
+			<mon>09:00 - 15:30</mon>
+			<sat>09:00 - 15:30</sat>
+			<sun>-</sun>
+			<thu>09:00 - 15:30</thu>
+			<wed>09:00 - 15:30</wed>
+			<fri>09:00 - 15:30</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2012</id>
+		<latitude>-20.23333</latitude>
+		<longitude>57.46667</longitude>
+		<address>Windsor Shopping Centre, Beau Bassin</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2013</id>
+		<latitude>-20.18766</latitude>
+		<longitude>57.48819</longitude>
+		<address>Old Moka Road, Bell Village</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>09:00 - 15:30</tue>
+			<holidayNote></holidayNote>
+			<mon>09:00 - 15:30</mon>
+			<sat>09:00 - 15:30</sat>
+			<sun>-</sun>
+			<thu>09:00 - 15:30</thu>
+			<wed>09:00 - 15:30</wed>
+			<fri>09:00 - 15:30</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2014</id>
+		<latitude>-20.18766</latitude>
+		<longitude>57.48819</longitude>
+		<address>Old Moka Road, Bell Village</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2015</id>
+		<latitude>-20.48932</latitude>
+		<longitude>57.46535</longitude>
+		<address>Royal Road, Chemin Grenier</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>09:00 - 15:30</tue>
+			<holidayNote></holidayNote>
+			<mon>09:00 - 15:30</mon>
+			<sat>09:00 - 15:30</sat>
+			<sun>-</sun>
+			<thu>09:00 - 15:30</thu>
+			<wed>09:00 - 15:30</wed>
+			<fri>09:00 - 15:30</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+     <pointOfInterest>
+		<id>2016</id>
+		<latitude>-20.48932</latitude>
+		<longitude>57.46535</longitude>
+		<address>Royal Road, Chemin Grenier</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>2017</id>
+		<latitude>-20.29901</latitude>
+		<longitude>57.47968</longitude>
+		<address>John Kennedy Avenue, Vacoas</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>09:00 - 15:30</tue>
+			<holidayNote></holidayNote>
+			<mon>09:00 - 15:30</mon>
+			<sat>09:00 - 15:30</sat>
+			<sun>-</sun>
+			<thu>09:00 - 15:30</thu>
+			<wed>09:00 - 15:30</wed>
+			<fri>09:00 - 15:30</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2018</id>
+		<latitude>-20.29901</latitude>
+		<longitude>57.47968</longitude>
+		<address>John Kennedy Avenue, Vacoas</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>2019</id>
+		<latitude>-20.31667</latitude>
+		<longitude>57.51667</longitude>
+		<address>Chasteauneuf Street, Curepipe</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>09:00 - 15:30</tue>
+			<holidayNote></holidayNote>
+			<mon>09:00 - 15:30</mon>
+			<sat>09:00 - 15:30</sat>
+			<sun>-</sun>
+			<thu>09:00 - 15:30</thu>
+			<wed>09:00 - 15:30</wed>
+			<fri>09:00 - 15:30</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>2020</id>
+		<latitude>-20.31667</latitude>
+		<longitude>57.51667</longitude>
+		<address>Chasteauneuf Street, Curepipe</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2021</id>
+		<latitude>-20.24189</latitude>
+		<longitude>57.4896</longitude>
+		<address>100 Gaulettes Street, Mahebourg</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>09:00 - 15:30</tue>
+			<holidayNote></holidayNote>
+			<mon>09:00 - 15:30</mon>
+			<sat>09:00 - 15:30</sat>
+			<sun>-</sun>
+			<thu>09:00 - 15:30</thu>
+			<wed>09:00 - 15:30</wed>
+			<fri>09:00 - 15:30</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2022</id>
+		<latitude>-20.24189</latitude>
+		<longitude>57.4896</longitude>
+		<address>100 Gaulettes Street, Mahebourg</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2023</id>
+		<latitude>-20.24189</latitude>
+		<longitude>57.4896</longitude>
+		<address>Ebene Centre Commercial, Ebène</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>09:00 - 15:30</tue>
+			<holidayNote></holidayNote>
+			<mon>09:00 - 15:30</mon>
+			<sat>09:00 - 15:30</sat>
+			<sun>-</sun>
+			<thu>09:00 - 15:30</thu>
+			<wed>09:00 - 15:30</wed>
+			<fri>09:00 - 15:30</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2024</id>
+		<latitude>-20.24189</latitude>
+		<longitude>57.4896</longitude>
+		<address>Ebene Centre Commercial, Ebène</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2025</id>
+		<latitude>-20.22578</latitude>
+		<longitude>57.71193</longitude>
+		<address>VIP Way, Flacq</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>09:00 - 15:30</tue>
+			<holidayNote></holidayNote>
+			<mon>09:00 - 15:30</mon>
+			<sat>09:00 - 15:30</sat>
+			<sun>-</sun>
+			<thu>09:00 - 15:30</thu>
+			<wed>09:00 - 15:30</wed>
+			<fri>09:00 - 15:30</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2026</id>
+		<latitude>-20.22578</latitude>
+		<longitude>57.71193</longitude>
+		<address>VIP Way, Flacq</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2027</id>
+		<latitude>-20.22578</latitude>
+		<longitude>57.64957</longitude>
+		<address>Royal Road, Goodlands</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>09:00 - 15:30</tue>
+			<holidayNote></holidayNote>
+			<mon>09:00 - 15:30</mon>
+			<sat>09:00 - 15:30</sat>
+			<sun>-</sun>
+			<thu>09:00 - 15:30</thu>
+			<wed>09:00 - 15:30</wed>
+			<fri>09:00 - 15:30</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2028</id>
+		<latitude>-20.22578</latitude>
+		<longitude>57.64957</longitude>
+		<address>Royal Road, Goodlands</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2029</id>
+		<latitude>-20.22578</latitude>
+		<longitude>57.64957</longitude>
+		<address>Royal Road, Goodlands</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>09:00 - 15:30</tue>
+			<holidayNote></holidayNote>
+			<mon>09:00 - 15:30</mon>
+			<sat>09:00 - 15:30</sat>
+			<sun>-</sun>
+			<thu>09:00 - 15:30</thu>
+			<wed>09:00 - 15:30</wed>
+			<fri>09:00 - 15:30</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2030</id>
+		<latitude>-20.22578</latitude>
+		<longitude>57.64957</longitude>
+		<address>Royal Road, Goodlands</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>2031</id>
+		<latitude>-20.0184</latitude>
+		<longitude>57.58017</longitude>
+		<address>Royal Road, Grand Baie</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>09:00 - 15:30</tue>
+			<holidayNote></holidayNote>
+			<mon>09:00 - 15:30</mon>
+			<sat>09:00 - 15:30</sat>
+			<sun>-</sun>
+			<fri>09:00 - 15:30</fri>
+			<wed>09:00 - 15:30</wed>
+			<thu>09:00 - 15:30</thu>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2032</id>
+		<latitude>-20.0184</latitude>
+		<longitude>57.58017</longitude>
+		<address>Royal Road, Grand Baie</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>2033</id>
+		<latitude>-20.19335</latitude>
+		<longitude>57.66941</longitude>
+		<address>Royal Road, Lallmatie</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>09:00 - 15:30</tue>
+			<holidayNote></holidayNote>
+			<mon>09:00 - 15:30</mon>
+			<sat>09:00 - 15:30</sat>
+			<sun>-</sun>
+			<thu>09:00 - 15:30</thu>
+			<wed>09:00 - 15:30</wed>
+			<fri>09:00 - 15:30</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2034</id>
+		<latitude>-20.19335</latitude>
+		<longitude>57.66941</longitude>
+		<address>Royal Road, Lallmatie</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>2035</id>
+		<latitude>-20.1095</latitude>
+		<longitude>57.58159</longitude>
+		<address>Royal Road, Pamplemousses</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>09:00 - 15:30</tue>
+			<holidayNote></holidayNote>
+			<mon>09:00 - 15:30</mon>
+			<sat>09:00 - 15:30</sat>
+			<sun>-</sun>
+			<thu>09:00 - 15:30</thu>
+			<wed>09:00 - 15:30</wed>
+			<fri>09:00 - 15:30</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2036</id>
+		<latitude>-20.1095</latitude>
+		<longitude>57.58159</longitude>
+		<address>Royal Road, Pamplemousses</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>2037</id>
+		<latitude>-20.28605</latitude>
+		<longitude>57.51224</longitude>
+		<address>Phoenix Rue Royale, Phoenix</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>09:00 - 15:30</tue>
+			<holidayNote></holidayNote>
+			<mon>09:00 - 15:30</mon>
+			<sat>09:00 - 15:30</sat>
+			<sun>-</sun>
+			<thu>09:00 - 15:30</thu>
+			<wed>09:00 - 15:30</wed>
+			<fri>09:00 - 15:30</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2038</id>
+		<latitude>-20.28605</latitude>
+		<longitude>57.51224</longitude>
+		<address>Phoenix Rue Royale, Phoenix</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>2039</id>
+		<latitude>-20.16573</latitude>
+		<longitude>57.50726</longitude>
+		<address>Main Branch, Sir William Newton Street, Port louis</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>09:00 - 15:30</tue>
+			<holidayNote></holidayNote>
+			<mon>09:00 - 15:30</mon>
+			<sat>09:00 - 15:30</sat>
+			<sun>-</sun>
+			<thu>09:00 - 15:30</thu>
+			<wed>09:00 - 15:30</wed>
+			<fri>09:00 - 15:30</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2040</id>
+		<latitude>-20.16573</latitude>
+		<longitude>57.50726</longitude>
+		<address>Main Branch, Sir William Newton Street, Port louis</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>2041</id>
+		<latitude>-20.16098</latitude>
+		<longitude>57.50793</longitude>
+		<address>Sir S. Ramgoolam Street, Port louis</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>09:00 - 15:30</tue>
+			<holidayNote></holidayNote>
+			<mon>09:00 - 15:30</mon>
+			<sat>09:00 - 15:30</sat>
+			<sun>-</sun>
+			<thu>09:00 - 15:30</thu>
+			<wed>09:00 - 15:30</wed>
+			<fri>09:00 - 15:30</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2042</id>
+		<latitude>-20.16098</latitude>
+		<longitude>57.50793</longitude>
+		<address>Sir S. Ramgoolam Street, Port louis</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>2043</id>
+		<latitude>-20.26026</latitude>
+		<longitude>57.47101</longitude>
+		<address>St. Jean Road, Quatre Bornes</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>09:00 - 15:30</tue>
+			<holidayNote></holidayNote>
+			<mon>09:00 - 15:30</mon>
+			<sat>09:00 - 15:30</sat>
+			<sun>-</sun>
+			<thu>09:00 - 15:30</thu>
+			<wed>09:00 - 15:30</wed>
+			<fri>09:00 - 15:30</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2044</id>
+		<latitude>-20.26026</latitude>
+		<longitude>57.47101</longitude>
+		<address>St. Jean Road, Quatre Bornes</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>2045</id>
+		<latitude>-20.12515</latitude>
+		<longitude>57.5167</longitude>
+		<address>Commercial Complex Riche Terre, Riche Terre</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>09:00 - 15:30</tue>
+			<holidayNote></holidayNote>
+			<mon>09:00 - 15:30</mon>
+			<sat>09:00 - 15:30</sat>
+			<sun>-</sun>
+			<thu>09:00 - 15:30</thu>
+			<wed>09:00 - 15:30</wed>
+			<fri>09:00 - 15:30</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2046</id>
+		<latitude>-20.12515</latitude>
+		<longitude>57.5167</longitude>
+		<address>Commercial Complex Riche Terre, Riche Terre</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>2047</id>
+		<latitude>-20.48038</latitude>
+		<longitude>57.56035</longitude>
+		<address>Rue La Baraque, Riv des Anguilles</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>09:00 - 15:30</tue>
+			<holidayNote></holidayNote>
+			<mon>09:00 - 15:30</mon>
+			<sat>09:00 - 15:30</sat>
+			<sun>-</sun>
+			<thu>09:00 - 15:30</thu>
+			<wed>09:00 - 15:30</wed>
+			<fri>09:00 - 15:30</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2048</id>
+		<latitude>-20.48038</latitude>
+		<longitude>57.56035</longitude>
+		<address>Rue La Baraque, Riv des Anguilles</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>2049</id>
+		<latitude>-20.10827</latitude>
+		<longitude>57.68443</longitude>
+		<address>Royal Rd, Riv Du Rempart</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>09:00 - 15:30</tue>
+			<holidayNote></holidayNote>
+			<mon>09:00 - 15:30</mon>
+			<sat>09:00 - 15:30</sat>
+			<sun>-</sun>
+			<thu>09:00 - 15:30</thu>
+			<wed>09:00 - 15:30</wed>
+			<fri>09:00 - 15:30</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2050</id>
+		<latitude>-20.10827</latitude>
+		<longitude>57.68443</longitude>
+		<address>Royal Rd, Riv Du Rempart</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>2051</id>
+		<latitude>-19.68217</latitude>
+		<longitude>63.41727</longitude>
+		<address>Port Mathurin, Rodrigues</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>09:00 - 15:30</tue>
+			<holidayNote></holidayNote>
+			<mon>09:00 - 15:30</mon>
+			<sat>09:00 - 15:30</sat>
+			<sun>-</sun>
+			<thu>09:00 - 15:30</thu>
+			<wed>09:00 - 15:30</wed>
+			<fri>09:00 - 15:30</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2052</id>
+		<latitude>-19.68217</latitude>
+		<longitude>63.41727</longitude>
+		<address>Port Mathurin, Rodrigues</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>2053</id>
+		<latitude>-20.40536</latitude>
+		<longitude>57.59706</longitude>
+		<address>Royal Road, Rose Belle</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>09:00 - 15:30</tue>
+			<holidayNote></holidayNote>
+			<mon>09:00 - 15:30</mon>
+			<sat>09:00 - 15:30</sat>
+			<sun>-</sun>
+			<thu>09:00 - 15:30</thu>
+			<wed>09:00 - 15:30</wed>
+			<fri>09:00 - 15:30</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2054</id>
+		<latitude>-20.40536</latitude>
+		<longitude>57.59706</longitude>
+		<address>Royal Road, Rose Belle</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>2055</id>
+		<latitude>-20.23333</latitude>
+		<longitude>57.46667</longitude>
+		<address>Royal Road, Rose Hill</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>09:00 - 15:30</tue>
+			<holidayNote></holidayNote>
+			<mon>09:00 - 15:30</mon>
+			<sat>09:00 - 15:30</sat>
+			<sun>-</sun>
+			<thu>09:00 - 15:30</thu>
+			<wed>09:00 - 15:30</wed>
+			<fri>09:00 - 15:30</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2056</id>
+		<latitude>-20.23333</latitude>
+		<longitude>57.46667</longitude>
+		<address>Royal Road, Rose Hill</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>2057</id>
+		<latitude>-20.24919</latitude>
+		<longitude>57.46131</longitude>
+		<address>76, Corner Hugnin St &amp; Maurice Cure St, Stanley</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>09:00 - 15:30</tue>
+			<holidayNote></holidayNote>
+			<mon>09:00 - 15:30</mon>
+			<sat>09:00 - 15:30</sat>
+			<sun>-</sun>
+			<thu>09:00 - 15:30</thu>
+			<wed>09:00 - 15:30</wed>
+			<fri>09:00 - 15:30</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2058</id>
+		<latitude>-20.24919</latitude>
+		<longitude>57.46131</longitude>
+		<address>76, Corner Hugnin St &amp; Maurice Cure St, Stanley</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>2059</id>
+		<latitude>-20.33779</latitude>
+		<longitude>57.37508</longitude>
+		<address>Nautica Complex, Riviere Noire</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>09:00 - 15:30</tue>
+			<holidayNote></holidayNote>
+			<mon>09:00 - 15:30</mon>
+			<sat>09:00 - 15:30</sat>
+			<sun>-</sun>
+			<thu>09:00 - 15:30</thu>
+			<wed>09:00 - 15:30</wed>
+			<fri>09:00 - 15:30</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+    <pointOfInterest>
+		<id>2060</id>
+		<latitude>-20.33779</latitude>
+		<longitude>57.37508</longitude>
+		<address>Nautica Complex, Riviere Noire</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>2061</id>
+		<latitude>-20.05</latitude>
+		<longitude>57.55</longitude>
+		<address>Royal Road, Triolet</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>09:00 - 15:30</tue>
+			<holidayNote></holidayNote>
+			<mon>09:00 - 15:30</mon>
+			<sat>09:00 - 15:30</sat>
+			<sun>-</sun>
+			<thu>09:00 - 15:30</thu>
+			<wed>09:00 - 15:30</wed>
+			<fri>09:00 - 15:30</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>BRANCH</type>
+	</pointOfInterest>
+
+    <pointOfInterest>
+		<id>2062</id>
+		<latitude>-20.05</latitude>
+		<longitude>57.55</longitude>
+		<address>Royal Road, Triolet</address>
+		<fax></fax>
+		<imageFileName></imageFileName>
+		<name>Barclays Bank</name>
+		<openingHours>
+			<tue>00:00 - 23:59</tue>
+			<holidayNote></holidayNote>
+			<mon>00:00 - 23:59</mon>
+			<sat>00:00 - 23:59</sat>
+			<sun>00:00 - 23:59</sun>
+			<thu>00:00 - 23:59</thu>
+			<wed>00:00 - 23:59</wed>
+			<fri>00:00 - 23:59</fri>
+		</openingHours>
+		<phoneNumber></phoneNumber>
+		<services></services>
+		<type>ATM</type>
+
+	</pointOfInterest>
+
+</POICollection>

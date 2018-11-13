@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<POICollection>
+  <pointOfInterest>
+    <id>1</id>
+    <latitude>0.29663</latitude>
+    <longitude>32.574463</longitude>
+    <name>Kampala Road</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Kampala Road,Kampala,Kampala</address>
+    <services>
+      <service>Premier Centre with Majlis area</service>
+      <service>Mortgage counter</service>
+      <service>Wheelchair access with automatic door</service>
+      <service>Level access</service>
+      <service>Children's play area</service>
+      <service>Tellers</service>
+      <service>Lobby ATM and CDM</service>
+      <service>Parking Facilities</service>
+      <service>Meeting and Conference Rooms</service>
+      <service>State Of the Art Design</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>2</id>
+    <latitude>0.29663</latitude>
+    <longitude>32.574463</longitude>
+    <name>Arch Bishop Luwum Street</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Arch Bishop Luwum Street,Kampala,Kampala</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>3</id>
+    <latitude>0.29663</latitude>
+    <longitude>32.574463</longitude>
+    <name>Parliament Avenue</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Parliament Avenue,Kampala,Kampala</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>4</id>
+    <latitude>0.29663</latitude>
+    <longitude>32.574463</longitude>
+    <name>Shauri Yako</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Shauri Yako,Kampala,Kampala</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>5</id>
+    <latitude>0.29663</latitude>
+    <longitude>32.574463</longitude>
+    <name>Bugolobi</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Bugolobi,Kampala,Kampala</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>6</id>
+    <latitude>0.29663</latitude>
+    <longitude>32.574463</longitude>
+    <name>Kamwokya</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Kamwokya,Kampala,Kampala</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>7</id>
+    <latitude>0.29663</latitude>
+    <longitude>32.574463</longitude>
+    <name>Nakulabye</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Nakulabye,Kampala,Kampala</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>8</id>
+    <latitude>0.29663</latitude>
+    <longitude>32.574463</longitude>
+    <name>Ntinda</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Ntinda,Kampala,Kampala</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>9</id>
+    <latitude>0.29663</latitude>
+    <longitude>32.574463</longitude>
+    <name>Kansanga</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Kansanga,Kampala,Kampala</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>10</id>
+    <latitude>0.29663</latitude>
+    <longitude>32.574463</longitude>
+    <name>Ndeeba</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Ndeeba,Kampala,Kampala</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>11</id>
+    <latitude>0.29663</latitude>
+    <longitude>32.574463</longitude>
+    <name>Katwe</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Katwe,Kampala,Kampala</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>12</id>
+    <latitude>0.043945</latitude>
+    <longitude>32.453613</longitude>
+    <name>Lubowa</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Lubowa,Lubowa,Lubowa</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>13</id>
+    <latitude>0.043945</latitude>
+    <longitude>32.453613</longitude>
+    <name>Abaita Ababiri</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Abaita Ababiri,Abaita Ababiri,Abaita Ababiri</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>14</id>
+    <latitude>0.043945</latitude>
+    <longitude>32.453613</longitude>
+    <name>Kitooro</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Kitooro,Kitooro,Kitooro</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>15</id>
+    <latitude>0.384519</latitude>
+    <longitude>32.816162</longitude>
+    <name>Mukono</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Mukono,Mukono,Mukono</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>16</id>
+    <latitude>0.406491</latitude>
+    <longitude>33.068848</longitude>
+    <name>Lugazi</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Lugazi,Lugazi,Lugazi</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>17</id>
+    <latitude>0.417477</latitude>
+    <longitude>33.178711</longitude>
+    <name>Jinja</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Jinja,Jinja,Jinja</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>18</id>
+    <latitude>0.889857</latitude>
+    <longitude>33.497314</longitude>
+    <name>Iganga</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Iganga,Iganga,Iganga</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>19</id>
+    <latitude>1.087581</latitude>
+    <longitude>34.16748</longitude>
+    <name>Mbale</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Mbale,Mbale,Mbale</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>20</id>
+    <latitude>0.692122</latitude>
+    <longitude>34.16748</longitude>
+    <name>Tororo</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Tororo,Tororo,Tororo</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>21</id>
+    <latitude>0.692122</latitude>
+    <longitude>34.16748</longitude>
+    <name>Busia</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Busia,Busia,Busia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>22</id>
+    <latitude>1.70263</latitude>
+    <longitude>33.596191</longitude>
+    <name>Soroti</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Soroti,Soroti,Soroti</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>23</id>
+    <latitude>-0.35156</latitude>
+    <longitude>31.728516</longitude>
+    <name>Masaka</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Masaka,Masaka,Masaka</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>24</id>
+    <latitude>-0.615223</latitude>
+    <longitude>30.651855</longitude>
+    <name>Mbarara</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Mbarara,Mbarara,Mbarara</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>25</id>
+    <latitude>0.186767</latitude>
+    <longitude>30.080566</longitude>
+    <name>Kasese</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Kasese,Kasese,Kasese</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>26</id>
+    <latitude>-0.889857</latitude>
+    <longitude>30.256348</longitude>
+    <name>Kabale</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Kabale,Kabale,Kabale</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>27</id>
+    <latitude>0.29663</latitude>
+    <longitude>32.574463</longitude>
+    <name>URA Nakawa</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>URA Nakawa,Kampala,Kampala</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>28</id>
+    <latitude>0.35156</latitude>
+    <longitude>32.629395</longitude>
+    <name>Kireka</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Kireka,Kampala,Kampala</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>29</id>
+    <latitude>0.29663</latitude>
+    <longitude>32.574463</longitude>
+    <name>Wandegeya</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Wandegeya,Kampala,Kampala</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>30</id>
+    <latitude>0.395505</latitude>
+    <longitude>32.55249</longitude>
+    <name>Kawempe</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Kawempe,Kampala,Kampala</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>31</id>
+    <latitude>0.659165</latitude>
+    <longitude>30.267334</longitude>
+    <name>Fortportal</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Fortportal,Fortportal,Fortportal</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>32</id>
+    <latitude>1.680667</latitude>
+    <longitude>31.695557</longitude>
+    <name>Masindi</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Masindi,Masindi,Masindi</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>33</id>
+    <latitude>1.417092</latitude>
+    <longitude>31.343994</longitude>
+    <name>Hoima</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Hoima,Hoima,Hoima</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>34</id>
+    <latitude>2.24064</latitude>
+    <longitude>32.893066</longitude>
+    <name>Lira</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Lira,Lira,Lira</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>35</id>
+    <latitude>2.767478</latitude>
+    <longitude>32.266846</longitude>
+    <name>Gulu</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Gulu,Gulu,Gulu</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>36</id>
+    <latitude>3.030812</latitude>
+    <longitude>30.904541</longitude>
+    <name>Arua</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Arua,Arua,Arua</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>37</id>
+    <latitude>0.29663</latitude>
+    <longitude>32.574463</longitude>
+    <name>Garden City</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 15:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Garden City,Kampala,Kampala</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>38</id>
+    <latitude>0.29663</latitude>
+    <longitude>32.574463</longitude>
+    <name>Tankhill</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 15:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Tankhill,Kampala,Kampala</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>39</id>
+    <latitude>0.29663</latitude>
+    <longitude>32.574463</longitude>
+    <name>Rwenzori</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 15:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Rwenzori,Kampala,Kampala</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>40</id>
+    <latitude>0.29663</latitude>
+    <longitude>32.574463</longitude>
+    <name>Hannington</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 15:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Hannington,Kampala,Kampala</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>41</id>
+    <latitude>0.29663</latitude>
+    <longitude>32.574463</longitude>
+    <name>Corporate Service Centre</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Hannington,Kampala,Kampala</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>42</id>
+    <latitude>0.043945</latitude>
+    <longitude>32.453613</longitude>
+    <name>RSCE</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:00 - 18:00</mon>
+      <tue>8:00 - 18:00</tue>
+      <wed>8:00 - 18:00</wed>
+      <thu>8:00 - 18:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>UN base Entebbe,Entebbe,Entebbe</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+</POICollection>

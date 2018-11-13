@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+	<util:map id="requestMap" map-class="java.util.HashMap">
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).WELCOME_SCREEN_BAL_ENQ.getTranId()}" value-ref="welcomeScreenBalMainEnqRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).OLAFT_SOURCE_PAYEE_LIST.getTranId()}" value-ref="retrieveSrcAccountPayeeListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).OLAFT_SOURCE_LIST.getTranId()}" value-ref="retrieveSrcAccountListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).OLAFT_PAYEE_LIST.getTranId()}" value-ref="retrievePayeeAccountListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).OLAFT_AMOUNT.getTranId()}" value-ref="getAmountRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).OLAFT_VALIDATE.getTranId()}" value-ref="ownFundTransferValidateRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).OLAFT_CONFIRM.getTranId()}" value-ref="ownFundTransferConfirmRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).INT_FT_SOURCE_AND_PAYEE_LIST.getTranId()}" value-ref="oBAFTSrcPayeeListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).INT_FT_PAYEE_LIST.getTranId()}" value-ref="retrieveOBAFTPayeeAcctListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).INT_FT_AMOUNT.getTranId()}" value-ref="obaftGetAmountRequestBuilder"/>
+		<!-- Kadikope -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).INT_FT_CARD.getTranId()}" value-ref="oBAFTGetCreditORCasaRequestBuilder" />
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).INT_FT_CARD_LIST.getTranId()}" value-ref="oBAFTGetCreditListRequestBuilder" />
+		<!-- Kadikope -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).INT_FT_SOURCE_LIST.getTranId()}" value-ref="retrieveOBAFTSrcAcctListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).INT_FT_VALIDATE.getTranId()}" value-ref="obaftValidateRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).INT_FT_CONFIRM.getTranId()}" value-ref="obaftConfirmRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CHECK_BK_SRC_ACT_LIST.getTranId()}" value-ref="chequeBookAccountListDetailsRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CHECK_BK_SRC_ACT.getTranId()}" value-ref="chequeBookAccountListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CHECK_BK_SIZE.getTranId()}" value-ref="chequeBookSizeListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CHECK_BK_BRANCH_NAME.getTranId()}" value-ref="chequeBookBranchSearchLetterRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CHECK_BK_BRANCH_LIST.getTranId()}" value-ref="chequeBookBranchListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CHECK_BK_VALIDATE.getTranId()}" value-ref="chequeBookValidationRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CHECK_BK_CONFIRM.getTranId()}" value-ref="chequeBookExecuteRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).OTHER_BARC_DEL_BENF_LIST.getTranId()}" value-ref="oBADBRetrievePayeeAcctListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).OTHER_BARC_DEL_BENF_PAYEE.getTranId()}" value-ref="oBADBRenderPayeeAcctListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).OTHER_BARC_DEL_BENF_VALIDATE.getTranId()}" value-ref="obadbValidateRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).OTHER_BARC_DEL_BENF_CONFIRM.getTranId()}" value-ref="obadbConfirmRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).NON_BARC_DEL_BENF_PAYEE_LIST.getTranId()}" value-ref="nBADBGetBenfListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).NON_BARC_DEL_BENF_PAYEE.getTranId()}" value-ref="nbadbPayeeLstRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).NON_BARC_DEL_BENF_VALIDATE.getTranId()}" value-ref="nbadbValidateRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).NON_BARC_DEL_BENF_CONFIRM.getTranId()}" value-ref="nbadbConfirmRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).STMT_REQ_SRC_ACT_LIST.getTranId()}" value-ref="statementReqRetrieveSrcAccountListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).STMT_REQ_SRC_ACT.getTranId()}" value-ref="statementReqAccountListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).STMT_REQ_VALIDATE.getTranId()}" value-ref="validateStatementReqRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).STMT_REQ_CONFIRM.getTranId()}" value-ref="statementRequestConfirmRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BEN_INT_ACC_NO.getTranId()}" value-ref="registerBenfGetAccNo"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BEN_INT_BRANCH_CODE_LETTER.getTranId()}" value-ref="registerBenfInterBranchCodeLetter"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BEN_INT_BRANCH_LIST.getTranId()}" value-ref="registerBenfBranchListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BEN_INT_BRANCH_CODE.getTranId()}" value-ref="registerBenfGetBranchCode"/>
+		<!--CR#48 -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BEN_INT_ACC_NUMBER.getTranId()}" value-ref="registerBenfGetAccNo"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BEN_INT_NICK_NAME.getTranId()}" value-ref="registerBenfGetBenfNickName"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BEN_INT_VALIDATE.getTranId()}" value-ref="registerBenfInternalValidateReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BEN_INT_CONFIRM.getTranId()}" value-ref="registerBenfInternalConfirmReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MINI_STMT_SEL_AC_LIST.getTranId()}" value-ref="accountSummaryListBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MINI_STMT_SEL_AC.getTranId()}" value-ref="accountSummaryBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MINI_STMT_RESP.getTranId()}" value-ref="cASADetailBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).BAL_ENQ_AC_LIST.getTranId()}" value-ref="accountSummaryListBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).BAL_ENQ_SEL_AC.getTranId()}" value-ref="accountSummaryBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).BAL_ENQ_ACCT_DET.getTranId()}" value-ref="balEnqAccntDetailBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).WLCME_BAL_ENQ_SEL_AC.getTranId()}" value-ref="wlcmScrnOthAcctAccountSummaryBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).WLCME_BAL_ENQ_ACCT_DET.getTranId()}" value-ref="wlcmScrnOthAcctBalEnqAccntDetailBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).PAY_BILLS_BILLER_LIST.getTranId()}" value-ref="payBillBillerList"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).PAY_BILLS_PAYEE_LIST.getTranId()}" value-ref="payBillPayeeList"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).PAY_BILLS_FROM_ACNT.getTranId()}" value-ref="payBillSelFrmAcnt"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).PAY_BILLS_ENTER_AMT.getTranId()}" value-ref="payBillEnterAmt"/>
+		<!-- Kadikope -->
+        <entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).PAY_BILLS_CARD.getTranId()}" value-ref="payBillEnterCreditORCasa"/>
+        <entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).PAY_BILLS_CARD_LIST.getTranId()}" value-ref="payBillEnterCreditList"/>
+		<!-- Kadikope -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).PAY_BILLS_SUBMIT.getTranId()}" value-ref="payBillSubmit"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).PAY_BILLS_CONFIRM.getTranId()}" value-ref="payBillConfirm"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EXT_BANK_FT_BENEF_LIST.getTranId()}" value-ref="othBnkRetrieveBenfListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EXT_BANK_FT_TO_AC.getTranId()}" value-ref="othBnkPayeeLstRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EXT_BANK_FT_ENTER_AMT.getTranId()}" value-ref="othBnkEnterAmount"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EXT_BANK_FT_SEL_FRM_AC.getTranId()}" value-ref="othBnkSelFrmAcntReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EXT_BANK_FT_PAYEE_INFO.getTranId()}" value-ref="othBnkPayeeInfoRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EXT_BANK_FT_VALIDATE.getTranId()}" value-ref="othBnkFrmValReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EXT_BANK_FT_EXECUTE.getTranId()}" value-ref="othBnkExecReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).VIEW_BILLERS_RET_LIST.getTranId()}" value-ref="viewBillerBenfListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).VIEW_BILLERS_LIST.getTranId()}" value-ref="payBillPayeeList"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).VIEW_BILLER_DETAILS.getTranId()}" value-ref="viewBillerDetailsRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).VLPB_RETRIEVE_BILLER_LST.getTranId()}" value-ref="vLPBRetrieveBillerLstRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).VLPB_BILLER_LST.getTranId()}" value-ref="vLPBBillerLstRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).VLPB_DETAILS.getTranId()}" value-ref="vLPBBillerDetRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LANG_PREF_RETRIEVE_LANGUAGE.getTranId()}" value-ref="getLanguagesRetrieveLangListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LANG_PREF_GET_LANG_LIST.getTranId()}" value-ref="getLanguagesReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LANG_PREF_VALIDATE.getTranId()}" value-ref="getLanguagesValidateReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LANG_PREF_CONFIRM.getTranId()}" value-ref="getLanguagesConfirmReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CHNG_PIN_OLD_PASS.getTranId()}" value-ref="changePinOldPassReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CHNG_PIN_NEW_PASS.getTranId()}" value-ref="changePinNewPassReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CHNG_PIN_CNF_NEW_PASS.getTranId()}" value-ref="changePinReenterNewPassReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CHNG_PIN_CNF_CONFIRM.getTranId()}" value-ref="changePinConfirmReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BILLER_GET_CKBILLERS.getTranId()}" value-ref="regbGetBillersCheckReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BILLER_GET_BILLERS.getTranId()}" value-ref="regbGetBillersReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BILLER_AREA_SEARCHER.getTranId()}" value-ref="regbGetBillerAreaSearchCharReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BILLER_AREA_CODE.getTranId()}" value-ref="regbGetBillerAreaCodeReqBuilder"/>
+		<!-- CR-57 -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BILLER_DSTV_TYPE.getTranId()}" value-ref="regbGetDstvBillerReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BILLER_GET_REFNO.getTranId()}" value-ref="regbGetRefNoReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BILLER_NICK_NAME.getTranId()}" value-ref="regbGetBillerNickNameReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BILLER_VALIDATE.getTranId()}" value-ref="regbValidateReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BILLER_CONFIRM.getTranId()}" value-ref="regbConfirmReqBuilder"/>
+		<!-- WUC change 20/06/2017 -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_WUC_BILLER_TYPE.getTranId()}" value-ref="regbWUCCustomerRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).DEL_BILLERS_CKLIST.getTranId()}" value-ref="delBlrsLstRetReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).DEL_BILLERS_LIST.getTranId()}" value-ref="delBlrsLstReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).DEL_BILLER_DETAILS.getTranId()}" value-ref="delBillersValidateRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).DEL_BILLER_CONFIRM.getTranId()}" value-ref="delBillrConfirmRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).INT_NR_FT_TO_AC.getTranId()}" value-ref="intNonRegFTGetAccNo"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).INT_NR_FT_BRANCH_CODE_LETTER.getTranId()}" value-ref="intNonRegFTGetBranchCodeLetter"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).INT_NR_FT_BRANCH_CODE.getTranId()}" value-ref="intNonRegFTGetBranchCode"/>
+		<!--CR#48 -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).INT_NR_FT_TO_AC_NO.getTranId()}" value-ref="intNonRegFTGetAccNo"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).INT_NR_FT_AMOUNT.getTranId()}" value-ref="intNonRegEnterAmount"/>
+		<!-- Kadikope  -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).INT_NR_FT_CREDIT_OPTION.getTranId()}" value-ref="intNonRegCASAOrCreditRequestBuilder" />
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).INT_NR_FT_CREDIT_LIST.getTranId()}" value-ref="intNonRegFTCCListRequestBuilder" />
+		<!-- Kadikope -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).INT_NR_FT_NICK_NAME.getTranId()}" value-ref="intNonRegFTGetBeneficiaryName"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).INT_NR_FT_SOURCE_LIST.getTranId()}" value-ref="intNonRegRetrieveSrcAccountListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).INT_NR_FT_VALIDATE.getTranId()}" value-ref="intNonRegValidateReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).INT_NR_FT_CONFIRM.getTranId()}" value-ref="intNonRegConfirmReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BEN_EXT_BANK_CODE.getTranId()}" value-ref="registerBenfExtGetBankCode"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BEN_EXT_BANK_CODE_LIST.getTranId()}" value-ref="registerBenfExtSelectBankCode"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BEN_EXT_BRANCH_CODE.getTranId()}" value-ref="registerBenfExtGetBranchCode"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BEN_EXT_BRANCH_CODE_LIST.getTranId()}" value-ref="registerBenfExtSelectBranchCode"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BEN_EXT_ACC_NO.getTranId()}" value-ref="registerBenfExtGetAccNo"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BEN_EXT_BENF_NAME.getTranId()}" value-ref="registerBenfExtGetBenfName"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BEN_EXT_NICK_NAME.getTranId()}" value-ref="registerBenfExtGetBenfNickName"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BEN_EXT_VALIDATE.getTranId()}" value-ref="registerBenfExtValidateReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BEN_EXT_CONFIRM.getTranId()}" value-ref="registerBenfExtConfirmReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ONE_TIME_BILL_PYMNT_BLRS_CKLST.getTranId()}" value-ref="oneTimeCheckBillPayBillersRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ONE_TIME_BILL_PYMNT_BLRS_LST.getTranId()}" value-ref="oneTimeBillPayBillersRequest"/>
+		<!-- CR-57 -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ONE_TIME_BILL_PYMNT_DSTVTYPE.getTranId()}" value-ref="oneTimeBillPayDstvTypeReqBuilder"/>
+		<!--  <entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ONE_TIME_BILL_PYMNT_AREA_SEARCHER.getTranId()}"   value-ref="oneTimeBillPayBillAreaSearcherRequestBuilder"/>-->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ONE_TIME_BILL_PYMNT_AREA_CODE.getTranId()}" value-ref="oneTimeBillPayBillAreaCodeRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ONE_TIME_BILL_PYMNT_BL_REF.getTranId()}" value-ref="oneTimeBillPayBillRefIdRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ONE_TIME_BILL_PYMNT_ENTER_AMT.getTranId()}" value-ref="OneTimeBillPayEnterAmountRequest"/>
+
+		<!-- WUC change 19/06/2017 -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ONE_TIME_BILL_PYMNT_WUC_CUSTOMER_NUMBER.getTranId()}" value-ref="oneTimeBillPayEnterWUCCustomerRequest"/>
+
+		<!-- Kadikope -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ONE_TIME_BILL_PYMNT_ENTER_CARD.getTranId()}" value-ref="OneTimeBillPayEnterCreditORCasaRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ONE_TIME_BILL_PYMNT_ENTER_CARD_LIST.getTranId()}" value-ref="OneTimeBillPayEnterCreditCardListRequest"/>
+		<!-- Kadikope -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ONE_TIME_BILL_PYMNT_ACNT_NOS.getTranId()}" value-ref="oneTimeBillPayAcctNumRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ONE_TIME_BILL_PYMNT_CONFIRM.getTranId()}" value-ref="oneTimeBillPayConfirmRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ONE_TIME_BILL_PYMNT_SUBMIT.getTranId()}" value-ref="oneTimeBillPayBillDetailsRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AIRTIME_SRC_MNO_LIST.getTranId()}" value-ref="AirtimeTopupSrcMnosRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AIRTIME_TOPUP_MSISDN_TYPE.getTranId()}" value-ref="AirtimeTopUpMsisdnTypeRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AIRTIME_MNO_LIST.getTranId()}" value-ref="airtimeInitRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AIRTIME_MOB_NUM.getTranId()}" value-ref="airtimeEnterMobileRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AIRTIME_AMOUNT.getTranId()}" value-ref="airtimeEnterAmountRequest"/>
+		<!-- Kadikope -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AIRTIME_CARD.getTranId()}" value-ref="airtimeEnterCreditORCasaRequest" />
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AIRTIME_CARD_LIST.getTranId()}" value-ref="airtimeEnterCreditListRequest" />
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AIRTIME_CARD_VALIDATE.getTranId()}" value-ref="airtimeEnterCreditCardValidateRequest" />
+	    <!-- Kadikope -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AIRTIME_ACCT_LIST.getTranId()}" value-ref="airtimeSelectAccountRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AIRTIME_CONFIRM.getTranId()}" value-ref="airtimeValidateRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AIRTIME_SUBMIT.getTranId()}" value-ref="airtimeSubmitRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FD_VIEW_RATE_ENTER_AMT.getTranId()}" value-ref="fDViewEnterAmountRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FD_VIEW_TENURE.getTranId()}" value-ref="fDViewTenuresRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FD_VIEW_RATES.getTranId()}" value-ref="fDViewRatesRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FD_APPLY_SEL_AC.getTranId()}" value-ref="accountSummaryBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FD_APPLY_ENTER_AMT.getTranId()}" value-ref="fDApplyEnterAmountRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FD_APPLY_SEL_TENURE.getTranId()}" value-ref="fDApplyEnterTenureRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FD_APPLY_SEL_PROD.getTranId()}" value-ref="fDApplySelectProductRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FD_APPLY_CONFIRM.getTranId()}" value-ref="fDApplyConfirmRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FD_APPLY_VALIDATE.getTranId()}" value-ref="fDApplyValidateRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FD_APPLY_SUBMIT.getTranId()}" value-ref="fDApplySubmitRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_MNOS_SRC_LST.getTranId()}" value-ref="MobileWalletTopupSrcMnosRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_MNOS_LST.getTranId()}" value-ref="mobileWalletTopupMnosRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_ACCOUNT_NUMBER.getTranId()}" value-ref="mobileWalletTopupAccountNumberRequest"/>
+		<!--CR#47 -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_MSISDN_TYPE.getTranId()}" value-ref="mobileWalletMsisdnTypeRequest" />
+		<!--CR#47 -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_AMOUNT.getTranId()}" value-ref="mobileWalletTopupAmountRequest"/>
+		<!-- Kadi Kope Credit Card -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_CREDIT_CARD.getTranId()}" value-ref="mobileWalletTopupCreditCardORCasaRequest" />
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_CREDIT_CARD_LIST.getTranId()}" value-ref="mobileWalletTopupCreditCardListRequest" />
+
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_FROM_ACCOUNT.getTranId()}" value-ref="mobileWalletTopupFromAccountRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_VALIDATE.getTranId()}" value-ref="mobileWalletTopupValidateRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_CONFIRM.getTranId()}" value-ref="mobileWalletTopupConfirmRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).USER_VERIFICATION.getTranId()}" value-ref="verifyUserRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).USER_AUTHENTICATION.getTranId()}" value-ref="authenticateUserRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MINI_STMT_MAIN_ACCT_SEL_AC.getTranId()}" value-ref="mainAcctMiniStmtReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).BAL_ENQ_MAIN_ACCT_SEL_AC.getTranId()}" value-ref="mainAcctBalEnqMiniStmtReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).TWO_FACTOR_INIT.getTranId()}" value-ref="twoFactorAuthInitReq"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).TWO_FACTOR_GENERATE.getTranId()}" value-ref="twoFactorAuthGenerateReq"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).TWO_FACTOR_VERIFY.getTranId()}" value-ref="twoFactorAuthVerifyRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).SELFREG_BRANCH_SEARCHER.getTranId()}" value-ref="selfRegisterBranchNameRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).SELFREG_BRANCH.getTranId()}" value-ref="selfRegisterBranchCodeRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).SELFREG_ACCOUNT.getTranId()}" value-ref="selfRegisterAccountRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).SELFREG_TERM_N_COND_1.getTranId()}" value-ref="selfRegisterTnC1Request"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).SELFREG_INIT.getTranId()}" value-ref="selfRegisterInitRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).SELFREG_GET_QUESTION.getTranId()}" value-ref="selfRegisterChallengeQnRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).SELFREG_ANSWER_ONE.getTranId()}" value-ref="selfRegisterChallengeAnsRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).SELFREG_EXECUTE.getTranId()}" value-ref="selfRegisterExecuteRequest"/>
+		<!--ADDED TO INCLUDE DEBIT CARD VALIDATION IN SELF REGISTRATION	-->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).SELFREG_DEBITCARD_NO.getTranId()}" value-ref="selfRegisterDebitCardNoRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).SELFREG_DEBITCARD_EXPIRYDATE.getTranId()}" value-ref="selfRegisterDebitExpiryDateRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).SELFREG_DEBITCARD_VERIFICATION.getTranId()}" value-ref="selfRegisterDebitCardVerificationRequestBuilder"/>
+		<!--END DEBIT CARD VALIDATION IN SELF REGISTRATION	-->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FIRST_LOGIN_CHNG_PIN_NEW_PASS.getTranId()}" value-ref="firstTimePinNewPassReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FIRST_LOGIN_CHNG_PIN_CNF_NEW_PASS.getTranId()}" value-ref="changePinReenterNewPassReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FIRST_LOGIN_CHNG_PIN_CNF_CONFIRM.getTranId()}" value-ref="firstLoginChangePinConfirmReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).HELLOMONEY_DEMO.getTranId()}" value-ref="helloMoneyDemoRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CONTACT_US.getTranId()}" value-ref="contactUsRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CHANGE_LANGUAGE_GET_LANG_LIST.getTranId()}" value-ref="changeLanguageReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CHANGE_LANGUAGE_EXECUTE.getTranId()}" value-ref="changeLanguageExecuteReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ONE_TIME_CASH_SEND_MOBILE_NUM.getTranId()}" value-ref="oneTimeCashSendGetMobileNoRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ONE_TIME_CASH_SEND_AMOUNT.getTranId()}" value-ref="oneTimeCashSendGetAmountRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ONE_TIME_CASH_SEND_SRC_ACCT_LIST.getTranId()}" value-ref="oneTimeCashSendGetSrcAcctRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ONE_TIME_CASH_SEND_ATM_PIN.getTranId()}" value-ref="oneTimeCashSendGetAtmPinRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ONE_TIME_CASH_SEND_REENTERED_ATM_PIN.getTranId()}" value-ref="oneTimeCashSendGetReenteredAtmPinRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ONE_TIME_CASH_SEND_VALIDATE.getTranId()}" value-ref="oneTimeCashSendValidateRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ONE_TIME_CASH_SEND_SUBMIT.getTranId()}" value-ref="oneTimeCashSendSubmitRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BEN_INT_BENF_LIST.getTranId()}" value-ref="editBenfInternalPayeeAcctListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BEN_INT_BENF_ID.getTranId()}" value-ref="editBenfInternalPayeeRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BEN_INT_ACC_NO.getTranId()}" value-ref="editBenfInternalGetAccNo"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BEN_INT_BRANCH_CODE_SEARCHER.getTranId()}" value-ref="editBenfInternalBranchCodeSearcher"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BEN_INT_BRANCH_LIST.getTranId()}" value-ref="editBenfInternalBranchList"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BEN_INT_ACC_NUMBER.getTranId()}" value-ref="editBenfInternalGetAccNo"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BEN_INT_NICK_NAME.getTranId()}" value-ref="editBenfInternalGetBenfNickNameRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BEN_INT_VALIDATE.getTranId()}" value-ref="editBenfInternalValidateRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BEN_INT_CONFIRM.getTranId()}" value-ref="editBenfInternalConfirmRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FX_RATE_GET_CURR.getTranId()}" value-ref="fxRateGetCurrencyRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FX_RATE_CONVERT.getTranId()}" value-ref="fxRateConvertRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).OLD_SESSION.getTranId()}" value-ref="oldSessionRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).NEW_SESSION.getTranId()}" value-ref="newSessionRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AT_A_GLANCE_CREDIT_CARD_LIST.getTranId()}" value-ref="RetrieveNoOfCardListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AT_A_GLANCE_CARD_LIST.getTranId()}" value-ref="retrieveCreditCardListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AT_A_GLANCE_CARD_DETAILS.getTranId()}" value-ref="retrieveCreditCardDetailsRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CR_CARD_STAT_LIST.getTranId()}" value-ref="ccStatCreditCardListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CR_CARD_STAT_TRAN_DATE_LIST.getTranId()}" value-ref="ccStatDateListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CR_CARD_STAT_DETAILS.getTranId()}" value-ref="ccStatDetailsRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CR_CARD_PAYMENT_LIST.getTranId()}" value-ref="creditCardPaymentListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CR_CARD_PAYMENT_CARD_DETAILS.getTranId()}" value-ref="creditCardPaymentDetailsRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CR_CARD_PAYMENT_AMOUNT.getTranId()}" value-ref="creditCardPaymentGetAmountRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CR_CARD_PAYMENT_SRC_ACC_NO.getTranId()}" value-ref="creditCardPaymentGetSrcAcctRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CR_CARD_PAYMENT_VALIDATE.getTranId()}" value-ref="creditCardPaymentValidateRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CR_CARD_PAYMENT_SUBMIT.getTranId()}" value-ref="creditCardPaymentSubmitRequestBuilder"/>
+		<!--CR#46-->
+		<!--<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LINK_CR_CARD_NUMBER.getTranId()}"   value-ref="creditCardLinkRequestBuilder"/>	-->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LINK_CR_CARD_CONFIRM.getTranId()}" value-ref="creditCardLinkConfirmRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LINK_CR_CARD_END.getTranId()}" value-ref="creditCardLinkSubmitRequestBuilder"/>
+		<!--CR#46-->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BENF_EXT_BENEF_LIST.getTranId()}" value-ref="editBenfExtRetrieveBenfListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BENF_EXT_BANK_CODE.getTranId()}" value-ref="editBenfExtGetBankSearchLetterRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BENF_EXT_BANK_CODE_LIST.getTranId()}" value-ref="editBenfExtRetrieveBankListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BENF_EXT_BRANCH_CODE.getTranId()}" value-ref="editBenfExtGetBranchSearchLetterRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BENF_EXT_BRANCH_CODE_LIST.getTranId()}" value-ref="editBenfExtRetrieveBranchListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BENF_EXT_ACC_NO.getTranId()}" value-ref="editBenfExtGetAccountNoRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BENF_EXT_BENF_NAME.getTranId()}" value-ref="editBenfExtGetBenfNameRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BENF_EXT_NICK_NAME.getTranId()}" value-ref="editBenfExtGetBenfNickNameRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BENF_EXT_VALIDATE.getTranId()}" value-ref="editBenfExtValidateRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BENF_EXT_CONFIRM.getTranId()}" value-ref="editBenfExtConfirmRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CR_CARD_UNBILLED_TRAN_CARD_LIST.getTranId()}" value-ref="ccUnbilledTranCreditCardListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CR_CARD_UNBILLED_TRAN_MERCHANT_LIST.getTranId()}" value-ref="ccUnbilledTranMerchantListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CR_CARD_UNBILLED_DETAILS.getTranId()}" value-ref="ccUnbilledTranDetailsRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).THIRD_PARTY_CC_PYMT_CC_NO.getTranId()}" value-ref="ccThirdPartyPayCardNoRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).THIRD_PARTY_CC_VALIDATE_CC_NO.getTranId()}" value-ref="ccThirdPartyPayValidateCardNoRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).THIRD_PARTY_CC_PYMT_AMT.getTranId()}" value-ref="ccThirdPartyPayAmtRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).THIRD_PARTY_CC_PYMT_FROM_ACNT.getTranId()}" value-ref="ccThirdPartyPayFrmAccRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).THIRD_PARTY_CC_PYMT_VALIDATE.getTranId()}" value-ref="ccThirdPartyPayValidateRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).THIRD_PARTY_CC_PYMT_CONFIRM.getTranId()}" value-ref="ccThirdPartyPayConfirmRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).BRANCH_LOCATOR_CITY_NAME.getTranId()}" value-ref="branchLocatorCityNameSearchLetterRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).BRANCH_LOCATOR_CITY_LIST.getTranId()}" value-ref="branchLocatorCityNameListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).BRANCH_LOCATOR_AREA_NAME.getTranId()}" value-ref="branchLocatorAreaNameSearchLetterRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).BRANCH_LOCATOR_AREA_LIST.getTranId()}" value-ref="branchLocatorAreaNameListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).BRANCH_LOCATOR_RESP.getTranId()}" value-ref="branchLocatorResponseRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ATM_LOCATOR_CITY_NAME.getTranId()}" value-ref="atmLocatorCityNameSearchLetterRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ATM_LOCATOR_CITY_LIST.getTranId()}" value-ref="atmLocatorCityNameListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ATM_LOCATOR_AREA_NAME.getTranId()}" value-ref="atmLocatorAreaNameSearchLetterRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ATM_LOCATOR_AREA_LIST.getTranId()}" value-ref="atmLocatorAreaNameListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ATM_LOCATOR_RESP.getTranId()}" value-ref="atmLocatorResponseRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).USER_MIGRATION_BRANCH_SEARCHER.getTranId()}" value-ref="userMigrationBranchSearcherRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).USER_MIGRATION_BRANCH_LIST.getTranId()}" value-ref="userMigrationBranchListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).USER_MIGRATION_ACCOUNT_NO.getTranId()}" value-ref="userMigrationAccountNoRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).USER_MIGRATION_INITIATION.getTranId()}" value-ref="userMigrationInitiateRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).USER_MIGRATION_DOB.getTranId()}" value-ref="userMigrationDOBRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).USER_MIGRATION_VERIFY_DOB.getTranId()}" value-ref="userMigrationVerifyDOBRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).USER_MIGRATION_NEW_PIN.getTranId()}" value-ref="userMigrationNewPinRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).USER_MIGRATION_REENTER_PIN.getTranId()}" value-ref="userMigrationReenterPinRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).USER_MIGRATION_SUBMIT.getTranId()}" value-ref="userMigrationSubmitRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).DINING_OFFER_CITY_LETTER.getTranId()}" value-ref="cityNameSearchLetterRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).DINING_OFFER_CITY_LIST.getTranId()}" value-ref="diningOfferCityListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).DINING_OFFER_RESTAURANT_LETTER.getTranId()}" value-ref="restaurantNameSearchLetterRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).DINING_OFFER_RESTAURANT_LIST.getTranId()}" value-ref="diningOfferRestaurantListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).DINING_OFFER_RESTAURANT_DTLS.getTranId()}" value-ref="diningOfferDetailsRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).INSTALLMENT_OFFER_PARTNER_LETTER.getTranId()}" value-ref="partnerNameSearchLetterRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).INSTALLMENT_OFFER_PARTNER_LIST.getTranId()}" value-ref="installmentOfferPartnerListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).INSTALLMENT_OFFER_PARTNER_DTLS.getTranId()}" value-ref="installmentOfferPartnerDetailsRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CALL_ME_BACK_AREA_LIST.getTranId()}" value-ref="businessAreaListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CALL_ME_BACK_CATEGORY_LIST.getTranId()}" value-ref="serviceCategoryListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CALL_ME_BACK_CATEGORY_DTLS.getTranId()}" value-ref="serviceCategoryDetailsRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).I_AM_INTERESTED_PRODUCT.getTranId()}" value-ref="interestedProductListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).I_AM_INTERESTED_SUB_PRODUCT.getTranId()}" value-ref="interestedSubProductListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).I_AM_INTERESTED_PRODUCT_DTLS.getTranId()}" value-ref="interestedProductDtlsRequestBuilder"/>
+		<!-- CR:73 Save Biller from Make One Time-->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ONE_TIME_BILL_PAYMENT_SAVE_BILLER_NICK_NAME.getTranId()}" value-ref="regbGetBillerNickNameReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ONE_TIME_BILL_PAYMENT_SAVE_BILLER_VALIDATE.getTranId()}" value-ref="regbValidateReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ONE_TIME_BILL_PAYMENT_SAVE_BILLER_CONFIRM.getTranId()}" value-ref="regbConfirmReqBuilder"/>
+		<!-- CR:73 Save Benefeciary from Fund Transfer to other Barclays-->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FUND_TRANSFER_OTHER_BARCLAYS_SAVE_BEN_INT_NICK_NAME.getTranId()}" value-ref="registerBenfGetBenfNickName"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FUND_TRANSFER_OTHER_BARCLAYS_SAVE_BEN_INT_VALIDATE.getTranId()}" value-ref="registerBenfInternalValidateReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FUND_TRANSFER_OTHER_BARCLAYS_SAVE_BEN_INT_CONFIRM.getTranId()}" value-ref="registerBenfInternalConfirmReqBuilder"/>
+		<!-- 	Forgot Pin Changes 	-->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FORGOT_PIN_INST_CONFIRM.getTranId()}" value-ref="forgotPinInstructionRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FORGOT_PIN_BRANCH_SEARCHER.getTranId()}" value-ref="selfRegisterBranchNameRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FORGOT_PIN_BRANCH.getTranId()}" value-ref="selfRegisterBranchCodeRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FORGOT_PIN_ACCOUNT.getTranId()}" value-ref="selfRegisterAccountRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FORGOT_PIN_TERM_N_COND_1.getTranId()}" value-ref="selfRegisterTnC1Request"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FORGOT_PIN_INIT.getTranId()}" value-ref="selfRegisterInitRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FORGOT_PIN_GET_QUESTION.getTranId()}" value-ref="selfRegisterChallengeQnRequest"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FORGOT_PIN_ANSWER_ONE.getTranId()}" value-ref="selfRegisterChallengeAnsRequest"/>
+		<!--<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FORGOT_PIN_EXECUTE.getTranId()}"   value-ref="selfRegisterExecuteRequest"/>
+
+		-->
+		<!--ADDED TO INCLUDE DEBIT CARD VALIDATION IN SELF REGISTRATION	-->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FORGOT_PIN_DEBITCARD_NO.getTranId()}" value-ref="selfRegisterDebitCardNoRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FORGOT_PIN_DEBITCARD_EXPIRYDATE.getTranId()}" value-ref="selfRegisterDebitExpiryDateRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FORGOT_PIN_DEBITCARD_VERIFICATION.getTranId()}" value-ref="selfRegisterDebitCardVerificationRequestBuilder"/>
+		<!--END DEBIT CARD VALIDATION IN SELF REGISTRATION	-->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FORGOT_PIN_CHNG_PIN_NEW_PASS.getTranId()}" value-ref="changePinNewPassReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FORGOT_PIN_CHNG_PIN_CNF_NEW_PASS.getTranId()}" value-ref="changePinReenterNewPassReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FORGOT_PIN_CHNG_PIN_CNF_CONFIRM.getTranId()}" value-ref="changePinConfirmReqBuilder"/>
+		<!-- Lead Generation -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_PROD_LST.getTranId()}" value-ref="leadGenerationProdListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_PROD_SUB_LST.getTranId()}" value-ref="leadGenerationProdSubListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_CONFIRM.getTranId()}" value-ref="leadGenerationConfirmRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_SUBMIT.getTranId()}" value-ref="leadGenerationSubmitRequestBuilder"/>
+<!-- KITS Changes Starts -->
+		<!--Registration-->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KITS_REG_ACCOUNT_NUM.getTranId()}" value-ref="kitsRegisterAccountNumberRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KITS_REG_PRIMARY_ACC.getTranId()}" value-ref="kitsRegisterPrimaryAccountRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KITS_REG_CONFIRM.getTranId()}" value-ref="kitsRegisterConfirmDetailsRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KITS_REG_SUBMIT.getTranId()}" value-ref="kitsRegisterSubmitRequestBuilder"/>
+		<!--Deregistration-->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KITS_DEREG_ACCOUNT_NUM.getTranId()}" value-ref="kitsDeregisterAccountNumberRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KITS_DEREG_CONFIRM.getTranId()}" value-ref="kitsDeregisterConfirmDetailsRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KITS_DEREG_SUBMIT.getTranId()}" value-ref="kitsDeregisterSubmitRequestBuilder"/>
+		<!-- Pay To Phone -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KITS_STP_ACCOUNT_NUM.getTranId()}" value-ref="kitsSendToPhoneAccountNumberRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KITS_STP_MOBILE_NUM.getTranId()}" value-ref="kitsSendToPhoneMobileNumberRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KITS_STP_BANK_NAME.getTranId()}" value-ref="kitsSendToPhoneBankListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KITS_STP_AMOUNT.getTranId()}" value-ref="kitsSendToPhoneAmountRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KITS_STP_REASON.getTranId()}" value-ref="kitsSendToPhoneReasonRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KITS_STP_CONFIRM.getTranId()}" value-ref="kitsSendToPhoneConfirmDetailsRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KITS_STP_SUBMIT.getTranId()}" value-ref="kitsSendToPhoneSubmitRequestBuilder"/>
+		<!-- Pay To Account -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KITS_STA_ACCOUNT_NUM.getTranId()}" value-ref="kitsSendToAccountAccountNumberRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KITS_STA_ACCOUNT_NUMBER.getTranId()}" value-ref="kitsSendToAccountAccountNumRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KITS_STA_BANK_CODE.getTranId()}" value-ref="kitsSendToAccountBankCodeRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KITS_STA_BANK_CODE_LIST.getTranId()}" value-ref="kitsSendToAccountBankListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KITS_STA_AMOUNT.getTranId()}" value-ref="kitsSendToAccountAmountRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KITS_STA_REASON.getTranId()}" value-ref="kitsSendToAccountReasonRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KITS_STA_CONFIRM.getTranId()}" value-ref="kitsSendToAccountConfirmDetailsRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KITS_STA_SUBMIT.getTranId()}" value-ref="kitsSendToAccountSubmitRequestBuilder"/>
+		<!-- KITS Changes Ends -->
+		<!-- CR82 Airtime -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AIRTIME_TOPUP_PAYMENT_TYPE.getTranId()}"   value-ref="AirtimeTopUpPaymentTypeRequest"/>
+		<!-- CR82 NEW bene -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AIRTIME_TOPUP_NEW_BENE_SRC_MON.getTranId()}"   value-ref="AirtimeTopupNewBeneficiarySrcMnosRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AIRTIME_TOPUP_NEW_BENE_MOB_NUM.getTranId()}"   value-ref="AirtimeEnterMobileNewBeneficiaryRequest"/>
+		<!-- CR82 NEW bene End-->
+
+		<!-- Save Benf One-Off Start-->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AIRTIME_TOPUP_SAVE_BEN_NICK_NAME.getTranId()}"   value-ref="AirtimeTopUpSavBnfNickNameReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AIRTIME_TOPUP_SAVE_BEN_VALIDATE.getTranId()}"   value-ref="AirtimeTopUpSavBnfValidateReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AIRTIME_TOPUP_SAVE_BEN_CONFIRM.getTranId()}"   value-ref="AirtimeTopUpSavBnfConfirmReqBuilder"/>
+		<!-- Save Benf One-Off END-->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AIRTIME_TOPUP_BILLER_LIST.getTranId()}"   value-ref="airtimeTopUpBillerListReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AIRTIME_TOPUP_PAYEE_LIST.getTranId()}"   value-ref="airtimeTopUpPayeeListReqBuilder"/>
+		 <entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AIRTIME_TOPUP_BENF_DTlS.getTranId()}"   value-ref="AirtimeTopUpBenfDtlsReqBuilder"/>
+		<!--Delete bene		-->
+				 <entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AIRTIME_TOPUP_DEL_BILLER_DETAILS.getTranId()}"   value-ref="airtimeTopUpDelBillersValidateRequest"/>
+		  <entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AIRTIME_TOPUP_DEL_BILLER_CONFIRM.getTranId()}"   value-ref="airtimeTopUpDelBillrConfirmRequest"/>
+		<!--edit bene		-->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AIRTIME_TOPUP_EDIT_BEN_VALIDATE.getTranId()}"   value-ref="AirtimeTopUpEditBnfValidateReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AIRTIME_TOPUP_EDIT_BILLER_CONFIRM.getTranId()}"   value-ref="airtimeTopUpEditBillrConfirmRequest"/>
+
+		<!-- CR82 Airtime End-->
+		<!-- CR82 MobileWallet-->
+            <entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_PAYMENT_TYPE.getTranId()}"   value-ref="mobileWalletTopUpPaymentTypeRequest"/>
+            <entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_SAVE_BEN_NICK_NAME.getTranId()}"   value-ref="mobileWalletTopUpSavBnfNickNameReqBuilder"/>
+            <entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_SAVE_BEN_VALIDATE.getTranId()}"   value-ref="mobileWalletTopUpSavBnfValidateReqBuilder"/>
+            <entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_SAVE_BEN_CONFIRM.getTranId()}"   value-ref="mobileWalletTopUpSavBnfConfirmReqBuilder"/>
+			<!-- CR82 NEW bene -->
+			<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_NEW_BENE_SRC_MON.getTranId()}"   value-ref="MobileWalletNewBeneficiarySrcMnosRequestBuilder"/>
+			<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_NEW_BENE_MOB_NUM.getTranId()}"   value-ref="MobileWalletEnterMobileNewBeneficiaryRequest"/>
+			<!-- CR82 NEW bene End-->
+        	<!--Delete bene		-->
+		    <entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_DEL_BILLER_DETAILS.getTranId()}"   value-ref="mobileWalletTopUpDelBillersValidateRequest"/>
+		    <entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_DEL_BILLER_CONFIRM.getTranId()}"   value-ref="mobileWalletTopUpDelBillrConfirmRequest"/>
+			<!--saved bene		-->
+			<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_BILLER_LIST.getTranId()}"   value-ref="mobileWalletTopUpBillerListReqBuilder"/>
+			<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_PAYEE_LIST.getTranId()}"   value-ref="mobileWalletTopUpPayeeListReqBuilder"/>
+			<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_BENF_DTlS.getTranId()}"   value-ref="mobileWalletTopUpBenfDtlstReqBuilder"/>
+			<!--edit bene		-->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_EDIT_BEN_VALIDATE.getTranId()}"   value-ref="mobileWalletTopUpEditBnfValidateReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_EDIT_BILLER_CONFIRM.getTranId()}"   value-ref="mobileWalletTopUpEditBillrConfirmRequest"/>
+
+		<!-- CR82 MobileWallet End-->
+
+		<!-- CR85 Start -->
+		<!-- Register Beneficiary -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BENF_BRANCH_SEARCHER.getTranId()}"   value-ref="registerBenfExtGetBankCode"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BENF_SELECT_BANK_NAME.getTranId()}"   value-ref="registerBenfExtSelectBankCode"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BENF_ENTER_BRANCH_NAME.getTranId()}"   value-ref="registerBenfExtGetBranchCode"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BENF_SELECT_BRANCH_NAME.getTranId()}"   value-ref="registerBenfExtSelectBranchCode"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BENF_BENF_ACNO.getTranId()}"   value-ref="registerBenfExtGetAccNo"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BENF_BENF_ADDRESS.getTranId()}"   value-ref="registerBenfExtGetAddress"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BENF_BENF_CITY.getTranId()}"   value-ref="registerBenfExtGetCity"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BENF_BENF_NICK_NAME.getTranId()}" value-ref="registerBenfExtGetBenfNickName"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BENF_BENF_CONFIRM.getTranId()}" value-ref="registerBenfExtValidateReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BENF_BENF_SUBMIT.getTranId()}" value-ref="registerBenfExtConfirmReqBuilder"/>
+
+		<!-- Fund Transfer -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KE_EXT_BANK_FT_BENEF_LIST.getTranId()}" value-ref="keToOthBnkRetrieveBenfListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KE_EXT_BANK_FT_TO_AC.getTranId()}" value-ref="keToOthBnkPayeeLstRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KE_EXT_BANK_FT_ENTER_AMT.getTranId()}" value-ref="keToOthBnkEnterAmount"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KE_EXT_BANK_FT_SEL_FRM_AC.getTranId()}" value-ref="keToOthBnkSelFrmAcntReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KE_EXT_BANK_FT_RSO_PAYMENT.getTranId()}" value-ref="keToOthBnkReasonOfPaymentReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KE_EXT_BANK_FT_PAYEE_INFO.getTranId()}" value-ref="keToOthBnkPayeeInfoRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KE_EXT_BANK_FT_VALIDATE.getTranId()}" value-ref="keToOthBnkFrmValReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KE_EXT_BANK_FT_EXECUTE.getTranId()}" value-ref="keToOthBnkExecReqBuilder"/>
+
+		<!-- Edit Beneficiary -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BENF_BENEFICIARY_NAME.getTranId()}" value-ref="othBnkBeneficiaryNameReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BENF_BRANCH_SEARCHER.getTranId()}" value-ref="othBnkBankSearchReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BENF_SELECT_BANK_NAME.getTranId()}" value-ref="othBnkSelectBankNameReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BENF_ENTER_BRANCH_NAME.getTranId()}" value-ref="othBnkBranchSearchReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BENF_SELECT_BRANCH_NAME.getTranId()}" value-ref="othBnkSelectBranchReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BENF_BENF_ACNO.getTranId()}" value-ref="othBnkSelectAcnoReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BENF_BENF_ADDRESS.getTranId()}" value-ref="othBnkAddressReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BENF_BENF_NICK_NAME.getTranId()}" value-ref="othBnkNickNameReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BENF_BENF_CONFIRM.getTranId()}" value-ref="othBnkConfirmReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).EDIT_BENF_BENF_SUBMIT.getTranId()}" value-ref="othBnkSubmitReqBuilder"/>
+
+		<!-- Delete Beneficiary -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).OTHER_BANKACC_DEL_BENF_PAYEE_LIST.getTranId()}" value-ref="oBADBRGetBenfListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).OTHER_BANKACC_DEL_BENF_PAYEE.getTranId()}" value-ref="obadbRPayeeLstRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).OTHER_BANKACC_DEL_BENF_VALIDATE.getTranId()}" value-ref="obadbRValidateRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).OTHER_BANKACC_DEL_BENF_CONFIRM.getTranId()}" value-ref="obadbRConfirmRequestBuilder"/>
+
+		<!-- CR85 End -->
+
+		<!-- MZ DFT Start -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).REG_BENF_GET_NIB_NO.getTranId()}" value-ref="registerBeneficiaryGetNIBNoRequestBuilder"/>
+		<!-- MZ DFT End -->
+
+		<!-- GHIPS -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_BANK_SEARCH.getTranId()}" value-ref="ghipsOneOffBnkSearchRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_BANK_LIST.getTranId()}" value-ref="ghipsOneOffBnkListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_BANK_ACC_NO.getTranId()}" value-ref="ghipsOneOffBnkAcnoRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_TRANSFER_AMT.getTranId()}" value-ref="ghipsOneOffTransferAmtRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_TRANSFER_FROM_ACC_LIST.getTranId()}" value-ref="ghipsOneOffFromAccListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_PAYMENT_REASON_LIST.getTranId()}" value-ref="ghipsOneOffPaymentReasonListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_PAYEE_INFO.getTranId()}" value-ref="ghipsOneOffPayeeInfoRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_FUND_TRANSFER_CONFIRM.getTranId()}" value-ref="ghipsOneOffFundTransferConfirmRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_FUND_TRANSFER_SUBMIT.getTranId()}" value-ref="ghipsOneOffFundTransferSubmitRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_FUND_TRANSFER_NICK_NAME.getTranId()}" value-ref="ghipsOneOffBenefNickNameRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_FUND_TRANSFER_NICK_NAME_CONFIRM.getTranId()}" value-ref="ghipsOneOffBenefConfirmRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_FUND_TRANSFER_NICK_NAME_SUBMIT.getTranId()}" value-ref="ghipsOneOffBenefConfirmSuccessRequestBuilder"/>
+
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_BENEF_LIST.getTranId()}" value-ref="ghipsSaveBenfListRequestBuilder" />
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_OTHER_BANK_FT_TO_AC.getTranId()}" value-ref="ghipsSaveBenefOtherBankPayeeRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_OTHER_BANK_FT_BENEF_INFO.getTranId()}" value-ref="ghipsSaveBenefOtherBankBenefInfoRequestBuilder" />
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_OTHER_BANK_FT_ENTER_AMT.getTranId()}" value-ref="ghipsSaveBenefEnterAmountRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_OTHER_BANK_FT_AMT.getTranId()}" value-ref="ghipsSaveBenefTransferAmtRequestBuilder" />
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_OTHER_BANK_FT_PAYMENT_REASON_LIST.getTranId()}" value-ref="ghipsSaveBenefReasonOfPaymentReqBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_OTHER_BANK_FT_PAYEE_INFO.getTranId()}" value-ref="ghipsSaveBenefPayeeInfoRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_OTHER_BANK_FT_CONFIRM.getTranId()}" value-ref="ghipsSaveBenefConfirmRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_OTHER_BANK_FT_SUBMIT.getTranId()}" value-ref="ghipsSaveBenefSubmitRequestBuilder"/>
+
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_REGISTER_BENEF_NON_BARCLAYS_BANK_SEARCH.getTranId()}"  value-ref="ghipsRegisterBenefSearchBankRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_REGISTER_BENEF_BANK_LIST.getTranId()}"  value-ref="ghipsRegisterBenefSelectBankNameRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_REGISTER_BENEF_BANK_ACC_NO.getTranId()}" value-ref="ghipsRegisterBenefBnkAcnoRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_REGISTER_BENEF_BANK_NICK_NAME.getTranId()}" value-ref="ghipsRegisterBenefNickNameRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_REGISTER_BENEF_BANK_CONFIRM.getTranId()}" value-ref="ghipsRegisterBenefConfirmRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_REGISTER_BENEF_BANK_ADD.getTranId()}" value-ref="ghipsRegisterBenefAddRequestBuilder"/>
+
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_DELETE_BENEF_NICK_NAME_LIST.getTranId()}"  value-ref="ghipsDelBenfListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_DELETE_BENEF_PAYEE.getTranId()}"  value-ref="ghipsDelBenfPayeeRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_DELETE_BENEF_CONFIRM.getTranId()}"  value-ref="ghipsDelBenfConfirmRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).GHIPS_DELETE_BENEF_SUBMIT.getTranId()}"  value-ref="ghipsDelBenfSubmitRequestBuilder"/>
+		<!--FreeDialUSSD STARTS  -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FREE_DIAL_SRC_MNO_LIST.getTranId()}" value-ref="freeDialSrcMnoListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FREE_DIAL_MNO_LIST.getTranId()}" value-ref="freeDialMnoListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FREE_DIAL_AMOUNT.getTranId()}"  value-ref="freeDialAmountRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FREE_DIAL_ACCT_LIST.getTranId()}"  value-ref="freeDialAccListRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FREE_DIAL_CONFIRM.getTranId()}"  value-ref="freeDialConfirmValidateRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).FREE_DIAL_SUBMIT.getTranId()}"  value-ref="freeDialSubmitRequestBuilder"/>
+		<!--FreeDialUSSD ENDS  -->
+	</util:map>
+</beans>

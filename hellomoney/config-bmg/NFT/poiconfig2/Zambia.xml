@@ -1,0 +1,2584 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<POICollection>
+
+  <pointOfInterest>
+    <id>1</id>
+    <latitude>-15.420354</latitude>
+    <longitude>28.282231</longitude>
+    <name>Mutaba House</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) (211) 224720/732/224722</phoneNumber>
+    <address>Mutaba House, Stand No 1RE, P.O Box 31416,Lusaka,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>2</id>
+    <latitude>-15.420354</latitude>
+    <longitude>28.282231</longitude>
+    <name>Mutaba House</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) (211) 224720/732/224722</phoneNumber>
+    <address>Mutaba House, Stand No 1RE, P.O Box 31416,Lusaka,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>3</id>
+    <latitude>-15.419733</latitude>
+    <longitude>28.301382</longitude>
+    <name>Holiday Inn</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>7:45 - 17:15</mon>
+      <tue>7:45 - 17:15</tue>
+      <wed>7:45 - 17:15</wed>
+      <thu>7:45 - 17:15</thu>
+      <fri>7:45 - 17:15</fri>
+      <sat>08:00 - 12:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) (211) 254537</phoneNumber>
+    <address>Holiday Inn Hotel, Church Rd,Lusaka,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>4</id>
+    <latitude>-15.417212</latitude>
+    <longitude>28.314466</longitude>
+    <name>Longacres</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+260 211 250668, 254234, 254236</phoneNumber>
+    <address>Longacres Premier Life Centre,Stand No. 2161&amp;2162, Haile Selassie Avenue,Lusaka,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>5</id>
+    <latitude>-12.96919</latitude>
+    <longitude>28.649168</longitude>
+    <name>Ndola Buteko</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Ndola Buteko Branch,3081 Matipa Street,PO Box 230009,Ndola,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>6</id>
+    <latitude>-12.821133</latitude>
+    <longitude>28.211163</longitude>
+    <name>Kitwe</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) (212) 225634/220675/230513</phoneNumber>
+    <address>Kitwe Branch (City Square),Plot 9,PO Box 20202,Kitwe,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>7</id>
+    <latitude>-12.821133</latitude>
+    <longitude>28.211163</longitude>
+    <name>Kitwe</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) (212) 225634/220675/230513</phoneNumber>
+    <address>Kitwe Branch (City Square),Plot 9,PO Box 20202,Kitwe,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>8</id>
+    <latitude>-12.96919</latitude>
+    <longitude>28.649168</longitude>
+    <name>Ndola Buteko</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Ndola Buteko Branch,3081 Matipa Street,PO Box 230009,Ndola,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>9</id>
+    <latitude>-17.846269</latitude>
+    <longitude>25.857444</longitude>
+    <name>Livingstone Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) (213) 321114/321115/3213340</phoneNumber>
+    <address>Livingstone Branch,916 Cnr Akapelwa St. Mosi-O-Tunya,PO Box 60600,Livingstone,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>10</id>
+    <latitude>-17.925088</latitude>
+    <longitude>25.865507</longitude>
+    <name>Livingstone Sun Agency</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Livingstone Branch,Zambezi Sun Hotel,Livingstone,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>11</id>
+    <latitude>-15.392194</latitude>
+    <longitude>28.316107</longitude>
+    <name>Arcades Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>7:45 - 17:15</mon>
+      <tue>7:45 - 17:15</tue>
+      <wed>7:45 - 17:15</wed>
+      <thu>7:45 - 17:15</thu>
+      <fri>7:45 - 17:15</fri>
+      <sat>08:00 - 12:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Arcades Premier Life Centre,Arcades Shopping Centre,Box 277 postnet,Lusaka,Zambia</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>12</id>
+    <latitude>-15.396932</latitude>
+    <longitude>28.30753</longitude>
+    <name>MANDA HILL</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Manda Hill Shopping Mall, Great Est Rd,Lusaka,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>13</id>
+    <latitude>-15.858233</latitude>
+    <longitude>27.763599</longitude>
+    <name>Mazabuka Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>17/RE Corner Main Street, PO Box 6701336,,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>14</id>
+    <latitude>-15.420354</latitude>
+    <longitude>28.282231</longitude>
+    <name>Kafue House</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Naiobi Place, Cairo RD, P.O Box 31936,Lusaka,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>15</id>
+    <latitude>-13.640232</latitude>
+    <longitude>32.645745</longitude>
+    <name>Chipata Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>808 Umodzi Highway, PO Box 510292,Chipata,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>16</id>
+    <latitude>-15.415865</latitude>
+    <longitude>28.282118</longitude>
+    <name>CENTRAL PARK</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) (211) 220933 / 231558 / 231557</phoneNumber>
+    <address>Central Park Premier Life Centre, Farmers House, Cairo Road, PO Box 31068,Lusaka,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>17</id>
+    <latitude>-15.447393</latitude>
+    <longitude>28.335521</longitude>
+    <name>CHILENJE Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) 211 266833 / 266546</phoneNumber>
+    <address>Box 324028, Plot CMO1/4586, Chilumbulu Rd, Chilenje,Lusaka,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>18</id>
+    <latitude>-14.44361</latitude>
+    <longitude>28.443587</longitude>
+    <name>KABWE BRANCH</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) 215 221414</phoneNumber>
+    <address>Kabwe, 1227 Civic Centre, Freedom Way,Box 80758,Kabwe,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>19</id>
+    <latitude>-16.813908</latitude>
+    <longitude>26.975727</longitude>
+    <name>CHOMA</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) (213) 220041/42/44/220514/15/</phoneNumber>
+    <address>F799/4 Livingstone Road,PO Box 630018,Choma,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>20</id>
+    <latitude>-16.28554</latitude>
+    <longitude>27.477493</longitude>
+    <name>MONZE</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>Tel +(260) (4) 450072/13</phoneNumber>
+    <address>Plot 1819 Livingstone Rd,Box 660399,Monze,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>21</id>
+    <latitude>-15.325185</latitude>
+    <longitude>28.445449</longitude>
+    <name>AIRPORT</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Kenneth Kaunda International Airport,Lusaka,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>22</id>
+    <latitude>-14.525098</latitude>
+    <longitude>30.761719</longitude>
+    <name>PETAUKE</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) 216 371551/2</phoneNumber>
+    <address>Plot 2279 Omelo Mumba Rd, Box 560204,Petauke,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>23</id>
+    <latitude>-13.970052</latitude>
+    <longitude>28.675003</longitude>
+    <name>KAPIRI MPOSHI</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) 215 271024/26</phoneNumber>
+    <address>Plot 1294 Kabwe Rd, Box 810326,Kapri Mposhi,Kapiri Mposhi,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>24</id>
+    <latitude>-13.255235</latitude>
+    <longitude>31.932707</longitude>
+    <name>MFUWE</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Mfuwe International Airport,Mfuwe,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>25</id>
+    <latitude>-17.925501</latitude>
+    <longitude>25.866339</longitude>
+    <name>FALLS PARK</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Zambezi Sun Hotel Agency,Livingstone,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>26</id>
+    <latitude>-12.180475</latitude>
+    <longitude>26.397057</longitude>
+    <name>SOLWEZI</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) 218 821289/892/632</phoneNumber>
+    <address>Plot 32 Lwenge Rd,Box 110179,Solwezi,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>27</id>
+    <latitude>-17.027078</latitude>
+    <longitude>26.478767</longitude>
+    <name>KALOMO</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) 213 265086-8</phoneNumber>
+    <address>Plot 9 Freedom Way,Box 620178,Kalomo,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>28</id>
+    <latitude>-14.989146</latitude>
+    <longitude>27.061858</longitude>
+    <name>MUMBWA</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) 211 800102/800107</phoneNumber>
+    <address>Plot 242 Town Area, Box 830176,Mumbwa,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>29</id>
+    <latitude>-12.552385</latitude>
+    <longitude>28.249197</longitude>
+    <name>MUFULIRA BRANCH</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) 212 411795 / 411921 / 411795</phoneNumber>
+    <address>938/G Corner Accra &amp; Buteko St,Civic Centre,Box 400696,Mufulira,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>30</id>
+    <latitude>-12.545683</latitude>
+    <longitude>27.863688</longitude>
+    <name>CHINGOLA BRANCH</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) 212 311244</phoneNumber>
+    <address>Plot 134 Kwacha Street, Box10140,Chingola,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>31</id>
+    <latitude>-15.761114</latitude>
+    <longitude>28.177528</longitude>
+    <name>KAFUE</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) (211) 312045/50</phoneNumber>
+    <address>P.O Box 360223, Plot 1078/1079, Kafue Rd,Kafue,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>32</id>
+    <latitude>-15.422164</latitude>
+    <longitude>28.278058</longitude>
+    <name>SOWETO</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Lumumba Rd,Soweto,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>33</id>
+    <latitude>-15.391543</latitude>
+    <longitude>28.329406</longitude>
+    <name>UNZA</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>University of Zambia Campus, Box 42,Lusaka,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>34</id>
+    <latitude>-12.295307</latitude>
+    <longitude>33.170857</longitude>
+    <name>LUNDAZI</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) 216 480695/6</phoneNumber>
+    <address>Magodi Rd, Box 530322,Lundazi,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>35</id>
+    <latitude>-10.207288</latitude>
+    <longitude>31.188362</longitude>
+    <name>KASAMA1</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Independence Avenue,Kasama,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>36</id>
+    <latitude>-10.206612</latitude>
+    <longitude>31.18878</longitude>
+    <name>KASAMA2</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Independence Avenue,Kasama,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>37</id>
+    <latitude>-17.82547</latitude>
+    <longitude>25.817614</longitude>
+    <name>LIVINGSTONE AIRPORT</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Harry Mwaanga Nkumbula International Airport,Livingstone,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>38</id>
+    <latitude>-16.04239</latitude>
+    <longitude>28.862543</longitude>
+    <name>CHIRUNDU</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Stand No 903/904,Box 15, Lusaka Rd,Chirundu,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>39</id>
+    <latitude>-15.422164</latitude>
+    <longitude>28.278058</longitude>
+    <name>SOWETO2</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Lumumba Rd,Lusaka,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>40</id>
+    <latitude>-12.953309</latitude>
+    <longitude>28.631787</longitude>
+    <name>KANSENSHI1</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Premium Plaza Kansenshi, Ndola,Ndola,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>41</id>
+    <latitude>-12.552385</latitude>
+    <longitude>28.249197</longitude>
+    <name>MUFULIRA 2</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>938/G Corner Accra &amp; Buteko St,Civic Centre,Box 400696,Mufulira,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>42</id>
+    <latitude>-12.180475</latitude>
+    <longitude>26.397057</longitude>
+    <name>SOLWEZI 2</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) 218 821289/892/632</phoneNumber>
+    <address>Plot 32 Lwenge Rd,Box 110179,Solwezi,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>43</id>
+    <latitude>-13.970052</latitude>
+    <longitude>28.675003</longitude>
+    <name>KAPIRI 2</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) 215 271024/26</phoneNumber>
+    <address>Plot 1294 Kabwe Rd, Box 810326,Kapiri Mposhi,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>44</id>
+    <latitude>-12.821133</latitude>
+    <longitude>28.211163</longitude>
+    <name>KCS LOBBY 1</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) (212) 225634/220675/230513</phoneNumber>
+    <address>Kitwe Branch (City Square),Plot 9,PO Box 20202,Kitwe,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>45</id>
+    <latitude>-15.435417</latitude>
+    <longitude>28.309257</longitude>
+    <name>KABWATA</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Box 50218, Plot 12037, Burma Road, Lusaka,Lusaka,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>46</id>
+    <latitude>-12.821133</latitude>
+    <longitude>28.211163</longitude>
+    <name>KCS LOBBY 2</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) (212) 225634/220675/230513</phoneNumber>
+    <address>Kitwe Branch (City Square),Plot 9,PO Box 20202,Kitwe,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>47</id>
+    <latitude>-12.821133</latitude>
+    <longitude>28.211163</longitude>
+    <name>KCS LOBBY 3</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) (212) 225634/220675/230513</phoneNumber>
+    <address>Kitwe Branch (City Square),Plot 9,PO Box 20202,Kitwe,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>48</id>
+    <latitude>-15.396932</latitude>
+    <longitude>28.30753</longitude>
+    <name>MANDA HILL</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Manda Hill Shopping Mall, Great Est Rd,Lusaka,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>49</id>
+    <latitude>-12.996153</latitude>
+    <longitude>28.658255</longitude>
+    <name>NDOLA AIRPORT</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Simon Mwansa Kapwepwe International Airport,Ndola,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>50</id>
+    <latitude>-15.266383</latitude>
+    <longitude>23.146563</longitude>
+    <name>MONGU</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) 217 222211</phoneNumber>
+    <address>Independence Road, Box 910013,Mongu,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>51</id>
+    <latitude>-15.420354</latitude>
+    <longitude>28.282231</longitude>
+    <name>KAF HSE LOBBY 1</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Naiobi Place, Cairo RD, P.O Box 31936,Lusaka,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>52</id>
+    <latitude>-13.131412</latitude>
+    <longitude>28.417404</longitude>
+    <name>LUANSHYA</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Box 90466, Part of plot 910, Civic Centre, 14th Street,Luanshya,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>53</id>
+    <latitude>-12.835276</latitude>
+    <longitude>28.088071</longitude>
+    <name>KALULUSHI</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) 212 733194</phoneNumber>
+    <address>Presidents Ave, Box 260532,Kalulushi,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>54</id>
+    <latitude>-15.420354</latitude>
+    <longitude>28.282231</longitude>
+    <name>KAF HSE LOBBY 2</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Naiobi Place, Cairo RD, P.O Box 31936,Lusaka,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>55</id>
+    <latitude>-15.381695</latitude>
+    <longitude>28.261042</longitude>
+    <name>MATERO</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Box 330069, Commonwealth Avenue, Matero,Lusaka,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>56</id>
+    <latitude>-15.447393</latitude>
+    <longitude>28.335521</longitude>
+    <name>CHILENJE - SALES CENTER</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Box 324028, Plot CMO1/4586, Chilumbulu Rd, Chilenje, Lusaka (STD 211),Lusaka,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>57</id>
+    <latitude>-13.131412</latitude>
+    <longitude>28.417404</longitude>
+    <name>LUANSHYA2</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Box 90466, Part of plot 910, Civic Centre, 14th Street,Luanshya,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>58</id>
+    <latitude>-15.420354</latitude>
+    <longitude>28.282231</longitude>
+    <name>KAF HSE LOBBY 3</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Naiobi Place, Cairo RD, P.O Box 31936,Lusaka,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>59</id>
+    <latitude>-15.420354</latitude>
+    <longitude>28.282231</longitude>
+    <name>KAF HSE LOBBY 4</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Naiobi Place, Cairo RD, P.O Box 31936,Lusaka,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>60</id>
+    <latitude>-15.420354</latitude>
+    <longitude>28.282231</longitude>
+    <name>KAF HSE LOBBY 5</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Naiobi Place, Cairo RD, P.O Box 31936,Lusaka,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>61</id>
+    <latitude>-16.043122</latitude>
+    <longitude>28.86205</longitude>
+    <name>CHIRUNDU</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) (211) 515037 / 53</phoneNumber>
+    <address>Box 15,Stand No 903/904,Lusaka Rd,Chirundu,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>62</id>
+    <latitude>-12.372323</latitude>
+    <longitude>27.84987</longitude>
+    <name>CHILILABOMBWE</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Box 210118, President's Avenue, part of plot 21, Chililbombwe (STD 212),Chililabombwe,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>63</id>
+    <latitude>-12.372323</latitude>
+    <longitude>27.84987</longitude>
+    <name>CHILILABOMBWE2</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Box 210118, President's Avenue, part of plot 21, Chililbombwe (STD 212),Chililabombwe,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>64</id>
+    <latitude>-9.332669</latitude>
+    <longitude>32.757111</longitude>
+    <name>NAKONDE</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Box 430025, Plot 1303/M, Great North Rd, Nakonde,Nakonde,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>65</id>
+    <latitude>-11.197531</latitude>
+    <longitude>28.889124</longitude>
+    <name>MANSA</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) 212 821907</phoneNumber>
+    <address>Plot 257 Independence Avenue, Civic Centre,Box 710663,Mansa,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>66</id>
+    <latitude>-12.821133</latitude>
+    <longitude>28.211163</longitude>
+    <name>KCS</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Kitwe City Square, P O BOX 20202,,Kitwe,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>67</id>
+    <latitude>-15.435417</latitude>
+    <longitude>28.309257</longitude>
+    <name>KABWATA 2</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Box 50218, Plot 12037, Burma Road, Lusaka,Lusaka,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>68</id>
+    <latitude>-14.44361</latitude>
+    <longitude>28.443587</longitude>
+    <name>KABWE BRANCH</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) 215 221414</phoneNumber>
+    <address>1227 Civic Centre, Freedom Way, Box 80758,Kabwe,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>69</id>
+    <latitude>-13.640232</latitude>
+    <longitude>32.645745</longitude>
+    <name>CHIPATA 2</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) (216) 222126/222127/222128</phoneNumber>
+    <address>808 Umodzi Highway, PO Box 510292,Chipata,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>70</id>
+    <latitude>-12.545683</latitude>
+    <longitude>27.863688</longitude>
+    <name>CHINGOLA 2</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Plot 134 Kwacha Street, Box10140,Chingola,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>71</id>
+    <latitude>-15.413781</latitude>
+    <longitude>28.303206</longitude>
+    <name>ELUNDA</name>
+    <imageFileName/>
+    <fax>+(260) (211) 222211</fax>
+    <openingHours>
+      <mon>8:00 - 18:00</mon>
+      <tue>8:00 - 18:00</tue>
+      <wed>8:00 - 18:00</wed>
+      <thu>8:00 - 18:00</thu>
+      <fri>8:00 - 18:00</fri>
+      <sat>08:15 - 12:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) (211) 366150 / 165 / 222205 Direct</phoneNumber>
+    <address>Barclays Bank Plc head office,Elunda Office Park,Plot No 4643 &amp; 4644,Addis Ababa Round About,Private bag E308,Rhodespark,Lusaka,Zambia</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>72</id>
+    <latitude>-17.846269</latitude>
+    <longitude>25.857444</longitude>
+    <name>LIVINGSTONE 2</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) (213) 321114/321115/3213340</phoneNumber>
+    <address>Livingstone Branch,916 Cnr Akapelwa St. Mosi-O-Tunya,PO Box 60600,Livingstone,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>73</id>
+    <latitude>-12.295307</latitude>
+    <longitude>33.170857</longitude>
+    <name>LUNDAZI 2</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) 216 480695/6</phoneNumber>
+    <address>Magodi Rd, Box 530322,Lundazi,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>74</id>
+    <latitude>-11.197531</latitude>
+    <longitude>28.889124</longitude>
+    <name>MANSA 2</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+(260) 212 821907</phoneNumber>
+    <address>Plot 257 Independence Avenue, Civic Centre,Box 710663,Mansa,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>75</id>
+    <latitude>-8.845171</latitude>
+    <longitude>31.372715</longitude>
+    <name>MBALA</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>Tel +(260) (4) 450072/13</phoneNumber>
+    <address>Box 420280, Plot No 213, Off President Ave,Mbala,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>76</id>
+    <latitude>-12.800335</latitude>
+    <longitude>28.217944</longitude>
+    <name>PARKLANDS</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:15 - 16:00</mon>
+      <tue>8:15 - 16:00</tue>
+      <wed>8:15 - 16:00</wed>
+      <thu>8:15 - 16:00</thu>
+      <fri>8:15 - 16:00</fri>
+      <sat>08:00 - 11:00 First &amp; Last Saturday of Month</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>260 21 02 227759 / 227758 / 227760</phoneNumber>
+    <address>Kitwe Parklands Premier Life Centre,The Archer Centre, Egupto Close, Off Kalemba Drive,Kitwe,Zambia</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>77</id>
+    <latitude>-12.548709</latitude>
+    <longitude>28.249283</longitude>
+    <name>MUFULIRA POST OFFICE</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>MUFULIRA POST OFFICE,Mufulira,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>78</id>
+    <latitude>-12.636318</latitude>
+    <longitude>28.057709</longitude>
+    <name>CHAMBISHI1</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Plot no.43 Chambishi Main Market, Chambishi,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>79</id>
+    <latitude>-15.388874</latitude>
+    <longitude>28.294065</longitude>
+    <name>GARDEN PARK</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>GARDEN PARK, Katima Mulilo Rd,Lusaka,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>80</id>
+    <latitude>-12.537849</latitude>
+    <longitude>28.23688</longitude>
+    <name>Mufulira Mopani Mine</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Mufulira Mopani Mine,Mufulira,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>81</id>
+    <latitude>-15.421455</latitude>
+    <longitude>28.343353</longitude>
+    <name>KABULONGA1</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Tukunka Mall 99 Chindo Rd, Lusaka,Lusaka,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>82</id>
+    <latitude>-15.435603</latitude>
+    <longitude>28.354833</longitude>
+    <name>CROSSROADS 2</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Crossroads Shopping Mall,Lusaka,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>83</id>
+    <latitude>-15.452998</latitude>
+    <longitude>28.268209</longitude>
+    <name>CASTLE</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Castle Shopping Centre,Lusaka,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>84</id>
+    <latitude>-13.003345</latitude>
+    <longitude>28.640199</longitude>
+    <name>MASALA2</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Plot no. 55 Masala RD Masala, Ndola,Kitwe,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>85</id>
+    <latitude>-15.383557</latitude>
+    <longitude>28.280096</longitude>
+    <name>EMMASDALE</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Chaisa Bus Station, Great East Rd,Lusaka,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>86</id>
+    <latitude>-14.825585</latitude>
+    <longitude>24.804125</longitude>
+    <name>BP-KAOMA</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>BP KAOMA Service Station,Kaoma,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>87</id>
+    <latitude>-10.206639</latitude>
+    <longitude>31.188743</longitude>
+    <name>BP - OSMAN KASAMA</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>BP Service Station, OSMAN KASAMA,Kasama,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>88</id>
+    <latitude>-14.054058</latitude>
+    <longitude>32.045574</longitude>
+    <name>BP-KATETE</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>BP-KATETE,Katete,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>89</id>
+    <latitude>-15.411661</latitude>
+    <longitude>28.281142</longitude>
+    <name>Northend</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>323/RE Cairo Road North End, PO Box 31068,Lusaka,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>90</id>
+    <latitude>-15.376781</latitude>
+    <longitude>28.378479</longitude>
+    <name>Chelstone BP Filling Station</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Chelstone BP Filling Station, Great East Rd,Lusaka,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>91</id>
+    <latitude>-12.545725</latitude>
+    <longitude>27.866521</longitude>
+    <name>Chingola BP Filling Station</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Chingola BP Filling Station,Chingola,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>92</id>
+    <latitude>-15.43521</latitude>
+    <longitude>28.34095</longitude>
+    <name>Woodlands BP Filling Station</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Woodlands BP Filling Station,Lusaka,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>93</id>
+    <latitude>-14.441413</latitude>
+    <longitude>28.446457</longitude>
+    <name>Kabwe BP Filling Station</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Kabwe BP Filling Station,Kabwe,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>94</id>
+    <latitude>-12.819208</latitude>
+    <longitude>28.210101</longitude>
+    <name>Kitwe - BP</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Kitwe - BP,Kitwe,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>95</id>
+    <latitude>-15.392194</latitude>
+    <longitude>28.316107</longitude>
+    <name>Arcades BP Filling Station</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Arcades BP Filling Station,Lusaka,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>96</id>
+    <latitude>-15.427537</latitude>
+    <longitude>28.284211</longitude>
+    <name>DOWNTOWN</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Downtown Shopping Mall,Lusaka,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>97</id>
+    <latitude>-15.435603</latitude>
+    <longitude>28.354833</longitude>
+    <name>CROSSROADS 1</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Castle Shopping Centre,Lusaka,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>98</id>
+    <latitude>-15.383846</latitude>
+    <longitude>28.268603</longitude>
+    <name>SPECTRA MATERO</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>SPECTRA MATERO Filling Station,Lusaka,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>99</id>
+    <latitude>-15.404446</latitude>
+    <longitude>28.296238</longitude>
+    <name>NORTHMEAD1</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Northmead Shopping Centre,Lusaka,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>100</id>
+    <latitude>-15.39132</latitude>
+    <longitude>28.317175</longitude>
+    <name>MICA</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Arcades Shopping Mall, Great East Rd,Lusaka,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>101</id>
+    <latitude>-15.411661</latitude>
+    <longitude>28.281142</longitude>
+    <name>NORTHEND LOBBY 1</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>323/RE Cairo Road North End, PO Box 31068,Lusaka,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>102</id>
+    <latitude>-15.411661</latitude>
+    <longitude>28.281142</longitude>
+    <name>NORTHEND LOBBY 2</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>323/RE Cairo Road North End, PO Box 31068,Lusaka,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>103</id>
+    <latitude>-15.411661</latitude>
+    <longitude>28.281142</longitude>
+    <name>NORTHEND LOBBY 3</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>323/RE Cairo Road North End, PO Box 31068,Lusaka,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>104</id>
+    <latitude>-15.411661</latitude>
+    <longitude>28.281142</longitude>
+    <name>NORTHEND LOBBY 4</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>323/RE Cairo Road North End, PO Box 31068,Lusaka,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>105</id>
+    <latitude>-15.411661</latitude>
+    <longitude>28.281142</longitude>
+    <name>NORTHEND LOBBY 5</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>323/RE Cairo Road North End, PO Box 31068,Lusaka,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>106</id>
+    <latitude>-15.405506</latitude>
+    <longitude>28.354533</longitude>
+    <name>MTENDERE SALES CENTRE</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Mutendere,Lusaka,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>107</id>
+    <latitude>-15.767888</latitude>
+    <longitude>28.180704</longitude>
+    <name>BP-KAFUE</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>BP Service Station, Kafue Rd,Kafue,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>108</id>
+    <latitude>-15.440278</latitude>
+    <longitude>28.310223</longitude>
+    <name>BP- CHILUMBULU RD</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>BP Filling Station, CHILUMBULU RD,Lusaka,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>109</id>
+    <latitude>-15.407885</latitude>
+    <longitude>28.350681</longitude>
+    <name>KOBIL - MTENDERE</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>KOBIL Filling Station, MTENDERE ,Lusaka,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>110</id>
+    <latitude>-15.421228</latitude>
+    <longitude>28.285911</longitude>
+    <name>INTER-CITY BUS TERMINUS</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>INTER-CITY BUS TERMINUS,Lusaka,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>111</id>
+    <latitude>-15.858233</latitude>
+    <longitude>27.763599</longitude>
+    <name>KOBIL MAZABUKA</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>KOBIL Service Station, MAZABUKA,Mazabuka,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>112</id>
+    <latitude>-15.274912</latitude>
+    <longitude>28.768666</longitude>
+    <name>BP-NYIMBA SERVICE STATION</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>BP-NYIMBA SERVICE STATION,Nyimba,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>113</id>
+    <latitude>-12.797186</latitude>
+    <longitude>28.222868</longitude>
+    <name>TOTAL - PARKLANDS KT</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>TOTAL Service Station PARKLANDS,Kitwe,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>114</id>
+    <latitude>-16.266384</latitude>
+    <longitude>27.474146</longitude>
+    <name>BP-TOOTERS MONZE</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>BP-TOOTERS MONZE,Monze,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>115</id>
+    <latitude>-11.843243</latitude>
+    <longitude>31.443729</longitude>
+    <name>BP-MPIKA OSMAN S/S</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>BP-MPIKA OSMAN Service Station,Mpika,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>116</id>
+    <latitude>-12.972986</latitude>
+    <longitude>28.64861</longitude>
+    <name>BP - PRESIDENT AVE NDOLA</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>BP - PRESIDENT AVE NDOLA,Ndola,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>117</id>
+    <latitude>-15.266383</latitude>
+    <longitude>23.146563</longitude>
+    <name>MONGU SALES CENTRE</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>MONGU SALES CENTRE,Mongu,Zambia</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+
+</POICollection>

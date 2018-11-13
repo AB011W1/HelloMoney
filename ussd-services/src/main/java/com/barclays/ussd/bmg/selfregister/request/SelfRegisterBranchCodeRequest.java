@@ -1,0 +1,17 @@
+package com.barclays.ussd.bmg.selfregister.request;
+
+import java.util.Map;
+
+import com.barclays.ussd.bmg.dto.RequestBuilderParamsDTO;
+import com.barclays.ussd.bmg.factory.request.BmgBaseRequestBuilder;
+import com.barclays.ussd.svc.context.USSDBaseRequest;
+import com.barclays.ussd.utils.USSDInputParamsEnum;
+
+public class SelfRegisterBranchCodeRequest implements BmgBaseRequestBuilder {
+
+    public USSDBaseRequest getRequestObject(RequestBuilderParamsDTO requestBuilderParamsDTO) {
+	Map<String, String> userInputMap = requestBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap();
+	userInputMap.put(USSDInputParamsEnum.SELFREG_MOBILE.getParamName(), requestBuilderParamsDTO.getMsisdnNo());
+	return null;
+    }
+}

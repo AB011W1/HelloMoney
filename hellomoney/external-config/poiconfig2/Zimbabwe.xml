@@ -1,0 +1,1997 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<POICollection>
+
+  <pointOfInterest>
+    <id>1</id>
+    <latitude>-17.8307095399764</latitude>
+    <longitude>31.0497236251831</longitude>
+    <name>First Street </name>
+    <imageFileName/>
+    <fax>+263772568369</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-758280-100</phoneNumber>
+    <address>Cnr 1st Street/J Moyo,Harare,Northern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>2</id>
+    <latitude>-17.826399398936</latitude>
+    <longitude>31.0503673553466</longitude>
+    <name>Pearl House </name>
+    <imageFileName/>
+    <fax>+263772570126</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-753358</phoneNumber>
+    <address>61 Samora Machel,Harare,Northern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>3</id>
+    <latitude>-17.8531675678323</latitude>
+    <longitude>31.0490155220031</longitude>
+    <name>Cripps Road</name>
+    <imageFileName/>
+    <fax>+263772568368</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-758961</phoneNumber>
+    <address>31ACripps Road/Kelvin Road Harare ,Harare,Northern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>4</id>
+    <latitude>-20.1544652751536</latitude>
+    <longitude>28.5820055007934</longitude>
+    <name>Main Street</name>
+    <imageFileName/>
+    <fax> + +263772295165</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-9-881122</phoneNumber>
+    <address>100 Main Street/8th Avenue Bulawayo,Bulawayo,Southern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>5</id>
+    <latitude>-17.8096787420601</latitude>
+    <longitude>31.0744214057922</longitude>
+    <name>Highlands</name>
+    <imageFileName/>
+    <fax>+263772570119</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-746626</phoneNumber>
+    <address>Enterprise Road, Newlands Shops,Harare,Northern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>6</id>
+    <latitude>-17.8023035863188</latitude>
+    <longitude>31.0368275642395</longitude>
+    <name>Avondale</name>
+    <imageFileName/>
+    <fax>+263772568371</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-335946</phoneNumber>
+    <address>King George Road, Avondale Harare,Harare,Northern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>7</id>
+    <latitude>-18.9724514800832</latitude>
+    <longitude>32.6713228225708</longitude>
+    <name>Mutare</name>
+    <imageFileName/>
+    <fax>+263772568372</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-20-64530</phoneNumber>
+    <address>91 H. Chitepo Street Mutare,Mutare,Northern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>8</id>
+    <latitude>-19.4536842989381</latitude>
+    <longitude>29.8153924942016</longitude>
+    <name>Gweru</name>
+    <imageFileName/>
+    <fax>+263772568373</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-54-229256</phoneNumber>
+    <address>Cnr Main Street/R Mugabe Way Gweru,Gweru,Southern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>9</id>
+    <latitude>-20.169617681214</latitude>
+    <longitude>28.5760134458541</longitude>
+    <name>Belmont</name>
+    <imageFileName/>
+    <fax>+263712755334</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-9-70033</phoneNumber>
+    <address>17 Plumtree Road, Bulawayo,Bulawayo,Southern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>10</id>
+    <latitude>-18.9291884326171</latitude>
+    <longitude>29.8056668043136</longitude>
+    <name>Kwekwe</name>
+    <imageFileName/>
+    <fax>+263773656882</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-55-22897/9</phoneNumber>
+    <address>33 Nelson Mandela Way Kwekwe,Kwekwe,Southern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>11</id>
+    <latitude>-17.3085854568595</latitude>
+    <longitude>31.3319778442382</longitude>
+    <name>Bindura</name>
+    <imageFileName/>
+    <fax>+263773054015</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-71-6256</phoneNumber>
+    <address>Bindura,Bindura,Northern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>12</id>
+    <latitude>-18.189848958258</latitude>
+    <longitude>31.5482711791992</longitude>
+    <name>Marondera</name>
+    <imageFileName/>
+    <fax>+263772513447</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-79-23597</phoneNumber>
+    <address>Cnr Hotel Street/The Green Marondera,Marondera,Northern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>13</id>
+    <latitude>-17.358011494595</latitude>
+    <longitude>30.1760959625244</longitude>
+    <name>Chinhoyi</name>
+    <imageFileName/>
+    <fax>+263772963182</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-67-22665</phoneNumber>
+    <address>Stand 5308 Magamba Way Chinhoyi,Chinhoyi,Northern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>14</id>
+    <latitude>-21.0462849040749</latitude>
+    <longitude>31.6697859764099</longitude>
+    <name>Chiredzi</name>
+    <imageFileName/>
+    <fax>+263772661599</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-31-2348</phoneNumber>
+    <address>60 Chironga Drive Chiredzi,Chiredzi,Southern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>15</id>
+    <latitude>-20.0739299357767</latitude>
+    <longitude>30.8333230018615</longitude>
+    <name>Masvingo</name>
+    <imageFileName/>
+    <fax>+263772248618</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-39-262618</phoneNumber>
+    <address>Cnr R. Mugabe/L Takawira Ave.  Masvingo,Masvingo,Southern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>16</id>
+    <latitude>-17.761826740265</latitude>
+    <longitude>31.0874462127685</longitude>
+    <name>Borrowdale</name>
+    <imageFileName/>
+    <fax>+263772397884</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-882779</phoneNumber>
+    <address>Pamona Shopping Centre, Borrowdale Harare,Harare,Northern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>17</id>
+    <latitude>-17.9269225775404</latitude>
+    <longitude>25.8408576250076</longitude>
+    <name>Victoria Falls</name>
+    <imageFileName/>
+    <fax>+263772295164</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-13-44273</phoneNumber>
+    <address>255 Livingstone Way, Vic Falls,Victoria Falls,Southern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>18</id>
+    <latitude>-20.1540019680412</latitude>
+    <longitude>28.5847306251525</longitude>
+    <name>Leopold Takawira</name>
+    <imageFileName/>
+    <fax>+263772247983</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-9-882035</phoneNumber>
+    <address>111 Cnr Leopold Takawira/Fife Street, Bulawayo,Bulawayo,Southern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>19</id>
+    <latitude>-22.2114640582846</latitude>
+    <longitude>29.9913024902343</longitude>
+    <name>Beit Bridge</name>
+    <imageFileName/>
+    <fax>+263772939748</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-86-2621/2624</phoneNumber>
+    <address>349 Justitia Road Beitbridge,Beit Bridge,Southern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>20</id>
+    <latitude>-17.8856802148977</latitude>
+    <longitude>30.9978175163269</longitude>
+    <name>Highfield</name>
+    <imageFileName/>
+    <fax>+263772568367</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-661805</phoneNumber>
+    <address>19 Jabavu Drive, Highfield, Harare,Harare,Northern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>21</id>
+    <latitude>-17.7635636937457</latitude>
+    <longitude>30.9785270690917</longitude>
+    <name>Westgate</name>
+    <imageFileName/>
+    <fax>+263772568370</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-308095</phoneNumber>
+    <address>Westgate Shopping Complex, Harare,Harare,Northern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>22</id>
+    <latitude>-18.0136714168892</latitude>
+    <longitude>31.1017799377441</longitude>
+    <name>Chitungwiza</name>
+    <imageFileName/>
+    <fax>+263772568368</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-70-23439</phoneNumber>
+    <address>197-36 Tilco, Chitungwiza ,Harare,Northern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>23</id>
+    <latitude>-17.8333752385187</latitude>
+    <longitude>31.0415375232696</longitude>
+    <name>Harare Street</name>
+    <imageFileName/>
+    <fax>+263733405682</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-749038/749093</phoneNumber>
+    <address>119 Albion Street, Harare,Harare,Northern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>24</id>
+    <latitude>-17.8388443916492</latitude>
+    <longitude>31.1172026395797</longitude>
+    <name>Msasa</name>
+    <imageFileName/>
+    <fax>+263772362504</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-447845</phoneNumber>
+    <address>120/122 Mutare Road, Harare,Harare,Northern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>25</id>
+    <latitude>-18.2166740483242</latitude>
+    <longitude>28.9411532878875</longitude>
+    <name>Gokwe</name>
+    <imageFileName/>
+    <fax>+263773392755</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-59-2871/2730/2921</phoneNumber>
+    <address>Stand 972, Gokwe Growth Point, Gokwe,Gokwe,Southern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>26</id>
+    <latitude>-18.3391586687886</latitude>
+    <longitude>29.9137866497039</longitude>
+    <name>Kadoma</name>
+    <imageFileName/>
+    <fax>+263772570127</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-68-26822/26824</phoneNumber>
+    <address>Stand No.4490, Cameron Sq. Kadoma,Kadoma,Northern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>27</id>
+    <latitude>-18.5320258278405</latitude>
+    <longitude>32.1233367919921</longitude>
+    <name>Rusape</name>
+    <imageFileName/>
+    <fax>+263712447158</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-25-3361/3363</phoneNumber>
+    <address>2455/56 Mutare Road, Rusape,Rusape,Northern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>28</id>
+    <latitude>-20.3159344323391</latitude>
+    <longitude>30.054280757904</longitude>
+    <name>Zvishavane</name>
+    <imageFileName/>
+    <fax>+263772513444</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-51-3242</phoneNumber>
+    <address>Std 1895 Corner R. Mugabe Rd/Ireland Road, Zvishavane,Zvishavane,Southern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>29</id>
+    <latitude>-20.1581414676278</latitude>
+    <longitude>28.5867798328399</longitude>
+    <name>Bulawayo Affluent</name>
+    <imageFileName/>
+    <fax>+263772295174</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-9-883008</phoneNumber>
+    <address>97A Robert Mugabe Way, Bulawayo,Bulawayo,Southern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>30</id>
+    <latitude>-17.8281867923545</latitude>
+    <longitude>31.0535860061645</longitude>
+    <name>Kurima</name>
+    <imageFileName/>
+    <fax>+263772513438</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-250584-10</phoneNumber>
+    <address>90 Nelson Mandela Avenue, Harare,Harare,Northern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>31</id>
+    <latitude>-17.8533105384674</latitude>
+    <longitude>31.0257983207702</longitude>
+    <name>Corporate Service Centre</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-754474</phoneNumber>
+    <address>Birmingham Rd/Paisley Rd, Harare,Harare,Northern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>32</id>
+    <latitude>-17.831629</latitude>
+    <longitude>31.047277</longitude>
+    <name>Joina City</name>
+    <imageFileName/>
+    <fax>+263772513438</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-250584-10</phoneNumber>
+    <address>Joina City, Corner Leopold Takawira and Jason Moyo, Harare,Harare,Northern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>33</id>
+    <latitude>-17.763395</latitude>
+    <longitude>31.051435</longitude>
+    <name>Arundel Shops</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-754474</phoneNumber>
+    <address>Corner Forest Road and Quom Avenue, Mt Pleasant, Harare,Harare,Northern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>34</id>
+    <latitude>-17.918312</latitude>
+    <longitude>31.098561</longitude>
+    <name>Harare International Airport</name>
+    <imageFileName/>
+    <fax>+263772513438</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-250584-10</phoneNumber>
+    <address>Airport Road, Manyame, Harare,Harare,Northern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>35</id>
+    <latitude>-17.832548</latitude>
+    <longitude>31.048707</longitude>
+    <name>Robert Mugabe</name>
+    <imageFileName/>
+    <fax>+263772513438</fax>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-250584-10</phoneNumber>
+    <address>Corner Angwa Street and Robert mugabe Avenue, Harare,Harare,Northern</address>
+    <services>
+      <service>Cash Withdrawals</service>
+      <service>Balance Enquiry</service>
+      <service>Airtime Top up</service>
+      <service>Bill Payment</service>
+      <service>Mini Statement</service>
+      <service>VISA &amp; Mastercard Accepted</service>
+    </services>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>36</id>
+    <latitude>-17.8023035863188</latitude>
+    <longitude>31.0368275642395</longitude>
+    <name>Avondale</name>
+    <imageFileName/>
+    <fax>+263772568370</fax>
+    <openingHours>
+      <mon>08:00-15:00 (Standard) &amp; 17:00 (Prestige)</mon>
+      <tue>08:00-15:00 (Standard) &amp; 17:00 (Prestige)</tue>
+      <wed>08:00-15:00 (Standard) &amp; 17:00 (Prestige)</wed>
+      <thu>08:00-15:00 (Standard) &amp; 17:00 (Prestige)</thu>
+      <fri>08:00-15:00 (Standard) &amp; 17:00 (Prestige)</fri>
+      <sat>08:00-11:30 (Standard) 12:30 (Prestige)</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-335945</phoneNumber>
+    <address>King George Road, Avondale Harare,Harare,Northern</address>
+    <services>
+      <service>Standard Banking Services</service>
+      <service>Prestige Plus Current Account</service>
+      <service>Prestige Savings Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Debit Card</service>
+      <service>Prestige Local Debit Card</service>
+      <service>Prestige Barclays Insurance</service>
+      <service>Barclays Internet Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>37</id>
+    <latitude>-22.2114640582846</latitude>
+    <longitude>29.9913024902343</longitude>
+    <name>Beit Bridge</name>
+    <imageFileName/>
+    <fax>+263772939747</fax>
+    <openingHours>
+      <mon>08:00-15:00</mon>
+      <tue>08:00-15:00</tue>
+      <wed>08:00-15:00</wed>
+      <thu>08:00-15:00</thu>
+      <fri>08:00-15:00</fri>
+      <sat>08:00-11:30</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-86-2621/2623</phoneNumber>
+    <address>348 Justitia Road Beitbridge,Beit Bridge,Southern</address>
+    <services>
+      <service>Barclays Premier League Account</service>
+      <service>Current Account</service>
+      <service>Savings Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Electron Debit Card</service>
+      <service>Standard Barclays Insurance</service>
+      <service>Internet Banking</service>
+      <service>Mobile Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>38</id>
+    <latitude>-20.169617681214</latitude>
+    <longitude>28.5760134458541</longitude>
+    <name>Belmont</name>
+    <imageFileName/>
+    <fax>+263712755333</fax>
+    <openingHours>
+      <mon>08:00-15:00</mon>
+      <tue>08:00-15:00</tue>
+      <wed>08:00-15:00</wed>
+      <thu>08:00-15:00</thu>
+      <fri>08:00-15:00</fri>
+      <sat>08:00-11:30</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-9-70032</phoneNumber>
+    <address>16 Plumtree Road, Bulawayo,Bulawayo,Southern</address>
+    <services>
+      <service>Barclays Premier League Account</service>
+      <service>Current Account</service>
+      <service>Savings Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Electron Debit Card</service>
+      <service>Standard Barclays Insurance</service>
+      <service>Internet Banking</service>
+      <service>Mobile Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>39</id>
+    <latitude>-17.3085854568595</latitude>
+    <longitude>31.3319778442382</longitude>
+    <name>Bindura</name>
+    <imageFileName/>
+    <fax>+263773054014</fax>
+    <openingHours>
+      <mon>08:00-15:00</mon>
+      <tue>08:00-15:00</tue>
+      <wed>08:00-15:00</wed>
+      <thu>08:00-15:00</thu>
+      <fri>08:00-15:00</fri>
+      <sat>08:00-11:30</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-71-6255</phoneNumber>
+    <address>Bindura,Bindura,Northern</address>
+    <services>
+      <service>Barclays Premier League Account</service>
+      <service>Current Account</service>
+      <service>Savings Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Electron Debit Card</service>
+      <service>Standard Barclays Insurance</service>
+      <service>Internet Banking</service>
+      <service>Mobile Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>40</id>
+    <latitude>-17.761826740265</latitude>
+    <longitude>31.0874462127685</longitude>
+    <name>Borrowdale</name>
+    <imageFileName/>
+    <fax>+263772397883</fax>
+    <openingHours>
+      <mon>08:00-15:00 (Standard) &amp; 17:00 (Prestige)</mon>
+      <tue>08:00-15:00 (Standard) &amp; 17:00 (Prestige)</tue>
+      <wed>08:00-15:00 (Standard) &amp; 17:00 (Prestige)</wed>
+      <thu>08:00-15:00 (Standard) &amp; 17:00 (Prestige)</thu>
+      <fri>08:00-15:00 (Standard) &amp; 17:00 (Prestige)</fri>
+      <sat>08:00-11:30 (Standard) 12:30 (Prestige)</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-882778</phoneNumber>
+    <address>Pamona Shopping Centre, Borrowdale Harare,Harare,Northern</address>
+    <services>
+      <service>Standard Banking Services</service>
+      <service>Prestige Plus Current Account</service>
+      <service>Prestige Savings Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Debit Card</service>
+      <service>Prestige Local Debit Card</service>
+      <service>Prestige Barclays Insurance</service>
+      <service>Barclays Internet Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>41</id>
+    <latitude>-20.1581414676278</latitude>
+    <longitude>28.5867798328399</longitude>
+    <name>Bulawayo Affluent</name>
+    <imageFileName/>
+    <fax>+263772295173</fax>
+    <openingHours>
+      <mon>08:00-17:00</mon>
+      <tue>08:00-17:00</tue>
+      <wed>08:00-17:00</wed>
+      <thu>08:00-17:00</thu>
+      <fri>08:00-17:00</fri>
+      <sat>08:00-12:30</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-9-883007</phoneNumber>
+    <address>97A Robert Mugabe Way, Bulawayo,Bulawayo,Southern</address>
+    <services>
+      <service>Prestige Banking Services</service>
+      <service>Premier Current Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Platinum Debit Card</service>
+      <service>Premier Local Card</service>
+      <service>Premier Barclays Insurance</service>
+      <service>Internet Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>42</id>
+    <latitude>-17.358011494595</latitude>
+    <longitude>30.1760959625244</longitude>
+    <name>Chinhoyi</name>
+    <imageFileName/>
+    <fax>+263772963181</fax>
+    <openingHours>
+      <mon>08:00-15:00</mon>
+      <tue>08:00-15:00</tue>
+      <wed>08:00-15:00</wed>
+      <thu>08:00-15:00</thu>
+      <fri>08:00-15:00</fri>
+      <sat>08:00-11:30</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-67-22664</phoneNumber>
+    <address>Stand 5308 Magamba Way Chinhoyi,Chinhoyi,Northern</address>
+    <services>
+      <service>Barclays Premier League Account</service>
+      <service>Current Account</service>
+      <service>Savings Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Electron Debit Card</service>
+      <service>Standard Barclays Insurance</service>
+      <service>Internet Banking</service>
+      <service>Mobile Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>43</id>
+    <latitude>-21.0462849040749</latitude>
+    <longitude>31.6697859764099</longitude>
+    <name>Chiredzi</name>
+    <imageFileName/>
+    <fax>+263772661598</fax>
+    <openingHours>
+      <mon>08:00-15:00</mon>
+      <tue>08:00-15:00</tue>
+      <wed>08:00-15:00</wed>
+      <thu>08:00-15:00</thu>
+      <fri>08:00-15:00</fri>
+      <sat>08:00-11:30</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-31-2347</phoneNumber>
+    <address>59 Chironga Drive Chiredzi,Chiredzi,Southern</address>
+    <services>
+      <service>Barclays Premier League Account</service>
+      <service>Current Account</service>
+      <service>Savings Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Electron Debit Card</service>
+      <service>Standard Barclays Insurance</service>
+      <service>Internet Banking</service>
+      <service>Mobile Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>44</id>
+    <latitude>-17.8533105384674</latitude>
+    <longitude>31.0257983207702</longitude>
+    <name>Corporate Service Centre</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>08:00-15:00</mon>
+      <tue>08:00-15:00</tue>
+      <wed>08:00-15:00</wed>
+      <thu>08:00-15:00</thu>
+      <fri>08:00-15:00</fri>
+      <sat>08:00-11:30</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-754473</phoneNumber>
+    <address>Birmingham Rd/Paisley Rd, Harare,Harare,Northern</address>
+    <services>
+      <service>Corporate Banking</service>
+      <service>Exchange Control</service>
+      <service>Corporate Loans</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>45</id>
+    <latitude>-17.8531675678323</latitude>
+    <longitude>31.0490155220031</longitude>
+    <name>Cripps Road</name>
+    <imageFileName/>
+    <fax>+263772568367</fax>
+    <openingHours>
+      <mon>08:00-15:00</mon>
+      <tue>08:00-15:00</tue>
+      <wed>08:00-15:00</wed>
+      <thu>08:00-15:00</thu>
+      <fri>08:00-15:00</fri>
+      <sat>08:00-11:30</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-758960</phoneNumber>
+    <address>31ACripps Road/Kelvin Road Harare ,Harare,Northern</address>
+    <services>
+      <service>Barclays Premier League Account</service>
+      <service>Current Account</service>
+      <service>Savings Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Electron Debit Card</service>
+      <service>Standard Barclays Insurance</service>
+      <service>Internet Banking</service>
+      <service>Mobile Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>46</id>
+    <latitude>-17.8307095399764</latitude>
+    <longitude>31.0497236251831</longitude>
+    <name>First Street </name>
+    <imageFileName/>
+    <fax>+263772568368</fax>
+    <openingHours>
+      <mon>08:00-15:00</mon>
+      <tue>08:00-15:00</tue>
+      <wed>08:00-15:00</wed>
+      <thu>08:00-15:00</thu>
+      <fri>08:00-15:00</fri>
+      <sat>08:00-11:30</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-758280-99</phoneNumber>
+    <address>Cnr 1st Street/J Moyo,Harare,Northern</address>
+    <services>
+      <service>Barclays Premier League Account</service>
+      <service>Current Account</service>
+      <service>Savings Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Electron Debit Card</service>
+      <service>Standard Barclays Insurance</service>
+      <service>Internet Banking</service>
+      <service>Mobile Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>47</id>
+    <latitude>-18.2166740483242</latitude>
+    <longitude>28.9411532878875</longitude>
+    <name>Gokwe</name>
+    <imageFileName/>
+    <fax>+263773392754</fax>
+    <openingHours>
+      <mon>08:00-15:00</mon>
+      <tue>08:00-15:00</tue>
+      <wed>08:00-15:00</wed>
+      <thu>08:00-15:00</thu>
+      <fri>08:00-15:00</fri>
+      <sat>08:00-11:30</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-59-2871/2730/2920</phoneNumber>
+    <address>Stand 972, Gokwe Growth Point, Gokwe,Gokwe,Southern</address>
+    <services>
+      <service>Barclays Premier League Account</service>
+      <service>Current Account</service>
+      <service>Savings Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Electron Debit Card</service>
+      <service>Standard Barclays Insurance</service>
+      <service>Internet Banking</service>
+      <service>Mobile Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>48</id>
+    <latitude>-19.4536842989381</latitude>
+    <longitude>29.8153924942016</longitude>
+    <name>Gweru</name>
+    <imageFileName/>
+    <fax>+263772568372</fax>
+    <openingHours>
+      <mon>08:00-15:00</mon>
+      <tue>08:00-15:00</tue>
+      <wed>08:00-15:00</wed>
+      <thu>08:00-15:00</thu>
+      <fri>08:00-15:00</fri>
+      <sat>08:00-11:30</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-54-229255</phoneNumber>
+    <address>Cnr Main Street/R Mugabe Way Gweru,Gweru,Southern</address>
+    <services>
+      <service>Barclays Premier League Account</service>
+      <service>Current Account</service>
+      <service>Savings Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Electron Debit Card</service>
+      <service>Standard Barclays Insurance</service>
+      <service>Internet Banking</service>
+      <service>Mobile Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>49</id>
+    <latitude>-17.8333752385187</latitude>
+    <longitude>31.0415375232696</longitude>
+    <name>Harare Street</name>
+    <imageFileName/>
+    <fax>+263733405681</fax>
+    <openingHours>
+      <mon>08:00-15:00</mon>
+      <tue>08:00-15:00</tue>
+      <wed>08:00-15:00</wed>
+      <thu>08:00-15:00</thu>
+      <fri>08:00-15:00</fri>
+      <sat>08:00-11:30</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-749038/749092</phoneNumber>
+    <address>118 Albion Street, Harare,Harare,Northern</address>
+    <services>
+      <service>Barclays Premier League Account</service>
+      <service>Current Account</service>
+      <service>Savings Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Electron Debit Card</service>
+      <service>Standard Barclays Insurance</service>
+      <service>Internet Banking</service>
+      <service>Mobile Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>50</id>
+    <latitude>-17.8096787420601</latitude>
+    <longitude>31.0744214057922</longitude>
+    <name>Highlands</name>
+    <imageFileName/>
+    <fax> + +263772570118</fax>
+    <openingHours>
+      <mon>08:00-15:00 (Standard) &amp; 17:00 (Prestige)</mon>
+      <tue>08:00-15:00 (Standard) &amp; 17:00 (Prestige)</tue>
+      <wed>08:00-15:00 (Standard) &amp; 17:00 (Prestige)</wed>
+      <thu>08:00-15:00 (Standard) &amp; 17:00 (Prestige)</thu>
+      <fri>08:00-15:00 (Standard) &amp; 17:00 (Prestige)</fri>
+      <sat>08:00-11:30 (Standard) 12:30 (Prestige)</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-746625</phoneNumber>
+    <address>Enterprise Road, Newlands Shops,Harare,Northern</address>
+    <services>
+      <service>Standard Banking Services</service>
+      <service>Prestige Plus Current Account</service>
+      <service>Prestige Savings Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Debit Card</service>
+      <service>Prestige Local Debit Card</service>
+      <service>Prestige Barclays Insurance</service>
+      <service>Barclays Internet Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>51</id>
+    <latitude>-18.3391586687886</latitude>
+    <longitude>29.9137866497039</longitude>
+    <name>Kadoma</name>
+    <imageFileName/>
+    <fax>+263772570126</fax>
+    <openingHours>
+      <mon>08:00-15:00</mon>
+      <tue>08:00-15:00</tue>
+      <wed>08:00-15:00</wed>
+      <thu>08:00-15:00</thu>
+      <fri>08:00-15:00</fri>
+      <sat>08:00-11:30</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-68-26822/26823</phoneNumber>
+    <address>Stand No.4490, Cameron Sq. Kadoma,Kadoma,Northern</address>
+    <services>
+      <service>Barclays Premier League Account</service>
+      <service>Current Account</service>
+      <service>Savings Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Electron Debit Card</service>
+      <service>Standard Barclays Insurance</service>
+      <service>Internet Banking</service>
+      <service>Mobile Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>52</id>
+    <latitude>-17.8281867923545</latitude>
+    <longitude>31.0535860061645</longitude>
+    <name>Kurima</name>
+    <imageFileName/>
+    <fax>+263772513437</fax>
+    <openingHours>
+      <mon>08:00-15:00 (Standard) &amp; 17:00 (Prestige)</mon>
+      <tue>08:00-15:00 (Standard) &amp; 17:00 (Prestige)</tue>
+      <wed>08:00-15:00 (Standard) &amp; 17:00 (Prestige)</wed>
+      <thu>08:00-15:00 (Standard) &amp; 17:00 (Prestige)</thu>
+      <fri>08:00-15:00 (Standard) &amp; 17:00 (Prestige)</fri>
+      <sat>08:00-11:30 (Standard) 12:30 (Prestige)</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-250584-9</phoneNumber>
+    <address>89 Nelson Mandela Avenue, Harare,Harare,Northern</address>
+    <services>
+      <service>Standard Banking Services</service>
+      <service>Prestige Plus Current Account</service>
+      <service>Prestige Savings Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Debit Card</service>
+      <service>Prestige Local Debit Card</service>
+      <service>Prestige Barclays Insurance</service>
+      <service>Barclays Internet Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>53</id>
+    <latitude>-18.9291884326171</latitude>
+    <longitude>29.8056668043136</longitude>
+    <name>Kwe Kwe</name>
+    <imageFileName/>
+    <fax>+263773656881</fax>
+    <openingHours>
+      <mon>08:00-15:00</mon>
+      <tue>08:00-15:00</tue>
+      <wed>08:00-15:00</wed>
+      <thu>08:00-15:00</thu>
+      <fri>08:00-15:00</fri>
+      <sat>08:00-11:30</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-55-22897/8</phoneNumber>
+    <address>32 Nelson Mandela Way Kwekwe,Kwekwe,Southern</address>
+    <services>
+      <service>Barclays Premier League Account</service>
+      <service>Current Account</service>
+      <service>Savings Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Electron Debit Card</service>
+      <service>Standard Barclays Insurance</service>
+      <service>Internet Banking</service>
+      <service>Mobile Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>54</id>
+    <latitude>-20.1540019680412</latitude>
+    <longitude>28.5847306251525</longitude>
+    <name>Leopold Takawira</name>
+    <imageFileName/>
+    <fax>+263772247982</fax>
+    <openingHours>
+      <mon>08:00-15:00</mon>
+      <tue>08:00-15:00</tue>
+      <wed>08:00-15:00</wed>
+      <thu>08:00-15:00</thu>
+      <fri>08:00-15:00</fri>
+      <sat>08:00-11:30</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-9-882034</phoneNumber>
+    <address>110 Cnr Leopold Takawira/Fife Street, Bulawayo,Bulawayo,Southern</address>
+    <services>
+      <service>Barclays Premier League Account</service>
+      <service>Current Account</service>
+      <service>Savings Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Electron Debit Card</service>
+      <service>Standard Barclays Insurance</service>
+      <service>Internet Banking</service>
+      <service>Mobile Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>55</id>
+    <latitude>-20.1544652751536</latitude>
+    <longitude>28.5820055007934</longitude>
+    <name>Main Street</name>
+    <imageFileName/>
+    <fax> + +263772295165</fax>
+    <openingHours>
+      <mon>08:00-15:00</mon>
+      <tue>08:00-15:00</tue>
+      <wed>08:00-15:00</wed>
+      <thu>08:00-15:00</thu>
+      <fri>08:00-15:00</fri>
+      <sat>08:00-11:30</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-9-881121</phoneNumber>
+    <address>100 Main Street/8th Avenue Bulawayo,Bulawayo,Southern</address>
+    <services>
+      <service>Barclays Premier League Account</service>
+      <service>Current Account</service>
+      <service>Savings Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Electron Debit Card</service>
+      <service>Standard Barclays Insurance</service>
+      <service>Internet Banking</service>
+      <service>Mobile Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>56</id>
+    <latitude>-18.189848958258</latitude>
+    <longitude>31.5482711791992</longitude>
+    <name>Marondera</name>
+    <imageFileName/>
+    <fax>+263772513446</fax>
+    <openingHours>
+      <mon>08:00-15:00</mon>
+      <tue>08:00-15:00</tue>
+      <wed>08:00-15:00</wed>
+      <thu>08:00-15:00</thu>
+      <fri>08:00-15:00</fri>
+      <sat>08:00-11:30</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-79-23596</phoneNumber>
+    <address>Cnr Hotel Street/The Green Marondera,Marondera,Northern</address>
+    <services>
+      <service>Barclays Premier League Account</service>
+      <service>Current Account</service>
+      <service>Savings Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Electron Debit Card</service>
+      <service>Standard Barclays Insurance</service>
+      <service>Internet Banking</service>
+      <service>Mobile Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>57</id>
+    <latitude>-20.0739299357767</latitude>
+    <longitude>30.8333230018615</longitude>
+    <name>Masvingo</name>
+    <imageFileName/>
+    <fax>+263772248617</fax>
+    <openingHours>
+      <mon>08:00-15:00</mon>
+      <tue>08:00-15:00</tue>
+      <wed>08:00-15:00</wed>
+      <thu>08:00-15:00</thu>
+      <fri>08:00-15:00</fri>
+      <sat>08:00-11:30</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-39-262617</phoneNumber>
+    <address>Cnr R. Mugabe/L Takawira Ave.  Masvingo,Masvingo,Southern</address>
+    <services>
+      <service>Barclays Premier League Account</service>
+      <service>Current Account</service>
+      <service>Savings Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Electron Debit Card</service>
+      <service>Standard Barclays Insurance</service>
+      <service>Internet Banking</service>
+      <service>Mobile Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>58</id>
+    <latitude>-17.8388443916492</latitude>
+    <longitude>31.1172026395797</longitude>
+    <name>Msasa</name>
+    <imageFileName/>
+    <fax>+263772362503</fax>
+    <openingHours>
+      <mon>08:00-15:00</mon>
+      <tue>08:00-15:00</tue>
+      <wed>08:00-15:00</wed>
+      <thu>08:00-15:00</thu>
+      <fri>08:00-15:00</fri>
+      <sat>08:00-11:30</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-447844</phoneNumber>
+    <address>120/122 Mutare Road, Harare,Harare,Northern</address>
+    <services>
+      <service>Barclays Premier League Account</service>
+      <service>Current Account</service>
+      <service>Savings Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Electron Debit Card</service>
+      <service>Standard Barclays Insurance</service>
+      <service>Internet Banking</service>
+      <service>Mobile Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>59</id>
+    <latitude>-18.9724514800832</latitude>
+    <longitude>32.6713228225708</longitude>
+    <name>Mutare</name>
+    <imageFileName/>
+    <fax>+263772568371</fax>
+    <openingHours>
+      <mon>08:00-15:00</mon>
+      <tue>08:00-15:00</tue>
+      <wed>08:00-15:00</wed>
+      <thu>08:00-15:00</thu>
+      <fri>08:00-15:00</fri>
+      <sat>08:00-11:30</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-20-64529</phoneNumber>
+    <address>90 H. Chitepo Street Mutare,Mutare,Northern</address>
+    <services>
+      <service>Barclays Premier League Account</service>
+      <service>Current Account</service>
+      <service>Savings Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Electron Debit Card</service>
+      <service>Standard Barclays Insurance</service>
+      <service>Internet Banking</service>
+      <service>Mobile Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>60</id>
+    <latitude>-17.826399398936</latitude>
+    <longitude>31.0503673553466</longitude>
+    <name>Pearl House </name>
+    <imageFileName/>
+    <fax>+263772570125</fax>
+    <openingHours>
+      <mon>08:00-15:00</mon>
+      <tue>08:00-15:00</tue>
+      <wed>08:00-15:00</wed>
+      <thu>08:00-15:00</thu>
+      <fri>08:00-15:00</fri>
+      <sat>08:00-11:30</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-753357</phoneNumber>
+    <address>61Samora Machel,Harare,Northern</address>
+    <services>
+      <service>Barclays Premier League Account</service>
+      <service>Current Account</service>
+      <service>Savings Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Electron Debit Card</service>
+      <service>Standard Barclays Insurance</service>
+      <service>Internet Banking</service>
+      <service>Mobile Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>61</id>
+    <latitude>-17.7781227873789</latitude>
+    <longitude>31.0887658596038</longitude>
+    <name>Premier Banking</name>
+    <imageFileName/>
+    <fax>+263773370124/+263712255560</fax>
+    <openingHours>
+      <mon>08:00-17:00</mon>
+      <tue>08:00-17:00</tue>
+      <wed>08:00-17:00</wed>
+      <thu>08:00-17:00</thu>
+      <fri>08:00-17:00</fri>
+      <sat>08:00-13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber> +263-4-852720-9</phoneNumber>
+    <address>Afre Office Prk, Borrowdale Rd Harare,Harare,Northern</address>
+    <services>
+      <service>Premier Current Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Platinum Debit Card</service>
+      <service>Premier Local Card</service>
+      <service>Premier Barclays Insurance</service>
+      <service>Internet Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>62</id>
+    <latitude>-18.5320258278405</latitude>
+    <longitude>32.1233367919921</longitude>
+    <name>Rusape</name>
+    <imageFileName/>
+    <fax>+263712447157</fax>
+    <openingHours>
+      <mon>08:00-15:00</mon>
+      <tue>08:00-15:00</tue>
+      <wed>08:00-15:00</wed>
+      <thu>08:00-15:00</thu>
+      <fri>08:00-15:00</fri>
+      <sat>08:00-11:30</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-25-3361/3362</phoneNumber>
+    <address>2455/56 Mutare Road, Rusape,Rusape,Northern</address>
+    <services>
+      <service>Barclays Premier League Account</service>
+      <service>Current Account</service>
+      <service>Savings Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Electron Debit Card</service>
+      <service>Standard Barclays Insurance</service>
+      <service>Internet Banking</service>
+      <service>Mobile Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>63</id>
+    <latitude>-17.9269225775404</latitude>
+    <longitude>25.8408576250076</longitude>
+    <name>Victoria Falls</name>
+    <imageFileName/>
+    <fax>+263772295163</fax>
+    <openingHours>
+      <mon>08:00-15:00</mon>
+      <tue>08:00-15:00</tue>
+      <wed>08:00-15:00</wed>
+      <thu>08:00-15:00</thu>
+      <fri>08:00-15:00</fri>
+      <sat>08:00-11:30</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-13-44272</phoneNumber>
+    <address>254 Livingstone Way, Vic Falls,Victoria Falls,Southern</address>
+    <services>
+      <service>Barclays Premier League Account</service>
+      <service>Current Account</service>
+      <service>Savings Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Electron Debit Card</service>
+      <service>Standard Barclays Insurance</service>
+      <service>Internet Banking</service>
+      <service>Mobile Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>64</id>
+    <latitude>-20.3159344323391</latitude>
+    <longitude>30.054280757904</longitude>
+    <name>Zvishavane</name>
+    <imageFileName/>
+    <fax>+263772513443</fax>
+    <openingHours>
+      <mon>08:00-15:00</mon>
+      <tue>08:00-15:00</tue>
+      <wed>08:00-15:00</wed>
+      <thu>08:00-15:00</thu>
+      <fri>08:00-15:00</fri>
+      <sat>08:00-11:30</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+263-51-3241</phoneNumber>
+    <address>Std 1895 Corner R. Mugabe Rd/Ireland Road, Zvishavane,Zvishavane,Southern</address>
+    <services>
+      <service>Barclays Premier League Account</service>
+      <service>Current Account</service>
+      <service>Savings Account</service>
+      <service>Cash Withdrawals &amp; Deposits</service>
+      <service>VISA Electron Debit Card</service>
+      <service>Standard Barclays Insurance</service>
+      <service>Internet Banking</service>
+      <service>Mobile Banking</service>
+      <service>SMS Alerts</service>
+      <service>E Statements</service>
+      <service>Alliances</service>
+    </services>
+    <type>BRANCH</type>
+
+  </pointOfInterest>
+
+</POICollection>

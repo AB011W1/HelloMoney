@@ -1,0 +1,6 @@
+BEGIN
+   ACCT_ERRMSG_PROC_SSA('BWBRB');
+END;
+/
+
+

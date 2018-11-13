@@ -1,0 +1,1436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<POICollection>
+  <pointOfInterest>
+    <id>1</id>
+    <latitude>-6.809086</latitude>
+    <longitude>39.287281</longitude>
+    <name>Ohio</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+255 22 2282002</phoneNumber>
+    <address>Barclays House, Ohio Street,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>2</id>
+    <latitude>-3.37724</latitude>
+    <longitude>36.700988</longitude>
+    <name>Arusha</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+255 27 2548139 </phoneNumber>
+    <address>Sopa Plaza,Arusha,Tanzania</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>3</id>
+    <latitude>-6.1269</latitude>
+    <longitude>39.193726</longitude>
+    <name>Zanzibar</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+255 24 2335796/97
+
+
+
+
+</phoneNumber>
+    <address>Zanzibar State Trading Corporation,Zanzibar,Tanzania</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>4</id>
+    <latitude>-6.74235</latitude>
+    <longitude>39.283676</longitude>
+    <name>Slipway</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 18:00</mon>
+      <tue>8:30 - 18:00</tue>
+      <wed>8:30 - 18:00</wed>
+      <thu>8:30 - 18:00</thu>
+      <fri>8:30 - 18:00</fri>
+      <sat>09:00 - 16:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+255 22 2602642</phoneNumber>
+    <address>Plot 1497/1497,Msasani Penninsular Dar es Salaam,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>5</id>
+    <latitude>-6.815478</latitude>
+    <longitude>39.280071</longitude>
+    <name>Uhuru</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 18:00</mon>
+      <tue>8:30 - 18:00</tue>
+      <wed>8:30 - 18:00</wed>
+      <thu>8:30 - 18:00</thu>
+      <fri>8:30 - 18:00</fri>
+      <sat>09:00 - 16:00</sat>
+      <sun>09:00 - 13:00</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+255 22 2182653</phoneNumber>
+    <address>Uhuru Road, Kariakoo,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>6</id>
+    <latitude>-3.307792</latitude>
+    <longitude>36.677856</longitude>
+    <name>TFA Arusha</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+255 27 2509320
+
+
+
+
+
+</phoneNumber>
+    <address>TFA Building, plot no. 76 Block E, School Road,Arusha,Tanzania</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>7</id>
+    <latitude>-6.18015</latitude>
+    <longitude>35.744619</longitude>
+    <name>Dodoma</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+255 26 2323141</phoneNumber>
+    <address>Plot No. 22, Block 1, Dodoma,Dodoma,Tanzania</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>8</id>
+    <latitude>-6.825918</latitude>
+    <longitude>37.664502</longitude>
+    <name>Morogoro</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+255 23 2613024</phoneNumber>
+    <address>Plot No. 14, Block G Morogoro,Morogoro,Tanzania</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>9</id>
+    <latitude>-6.808266</latitude>
+    <longitude>39.259762</longitude>
+    <name>Magomeni</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+255 22 2170686</phoneNumber>
+    <address>Magomeni,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>10</id>
+    <latitude>-6.790325</latitude>
+    <longitude>39.271789</longitude>
+    <name>Kinondoni</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+255 22 2667675</phoneNumber>
+    <address>Kinondoni Road,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>11</id>
+    <latitude>-6.763659</latitude>
+    <longitude>39.233894</longitude>
+    <name>Mwenge</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+255 22 2772450</phoneNumber>
+    <address>Ali Hassan Mwinyi Rd, Dar Cinema, Mwenge,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>12</id>
+    <latitude>-6.16078</latitude>
+    <longitude>39.19379</longitude>
+    <name>Zanzibar Darajani</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+255 24 2232123
+
+
+
+
+</phoneNumber>
+    <address>Kisiwandui St, Darajani,Zanzibar,Tanzania</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>13</id>
+    <latitude>-6.760249</latitude>
+    <longitude>39.254408</longitude>
+    <name>Mikocheni</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+255 22 2772451</phoneNumber>
+    <address>Old Bagamoyo Rd, Mikocheni,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>14</id>
+    <latitude>-6.81258</latitude>
+    <longitude>39.283161</longitude>
+    <name>Kisutu</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+255 22 2126994</phoneNumber>
+    <address>Skymark Bldg, Libya St,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>15</id>
+    <latitude>-2.522028</latitude>
+    <longitude>32.904074</longitude>
+    <name>Mwanza Main</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+255 22 2282696</phoneNumber>
+    <address>Plot No. 140, Block U Miti Mirefu/Pamba Rd,Mwanza,Tanzania</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>16</id>
+    <latitude>-3.354363</latitude>
+    <longitude>37.340813</longitude>
+    <name>Moshi</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+255 27 2753315</phoneNumber>
+    <address>Plot No. 43, Block F, Zone III, P.O.Box 1617,Mawenzi road,Moshi,Moshi,Tanzania</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>17</id>
+    <latitude>-5.069849</latitude>
+    <longitude>39.105728</longitude>
+    <name>Tanga</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+255 27 2645501/00</phoneNumber>
+    <address>Plot No. 8, Block KBII,
+King/Arab Street,Tanga,Tanzania</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>18</id>
+    <latitude>-6.826386</latitude>
+    <longitude>39.250202</longitude>
+    <name>Buguruni</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+255 22 2863608</phoneNumber>
+    <address>Buguruni Rd,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>19</id>
+    <latitude>-6.8178</latitude>
+    <longitude>39.277443</longitude>
+    <name>Mkunguni</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 18:00</mon>
+      <tue>8:30 - 18:00</tue>
+      <wed>8:30 - 18:00</wed>
+      <thu>8:30 - 18:00</thu>
+      <fri>8:30 - 18:00</fri>
+      <sat>09:00 - 16:00</sat>
+      <sun>09:00 - 13:00</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+255 22 2181613</phoneNumber>
+    <address>Mkunguni/Chura ST, Kariakoo,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>20</id>
+    <latitude>-7.776723</latitude>
+    <longitude>35.698947</longitude>
+    <name>Iringa</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+255 26 2702274</phoneNumber>
+    <address>Plot No. 12, Block 2, Zone 2 Gangilonga, Iringa,Iringa,Tanzania</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>21</id>
+    <latitude>-8.894219</latitude>
+    <longitude>33.441803</longitude>
+    <name>Mbeya Main</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+255 25 2500625</phoneNumber>
+    <address>Plot No. 3, Block D, Lupaway, Mbeya,Mbeya,Tanzania</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>22</id>
+    <latitude>-6.838152</latitude>
+    <longitude>39.257095</longitude>
+    <name>Pugu Road</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>8:30 - 16:00</mon>
+      <tue>8:30 - 16:00</tue>
+      <wed>8:30 - 16:00</wed>
+      <thu>8:30 - 16:00</thu>
+      <fri>8:30 - 16:00</fri>
+      <sat>09:00 - 13:00</sat>
+      <sun>Closed</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber>+255 22 2863691
+
+
+
+
+
+</phoneNumber>
+    <address>General Industrial Area, ,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>23</id>
+    <latitude>-3.365887</latitude>
+    <longitude>36.696053</longitude>
+    <name>AICC Sales Centre</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address> Arusha International Conference Centre,Arusha,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>24</id>
+    <latitude>-3.404786</latitude>
+    <longitude>36.704807</longitude>
+    <name>Arusha - Njiro Complex</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Njiro Arusha,Arusha,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>25</id>
+    <latitude>-3.371103</latitude>
+    <longitude>36.68542</longitude>
+    <name>Arusha - Bus Stand</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Zaramo Street,Arusha,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>26</id>
+    <latitude>-8.910893</latitude>
+    <longitude>33.460965</longitude>
+    <name>Mbeya SSC</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Plot No. 45 1/2 Block O, P.O.Box 3865,Soweto, Mbeya,Mbeya,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>27</id>
+    <latitude>-6.827526</latitude>
+    <longitude>37.663488</longitude>
+    <name>Morogoro Luna</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Plot No. 25/26,Block C,,Morogoro,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>28</id>
+    <latitude>-6.819931</latitude>
+    <longitude>39.285543</longitude>
+    <name>JM Mall</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Harbour View Towers Ltd,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>29</id>
+    <latitude>-6.747869</latitude>
+    <longitude>39.284105</longitude>
+    <name>Shoppers Masaki</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Plot No. 492,Shoppers Plaza,
+Haileselasie Road,Masaki.,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>30</id>
+    <latitude>-6.130997</latitude>
+    <longitude>39.185486</longitude>
+    <name>Mazsons Hotel Zanzibar</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Plot No. 62/63 Shangani, Zanzibar,Zanzibar,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>31</id>
+    <latitude>-3.348414</latitude>
+    <longitude>36.632391</longitude>
+    <name>Arusha TGTS</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Estate of Friedkin Recreation Centre ,Arusha,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>32</id>
+    <latitude>-5.075983</latitude>
+    <longitude>3.909811E7</longitude>
+    <name>Tanga</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Shell craft building, Taifa road,Tanga,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>33</id>
+    <latitude>-6.789784</latitude>
+    <longitude>39.229109</longitude>
+    <name>Sinza</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Maembe Commercial Estate Centre ,P.O.Box 62000,Plot No.4,Block C,Dar es Salaam.,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>34</id>
+    <latitude>-6.778127</latitude>
+    <longitude>39.259483</longitude>
+    <name>Alpha House</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Alpha House, Bagamoyo Road, Dar es Salaam,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>35</id>
+    <latitude>-6.809086</latitude>
+    <longitude>39.287281</longitude>
+    <name>Ohio 1</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Barclays House, Ohio Street,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>36</id>
+    <latitude>-6.809086</latitude>
+    <longitude>39.287281</longitude>
+    <name>Ohio 2</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Barclays House, Ohio Street,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>37</id>
+    <latitude>-6.809086</latitude>
+    <longitude>39.287281</longitude>
+    <name>Ohio 3</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Barclays House, Ohio Street,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>38</id>
+    <latitude>-3.37724</latitude>
+    <longitude>36.700988</longitude>
+    <name>Arusha Main</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Sopa Plaza,Arusha,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>39</id>
+    <latitude>-3.37724</latitude>
+    <longitude>36.700988</longitude>
+    <name>Arusha Main 2</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Sopa Plaza,Arusha,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>40</id>
+    <latitude>-6.1269</latitude>
+    <longitude>39.193726</longitude>
+    <name>Zanzibar Main</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Zanzibar State Trading Corporation,Zanzibar,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>41</id>
+    <latitude>-6.1269</latitude>
+    <longitude>39.193726</longitude>
+    <name>Zanzibar Main 2</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Zanzibar State Trading Corporation,Zanzibar,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>42</id>
+    <latitude>-6.74235</latitude>
+    <longitude>39.283676</longitude>
+    <name>Slipway</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Plot 1497/1497,Msasani Penninsular Dar es Salaam,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>43</id>
+    <latitude>-6.74235</latitude>
+    <longitude>39.283676</longitude>
+    <name>Slipway 2</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Plot 1497/1497,Msasani Penninsular Dar es Salaam,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>44</id>
+    <latitude>-6.815478</latitude>
+    <longitude>39.280071</longitude>
+    <name>Uhuru</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Uhuru Road, Kariakoo,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>45</id>
+    <latitude>-3.307792</latitude>
+    <longitude>36.677856</longitude>
+    <name>TFA Arusha</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>TFA Building, plot no. 76 Block E, School Road,Arusha,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>46</id>
+    <latitude>-6.18015</latitude>
+    <longitude>35.744619</longitude>
+    <name>Dodoma</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Plot No. 22, Block 1, Dodoma,Dodoma,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>47</id>
+    <latitude>-6.825918</latitude>
+    <longitude>37.664502</longitude>
+    <name>Morogoro</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Plot No. 14, Block G Morogoro,Morogoro,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>48</id>
+    <latitude>-6.808266</latitude>
+    <longitude>39.259762</longitude>
+    <name>Magomeni</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Magomeni,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>49</id>
+    <latitude>-6.790325</latitude>
+    <longitude>39.271789</longitude>
+    <name>Kinondoni</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Kinondoni Road,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>50</id>
+    <latitude>-6.763659</latitude>
+    <longitude>39.233894</longitude>
+    <name>Mwenge</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Ali Hassan Mwinyi Rd, Dar Cinema, Mwenge,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>51</id>
+    <latitude>-6.16078</latitude>
+    <longitude>39.19379</longitude>
+    <name>Zanzibar Darajani</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Kisiwandui St, Darajani,Zanzibar,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>52</id>
+    <latitude>-6.760249</latitude>
+    <longitude>39.254408</longitude>
+    <name>Mikocheni</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Old Bagamoyo Rd, Mikocheni,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>53</id>
+    <latitude>-6.81258</latitude>
+    <longitude>39.283161</longitude>
+    <name>Kisutu</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Skymark Bldg, Libya St,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>54</id>
+    <latitude>-2.522028</latitude>
+    <longitude>32.904074</longitude>
+    <name>Mwanza Main</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Plot No. 140, Block U Miti Mirefu/Pamba Rd,Mwanza,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>55</id>
+    <latitude>-2.522028</latitude>
+    <longitude>32.904074</longitude>
+    <name>Mwanza Main 2</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Plot No. 140, Block U Miti Mirefu/Pamba Rd,Mwanza,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>56</id>
+    <latitude>-3.354363</latitude>
+    <longitude>37.340813</longitude>
+    <name>Moshi</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Plot No. 43, Block F, Zone III, P.O.Box 1617,Mawenzi road,Moshi,Moshi,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>57</id>
+    <latitude>-5.069849</latitude>
+    <longitude>39.105728</longitude>
+    <name>Tanga</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Plot No. 8, Block KBII,
+King/Arab Street,Tanga,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>58</id>
+    <latitude>-6.826386</latitude>
+    <longitude>39.250202</longitude>
+    <name>Buguruni</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Buguruni Rd,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>59</id>
+    <latitude>-6.8178</latitude>
+    <longitude>39.277443</longitude>
+    <name>Mkunguni</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Mkunguni/Chura ST, Kariakoo,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>60</id>
+    <latitude>-7.776723</latitude>
+    <longitude>35.698947</longitude>
+    <name>Iringa</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Plot No. 12, Block 2, Zone 2 Gangilonga, Iringa,Iringa,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>61</id>
+    <latitude>-8.894219</latitude>
+    <longitude>33.441803</longitude>
+    <name>Mbeya Main</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Plot No. 3, Block D, Lupaway, Mbeya,Mbeya,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>62</id>
+    <latitude>-6.838152</latitude>
+    <longitude>39.257095</longitude>
+    <name>Pugu Road</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>General Industrial Area, ,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>63</id>
+    <latitude>-6.739622</latitude>
+    <longitude>39.283826</longitude>
+    <name>Sea Cliff</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Sea Cliff, Village walk, Masaki,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>64</id>
+    <latitude>-6.840208</latitude>
+    <longitude>39.256414</longitude>
+    <name>Quality Centre Mall</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+      <holidayNote>Closed on public holidays</holidayNote>
+    </openingHours>
+    <phoneNumber/>
+    <address>Quality Centre Mall, Nyerere Road,Dar es salaam,Tanzania</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+</POICollection>

@@ -1,0 +1,26 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,view,org.eclipse.search,3.4.1.r341_v20080813-0800,org.eclipse.search.ui.views.SearchView,1524663221190
+activated,editor,org.eclipse.jdt.ui,3.4.1.r341_v20080827-1100,org.eclipse.jdt.ui.PropertiesFileEditor,1524663234178
+deactivated,workbench,org.eclipse.ui.workbench,3.4.1.M20080827-0800a,,1524663241779
+executed,command,org.eclipse.ui,3.4.1.M20080910-0800,org.eclipse.ui.edit.paste,1524663242543
+activated,workbench,org.eclipse.ui.workbench,3.4.1.M20080827-0800a,,1524663245149
+executed,command,org.eclipse.search,3.4.1.r341_v20080813-0800,org.eclipse.search.ui.openSearchDialog,1524663245195
+no handler,command,org.eclipse.jdt.ui,3.4.1.r341_v20080827-1100,org.eclipse.jdt.ui.edit.text.java.search.declarations.in.workspace,1524663248471
+deactivated,workbench,org.eclipse.ui.workbench,3.4.1.M20080827-0800a,,1524663249844
+activated,view,org.eclipse.search,3.4.1.r341_v20080813-0800,org.eclipse.search.ui.views.SearchView,1524663252153
+activated,workbench,org.eclipse.ui.workbench,3.4.1.M20080827-0800a,,1524663252184
+executed,command,org.eclipse.search,3.4.1.r341_v20080813-0800,org.eclipse.search.ui.openSearchDialog,1524663252216
+deactivated,workbench,org.eclipse.ui.workbench,3.4.1.M20080827-0800a,,1524663252512
+activated,workbench,org.eclipse.ui.workbench,3.4.1.M20080827-0800a,,1524663256913
+deactivated,workbench,org.eclipse.ui.workbench,3.4.1.M20080827-0800a,,1524663317487
+activated,workbench,org.eclipse.ui.workbench,3.4.1.M20080827-0800a,,1524663540163
+deactivated,workbench,org.eclipse.ui.workbench,3.4.1.M20080827-0800a,,1524663544005
+executed,command,org.eclipse.ui,3.4.1.M20080910-0800,org.eclipse.ui.edit.paste,1524663544660
+activated,workbench,org.eclipse.ui.workbench,3.4.1.M20080827-0800a,,1524663546017
+opened,editor,org.eclipse.jdt.ui,3.4.1.r341_v20080827-1100,org.eclipse.jdt.ui.CompilationUnitEditor,1524663546111
+activated,editor,org.eclipse.jdt.ui,3.4.1.r341_v20080827-1100,org.eclipse.jdt.ui.CompilationUnitEditor,1524663546501
+executed,command,org.eclipse.ui.ide,3.4.1.M20080903-2000,org.eclipse.ui.navigate.openResource,1524663546532
+deactivated,workbench,org.eclipse.ui.workbench,3.4.1.M20080827-0800a,,1524663644009
+activated,workbench,org.eclipse.ui.workbench,3.4.1.M20080827-0800a,,1524663704590
+executed,command,org.eclipse.ui,3.4.1.M20080910-0800,org.eclipse.ui.edit.copy,1524663710939
+deactivated,workbench,org.eclipse.ui.workbench,3.4.1.M20080827-0800a,,1524663711127

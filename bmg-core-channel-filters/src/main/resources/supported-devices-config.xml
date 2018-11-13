@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+			  http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+			  http://www.springframework.org/schema/util
+			  http://www.springframework.org/schema/util/spring-util-2.5.xsd
+              http://www.springframework.org/schema/context
+              http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<bean id="clientApplicationValidationInterceptor"
+		class="com.barclays.bmg.mvc.interceptor.ClientApplicationValidationInterceptor">
+		<property name="allowedList" ref="allowedList" />
+		<property name="systemParameterService" ref="systemParameterService" />
+	</bean>
+
+	<util:list id="allowedList" list-class="java.util.ArrayList">
+		<ref bean="wildCardAttributeSet" />
+	</util:list>
+
+	<bean id="wildCardAttributeSet" class="com.barclays.bmg.mvc.interceptor.AllowedAttributesSet">
+		<property name="applicationVersionExpr" value="(*)" />
+		<property name="deviceIdExpr" value="(*)" />
+		<property name="deviceOsNameExpr" value="(*)" />
+		<property name="deviceOSVersionExpr" value="(*)" />
+		<property name="deviceModelNameExpr" value="(*)" />
+	</bean>
+
+
+</beans>

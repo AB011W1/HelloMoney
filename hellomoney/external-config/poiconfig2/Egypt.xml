@@ -1,0 +1,2288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<POICollection>
+
+  <pointOfInterest>
+    <id>1</id>
+    <latitude>29.965903</latitude>
+    <longitude>30.93367</longitude>
+    <name>6th Of October Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>Branch El Fath Center Building No. 7, El Mehwar El Markazi, 6th October, Giza, Egypt.,6 th of October,Giza</address>
+    <services/>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>2</id>
+    <latitude>30.063086</latitude>
+    <longitude>31.027633</longitude>
+    <name>Dandy Mall Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>Km 28 Cairo-Alex Highway, Giza, Egypt.,Giza,Giza</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>3</id>
+    <latitude>31.200753</latitude>
+    <longitude>29.907231</longitude>
+    <name>Azarita Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>11 Sharikat Misr, Azarita, Alexandria, Egypt.,Azarita,Alexandria</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>4</id>
+    <latitude>31.168848</latitude>
+    <longitude>29.935405</longitude>
+    <name>Down Town Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>El Hadika EL-Dawliya, MP Gallery Project, No 3. Ground Floor, Alexandria, Egypt.,Alexandria,Alexandria</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>5</id>
+    <latitude>31.239972</latitude>
+    <longitude>29.956061</longitude>
+    <name>Gleem Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>344 Tareek El Geish St., Gleem, El Raml District, Alexandria, Egypt.,El Raml,Alexandria</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>6</id>
+    <latitude>31.249534</latitude>
+    <longitude>29.975547</longitude>
+    <name>Loran Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>23 Ekbal St., Saraya, Loran, Alexandria, Egypt.,Loran,Alexandria</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>7</id>
+    <latitude>31.276687</latitude>
+    <longitude>30.003182</longitude>
+    <name>Mandara Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>737, Tareek El Geish St., Mandara, Alexandria, Egypt.,Mandara,Alexandria</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>8</id>
+    <latitude>31.198032</latitude>
+    <longitude>29.887348</longitude>
+    <name>Mansheya Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>24 Tanzeem Elnasr St., Alexandria, Egypt.,Alexandria,Alexandria</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>9</id>
+    <latitude>31.230521</latitude>
+    <longitude>29.949439</longitude>
+    <name>Roushdy Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>33B Syria St., Kirosiez Bldg., Roushdy, Alexandria, Egypt.,Roushdy,Alexandria</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>10</id>
+    <latitude>31.233378</latitude>
+    <longitude>29.947085</longitude>
+    <name>Stanly Premier Flagship</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>Kamarayet Roushdy at the crossing streets Elgeish st. and Roushdy Basha st.,Alexandria,Alexandria</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>14</id>
+    <latitude>30.063096</latitude>
+    <longitude>31.349852</longitude>
+    <name>Ahmed Fakhry Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address> 29 Ahmed Fakhry St., Nasr City,  Cairo, Egypt.,Nasr City ,Cairo</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>15</id>
+    <latitude>30.073402</latitude>
+    <longitude>31.347041</longitude>
+    <name>City Stars Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>Omar Ibn El Khattab St., Star Capital 1, Heliopolis, Cairo, Egypt.,Heliopolis,Cairo</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>16</id>
+    <latitude>30.115248</latitude>
+    <longitude>31.344681</longitude>
+    <name>Nady El Shams Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>31, Abd El Hamid Badway St.- Heliopolis, Cairo, Egypt.,Heliopolis,Cairo</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>17</id>
+    <latitude>30.040752</latitude>
+    <longitude>31.235247</longitude>
+    <name>Garden City Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>12 Midan El Sheikh Youssef, Garden City,  Cairo, Egypt. ,Garden City,Cairo</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>18</id>
+    <latitude>30.084144</latitude>
+    <longitude>31.325042</longitude>
+    <name>Marghany Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>47 El Merghany Street, Heliopolis, Cairo, Egypt.,Heliopolis,Cairo</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>19</id>
+    <latitude>30.09448</latitude>
+    <longitude>31.336382</longitude>
+    <name>Ismailia Square Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>39 Omar Ibn El Khattab St. - Ismailia Square - Heliopolis, Cairo, Egypt.,Heliopolis,Cairo</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>20</id>
+    <latitude>30.020949</latitude>
+    <longitude>31.225902</longitude>
+    <name>Manial Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>9 Saed Zoulfakar St., El Basha Tower, Manial, Cairo, Egypt.,Manial,Cairo</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>21</id>
+    <latitude>30.013944</latitude>
+    <longitude>31.286482</longitude>
+    <name>Mokattam Branch </name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>34 Road 9, Mokkatam, Cairo, Egypt.,Mokkatam ,Cairo</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>22</id>
+    <latitude>30.054594</latitude>
+    <longitude>31.348184</longitude>
+    <name>Mostafa El Nahas Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>71 Mostafa El Nahas St., District no. 8, Nasr City, Cairo, Egypt.,Nasr City ,Cairo</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>23</id>
+    <latitude>30.061225</latitude>
+    <longitude>31.337729</longitude>
+    <name>Nasr City Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>50 Abbas El Akkad Street, Nasr City, Cairo, Egypt.,Nasr City ,Cairo</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>24</id>
+    <latitude>30.123545</latitude>
+    <longitude>31.369067</longitude>
+    <name>Nozha Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>44 Dr. Mohamed Kamel Hussein st., Nozha Elgedida, Heliopolis, Cairo, Egypt.,Heliopolis,Cairo</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>25</id>
+    <latitude>30.079632</latitude>
+    <longitude>31.314479</longitude>
+    <name>Obour Buildings Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>5, Obour Buildings, Salah Salem St., Cairo, Egypt.,Cairo ,Cairo</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>26</id>
+    <latitude>30.04931</latitude>
+    <longitude>31.246203</longitude>
+    <name>Opera Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>51 Kasr El Nil St., Down Town, Cairo, Egypt.,Cairo ,Cairo</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>27</id>
+    <latitude>30.105104</latitude>
+    <longitude>31.376942</longitude>
+    <name>Sheraton Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>4 Emtidad Abd El Hameed Badawy, Sheraton Buildings, Cairo, Egypt.,Cairo ,Cairo</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>28</id>
+    <latitude>30.099962</latitude>
+    <longitude>31.24265</longitude>
+    <name>Shoubra Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>19 Dawlatyan St. Agha Khan, Shoubra, Cairo, Egypt.,Shoubra,Cairo</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>29</id>
+    <latitude>30.106691</latitude>
+    <longitude>31.344536</longitude>
+    <name>St . Fatima Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>147 Nozha st., Heliopolis, Cairo, Egypt.,Heliopolis,Cairo</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>30</id>
+    <latitude>30.061865</latitude>
+    <longitude>31.217077</longitude>
+    <name>Zamalek Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>3 Mansour Mohamed st., Zamalek, Cairo, Egypt.,Zamalek,Cairo</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>32</id>
+    <latitude>31.417434</latitude>
+    <longitude>31.811769</longitude>
+    <name>Damietta Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>3 Saad Zaghloul St., Kornich El Nile, Demietta, Egypt.,Demietta,Demietta</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>37</id>
+    <latitude>30.794954</latitude>
+    <longitude>30.99789</longitude>
+    <name>Tanta Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>42 Elgesh St. and Elnahhas St., Delta City Mall, Tanta, Egypt.,Tanta,Tanta</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>38</id>
+    <latitude>30.045712</latitude>
+    <longitude>31.213145</longitude>
+    <name>El Agouza Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>6 Nawal St. (currently Hassan Moh. El Razaz St.,), Mostafa EL Sheriey Corner, Agouza, Giza, Egypt.,Agouza,Giza</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>39</id>
+    <latitude>30.011615</latitude>
+    <longitude>31.21767</longitude>
+    <name>El Bahr El Aazam Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>134 El Bahr EL A’azam St., Block 19, Giza, Egypt.,Giza,Giza</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>40</id>
+    <latitude>30.002169</latitude>
+    <longitude>31.170439</longitude>
+    <name>Feisal Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>313 King Faisal St. (Hassan Mohamed), Giza, Egypt.,Giza,Giza</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>41</id>
+    <latitude>29.990561</latitude>
+    <longitude>31.152128</longitude>
+    <name>Haram Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>103 El Haram St.,Giza, Egypt.,Giza,Giza</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>42</id>
+    <latitude>30.053183</latitude>
+    <longitude>31.199243</longitude>
+    <name>Mohandseen Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>13 Syria Street, Mohandseen, Giza, Egypt.,Mohandseen,Giza</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>43</id>
+    <latitude>30.038955</latitude>
+    <longitude>31.20078</longitude>
+    <name>Mohey El Din Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>30 Mohey El Din Abul Ezz st., Mohandseen, Giza, Egypt.,Mohandseen,Giza</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>45</id>
+    <latitude>29.956475</latitude>
+    <longitude>31.261202</longitude>
+    <name>Maadi Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>67 Road 9, Maadi, Cairo, Egypt.,Maadi,Cairo</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>46</id>
+    <latitude>29.966765</latitude>
+    <longitude>31.269689</longitude>
+    <name>New Maadi Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>55, Road 250, Maadi, Cairo, Egypt.,Maadi,Cairo</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>50</id>
+    <latitude>30.173847</latitude>
+    <longitude>31.475616</longitude>
+    <name>Obour City Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>30, 31 Stores, Golf City Club Fence, Obour Industrial City, Cairo, Egypt.,Obour City,Cairo</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>51</id>
+    <latitude>27.196811</latitude>
+    <longitude>33.828905</longitude>
+    <name>Hurghada – Airport Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>114 Al Mohamady Howaydek St. – Takseem El Kawthar, in front of Mobarak 2 Buildings –Red Sea Hurghada,
+
+Egypt.,Hurghada,Hurghada</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>52</id>
+    <latitude>30.299033</latitude>
+    <longitude>31.743466</longitude>
+    <name>10th Of Ramadan Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>08.00 - 17.00</mon>
+      <tue>08.00 - 17.00</tue>
+      <wed> 08.00 - 17.00</wed>
+      <thu> 08.00 - 17.00</thu>
+      <fri>closed</fri>
+      <sat>closed</sat>
+      <sun>08.00 - 17.00</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>El Masria Centre 2, Ordoneya District, Sharqeya, Egypt.,Sharqeya,Sharqeya</address>
+    <services>
+      <service/>
+    </services>
+    <type>BRANCH</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>56</id>
+    <latitude>30.040752</latitude>
+    <longitude>31.235247</longitude>
+    <name>Garden City Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>12 Midan El-Sheikh Youssef - Garden City, Cairo, Egypt.,Garden City,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>57</id>
+    <latitude>30.053183</latitude>
+    <longitude>31.199243</longitude>
+    <name>Mohandseen Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>13 Syria St. - Mohandseen, Giza, Egypt.,Mohandseen,Giza</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>58</id>
+    <latitude>30.061225</latitude>
+    <longitude>31.337729</longitude>
+    <name>Nasr City Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>50 Abbas El Akkad St. - Nasr City, Cairo, Egypt.,Nasr City,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>59</id>
+    <latitude>30.073402</latitude>
+    <longitude>31.347041</longitude>
+    <name>City Stars Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>Omar Ibn EL Khattab St. - Star Capital 1- Heliopolis, Cairo, Egypt.,Heliopolis,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>60</id>
+    <latitude>29.966765</latitude>
+    <longitude>31.269689</longitude>
+    <name>New Maadi Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>55, 250 St. - New Maadi, Cairo, Egypt.,Maadi,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>61</id>
+    <latitude>30.084144</latitude>
+    <longitude>31.325042</longitude>
+    <name>Marghany Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>47 EL-Merghany St. - Heliopolis, Cairo, Egypt.,Heliopolis,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>63</id>
+    <latitude>29.965903</latitude>
+    <longitude>30.93367</longitude>
+    <name>6th of October Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>El-Fath Center Building No. 7 - El-Mehwar El-Markazi, Giza, Egypt.,6th of October,Giza</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>64</id>
+    <latitude>31.200753</latitude>
+    <longitude>29.907231</longitude>
+    <name>Azarita Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>11 Sharikat Misr - Azarita - Alexandria, Egypt.,Alexandria,Alexandria</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>65</id>
+    <latitude>31.249534</latitude>
+    <longitude>29.975547</longitude>
+    <name>Loran Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>23 El-Ekbal St. - Loran - Alexandria, Egypt.,Alexandria,Alexandria</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>66</id>
+    <latitude>31.230521</latitude>
+    <longitude>29.949439</longitude>
+    <name>Roushdy Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>33B Syria St - Kirosiez Buildings - Roushdy - Alexandria, Egypt.,Alexandria,Alexandria</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>67</id>
+    <latitude>30.299033</latitude>
+    <longitude>31.743466</longitude>
+    <name>10th of Ramadan Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>El-Masria Center 2 - Ordoneya District,Sharqeya, Egypt.,Cairo,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>68</id>
+    <latitude>30.038955</latitude>
+    <longitude>31.20078</longitude>
+    <name>Mohey El Din Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>30 Mohie El-Din Abo El-Ezz St.- Dokki, Giza, Egypt.,Dokki,Giza</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>69</id>
+    <latitude>31.168848</latitude>
+    <longitude>29.935405</longitude>
+    <name>Down Town Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>El Hadika EL-Dawliya, MP Gallery Project, No 3. Ground Floor, Alexandria, Egypt.,Alexandria,Alexandria</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>70</id>
+    <latitude>31.198032</latitude>
+    <longitude>29.887348</longitude>
+    <name>Mansheya Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>24 Tanzeem Elnasr St. - Alexandria, Egypt.,Alexandria,Alexandria</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>71</id>
+    <latitude>29.990561</latitude>
+    <longitude>31.152128</longitude>
+    <name>Haram Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>103 El-Haram St. - Haram, Giza, Egypt.,Giza,Giza</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>72</id>
+    <latitude>30.020949</latitude>
+    <longitude>31.225902</longitude>
+    <name>Manial Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>9 Saed Zou El-Fakhar St. (El-Basha Tower) - Manial, Cairo, Egypt.,Manial ,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>73</id>
+    <latitude>30.123545</latitude>
+    <longitude>31.369067</longitude>
+    <name>Nozha  Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>44 Dr. Mohamed Kamel Hussein st., Nozha Elgedida, Heliopolis, Cairo, Egypt.,Heliopolis,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>74</id>
+    <latitude>30.105104</latitude>
+    <longitude>31.376942</longitude>
+    <name>Sheraton Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>4 Emtidat Abd El Hameed Badawy, Sheraton Buildings, Cairo, Egypt.,Cairo,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>75</id>
+    <latitude>30.106691</latitude>
+    <longitude>31.344536</longitude>
+    <name>St. Fatima Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>147 Nozha St. - Heliopolis, Cairo, Egypt.,Heliopolis,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>76</id>
+    <latitude>30.099962</latitude>
+    <longitude>31.24265</longitude>
+    <name>Shoubra Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>19 Dawlatyahn St. Agha Khan, Shoubra, Cairo, Egypt.,Shoubra,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>77</id>
+    <latitude>30.173847</latitude>
+    <longitude>31.475616</longitude>
+    <name>Obour City Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>30, 31 Stores, Golf City Club Fence, Obour Industrial City, Cairo, Egypt.,Obour City,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>78</id>
+    <latitude>30.794954</latitude>
+    <longitude>30.99789</longitude>
+    <name>Tanta Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>42 Elgesh St. and Elnahhas St., Delta City Mall, Tanta, Egypt.,Tanta,Tanta</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>80</id>
+    <latitude>30.063096</latitude>
+    <longitude>31.349852</longitude>
+    <name>Ahmed Fakhry Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>29 Ahmed Fakhry St. - Nasr City, Cairo, Egypt.,Nasr City,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>81</id>
+    <latitude>30.04931</latitude>
+    <longitude>31.246203</longitude>
+    <name>Opera Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>51 Kasr El Nil St., Down Town, Cairo, Egypt.,Cairo,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>82</id>
+    <latitude>30.079632</latitude>
+    <longitude>31.314479</longitude>
+    <name>Obour Bldng Branch..</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>5 Obour Buildings - Salah Salem St. , Cairo, Egypt.,Cairo,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>83</id>
+    <latitude>30.013944</latitude>
+    <longitude>31.286482</longitude>
+    <name>Mokattam Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>34 Road 9, Mokkatam, Cairo, Egypt.,Cairo,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>84</id>
+    <latitude>31.239972</latitude>
+    <longitude>29.956061</longitude>
+    <name>Gleem Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>344 Tareek El Geish St., Gleem, El Raml District, Alexandria, Egypt.,Alexandria,Alexandria</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>85</id>
+    <latitude>31.276687</latitude>
+    <longitude>30.003182</longitude>
+    <name>Mandara Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>737 Tareek El-Geish St. - Mandara - Alexandria, Egypt.,Alexandria,Alexandria</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>87</id>
+    <latitude>30.115248</latitude>
+    <longitude>31.344681</longitude>
+    <name>Nady El Shams Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>31, Abd El Hamid Badway St.- Heliopolis, Cairo, Egypt.,Heliopolis,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>88</id>
+    <latitude>30.063086</latitude>
+    <longitude>31.027633</longitude>
+    <name>Dandy Mall Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>Km 28 Cairo-Alex Highway, Giza, Egypt.,Giza,Giza</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>91</id>
+    <latitude>30.054594</latitude>
+    <longitude>31.348184</longitude>
+    <name>Mostafa El Nahas Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>71 Mostafa El Nahas St., District no. 8, Nasr City, Cairo, Egypt.,Nasr City,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>92</id>
+    <latitude>30.002169</latitude>
+    <longitude>31.170439</longitude>
+    <name>Feisal Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>313 King Faisal St. (Hassan Mohamed), Giza, Egypt.,Giza,Giza</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>93</id>
+    <latitude>30.045712</latitude>
+    <longitude>31.213145</longitude>
+    <name>El Agouza Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>6 Nawal St.,(currently Hassan Moh. El Razaz St.,) – Mostafa EL Sheriey Corner-Agouza–, Giza, Egypt.,Agouza,Giza</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>94</id>
+    <latitude>30.011615</latitude>
+    <longitude>31.21767</longitude>
+    <name>El Bahr El Aazam Branch</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>134 El-Bahr El- A’azam St. - Block 19 , Giza, Egypt.,Giza,Giza</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>96</id>
+    <latitude>31.417434</latitude>
+    <longitude>31.811769</longitude>
+    <name>Damietta Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>3 Saad Zaghloul St., Kornich El Nile, Demietta, Egypt.,Demietta,Demietta</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>99</id>
+    <latitude>30.09448</latitude>
+    <longitude>31.336382</longitude>
+    <name>Ismailiya Square Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>39 Omar Ibn El Khattab St. - Ismaileya Square - Heliopolis, Cairo, Egypt.,Heliopolis,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>105</id>
+    <latitude>27.196811</latitude>
+    <longitude>33.828905</longitude>
+    <name>Hurghada – Airport Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>14 Al Mohamady Howaydek St. - Takseem El Kawthar, in front of Mobarak 2 Buildings - Hurghada, Red Sea, El-Bahr El-Ahmar,
+
+Egypt,Hurghada,El-Bahr El-Ahmar</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>106</id>
+    <latitude>30.061865</latitude>
+    <longitude>31.217077</longitude>
+    <name>Zamalek Branch.</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>3 Mansour Mohamed st., Zamalek, Cairo, Egypt.,Zamalek,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>107</id>
+    <latitude>31.233378</latitude>
+    <longitude>29.947085</longitude>
+    <name>Stanly Premier Flagship</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>Kamarayet Roushdy at the crossing streets Elgeish st. and Roushdy Basha st.,Alexandria,Alexandria</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>109</id>
+    <latitude>30.073402</latitude>
+    <longitude>31.347041</longitude>
+    <name>City Stars - Market Level</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>Nasr City - City Stars Mall, Cairo, Egypt.,Nasr City,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>110</id>
+    <latitude>30.073402</latitude>
+    <longitude>31.347041</longitude>
+    <name>City Stars - 1st Retail Floor</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>Nasr City - City Stars Mall, Cairo, Egypt.,Nasr City,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>111</id>
+    <latitude>29.975968</latitude>
+    <longitude>30.94457</longitude>
+    <name>Diamond Mall</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>Beside 6th of October University, Cairo, Egypt.,6th of October,Giza</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>112</id>
+    <latitude>30.061201</latitude>
+    <longitude>31.482643</longitude>
+    <name>El-Rehab Mall 2</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>EL-Rehab City - El-Rehab Mall 2, New Cairo, Cairo, Egypt.,New Cairo,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>113</id>
+    <latitude>30.05059</latitude>
+    <longitude>31.232221</longitude>
+    <name>Ramsis Hilton Mall</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>Downtown - Maspeero Street, Cairo, Egypt.,Cairo,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>114</id>
+    <latitude>30.050299</latitude>
+    <longitude>31.231481</longitude>
+    <name>Ramsis Hilton Hotel</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>Downtown - Maspeero Street, Cairo, Egypt.,Cairo,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>115</id>
+    <latitude>30.25992</latitude>
+    <longitude>31.757612</longitude>
+    <name>Dr. Griesh Company 1</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>10th of Ramadan - Industrial Zone, Sharqeya, Egypt.,10th of Ramadan,Sharqeya</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>116</id>
+    <latitude>30.111963</latitude>
+    <longitude>31.399462</longitude>
+    <name>Cairo Airport</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>Hall No. 3, Cairo, Egypt.,Cairo,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>117</id>
+    <latitude>30.25992</latitude>
+    <longitude>31.757612</longitude>
+    <name>Dr. Griesh Company 2</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>10th of Ramadan - Industrial Zone, Sharqeya, Egypt.,10th of Ramadan,Sharqeya</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>118</id>
+    <latitude>30.041662</latitude>
+    <longitude>31.235327</longitude>
+    <name>Cairo Center</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>Cairo Center Building, Cairo, Egypt.,Cairo,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>119</id>
+    <latitude>30.25992</latitude>
+    <longitude>31.757612</longitude>
+    <name>Dr. Griesh Company 3</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>10th of Ramadan - Industrial Zone, Sharqeya, Egypt.,10th of Ramadan,Sharqeya</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>120</id>
+    <latitude>29.982994</latitude>
+    <longitude>31.316947</longitude>
+    <name>Carrefour - Maadi City Centre. </name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>Maadi City Center - Maadi, Cairo, Egypt.,Maadi,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>121</id>
+    <latitude>30.125308</latitude>
+    <longitude>31.40341</longitude>
+    <name>Air Mall</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>Air Mall - Cairo In'tl Airport, Cairo, Egypt.,Cairo,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>122</id>
+    <latitude>30.111972</latitude>
+    <longitude>31.39943</longitude>
+    <name>Hall No. 4</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>Hall No. 4 - Cairo In'tl Airport, Cairo, Egypt.,Cairo,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>123</id>
+    <latitude>30.117178</latitude>
+    <longitude>31.407981</longitude>
+    <name>Cairo Airport Terminal3 </name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>Arrival hall Cairo In'tl Airport, Cairo, Egypt.,Cairo,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>124</id>
+    <latitude>30.117178</latitude>
+    <longitude>31.407981</longitude>
+    <name>Cairo Airport Terminal3 </name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>Departure hall Cairo In'tl Airport, Cairo, Egypt.,Cairo,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>125</id>
+    <latitude>31.167554</latitude>
+    <longitude>29.932938</longitude>
+    <name>City Center Alex</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>Down Town - Alexandria, Egypt.,Alexandria,Alexandria</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>126</id>
+    <latitude>30.042847</latitude>
+    <longitude>31.231948</longitude>
+    <name>Samiramis Hotel - Garden City</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>Garden City, Cairo, Egypt.,Garden City,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>129</id>
+    <latitude>30.063086</latitude>
+    <longitude>31.027633</longitude>
+    <name>Dandy Mall beside Carrefour</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>Inside Dandy Mall, Beside Carrefour, Km 28 Cairo-Alex Highway, Giza, Egypt.,6th of October,Giza</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>130</id>
+    <latitude>30.25992</latitude>
+    <longitude>31.757612</longitude>
+    <name>Dr. Griesh Company 4</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>10th of Ramadan - Industrial Zone, Sharqeya, Egypt.,10th of Ramadan,Sharqeya</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+  <pointOfInterest>
+    <id>131</id>
+    <latitude>30.06914</latitude>
+    <longitude>31.221766</longitude>
+    <name>Zamalek Sales Office</name>
+    <imageFileName/>
+    <fax/>
+    <openingHours>
+      <holidayNote/>
+      <mon>00:00-23:59</mon>
+      <tue>00:00-23:59</tue>
+      <wed>00:00-23:59</wed>
+      <thu>00:00-23:59</thu>
+      <fri>00:00-23:59</fri>
+      <sat>00:00-23:59</sat>
+      <sun>00:00-23:59</sun>
+    </openingHours>
+    <phoneNumber/>
+    <address>40 B, Mohammed Mazhar St. , Zamalek, Cairo, Egypt,Zamalek,Cairo</address>
+    <services/>
+    <type>ATM</type>
+  </pointOfInterest>
+
+</POICollection>

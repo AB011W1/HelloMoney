@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+
+	<util:map id="dummyResponseMap" map-class="java.util.HashMap">
+		<entry key="TZBRB_TZ"  value-ref="dummyResponse_TZBRB_TZ"/>
+		<entry key="KEBRB_KE"  value-ref="dummyResponse_KEBRB_KE"/>
+		<entry key="UGBRB_UG"  value-ref="dummyResponse_UGBRB_UG"/>
+		<entry key="GHBRB_GH"  value-ref="dummyResponse_GHBRB_GH"/>
+		<entry key="ZMBRB_ZM"  value-ref="dummyResponse_ZMBRB_ZM"/>
+		<entry key="ZWBRB_ZW"  value-ref="dummyResponse_ZWBRB_ZW"/>
+        <entry key="MZBRB_MZ"  value-ref="dummyResponse_MZBRB_MZ"/>
+        <entry key="TZNBC_TZN"  value-ref="dummyResponse_TZNBC_TZN"/>
+        <entry key="BWBRB_BW"  value-ref="dummyResponse_BWBRB_BW"/>
+ 	</util:map>
+</beans>

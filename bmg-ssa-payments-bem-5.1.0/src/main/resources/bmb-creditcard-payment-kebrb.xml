@@ -1,0 +1,203 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:util="http://www.springframework.org/schema/util"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+ Credit card payment controller starts here
+
+	<bean id="KEBRBretrieveBCDPayeeInfoController"
+		class="com.barclays.bmg.mvc.controller.cardpayment.RetrieveBCDPayeeInformationController" parent="bmbAbstractCommandController">
+		<property name="mergeBarclayCardPayeeInfoOperation" ref="mergeBarclayCardPayeeInfoOperation" />
+		<property name="retrieveAccountListOperation" ref="retrieveAccountListOperation" />
+		<property name="retrievePayeeInfoOperation" ref="retrievePayeeInfoOperation" />
+		<property name="transactionLimitOperation" ref="transactionLimitOperation" />
+		<property name="commandName" value="bcdPayeeInformationCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.BCDPayeeInformationCommand" />
+		<property name="validator" ref="bcdPayeeInformationCommandValidator" />
+		<property name="bmbJSONBuilder" ref="retreiveBCDPayeeInfoJSONBldr" />
+	</bean>
+
+	<bean id="KEBRBretrieveCCPPayeeInfoController"
+		class="com.barclays.bmg.mvc.controller.cardpayment.RetreiveCCPPayeeInformationController" parent="bmbAbstractCommandController">
+		<property name="retrieveAccountListOperation" ref="retrieveAccountListOperation" />
+		<property name="mergeOwnCreditcardInfoOperation" ref="mergeOwnCreditcardInfoOperation" />
+		<property name="getSelectedAccountOperation" ref="getSelectedAccountOperation" />
+		<property name="transactionLimitOperation" ref="transactionLimitOperation" />
+		<property name="commandName" value="ccpPayeeInformationCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.CCPPayeeInformationCommand" />
+		<property name="validator" ref="ccpPayeeInformationCommandValidator" />
+		<property name="bmbJSONBuilder" ref="retreiveCCPPayeeInfoJSONBldr" />
+	</bean>
+
+
+
+
+ Credit card payment controller ends here
+     <bean id="KEBRBgetOwnCreditCardAccountsOperation"
+		class="com.barclays.bmg.operation.beneficiary.GetOwnCreditCardAccountsOperation" parent="bmbPaymentsOperation">
+		<property name="listValueResService" ref="listValueResService" />
+	</bean>
+
+	<bean id="KEBRBmergeBarclayCardPayeeInfoOperation"
+		class="com.barclays.bmg.operation.beneficiary.MergeBarclayCardPayeeInfoOperation" parent="bmbPaymentsOperation">
+		<property name="retreiveIndvCustInfoService" ref="KEBRBretreiveIndvCustInfoService" />
+		<property name="currLstKey" value="currency_list_barclaycard" />
+		<property name="currLstActId" value="PMT_BP_BCD" />
+	</bean>
+
+	<bean id="KEBRBbcdPayeeInformationCommandValidator"
+		class="com.barclays.bmg.mvc.validator.billpayment.BCDPayeeInformationCommandValidator">
+	</bean>
+
+	<bean id="KEBRBretreiveBCDPayeeInfoJSONBldr"
+		class="com.barclays.bmg.json.model.builder.billpayment.RetreiveBCDPayeeInfoJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+
+	<bean id="KEBRBmergeOwnCreditcardInfoOperation"
+		class="com.barclays.bmg.operation.beneficiary.MergeOwnCreditcardInfoOperation" parent="bmbPaymentsOperation">
+		<property name="creditCardDetailsService" ref="creditCardDetailsServiceImpl" />
+	</bean>
+
+	<bean id="KEBRBccpPayeeInformationCommandValidator"
+		class="com.barclays.bmg.mvc.validator.billpayment.CCPPayeeInformationCommandValidator">
+	</bean>
+
+	<bean id="KEBRBretreiveCCPPayeeInfoJSONBldr"
+	 	class="com.barclays.bmg.json.model.builder.billpayment.RetreiveCCPPayeeInfoJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+
+	 Credit Card PAyment
+
+	<bean id="KEBRBcreditCardPaymentDAO"
+		class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.CreditCardPaymentDAO" />
+		<property name="daoFrontController" ref="billPaymentDaoFrontControllerImpl" />
+	</bean>
+  <bean id="KEBRBcreditCardPaymentDAOController"
+    class="com.barclays.bmg.dao.processing.accountservices.CreditCardPaymentDAOController">
+    <property name="creditCardPayReqAdptOperation" ref="KEBRBcreditCardPayReqAdptOperation" />
+    <property name="transmissionOperation" ref="KEBRBcreditCardPayTransmissionOperation" />
+    <property name="creditCardPayRespAdptOperation" ref="KEBRBcreditCardPayRespAdptOperation" />
+  </bean>
+
+  <bean id="KEBRBcreditCardPayReqAdptOperation"
+    class="com.barclays.bmg.dao.operation.accountservices.CreditCardPayReqAdptOperation">
+    <property name="creditCardPayHeaderAdapter" ref="KEBRBcreditCardPayHeaderAdapter" />
+    <property name="creditCardPayPayloadAdapter" ref="KEBRBcreditCardPayPayloadAdapter" />
+  </bean>
+
+  <bean id="KEBRBcreditCardPayTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+    <property name="transmissionService" ref="KEBRBcreditCardPayTransmissionService" />
+  </bean>
+
+  <bean id="KEBRBcreditCardPayTransmissionService"
+    class="com.barclays.bmg.dao.service.impl.CreditCardPayTransmissionService">
+    <property name="remoteService" ref="fundTransferWebServiceImpl" />
+  </bean>
+  <bean id="KEBRBcreditCardPayHeaderAdapter"
+    class="com.barclays.bmg.dao.accountservices.adapter.CreditCardPayHeaderAdapter">
+  </bean>
+  <bean id="KEBRBcreditCardPayPayloadAdapter"
+    class="com.barclays.bmg.dao.accountservices.adapter.CreditCardPayPayloadAdapter">
+  </bean>
+
+  <bean id="KEBRBcreditCardPayRespAdptOperation"
+    class="com.barclays.bmg.dao.operation.accountservices.CreditCardPayRespAdptOperation">
+  </bean>
+
+
+     Individual Cust Info By Credit Card Number
+
+  <bean id="KEBRBretreiveIndvCustInfoService"
+  		class="com.barclays.bmg.service.impl.RetreiveIndvCustInfoServiceImpl">
+  		<property name="retreiveIndvCustInfoByCCDAO" ref="KEBRBretreiveIndvCustInfoByCCDAO" />
+  </bean>
+
+  <bean id="KEBRBretreiveIndvCustInfoByCCDAO"
+		class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.RetreiveIndvCustInfoByCCDAO" />
+		<property name="daoFrontController" ref="billPaymentDaoFrontControllerImpl" />
+	</bean>
+  <bean id="KEBRBretrIndvCustInfoByCCDAOController"
+    class="com.barclays.bmg.dao.processing.accountservices.RetreiveIndvCustInfoByCCDAOController">
+    <property name="retrIndvCustByCCReqAdptOperation" ref="KEBRBretrIndvCustByCCReqAdptOperation" />
+    <property name="transmissionOperation" ref="KEBRBretrIndvCustInfoTransmissionOperation" />
+    <property name="retrIndvCustByCCRespAdptOperation" ref="KEBRBretrIndvCustByCCRespAdptOperation" />
+  </bean>
+
+  <bean id="KEBRBretrIndvCustByCCReqAdptOperation"
+    class="com.barclays.bmg.dao.operation.accountservices.RetrIndvCustByCCReqAdptOperation">
+    <property name="retrIndvCustByCCHeaderAdapter" ref="KEBRBretrIndvCustByCCHeaderAdapter" />
+    <property name="retrIndvCustByCCPayloadAdapter" ref="KEBRBretrIndvCustByCCPayloadAdapter" />
+  </bean>
+
+  <bean id="KEBRBretrIndvCustInfoTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+    <property name="transmissionService" ref="KEBRBretreiveIndvCustInfoByCCTransmissionService" />
+  </bean>
+
+  <bean id="KEBRBretreiveIndvCustInfoByCCTransmissionService"
+    class="com.barclays.bmg.dao.service.impl.RetreiveIndvCustInfoByCCTransmissionService">
+    <property name="remoteService" ref="KEBRBretreiveIndvCustInfoWebServiceImpl" />
+  </bean>
+  <bean id="KEBRBretrIndvCustByCCHeaderAdapter"
+    class="com.barclays.bmg.dao.accountservices.adapter.RetrIndvCustByCCHeaderAdapter">
+  </bean>
+  <bean id="KEBRBretrIndvCustByCCPayloadAdapter"
+    class="com.barclays.bmg.dao.accountservices.adapter.RetrIndvCustByCCPayloadAdapter">
+  </bean>
+
+  <bean id="KEBRBretrIndvCustByCCRespAdptOperation"
+    class="com.barclays.bmg.dao.operation.accountservices.RetrIndvCustByCCRespAdptOperation">
+  </bean>
+
+   <bean id="KEBRBretreiveIndvCustInfoWebServiceImpl"
+    class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+    <property name="portInterface"
+      value="com.barclays.bem.IndividualCustomerManagement.IndividualCustomerManagement_PortType" />
+    <property name="portName" value="IndividualCustomerManagementSOAP" />
+    <property name="jaxRpcServiceInterface"
+      value="com.barclays.bem.IndividualCustomerManagement.IndividualCustomerManagement_Service" />
+    <property name="endpointAddress"
+      value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+    <property name="endpointAddressName" value="IndividualCustomerManagement_EndPoint" />
+    <property name="cacheKey" value="indvCustomerManagement" />
+  </bean>
+
+
+
+
+   Credit Card PAyment
+
+  <bean id="creditCardPaymentDAOController"
+    class="com.barclays.bmg.dao.processing.accountservices.ssa.CreditCardPaymentDAOController">
+    <property name="creditCardPayReqAdptOperation" ref="creditCardPayReqAdptOperation" />
+    <property name="transmissionOperation" ref="creditCardPayTransmissionOperation" />
+    <property name="creditCardPayRespAdptOperation" ref="creditCardPayRespAdptOperation" />
+  </bean>
+
+  <bean id="creditCardPayReqAdptOperation"
+    class="com.barclays.bmg.dao.operation.accountservices.ssa.CreditCardPayReqAdptOperation">
+    <property name="creditCardPayHeaderAdapter" ref="creditCardPayHeaderAdapter" />
+    <property name="creditCardPayPayloadAdapter" ref="creditCardPayPayloadAdapter" />
+  </bean>
+
+  <bean id="creditCardPayHeaderAdapter"
+    class="com.barclays.bmg.dao.accountservices.adapter.ssa.CreditCardPayHeaderAdapter">
+  </bean>
+  <bean id="creditCardPayPayloadAdapter"
+    class="com.barclays.bmg.dao.accountservices.adapter.ssa.CreditCardPayPayloadAdapter">
+  </bean>
+
+  <bean id="creditCardPayRespAdptOperation"
+    class="com.barclays.bmg.dao.operation.accountservices.ssa.CreditCardPayRespAdptOperation">
+  </bean>
+
+
+
+</beans>-->

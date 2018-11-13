@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- Login Controller -->
+<!-- Login Controller -->
+	<bean id="loginControllerVer1" class="com.barclays.bmg.mvc.controller.auth.LoginController" parent="bmbAbstractCommandController">
+		<property name="spAuthenticationOperation" ref="spAuthenticationOperation" />
+		<property name="otpAuthenticationOperation" ref="otpAuthenticationOperation" />
+		<property name="sqaAuthenticationOperation" ref="sqaAuthenticationOperation" />
+		<property name="commandName" value="loginCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.auth.LoginCommand" />
+		<property name="validator" ref="loginValidator" />
+		<property name="sqaAuthenticationJSONBldr" ref="sqaAuthenticationJSONBldrver1" />
+		<property name="otpAuthenticationJSONBldr" ref="otpAuthenticationJSONBldrver1" />
+		<property name="invalidLoginJSONBldr" ref="invalidLoginJSONBldrver1" />
+	</bean>
+
+
+	<!-- OTP Validation Controller -->
+	<bean id="otpValidationControllerVer1"
+		class="com.barclays.bmg.mvc.controller.auth.OTPValidationController" parent="bmbAbstractCommandController">
+		<property name="otpAuthenticationOperation" ref="otpAuthenticationOperation" />
+		<property name="commandName" value="otpCommand" />
+		<property name="commandClass" value="com.barclays.bmg.mvc.command.auth.OTPCommand" />
+		<property name="validator" ref="otpValidator" />
+		<property name="bmbJSONBldr" ref="otpVerificationJSONBldrVer1" />
+	</bean>
+
+	<!-- SQA Validation Controller -->
+	<bean id="sqaValidationControllerVer1"
+		class="com.barclays.bmg.mvc.controller.auth.SQAValidationController" parent="bmbAbstractCommandController">
+		<property name="sqaAuthenticationOperation" ref="sqaAuthenticationOperation" />
+		<property name="commandName" value="sqaCommand" />
+		<property name="commandClass" value="com.barclays.bmg.mvc.command.auth.SQACommand" />
+		<property name="validator" ref="sqaValidator" />
+		<property name="bmbJSONBldr" ref="sqaVerificationJSONBldrVer1" />
+	</bean>
+
+<!-- Post Login Controller -->
+	<bean id="postLoginControllerVer1"
+		class="com.barclays.bmg.mvc.controller.auth.PostLoginController" parent="bmbAbstractController">
+		<property name="postAuthenticationOperation" ref="postAuthenticationOperation" />
+		<property name="sessionActivityOperation" ref="sessionSummaryRetrievalOperation" />
+		<property name="requestUri" value="/dataserv?opCde=OP0200" />
+		<property name="serVerUri" value="serVer=1.0" />
+		<property name="featureBlackoutService" ref="featureBlackoutServiceImpl" />
+		<property name="bmbJsonBuilder" ref="postAuthenticationJSONBldrVer1" />
+		<property name="supportedMethods" value="POST,GET" />
+	</bean>
+
+	<bean id="fundTransferInitControllerVer1"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.own.OwnFundTransferInitController" parent="bmbAbstractController" >
+		<property name="retrieveAccountListOperation" ref="retrieveAccountListOperation" />
+		<property name="transactionLimitOperation" ref="transactionLimitOperation" />
+		<property name="validateAccountListOperation" ref="validateAccountListOperation" />
+		<property name="bmbJSONBuilder" ref="fundTransferInitJSONBuilderVer1" />
+	</bean>
+
+	<bean id="fTValidationControllerVer1"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.own.OwnFundtransferValidateController" parent="bmbAbstractCommandController">
+		<property name="getSelectedAccountOperation" ref="getSelectedAccountOperation" />
+		<property name="ownFundTransferRel1ValidateOperation" ref="ownFundTransferRel1ValidateOperation" />
+		<property name="formValidateOperation" ref="formValidateOperation" />
+		<property name="bmbJSONBuilder" ref="fundTransferValidateJSONBuilderVer1" />
+		<property name="commandName" value="fundTransferValidateCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.fundtransfer.own.FundTransferValidateCommand" />
+		<property name="validator" ref="fundTransferCommandValidator" />
+		<property name="crossCurrencyAllowed" value="true" />
+	</bean>
+
+	<bean id="fundTransferExecutionControllerVer1"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.own.OwnFundTransferExecuteController" parent="bmbAbstractCommandController">
+		<property name="domesticFundTransferExecuteOperation" ref="domesticFundTransferExecuteOperation" />
+		<property name="bmbJSONBuilder" ref="fundTransferExecuteJSONBldrVer1" />
+		<property name="otpAuthenticationOperation" ref="otpAuthenticationOperation" />
+		<property name="txnOTPSecondAuthJSONBldr" ref="txnSecondAuthOTPJSONBldrVer1" />
+		<property name="sqaAuthenticationOperation" ref="sqaAuthenticationOperation" />
+		<property name="txnSQASecondAuthJSONBldr" ref="txnSecondAuthSQAJSONBldrVer1" />
+		<property name="commandName" value="fundTransferExecuteCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.fundtransfer.own.FundTransferExecuteCommand" />
+		<property name="validator" ref="fundTransferExecuteCommandValidator" />
+	</bean>
+
+	<!-- atAGlanceController   -->
+	<bean id="atAGlanceControllerVer1"
+		class="com.barclays.bmg.mvc.controller.accountsummary.AtAGlanceController" parent="bmbAbstractController">
+		<property name="accountSummaryOperation" ref="accountSummaryOperation" />
+		<property name="bmbJsonBuilder" ref="accountSummaryJSONBldrVer1" />
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="featureBlackoutService" ref="featureBlackoutServiceImpl" />
+		<property name="supportedMethods" value="POST,GET" />
+	</bean>
+
+	<bean id="casaAccoutDetailsControllerVer1"
+		class="com.barclays.bmg.mvc.controller.accountdetails.CasaAccountDetailsController" parent="bmbAbstractCommandController">
+		<property name="commandName" value="accountCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.accountdetails.AccountDetailsCommand" />
+		<property name="validator" ref="accountDetailsValidator" />
+
+		<property name="casaDetailsOperation" ref="casaDetailsOperation" />
+		<property name="bmbJsonBuilder" ref="casaAccountDetailsJSONBldrVer1" />
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="featureBlackoutService" ref="featureBlackoutServiceImpl" />
+	</bean>
+
+		<!-- CASA Trnxn Activity  -->
+
+	<bean id="casaTrnxnActivityControllerVer1"
+		class="com.barclays.bmg.mvc.controller.accountdetails.CasaTransactionActivityController" parent="bmbAbstractCommandController">
+		<property name="commandName" value="casaTrxActivityCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.accountdetails.CasaTransactionActivityCommand" />
+		<property name="validator" ref="casaTrxActivityValidator" />
+
+		<property name="casaTransactionActivityOperation" ref="casaTransactionActivityOperation" />
+		<property name="casaDetailsOperation" ref="casaDetailsOperation" />
+		<property name="bmbJsonBuilder" ref="casaTransactionActivityJSONBldrVer1" />
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="featureBlackoutService" ref="featureBlackoutServiceImpl" />
+	</bean>
+
+	<!-- Credit Card Account Details -->
+
+	<bean id="creditCardAccoutDetailsControllerVer1"
+		class="com.barclays.bmg.mvc.controller.accountdetails.CreditCardAccountDetailsController" parent="bmbAbstractCommandController">
+		<property name="commandName" value="accountCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.accountdetails.CreditCardAccountDetailsCommand" />
+		<property name="validator" ref="creditCardAccountDetailsValidator" />
+
+		<property name="creditCardDetailsOperation" ref="creditCardDetailsOperation" />
+		<property name="bmbJsonBuilder" ref="creditCardAccoutDetailsJSONBldrVer1" />
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="featureBlackoutService" ref="featureBlackoutServiceImpl" />
+	</bean>
+
+	<!-- Credit Card Unbilled  Transaction-->
+
+	<bean id="creditCardUnbilledTransControllerVer1"
+		class="com.barclays.bmg.mvc.controller.accountdetails.CreditCardUnbilledTransController" parent="bmbAbstractCommandController">
+		<property name="commandName" value="accountCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.accountdetails.CreditCardUnbilledTransCommand" />
+		<property name="validator" ref="creditCardUnbilledTransValidator" />
+
+		<property name="creditCardUnbilledTransOperation" ref="creditCardUnbilledTransOperation" />
+		<property name="bmbJsonBuilder" ref="creditCardUnbilledTransJSONBldrVer1" />
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="featureBlackoutService" ref="featureBlackoutServiceImpl" />
+	</bean>
+
+	<!-- Credit Card Statemented  Transaction-->
+
+	<bean id="creditCardStmtTransControllerVer1"
+		class="com.barclays.bmg.mvc.controller.accountdetails.CreditCardStmtTransController" parent="bmbAbstractCommandController">
+		<property name="commandName" value="accountCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.accountdetails.CreditCardStmtTransCommand" />
+		<property name="validator" ref="creditCardStmtTransValidator" />
+
+		<property name="creditCardStmtTransOperation" ref="creditCardStmtTransOperation" />
+		<property name="bmbJsonBuilder" ref="creditCardStmtTransJSONBldrVer1" />
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="featureBlackoutService" ref="featureBlackoutServiceImpl" />
+	</bean>
+
+	<!-- Terms Of Use  -->
+	<bean id="termsOfUseDetailControllerVer1"	class="com.barclays.bmg.mvc.controller.auth.TermsOfUseDetailController"  parent="bmbAbstractController">
+		<property name="termsOfUseDetailOperation" ref="termsOfUseDetailOperation" />
+		<property name="bmbJsonBuilder" ref="TermsOfUseDetailsJSONBldrVer1" />
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="featureBlackoutService" ref="featureBlackoutServiceImpl" />
+		<property name="supportedMethods" value="POST,GET" />
+	</bean>
+
+	<bean id="termsOfUseAcceptControllerVer1"	class="com.barclays.bmg.mvc.controller.auth.TermsOfUseAcceptController"  parent="bmbAbstractController">
+		<property name="termsOfUseAcceptOperation" ref="termsOfUseAcceptOperation" />
+		<property name="bmbJsonBuilder" ref="TermsOfUseAcceptJSONBldrVer1" />
+		<property name="requestUri" value="/dataserv?opCde=OP0200"/>
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="featureBlackoutService" ref="featureBlackoutServiceImpl" />
+		<property name="supportedMethods" value="POST,GET" />
+	</bean>
+
+	<!-- Bill Payment -->
+		<bean id="retrievePayeeListControllerVer1"
+		class="com.barclays.bmg.mvc.controller.billpayment.PayeeListController" parent="bmbAbstractCommandController">
+		<property name="retrievePayeeListOperation" ref="retrieveBPPayeeListOperation" />
+		<property name="getOwnCreditCardAccountsOperation" ref="getOwnCreditCardAccountsOperation" />
+		<property name="commandName" value="payeeListCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.PayeeListCommand" />
+		<property name="validator" ref="payeeListCommandValidator" />
+		<property name="bmbJSONBuilder" ref="retreivePayeeListJSONBldrVer1" />
+	</bean><!--
+
+	<bean id="retrievePayeeInfoControllerVer1"
+		class="com.barclays.bmg.mvc.controller.billpayment.RetrieveBPPayeeInformationController" parent="bmbAbstractCommandController">
+		<property name="retrievePayeeInfoOperation" ref="retrievePayeeInfoOperation" />
+		<property name="retrieveAccountListOperation" ref="retrieveAccountListOperation" />
+		<property name="mergeBillerInfoOperation" ref="mergeBillerInfoOperation" />
+		<property name="transactionLimitOperation" ref="transactionLimitOperation" />
+		<property name="checkInqueryBillOperation" ref="checkInqueryBillOperation" />
+		<property name="commandName" value="payeeInformationCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.PayeeInformationCommand" />
+		<property name="validator" ref="payeeInformationCommandValidator" />
+		<property name="bmbJSONBuilder" ref="retreivePayeeInfoJSONBldrVer1" />
+		<property name="activityId" value="PMT_BP_BILLPAY_PAYEE" />
+		<property name="txnType" value="BP" />
+	</bean>
+
+	--><bean id="retrievePayeeInfoControllerVer1"
+		class="com.barclays.bmg.mvc.controller.billpayment.RetreivePayeeInformationControllerRel1" parent="bmbAbstractCommandController">
+		<property name="retrievePayeeInfoOperation" ref="retrievePayeeInfoOperation" />
+		<property name="retrieveAccountListOperation" ref="retrieveAccountListOperation" />
+		<property name="mergeBillerInfoOperation" ref="mergeBillerInfoOperation" />
+		<property name="transactionLimitOperation" ref="transactionLimitOperation" />
+		<property name="checkInqueryBillOperation" ref="checkInqueryBillOperation" />
+		<property name="mergeBarclayCardPayeeInfoOperation" ref="mergeBarclayCardPayeeInfoOperation" />
+		<property name="mergeOwnCreditcardInfoOperation" ref="mergeOwnCreditcardInfoOperation" />
+		<property name="getSelectedAccountOperation" ref="getSelectedAccountOperation" />
+		<property name="commandName" value="payeeInformationCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.PayInfoCommandRel1" />
+		<property name="validator" ref="payeeInformationCommandValidatorVer1" />
+		<property name="bmbJSONBuilder" ref="retreivePayeeInfoJSONBldrVer1" />
+	</bean><!--
+
+	<bean id="retrieveBCDPayeeInfoController"
+		class="com.barclays.bmg.mvc.controller.cardpayment.RetrieveBCDPayeeInformationController" >
+		<property name="mergeBarclayCardPayeeInfoOperation" ref="mergeBarclayCardPayeeInfoOperation" />
+		<property name="retrieveAccountListOperation" ref="retrieveAccountListOperation" />
+		<property name="retrievePayeeInfoOperation" ref="retrievePayeeInfoOperation" />
+		<property name="transactionLimitOperation" ref="transactionLimitOperation" />
+		<property name="commandName" value="bcdPayeeInformationCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.BCDPayeeInformationCommand" />
+		<property name="validator" ref="bcdPayeeInformationCommandValidator" />
+		<property name="bmbJSONBuilder" ref="retrieveBCDPayeeInfoJSONBuilderVer1" />
+	</bean>
+
+	<bean id="retrieveCCPPayeeInfoController"
+		class="com.barclays.bmg.mvc.controller.cardpayment.RetreiveCCPPayeeInformationController" >
+		<property name="retrieveAccountListOperation" ref="retrieveAccountListOperation" />
+		<property name="mergeOwnCreditcardInfoOperation" ref="mergeOwnCreditcardInfoOperation" />
+		<property name="getSelectedAccountOperation" ref="getSelectedAccountOperation" />
+		<property name="transactionLimitOperation" ref="transactionLimitOperation" />
+		<property name="commandName" value="ccpPayeeInformationCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.CCPPayeeInformationCommand" />
+		<property name="validator" ref="ccpPayeeInformationCommandValidator" />
+		<property name="bmbJSONBuilder" ref="retreiveCCPPayeeInfoJSONBuilderVer1" />
+	</bean>
+
+
+	--><bean id="paymentFormSubmissionControllerVer1"
+		class="com.barclays.bmg.mvc.controller.billpayment.BillPayFormSubmissionValidationController" parent="bmbAbstractCommandController">
+		<property name="getSelectedAccountOperation" ref="getSelectedAccountOperation" />
+		<property name="formValidateOperation" ref="formValidateOperation" />
+		<property name="billPayAmountValidationOperation" ref="billPayAmountValidationOperation" />
+		<property name="commandName" value="paymentFormSubmissionCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.PaymentFormSubmissionCommand" />
+		<property name="validator" ref="paymentFormSubmissionCommandValidator" />
+		<property name="bmbJSONBuilder" ref="paymentTransferJSONBldrVer1" />
+	</bean>
+
+	<bean id="confirmPaymentExecutionControllerVer1"
+		class="com.barclays.bmg.mvc.controller.billpayment.BillPaymentExecutionController" parent="bmbAbstractCommandController">
+		<property name="makeBillPaymentOperation" ref="makeBillPaymentOperation" />
+		<property name="bmbJSONBuilder" ref="paymentConfirmationJSONBldrVer1" />
+		<property name="otpAuthenticationOperation" ref="otpAuthenticationOperation" />
+		<property name="txnOTPSecondAuthJSONBldr" ref="txnSecondAuthOTPJSONBldrVer1" />
+		<property name="sqaAuthenticationOperation" ref="sqaAuthenticationOperation" />
+		<property name="txnSQASecondAuthJSONBldr" ref="txnSecondAuthSQAJSONBldrVer1" />
+		<property name="commandName" value="paymentExecuteCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.BillPaymentExecuteCommand" />
+		<property name="validator" ref="billPaymentExecuteCommandValidatorRel1" />
+	</bean>
+
+
+	<bean id="logoutControllerVer1"
+		class="com.barclays.bmg.mvc.controller.auth.BMBLogoutController" parent="bmbAbstractController">
+		<property name="sessionSummaryRetrievalOperation" ref="sessionSummaryRetrievalOperation" />
+		<property name="bmbJsonBuilder" ref="logoutSessionSummaryJSONBldrVer1" />
+	</bean>
+
+	<bean id="tdAccountDetailsControllerVer1"
+		class="com.barclays.bmg.mvc.controller.accountdetails.TDAccountDetailsController" parent="bmbAbstractCommandController">
+		<property name="tdAccountDetailsOperation" ref="tdAccountDetailsOperation" />
+		<property name="bmbJSONBuilder" ref="tdAccountDtlsJSONBldrVer1" />
+		<property name="commandName" value="tdDetailsCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.accountdetails.AccountDetailsCommand" />
+		<property name="validator" ref="tdAccountDetailsValidator" />
+	</bean>
+
+	<bean id="inValidateSessionControllerVer1"
+		class="com.barclays.bmg.mvc.controller.auth.BMBSessionInvalidationController" parent="bmbAbstractController">
+		<property name="bmbJsonBuilder" ref="invalidLoginJSONBldrver1" />
+		<property name="supportedMethods" value="POST,GET" />
+	</bean>
+</beans>

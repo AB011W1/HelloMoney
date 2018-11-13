@@ -1,0 +1,136 @@
+!SESSION 2018-04-25 11:22:20.610 -----------------------------------------------
+eclipse.buildId=M20080911-1700
+java.fullversion=J2RE 1.6.0 IBM J9 2.4 Windows Vista x86-32 jvmwi3260sr5-20090519_35743 (JIT enabled, AOT enabled)
+J9VM - 20090519_035743_lHdSMr
+JIT  - r9_20090518_2017
+GC   - 20090417_AA
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -showlocation
+Command-line arguments:  -os win32 -ws win32 -arch x86 -showlocation
+
+!ENTRY org.eclipse.ui.workbench 2 0 2018-04-25 11:24:07.783
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2018-04-25 11:24:07.783
+!MESSAGE Conflict for 'AUTOGEN:::com.ibm.rational.clearcase.ui.plugin.actions.IProjectContributions/com.ibm.rational.clearcase.ui.actions.ComparePredecessorAction':
+HandlerActivation(commandId=AUTOGEN:::com.ibm.rational.clearcase.ui.plugin.actions.IProjectContributions/com.ibm.rational.clearcase.ui.actions.ComparePredecessorAction,
+	handler=ActionDelegateHandlerProxy(null,com.ibm.rational.clearcase.ui.plugin.CTViewActionDelegate),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@25322532),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::com.ibm.rational.clearcase.ui.plugin.actions.IProjectContributions/com.ibm.rational.clearcase.ui.actions.ComparePredecessorAction,
+	handler=ActionDelegateHandlerProxy(null,com.ibm.rational.clearcase.ui.plugin.CTViewActionDelegate),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@25322532),sourcePriority=16384)
+
+!ENTRY org.eclipse.team.svn.core.svnnature 4 0 2018-04-25 11:35:24.264
+!MESSAGE SVN: '0x00000111: Get Resource List' operation finished with error
+!SUBENTRY 1 org.eclipse.team.svn.core.svnnature 4 0 2018-04-25 11:35:24.264
+!MESSAGE Get all resources operation failed.
+!STACK 0
+org.eclipse.team.svn.core.operation.HiddenException: 0x00000000: Unable connect to 'bmg-acct-svc-bem-5.1.0' project.
+Please check that SVN meta-information exists and its format is supported by the current SVN plug-in version.
+If so, it is possible that project working copy is relocated outside plug-in control.
+At the current moment project will be automatically disconnected from source control.
+	at org.eclipse.team.svn.core.SVNTeamProvider.breakThreadExecution(SVNTeamProvider.java:225)
+	at org.eclipse.team.svn.core.SVNTeamProvider.connectToProject(SVNTeamProvider.java:176)
+	at org.eclipse.team.svn.core.SVNTeamProvider.getRepositoryResource(SVNTeamProvider.java:70)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage.loadLocalResourcesSubTreeSVNImpl(SVNRemoteStorage.java:627)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage.loadLocalResourcesSubTree(SVNRemoteStorage.java:520)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage.getRegisteredChildren(SVNRemoteStorage.java:272)
+	at org.eclipse.team.svn.core.operation.local.GetAllResourcesOperation.runImpl(GetAllResourcesOperation.java:36)
+	at org.eclipse.team.svn.core.operation.AbstractActionOperation.run(AbstractActionOperation.java:76)
+	at org.eclipse.team.svn.core.operation.LoggedOperation.run(LoggedOperation.java:37)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility.doTask(ProgressMonitorUtility.java:103)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility.doTaskExternal(ProgressMonitorUtility.java:89)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility.doTaskExternal(ProgressMonitorUtility.java:80)
+	at org.eclipse.team.svn.ui.synchronize.RemoteStatusCache.allMembers(RemoteStatusCache.java:115)
+	at org.eclipse.team.svn.ui.synchronize.AbstractSVNSubscriber.resourcesStateChangedImpl(AbstractSVNSubscriber.java:188)
+	at org.eclipse.team.svn.ui.synchronize.AbstractSVNSubscriber.resourcesStateChanged(AbstractSVNSubscriber.java:161)
+	at org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage$3.runImpl(SVNRemoteStorage.java:151)
+	at org.eclipse.team.svn.core.operation.AbstractActionOperation.run(AbstractActionOperation.java:76)
+	at org.eclipse.team.svn.core.operation.LoggedOperation.run(LoggedOperation.java:37)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility.doTask(ProgressMonitorUtility.java:103)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility.doTaskExternal(ProgressMonitorUtility.java:89)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility$1$1.run(ProgressMonitorUtility.java:59)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1800)
+	at org.eclipse.team.svn.core.utility.ProgressMonitorUtility$1.run(ProgressMonitorUtility.java:57)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.mylyn.tasks.ui 2 0 2018-04-25 18:11:42.046
+!MESSAGE Repository link provider took over 5s to execute and was timed out: "[org.eclipse.team.svn.mylyn.SVNTaskRepositoryLinkProvider@334a334a]"
+
+!ENTRY org.eclipse.ui.workbench 4 0 2018-04-25 19:03:20.527
+!MESSAGE WARNING: Prevented recursive attempt to activate part org.eclipse.jdt.ui.CompilationUnitEditor while still in the middle of activating part org.eclipse.jdt.ui.PropertiesFileEditor
+!STACK 0
+java.lang.RuntimeException: WARNING: Prevented recursive attempt to activate part org.eclipse.jdt.ui.CompilationUnitEditor while still in the middle of activating part org.eclipse.jdt.ui.PropertiesFileEditor
+	at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3441)
+	at org.eclipse.ui.internal.WorkbenchPage.toggleFastView(WorkbenchPage.java:3832)
+	at org.eclipse.ui.internal.WorkbenchPage.hideFastView(WorkbenchPage.java:3812)
+	at org.eclipse.ui.internal.FastViewManager.restoreToPresentation(FastViewManager.java:587)
+	at org.eclipse.ui.internal.ViewStack.setMinimized(ViewStack.java:147)
+	at org.eclipse.ui.internal.PartStack.smartUnzoom(PartStack.java:1424)
+	at org.eclipse.ui.internal.PartStack$3.runWithException(PartStack.java:1480)
+	at org.eclipse.ui.internal.StartupThreading$StartupRunnable.run(StartupThreading.java:31)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:178)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:150)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4251)
+	at org.eclipse.ui.internal.StartupThreading.runWithoutExceptions(StartupThreading.java:94)
+	at org.eclipse.ui.internal.PartStack.setState(PartStack.java:1473)
+	at org.eclipse.ui.internal.PerspectiveHelper.zoomOut(PerspectiveHelper.java:1436)
+	at org.eclipse.ui.internal.Perspective.setActiveFastView(Perspective.java:1827)
+	at org.eclipse.ui.internal.Perspective.setActiveFastView(Perspective.java:1848)
+	at org.eclipse.ui.internal.Perspective.partActivated(Perspective.java:1074)
+	at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3471)
+	at org.eclipse.ui.internal.WorkbenchPage.activate(WorkbenchPage.java:610)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditorBatched(WorkbenchPage.java:2832)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor(WorkbenchPage.java:2729)
+	at org.eclipse.ui.internal.WorkbenchPage.access$11(WorkbenchPage.java:2721)
+	at org.eclipse.ui.internal.WorkbenchPage$10.run(WorkbenchPage.java:2673)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2668)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2652)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2643)
+	at org.eclipse.search.internal.ui.text.EditorOpener.showWithReuse(EditorOpener.java:116)
+	at org.eclipse.search.internal.ui.text.EditorOpener.openAndSelect(EditorOpener.java:58)
+	at org.eclipse.search.internal.ui.text.FileSearchPage.showMatch(FileSearchPage.java:174)
+	at org.eclipse.search.ui.text.AbstractTextSearchViewPage$7.run(AbstractTextSearchViewPage.java:871)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.search.ui.text.AbstractTextSearchViewPage.showMatch(AbstractTextSearchViewPage.java:874)
+	at org.eclipse.search.ui.text.AbstractTextSearchViewPage.showCurrentMatch(AbstractTextSearchViewPage.java:939)
+	at org.eclipse.search.ui.text.AbstractTextSearchViewPage.gotoNextMatch(AbstractTextSearchViewPage.java:904)
+	at org.eclipse.search.ui.text.AbstractTextSearchViewPage.handleOpen(AbstractTextSearchViewPage.java:1374)
+	at org.eclipse.search.internal.ui.text.FileSearchPage.handleOpen(FileSearchPage.java:194)
+	at org.eclipse.search.ui.text.AbstractTextSearchViewPage$5.open(AbstractTextSearchViewPage.java:691)
+	at org.eclipse.jface.viewers.StructuredViewer$2.run(StructuredViewer.java:820)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:880)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:48)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:175)
+	at org.eclipse.jface.viewers.StructuredViewer.fireOpen(StructuredViewer.java:818)
+	at org.eclipse.jface.viewers.StructuredViewer.handleOpen(StructuredViewer.java:1079)
+	at org.eclipse.jface.viewers.StructuredViewer$6.handleOpen(StructuredViewer.java:1183)
+	at org.eclipse.jface.util.OpenStrategy.fireOpenEvent(OpenStrategy.java:263)
+	at org.eclipse.jface.util.OpenStrategy.access$2(OpenStrategy.java:257)
+	at org.eclipse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:297)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1003)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3823)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3422)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2382)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2346)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2198)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:493)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:288)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:488)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:113)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:193)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:386)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)
+	at java.lang.reflect.Method.invoke(Method.java:599)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:549)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:504)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1236)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1212)

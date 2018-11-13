@@ -1,0 +1,4 @@
+BEGIN
+   BP_ERRMSG_PROC_SSA('EGBRB');
+END;
+/

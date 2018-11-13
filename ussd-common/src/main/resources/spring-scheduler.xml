@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	   		http://www.springframework.org/schema/task
+			http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+
+
+	<!-- XML way of adding Spring's scheduling support.
+			This is managed by a given TaskScheduler. -->
+	<task:scheduled-tasks scheduler="taskScheduler">
+		<!-- Add your tasks here.
+		 An interval-based trigger where the interval is measured from the completion time of the previous task.
+		<task:scheduled ref="fixedDelayTask" method="work" fixed-delay="5000"/>
+		 An interval-based trigger where the interval is measured from the start time of the previous task.
+		<task:scheduled ref="fixedRateTask" method="work" fixed-rate="5000"/>
+		--><!-- A cron-based trigger.  -->
+    	<task:scheduled ref="cronJob" method="work" cron="$#{configMgr.getString('cron.interval')}"/>
+	</task:scheduled-tasks>
+
+	<!-- The bean that does the actual work
+	<bean id="fixedDelayTask" class="com.barclays.ussd.utils.cron.job.FixedDelayWorker" />
+	<bean id="fixedRateTask" class="com.barclays.ussd.utils.cron.job.FixedRateWorker" />
+	-->
+	<bean id="cronJob" class="com.barclays.ussd.utils.cron.job.CronJob" >
+              <property name="runSchedular" value="#{configMgr.getString('runSchedular')}" />
+	</bean>
+
+	<!-- Defines a ThreadPoolTaskScheduler instance with configurable pool size. -->
+	<task:scheduler id="taskScheduler" pool-size="1"/>
+
+</beans>

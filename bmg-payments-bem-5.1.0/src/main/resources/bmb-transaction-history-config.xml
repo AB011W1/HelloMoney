@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:util="http://www.springframework.org/schema/util"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+
+	<bean id="searchTransactionHistoryController"
+		class="com.barclays.bmg.mvc.controller.billpayment.SearchTransactionHistoryController" parent="bmbAbstractCommandController">
+		<property name="commandName" value="searchTransactionHistoryCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.SearchTransactionHistoryCommand" />
+		<property name="validator" ref="searchTransactionHistoryCommandValidator" />
+		<property name="bmbJSONBuilder" ref="searchTransactionHistoryJSONBldr" />
+		<property name="searchTransactionHistoryOperation" ref="searchTransactionHistoryOperation" />
+	</bean>
+
+	<bean id="viewBillPaymentDetailsController"
+		class="com.barclays.bmg.mvc.controller.billpayment.ViewBillPaymentDetailsController" parent="viewTxnHistoryDetailsController">
+		<property name="bmbJSONBuilder" ref="viewBillPaymentDetailsJSONBldr" />
+		<property name="viewBillPaymentDetailsOperation" ref="viewBillPaymentDetailsOperation" />
+	</bean>
+
+	<bean id="viewTxnHistoryDetailsController"
+		class="com.barclays.bmg.mvc.controller.billpayment.ViewTxnHistoryDetailsController" abstract="true" parent="bmbAbstractCommandController">
+		<property name="commandName" value="viewTxnHistoryDetailsCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.ViewTxnHistoryDetailsCommand" />
+		<property name="validator" ref="viewTxnHistoryDetailsCommandValidator" />
+		<property name="activityId" value="TXN_HISTORY" />
+	</bean>
+
+     <bean id="viewTxnHistoryDetailsCommandValidator"
+		class="com.barclays.bmg.mvc.validator.billpayment.ViewTxnHistoryDetailsCommandValidator">
+	</bean>
+	<bean id="viewBillPaymentDetailsJSONBldr"
+		class="com.barclays.bmg.json.model.builder.billpayment.ViewBillPaymentDetailsJSONBldr" parent="viewTxnHistoryDetailsJSONBldr">
+	</bean>
+
+	<bean id="viewTxnHistoryDetailsJSONBldr"
+		class="com.barclays.bmg.json.model.builder.billpayment.ViewTxnHistoryDetailsJSONBldr" abstract="true" parent="bmbCommonJSONBuilder">
+	</bean>
+
+     <bean id="searchTransactionHistoryCommandValidator"
+		class="com.barclays.bmg.mvc.validator.billpayment.SearchTransactionHistoryCommandValidator">
+	</bean>
+	<bean id="searchTransactionHistoryJSONBldr"
+		class="com.barclays.bmg.json.model.builder.billpayment.SearchTransactionHistoryJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<bean id="viewTxnHistoryDetailsOperation"
+		class="com.barclays.bmg.operation.payments.ViewTxnHistoryDetailsOperation" abstract="true" parent="bmbPaymentsOperation">
+			<property name="viewTxnHistoryDetailsService" ref="viewTxnHistoryDetailsService" />
+	</bean>
+
+	<bean id="viewBillPaymentDetailsOperation"
+		class="com.barclays.bmg.operation.payments.ViewBillPaymentDetailsOperation" parent="viewTxnHistoryDetailsOperation">
+	</bean>
+	<bean id="searchTransactionHistoryOperation"
+		class="com.barclays.bmg.operation.payments.SearchTransactionHistoryOperation" parent="bmbCommonOperation">
+			<property name="searchTransactionHistoryService" ref="searchTransactionHistoryService" />
+			<property name="billerService" ref="billerService"/>
+	</bean>
+
+	<bean id="viewTxnHistoryDetailsService"
+		class="com.barclays.bmg.service.impl.ViewTxnHistoryDetailsServiceImpl">
+		<property name="viewTxnHistoryDetailsDAO" ref="viewTxnHistoryDetailsDAO" />
+	</bean>
+
+	<bean id="searchTransactionHistoryService"
+		class="com.barclays.bmg.service.impl.SearchTransactionHistoryServiceImpl">
+		<property name="searchTransactionHistoryDAO" ref="searchTransactionHistoryDAO" />
+	</bean>
+
+
+<!-- View Bill Payment Details DAO layer config -->
+
+	<bean id="transactionHistoryDaoFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+			<entry key="SEARCHTRANSACTIONHISTORY" value-ref="searchTransactionHistoryDAOController" />
+			<entry key="VIEWBILLPAYMENTDETAILS" value-ref="viewBillPaymentDetailsDAOController" />
+			</map>
+		</property>
+	</bean>
+
+
+	<bean id="viewTxnHistoryDetailsDAO"
+		class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.ViewTxnHistoryDetailsDAO" />
+		<property name="daoFrontController" ref="transactionHistoryDaoFrontControllerImpl" />
+	</bean>
+  <bean id="viewBillPaymentDetailsDAOController"
+    class="com.barclays.bmg.dao.processing.accountservices.ViewBillPaymentDetailsDAOController">
+    <property name="viewBillPaymentDetailsReqAdptOperation" ref="viewBillPaymentDetailsReqAdptOperation" />
+    <property name="transmissionOperation" ref="viewBillPaymentDetailsTransmissionOperation" />
+    <property name="viewBillPaymentDetailsResAdptOperation" ref="viewBillPaymentDetailsResAdptOperation" />
+  </bean>
+
+	<bean id="viewBillPaymentDetailsReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.ViewBillPaymentDetailsReqAdptOperation">
+		<property name="viewBillPaymentDetailsHeaderAdapter" ref="viewBillPaymentDetailsHeaderAdapter" />
+		<property name="viewBillPaymentDetailsPayloadAdapter" ref="viewBillPaymentDetailsPayloadAdapter" />
+	</bean>
+	<bean id="viewBillPaymentDetailsHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.ViewBillPaymentDetailsHeaderAdapter">
+	</bean>
+	<bean id="viewBillPaymentDetailsPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.ViewBillPaymentDetailsPayloadAdapter">
+	</bean>
+
+	<bean id="viewBillPaymentDetailsResAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.ViewBillPaymentDetailsResAdptOperation">
+	</bean>
+
+	<bean id="viewBillPaymentDetailsTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="viewBillPaymentDetailsTransmissionService" />
+	</bean>
+
+	<bean id="viewBillPaymentDetailsTransmissionService" class="com.barclays.bmg.dao.service.impl.ViewBillPaymentDetailsTransmissionService">
+		<property name="remoteService" ref="transactionHistoryWebServiceImpl" />
+	</bean>
+
+<!-- Search Transaction History DAO layer config -->
+	<bean id="searchTransactionHistoryDAO"
+		class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.SearchTransactionHistoryDAO" />
+		<property name="daoFrontController" ref="transactionHistoryDaoFrontControllerImpl" />
+	</bean>
+  <bean id="searchTransactionHistoryDAOController"
+    class="com.barclays.bmg.dao.processing.accountservices.SearchTransactionHistoryDAOController">
+    <property name="searchTransactionHistoryReqAdptOperation" ref="searchTransactionHistoryReqAdptOperation" />
+    <property name="transmissionOperation" ref="searchTransactionHistoryTransmissionOperation" />
+    <property name="searchTransactionHistoryResAdptOperation" ref="searchTransactionHistoryResAdptOperation" />
+  </bean>
+
+	<bean id="searchTransactionHistoryReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.SearchTransactionHistoryReqAdptOperation">
+		<property name="searchTransactionHistoryHeaderAdapter" ref="searchTransactionHistoryHeaderAdapter" />
+		<property name="searchTransactionHistoryPayloadAdapter" ref="searchTransactionHistoryPayloadAdapter" />
+	</bean>
+	<bean id="searchTransactionHistoryHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.SearchTransactionHistoryHeaderAdapter">
+	</bean>
+	<bean id="searchTransactionHistoryPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.SearchTransactionHistoryPayloadAdapter">
+	</bean>
+
+	<bean id="searchTransactionHistoryResAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.SearchTransactionHistoryResAdptOperation">
+	</bean>
+
+	<bean id="searchTransactionHistoryTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="searchTransactionHistoryTransmissionService" />
+	</bean>
+
+	<bean id="searchTransactionHistoryTransmissionService" class="com.barclays.bmg.dao.service.impl.SearchTransactionHistoryTransmissionService">
+		<property name="remoteService" ref="transactionHistoryWebServiceImpl" />
+	</bean>
+
+	<bean id="transactionHistoryWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.FinancialTransactionProcessing.FinancialTransactionProcessing_PortType" />
+		<property name="portName" value="FinancialTransactionProcessingSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.FinancialTransactionProcessing.FinancialTransactionProcessing_Service" />
+		<property name="endpointAddress" value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="FinancialTransactionProcessing_EndPoint" /><!--
+		for Stub
+		<property name="endpointAddressName" value="ViewBillPaymentDetails_EndPoint" />
+		--><property name="cacheKey" value="financialService" />
+	</bean>
+
+
+
+</beans>

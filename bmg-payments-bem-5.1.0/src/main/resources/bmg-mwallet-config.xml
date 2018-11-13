@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+	<bean id="mWalletUpInItController"
+		class="com.barclays.bmg.mwallet.mvc.controller.MWalletUpInItController" parent="bmbAbstractController">
+		<property name="retrieveAccountListOperation" ref="retrieveAccountListOperation" />
+		<property name="mWalletOperation" ref="mWalletOperation" />
+		<property name="bmbJSONBuilder" ref="MwalletUpInitJSONBldr" />
+		<property name="activityId" value="PMT_BP_MOBILE_TOPUP_PAYEE" />
+		<!--<property name="payGrp" value="MTP" />
+		--><property name="billerType" value="MobileWallet" />
+	</bean>
+
+
+<bean id="MwalletUpInitJSONBldr"
+		class="com.barclays.bmg.json.model.buiider.mwallet.MwalletUpInitJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+	<!-- Beneficiary Details DAO layer config starts here -->
+	<bean id="beneficiaryDetailsDAO"
+		class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.RetreiveOrganizationBeneficiaryDetailsDAO" />
+		<property name="daoFrontController" ref="mWalletDaoFrontControllerImpl" />
+	</bean>
+
+
+
+<bean id="mWalletValidateController"
+		class="com.barclays.bmg.mwallet.mvc.controller.MWalletValidateController" parent="bmbAbstractCommandController">
+		<property name="getSelectedAccountOperation" ref="getSelectedAccountOperation" />
+		<property name="mWalletOperation" ref="mWalletOperation" />
+		<property name="commandName" value="mWalletValidateCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mwallet.command.MWalletValidateCommandObject" />
+		<property name="validator" ref="mWalletValidateValidation" />
+		<property name="activityId" value="PMT_BP_MOBILE_TOPUP_PAYEE" />
+		<!--<property name="payGrp" value="MTP" />
+		--><property name="billerType" value="MobileWallet" />
+		<property name="bmbJSONBuilder" ref="mwaletValidateJSONBldr" />
+
+	</bean>
+
+<bean id="mwaletValidateJSONBldr"
+		class="com.barclays.bmg.json.model.buiider.mwallet.MwaletValidateJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<bean id="mWalletOperation"
+		class="com.barclays.bmg.mwallet.operation.MWalletOperation"  parent="bmbPaymentsOperation">
+
+	</bean>
+
+	<bean id="mWalletValidateValidation"
+		class="com.barclays.bmg.mwallet.mvc.validation.MWalletValidateValidation">
+
+	</bean>
+
+
+<bean id="mWalletDaoFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<!--<entry key="RETREIVEPAYEELIST" value-ref="retreivePayeeListDAOController" />
+				<entry key="RETREIVEORGANIZATIONBENEFICIARYDETAILS" value-ref="retreiveOrganizationBeneficiaryDetailsDAOController" />
+				--><entry key="RETREIVEMWALLETBENEFICIARYDETAILS" value-ref="retreiveOrgBeneficiaryMWalletDAOController" />
+				<!--<entry key="INQUERYBILL" value-ref="inqueryBillDAOController" />
+				<entry key="RETREIVECHARGEDETAILS" value-ref="retreiveChargeDetailsDAOController" />
+				<entry key="PAYBILL" value-ref="payBillDAOController" />
+				<entry key="RETREIVEFXRATE" value-ref="fxRateDAOController" />
+					<entry key="RETREIVEINDIVIDUALBENEFICIARYDETAILS" value-ref="retreiveIndividualBeneficiaryDetailsDAOController" />
+					<entry key="MAKECARDPAYMENT" value-ref="creditCardPaymentDAOController" />
+					<entry key ="RETREIVEINDVCUSTBYCCNUMBER" value-ref="retrIndvCustInfoByCCDAOController" />
+				--><!--<entry key="RETREIVEINDIVIDUALBENEFICIARYDETAILS" value-ref="retreiveIndividualBeneficiaryDetailsDAOController" />
+			-->
+			</map>
+		</property>
+	</bean>
+
+
+
+
+
+<!-- Remort call -->
+
+<bean id="retreiveOrgBeneficiaryMWalletDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.RetreiveOrgBeneficiaryMWalletDAOController">
+		<property name="beneficiaryDetailsMWalletReqAdptOperation" ref="beneficiaryDetailsMWalletReqAdptOperation" />
+		<property name="transmissionOperation" ref="retreiveOrgBenDtlsTransmissionOperation" />
+		<property name="retreiveOrgBeneficiaryDetailsRespAdptOperation" ref="retreiveOrgBeneficiaryDetailsRespAdptOperation" />
+	</bean>
+<bean id="beneficiaryDetailsMWalletReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.RetreiveOrgBeneficiaryDetailsMWalletReqAdptOperation">
+		<property name="retreiveOrgBeneficiaryDtlsHeaderAdapter" ref="retreiveOrgBeneficiaryDtlsHeaderAdapter" />
+		<property name="beneficiaryDtlsMWalletPayloadAdapter" ref="beneficiaryDtlsMWalletPayloadAdapter" />
+	</bean>
+
+	<bean id="beneficiaryDtlsMWalletPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.RetreiveOrgBeneficiaryDtlsMWalletPayloadAdapter">
+	</bean>
+
+
+</beans>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:util="http://www.springframework.org/schema/util"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+    <bean id="bmbPaymentsOperation"
+		class="com.barclays.bmg.operation.payments.BMBPaymentsOperation"
+		parent="bmbCommonOperation">
+		<property name="allAccountService" ref="allAccountService" />
+		<property name="productEligibilityService" ref="productEligibilityServiceImpl" />
+		<property name="retreivePayeeListService" ref="retreivePayeeListService" />
+		<property name="retreiveBeneficiaryDetailsService" ref="retreiveBeneficiaryDetailsService" />
+		<property name="transactionLimitService" ref="transactionLimitService" />
+		<property name="transactionAbilityService" ref="transactionAbilityService" />
+		<property name="billerService" ref="billerService" />
+		<property name="addOrgBeneficairyService" ref="addOrgBenefeciaryService" />
+		<property name="applyTDAddProblemService" ref="applyTDAddProblemService" />
+
+
+	</bean>
+
+     <bean id="retrieveAccountListOperation"
+		class="com.barclays.bmg.operation.accountservices.RetrieveAccountListOperation" parent="bmbPaymentsOperation">
+	</bean>
+
+	<bean id="transactionLimitOperation"
+		class="com.barclays.bmg.operation.formvalidation.TransactionLimitOperation" parent="bmbPaymentsOperation">
+		<property name="transactionLimitService" ref="transactionLimitService" />
+	</bean>
+
+	<bean id="getSelectedAccountOperation"
+		class="com.barclays.bmg.operation.accountservices.GetSelectedAccountOperation" parent="retrieveAccountListOperation">
+		<property name="casaDetailsOperation" ref="casaDetailsOperation" />
+	</bean>
+
+	<bean id="formValidateOperation"
+		class="com.barclays.bmg.operation.formvalidation.FormValidateOperation" parent="bmbPaymentsOperation">
+		<property name="fxRateService" ref="fxRateService" />
+		<property name="retreiveChargeDetailsService" ref="retreiveChargeDetailsService" />
+		<property name="transactionLimitService" ref="transactionLimitService" />
+		<property name="creditCardDetailsService" ref="creditCardDetailsServiceImpl" />
+	</bean>
+
+	<bean id="retrieveFTPayeeListOperation"
+		class="com.barclays.bmg.operation.beneficiary.RetrievePayeeListOperation" parent="bmbPaymentsOperation">
+		<property name="listValueResService" ref="listValueResService" />
+		<property name="PAYEE_TYPE_GROUP" value="FT_FACADE_DEST" />
+		<property name="payGroupTxnType" ref="payGroupTxnType"/>
+	</bean>
+
+	<util:map id="payGroupTxnType" map-class="java.util.HashMap">
+		<entry key="INT2" value="DT" />
+		<entry key="BKD" value="PBC" />
+		<entry key="MC" value="PMC" />
+		<entry key="OWN" value="OWN" />
+		<entry key="CCP" value="CCP" />
+		<entry key="LOAN" value="LP" />
+		<entry key="INTERNAL" value="IT" />
+		<entry key="INTL" value="INTL" />
+		<entry key="LOAN" value="LP" />
+	</util:map>
+
+	<bean id="retrieveBPPayeeListOperation"
+		class="com.barclays.bmg.operation.beneficiary.RetrievePayeeListOperation" parent="bmbPaymentsOperation">
+		<property name="listValueResService" ref="listValueResService" />
+		<property name="PAYEE_TYPE_GROUP" value="BP_FACADE_DEST" />
+		<property name="payGroupTxnType" ref="billpayGroupTxnType"/>
+	</bean>
+
+	<util:map id="billpayGroupTxnType" map-class="java.util.HashMap">
+		<entry key="BP" value="BP" />
+		<entry key="MTP" value="MTP" />
+		<entry key="BCD" value="BCP" />
+		<!-- CR82 -->
+		<entry key="AT" value="AT" />
+		<entry key="WT" value="WT" />
+	</util:map>
+
+	<bean id="retrievePayeeInfoOperation"
+		class="com.barclays.bmg.operation.beneficiary.RetrievePayeeInfoOperation" parent="bmbPaymentsOperation">
+		<property name="casaDetailsService" ref="casaDetailsServiceImpl" />
+	</bean>
+
+	<bean id="addOrgBeneficiaryOperation"
+		class="com.barclays.bmg.operation.beneficiary.AddOrgBeneficiaryOperation"
+		parent="bmbPaymentsOperation" >
+		<property name="smsDetailsService" ref="smsDetailsService" />
+	</bean>
+
+	<bean id="smsDetailsService"
+		class="com.barclays.bmg.ussd.service.impl.SMSDetailsServiceImpl">
+		<property name="smsDetailsDAO" ref="smsDetailsDAO" />
+	</bean>
+
+	<bean id="addOrgValidationOperation" class="com.barclays.bmg.operation.formvalidation.AddOrgValidationOperation"
+		parent="bmbPaymentsOperation" />
+
+	<bean id="addOrgBenefeciaryService"
+		class="com.barclays.bmg.service.impl.AddOrganizationBeneficiaryServiceImpl">
+		<property name="addOrganizationBeneficiaryDao" ref="addOrgBeneficiaryDAO" />
+	</bean>
+
+	<bean id="applyTDAddProblemService"
+		class="com.barclays.bmg.dao.service.impl.ApplyTDServiceImpl">
+		<property name="applyTDDao" ref="applyTDDAO" />
+	</bean>
+
+</beans>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="DynamicItem">
+
+
+		<typeAlias alias="cacheController"
+		type="com.barclays.bmg.cache.IbatisCacheController"/><!--
+
+
+		<cacheModel id="dynamicItemCache" implementation="cacheController"
+			readOnly="true" serialize="false">
+
+		  <flushInterval hours="24"/>
+		  <flushOnExecute  statement="loadcategoryCache"/>
+		  <property name="CacheSize" value="100"/>
+		</cacheModel>
+
+	--><typeAlias alias="booleanHandler"
+		type="com.barclays.bmg.typehandler.StringBooleanHandler" />
+
+		<cacheModel id="dynamicItemCache" type="cacheController"
+		readOnly="true" serialize="true"> </cacheModel>
+	<!-- Alias for the classes -->
+	<!--
+		<typeAlias alias="categoryDTO"
+		type="com.barclays.mcfe.ssc.retail.core.dto.CategoryDTO" /> <typeAlias
+		alias="pageFieldCache"
+		type="com.barclays.mcfe.ssc.retail.common.bean.ComponentResCacheDTO"
+		/> <typeAlias alias="tableColumnCache"
+		type="com.barclays.mcfe.ssc.retail.common.bean.TableHeaderDTO" />
+	-->
+	<typeAlias alias="productDTO" type="com.barclays.bmg.dto.ProductDTO" />
+	<!-- result map for business ids -->
+	<!--
+		<resultMap id="businessIdResult" class="java.lang.String"> <result
+		property="value" column="BUSINESS_ID"/> </resultMap> Result map for
+		category cache <resultMap id="categoryCache" class="categoryDTO">
+		<result property="categoryCode" column="CATEGORY_CD"/> <result
+		property="systemID" column="SYSTEM_ID"/> <result property="businessID"
+		column="BUSINESS_ID"/> <result property="categoryNameKey"
+		column="CATEGORY_NM_KEY"/> <result property="displayOrder"
+		column="DISP_ORDER"/> </resultMap> result map for component Cache
+		<resultMap id="listComponentCache" class="pageFieldCache"> <result
+		property="componentKey" column="COMPONENT_KEY"/> <result
+		property="fieldName" column="COMPONENT_KEY"/> <result
+		property="displayOrder" column="DISP_ORDER"/> <result
+		property="section" column="PARENT_COMPONENT_KEY"/> </resultMap> result
+		map for TableColumn Cache <resultMap id="listTableColumnCache"
+		class="tableColumnCache"> <result property="tableName"
+		column="TABLE_ID" /> <result property="headerName" column="COLUMN_KEY"
+		/> <result property="systemId" column="SYSTEM_ID" /> <result
+		property="businessId" column="BUSINESS_ID" /> <result
+		property="columnType" column="COLUMN_TYP"/> <result
+		property="sortableFlag" column="SORTABLE"/> <result property="order"
+		column="DISP_ORDER"/> <result property="fieldName" column="FIELD_NM"/>
+		<result property="action" column="LINK_URI"/> <result
+		property="groupId" column="LISTVALUE_GROUP_ID"/> <result
+		property="needCurrencyFlag" column="CCY_DISP_FLG"/> <result
+		property="columnCss" column="COL_CSS"/> </resultMap>
+	-->
+	<!-- ResultMap for productCache -->
+	<resultMap id="productCache" class="productDTO">
+		<result property="productCode" column="PRODUCT_CD" />
+		<result property="systemID" column="SOURCE_SYSTEM_ID" />
+		<result property="businessID" column="BUSINESS_ID" />
+		<result property="categoryCode" column="PRODUCT_GROUP" />
+		<result property="productDesc" column="PRODUCT_DESC" />
+		<result property="currencyCode" column="CURRENCY_CD" />
+		<result property="supportedTenureType" column="TENURE_TYP" />
+		<result property="minAmount" column="MIN_AMOUNT" />
+		<result property="maxAmount" column="MAX_AMOUNT" />
+		<result property="interestPayoutFrequency" column="INT_PAYOUT_FRQ" />
+		<result property="interestCompoundingFrequency" column="INT_COMPD_FRQ" />
+		<result property="supportCheque" column="SUPPORT_CHEQUE"
+			typeHandler="booleanHandler" />
+		<result property="internetEnabled" column="INTERNET_ENABLED" />
+
+	</resultMap>
+
+	<!-- ResultMap for product code  desc -->
+		<resultMap id="productCodeDesc" class="productDTO">
+			<result property="productCode" column="PRODUCT_CD" />
+			<result property="productDesc" column="PRODUCT_DESC" />
+		</resultMap>
+
+	<!-- cacheModel="product-cache" resultMap="productCache" -->
+
+	<!--
+		<statement id="loadcategoryCache" resultMap="categoryCache"
+		cacheModel="dynamicItemCache"> select
+		CATEGORY_CD,SYSTEM_ID,BUSINESS_ID,CATEGORY_NM_KEY,DISP_ORDER from
+		S_PRODUCT_CATEGORY_MST where BUSINESS_ID = #businessId# and SYSTEM_ID
+		= #systemId# and (DELETE_FLG IS null OR DELETE_FLG = 'N') and (RENDER
+		IS null OR RENDER = 'Y') order by DISP_ORDER ASC </statement>
+
+
+		<statement id="getPageField" resultMap="listComponentCache"
+		cacheModel="dynamicItemCache"> select
+		COMPONENT_KEY,DISP_ORDER,PARENT_COMPONENT_KEY from C_COMPONENT_MST
+		where C_COMPONENT_MST.BUSINESS_ID = #businessId# and
+		C_COMPONENT_MST.SYSTEM_ID = #systemId# and C_COMPONENT_MST.SCREEN_ID =
+		#screenId# and C_COMPONENT_MST.PARENT_COMPONENT_KEY = #section# and
+		(RENDERED_FLG IS null OR RENDERED_FLG = 'Y') order by DISP_ORDER ASC
+		</statement> <statement id="loadTableColumnCache"
+		resultMap="listTableColumnCache" cacheModel="dynamicItemCache"> select
+		t.TABLE_ID, t.COLUMN_KEY, t.SYSTEM_ID, t.BUSINESS_ID, t.COLUMN_TYP,
+		t.FIELD_NM, t.DISP_ORDER,
+		t.SORTABLE,t.CCY_DISP_FLG,t.COL_CSS,t.LINK_URI, null as
+		LISTVALUE_GROUP_ID from S_DYNAMICTABLE_CONFIG_MST t where
+		t.BUSINESS_ID=#businessId# and t.SYSTEM_ID=#systemId# and
+		t.TABLE_ID=#tableName# AND (t.DELETE_FLG IS null OR t.DELETE_FLG =
+		'N') and t.screen_id is null UNION select t.TABLE_ID, t.COLUMN_KEY,
+		t.SYSTEM_ID, t.BUSINESS_ID, t.COLUMN_TYP, t.FIELD_NM, t.DISP_ORDER,
+		t.SORTABLE, t.CCY_DISP_FLG,t.COL_CSS,t.LINK_URI, c.LISTVALUE_GROUP_ID
+		from S_DYNAMICTABLE_CONFIG_MST t, c_component_mst c where
+		t.BUSINESS_ID=#businessId# and t.SYSTEM_ID=#systemId# and
+		t.TABLE_ID=#tableName# AND (t.DELETE_FLG IS null OR t.DELETE_FLG =
+		'N') and t.system_id = c.system_id and t.business_id = c.business_id
+		and t.column_key = c.component_key and t.screen_id = c.screen_id
+		</statement> <statement id="getProduct" resultMap="productCache"
+		cacheModel="dynamicItemCache"> select
+		PRODUCT_CD,SOURCE_SYSTEM_ID,BUSINESS_ID,PRODUCT_GROUP,
+		PRODUCT_DESC,CURRENCY_CD,TENURE_TYP,MIN_AMOUNT,MAX_AMOUNT,
+		INT_PAYOUT_FRQ,INT_COMPD_FRQ,SUPPORT_CHEQUE,INTERNET_ENABLED from
+		C_PRODUCT_MST where BUSINESS_ID = #businessId# and PRODUCT_CD =
+		#productCode# <isNotNull prepend="AND" property="currencyCode">
+		CURRENCY_CD=#currencyCode# </isNotNull> and (DELETE_FLG IS null OR
+		DELETE_FLG = 'N') order by PRODUCT_DESC, CURRENCY_CD </statement>
+	-->
+	<statement id="getProducts" resultMap="productCache"
+		cacheModel="dynamicItemCache">
+		select PRODUCT_CD,SOURCE_SYSTEM_ID,BUSINESS_ID,PRODUCT_GROUP,
+		PRODUCT_DESC,CURRENCY_CD,TENURE_TYP,MIN_AMOUNT,MAX_AMOUNT,
+		INT_PAYOUT_FRQ,INT_COMPD_FRQ,SUPPORT_CHEQUE,INTERNET_ENABLED
+		from C_PRODUCT_MST
+		where BUSINESS_ID = #businessId#
+		and PRODUCT_CD = #productCode#
+		<isNotNull prepend="AND" property="currencyCode">
+			CURRENCY_CD=#currencyCode#
+          </isNotNull>
+
+		and (DELETE_FLG IS null OR DELETE_FLG = 'N')
+		order by PRODUCT_DESC, CURRENCY_CD
+	</statement>
+
+
+	<statement id="getProductList" resultMap="productCache"
+		cacheModel="dynamicItemCache">
+		select PRODUCT_CD,SOURCE_SYSTEM_ID,BUSINESS_ID,PRODUCT_GROUP,
+		PRODUCT_DESC,CURRENCY_CD,TENURE_TYP,MIN_AMOUNT,MAX_AMOUNT,
+		INT_PAYOUT_FRQ,INT_COMPD_FRQ,SUPPORT_CHEQUE,INTERNET_ENABLED
+		from C_PRODUCT_MST
+		where BUSINESS_ID = #businessId#
+		and PRODUCT_GROUP = #productGroup#
+
+		<isNotNull prepend="AND" property="currencyCode">
+			CURRENCY_CD=#currencyCode#
+          </isNotNull>
+		and (DELETE_FLG IS null OR DELETE_FLG = 'N')
+		order by PRODUCT_DESC, CURRENCY_CD
+	</statement>
+
+
+
+
+
+
+	<statement id="getProductListByProductCodes" resultMap="productCodeDesc"
+		cacheModel="dynamicItemCache">
+		select distinct PRODUCT_CD,PRODUCT_DESC
+		from C_PRODUCT_MST
+		where BUSINESS_ID = #businessId#
+		<isNotNull prepend="AND" property="productCodeList">
+			PRODUCT_CD IN
+			<iterate  open="(" close=")" conjunction="," property="productCodeList">
+				#productCodeList[]#
+			</iterate>
+         </isNotNull>
+
+	</statement>
+
+
+	<!--
+		<statement id="getOpenTDProductList" resultMap="productCache"
+		cacheModel="dynamicItemCache"> select
+		PRODUCT_CD,SOURCE_SYSTEM_ID,BUSINESS_ID,PRODUCT_GROUP,PRODUCT_DESC,CURRENCY_CD,
+		TENURE_TYP,MIN_AMOUNT,MAX_AMOUNT,INT_PAYOUT_FRQ,INT_COMPD_FRQ,SUPPORT_CHEQUE,INTERNET_ENABLED
+		from C_PRODUCT_MST where product_cd in(select product_cd from
+		C_INTEREST_RATE_MST) and BUSINESS_ID = #businessId# and PRODUCT_GROUP
+		= #productGroup# <isNotNull prepend="AND" property="currencyCode">
+		CURRENCY_CD=#currencyCode# </isNotNull> and (DELETE_FLG IS null OR
+		DELETE_FLG = 'N') order by PRODUCT_DESC, CURRENCY_CD </statement> get
+		Product List For ESaver <statement id="getESaverProductList"
+		resultMap="productCache" cacheModel="dynamicItemCache"> select
+		PRODUCT_CD,SOURCE_SYSTEM_ID,BUSINESS_ID,PRODUCT_GROUP,PRODUCT_DESC,CURRENCY_CD,
+		TENURE_TYP,MIN_AMOUNT,MAX_AMOUNT,INT_PAYOUT_FRQ,INT_COMPD_FRQ,SUPPORT_CHEQUE,INTERNET_ENABLED
+		from C_PRODUCT_MST where BUSINESS_ID = #businessId# and ESAVER_IND =
+		'Y' and INTERNET_ENABLED = 'Y' and (DELETE_FLG IS null OR DELETE_FLG =
+		'N') <isNotNull prepend="AND" property="currencyCode">
+		CURRENCY_CD=#currencyCode# </isNotNull> order by PRODUCT_DESC,
+		CURRENCY_CD </statement>
+	-->
+
+
+</sqlMap>

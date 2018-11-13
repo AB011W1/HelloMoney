@@ -1,0 +1,320 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style type="text/css">
+<!--
+body
+	{
+	margin		:0;
+	padding		:0;
+	font-family	:arial,helvetica,sans-serif;
+	color		:#006FA4;}
+
+#wrapper
+	{
+	padding		:10px;
+	margin		:0 auto;}
+
+#header
+	{
+	text-align	:center;}
+
+
+#wrapper #header p
+	{
+	font-size	:0.8em;
+	margin		:0px auto;
+	padding		:0 0 5px 0 ;}
+
+#wrapper #header h2
+	{
+	font-size	:0.8em;
+	margin		:0px auto;
+	padding		:5px 0 0 0;}
+
+.divider
+	{
+	border-bottom	:1px solid #006FA4;}
+
+
+h1
+	{
+	margin		:0;
+	padding		:0 0 5px 0;
+	font-size	:1.2em;
+	font-weight	:bold;}
+
+h2
+	{
+	margin		:0 0 5px 0;
+	padding		:8px 0 0 0;
+	font-size	:0.9em;
+	font-weight	:bold;}
+
+#wrapper p
+	{
+	font-size	:0.8em;
+	margin		:0 0 5px 15px;
+	padding		:8px 0 0 0;}
+
+ #wrapper ul, #wrapper ol
+	{
+	margin-top	:0px;
+	padding-top	:0px;}
+
+ #wrapper ul li, #wrapper ol li
+	{
+	font-size	:0.8em;
+	margin-top	:2px;}
+
+ #wrapper ol li ol li
+	{
+	font-size	:1em;
+	margin		:5px 0 5px 0;}
+
+ #wrapper p.subsection
+	{
+	margin-left	:15px;
+	margin-top	:2px;}
+
+ #wrapper p.subsection span
+	{
+	display		:block;
+	margin-left	:15px;}
+-->
+
+</style>
+
+</head>
+
+
+
+<body>
+<div id="wrapper">
+
+<div id="header">
+<h1>Terms and Conditions</h1>
+<p>Applicable to the Internet and Mobile Banking</p>
+<div class="divider"></div>
+<h2>"Electronic Channels Banking services"</h2></div>
+
+<div id="text">
+<h2>Terms of Use</h2>
+<p>Please read the following Terms and Conditions carefully. By using this website and its related services, the customer acknowledge that he have read and understood the Terms and Conditions and that he accepts them all and will be bound by them. These Terms and Conditions govern your use of this Site and by accessing this Site you agree to be bound by them. These Terms will apply in addition to those contained in the customer agreement relating to your account(s), an additional copy of which can be obtained from your local branch. Barclays products and services may be subject to separate terms and conditions which govern their use.</p>
+
+<p>We reserve the right to change these Terms and Conditions at any time by updating this posting and your continued access to or use of this Site will constitute your acceptance of the revised terms and conditions.</p>
+
+<p>References to "you" or "your" are references to any person accessing this web-site ("Site").</p>
+
+<p>References to "we", "us" or "our" are references to Barclays Bank Egypt S.A.E.,
+</p>
+
+<p>References to "Barclays Group" are references our parent company and any companies we or our parent company totally or partly own at any time.</p>
+
+<p>References to "Password" means any secret and confidential code for using this Site and/or to avail of any products and services provided by us to you and/or selected by you and/or subsequently changed by you at your discretion.</p>
+
+<p>References to "Username" means and includes an identification code which is selected by us and/or you for operating the Site and/or to avail of any products or services provided by us to you.</p>
+
+<h2>Definitions</h2>
+
+<p>In these Terms and Conditions, the following words will have the following meanings:</p>
+<p><strong>"Account(s)"</strong> means account(s) you have with Barclays Bank Egypt S.A.E operable through its branches in Egypt, including any new accounts opened</p>
+
+<p><strong>"Account Holder"</strong> means a person who has entered into a contract with Barclays Bank Egypt S.A.E and has an Account in his / her own name.</p>
+
+<p><strong>"Bank"</strong> means Barclays Bank Egypt S.A.E.</p>
+
+<p><strong>"EGP"</strong> means Egyptian Pound.</p>
+
+<p><strong>"Banking Day"</strong> means any day on which banks in Egypt are open for business.</p>
+
+<p><strong>"Instruction"</strong> means any request or order to the Bank which is effected through the Service by use of a User ID, Memorable Answer, and Password.</p>
+
+<p><strong>"Internet Banking Service"</strong> means the service that the Bank makes available through the Internet network to its customers to enable the electronic receipt and transmission of information and Instructions (in relation to their Account).</p>
+
+<p><strong>"Service"</strong> means the Online Internet and Mobile Banking Services ("Electronic Channels Banking").</p>
+
+<p><strong>"Terms"</strong> mean these Terms and Conditions, which could be amended from time to time.</p>
+
+<p><strong>'Commencement Date'</strong> means the date of acceptance of the Electronic Channels Banking terms and Conditions.</p>
+
+<p><strong>'Main User/s'</strong>, means any person/s authorized or deemed to be authorized by the Customer to use the Internet and Mobile Banking.</p>
+
+<p><strong>'Password'</strong> means alphanumeric (both letters and numbers) characters chosen by the Customer or Main User, as the case may be, used as an additional security and authentication when accessing the Electronic Channels Banking.</p>
+
+<p><strong>'PIN'</strong> means numeric digits (Personal Identification Number), chosen by the Customer or Main User and used as a security and authentication when accessing the Electronic Channels Banking.</p>
+
+<p><strong>'One Time Pin (OTP)'</strong> is a unique code that acts as a once-off password that is required when performing particular transactions on Internet Banking which is received via SMS at no additional charge.</p>
+
+<h2>Acceptance and the Use of Internet and Mobile banking</h2>
+
+<p>When you use the Service, you accept these Terms and Conditions. If you have previously used the Service, your first use of the Service after publication of these Terms and Conditions indicates your acceptance of them.</p>
+
+<p>The use of Electronic Channels Banking is subject to these Terms and Conditions in addition to those contained in your account(s) opening agreement. This Agreement governs the customer and our rights and obligations when the customer use or access any of the Electronic Channels Banking services. The customer will become bound to the most recent version of this Agreement once the customer register to use any of the Electronic Channels Banking. Before the customer can use the Electronic Channels Banking services the customer must register for the said Channel. Refer to www.barclays.com for more information on how to register for the different Electronic Channels Banking services available. To use the Electronic Channels Banking, the customer must be at least 21 years old and having an account at Barclays Bank Egypt. By registering to use the Electronic Banking Channels the customer therefore confirm that he/she are at least 21.</p>
+
+<p>The customer acknowledges that information transmitted through the Internet or any other communication system, including wireless communication system, is susceptible to unlawful access, distortion and monitoring and that the Customer uses the Electronic Channels Banking at its own risk.</p>
+
+<p>The customer authorizes the Bank to carry out any and all instructions given via the Electronic Channels Banking, including the debiting of and transfer of funds if available from the Account and the furnishing of information on the Account, provided that the instructions are authenticated by the use of:</p>
+<ul>
+<li>the PIN and/or Password</li>
+<li>any other procedures which may be agreed to in writing between the Customer and the Bank</li></ul>
+
+<p>The provision of the Electronic Channels Banking will not entitle the Customer to overdraw the Account if overdraft or other borrowing arrangements have not been made and approved by  the Bank, or where such arrangement have been made, to overdraw in excess of the  borrowing limits approved  by  the Bank.</p>
+
+<p>The customer should comply with Barclays bank Egypt security recommendations and directions as published on the site from time to time.</p>
+
+<p>The customer should comply with the registration procedures as published on the site from time to time.</p>
+
+<h2>Unauthorised Use of the PIN and Password - Access Codes</h2>
+
+<p>The Bank deals with the customer remotely when using Electronic Banking Channels (there is no face to face interaction), as such, the Customer authorizes the Bank to act on and accept all instructions and transactions that occur after the customers PIN, Password or OTP have been entered or applied. The bank is entitled to and will proceed on the assumption that all such transactions have been authorized by the customer, even in circumstances where such transactions occur without the customers knowledge, consent or authority. The Customer must inform the Bank immediately if he/she knows or suspects that his/her access code (s) have been lost, stolen or may be subjected to unauthorized use.</p>
+
+<p>If any unauthorized person obtains the Access Codes in any manner whatsoever, such a person will be regarded as the Customer's duly authorized agent with full authority to use the Electronic Channels Banking on the Customer's behalf, unless this is due to the Bank's negligence.</p>
+
+<h2>Indemnity and Warranty by the Customer</h2>
+
+<p>The Customer indemnifies the Bank against any damage, loss and/or consequential damage that the Bank may suffer as a result of incorrect, wrong, unauthorized and/or wrongful instructions or information given by the customer or any other person authorized or deemed to be authorized to act on behalf of the customer.</p>
+
+<p>The Customer hereby warrants to the Bank that the Customer has the required legal capacity to enter into and be bound by these Terms and Conditions.</p>
+
+<h2>Duties of the Customer</h2>
+<p>The Customer must ensure secure retention of his/her PIN, Password or OTP secret. The Customer is prohibited from disclosing the PIN, Password or OTP, to third parties to prevent   access by unauthorized person.</p>
+
+<p>The Customer must take all reasonable precautions to prevent unauthorized use of the Electronic Channels Banking and unauthorized access to the Account.</p>
+
+<p>If the Customer suspects that the PIN, Password or OTP has become compromised, the Customer must immediately notify the Bank and arrange to immediately change the PIN or Password.</p>
+
+<p>The Customer must provide the correct account number as well as the correct branch clearing code, where required, of all beneficiaries when instructing the Bank to make payments, pay accounts and to transfer funds to such beneficiaries or when accessing or carrying out any other transaction or service. The Bank is not obliged to, at any stage; verify an account number and branch clearing code against the name of a beneficiary.</p>
+
+<h2>Other Applicable Agreements</h2>
+
+<p>Certain products and services that the customer use or access via Electronic Channels Banking such as the bank account or services the customer access, the customers ATM Debit card and Credit card are subject to their own terms and conditions,. This agreement (governing the use of Electronic Channels Banking) must be read together with, and forms part of each product agreement. In the event of conflict between this agreement and such other terms, the provisions of such other terms will prevail to the extent of the conflict.</p>
+
+<h2>Fees</h2>
+
+<p>Any fees and charges in respect of the Electronic Channels Banking will be debited to the Customer's nominated bank account.</p>
+
+<p>Should the Bank be unable to recover any fees/charges as per 7.1 above, the Bank reserves the right to suspend the Internet and/or Cell phone Banking service with immediate effect, with or without notice.</p>
+
+<p>The Bank may vary the fees/charges in respect of Electronic Channels Banking by giving a month's notice of such amendments to the Customer by posting a notification of amendments on the website and selected media.</p>
+
+<h2>Availability of Electronic Channels Banking</h2>
+
+<p>The Electronic Channels banking will be available at all times, subject to the availability of the Internet and Mobile Networks connections and to any periods required for necessary maintenance of the Internet and Mobile networks connections.</p>
+
+<p>Should the Electronic Channels Banking be unavailable for whatever reason, the Customer must use the Bank's other available service channels and take reasonable steps to minimize and/or prevent loss or risk.</p>
+
+<h2>Internet Requirements</h2>
+
+<p>Should the Customer obtain access to the Electronic Channels Banking via the Internet, the customer must register with an Internet Service Provider before the commencement date.</p>
+
+<p>The Customer will be solely responsible for the acquisition, installation and maintenance of the connection to the Internet or any related costs or expenses will be borne by the Customer.</p>
+
+<p>Should the Internet software and hardware requirements be modified with a view to improving or upgrading the Internet, the resultant cost of any hardware, software or Internet connection required for use of the system will be for the Customer's own account.</p>
+
+<p>In the event that the Customer experiences problems with the Internet and Internet connection, it is the Customer's responsibility to liaise with the Internet Service Providers prior to contacting the Bank..</p>
+
+<h2>Mobile Telephone Requirements</h2>
+
+<p>Should the Customer obtain access to the Electronic Channels Banking via the Cell phone, the Customer must register with Mobile Network Operator before the commencement date.</p>
+
+<p>The customer will be solely responsible for obtaining of the prescribed cell phone and the connection to the Mobile Network Operator and any related costs or expenses will be borne by the Customer.</p>
+
+<p>In the event that the Customers experience connectivity or other access related difficulties the Cell phone and/or Mobile Network Operator, it is the Customer's responsibility to liaise with the Mobile Network Operator prior to contacting the Bank.</p>
+
+<h2>Liability for Loss or Damage</h2>
+
+<p>The Customer acknowledges that the use of the Electronic Channels banking and the Account is at the Customer's own risk.</p>
+
+<p>The Bank will not be responsible for any damage, loss or consequential damage which the Customer may suffer as a result of:</p>
+
+<p>Any malfunction or defect in the hardware used by the Customer (which includes the personal computer or cell phone).</p>
+
+<p>Any defect in the software used by the Customer to gain access to the Electronic Channels Banking.</p>
+
+<p>Any act or omission by the Internet or Mobile Network Operator or any defect in the Electronic Channels Banking or any other medium by which access is gained to the system.</p>
+
+<p>The Electronic Channels Banking being off-line or unavailable</p>
+
+<p>Any industrial action</p>
+
+<p>Any other circumstances not reasonably within the Bank's control</p>
+
+<p>Erroneous, unauthorized, incomplete or unlawful instruction from the Customer</p>
+
+<p>Unlawful or unauthorized access by another person(s)</p>
+
+<p>Incorrect or late execution on non-payment of any instruction given by the Customer, due to the circumstances set out in 11.2.1 to 11.2.8.</p>
+
+<h2>Intellectual Property</h2>
+
+<p>The Bank retains all copyright and other intellectual property rights in all material, including logos and other graphics and multimedia works published on or through this website.</p>
+
+<p>The customer is authorized to view and download a copy of these Terms and Conditions to a local hard drive or disk, print and make copies of such printouts, provided that the material is used for considering use of the Electronic Channels Banking and for no other commercial purposes.</p>
+
+<p>Any reproduction of the Bank's proprietary material from the website or portion of it, must include the Bank's copyright notice in its entirety.</p>
+
+<p>Nothing on this website should be construed as granting any license or right to use any trademark without the Bank's prior written consent and/or the prior written consent of the third parties, as the case may be. The customer may not without the Bank's prior written consent, use the Bank's intellectual property or the intellectual property of third parties for any purposes whatsoever.</p>
+
+<p>The entire design and content of this Site is the copyright of Barclays Bank Egypt S.A.E., or its licensors. The Barclays eagle logo and Barclays name are registered trade marks of Barclays Bank PLC. All trade marks, brand names, logos and designs used on this Site are the intellectual property of Barclays Bank PLC. All our rights are reserved and the information held is for your personal security. You may not download (all or in part), transmit, reproduce, distribute or modify this Site without our prior written permission. However, you may print out part or all of this Site for your own personal use.</p>
+
+<h2>Termination, Suspension or Withdrawal of the Electronic Channels Banking</h2>
+
+<p>The Customer may terminate the Electronic Channels Banking by giving the Bank 30 (thirty) days' written notice. The notice should be signed by the customer.</p>
+
+<p>The Bank is entitled, at its discretion, to terminate the Electronic Channels Banking at any time the Bank deems it necessary.</p>
+
+<p>In order to protect the Customer, the Bank and the banking systems, the Bank is entitled to immediately suspend or withdraw all or part of the Electronic Channels Banking if the Channel is being used contrary to the Terms and Conditions of this agreement; the Bank has reasonable grounds to believe that the channel may be used negligently, illegally or fraudulently or the Bank believes that the security of the system used to provide the Electronic Channels Banking may be compromised.</p>
+
+<p>In the event that the Electronic Channels Banking not being used for a period of 6 (six) months or longer, the Bank reserves the right to terminate the agreement without prior notice. The Customer may reapply for the Electronic Channels Banking at any time.</p>
+
+<p>The customer is liable for all transactions and/or obligations (and related charges) which are incurred up to and including the date of termination.</p>
+
+<h2>Changes to These Terms</h2>
+
+<p>The Bank reserves the right to change these Terms and any other information it has issued about the Service at any time. If the Bank introduces a new fee or charge, increases your liability for losses or adjusts any periodic transaction limits you will be given at least 30 days notice by such method as the Bank shall decide. Notice of any other change will be given in writing (for example on Account Statements or on our Web Site) or by any other mean no later than the date on which the change takes place.</p>
+
+<h2>Recording Telephone Calls</h2>
+
+<p>The Bank may record telephone calls made to the Bank Call Centre for transaction verification and quality control purposes and the Customer hereby agree and authorize the Bank to record all Telephone Calls.</p>
+
+<h2>Third Party Products and Services</h2>
+
+<p>Where we provide hypertext links to third party internet web sites, such links are provided for your information and convenience and the inclusion of any link it is not an endorsement by us in any way of any products or services in such web sites. You use such links entirely at your own risk and we accept no responsibility or liability for the content, use or availability of such web sites or for any loss or damage, however arising, suffered as a result of their use. We have not verified the truth or accuracy of any content of such web sites. This Site may also contain some material provided by third parties and we accept no responsibility or liability for the accuracy of such material. No third party is permitted to link any other web site to this Site without obtaining our prior written</p>
+
+<h2>Force Majeure</h2>
+
+<p>Neither party will be liable for delay in performing or failure to perform any of its obligations under this Agreement which is caused by circumstances beyond its reasonable control, including without limitation, the failure, malfunction or unavailability of telecommunications, data communications and computer systems and services, war, civil unrest, government action, strikes, lock-out or other industrial action or trade disputes (whether involving either party's employees or those of a third party). Any delay or failure of this kind will not be deemed to be a breach to this Agreement and the time for performance of this affected obligation will be extended by a period which is reasonable in the circumstances.</p>
+
+<h2>Electronic Channels Banking Services Records and Transaction Terms</h2>
+<p>The Bank's records will be evidence of your dealing with us in connection with the Services.</p>
+
+<p>When you give us instruction or request a transaction through the Electronic Channels Banking Services, these terms and conditions apply in addition to the General terms and conditions (as amended from time to time) even if you have not signed such terms and conditions.</p>
+
+
+<h2>General</h2>
+
+<p>All information on this website is only intended to provide the Customer with general information about the Bank, Bank products and services and the Bank will Endeavour to ensure that the information provided is up to date. The Bank will periodically amend, add, delete, update or alter the information, including without limitation. Further, the Bank assumes no responsibility for any errors or omissions in the content of the website.
+Users agree to indemnify, defend and hold the Bank harmless from any liability, loss, claim and expense, including legal fees related to a user's violation of these Terms and Conditions or unauthorized use of the services and information provided at this website.
+Both parties agree to comply with all applicable data protection and other laws to the same or similar purpose in all relevant jurisdictions.</p>
+
+<p>The records we maintain of any online messages, instructions, payments or other transactions will be final evidence of those messages, instructions, payments or other transactions and of the time they are given or carried out, except in instances of obvious mistake.</p>
+
+<p>You agree and hereby acknowledge that by using any of the electronic banking services we provide or assent given by electronically "clicking" any graphic button or link on our electronic interface is a valid and enforceable agreement by you to any terms or conditions associations by such electronic signatures or assents.</p>
+
+<p>You agree and hereby acknowledge that you are responsible for determining whether the electronic banking services are legal, and proper under all applicable regulations for any transactions that you may consummate under such services.</p>
+
+<p>With respect to any hardware, software, or data processing or storage services we provide in the course of providing the electronic banking services, we hereby disclaim any implied warranty of merchantability, fitness for a particular purpose, non-infringement, freedom from viruses and other malicious software, title, interoperability, non-infringement, or those arising from a course of dealing, usage, or trade practice.</p>
+
+<p>The Terms and Conditions will be governed by and construed in accordance with the applicable laws of Egypt and users agree that all legal proceedings relating to the matters herein shall be adjudicated solely in the courts of Egypt.</p>
+
+<p>To the extent that any portion of these Terms and Conditions shall be determined to be unenforceable by a court of competent jurisdiction, such portion will be modified by the court solely to the extent necessary to cause such portion to be enforceable, and these Terms and Conditions as so modified will remain in full force and effect. Any waiver of any provisions contained in these Terms and Conditions by the Bank shall not be deemed to be a waiver of any other right, term or provision of these Terms and Conditions.</p>
+
+</div>
+</div>
+</body>
+</html>

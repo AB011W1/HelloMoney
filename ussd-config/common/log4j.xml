@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!--
+		C:/softtag/HelloMoney_TZLogs = set logger.dir in ANT build env specific
+		properties file
+	-->
+
+	<appender name="debug" class="com.utils.logger.CompositeRollingAppender">
+		<param name="File" value="@LOGGER_DIRECTORY@/hellomoney_debug.log" />
+		<param name="DatePattern" value=".yyyy-MM-dd"/>
+		<param name="BufferedIO" value="false"/>
+		<param name="Append" value="true" />
+		<param name="MaxFileSize" value="15MB" />
+		<param name="MaxBackupIndex" value="10" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[%d{yyyy-MMM-dd HH:mm:ss.SSS}] [%p] [%t] [%x] [%C-%M(%L)] - %m %n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="DEBUG" />
+			<param name="LevelMax" value="DEBUG" />
+		</filter>
+	</appender>
+
+
+
+	<appender name="info" class="com.utils.logger.CompositeRollingAppender">
+		<param name="File" value="@LOGGER_DIRECTORY@/hellomoney_info.log" />
+		<param name="Append" value="true" />
+		<param name="MaxFileSize" value="15MB" />
+		<param name="MaxBackupIndex" value="10" />
+		<param name="DatePattern" value=".yyyy-MM-dd"/>
+		<param name="BufferedIO" value="false"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[%d{yyyy-MMM-dd HH:mm:ss.SSS}] [%p] [%t] [%x] [%c] - %m %n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="INFO" />
+			<param name="LevelMax" value="INFO" />
+		</filter>
+	</appender>
+
+	<appender name="error" class="com.utils.logger.CompositeRollingAppender">
+		<param name="File" value="@LOGGER_DIRECTORY@/hellomoney_error.log" />
+		<param name="Append" value="true" />
+		<param name="MaxFileSize" value="15MB" />
+		<param name="MaxBackupIndex" value="10" />
+		<param name="DatePattern" value=".yyyy-MM-dd"/>
+		<param name="BufferedIO" value="false"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[%d{yyyy-MMM-dd HH:mm:ss.SSS}] [%p] [%t] [%x] [%c] - %m %n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="WARN" />
+			<param name="LevelMax" value="FATAL" />
+		</filter>
+	</appender>
+
+	<appender name="AuditLogFile" class="com.utils.logger.CompositeRollingAppender">
+		<param name="File" value="@LOGGER_DIRECTORY@/hellomoney_audit-time.csv" />
+		<param name="Append" value="true" />
+		<param name="MaxFileSize" value="15MB" />
+		<param name="MaxBackupIndex" value="10" />
+		<param name="DatePattern" value=".yyyy-MM-dd"/>
+		<param name="BufferedIO" value="false"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MMM-dd HH:mm:ss.SSS},%x,%m %n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="DEBUG" />
+			<param name="LevelMax" value="FATAL" />
+		</filter>
+	</appender>
+
+	<appender name="APPLICATION_FILE" class="com.utils.logger.CompositeRollingAppender">
+		<param name="File" value="@LOGGER_DIRECTORY@/hellomoney_gateway_debug.log" />
+		<param name="Append" value="true" />
+		<param name="MaxFileSize" value="15MB" />
+		<param name="MaxBackupIndex" value="10" />
+		<param name="DatePattern" value=".yyyy-MM-dd"/>
+		<param name="BufferedIO" value="false"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[%d{yyyy-MMM-dd HH:mm:ss.SSS}] [%p] [%t] [%x] [%C-%M(%L)] - %m %n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="DEBUG" />
+			<param name="LevelMax" value="FATAL" />
+		</filter>
+	</appender>
+
+   <appender name="SOAP_FILE" class="com.utils.logger.CompositeRollingAppender">
+		<param name="File" value="@LOGGER_DIRECTORY@/hellomoney_soap.log" />
+		<param name="Append" value="true" />
+		<param name="MaxFileSize" value="15MB" />
+		<param name="MaxBackupIndex" value="10" />
+		<param name="DatePattern" value=".yyyy-MM-dd"/>
+		<param name="BufferedIO" value="false"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[%d{yyyy-MMM-dd HH:mm:ss.SSS}] [%p] [%t] [%x] [%C-%M(%L)] - %m %n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="DEBUG" />
+			<param name="LevelMax" value="FATAL" />
+		</filter>
+	</appender>
+
+	<appender name="BEM_TAT_LOG" class="com.utils.logger.CompositeRollingAppender">
+		<param name="File" value="@LOGGER_DIRECTORY@/hellomoney_bem_tat.csv" />
+		<param name="Append" value="true" />
+		<param name="MaxFileSize" value="15MB" />
+		<param name="MaxBackupIndex" value="10" />
+		<param name="DatePattern" value=".yyyy-MM-dd"/>
+		<param name="BufferedIO" value="false"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MMM-dd HH:mm:ss.SSS},%p,%x,%m %n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="DEBUG" />
+			<param name="LevelMax" value="FATAL" />
+		</filter>
+	</appender>
+
+	<appender name="ECRIME_FILE" class="org.apache.log4j.DailyRollingFileAppender">
+  	<param name="File" value="@LOGGER_DIRECTORY@/hellomoney_ecrime.log" />
+  	<param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%-4r [%t] %d %-5p %c %x -%m%n" />
+    </layout>
+  </appender>
+
+	<category name="com.barclays.ussd.audit-time" additivity="false">
+		<appender-ref ref="AuditLogFile" />
+	</category>
+
+	<logger name="mcfe-ecrime" additivity="false">
+		<appender-ref ref="ECRIME_FILE" />
+	</logger>
+
+	<logger name="com.barclays.bmg" additivity="false">
+		<appender-ref ref="APPLICATION_FILE" />
+	</logger>
+
+	<logger name="SOAP_LOGGER" additivity="false">
+		<appender-ref ref="SOAP_FILE" />
+	</logger>
+
+	<logger name="BEM_TAT_LOGGER" additivity="false">
+		<appender-ref ref="BEM_TAT_LOG" />
+	</logger>
+	<logger name="com.ibm" additivity="false">
+		<appender-ref ref="error" />
+	</logger>
+
+	<root>
+		<priority value="DEBUG" />
+		<appender-ref ref="debug" />
+		<appender-ref ref="info" />
+		<appender-ref ref="error" />
+
+ 	</root>
+
+</log4j:configuration>

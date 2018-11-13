@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menuItems>
+<version>1.0</version>
+<pageHeader>
+      <countryCode>GH</countryCode>
+      <businessId>BBG</businessId>
+</pageHeader>
+
+<node id="ussd0.00" screenId="00" level="00" optionId="0000" labelId="label.select" headerId="label.select" MainMenu="true">
+      <node id="ussd0.1" screenId="0" level="0" optionId="1" labelId="menu.cash.send" tranId="GH_CASH_SEND_ONE_TIME_PAYMNTS" />
+      <node id="ussd0.8" screenId="0" level="0" optionId="2" labelId="menu.mwallet" tranId="GH_MOBILE_WALLET_TOP_UP" />
+
+      <node id="ussd0.6" screenId="0" level="0" optionId="3" labelId="menu.buy.airtimetopup" tranId="GH_AIRTIME_TOPUP" />
+
+      <node id="ussd0.2" screenId="0" level="0" optionId="4" labelId="menu.account.services" headerId="label.select" backOptionReq="true">
+      		<node id="ussd0.2.1" screenId="2" level="1" optionId="1" labelId="menu.bkg.balance.enquirey" tranId="GH_BAL_ENQ" />
+            <node id="ussd0.2.2" screenId="2" level="1" optionId="2" labelId="menu.bkg.mini.stmt" tranId="GH_MINI_STMT" />
+            <node id="ussd0.2.3" screenId="2" level="1" optionId="3" labelId="menu.bkg.request" headerId="label.select" backOptionReq="true">
+               <node id="ussd0.2.3.1" screenId="3" level="2" optionId="1" labelId="menu.bkg.request.chequebok" tranId="GH_CHK_BK_REQ" />
+               <node id="ussd0.2.3.2" screenId="3" level="2" optionId="2" labelId="menu.bkg.request.prntstmt" tranId="GH_STMT_REQ" />
+            </node>
+            <node id="ussd0.2.4" screenId="2" level="1" optionId="4" labelId="menu.foreign.exchange" headerId="label.select" tranId="GH_VIEW_FX_RATE" />
+	 </node>
+
+	 <node id="ussd0.5" screenId="0" level="0" optionId="5" labelId="menu.pay.bills" headerId="label.select" backOptionReq="true">
+            <node id="ussd0.5.1" screenId="6" level="1" optionId="1" labelId="menu.pb.registered.biller" tranId="GH_PAY_BILLS" backOptionReq="true" />
+            <node id="ussd0.5.2" screenId="6" level="1" optionId="2" labelId="menu.pb.onetime.payement" tranId="GH_ONE_TIME_PAYMNTS" backOptionReq="true" />
+            <node id="ussd0.5.3" screenId="6" level="1" optionId="3" labelId="menu.pb.view.lastpaid.bills" tranId="GH_VIEW_LAST_PAID_BILLS" />
+            <node id="ussd0.5.4" screenId="6" level="1" optionId="4" labelId="menu.pb.register.biller" tranId="GH_REG_BILLERS" />
+            <node id="ussd0.5.5" screenId="6" level="1" optionId="5" labelId="menu.pb.view.mybillers" tranId="GH_VIEW_BILLERS" />
+            <node id="ussd0.5.6" screenId="6" level="1" optionId="6" labelId="menu.pb.delete.biller" tranId="GH_DEL_BILLERS" />
+      </node>
+       <!-- Credit Card changes -->
+ 		<node id="ussd0.7" screenId="0" level="0" optionId="6" labelId="menu.credit.card.services" headerId="label.select" backOptionReq="true">
+        	 <node id="ussd0.7.1" screenId="11" level="1" optionId="1" labelId="menu.at.glance" tranId="GH_AT_GLANCE" />
+         	 <node id="ussd0.7.2" screenId="11" level="1" optionId="2" labelId="menu.card.statement" tranId="GH_CARD_STATEMENT" />
+         	 <node id="ussd0.7.3" screenId="11" level="1" optionId="3" labelId="menu.unbilled.transaction" tranId="GH_UNBILLED_TRANSACTION" />
+         	 <node id="ussd0.7.4" screenId="11" level="1" optionId="4" labelId="menu.credit.card.payment" headerId="label.select" backOptionReq="true">
+             <node id="ussd0.7.4.1" screenId="12" level="2" optionId="1" labelId="label.own.barclaycard" tranId="GH_CARD_PAYMENT_INT"/>
+         	</node><!--CR#46 Credit card link-->
+         		<node id="ussd0.7.5" screenId="11" level="1" optionId="5" labelId="menu.credit.card.link" tranId="GH_CREDITCARD_LINK" />
+     	 </node>
+		<!-- Credit Card changes -->
+
+	 <node id="ussd0.3" screenId="0" level="0" optionId="7" labelId="menu.fund.transfer" headerId="label.select" backOptionReq="true">
+            <node id="ussd0.3.1" screenId="5" level="1" optionId="1" labelId="menu.ft.own.account" tranId="GH_OWN_LNK_FND_TX" />
+            <node id="ussd0.3.2" screenId="5" level="1" optionId="2" labelId="menu.ft.other.barclay" headerId="label.select" backOptionReq="true">
+               	<node id="ussd0.3.2.1" screenId="7" level="2" optionId="1" labelId="label.registered" tranId="GH_OTHER_BARC_FND_TX_REG" />
+               	<node id="ussd0.3.2.2" screenId="7" level="2" optionId="2" labelId="label.unregistered" tranId="GH_OTHER_BARC_FND_TX_UNREG" />
+ 	  		</node>
+            <node id="ussd0.3.3" screenId="5" level="1" optionId="3" labelId="menu.ghips.ft.other.bank" headerId="label.ghips.make.realtime.pymt" backOptionReq="true">
+               	<node id="ussd0.3.3.1" screenId="14" level="2" optionId="1" labelId="label.ghips.one.off" tranId="GH_ONE_OFF_OTHER_BANK_AC" />
+               	<node id="ussd0.3.3.2" screenId="14" level="2" optionId="2" labelId="label.ghips.save.benef" tranId="GH_SAVE_BENF_OTHER_BANK_AC" />
+ 	  		</node>
+            <node id="ussd0.3.4" screenId="5" level="1" optionId="4" labelId="menu.ft.register.benef" headerId="label.ghips.register.select.bank" backOptionReq="true" >
+            	<node id="ussd0.3.4.1" screenId="15" level="2" optionId="1" labelId="label.barclay.acc" tranId="GH_REG_BENF_INT" />
+                <node id="ussd0.3.4.2" screenId="15" level="2" optionId="2" labelId="label.ghips.ft.non.barclays.bank" tranId="GH_REG_BENF_OTHER_BANK_AC" backOptionReq="true" />
+            </node>
+			<node id="ussd0.3.5" screenId="5" level="1" optionId="5" labelId="menu.ft.edit.benef" headerId="label.select" backOptionReq="true" >
+				<node id="ussd0.3.5.1" screenId="9" level="2" optionId="1" labelId="label.barclay.acc" tranId="GH_EDIT_BENF_INT" />
+               <!-- 	<node id="ussd0.3.5.2" screenId="9" level="2" optionId="2" labelId="label.otherbank.acc" tranId="GH_EDIT_BENF_EXT" /> -->
+			</node>
+			<node id="ussd0.3.6" screenId="5" level="1" optionId="6" labelId="menu.ft.delete.benef" headerId="label.select" backOptionReq="true" >
+				<node id="ussd0.3.6.1" screenId="10" level="2" optionId="1" labelId="label.barclay.acc" tranId="GH_DEL_BENF_BARCLAYS" />
+				<node id="ussd0.3.6.2" screenId="10" level="2" optionId="2" labelId="menu.ghips.ft.delete.other.bank" tranId="GH_DEL_BENF_OTHER_BANK_AC" />
+		  </node>
+	   </node>
+
+ 		<node id="ussd0.9" screenId="0" level="0" optionId="8" labelId="menu.lead.generation" tranId="GH_LEAD_GENERATION" />
+
+      <node id="ussd0.4" screenId="0" level="0" optionId="9" labelId="menu.others" headerId="label.select" backOptionReq="true">
+         <node id="ussd0.4.1" screenId="13" level="1" optionId="1" labelId="menu.change.pin" tranId="GH_CHNG_PIN" />
+         <node id="ussd0.4.2" screenId="13" level="1" optionId="2" labelId="menu.contactus" tranId="GH_CONTACT_US" />
+      </node>
+</node>
+
+<node id="ussd1.00" screenId="100" level="00" optionId="01" labelId="label.select" headerId="label.unreg.user.welcome">
+		<node id="ussd1.01" screenId="01" level="1" optionId="1" labelId="menu.self.registration" tranId="GH_SELF_REG" />
+		<node id="ussd1.02" screenId="01" level="1" optionId="2" labelId="menu.demo" tranId="GH_HM_DEMO"/>
+		<node id="ussd1.03" screenId="01" level="1" optionId="3" labelId="menu.contactus" tranId="GH_SELFREG_CONTACT_US"/>
+</node>
+<node id="ussd3.00" screenId="200" level="00" optionId="1" labelId="label.select" headerId="label.forgot.pin.instruction" tranId="GH_FOR_PIN"/>
+
+<!-- FreeDialUSSD -->
+	<node id="ussd4.00" screenId="300" level="00" optionId="1" labelId="label.select" headerId="menu.mwallet" tranId="GH_FREE_DIAL_USSD"/>
+
+<!-- Free Dial Airtel Solution -->
+<node id="ussd4.01" screenId="400" level="00" optionId="1" labelId="LBL9999" headerId="LBL9999" tranId="GH_FREE_DIAL_USSD_AIRTEL"/>
+
+</menuItems>

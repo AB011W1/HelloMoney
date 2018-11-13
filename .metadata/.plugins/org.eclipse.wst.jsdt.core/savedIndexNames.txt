@@ -1,0 +1,2 @@
+INDEX VERSION 1.121+C:\softtag\NFT_Prod\.metadata\.plugins\org.eclipse.wst.jsdt.core
+2397746291.index

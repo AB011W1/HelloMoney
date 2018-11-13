@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+  http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+  http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-3.0.xsd">
+
+
+		<bean id="retrieveSrcAccountPayeeListRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.ownfundtransfer.request.RetrieveSrcAccountPayeeListRequestBuilder"/>
+
+		<bean id="welcomeScreenBalMainEnqRequestBuilder"   class="com.barclays.ussd.bmg.accountenquiry.WelcomeScreenBalMainEnqRequestBuilder"/>
+		<bean id="retrievePayeeAccountListRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.ownfundtransfer.request.RetrievePayeeAccountListRequestBuilder"/>
+		<bean id="retrieveSrcAccountListRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.ownfundtransfer.request.RetrieveSrcAccountListRequestBuilder"/>
+		<bean id="getAmountRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.ownfundtransfer.request.GetAmountRequestBuilder"/>
+		<bean id="ownFundTransferValidateRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.ownfundtransfer.request.OwnFundTransferValidateRequestBuilder"/>
+		<bean id="ownFundTransferConfirmRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.ownfundtransfer.request.OwnFundTransferConfirmRequestBuilder"/>
+
+		<bean id="oBAFTSrcPayeeListRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbarclaysfundtx.request.OBAFTSrcPayeeListRequestBuilder"/>
+		<bean id="retrieveOBAFTPayeeAcctListRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbarclaysfundtx.request.RetrieveOBAFTPayeeAcctListRequestBuilder"/>
+		<bean id="retrieveOBAFTSrcAcctListRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbarclaysfundtx.request.RetrieveOBAFTSrcAcctListRequestBuilder"/>
+		<bean id="obaftGetAmountRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbarclaysfundtx.request.OBAFTGetAmountRequestBuilder"/>
+		<!-- Kadikope -->
+		<bean id="oBAFTGetCreditORCasaRequestBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbarclaysfundtx.request.OBAFTGetCreditORCasaRequestBuilder" />
+        <bean id="oBAFTGetCreditListRequestBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbarclaysfundtx.request.OBAFTGetCreditListRequestBuilder" />
+		<!-- Kadikope -->
+		<bean id="obaftValidateRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbarclaysfundtx.request.OBAFTValidateRequestBuilder"/>
+		<bean id="obaftConfirmRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbarclaysfundtx.request.OBAFTConfirmRequestBuilder"/>
+
+		<bean id="chequeBookAccountListDetailsRequestBuilder"   class="com.barclays.ussd.bmg.chequeBook.request.ChequeBookAccountListDetailsRequestBuilder"/>
+		<bean id="chequeBookAccountListRequestBuilder"   class="com.barclays.ussd.bmg.chequeBook.request.ChequeBookAccountListRequestBuilder"/>
+		<bean id="chequeBookSizeListRequestBuilder"   class="com.barclays.ussd.bmg.chequeBook.request.ChequeBookSizeListRequestBuilder"/>
+
+		<bean id="chequeBookBranchSearchLetterRequestBuilder"   class="com.barclays.ussd.bmg.chequeBook.request.ChequeBookBranchSearchLetterRequestBuilder"/>
+		<bean id="chequeBookBranchListRequestBuilder"   class="com.barclays.ussd.bmg.chequeBook.request.ChequeBookBranchListRequestBuilder"/>
+
+
+		<bean id="chequeBookValidationRequestBuilder"   class="com.barclays.ussd.bmg.chequeBook.request.ChequeBookValidationRequestBuilder"/>
+		<bean id="chequeBookExecuteRequestBuilder"   class="com.barclays.ussd.bmg.chequeBook.request.ChequeBookExecuteRequestBuilder"/>
+
+		<bean id="payBillBillerList"   class="com.barclays.ussd.bmg.paybills.request.PayBillBillerListRequestBuilder"/>
+		<bean id="payBillPayeeList"   class="com.barclays.ussd.bmg.paybills.request.PayBillPayeeList"/>
+		<bean id="payBillEnterAmt"   class="com.barclays.ussd.bmg.paybills.request.PayBillEnterAmt"/>
+		<!-- Kadikope -->
+			<bean id="payBillEnterCreditORCasa"   class="com.barclays.ussd.bmg.paybills.request.PayBillEnterCreditORCasa"/>
+			<bean id="payBillEnterCreditList" class="com.barclays.ussd.bmg.paybills.request.PayBillEnterCreditList" />
+		<!-- Kadikope -->
+		<bean id="payBillSelFrmAcnt"   class="com.barclays.ussd.bmg.paybills.request.PayBillSelFrmAcnt"/>
+		<bean id="payBillSubmit"   class="com.barclays.ussd.bmg.paybills.request.PayBillSubmit"/>
+		<bean id="payBillConfirm"   class="com.barclays.ussd.bmg.paybills.request.PayBillConfirm"/>
+
+		<bean id="oBADBRetrievePayeeAcctListRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.deletebenf.barclays.OBADBRetrievePayeeAcctListRequestBuilder"/>
+		<bean id="oBADBRenderPayeeAcctListRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.deletebenf.barclays.OBADBRenderPayeeAcctListRequestBuilder"/>
+		<bean id="obadbValidateRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.deletebenf.barclays.OBADBValidateRequestBuilder"/>
+		<bean id="obadbConfirmRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.deletebenf.barclays.OBADBConfirmRequestBuilder"/>
+
+		<bean id="othBnkRetrieveBenfListRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.OthBnkRetrieveBenfListRequestBuilder"/>
+		<bean id="othBnkPayeeLstRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.OthBnkPayeeLstRequestBuilder"/>
+
+		<bean id="nBADBGetBenfListRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.deletebenf.nonbarclays.NBADBGetBenfListRequestBuilder"/>
+		<bean id="nbadbPayeeLstRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.deletebenf.nonbarclays.NBADBPayeeLstRequestBuilder"/>
+		<bean id="nbadbValidateRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.deletebenf.nonbarclays.NBADBValidateRequestBuilder"/>
+		<bean id="nbadbConfirmRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.deletebenf.nonbarclays.NBADBConfirmRequestBuilder"/>
+
+		<bean id="statementReqRetrieveSrcAccountListRequestBuilder"   class="com.barclays.ussd.bmg.statementrequest.StatementReqRetrieveSrcAccountListRequestBuilder"/>
+		<bean id="statementReqAccountListRequestBuilder"   class="com.barclays.ussd.bmg.statementrequest.StatementReqAccountListRequestBuilder"/>
+		<bean id="validateStatementReqRequestBuilder"   class="com.barclays.ussd.bmg.statementrequest.ValidateStatementReqRequestBuilder"/>
+		<bean id="statementRequestConfirmRequestBuilder"   class="com.barclays.ussd.bmg.statementrequest.StatementRequestConfirmRequestBuilder"/>
+
+		<bean id="registerBenfGetAccNo"   class="com.barclays.ussd.bmg.registerbenf.internal.RegisterBenfGetAccNo"/>
+		<bean id="registerBenfInterBranchCodeLetter"   class="com.barclays.ussd.bmg.registerbenf.internal.RegisterBenfInterBranchCodeLetter"/>
+		<bean id="registerBenfBranchListRequestBuilder"   class="com.barclays.ussd.bmg.registerbenf.internal.RegisterBenfBranchListRequestBuilder"/>
+		<bean id="registerBenfGetBranchCode"   class="com.barclays.ussd.bmg.registerbenf.internal.RegisterBenfGetBranchCode"/>
+		<bean id="registerBenfGetBenfNickName"   class="com.barclays.ussd.bmg.registerbenf.internal.RegisterBenfGetBenfNickName"/>
+		<bean id="registerBenfInternalValidateReqBuilder"   class="com.barclays.ussd.bmg.registerbenf.internal.RegisterBenfInternalValidateReqBuilder"/>
+		<bean id="registerBenfInternalConfirmReqBuilder"   class="com.barclays.ussd.bmg.registerbenf.internal.RegisterBenfInternalConfirmReqBuilder"/>
+
+
+		<bean id="accountSummaryListBuilder"   class="com.barclays.ussd.bmg.accountenquiry.AccountSummaryListBuilder"/>
+		<bean id="accountSummaryBuilder"   class="com.barclays.ussd.bmg.accountenquiry.AccountSummaryBuilder"/>
+		<bean id="cASADetailBuilder"   class="com.barclays.ussd.bmg.ministatement.CASADetailBuilder"/>
+
+
+		<bean id="balEnqAccntDetailBuilder"   class="com.barclays.ussd.bmg.accountenquiry.BalEnqAccntDetailBuilder"/>
+
+		<bean id="wlcmScrnOthAcctAccountSummaryBuilder"   class="com.barclays.ussd.bmg.accountenquiry.WlcmScrnOthAcctAccountSummaryBuilder"/>
+		<bean id="wlcmScrnOthAcctBalEnqAccntDetailBuilder"   class="com.barclays.ussd.bmg.accountenquiry.WlcmScrnOthAcctBalEnqAccntDetailBuilder"/>
+
+		<bean id="othBnkEnterAmount"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.OthBnkEnterAmount"/>
+		<bean id="othBnkSelFrmAcntReqBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.OthBnkSelFrmAcntReqBuilder"/>
+		<bean id="othBnkPayeeInfoRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.OthBnkPayeeInfoRequestBuilder"/>
+		<bean id="othBnkFrmValReqBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.OthBnkFrmValReqBuilder"/>
+		<bean id="othBnkExecReqBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.OthBnkExecReqBuilder"/>
+
+		<bean id="viewBillerBenfListRequestBuilder"   class="com.barclays.ussd.bmg.paybills.request.ViewBillerBenfListRequestBuilder"/>
+		<bean id="viewBillerDetailsRequest"   class="com.barclays.ussd.bmg.viewbillers.request.ViewBillerDetailsRequest"/>
+
+		<bean id="vLPBRetrieveBillerLstRequestBuilder"   class="com.barclays.ussd.bmg.vlpb.request.VLPBRetrieveBillerLstRequestBuilder"/>
+		<bean id="vLPBBillerLstRequest"   class="com.barclays.ussd.bmg.vlpb.request.VLPBBillerLstRequest"/>
+		<bean id="vLPBBillerDetRequest"   class="com.barclays.ussd.bmg.vlpb.request.VLPBBillerDetRequest"/>
+
+		<bean id="getLanguagesRetrieveLangListRequestBuilder"   class="com.barclays.ussd.bmg.langpref.GetLanguagesRetrieveLangListRequestBuilder"/>
+		<bean id="getLanguagesReqBuilder"   class="com.barclays.ussd.bmg.langpref.GetLanguagesReqBuilder"/>
+		<bean id="getLanguagesValidateReqBuilder"   class="com.barclays.ussd.bmg.langpref.GetLanguagesValidateReqBuilder"/>
+		<bean id="getLanguagesConfirmReqBuilder"   class="com.barclays.ussd.bmg.langpref.GetLanguagesConfirmReqBuilder"/>
+
+		<bean id="changePinOldPassReqBuilder"   class="com.barclays.ussd.bmg.changepin.ChangePinOldPassReqBuilder"/>
+		<bean id="changePinNewPassReqBuilder"   class="com.barclays.ussd.bmg.changepin.ChangePinNewPassReqBuilder"/>
+		<bean id="changePinReenterNewPassReqBuilder"   class="com.barclays.ussd.bmg.changepin.ChangePinReenterNewPassReqBuilder"/>
+		<bean id="changePinConfirmReqBuilder"   class="com.barclays.ussd.bmg.changepin.ChangePinConfirmReqBuilder"/>
+		<bean id="firstLoginChangePinConfirmReqBuilder"   class="com.barclays.ussd.bmg.changepin.FirstLoginChangePinConfirmReqBuilder"/>
+
+
+		<bean id="firstTimePinNewPassReqBuilder"   class="com.barclays.ussd.bmg.firsttimelogin.FirstTimePinNewPassReqBuilder"/>
+
+         <bean id="regbGetBillersCheckReqBuilder"   class="com.barclays.ussd.bmg.regbillers.REGBGetBillersCheckReqBuilder"/>
+		<bean id="regbGetBillersReqBuilder"   class="com.barclays.ussd.bmg.regbillers.REGBGetBillersReqBuilder"/>
+		<bean id="regbGetRefNoReqBuilder"   class="com.barclays.ussd.bmg.regbillers.REGBGetRefNoReqBuilder"/>
+		<bean id="regbGetBillerNickNameReqBuilder"   class="com.barclays.ussd.bmg.regbillers.REGBGetBillerNickNameReqBuilder"/>
+		<bean id="regbValidateReqBuilder"   class="com.barclays.ussd.bmg.regbillers.REGBValidateReqBuilder"/>
+		<bean id="regbConfirmReqBuilder"   class="com.barclays.ussd.bmg.regbillers.REGBConfirmReqBuilder"/>
+		<bean id="regbGetBillerAreaSearchCharReqBuilder"   class="com.barclays.ussd.bmg.regbillers.REGBGetBillerAreaSearchCharReqBuilder"/>
+		<bean id="regbGetBillerAreaCodeReqBuilder"   class="com.barclays.ussd.bmg.regbillers.REGBGetBillerAreaCodeReqBuilder"/>
+		<!-- CR-57 -->
+		<bean id="regbGetDstvBillerReqBuilder"   class="com.barclays.ussd.bmg.regbillers.REGBGetDstvBillerReqBuilder"/>
+		<!-- WUC change -Botswana  -->
+		<bean id="regbWUCCustomerRequest"   class="com.barclays.ussd.bmg.regbillers.REGBWUCBillPayEnterCustomerNumRefRequest"/>
+
+        <bean id="delBlrsLstRetReqBuilder"   class="com.barclays.ussd.bmg.deletebillers.request.DelBlrsLstRetReqBuilder"/>
+		<bean id="delBlrsLstReqBuilder"   class="com.barclays.ussd.bmg.deletebillers.request.DelBlrsLstReqBuilder"/>
+		<bean id="delBillersValidateRequest"   class="com.barclays.ussd.bmg.deletebillers.request.DelBillersValidateRequest"/>
+		<bean id="delBillrConfirmRequest"   class="com.barclays.ussd.bmg.deletebillers.request.DelBillrConfirmRequest"/>
+
+		<bean id="intNonRegFTGetAccNo"   class="com.barclays.ussd.bmg.fundtransfer.internal.nonregistered.request.IntNonRegFTGetAccNo"/>
+		<bean id="intNonRegFTGetBranchCodeLetter"   class="com.barclays.ussd.bmg.fundtransfer.internal.nonregistered.request.IntNonRegFTGetBranchCodeLetter"/>
+		<bean id="intNonRegFTGetBranchCode"   class="com.barclays.ussd.bmg.fundtransfer.internal.nonregistered.request.IntNonRegFTGetBranchCode"/>
+		<bean id="intNonRegFTGetBeneficiaryName"   class="com.barclays.ussd.bmg.fundtransfer.internal.nonregistered.request.IntNonRegFTGetBeneficiaryName"/>
+		<bean id="intNonRegEnterAmount"   class="com.barclays.ussd.bmg.fundtransfer.internal.nonregistered.request.IntNonRegEnterAmount"/>
+		<!-- Kadikope -->
+		<bean id="intNonRegCASAOrCreditRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.internal.nonregistered.request.IntNonRegCASAOrCreditRequestBuilder"/>
+		<bean id="intNonRegFTCCListRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.internal.nonregistered.request.IntNonRegFTCCListRequestBuilder"/>
+		<!-- Kadikope -->
+
+		<bean id="intNonRegRetrieveSrcAccountListRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.internal.nonregistered.request.IntNonRegRetrieveSrcAccountListRequestBuilder"/>
+		<bean id="intNonRegValidateReqBuilder"   class="com.barclays.ussd.bmg.fundtransfer.internal.nonregistered.request.IntNonRegValidateReqBuilder"/>
+		<bean id="intNonRegConfirmReqBuilder"   class="com.barclays.ussd.bmg.fundtransfer.internal.nonregistered.request.IntNonRegConfirmReqBuilder"/>
+
+		<bean id="registerBenfExtGetAccNo"   class="com.barclays.ussd.bmg.registerbenf.external.RegisterBenfExtGetAccNo"/>
+		<bean id="registerBenfExtGetBankCode"   class="com.barclays.ussd.bmg.registerbenf.external.RegisterBenfExtGetBankCode"/>
+		<bean id="registerBenfExtSelectBankCode"   class="com.barclays.ussd.bmg.registerbenf.external.RegisterBenfExtSelectBankCode"/>
+		<bean id="registerBenfExtGetBranchCode"   class="com.barclays.ussd.bmg.registerbenf.external.RegisterBenfExtGetBranchCode"/>
+		<bean id="registerBenfExtSelectBranchCode"   class="com.barclays.ussd.bmg.registerbenf.external.RegisterBenfExtSelectBranchCode"/>
+		<bean id="registerBenfExtSelectedBranchCode"   class="com.barclays.ussd.bmg.registerbenf.external.RegisterBenfExtSelectedBranchCode"/>
+		<bean id="registerBenfExtGetBenfName"   class="com.barclays.ussd.bmg.registerbenf.external.RegisterBenfExtGetBenfName"/>
+		<bean id="registerBenfExtGetBenfNickName"   class="com.barclays.ussd.bmg.registerbenf.external.RegisterBenfExtGetBenfNickName"/>
+		<bean id="registerBenfExtValidateReqBuilder"   class="com.barclays.ussd.bmg.registerbenf.external.RegisterBenfExtValidateReqBuilder"/>
+		<bean id="registerBenfExtConfirmReqBuilder"   class="com.barclays.ussd.bmg.registerbenf.external.RegisterBenfExtConfirmReqBuilder"/>
+
+		<bean id="oneTimeCheckBillPayBillersRequestBuilder"   class="com.barclays.ussd.bmg.paybills.request.OneTimeCheckBillPayBillersRequestBuilder"/>
+		<bean id="oneTimeBillPayBillersRequest"   class="com.barclays.ussd.bmg.otbp.request.OneTimeBillPayBillersRequest"/>
+		<!-- CR-57 -->
+		<bean id="oneTimeBillPayDstvTypeReqBuilder"   class="com.barclays.ussd.bmg.otbp.request.OneTimeBillPayDstvTypeReqBuilder"/>
+	<!--  	<bean id="oneTimeBillPayBillAreaSearcherRequestBuilder"   class="com.barclays.ussd.bmg.otbp.request.OneTimeBillPayBillAreaSearcherRequestBuilder"/>-->
+		<bean id="oneTimeBillPayBillAreaCodeRequestBuilder"   class="com.barclays.ussd.bmg.otbp.request.OneTimeBillPayBillAreaCodeRequestBuilder"/>
+		<bean id="oneTimeBillPayBillRefIdRequest"   class="com.barclays.ussd.bmg.otbp.request.OneTimeBillPayBillRefIdRequest"/>
+		<bean id="OneTimeBillPayEnterAmountRequest"   class="com.barclays.ussd.bmg.otbp.request.OneTimeBillPayEnterAmountRequest"/>
+
+		<!-- WUC change 19/06/2017 -->
+		<bean id="oneTimeBillPayEnterWUCCustomerRequest"   class="com.barclays.ussd.bmg.otbp.request.OneTimeWUCBillPayEnterCustomerNumRefRequest"/>
+
+			<!-- Kadikope -->
+		<bean id="OneTimeBillPayEnterCreditORCasaRequest"   class="com.barclays.ussd.bmg.otbp.request.OneTimeBillPayEnterCreditORCasaRequest"/>
+		<bean id="OneTimeBillPayEnterCreditCardListRequest"   class="com.barclays.ussd.bmg.otbp.request.OneTimeBillPayEnterCreditListRequest"/>
+			<!-- Kadikope -->
+		<bean id="oneTimeBillPayAcctNumRequest"   class="com.barclays.ussd.bmg.otbp.request.OneTimeBillPayAcctNumRequest"/>
+		<bean id="oneTimeBillPayConfirmRequest"   class="com.barclays.ussd.bmg.otbp.request.OneTimeBillPayConfirmRequest"/>
+		<bean id="oneTimeBillPayBillDetailsRequest"   class="com.barclays.ussd.bmg.otbp.request.OneTimeBillPayBillDetailsRequest"/>
+
+		<bean id="AirtimeTopupSrcMnosRequestBuilder"   class="com.barclays.ussd.bmg.airtime.request.AirtimeTopupSrcMnosRequestBuilder"/>
+		<bean id="AirtimeTopUpMsisdnTypeRequest"   class="com.barclays.ussd.bmg.airtime.request.AirtimeTopUpMsisdnTypeRequest"/>
+		<bean id="airtimeInitRequest"   class="com.barclays.ussd.bmg.airtime.request.AirtimeInitRequest"/>
+		<bean id="airtimeEnterMobileRequest"   class="com.barclays.ussd.bmg.airtime.request.AirtimeEnterMobileRequest"/>
+		<bean id="airtimeEnterAmountRequest"   class="com.barclays.ussd.bmg.airtime.request.AirtimeEnterAmountRequest"/>
+		<!-- Kadikope -->
+		<bean id="airtimeEnterCreditORCasaRequest" class="com.barclays.ussd.bmg.airtime.request.AirtimeEnterCreditORCasaRequest" />
+        <bean id="airtimeEnterCreditListRequest" class="com.barclays.ussd.bmg.airtime.request.AirtimeEnterCreditListRequest" />
+		<bean id="airtimeEnterCreditCardValidateRequest" class="com.barclays.ussd.bmg.airtime.request.AirtimeEnterCreditCardValidateRequest" />
+
+		<!-- Kadikope -->
+
+
+		<bean id="airtimeSelectAccountRequest"   class="com.barclays.ussd.bmg.airtime.request.AirtimeSelectAccountRequest"/>
+		<bean id="airtimeValidateRequest"   class="com.barclays.ussd.bmg.airtime.request.AirtimeValidateRequest"/>
+		<bean id="airtimeSubmitRequest"   class="com.barclays.ussd.bmg.airtime.request.AirtimeSubmitRequest"/>
+
+		<bean id="fDViewEnterAmountRequest"   class="com.barclays.ussd.bmg.fd.request.FDViewEnterAmountRequest"/>
+		<bean id="fDViewTenuresRequest"   class="com.barclays.ussd.bmg.fd.request.FDViewTenuresRequest"/>
+		<bean id="fDViewRatesRequest"   class="com.barclays.ussd.bmg.fd.request.FDViewRatesRequest"/>
+		<bean id="fDApplyEnterAmountRequest"   class="com.barclays.ussd.bmg.fd.request.FDApplyEnterAmountRequest"/>
+		<bean id="fDApplyEnterTenureRequest"   class="com.barclays.ussd.bmg.fd.request.FDApplyEnterTenureRequest"/>
+		<bean id="fDApplySelectProductRequest"   class="com.barclays.ussd.bmg.fd.request.FDApplySelectProductRequest"/>
+		<bean id="fDApplyConfirmRequest"   class="com.barclays.ussd.bmg.fd.request.FDApplyConfirmRequest"/>
+		<bean id="fDApplyValidateRequest"   class="com.barclays.ussd.bmg.fd.request.FDApplyValidateRequest"/>
+		<bean id="fDApplySubmitRequest"   class="com.barclays.ussd.bmg.fd.request.FDApplySubmitRequest"/>
+
+		<bean id="MobileWalletTopupSrcMnosRequestBuilder"   class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletTopupSrcMnosRequestBuilder"/>
+		<bean id="mobileWalletTopupMnosRequest"   class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletTopupMnosRequest"/>
+		<bean id="mobileWalletTopupAccountNumberRequest"   class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletTopupAccountNumberRequest"/>
+		<!--CR#47 -->
+	<bean id="mobileWalletMsisdnTypeRequest" class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletMsisdnTypeRequest" />
+	 <!--CR#47 -->
+		<bean id="mobileWalletTopupAmountRequest"   class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletTopupAmountRequest"/>
+		<!-- Kadi Kope Credit Card -->
+		<bean id="mobileWalletTopupCreditCardORCasaRequest" class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletTopupCreditCardORCasaRequest" />
+		<bean id="mobileWalletTopupCreditCardListRequest" class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletTopupCreditCardListRequest" />
+
+		<bean id="mobileWalletTopupFromAccountRequest"   class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletTopupFromAccountRequest"/>
+		<bean id="mobileWalletTopupValidateRequest"   class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletTopupValidateRequest"/>
+		<bean id="mobileWalletTopupConfirmRequest"   class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletTopupConfirmRequest"/>
+
+		<bean id="verifyUserRequestBuilder"   class="com.barclays.ussd.bmg.login.VerifyUserRequestBuilder"/>
+		<bean id="authenticateUserRequestBuilder"   class="com.barclays.ussd.bmg.login.AuthenticateUserRequestBuilder"/>
+
+		<bean id="mainAcctBalEnqMiniStmtReqBuilder"   class="com.barclays.ussd.bmg.mainaccount.MainAcctBalEnqMiniStmtReqBuilder"/>
+		<bean id="mainAcctMiniStmtReqBuilder"   class="com.barclays.ussd.bmg.mainaccount.MainAcctMiniStmtReqBuilder"/>
+
+		<bean id="twoFactorAuthInitReq"   class="com.barclays.ussd.bmg.tfa.request.TwoFactorAuthInitReq"/>
+		<bean id="twoFactorAuthGenerateReq"   class="com.barclays.ussd.bmg.tfa.request.TwoFactorAuthGenerateReq"/>
+		<bean id="twoFactorAuthVerifyRequest"   class="com.barclays.ussd.bmg.tfa.request.TwoFactorAuthVerifyRequest"/>
+
+		<!--<bean id="selfRegisterInitRequest"   class="com.barclays.ussd.bmg.selfregister.request.SelfRegisterInitRequest"/>
+		<bean id="SelfRegisterInputRequest"   class="com.barclays.ussd.bmg.selfregister.request.SelfRegisterInputRequest"/>
+		<bean id="selfRegisterGetQuestionRequest"   class="com.barclays.ussd.bmg.selfregister.request.SelfRegisterGetQuestionRequest"/>
+		<bean id="selfRegisterIDVQ2Request"   class="com.barclays.ussd.bmg.selfregister.request.SelfRegisterIDVQ2Request"/>
+		<bean id="selfRegisterIDVQ3Request"   class="com.barclays.ussd.bmg.selfregister.request.SelfRegisterIDVQ3Request"/>
+		<bean id="selfRegisterIDVQ4Request"   class="com.barclays.ussd.bmg.selfregister.request.SelfRegisterIDVQ4Request"/>
+		<bean id="selfRegisterValidateRequest"   class="com.barclays.ussd.bmg.selfregister.request.SelfRegisterValidateRequest"/>
+    -->
+
+		<bean id="selfRegisterMobileNotRegisteredRequest"   class="com.barclays.ussd.bmg.selfregister.request.SelfRegisterMobileNotRegisteredRequest"/>
+    	<bean id="selfRegisterBranchNameRequest"   class="com.barclays.ussd.bmg.selfregister.request.SelfRegisterBranchNameRequest"/>
+    	<bean id="selfRegisterBranchCodeRequest"   class="com.barclays.ussd.bmg.selfregister.request.SelfRegisterBranchCodeRequest"/>
+    	<bean id="selfRegisterAccountRequest"   class="com.barclays.ussd.bmg.selfregister.request.SelfRegisterAccountRequest"/>
+    	<bean id="selfRegisterTnC1Request"   class="com.barclays.ussd.bmg.selfregister.request.SelfRegisterTnC1Request"/>
+		<bean id="selfRegisterInitRequest"   class="com.barclays.ussd.bmg.selfregister.request.SelfRegisterInitRequest"/>
+		<bean id="selfRegisterChallengeQnRequest"   class="com.barclays.ussd.bmg.selfregister.request.SelfRegisterChallengeQnRequest"/>
+		<bean id="selfRegisterChallengeAnsRequest"   class="com.barclays.ussd.bmg.selfregister.request.SelfRegisterChallengeAnsRequest"/>
+		<bean id="selfRegisterExecuteRequest"   class="com.barclays.ussd.bmg.selfregister.request.SelfRegisterExecuteRequest"/>
+
+	<!--ADDED TO INCLUDE DEBIT CARD VALIDATION IN SELF REGISTRATION	-->
+		<bean id="selfRegisterDebitCardNoRequestBuilder"   class="com.barclays.ussd.bmg.selfregister.request.SelfRegisterDebitCardNoRequestBuilder"/>
+		<bean id="selfRegisterDebitExpiryDateRequestBuilder"   class="com.barclays.ussd.bmg.selfregister.request.SelfRegisterDebitExpiryDateRequestBuilder"/>
+		<bean id="selfRegisterDebitCardVerificationRequestBuilder"   class="com.barclays.ussd.bmg.selfregister.request.SelfRegisterDebitCardVerificationRequestBuilder"/>
+		<!--END DEBIT CARD VALIDATION IN SELF REGISTRATION	-->
+
+		<bean id="helloMoneyDemoRequestBuilder"   class="com.barclays.ussd.bmg.hellomoney.demo.HelloMoneyDemoRequestBuilder"/>
+		<bean id="contactUsRequestBuilder"   class="com.barclays.ussd.bmg.hellomoney.contactus.ContactUsRequestBuilder"/>
+
+		<bean id="requestMapperObj"   class="com.barclays.ussd.auth.USSDresquest.USSDBaseRequestMapper"/>
+
+		<bean id="changeLanguageReqBuilder"   class="com.barclays.ussd.bmg.langpref.ChangeLanguageReqBuilder"/>
+		<bean id="changeLanguageExecuteReqBuilder"   class="com.barclays.ussd.bmg.langpref.ChangeLanguageExecuteReqBuilder"/>
+
+		<bean id="oneTimeCashSendGetMobileNoRequestBuilder"   class="com.barclays.ussd.bmg.cashsend.onetime.OneTimeCashSendGetMobileNoRequestBuilder"/>
+		<bean id="oneTimeCashSendGetAmountRequestBuilder"   class="com.barclays.ussd.bmg.cashsend.onetime.OneTimeCashSendGetAmountRequestBuilder"/>
+		<bean id="oneTimeCashSendGetSrcAcctRequestBuilder"   class="com.barclays.ussd.bmg.cashsend.onetime.OneTimeCashSendGetSrcAcctRequestBuilder"/>
+		<bean id="oneTimeCashSendGetAtmPinRequestBuilder"   class="com.barclays.ussd.bmg.cashsend.onetime.OneTimeCashSendGetAtmPinRequestBuilder"/>
+		<bean id="oneTimeCashSendGetReenteredAtmPinRequestBuilder"   class="com.barclays.ussd.bmg.cashsend.onetime.OneTimeCashSendGetReenteredAtmPinRequestBuilder"/>
+		<bean id="oneTimeCashSendValidateRequestBuilder"   class="com.barclays.ussd.bmg.cashsend.onetime.OneTimeCashSendValidateRequestBuilder"/>
+		<bean id="oneTimeCashSendSubmitRequestBuilder"   class="com.barclays.ussd.bmg.cashsend.onetime.OneTimeCashSendSubmitRequestBuilder"/>
+
+		<bean id="editBenfInternalPayeeAcctListRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.internal.editbenf.EditBenfInternalPayeeAcctListRequestBuilder"/>
+		<bean id="editBenfInternalPayeeRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.internal.editbenf.EditBenfInternalPayeeRequestBuilder"/>
+		<bean id="editBenfInternalGetAccNo"   class="com.barclays.ussd.bmg.fundtransfer.internal.editbenf.EditBenfInternalGetAccNo"/>
+		<bean id="editBenfInternalBranchCodeSearcher"   class="com.barclays.ussd.bmg.fundtransfer.internal.editbenf.EditBenfInternalBranchCodeSearcher"/>
+		<bean id="editBenfInternalBranchList"   class="com.barclays.ussd.bmg.fundtransfer.internal.editbenf.EditBenfInternalBranchList"/>
+		<bean id="editBenfInternalGetBenfNickNameRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.internal.editbenf.EditBenfInternalGetBenfNickNameRequestBuilder"/>
+		<bean id="editBenfInternalValidateRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.internal.editbenf.EditBenfInternalValidateRequestBuilder"/>
+		<bean id="editBenfInternalConfirmRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.internal.editbenf.EditBenfInternalConfirmRequestBuilder"/>
+
+		<bean id="fxRateGetCurrencyRequestBuilder" class="com.barclays.ussd.bmg.fxrate.FxRateGetCurrencyRequestBuilder"/>
+		<bean id="fxRateConvertRequestBuilder" class="com.barclays.ussd.bmg.fxrate.FxRateConvertRequestBuilder"/>
+
+		<bean id="oldSessionRequestBuilder"   class="com.barclays.ussd.bmg.hellomoney.ussdsession.OldSessionRequestBuilder"/>
+		<bean id="newSessionRequestBuilder"   class="com.barclays.ussd.bmg.hellomoney.ussdsession.NewSessionRequestBuilder"/>
+
+		<bean id="RetrieveNoOfCardListRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.at.a.glance.RetrieveNoOfCardListRequestBuilder"/>
+		<bean id="retrieveCreditCardListRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.at.a.glance.RetrieveCreditCardListRequestBuilder"/>
+		<bean id="retrieveCreditCardDetailsRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.at.a.glance.RetrieveCreditCardDetailsRequestBuilder"/>
+
+		<bean id="ccStatCreditCardListRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.statement.CcStatCreditCardListRequestBuilder"/>
+		<bean id="ccStatDateListRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.statement.CcStatDateListRequestBuilder"/>
+		<bean id="ccStatDetailsRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.statement.CcStatDetailsRequestBuilder"/>
+
+		<bean id="creditCardPaymentListRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.payment.CreditCardPaymentListRequestBuilder"/>
+		<bean id="creditCardPaymentDetailsRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.payment.CreditCardPaymentDetailsRequestBuilder"/>
+		<bean id="creditCardPaymentGetAmountRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.payment.CreditCardPaymentGetAmountRequestBuilder"/>
+		<bean id="creditCardPaymentGetSrcAcctRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.payment.CreditCardPaymentGetSrcAcctRequestBuilder"/>
+		<bean id="creditCardPaymentValidateRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.payment.CreditCardPaymentValidateRequestBuilder"/>
+		<bean id="creditCardPaymentSubmitRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.payment.CreditCardPaymentSubmitRequestBuilder"/>
+
+		<!--CR#46-->
+		<!--<bean id="creditCardLinkRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.link.CreditCardLinkRequestBuilder"/>
+		--><bean id="creditCardLinkConfirmRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.link.CreditCardLinkConfirmRequestBuilder"/>
+		<bean id="creditCardLinkSubmitRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.link.CreditCardLinkSubmitRequestBuilder"/>
+	 	<!--CR#46-->
+
+		<bean id="editBenfExtRetrieveBenfListRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.external.editbenf.EditBenfExtRetrieveBenfListRequestBuilder"/>
+		<bean id="editBenfExtGetBankSearchLetterRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.external.editbenf.EditBenfExtGetBankSearchLetterRequestBuilder"/>
+		<bean id="editBenfExtRetrieveBankListRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.external.editbenf.EditBenfExtRetrieveBankListRequestBuilder"/>
+		<bean id="editBenfExtGetBranchSearchLetterRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.external.editbenf.EditBenfExtGetBranchSearchLetterRequestBuilder"/>
+		<bean id="editBenfExtRetrieveBranchListRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.external.editbenf.EditBenfExtRetrieveBranchListRequestBuilder"/>
+		<bean id="editBenfExtGetAccountNoRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.external.editbenf.EditBenfExtGetAccountNoRequestBuilder"/>
+		<bean id="editBenfExtGetBenfNameRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.external.editbenf.EditBenfExtGetBenfNameRequestBuilder"/>
+		<bean id="editBenfExtGetBenfNickNameRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.external.editbenf.EditBenfExtGetBenfNickNameRequestBuilder"/>
+		<bean id="editBenfExtValidateRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.external.editbenf.EditBenfExtValidateRequestBuilder"/>
+		<bean id="editBenfExtConfirmRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.external.editbenf.EditBenfExtConfirmRequestBuilder"/>
+
+		<bean id="ccUnbilledTranCreditCardListRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.unbilled.transaction.CcUnbilledTranCreditCardListRequestBuilder"/>
+		<bean id="ccUnbilledTranMerchantListRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.unbilled.transaction.CcUnbilledTranMerchantListRequestBuilder"/>
+		<bean id="ccUnbilledTranDetailsRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.unbilled.transaction.CcUnbilledTranDetailsRequestBuilder"/>
+
+		<bean id="ccThirdPartyPayCardNoRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.third.party.payment.CCThirdPartyPayCardNoRequestBuilder"/>
+		<bean id="ccThirdPartyPayValidateCardNoRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.third.party.payment.CCThirdPartyPayValidateCardNoRequestBuilder"/>
+		<bean id="ccThirdPartyPayAmtRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.third.party.payment.CCThirdPartyPayAmtRequestBuilder"/>
+		<bean id="ccThirdPartyPayFrmAccRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.third.party.payment.CCThirdPartyPayFrmAccRequestBuilder"/>
+		<bean id="ccThirdPartyPayValidateRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.third.party.payment.CCThirdPartyPayValidateRequestBuilder"/>
+		<bean id="ccThirdPartyPayConfirmRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.third.party.payment.CCThirdPartyPayConfirmRequestBuilder"/>
+
+
+		<bean id="branchLocatorCityNameSearchLetterRequestBuilder"   class="com.barclays.ussd.bmg.branchlocator.BranchLocatorCityNameSearchLetterRequestBuilder"/>
+		<bean id="branchLocatorCityNameListRequestBuilder"    class="com.barclays.ussd.bmg.branchlocator.BranchLocatorCityNameListRequestBuilder"/>
+		<bean id="branchLocatorAreaNameSearchLetterRequestBuilder"   class="com.barclays.ussd.bmg.branchlocator.BranchLocatorAreaNameSearchLetterRequestBuilder"/>
+		<bean id="branchLocatorAreaNameListRequestBuilder"   class="com.barclays.ussd.bmg.branchlocator.BranchLocatorAreaNameListRequestBuilder"/>
+		<bean id="branchLocatorResponseRequestBuilder"   class="com.barclays.ussd.bmg.branchlocator.BranchLocatorResponseRequestBuilder"/>
+
+		<bean id="atmLocatorCityNameSearchLetterRequestBuilder"   class="com.barclays.ussd.bmg.atmlocator.AtmLocatorCityNameSearchLetterRequestBuilder"/>
+		<bean id="atmLocatorCityNameListRequestBuilder"    class="com.barclays.ussd.bmg.atmlocator.AtmLocatorCityNameListRequestBuilder"/>
+		<bean id="atmLocatorAreaNameSearchLetterRequestBuilder"   class="com.barclays.ussd.bmg.atmlocator.AtmLocatorAreaNameSearchLetterRequestBuilder"/>
+		<bean id="atmLocatorAreaNameListRequestBuilder"   class="com.barclays.ussd.bmg.atmlocator.AtmLocatorAreaNameListRequestBuilder"/>
+		<bean id="atmLocatorResponseRequestBuilder"   class="com.barclays.ussd.bmg.atmlocator.AtmLocatorResponseRequestBuilder"/>
+
+		<bean id="userMigrationBranchSearcherRequestBuilder"   class="com.barclays.ussd.bmg.user.migration.UserMigrationBranchSearcherRequestBuilder"/>
+		<bean id="userMigrationBranchListRequestBuilder"   class="com.barclays.ussd.bmg.user.migration.UserMigrationBranchListRequestBuilder"/>
+		<bean id="userMigrationAccountNoRequestBuilder"   class="com.barclays.ussd.bmg.user.migration.UserMigrationAccountNoRequestBuilder"/>
+		<bean id="userMigrationInitiateRequestBuilder"   class="com.barclays.ussd.bmg.user.migration.UserMigrationInitiateRequestBuilder"/>
+		<bean id="userMigrationDOBRequestBuilder"   class="com.barclays.ussd.bmg.user.migration.UserMigrationDOBRequestBuilder"/>
+		<bean id="userMigrationVerifyDOBRequestBuilder"   class="com.barclays.ussd.bmg.user.migration.UserMigrationVerifyDOBRequestBuilder"/>
+		<bean id="userMigrationNewPinRequestBuilder"   class="com.barclays.ussd.bmg.user.migration.UserMigrationNewPinRequestBuilder"/>
+		<bean id="userMigrationReenterPinRequestBuilder"   class="com.barclays.ussd.bmg.user.migration.UserMigrationReenterPinRequestBuilder"/>
+		<bean id="userMigrationSubmitRequestBuilder"   class="com.barclays.ussd.bmg.user.migration.UserMigrationSubmitRequestBuilder"/>
+
+		<bean id="cityNameSearchLetterRequestBuilder"   class="com.barclays.ussd.bmg.dinning.offer.CityNameSearchLetterRequestBuilder"/>
+		<bean id="diningOfferCityListRequestBuilder"   class="com.barclays.ussd.bmg.dinning.offer.DiningOfferCityListRequestBuilder"/>
+		<bean id="restaurantNameSearchLetterRequestBuilder"   class="com.barclays.ussd.bmg.dinning.offer.RestarantNameSearchLetterRequestBuilder"/>
+		<bean id="diningOfferRestaurantListRequestBuilder"   class="com.barclays.ussd.bmg.dinning.offer.DiningOfferRestaurantListRequestBuilder"/>
+		<bean id="diningOfferDetailsRequestBuilder"   class="com.barclays.ussd.bmg.dinning.offer.DiningOfferDetailsRequestBuilder"/>
+
+
+		<bean id="partnerNameSearchLetterRequestBuilder"   class="com.barclays.ussd.bmg.installment.offer.PartnerNameSearchLetterRequestBuilder"/>
+		<bean id="installmentOfferPartnerListRequestBuilder"   class="com.barclays.ussd.bmg.installment.offer.InstallmentOfferPartnerListRequestBuilder"/>
+		<bean id="installmentOfferPartnerDetailsRequestBuilder"   class="com.barclays.ussd.bmg.installment.offer.InstallmentOfferPartnerDetailsRequestBuilder"/>
+
+		<bean id="businessAreaListRequestBuilder"   class="com.barclays.ussd.bmg.callmeback.BusinessAreaListRequestBuilder"/>
+		<bean id="serviceCategoryListRequestBuilder"   class="com.barclays.ussd.bmg.callmeback.ServiceCategoryListRequestBuilder"/>
+		<bean id="serviceCategoryDetailsRequestBuilder"   class="com.barclays.ussd.bmg.callmeback.ServiceCategoryDetailsRequestBuilder"/>
+
+		<bean id="interestedProductListRequestBuilder"   class="com.barclays.ussd.bmg.interested.InterestedProductListRequestBuilder"/>
+		<bean id="interestedSubProductListRequestBuilder"   class="com.barclays.ussd.bmg.interested.InterestedSubProductListRequestBuilder"/>
+		<bean id="interestedProductDtlsRequestBuilder"   class="com.barclays.ussd.bmg.interested.InterestedProductDtlsRequestBuilder"/>
+		<!--  Forgot Pin Changes   -->
+		<bean id="forgotPinInstructionRequestBuilder"   class="com.barclays.ussd.bmg.login.ForgotPinInstructionRequestBuilder"/>
+		<!-- Lead Generation -->
+	 	<bean id="leadGenerationProdListRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.link.LeadGenerationProdListRequestBuilder"/>
+		<bean id="leadGenerationProdSubListRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.link.LeadGenerationProdSubListRequestBuilder"/>
+		<bean id="leadGenerationConfirmRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.link.LeadGenerationConfirmRequestBuilder"/>
+		<bean id="leadGenerationSubmitRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.link.LeadGenerationSubmitRequestBuilder"/>
+
+<!-- KITS Changes Starts -->
+        <!--Registration-->
+        <bean id="kitsRegisterAccountNumberRequestBuilder"   class="com.barclays.ussd.bmg.kits.KitsRegisterAccountNumberRequestBuilder"/>
+        <bean id="kitsRegisterPrimaryAccountRequestBuilder"   class="com.barclays.ussd.bmg.kits.KitsRegisterPrimaryAccountRequestBuilder"/>
+		<bean id="kitsRegisterConfirmDetailsRequestBuilder"   class="com.barclays.ussd.bmg.kits.KitsRegisterConfirmDetailsRequestBuilder"/>
+		<bean id="kitsRegisterSubmitRequestBuilder"   class="com.barclays.ussd.bmg.kits.KitsRegisterSubmitRequestBuilder"/>
+
+        <!--Deregistration-->
+        <bean id="kitsDeregisterAccountNumberRequestBuilder"   class="com.barclays.ussd.bmg.kits.KitsDeregisterAccountNumberRequestBuilder"/>
+        <bean id="kitsDeregisterConfirmDetailsRequestBuilder"   class="com.barclays.ussd.bmg.kits.KitsDeregisterConfirmDetailsRequestBuilder"/>
+		<bean id="kitsDeregisterSubmitRequestBuilder"   class="com.barclays.ussd.bmg.kits.KitsDeregisterSubmitRequestBuilder"/>
+
+        <!-- Pay To Phone -->
+        <bean id="kitsSendToPhoneAccountNumberRequestBuilder"   class="com.barclays.ussd.bmg.kits.KitsSendToPhoneAccountNumberRequestBuilder"/>
+        <bean id="kitsSendToPhoneMobileNumberRequestBuilder"   class="com.barclays.ussd.bmg.kits.KitsSendToPhoneMobileNumberRequestBuilder"/>
+		<bean id="kitsSendToPhoneBankListRequestBuilder"   class="com.barclays.ussd.bmg.kits.KitsSendToPhoneBankListRequestBuilder"/>
+		<bean id="kitsSendToPhoneAmountRequestBuilder"   class="com.barclays.ussd.bmg.kits.KitsSendToPhoneAmountRequestBuilder"/>
+		<bean id="kitsSendToPhoneReasonRequestBuilder"   class="com.barclays.ussd.bmg.kits.KitsSendToPhoneReasonRequestBuilder"/>
+		<bean id="kitsSendToPhoneConfirmDetailsRequestBuilder"   class="com.barclays.ussd.bmg.kits.KitsSendToPhoneConfirmDetailsRequestBuilder"/>
+		<bean id="kitsSendToPhoneSubmitRequestBuilder"   class="com.barclays.ussd.bmg.kits.KitsSendToPhoneSubmitRequestBuilder"/>
+
+         <!-- Pay To Account -->
+		<bean id="kitsSendToAccountAccountNumberRequestBuilder"   class="com.barclays.ussd.bmg.kits.KitsSendToAccountAccountNumberRequestBuilder"/>
+        <bean id="kitsSendToAccountAccountNumRequestBuilder"   class="com.barclays.ussd.bmg.kits.KitsSendToAccountAccountNumRequestBuilder"/>
+		<bean id="kitsSendToAccountBankCodeRequestBuilder"   class="com.barclays.ussd.bmg.kits.KitsSendToAccountBankCodeRequestBuilder"/>
+		<bean id="kitsSendToAccountBankListRequestBuilder"   class="com.barclays.ussd.bmg.kits.KitsSendToAccountBankListRequestBuilder"/>
+		<bean id="kitsSendToAccountAmountRequestBuilder"   class="com.barclays.ussd.bmg.kits.KitsSendToAccountAmountRequestBuilder"/>
+		<bean id="kitsSendToAccountReasonRequestBuilder"   class="com.barclays.ussd.bmg.kits.KitsSendToAccountReasonRequestBuilder"/>
+		<bean id="kitsSendToAccountConfirmDetailsRequestBuilder"   class="com.barclays.ussd.bmg.kits.KitsSendToAccountConfirmDetailsRequestBuilder"/>
+		<bean id="kitsSendToAccountSubmitRequestBuilder"   class="com.barclays.ussd.bmg.kits.KitsSendToAccountSubmitRequestBuilder"/>
+   		<!-- KITS Changes Ends -->
+		<!-- CR82 Airtime -->
+		<bean id="AirtimeTopUpPaymentTypeRequest"   class="com.barclays.ussd.bmg.airtime.request.AirtimeTopUpPaymentTypeRequest"/>
+		<bean id="AirtimeTopUpSavBnfNickNameReqBuilder"   class="com.barclays.ussd.bmg.airtime.request.AirtimeTopUpSavBnfNickNameReqBuilder"/>
+		<bean id="AirtimeTopUpSavBnfValidateReqBuilder"   class="com.barclays.ussd.bmg.airtime.request.AirtimeTopUpSavBnfValidateReqBuilder"/>
+		<bean id="AirtimeTopUpSavBnfConfirmReqBuilder"   class="com.barclays.ussd.bmg.airtime.request.AirtimeTopUpSavBnfConfirmReqBuilder"/>
+		<bean id="airtimeTopUpBillerListReqBuilder"   class="com.barclays.ussd.bmg.airtime.request.AirtimeTopUpBillerListReqBuilder"/>
+		<bean id="airtimeTopUpPayeeListReqBuilder"   class="com.barclays.ussd.bmg.airtime.request.AirtimeTopUpPayeeListReqBuilder"/>
+		<bean id="AirtimeTopUpBenfDtlsReqBuilder"   class="com.barclays.ussd.bmg.airtime.request.AirtimeTopUpBenfDtlsReqBuilder"/>
+
+		<!--Delete bene		-->
+		<bean id="airtimeTopUpDelBillersValidateRequest"   class="com.barclays.ussd.bmg.airtime.request.AirtimeTopupDelBillersValidateRequest"/>
+		<bean id="airtimeTopUpDelBillrConfirmRequest"   class="com.barclays.ussd.bmg.airtime.request.AirtimeTopupDelBillrConfirmRequest"/>
+		<!-- CR82 -->
+		<bean id="AirtimeTopupNewBeneficiarySrcMnosRequestBuilder"   class="com.barclays.ussd.bmg.airtime.request.AirtimeTopupNewBeneficiarySrcMnosRequestBuilder"/>
+		<bean id="AirtimeEnterMobileNewBeneficiaryRequest"   class="com.barclays.ussd.bmg.airtime.request.AirtimeEnterMobileNewBeneficiaryRequest"/>
+		<!-- CR82 End-->
+
+		<!--edit bene		-->
+		<bean id="AirtimeTopUpEditBnfValidateReqBuilder"   class="com.barclays.ussd.bmg.airtime.request.AirtimeTopUpEditBnfValidateReqBuilder"/>
+		<bean id="airtimeTopUpEditBillrConfirmRequest"   class="com.barclays.ussd.bmg.airtime.request.AirtimeTopupEditBillrConfirmRequest"/>
+
+		<!-- CR82 Airtime End-->
+		<!-- CR82 MobileWallet -->
+        <bean id="mobileWalletTopUpPaymentTypeRequest"   class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletTopUpPaymentTypeRequest"/>
+        <bean id="mobileWalletTopUpSavBnfNickNameReqBuilder"   class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletTopUpSavBnfNickNameReqBuilder"/>
+        <bean id="mobileWalletTopUpSavBnfValidateReqBuilder"   class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletTopUpSavBnfValidateReqBuilder"/>
+        <bean id="mobileWalletTopUpSavBnfConfirmReqBuilder"   class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletTopUpSavBnfConfirmReqBuilder"/>
+
+         <!--Delete bene-->
+		<bean id="mobileWalletTopUpDelBillersValidateRequest"   class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletTopUpDelBillersValidateRequest"/>
+		<bean id="mobileWalletTopUpDelBillrConfirmRequest"   class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletTopUpDelBillrConfirmRequest"/>
+		<!--saved bene		-->
+		<bean id="mobileWalletTopUpBillerListReqBuilder"   class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletTopUpBillerListReqBuilder"/>
+		<bean id="mobileWalletTopUpPayeeListReqBuilder"   class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletTopUpPayeeListReqBuilder"/>
+		<bean id="mobileWalletTopUpBenfDtlstReqBuilder"   class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletTopUpBenfDtlsReqBuilder"/>
+		<!-- CR82 -->
+		<bean id="MobileWalletNewBeneficiarySrcMnosRequestBuilder"   class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletNewBeneficiarySrcMnosRequestBuilder"/>
+		<bean id="MobileWalletEnterMobileNewBeneficiaryRequest"   class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletEnterMobileNewBeneficiaryRequest"/>
+		<!--edit bene		-->
+		<bean id="mobileWalletTopUpEditBnfValidateReqBuilder"   class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletTopUpEditBnfValidateReqBuilder"/>
+		<bean id="mobileWalletTopUpEditBillrConfirmRequest"   class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletTopUpEditBillrConfirmRequest"/>
+
+		<!-- CR82 End-->
+            <!-- CR82 MobileWallet End-->
+
+
+
+		<!-- CR85 Start -->
+		<!-- Register Beneficiary -->
+		<bean id="registerBenfExtGetAddress"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.RegisterBenfExtGetAddress"/>
+		<bean id="registerBenfExtGetCity"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.RegisterBenfExtGetCity"/>
+
+		<!-- Fund transfer - Saved Payees -->
+		<bean id="keToOthBnkRetrieveBenfListRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.KEToOthBnkRetrieveBenfListRequestBuilder"/>
+		<bean id="keToOthBnkPayeeLstRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.KEToOthBnkPayeeLstRequestBuilder"/>
+		<bean id="keToOthBnkEnterAmount"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.KEToOthBnkEnterAmount"/>
+		<bean id="keToOthBnkSelFrmAcntReqBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.KEToOthBnkSelFrmAcntReqBuilder"/>
+		<bean id="keToOthBnkReasonOfPaymentReqBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.OthBnkReasonOfPaymentReqBuilder"/>
+		<bean id="keToOthBnkPayeeInfoRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.KEToOthBnkPayeeInfoRequestBuilder"/>
+		<bean id="keToOthBnkFrmValReqBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.KEToOthBnkFrmValReqBuilder"/>
+		<bean id="keToOthBnkExecReqBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.KEToOthBnkExecReqBuilder"/>
+
+		<!-- Edit Beneficiary -->
+		<bean id="othBnkBeneficiaryNameReqBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.OthBnkBeneficiaryNameReq"/>
+		<bean id="othBnkBankSearchReqBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.OthBnkBankSearchReq"/>
+		<bean id="othBnkSelectBankNameReqBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.OthBnkSelectBankName"/>
+		<bean id="othBnkBranchSearchReqBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.OthBnkBranchSearchReq"/>
+		<bean id="othBnkSelectBranchReqBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.OthBnkSelectBranchReq"/>
+		<bean id="othBnkSelectAcnoReqBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.OthBnkSelectAcnoReq"/>
+		<bean id="othBnkAddressReqBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.OthBnkAddressReq"/>
+		<bean id="othBnkNickNameReqBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.OthBnkNickNameReq"/>
+		<bean id="othBnkConfirmReqBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.OthBnkConfirm"/>
+		<bean id="othBnkSubmitReqBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.OthBnkSubmit"/>
+
+		<!-- Delete Beneficiary -->
+		<bean id="oBADBRGetBenfListRequestBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.OBADBRGetBenfListRequestBuilder"/>
+		<bean id="obadbRPayeeLstRequestBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.ObadbRPayeeLstRequestBuilder"/>
+		<bean id="obadbRValidateRequestBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.ObadbRValidateRequestBuilder"/>
+		<bean id="obadbRConfirmRequestBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.ObadbRConfirmRequestBuilder"/>
+
+		<!-- CR85 End -->
+		<!-- MZ DFT Start -->
+		<bean id="registerBeneficiaryGetNIBNoRequestBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.RegisterBeneficiaryGetNIBNoRequestBuilder"/>
+		<!-- MZ DFT End -->
+
+
+		<!-- GHIPSS -->
+		<bean id="ghipsOneOffBnkSearchRequestBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsOneOffBnkSearchRequestBuilder"/>
+		<bean id="ghipsOneOffBnkListRequestBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsOneOffBnkListRequestBuilder"/>
+		<bean id="ghipsOneOffBnkAcnoRequestBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsOneOffBnkAcnoRequestBuilder"/>
+		<bean id="ghipsOneOffTransferAmtRequestBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsOneOffTransferAmtRequestBuilder"/>
+		<bean id="ghipsOneOffFromAccListRequestBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsOneOffFromAccListRequestBuilder" />
+		<bean id="ghipsOneOffPaymentReasonListRequestBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsOneOffPaymentReasonListRequestBuilder" />
+		<bean id="ghipsOneOffPayeeInfoRequestBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsOneOffPayeeInfoRequestBuilder" />
+		<bean id="ghipsOneOffFundTransferConfirmRequestBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsOneOffFundTransferConfirmRequestBuilder" />
+		<bean id="ghipsOneOffFundTransferSubmitRequestBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsOneOffFundTransferSubmitRequestBuilder" />
+		<bean id="ghipsOneOffBenefNickNameRequestBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsOneOffBenefNickNameRequestBuilder"/>
+		<bean id="ghipsOneOffBenefConfirmRequestBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsOneOffBenefConfirmRequestBuilder"/>
+		<bean id="ghipsOneOffBenefConfirmSuccessRequestBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsOneOffBenefConfirmSuccessRequestBuilder"/>
+
+		<bean id="ghipsSaveBenfListRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsSaveBenfListRequestBuilder"/>
+		<bean id="ghipsSaveBenefOtherBankPayeeRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsSaveBenefOtherBankPayeeRequestBuilder"/>
+		<bean id="ghipsSaveBenefOtherBankBenefInfoRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsSaveBenefOtherBankBenefInfoRequestBuilder"/>
+		<bean id="ghipsSaveBenefEnterAmountRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsSaveBenefEnterAmtRequestBuilder"/>
+   		<bean id="ghipsSaveBenefTransferAmtRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsSaveFromAccListRequestBuilder"/>
+		<bean id="ghipsSaveBenefReasonOfPaymentReqBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsSaveBenefReasonOfPaymentReqBuilder"/>
+		<bean id="ghipsSaveBenefPayeeInfoRequestBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsSaveBenefPayeeInfoRequestBuilder" />
+		<bean id="ghipsSaveBenefConfirmRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsSaveBenefConfirmRequestBuilder"/>
+		<bean id="ghipsSaveBenefSubmitRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsSaveBenefSubmitRequestBuilder"/>
+
+   		<bean id="ghipsRegisterBenefSearchBankRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsRegisterBenfExtSearchBankRequestBuilder"/>
+		<bean id="ghipsRegisterBenefSelectBankNameRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsRegisterBenfExtBankNameRequestBuilder"/>
+		<bean id="ghipsRegisterBenefBnkAcnoRequestBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsRegisterBenefBnkAcnoRequestBuilder"/>
+		<bean id="ghipsRegisterBenefNickNameRequestBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsRegisterBenefNickNameRequestBuilder"/>
+		<bean id="ghipsRegisterBenefConfirmRequestBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsRegisterBenefConfirmRequestBuilder"/>
+		<bean id="ghipsRegisterBenefAddRequestBuilder" class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsRegisterBenefAddRequestBuilder"/>
+
+		<bean id="ghipsDelBenfListRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsDelBenfListRequestBuilder"/>
+		<bean id="ghipsDelBenfPayeeRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsDelBenfPayeeRequestBuilder"/>
+		<bean id="ghipsDelBenfConfirmRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsDelBenfConfirmRequestBuilder"/>
+		<bean id="ghipsDelBenfSubmitRequestBuilder"   class="com.barclays.ussd.bmg.fundtransfer.otherbank.request.GhipsDelBenfSubmitRequestBuilder"/>
+		<!--FreeDialUSSD STARTS  -->
+		<bean id="freeDialSrcMnoListRequestBuilder" class="com.barclays.ussd.bmg.freedialussd.FreeDialSrcMnoListRequestBuilder"/>
+		<bean id="freeDialMnoListRequestBuilder" class="com.barclays.ussd.bmg.freedialussd.FreeDialMnoListRequestBuilder"/>
+		<bean id="freeDialAmountRequestBuilder"   class="com.barclays.ussd.bmg.freedialussd.FreeDialAmountRequestBuilder"/>
+		<bean id="freeDialAccListRequestBuilder"   class="com.barclays.ussd.bmg.freedialussd.FreeDialAccListRequestBuilder"/>
+		<bean id="freeDialConfirmValidateRequestBuilder"   class="com.barclays.ussd.bmg.freedialussd.FreeDialConfirmValidateRequestBuilder"/>
+		<bean id="freeDialSubmitRequestBuilder"   class="com.barclays.ussd.bmg.freedialussd.FreeDialSubmitRequestBuilder"/>
+		<!--FreeDialUSSD ENDS  -->
+
+   		</beans>

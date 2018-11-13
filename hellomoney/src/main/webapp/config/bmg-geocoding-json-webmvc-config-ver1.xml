@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+
+	<import resource="classpath:geocoding-controller.xml" />
+	<import resource="classpath:bmb-geocoding-config.xml" />
+	<import resource="classpath:bmb-geocoding-config-ssa.xml" />
+
+	<!-- GHBRB GECODING CONTROLLER -->
+
+	<bean id="GHBRBgeoCodingControllerVer1"
+		class="com.barclays.bmg.mvc.controllers.geocoding.GeoCodingController" parent="bmbAbstractCommandController">
+
+		<property name="commandName" value="geoCodingCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.geocoding.GeoCodingCommand" />
+		<property name="validator" ref="geoCodingCommandValidator" />
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="geoCodingOperation" ref="GHBRBgeoCodingOperation" />
+		<property name="bmbJsonBuilder" ref="geoCodingJSONBuilderVer1" />
+	</bean>
+
+	<!-- BWBRB GECODING CONTROLLER -->
+
+	<bean id="BWBRBgeoCodingControllerVer1"
+		class="com.barclays.bmg.mvc.controllers.geocoding.GeoCodingController" parent="bmbAbstractCommandController">
+
+		<property name="commandName" value="geoCodingCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.geocoding.GeoCodingCommand" />
+		<property name="validator" ref="geoCodingCommandValidator" />
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="geoCodingOperation" ref="BWBRBgeoCodingOperation" />
+		<property name="bmbJsonBuilder" ref="geoCodingJSONBuilderVer1" />
+	</bean>
+
+
+	<!-- MUBRB GECODING CONTROLLER -->
+
+	<bean id="MUBRBgeoCodingControllerVer1"
+		class="com.barclays.bmg.mvc.controllers.geocoding.GeoCodingController" parent="bmbAbstractCommandController">
+
+		<property name="commandName" value="geoCodingCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.geocoding.GeoCodingCommand" />
+		<property name="validator" ref="geoCodingCommandValidator" />
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="geoCodingOperation" ref="MUBRBgeoCodingOperation" />
+		<property name="bmbJsonBuilder" ref="geoCodingJSONBuilderVer1" />
+	</bean>
+
+	<!-- ZWBRB GECODING CONTROLLER -->
+
+	<bean id="ZWBRBgeoCodingControllerVer1"
+		class="com.barclays.bmg.mvc.controllers.geocoding.GeoCodingController" parent="bmbAbstractCommandController">
+
+		<property name="commandName" value="geoCodingCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.geocoding.GeoCodingCommand" />
+		<property name="validator" ref="geoCodingCommandValidator" />
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="geoCodingOperation" ref="ZWBRBgeoCodingOperation" />
+		<property name="bmbJsonBuilder" ref="geoCodingJSONBuilderVer1" />
+	</bean>
+
+
+	<!-- ZMBRB GECODING CONTROLLER -->
+
+	<bean id="ZMBRBgeoCodingControllerVer1"
+		class="com.barclays.bmg.mvc.controllers.geocoding.GeoCodingController" parent="bmbAbstractCommandController">
+
+		<property name="commandName" value="geoCodingCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.geocoding.GeoCodingCommand" />
+		<property name="validator" ref="geoCodingCommandValidator" />
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="geoCodingOperation" ref="ZMBRBgeoCodingOperation" />
+		<property name="bmbJsonBuilder" ref="geoCodingJSONBuilderVer1" />
+	</bean>
+
+
+	<!-- TZBRB GECODING CONTROLLER -->
+
+	<bean id="TZBRBgeoCodingControllerVer1"
+		class="com.barclays.bmg.mvc.controllers.geocoding.GeoCodingController" parent="bmbAbstractCommandController">
+
+		<property name="commandName" value="geoCodingCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.geocoding.GeoCodingCommand" />
+		<property name="validator" ref="geoCodingCommandValidator" />
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="geoCodingOperation" ref="TZBRBgeoCodingOperation" />
+		<property name="bmbJsonBuilder" ref="geoCodingJSONBuilderVer1" />
+	</bean>
+
+
+	<!-- EGBRB GECODING CONTROLLER -->
+
+	<bean id="EGBRBgeoCodingControllerVer1"
+		class="com.barclays.bmg.mvc.controllers.geocoding.GeoCodingController" parent="bmbAbstractCommandController">
+
+		<property name="commandName" value="geoCodingCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.geocoding.GeoCodingCommand" />
+		<property name="validator" ref="geoCodingCommandValidator" />
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="geoCodingOperation" ref="EGBRBgeoCodingOperation" />
+		<property name="bmbJsonBuilder" ref="geoCodingJSONBuilderVer1" />
+	</bean>
+
+	<!-- SCBRB GECODING CONTROLLER -->
+
+	<bean id="SCBRBgeoCodingControllerVer1"
+		class="com.barclays.bmg.mvc.controllers.geocoding.GeoCodingController" parent="bmbAbstractCommandController">
+
+		<property name="commandName" value="geoCodingCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.geocoding.GeoCodingCommand" />
+		<property name="validator" ref="geoCodingCommandValidator" />
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="geoCodingOperation" ref="SCBRBgeoCodingOperation" />
+		<property name="bmbJsonBuilder" ref="geoCodingJSONBuilderVer1" />
+	</bean>
+
+</beans>

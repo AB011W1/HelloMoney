@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+	<bean id="cashSendOneTimeInitController"
+		class="com.barclays.bmg.cashsend.mvc.controller.CashSendOneTimeInitController"
+		parent="bmbAbstractCommandController">
+		<property name="retrieveAccountListOperation" ref="retrieveAccountListOperation" />
+		<property name="cashSendOneTimeJsonBldr" ref="cashSendOneTimeJsonBldr" />
+		<property name="activityId" value="PMT_FT_CS" />
+	</bean>
+
+	<bean id="cashSendOneTimeJsonBldr"
+		class="com.barclays.bmg.json.model.builder.cashsend.CashSendOneTimeJsonBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<bean id="cashSendOneTimeValidateController"
+		class="com.barclays.bmg.cashsend.mvc.controller.CashSendOneTimeValidateController">
+		<property name="getSelectedAccountOperation" ref="getSelectedAccountOperation" />
+		<property name="formValidateOperation" ref="formValidateOperation" />
+		<property name="bmbJSONBuilder" ref="cashSendOneTimeValidateJsonBldr" />
+		<property name="commandName" value="cashSendRequestValidationCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.cashsend.mvc.command.CashSendRequestValidationCommand" />
+			<property  name="branchCodeCountryList" ref="branchCodeCountryList"/>
+	</bean>
+
+	<bean id="cashSendOneTimeValidateJsonBldr"
+		class="com.barclays.bmg.json.model.builder.cashsend.CashSendOneTimeValidateJsonBldr"
+		parent="bmbCommonJSONBuilder">
+	</bean>
+
+
+	<bean name="cashSendOneTimeExecuteCommandValidator"
+		class="com.barclays.bmg.cashsend.mvc.validator.CashSendOneTimeExecuteCommandValidator" />
+
+	<bean id="cashSendOneTimeExecuteController"
+		class="com.barclays.bmg.cashsend.mvc.controller.CashSendOneTimeExecuteController">
+		<property name="cashSendOneTimeExecuteOperation" ref="cashSendOneTimeExecuteOperation" />
+		<property name="bmbJSONBuilder" ref="cashSendOneTimeExecuteJSONBulider" />
+		<property name="commandName" value="cashSendValidationCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.cashsend.mvc.command.CashSendOneTimeExecuteCommand" />
+		<property name="validator" ref="cashSendOneTimeExecuteCommandValidator" />
+	</bean>
+
+	<bean id="cashSendOneTimeExecuteOperation"
+		class="com.barclays.bmg.cashsend.operation.CashSendOneTimeExecuteOperation"
+		parent="bmbPaymentsOperation">
+		<property name="cashSendOneTimeExecuteService" ref="cashSendOneTimeExecuteService" />
+		 <property name="j2cAuthenticationDataUtil" ref="j2cAuthenticationDataUtil"/>
+		  <property name="smsDetailsService" ref="smsDetailsService" />
+		</bean>
+
+
+	<bean id="cashSendOneTimeExecuteJSONBulider"
+		class="com.barclays.bmg.json.model.builder.cashsend.CashSendOneTimeExecuteJSONBulider"
+		parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<bean id="cashSendOneTimeExecuteService"
+		class="com.barclays.bmg.cashsend.service.impl.CashSendOneTimeExecuteServiceImpl">
+		<property name="cashSendOneTimeExecuteDAO" ref="cashSendOneTimeExecuteDAO" />
+		<property name="cashSendEncryptionDAO" ref="cashSendEncryptionDAO"/>
+	</bean>
+
+	<bean id="cashSendEncryptionDAO" class="com.barclays.bmg.cashsend.dao.impl.CashSendEncryptionDAOImpl"/>
+
+	<bean id="cashSendOneTimeExecuteDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface"
+			value="com.barclays.bmg.cashsend.dao.CashSendOneTimeExecuteDAO" />
+		<property name="daoFrontController" ref="cashSendDAOFrontControllerImpl" />
+	</bean>
+
+	<bean id="cashSendDAOFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="EXECUTECASHSEND" value-ref="cashSendOneTimeExecuteDAOController" />
+				<!--<entry key="ENCRYPTPIN" value-ref="cashSendEncryptionDAOController" />-->
+			</map>
+		</property>
+	</bean>
+
+	<bean id="cashSendOneTimeExecuteDAOController"
+		class="com.barclays.bmg.cashsend.dao.controller.CashSendOneTimeExecuteDAOController">
+		<property name="cashSendOneTimeExecuteReqAdptOperation" ref="cashSendOneTimeExecuteReqAdptOperation" />
+		<property name="transmissionOperation" ref="cashSendOneTimeExecuteTransmissionOperation" />
+		<property name="cashSendOneTimeExecuteResAdptOperation" ref="cashSendOneTimeExecuteResAdptOperation" />
+	</bean>
+
+	<bean id="cashSendOneTimeExecuteReqAdptOperation"
+		class="com.barclays.bmg.cashsend.dao.operation.CashSendOneTimeExecuteReqAdptOperation">
+		<property name="cashSendOneTimeExecuteRequestHeaderAdapter"
+			ref="cashSendOneTimeExecuteRequestHeaderAdapter" />
+		<property name="cashSendOneTimeExecutePayloadAdapter" ref="cashSendOneTimeExecutePayloadAdapter" />
+	</bean>
+
+	<bean id="cashSendOneTimeExecuteRequestHeaderAdapter"
+		class="com.barclays.bmg.cashsend.dao.adapter.CashSendOneTimeExecuteRequestHeaderAdapter">
+	</bean>
+
+
+	<bean id="cashSendOneTimeExecutePayloadAdapter"
+		class="com.barclays.bmg.cashsend.dao.adapter.CashSendOneTimeExecutePayloadAdapter">
+	</bean>
+
+	<bean id="cashSendOneTimeExecuteTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="sendCashService" />
+	</bean>
+	<bean id="sendCashService" class="com.barclays.bmg.cashsend.dao.service.SendCashService">
+		<property name="remoteService" ref="sendCashExecuteWebServiceImpl" />
+	</bean>
+
+	<bean id="cashSendOneTimeExecuteResAdptOperation"
+		class="com.barclays.bmg.cashsend.dao.operation.CashSendOneTimeExecuteResAdptOperation">
+
+	</bean>
+
+	<bean id="sendCashExecuteWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.FinancialTransactionProcessing.FinancialTransactionProcessing_PortType" />
+		<property name="portName" value="FinancialTransactionProcessingSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.FinancialTransactionProcessing.FinancialTransactionProcessing_Service" />
+		<property name="endpointAddressName" value="FinancialTransactionProcessing_EndPoint" />
+		<property name="cacheKey" value="financialService" />
+	</bean>
+
+	<bean id="cashSendEncryptionDAOController"
+		class="com.barclays.bmg.cashsend.dao.controller.CashSendEncryptionDAOController">
+		<property name="cashSendEncryptionReqAdptOperation" ref="cashSendEncryptionReqAdptOperation" />
+		<property name="transmissionOperation" ref="cashSendEncryptionTransmissionOperation" />
+		<property name="cashSendEncryptionResAdptOperation" ref="cashSendEncryptionResAdptOperation" />
+	</bean>
+
+	<bean id="cashSendEncryptionReqAdptOperation"
+		class="com.barclays.bmg.cashsend.dao.operation.CashSendEncryptionReqAdptOperation">
+		<property name="cashSendEncryptionRequestHeaderAdapter"
+			ref="cashSendEncryptionRequestHeaderAdapter" />
+		<property name="cashSendEncryptionPayloadAdapter" ref="cashSendEncryptionPayloadAdapter" />
+	</bean>
+
+	<bean id="cashSendEncryptionRequestHeaderAdapter"
+		class="com.barclays.bmg.cashsend.dao.adapter.CashSendEncryptionRequestHeaderAdapter">
+	</bean>
+
+
+	<bean id="cashSendEncryptionPayloadAdapter"
+		class="com.barclays.bmg.cashsend.dao.adapter.CashSendEncryptionPayloadAdapter">
+	</bean>
+
+	<bean id="cashSendEncryptionTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="encryptionService" />
+	</bean>
+	<bean id="encryptionService" class="com.barclays.bmg.cashsend.dao.service.EncryptionTransmissionService">
+		<property name="remoteService" ref="encryptionWebServiceImpl" />
+	</bean>
+
+	<bean id="cashSendEncryptionResAdptOperation"
+		class="com.barclays.bmg.cashsend.dao.operation.CashSendEncryptionResAdptOperation">
+
+	</bean>
+
+	<bean id="encryptionWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.PinManagement.PinManagement_PortType" />
+		<property name="portName" value="PinManagementSOAP" />
+		<property name="jaxRpcServiceInterface" value="com.barclays.bem.PinManagement.PinManagement_Service" />
+		<property name="endpointAddressName" value="FinancialTransactionProcessing_EndPoint" />
+		<property name="cacheKey" value="encryptionService" />
+	</bean>
+
+	<bean name="j2cAuthenticationDataUtil" class="com.barclays.bmg.helper.J2CAuthenticationDataUtil"  init-method="init"/>
+</beans>

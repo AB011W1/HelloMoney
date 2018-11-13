@@ -1,0 +1,4 @@
+delete from C_LISTVALUE_MST where business_id = 'GHBRB' and system_id = 'UB' and group_id = 'SYS_PARAM_CURRENT' and list_value_key = 'PRODUCT_CODES';
+insert into C_LISTVALUE_MST (SYSTEM_ID,BUSINESS_ID,GROUP_ID,LIST_VALUE_KEY,FILTER_KEY_1,FILTER_KEY_2,DEFAULT_FLG,MODIFIED_BY,MODIFIED_DTM,AUTHORIZED_BY,AUTHORIZED_DTM,DELETE_FLG,EDITABLE_FLG) values ('UB','GHBRB','SYS_PARAM_CURRENT','PRODUCT_CODES',null,null,'N',null,null,null,null,'N','Y');
+
+commit;

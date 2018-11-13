@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="MCFE_APP_CACHE">
+  <!-- Alias for the classes -->
+  <typeAlias alias="listValueResDTO"
+    type="com.barclays.bmg.dto.ListValueResDTO" />
+  <typeAlias alias="cacheController" type="com.barclays.bmg.cache.IbatisCacheController"/>
+  <cacheModel id="lovCacheModel" type="cacheController"
+    readOnly="true" serialize="true">
+    <property name="configFile" value="/ehcache.xml" />
+    <property name="CacheSize" value="1000" />
+  </cacheModel>
+
+
+
+
+  <!-- result map for ListValueResCacheDTO -->
+
+  <resultMap id="listValueResCache" class="listValueResDTO">
+    <result property="languageKey" column="LANGUAGE_ID" />
+    <!--		<result property="listId" column="LIST_VALUE_ID" />-->
+    <result property="listOrder" column="LIST_VALUE_ORDER" />
+    <result property="listValue" column="VALUE" />
+    <result property="listKey" column="LIST_VALUE_KEY" />
+    <result property="filterKey1" column="FILTER_KEY_1" />
+  </resultMap>
+
+
+  <statement id="findListValueResByGroup" resultMap="listValueResCache" cacheModel="lovCacheModel">
+    SELECT
+    a.LIST_VALUE_KEY,
+    b.LANGUAGE_ID, b.LIST_VALUE_ORDER,b.VALUE,a.FILTER_KEY_1 FROM
+    C_LISTVALUE_MST a ,C_LISTVALUE_RES_MST b WHERE
+    a.SYSTEM_ID=#systemId#
+    AND a.BUSINESS_ID=#businessId# AND a.SYSTEM_ID=
+    b.SYSTEM_ID AND a.BUSINESS_ID=b.BUSINESS_ID
+    and a.GROUP_ID=b.GROUP_ID
+    and a.LIST_VALUE_KEY=b.LIST_VALUE_KEY
+    AND
+    b.LANGUAGE_ID=#langId#
+    AND
+    a.GROUP_ID=#group# ORDER BY
+    b.LIST_VALUE_ORDER ASC, b.VALUE ASC
+    </statement>
+
+    <statement id="findListValueResByKey" resultMap="listValueResCache" cacheModel="lovCacheModel">
+    SELECT
+    a.LIST_VALUE_KEY,
+    b.LANGUAGE_ID, b.LIST_VALUE_ORDER,b.VALUE,a.FILTER_KEY_1 FROM
+    C_LISTVALUE_MST a ,C_LISTVALUE_RES_MST b WHERE
+    a.SYSTEM_ID=#systemId#
+    AND a.BUSINESS_ID=#businessId# AND a.SYSTEM_ID=
+    b.SYSTEM_ID AND a.BUSINESS_ID=b.BUSINESS_ID
+    and a.GROUP_ID=b.GROUP_ID
+    and a.LIST_VALUE_KEY=b.LIST_VALUE_KEY
+    AND
+    b.LANGUAGE_ID=#langId#
+    AND
+    a.LIST_VALUE_KEY=#listValueKey# ORDER BY
+    b.LIST_VALUE_ORDER ASC, b.VALUE ASC
+    </statement>
+
+  <statement id="findListValueResByGroupKey" resultMap="listValueResCache" cacheModel="lovCacheModel">
+    SELECT
+    a.LIST_VALUE_KEY,
+    b.LANGUAGE_ID,b.LIST_VALUE_ORDER,b.VALUE,a.FILTER_KEY_1 FROM
+    C_LISTVALUE_MST a ,C_LISTVALUE_RES_MST b WHERE
+    a.SYSTEM_ID=#systemId#
+    AND a.BUSINESS_ID=#businessId# AND
+    a.LIST_VALUE_KEY=#listValueKey# AND
+    b.LANGUAGE_ID=#langId# AND
+    a.SYSTEM_ID= b.SYSTEM_ID AND
+    a.BUSINESS_ID=b.BUSINESS_ID
+    and
+    a.GROUP_ID=b.GROUP_ID and
+    a.LIST_VALUE_KEY=b.LIST_VALUE_KEY
+    AND
+    a.GROUP_ID=#group#
+    <isNotNull prepend="AND" property="DELETE_FLG">
+        and a.DELETE_FLG != 'Y'
+        </isNotNull>
+    ORDER BY
+    b.LIST_VALUE_ORDER ASC,b.VALUE ASC
+    </statement>
+
+    <statement id="findListValueResByGroupWithFilter" resultMap="listValueResCache" cacheModel="lovCacheModel">
+    SELECT
+    a.LIST_VALUE_KEY,
+    b.LANGUAGE_ID, b.LIST_VALUE_ORDER,b.VALUE,a.FILTER_KEY_1 FROM
+    C_LISTVALUE_MST a ,C_LISTVALUE_RES_MST b WHERE
+    a.SYSTEM_ID=#systemId#
+    AND a.BUSINESS_ID=#businessId# AND a.SYSTEM_ID=
+    b.SYSTEM_ID AND a.BUSINESS_ID=b.BUSINESS_ID
+    and a.GROUP_ID=b.GROUP_ID
+    and a.LIST_VALUE_KEY=b.LIST_VALUE_KEY
+    AND
+    b.LANGUAGE_ID=#langId#
+    AND
+    a.GROUP_ID=#group#
+    <isNotNull prepend="AND" property="filterKey1">
+        a.FILTER_KEY_1 = #filterKey1#
+    </isNotNull>
+    ORDER BY
+    b.LIST_VALUE_ORDER ASC,b.VALUE ASC
+    </statement>
+
+
+    <select id="findSupportedLang" resultMap="listValueResCache" cacheModel="lovCacheModel">
+    SELECT a.LIST_VALUE_KEY,b.LANGUAGE_ID, b.LIST_VALUE_ORDER,b.VALUE,a.FILTER_KEY_1
+      FROM C_LISTVALUE_MST a ,C_LISTVALUE_RES_MST b, C_BIZ_LANG_MMAP c
+     WHERE a.SYSTEM_ID=#systemId#
+       AND a.BUSINESS_ID=#businessId#
+       AND a.SYSTEM_ID=b.SYSTEM_ID
+       AND a.BUSINESS_ID=b.BUSINESS_ID
+       AND a.GROUP_ID=b.GROUP_ID
+       AND a.LIST_VALUE_KEY=b.LIST_VALUE_KEY
+       AND b.LANGUAGE_ID=#langId#
+       AND a.GROUP_ID=#group#
+       AND a.BUSINESS_ID = c.BUSINESS_ID
+       AND a.LIST_VALUE_KEY = c.SUPPORTED_LANG_KEY
+  ORDER BY b.LIST_VALUE_ORDER ASC,b.VALUE ASC
+    </select>
+</sqlMap>

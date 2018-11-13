@@ -1,0 +1,16 @@
+what,kind,bundleId,bundleVersion,description,time
+stopped,bundle,com.collabnet.ccf.teamforge,1.4.7,com.collabnet.ccf.teamforge,1524740001287
+stopped,bundle,com.collabnet.ccf,1.4.16,com.collabnet.ccf,1524740001350
+stopped,bundle,org.eclipse.jst.ws.axis.creation.ui,1.0.305.v200805140230,org.eclipse.jst.ws.axis.creation.ui,1524740001490
+stopped,bundle,org.eclipse.jst.ws.axis.consumption.ui,1.0.304.v200807092124,org.eclipse.jst.ws.axis.consumption.ui,1524740001584
+stopped,bundle,org.eclipse.jst.ws.axis.consumption.core,1.0.305.v200806190413,org.eclipse.jst.ws.axis.consumption.core,1524740001646
+stopped,bundle,org.eclipse.jst.ws.axis2.creation.ui,1.0.103.v200807162242,org.eclipse.jst.ws.axis2.creation.ui,1524740001740
+stopped,bundle,org.eclipse.jst.ws.axis2.consumption.ui,1.0.102.v200807232000,org.eclipse.jst.ws.axis2.consumption.ui,1524740001771
+stopped,bundle,org.eclipse.jst.ws.axis2.creation.core,1.0.103.v200807162242,org.eclipse.jst.ws.axis2.creation.core,1524740001818
+stopped,bundle,org.eclipse.jst.ws.axis2.consumption.core,1.0.103.v200807232000,org.eclipse.jst.ws.axis2.consumption.core,1524740001849
+stopped,bundle,org.eclipse.jst.ws.axis2.ui,1.0.202.v200806190413,org.eclipse.jst.ws.axis2.ui,1524740001927
+stopped,bundle,org.eclipse.jst.ws.axis2.core,1.0.103.v200807162242,org.eclipse.jst.ws.axis2.core,1524740002036
+stopped,bundle,org.eclipse.jst.ws.creation.ui,1.0.306.v200807302056,org.eclipse.jst.ws.creation.ui,1524740002130
+stopped,bundle,org.eclipse.jst.ws.consumption.ui,1.1.2.v200808200318,org.eclipse.jst.ws.consumption.ui,1524740002223
+stopped,bundle,org.eclipse.jst.ws.consumption,1.0.305.v200807302152,org.eclipse.jst.ws.consumption,1524740002333
+stopped,bundle,org.eclipse.jst.ws.uddiregistry,1.0.300.v200805140230,org.eclipse.jst.ws.uddiregistry,1524740002379

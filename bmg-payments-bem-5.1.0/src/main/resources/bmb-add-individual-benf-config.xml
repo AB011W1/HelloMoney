@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:util="http://www.springframework.org/schema/util"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+	<bean id="updateBeneficiaryFormSubmissionController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.external.UpdateBeneficiaryFormSubmissionController" parent="bmbAbstractCommandController">
+		<property name="updateBeneficiaryOperation" ref="updateBeneficiaryOperation" />
+		<property name="retrievePayeeListOperation" ref="retrieveFTPayeeListOperation" />
+		<property name="bmbJSONBuilder" ref="updateBeneficiaryFormSubmissionJSONBldr" />
+		<property name="commandName" value="updateBeneficiaryFormSubmissionCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.UpdateBeneficiaryFormSubmissionCommand" />
+
+	</bean>
+
+	<bean id="updateBeneficiaryOperation"
+		class="com.barclays.bmg.operation.beneficiary.UpdateBeneficiaryOperation" parent="bmbPaymentsOperation">
+		<property name="deleteBeneficiaryService" ref="deleteBeneficiaryService" />
+			<property name="addBeneficiaryService" ref="addBeneficiaryService" />
+			<property name="casaDetailsService" ref="casaDetailsServiceImpl" />
+			<property name="branchLookUpService" ref="branchLookUpService" />
+			<property name="smsDetailsService" ref="smsDetailsService" />
+	</bean>
+
+
+<bean id="updateBeneficiaryExecutionController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.external.UpdateBeneficiaryExecutionController" parent="bmbAbstractCommandController">
+		<property name="updateBeneficiaryOperation" ref="updateBeneficiaryOperation" />
+		<property name="otpAuthenticationOperation" ref="otpAuthenticationOperation" />
+		<property name="txnOTPSecondAuthJSONBldr" ref="txnOTPSecondAuthJSONBldr" />
+		<property name="sqaAuthenticationOperation" ref="sqaAuthenticationOperation" />
+		<property name="txnSQASecondAuthJSONBldr" ref="txnSQASecondAuthJSONBldr" />
+		<property name="bmbJSONBuilder" ref="updateBeneficiaryJSONBldr" />
+		<property name="commandName" value="updateBeneficiaryCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.UpdateBeneficiaryCommand" />
+
+	</bean>
+	<bean id="updateBeneficiaryFormSubmissionJSONBldr"
+		class="com.barclays.bmg.json.model.builder.fundtransfer.external.UpdateBeneficiaryFormSubmissionJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<bean id="updateBeneficiaryJSONBldr"
+		class="com.barclays.bmg.json.model.builder.fundtransfer.external.UpdateBeneficiaryJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+
+
+
+	<bean id="addBeneficiaryFormSubmissionController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.external.AddBeneficiaryFormSubmissionController" parent="bmbAbstractCommandController">
+		<property name="addBeneficiaryOperation" ref="addBeneficiaryOperation" />
+		<property name="bmbJSONBuilder" ref="addBeneficiaryFormSubmissionJSONBldr" />
+		<property name="commandName" value="addBeneficiaryFormSubmissionCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.AddBeneficiaryFormSubmissionCommand" />
+		<property name="validator" ref="addBeneficiaryFormSubmissionCommandValidator" />
+	</bean>
+	<bean id="addBeneficiaryExecutionController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.external.AddBeneficiaryExecutionController" parent="bmbAbstractCommandController">
+		<property name="addBeneficiaryOperation" ref="addBeneficiaryOperation" />
+		<property name="otpAuthenticationOperation" ref="otpAuthenticationOperation" />
+		<property name="txnOTPSecondAuthJSONBldr" ref="txnOTPSecondAuthJSONBldr" />
+		<property name="sqaAuthenticationOperation" ref="sqaAuthenticationOperation" />
+		<property name="txnSQASecondAuthJSONBldr" ref="txnSQASecondAuthJSONBldr" />
+		<property name="bmbJSONBuilder" ref="addBeneficiaryJSONBldr" />
+		<property name="commandName" value="addBeneficiaryCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.AddBeneficiaryCommand" />
+		<property name="validator" ref="addBeneficiaryCommandValidator" />
+	</bean>
+
+
+	<bean id="addBeneficiaryJSONBldr"
+		class="com.barclays.bmg.json.model.builder.fundtransfer.external.AddBeneficiaryJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+	<bean id="addBeneficiaryFormSubmissionJSONBldr"
+		class="com.barclays.bmg.json.model.builder.fundtransfer.external.AddBeneficiaryFormSubmissionJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<bean id="addBeneficiaryCommandValidator"
+		class="com.barclays.bmg.mvc.validator.fundtransfer.AddBeneficiaryCommandValidator">
+	</bean>
+	<bean id="addBeneficiaryFormSubmissionCommandValidator"
+		class="com.barclays.bmg.mvc.validator.fundtransfer.AddBeneficiaryFormSubmissionCommandValidator">
+			<property  name="branchCodeCountryList" ref="branchCodeCountryList"/>
+	</bean>
+
+
+	<bean id="addBeneficiaryOperation"
+		class="com.barclays.bmg.operation.beneficiary.AddBeneficiaryOperation" parent="bmbPaymentsOperation">
+			<property name="addBeneficiaryService" ref="addBeneficiaryService" />
+			<property name="casaDetailsService" ref="casaDetailsServiceImpl" />
+			<property name="branchLookUpService" ref="branchLookUpService" />
+			<property name="smsDetailsService" ref="smsDetailsService" />
+	</bean>
+
+	<bean id="smsDetailsService"
+		class="com.barclays.bmg.ussd.service.impl.SMSDetailsServiceImpl">
+		<property name="smsDetailsDAO" ref="smsDetailsDAO" />
+	</bean>
+
+	<bean id="addBeneficiaryService"
+		class="com.barclays.bmg.service.impl.AddBeneficiaryServiceImpl">
+		<property name="addBeneficiaryDAO" ref="addBeneficiaryDAO" />
+	</bean>
+
+<!-- Add Beneficiary DAO layer config -->
+
+	<bean id="addBeneficiaryDAO"
+		class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.AddBeneficiaryDAO" />
+		<property name="daoFrontController" ref="beneficiaryMgmtDaoFrontControllerImpl" />
+	</bean>
+  <bean id="addBeneficiaryDAOController"
+    class="com.barclays.bmg.dao.processing.accountservices.AddBeneficiaryDAOController">
+    <property name="addBeneficiaryReqAdptOperation" ref="addBeneficiaryReqAdptOperation" />
+    <property name="transmissionOperation" ref="addBeneficiaryTransmissionOperation" />
+    <property name="addBeneficiaryResAdptOperation" ref="addBeneficiaryResAdptOperation" />
+  </bean>
+
+	<bean id="addBeneficiaryReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.AddBeneficiaryReqAdptOperation">
+		<property name="addBeneficiaryHeaderAdapter" ref="addBeneficiaryHeaderAdapter" />
+		<property name="addBeneficiaryPayloadAdapter" ref="addBeneficiaryPayloadAdapter" />
+	</bean>
+	<bean id="addBeneficiaryHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.AddBeneficiaryHeaderAdapter">
+	</bean>
+	<bean id="addBeneficiaryPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.AddBeneficiaryPayloadAdapter">
+	</bean>
+
+	<bean id="addBeneficiaryResAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.AddBeneficiaryResAdptOperation">
+	</bean>
+
+	<bean id="addBeneficiaryTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="addBeneficiaryTransmissionService" />
+	</bean>
+
+	<bean id="addBeneficiaryTransmissionService" class="com.barclays.bmg.dao.service.impl.AddBeneficiaryTransmissionService">
+		<property name="remoteService" ref="beneficiaryWebServiceImpl" />
+	</bean>
+
+
+</beans>

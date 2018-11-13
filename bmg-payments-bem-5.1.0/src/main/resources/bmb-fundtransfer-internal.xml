@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:util="http://www.springframework.org/schema/util"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+<!-- Internal Fund Transfer Controller Starts here -->
+	<bean id="internalFTInitController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.internal.InternalFundtransferInitController" parent="bmbAbstractController">
+		<property name="retrieveAccountListOperation" ref="retrieveAccountListOperation" />
+		<property name="transactionLimitOperation" ref="transactionLimitOperation" />
+		<property name="retrievePayeeListOperation" ref="retrieveFTPayeeListOperation" />
+		<property name="bmbJSONBuilder" ref="internalFundTransferInitJSONBldr" />
+	</bean>
+
+	<bean id="internalFTValidationController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.internal.InternalFundTransferValidateController" parent="bmbAbstractCommandController">
+		<property name="getSelectedAccountOperation" ref="getSelectedAccountOperation" />
+		<property name="formValidateOperation" ref="formValidateOperation" />
+		<property name="retrievePayeeInfoOperation" ref="retrievePayeeInfoOperation" />
+		<property name="bmbJSONBuilder" ref="internalFundTransferValidateJSONBldr" />
+		<property name="commandName" value="internalFTValidateCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.fundtransfer.internal.InternalFundTransferCommand" />
+		<property name="validator" ref="internalFundTransferCommandValidator" />
+	</bean>
+
+	<bean id="internalFTDetailsController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.internal.InternalFundTransferDetailsController" parent="bmbAbstractCommandController">
+		<property name="retrievePayeeInfoOperation" ref="retrievePayeeInfoOperation" />
+		<property name="commandName" value="internalFTDetailsCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.fundtransfer.internal.InternalFTDetailsCommand" />
+		<property name="validator" ref="internalFTDetailsCommandValidator" />
+		<property name="bmbJSONBuilder" ref="internalFTDetailsJSONBldr" />
+	</bean>
+<!-- Internal Fund Transfer Controller Ends here -->
+     <bean id="internalFundTransferInitJSONBldr"
+		class="com.barclays.bmg.json.model.builder.fundtransfer.internal.InternalFundTransferInitJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+		<bean id="internalFundTransferCommandValidator"
+		class="com.barclays.bmg.mvc.validator.fundtransfer.InternalFundTransferCommandValidator" />
+
+	<bean id="internalFundTransferValidateJSONBldr"
+		class="com.barclays.bmg.json.model.builder.fundtransfer.internal.InternalFundTransferValidateJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<bean id="internalFTDetailsCommandValidator"
+		class="com.barclays.bmg.mvc.validator.fundtransfer.InternalFTDetailsCommandValidator" />
+
+	<bean id="internalFTDetailsJSONBldr"
+		class="com.barclays.bmg.json.model.builder.fundtransfer.InternalFTDetailsJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+</beans>

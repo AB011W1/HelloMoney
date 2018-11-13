@@ -1,0 +1,8 @@
+
+-----------------------		URL INSERTION QUERY FOR BWBRB - PCT   --------------------------
+DELETE FROM S_URL_BUSINESS_MAP_MST WHERE SYSTEM_ID='MB' AND BUSINESS_ID='BWBRB' AND URL_PATTERN='https://widd.wload.global:52250/bmg';
+
+INSERT INTO S_URL_BUSINESS_MAP_MST (SYSTEM_ID, BUSINESS_ID, URL_PATTERN, LANGUAGE_ID, SEGMENT_ID) VALUES ('MB','BWBRB','https://widd.wload.global:52250/bmg','EN','MASS');
+
+COMMIT;
+

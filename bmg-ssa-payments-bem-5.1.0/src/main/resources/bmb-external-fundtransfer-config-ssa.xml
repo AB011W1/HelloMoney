@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:util="http://www.springframework.org/schema/util"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+
+	<!--  External Fund TRansfer Starts here -->
+	<bean id="retreiveFTExternalPayeeListController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.external.RetrievePayeeListController" parent="bmbAbstractCommandController">
+		<property name="retrievePayeeListOperation" ref="retrieveFTPayeeListOperation" />
+		<property name="retrieveAccountListOperation" ref="retrieveAccountListOperation" />
+		<property name="filterUrgentPayeeListOperation" ref="filterUrgentPayeeListOperation" />
+		<property name="bmbJSONBuilder" ref="externalFundTransferInitJSONBldr" />
+		<property name="activityId" value="PMT_FT_EXTERNAL_PAYEE" />
+		<property name="payGrp" value="EXTERNAL" />
+		<property name="commandName" value="retrievePayeeListCommand" />
+		<property name="commandClass" value="com.barclays.bmg.mvc.command.billpayment.RetrievePayeeListCommand" />
+	</bean>
+
+	<bean id="retreiveFTExternalPayeeInfoController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.external.RetrievePayeeInformationController" parent="bmbAbstractCommandController">
+		<property name="retrievePayeeInfoOperation" ref="retrievePayeeInfoOperation" />
+		<property name="externalFundTransferDataOperation" ref="externalFundTransferDataOperation" />
+		<property name="transactionLimitOperation" ref="transactionLimitOperation" />
+		<property name="getSelectedAccountOperation" ref="getSelectedAccountOperation" />
+		<property name="getPaymentReasonDetailsOperation" ref="getPaymentReasonDetailsOperation" />
+		<property name="bmbJSONBuilder" ref="externalFundTransferPayInfoJSONBldr" />
+		<property name="commandName" value="payeeInformationCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.ExternalFTPayInfoCommand" />
+		<property name="validator" ref="externalFTPayInfoCommandValidator" />
+		<property name="activityId" value="PMT_FT_EXTERNAL_PAYEE" />
+		<property name="payGrp" value="EXTERNAL" />
+		<property name="txnType" value="DT" />
+	</bean>
+
+	<bean id="getExternalBeneficiaryDetailsController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.external.GetBeneficiaryDetailsController" parent="bmbAbstractCommandController">
+		<property name="retrievePayeeInfoOperation" ref="retrievePayeeInfoOperation" />
+		<property name="bmbJSONBuilder" ref="externalBeneficiaryDetailsJSONBldr" />
+		<property name="commandName" value="payeeInformationCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.ExternalPayeeDetailsCommand" />
+		<property name="validator" ref="externalPayeeDetailsCommandValidator" />
+		<property name="activityId" value="PMT_FT_EXTERNAL_PAYEE" />
+		<property name="payGrp" value="EXTERNAL" />
+	</bean>
+
+	<bean id="externalFTPaymentFormSubmissionController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.external.PaymentFormSubmissionController" parent="bmbAbstractCommandController">
+		<property name="externalFTFormSubmissionOperation" ref="externalFTFormSubmissionOperation" />
+		<property name="formValidateOperation" ref="formValidateOperation" />
+		<property name="commandName" value="paymentFormSubmissionCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.ExternalFundTransferCommand" />
+		<property name="validator" ref="ssaExternalFTFormSubmissionCommandValidator" />
+		<property name="bmbJSONBuilder" ref="externalFundTransferFormSubmissionJSONBldr" />
+		<property name="activityId" value="PMT_FT_EXTERNAL_PAYEE" />
+	</bean>
+
+	<bean id="externalFundTransferExecutionController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.external.ssa.FundTransferExecutionController" parent="bmbAbstractCommandController">
+		<property name="domesticFundTransferExecuteOperation" ref="domesticFundTransferExecuteOperation" />
+		<property name="bmbJSONBuilder" ref="ssaExternalFundTransferDoneJSONBldr" />
+		<property name="otpAuthenticationOperation" ref="otpAuthenticationOperation" />
+		<property name="txnOTPSecondAuthJSONBldr" ref="txnOTPSecondAuthJSONBldr" />
+		<property name="sqaAuthenticationOperation" ref="sqaAuthenticationOperation" />
+		<property name="txnSQASecondAuthJSONBldr" ref="txnSQASecondAuthJSONBldr" />
+		<property name="commandName" value="paymentExecuteCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.fundtransfer.own.FundTransferExecuteCommand" />
+		<property name="validator" ref="externalFundTransferExecuteCommandValidator" />
+		<property name="activityId" value="PMT_FT_EXTERNAL_PAYEE" />
+	</bean>
+
+	<bean id="ghanaExternalFundTransferExecutionController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.external.FundTransferExecutionController" parent="bmbAbstractCommandController">
+		<property name="internationalFundTransferOperation" ref="internationalFundTransferOperation" />
+		<property name="bmbJSONBuilder" ref="externalFundTransferDoneJSONBldr" />
+		<property name="otpAuthenticationOperation" ref="otpAuthenticationOperation" />
+		<property name="txnOTPSecondAuthJSONBldr" ref="txnOTPSecondAuthJSONBldr" />
+		<property name="sqaAuthenticationOperation" ref="sqaAuthenticationOperation" />
+		<property name="txnSQASecondAuthJSONBldr" ref="txnSQASecondAuthJSONBldr" />
+		<property name="commandName" value="paymentExecuteCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.fundtransfer.own.FundTransferExecuteCommand" />
+		<property name="validator" ref="externalFundTransferExecuteCommandValidator" />
+		<property name="activityId" value="PMT_FT_EXTERNAL_PAYEE" />
+	</bean>
+
+	<bean id="ssaExternalFTFormSubmissionCommandValidator"
+		class="com.barclays.bmg.mvc.validator.fundtransfer.ssa.ExternalFTFormSubmissionCommandValidator">
+	</bean>
+
+	<bean id="ssaExternalFundTransferDoneJSONBldr"
+		class="com.barclays.bmg.json.model.builder.fundtransfer.external.SSAExternalFundTransferDoneJSONBldr" parent="domesticFundTransferJSONBldr">
+	</bean>
+
+	<bean id="externalFundTransferDataOperation"
+		class="com.barclays.bmg.operation.fundtransfer.external.ExternalFundTransferDataOperation" parent="bmbCommonOperation">
+		<property name="listValueResService" ref="listValueResService" />
+		<property name="currLstKey" value="PMT_FT_SUPPORT_CURRENCY" />
+		<property name="currLstActId" value="PMT_FT_EXTERNAL_PAYEE" />
+	</bean>
+
+	<bean id="internationalFundTransferDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.ssa.InternationalFundTransferDAOController">
+		<property name="internationalFundTransferReqAdptOperation" ref="internationalFundTransferReqAdptOperation" />
+		<property name="transmissionOperation" ref="internationalFTTransmissionOperation" />
+		<property name="internationalFundTransferRespAdptOperation" ref="internationalFundTransferRespAdptOperation" />
+	</bean>
+
+	<bean id="internationalFundTransferReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.ssa.InternationalFundTransferReqAdptOperation">
+		<property name="internationalFundTransferHeaderAdapter" ref="internationalFundTransferHeaderAdapter" />
+		<property name="internationalFundTransferPayloadAdapter" ref="internationalFundTransferPayloadAdapter" />
+	</bean>
+
+
+	<bean id="internationalFundTransferHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.ssa.InternationalFundTransferHeaderAdapter">
+	</bean>
+	<bean id="internationalFundTransferPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.ssa.InternationalFundTransferPayloadAdapter">
+	</bean>
+
+	<bean id="internationalFundTransferRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.ssa.InternationalFundTransferRespAdptOperation">
+	</bean>
+
+		<bean id="KEBRBinternationalFTPaymentFormSubmissionController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.external.PaymentFormSubmissionController"
+		parent="bmbAbstractCommandController">
+		<property name="externalFTFormSubmissionOperation" ref="externalFTFormSubmissionOperation" />
+		<property name="formValidateOperation" ref="formValidateOperation" />
+		<property name="commandName" value="paymentFormSubmissionCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.ExternalFundTransferCommand" />
+		<property name="bmbJSONBuilder"
+			ref="KEBRBinternationalFundTransferFormSubmissionJSONBldr" />
+		<property name="validator"
+			ref="internationalFTFormSubmissionCommandValidator" />
+		<property name="activityId" value="PMT_FT_EXTERNAL_PAYEE" />
+		<property name="branchLookUpService" ref="KEBRBbranchLookUpService" />
+	</bean>
+
+	<bean id="KEBRBbranchLookUpService"
+		class="com.barclays.bmg.service.lookup.impl.BranchLookUpServiceImpl">
+		<property name="branchLookUpDAO" ref="KEBRBbranchLookUpDAO"></property>
+	</bean>
+
+	<bean id="KEBRBbranchLookUpDAO" class="com.barclays.bmg.dao.lookup.impl.BranchLookUpDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+
+	<bean id="KEBRBinternationalFundTransferExecutionController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.external.FundTransferExecutionController"
+		parent="bmbAbstractCommandController">
+		<property name="internationalFundTransferOperation" ref="internationalFundTransferOperation" />
+		<property name="bmbJSONBuilder" ref="internationalFundTransferDoneJSONBldr" />
+		<property name="otpAuthenticationOperation" ref="otpAuthenticationOperation" />
+		<property name="txnOTPSecondAuthJSONBldr" ref="txnOTPSecondAuthJSONBldr" />
+		<property name="sqaAuthenticationOperation" ref="sqaAuthenticationOperation" />
+		<property name="txnSQASecondAuthJSONBldr" ref="txnSQASecondAuthJSONBldr" />
+		<property name="commandName" value="paymentExecuteCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.fundtransfer.own.FundTransferExecuteCommand" />
+		<property name="validator" ref="internationalFTExecuteCommandValidator" />
+		<property name="activityId" value="PMT_FT_EXTERNAL_PAYEE" />
+	</bean>
+
+
+	<bean id="KEBRBinternationalFundTransferFormSubmissionJSONBldr"
+		class="com.barclays.bmg.json.model.builder.fundtransfer.international.KEBRBInternationalFundTransferFormSubmissionJSONBldr"
+		parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<bean id="internationalFTFormSubmissionCommandValidator"
+		class="com.barclays.bmg.mvc.validator.fundtransfer.international.InternationalFTFormSubmissionCommandValidator">
+	</bean>
+
+	<bean id="internationalFTExecuteCommandValidator"
+		class="com.barclays.bmg.mvc.validator.fundtransfer.international.InternationalFTExecuteCommandValidator">
+	</bean>
+
+	<bean id="internationalFundTransferDoneJSONBldr"
+		class="com.barclays.bmg.json.model.builder.fundtransfer.international.InternationalFundTransferDoneJSONBldr"
+		parent="bmbCommonJSONBuilder">
+		</bean>
+
+		<!--  GHIPPS Fund TRansfer Starts here -->
+	<bean id="retreiveGhipsPayeeListController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.external.RetrievePayeeListController" parent="bmbAbstractCommandController">
+		<property name="retrievePayeeListOperation" ref="retrieveFTPayeeListOperation" />
+		<property name="retrieveAccountListOperation" ref="retrieveAccountListOperation" />
+		<property name="filterUrgentPayeeListOperation" ref="filterUrgentPayeeListOperation" />
+		<property name="bmbJSONBuilder" ref="externalFundTransferInitJSONBldr" />
+		<property name="activityId" value="PMT_FT_EXTERNAL_PAYEE" />
+		<property name="payGrp" value="GHIPPSPAY" />
+		<property name="commandName" value="retrievePayeeListCommand" />
+		<property name="commandClass" value="com.barclays.bmg.mvc.command.billpayment.RetrievePayeeListCommand" />
+	</bean>
+
+	<bean id="ghippsFundTransferInformationController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.external.GHIPPSFundTransferInformationController" parent="bmbAbstractCommandController">
+		<property name="externalFundTransferDataOperation" ref="externalFundTransferDataOperation" />
+		<property name="getSelectedAccountOperation" ref="getSelectedAccountOperation" />
+		<property name="getPaymentReasonDetailsOperation" ref="getPaymentReasonDetailsOperation" />
+		<property name="bmbJSONBuilder" ref="externalFundTransferPayInfoJSONBldr" />
+		<property name="commandName" value="payeeInformationCommand" />
+		<property name="commandClass" value="com.barclays.bmg.mvc.command.billpayment.ExternalFTPayInfoCommand" />
+		<property name="activityId" value="GHIPPS_FT_OB_ACCOUNTS" />
+	</bean>
+
+	<bean id="ghippsExternalFundTransferExecutionController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.external.ssa.FundTransferExecutionController" parent="bmbAbstractCommandController">
+		<property name="domesticFundTransferExecuteOperation" ref="domesticFundTransferExecuteOperation" />
+		<property name="bmbJSONBuilder" ref="ssaExternalFundTransferDoneJSONBldr" />
+		<property name="otpAuthenticationOperation" ref="otpAuthenticationOperation" />
+		<property name="txnOTPSecondAuthJSONBldr" ref="txnOTPSecondAuthJSONBldr" />
+		<property name="sqaAuthenticationOperation" ref="sqaAuthenticationOperation" />
+		<property name="txnSQASecondAuthJSONBldr" ref="txnSQASecondAuthJSONBldr" />
+		<property name="commandName" value="paymentExecuteCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.fundtransfer.own.FundTransferExecuteCommand" />
+		<property name="validator" ref="externalFundTransferExecuteCommandValidator" />
+		<property name="activityId" value="GHIPPS_FT_OB_ACCOUNTS" />
+
+	</bean>
+
+	<bean id="retrieveSourceAccountListController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.external.RetrieveSourceAccountListController" parent="bmbAbstractCommandController">
+		<property name="retrieveAccountListOperation" ref="retrieveAccountListOperation" />
+		<property name="bmbJSONBuilder" ref="externalFundTransferInitJSONBldr" />
+		<property name="activityId" value="PMT_FT_EXTERNAL_PAYEE" />
+		<property name="payGrp" value="GHIPPSPAY" />
+		<property name="commandName" value="retrievePayeeListCommand" />
+		<property name="commandClass" value="com.barclays.bmg.mvc.command.billpayment.RetrievePayeeListCommand" />
+	</bean>
+
+</beans>

@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<transactionItems>
+	<version>1.0</version>
+
+	<pageHeader>
+		<countryCode>UG</countryCode>
+		<businessId>1001</businessId>
+	</pageHeader>
+
+	<tx id="tx0.0" tranId="BalanceEnquiry">
+		<transaction tranDataId="BE000" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true"  />
+		<transaction tranDataId="BE001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="BE001"  headerId="label.select.accnum"  backOptionReq="true" />
+		<transaction tranDataId="BE002" type="endTran" bmgOpCode="OP0301" tranDataOpCode="BE002"  headerId="LBL9999" homeOptionReq="true" backOptionReq="true"/>
+	</tx>
+	<tx id="tx0.1" tranId="ChequeBookRequest">
+		<transaction tranDataId="CBR000" type="NA" bmgOpCode="OP0901" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true"/>
+		<transaction tranDataId="CBR001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="CBR001"  headerId="label.select.accnum"   backOptionReq="true" />
+		<transaction tranDataId="CBR002" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="CBR002"  headerId="label.select.numofcheques"   backOptionReq="true" />
+
+		<transaction tranDataId="CBR0002" type="searcher" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="CBR0002"  headerId="label.enter.delivery.branch.name"  backOptionReq="true" />
+		<transaction tranDataId="CBR0003" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="CBR0003"  headerId="label.select.branch.name"   backOptionReq="true" />
+
+		<transaction tranDataId="CBR003" type="NA" bmgOpCode="OP0902" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"   backOptionReq="true" />
+		<transaction tranDataId="CBR004" type="endTran" bmgOpCode="OP0903" tranDataOpCode="CBR004"  headerId="LBL9999" homeOptionReq="true"/>
+	</tx>
+	<tx id="tx0.2" tranId="OwnLinkedAcctFundTx">
+		<transaction tranDataId="OLFT000" type="list" bmgOpCode="OP0500" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true"/>
+		<transaction tranDataId="OLFT001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OLFT001"  headerId="label.fundtr.fundtrans.from"  backOptionReq="true"/>
+		<transaction tranDataId="OLFT002" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OLFT002"  headerId="label.fundtrans.to"  backOptionReq="true" />
+		<transaction tranDataId="OLFT003" type="amount" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OLFT003" headerId="label.enter.amount"  backOptionReq="true"/>
+		<transaction tranDataId="OLFT004" type="confirm" bmgOpCode="OP0501" tranDataOpCode="OLFT004" headerId="label.transaction"  backOptionReq="true"/>
+		<transaction tranDataId="OLFT005" type="endTran" bmgOpCode="OP0502" tranDataOpCode="OLFT005" headerId="label.transaction.success" homeOptionReq="true"/>
+	</tx>
+	<tx id="tx0.3" tranId="MiniStatement">
+		<transaction tranDataId="MS000" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true"  />
+		<transaction tranDataId="MS001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MS001"  headerId="label.select.accnum"  backOptionReq="true"/>
+		<transaction tranDataId="MS002" type="endTran" bmgOpCode="OP0401" tranDataOpCode="MS002"  headerId="LBL9999" homeOptionReq="true" backOptionReq="true"/>
+	</tx>
+	<tx id="tx0.4" tranId="BillPay">
+		<transaction tranDataId="BP005" type="NA" bmgOpCode="OP0600" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999" />
+		<transaction tranDataId="BP000" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="BP000"  headerId="label.mybillers"  backOptionReq="true" />
+		<transaction tranDataId="BP001" type="amount" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="BP001"  headerId="label.enter.the.bill.amount"  backOptionReq="true" />
+		<!-- Kadikope -->
+		<transaction tranDataId="BP007" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="BP007"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="BP008" type="list" bmgOpCode="OP0950" tranDataOpCode="BP008"  headerId="LBL9999"  backOptionReq="true" />
+		<!-- Kadikope End-->
+		<transaction tranDataId="BP002" type="list" bmgOpCode="OP0601" tranDataOpCode="BP002"  headerId="label.paybill.select.accnum"  backOptionReq="true" />
+		<transaction tranDataId="BP003" type="confirm" bmgOpCode="OP0602" tranDataOpCode="BP003"  headerId="label.transaction"  backOptionReq="true" />
+		<transaction tranDataId="BP004" type="endTran" bmgOpCode="OP0603" tranDataOpCode="BP004"  headerId="LBL9999" homeOptionReq="true" />
+	</tx>
+	<tx id="tx0.5" tranId="OtherBarclaysAcctFundTxReg">
+		<transaction tranDataId="OBAFT010" type="NA" bmgOpCode="OP0510" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true"  />
+		<transaction tranDataId="OBAFT011" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OBAFT011"  headerId="label.select.beneficiary"  backOptionReq="true"  />
+		<transaction tranDataId="OBAFT012" type="amount" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OBAFT012" headerId="label.enter.amount"  backOptionReq="true" />
+		<!-- Kadikope -->
+		<transaction tranDataId="OBAFT018" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OBAFT018"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="OBAFT019" type="list" bmgOpCode="OP0950" tranDataOpCode="OBAFT019"  headerId="LBL9999"  backOptionReq="true" />
+		<!-- Kadikope End-->
+		<transaction tranDataId="OBAFT013" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OBAFT013" headerId="label.fundtr.fundtrans.from"  backOptionReq="true" />
+		<transaction tranDataId="OBAFT014" type="confirm" bmgOpCode="OP0511" tranDataOpCode="OBAFT014" headerId="label.transaction"  backOptionReq="true" />
+		<transaction tranDataId="OBAFT015" type="endTran" bmgOpCode="OP0502" tranDataOpCode="OBAFT015" headerId="label.transaction.success" homeOptionReq="true" />
+	</tx>
+	<tx id="tx0.6" tranId="ExtBankAcctFundTx">
+		<transaction tranDataId="EBAFT000" type="NA" bmgOpCode="OP0520" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="EBAFT001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="EBAFT001"  headerId="label.select.beneficiary"  backOptionReq="true" />
+		<transaction tranDataId="EBAFT002" type="amount" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="EBAFT002" headerId="label.enter.amount"  backOptionReq="true" />
+		<transaction tranDataId="EBAFT003" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="EBAFT003" headerId="label.fundtr.fundtrans.from"  backOptionReq="true" />
+		<transaction tranDataId="EBAFT004" type="NA" bmgOpCode="OP0521" tranDataOpCode="NEGUIRENDER" headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="EBAFT005" type="confirm" bmgOpCode="OP0522" tranDataOpCode="EBAFT005" headerId="label.transaction"  backOptionReq="true"/>
+		<transaction tranDataId="EBAFT006" type="endTran" bmgOpCode="OP0523" tranDataOpCode="EBAFT006" headerId="label.transaction.success" homeOptionReq="true" />
+	</tx>
+	<tx id="tx0.7" tranId="ViewMyBillers">
+		<transaction tranDataId="VB000" type="NA" bmgOpCode="OP0600" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999" backOptionReq="true"/>
+		<transaction tranDataId="VB001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="BP001"  headerId="label.mybillers" backOptionReq="true" />
+		<transaction tranDataId="VB002" type="endTran" bmgOpCode="OP0601" tranDataOpCode="VB002"  headerId="label.billerinfo" homeOptionReq="true" />
+	</tx>
+	<tx id="tx0.8" tranId="OtherBarcAcctDelBenef">
+		<transaction tranDataId="OBADB000" type="NA" bmgOpCode="OP0510" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true"/>
+		<transaction tranDataId="OBADB001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OBADB001"  headerId="label.select.benef.nickname"  backOptionReq="true"/>
+		<transaction tranDataId="OBADB002" type="confirm" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OBADB002"  headerId="label.del.benef.dtls"  backOptionReq="true" />
+		<transaction tranDataId="OBADB003" type="endTran" bmgOpCode="OP0640" tranDataOpCode="OBADB003"  headerId="LBL9999" homeOptionReq="true"/>
+	</tx>
+	<tx id="tx0.9" tranId="NonBarcAcctDelBenef">
+		<transaction tranDataId="NBADB000" type="NA" bmgOpCode="OP0520" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="NBADB001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="NBADB001"  headerId="label.select.benef.nickname"  backOptionReq="true" />
+		<transaction tranDataId="NBADB002" type="confirm" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="NBADB002"  headerId="label.del.benef.dtls"  backOptionReq="true" />
+		<transaction tranDataId="NBADB003" type="endTran" bmgOpCode="OP0640" tranDataOpCode="NBADB003"  headerId="LBL9999" homeOptionReq="true"/>
+	</tx>
+	<tx id="tx1.0" tranId="StatementRequest">
+		<transaction tranDataId="SR000" type="NA" bmgOpCode="OP0910" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true"/>
+		<transaction tranDataId="SR001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="SR001"  headerId="label.select.accnum"  backOptionReq="true"/>
+		<transaction tranDataId="SR002" type="NA" bmgOpCode="OP0911" tranDataOpCode="NEGUIRENDER"  headerId="label.stmt.req.confirm"  backOptionReq="true"/>
+		<transaction tranDataId="SR003" type="endTran" bmgOpCode="OP0912" tranDataOpCode="SR003"  headerId="LBL9999" homeOptionReq="true" />
+	</tx>
+	<tx id="tx1.1" tranId="ViewLastPaidBills">
+		<transaction tranDataId="VLPB000" type="NA" bmgOpCode="OP0643" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="VLPB001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="VLPB001"  headerId="label.select.bill"  backOptionReq="true" />
+		<transaction tranDataId="VLPB002" type="endTran" bmgOpCode="OP0644" tranDataOpCode="VLPB002"  headerId="label.bill.details" homeOptionReq="true" />
+	</tx>
+	<!--CR#48 implementation-->
+	<tx id="tx1.2" tranId="RegisterBarclaysBenf">
+		<transaction tranDataId="RBB001" type="accountNo" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="RBB001"  headerId="label.enter.benef.acc.num"  backOptionReq="true" />
+		<transaction tranDataId="RBB002" type="searcher" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="RBB002"  headerId="label.enter.branch.name"  backOptionReq="true" />
+		<transaction tranDataId="RBB003" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="RBB004" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="RRBB004"  headerId="label.select.branch.name"  backOptionReq="true" />
+		<transaction tranDataId="RBB008" type="accountNo" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="RBB008"  headerId="label.enter.benef.acc.num"  backOptionReq="true" />
+		<transaction tranDataId="RBB005" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="RBB005"  headerId="label.enter.benef.nick.name"  backOptionReq="true" />
+		<transaction tranDataId="RBB006" type="confirm" bmgOpCode="OP0641" tranDataOpCode="RBB006"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="RBB007" type="endTran" bmgOpCode="OP0642" tranDataOpCode="RBB007"  headerId="LBL9999" homeOptionReq="true" />
+	</tx>
+
+	<tx id="tx1.3" tranId="RegisterOtherBankBenf">
+		<transaction tranDataId="ROTHBB001" type="searcherAlphaNum" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ROTHBB001"  headerId="label.olaft.enter.bank.name"  backOptionReq="true" />
+		<transaction tranDataId="ROTHBB002" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ROTHBB002"  headerId="label.select.bank.name"  backOptionReq="true" />
+		<transaction tranDataId="ROTHBB003" type="searcher" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ROTHBB003"  headerId="label.enter.branch.name"  backOptionReq="true" />
+		<transaction tranDataId="ROTHBB004" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ROTHBB004"  headerId="label.select.branch.name"  backOptionReq="true" />
+		<transaction tranDataId="ROTHBB005" type="accountNo" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ROTHBB005"  headerId="label.enter.benef.acc.num"  backOptionReq="true" />
+		<transaction tranDataId="ROTHBB006" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ROTHBB006"  headerId="label.enter.benef.name"  backOptionReq="true" />
+		<transaction tranDataId="ROTHBB007" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ROTHBB007"  headerId="label.enter.benef.nick.name"  backOptionReq="true" />
+		<transaction tranDataId="ROTHBB008" type="confirm" bmgOpCode="OP0641" tranDataOpCode="ROTHBB008"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="ROTHBB009" type="endTran" bmgOpCode="OP0642" tranDataOpCode="ROTHBB009"  headerId="LBL9999" homeOptionReq="true" />
+	</tx>
+
+	<tx id="tx1.4" tranId="LanguagePreference">
+		<transaction tranDataId="LANG000" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="LANG001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="LANG001"  headerId="label.menu.select.language"  backOptionReq="true" />
+		<transaction tranDataId="LANG002" type="confirm" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="LANG002"  headerId="label.prefered.lang.selected"  backOptionReq="true" />
+		<transaction tranDataId="LANG003" type="endTran" bmgOpCode="OP0113" tranDataOpCode="LANG003"  headerId="label.prefered.lang.changed" homeOptionReq="true" />
+	</tx>
+	<tx id="tx1.5" tranId="ChangePin">
+		<transaction tranDataId="CP001" type="password" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="CP001"  headerId="label.enter.old.pin"  backOptionReq="true" />
+		<transaction tranDataId="CP002" type="password" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="CP002"  headerId="label.enter.new.pin"  backOptionReq="true" />
+		<transaction tranDataId="CP003" type="password" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="CP003"  headerId="label.reenter.new.pin"  backOptionReq="true" />
+		<transaction tranDataId="CP004" type="endTran" bmgOpCode="OP0112" tranDataOpCode="CP004"  headerId="label.pin.updated.success" homeOptionReq="true"  />
+	</tx>
+	<tx id="tx1.6" tranId="RegisterBillers">
+	    <transaction tranDataId="REGB000" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="REGB001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="REGB001"  headerId="label.select.biller"  backOptionReq="true" />
+	<!--	<transaction tranDataId="REGB002" type="searcherAlphaNum" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="REGB002"  headerId="label.enter.area.code.search.char"  backOptionReq="true" />-->
+		<transaction tranDataId="REGB003" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="REGB003"  headerId="label.select.area"  backOptionReq="true" />
+		<transaction tranDataId="REGB004" type="refno" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="REGB004"  headerId="label.enter.customer.refid"  backOptionReq="true" />
+		<transaction tranDataId="REGB005" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="REGB005"  headerId="label.enter.customer.nickname"  backOptionReq="true" />
+		<transaction tranDataId="REGB006" type="confirm" bmgOpCode="OP0612" tranDataOpCode="REGB006"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="REGB007" type="endTran" bmgOpCode="OP0613" tranDataOpCode="REGB007"  headerId="LBL9999" homeOptionReq="true"  />
+	</tx>
+	<tx id="tx1.7" tranId="DeleteBillers">
+	    <transaction tranDataId="DBILL000" type="NA" bmgOpCode="OP0600" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="DBILL001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="DBILL001"  headerId="label.mybillers"  backOptionReq="true" />
+		<transaction tranDataId="DBILL002" type="confirm" bmgOpCode="OP0601" tranDataOpCode="DBILL002"  headerId="label.biller.deletion.askconfirm"  backOptionReq="true" />
+		<transaction tranDataId="DBILL003" type="endTran" bmgOpCode="OP0640" tranDataOpCode="DBILL003"  headerId="LBL9999" homeOptionReq="true"  />
+	</tx>
+    <!--CR#48 implementation-->
+	<tx id="tx1.8" tranId="OtherBarclaysAcctFundTxUnReg">
+		<transaction tranDataId="OBAFTNR011" type="accountNo" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OBAFTNR011" headerId="label.eneter.benef.account.number"  backOptionReq="true"/>
+		<transaction tranDataId="OBAFTNR0012" type="searcher" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OBAFTNR0012" headerId="label.enter.branch.name"  backOptionReq="true"/>
+		<transaction tranDataId="OBAFTNR012" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OBAFTNR012" headerId="label.select.branch.name"  backOptionReq="true"/>
+        <transaction tranDataId="OBAFTNR018" type="accountNo" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OBAFTNR018" headerId="label.eneter.benef.account.number"  backOptionReq="true"/>
+        <transaction tranDataId="OBAFTNR014" type="amount" bmgOpCode="OP0568" tranDataOpCode="OBAFTNR014" headerId="label.enter.amount" backOptionReq="true"/>
+        <!-- Kadikope Begin-->
+        <transaction tranDataId="OBAFTNRC00" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OBAFTNRC00"  headerId="LBL9999"  backOptionReq="true"/>
+		<transaction tranDataId="OBAFTNRC01" type="list" bmgOpCode="OP0950" tranDataOpCode="OBAFTNRC01" headerId="LBL9999"  backOptionReq="true"/>
+        <!-- Kadikope End-->
+		<transaction tranDataId="OBAFTNR015" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OBAFTNR015"  headerId="label.select.from.accnum"  backOptionReq="true"/>
+		<transaction tranDataId="OBAFTNR016" type="confirm" bmgOpCode="OP0569" tranDataOpCode="OBAFT016" headerId="label.transaction"  backOptionReq="true"/>
+		<transaction tranDataId="OBAFTNR017" type="confirm" bmgOpCode="OP0570" tranDataOpCode="OBAFT017" headerId="label.transaction.success"  homeOptionReq="true"/>
+		<transaction tranDataId="OBAFTNR019" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OBAFTNR019"  headerId="label.enter.benef.nick.name"  homeOptionReq="true" />
+		<transaction tranDataId="OBAFTNR020" type="confirm" bmgOpCode="OP0641" tranDataOpCode="OBAFTNR020"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="OBAFTNR021" type="endTran" bmgOpCode="OP0642" tranDataOpCode="OBAFTNR021"  headerId="LBL9999" homeOptionReq="true" />
+	</tx>
+	<tx id="tx1.9" tranId="OneTimePayments">
+	  <transaction tranDataId="OTBP000" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="NEGUIRENDER" headerId="LBL9999"  backOptionReq="true"/>
+		<transaction tranDataId="OTBP001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OTBP001" headerId="label.selectbiller"  backOptionReq="true"/>
+	<!--	<transaction tranDataId="OTBP002" type="searcherAlphaNum" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OTBP002"  headerId="label.enter.area.code.search.char"  backOptionReq="true" />	-->
+		<transaction tranDataId="OTBP003" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OTBP003"  headerId="label.select.area"  backOptionReq="true" />
+		<transaction tranDataId="OTBP004" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OTBP004" headerId="label.enter.billerrefnum"  backOptionReq="true" />
+		<transaction tranDataId="OTBP005" type="amount" bmgOpCode="OP0650" tranDataOpCode="OTBP005"  headerId="label.enter.the.bill.amount"  backOptionReq="true" />
+		<!-- Kadikope -->
+		<transaction tranDataId="OTBP014" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OTBP014"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="OTBP015" type="list" bmgOpCode="OP0950" tranDataOpCode="OTBP015"  headerId="LBL9999"  backOptionReq="true" />
+		<!-- Kadikope -->
+		<transaction tranDataId="OTBP006" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OTBP006"  headerId="label.paybill.select.accnum"  backOptionReq="true" />
+		<transaction tranDataId="OTBP007" type="confirm" bmgOpCode="OP0651" tranDataOpCode="OTBP007"  headerId="label.transaction"  backOptionReq="true" />
+		<transaction tranDataId="OTBP008" type="confirm" bmgOpCode="OP0603" tranDataOpCode="OTBP008"  headerId="LBL9999" homeOptionReq="true"/>
+		<transaction tranDataId="OTBPSB011" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OTBPSB011"  headerId="label.enter.customer.nickname"  homeOptionReq="true" />
+		<transaction tranDataId="OTBPSB012" type="confirm" bmgOpCode="OP0612" tranDataOpCode="OTBPSB012"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="OTBPSB013" type="endTran" bmgOpCode="OP0613" tranDataOpCode="OTBPSB013"  headerId="LBL9999" homeOptionReq="true" />
+	</tx>
+	<tx id="tx2.0" tranId="ViewFd">
+		<transaction tranDataId="FDR001" type="amount" bmgOpCode="OP0701" tranDataOpCode="FDR001" headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="FDR002" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="FDR002"  headerId="label.tenures"  backOptionReq="true" />
+		<transaction tranDataId="FDR003" type="endTran" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="FDR003" headerId="label.product.rate" homeOptionReq="true" />
+	</tx>
+
+	<tx id="tx2.1" tranId="ApplyFd">
+		<transaction tranDataId="FDA001" type="list" bmgOpCode="OP1234" tranDataOpCode="FDA001"  headerId="label.from.acc.number"  backOptionReq="true" />
+		<transaction tranDataId="FDA002" type="amount" bmgOpCode="OP0701" tranDataOpCode="FDA002"  headerId="label.enter.amount"  backOptionReq="true"/>
+		<transaction tranDataId="FDA003" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="FDA003"  headerId="label.tenures" backOptionReq="true"/>
+		<transaction tranDataId="FDA004" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="FDA004"  headerId="label.product.rate" backOptionReq="true" />
+		<transaction tranDataId="FDA005" type="confirm" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="FDA005"  headerId="label.transaction"  backOptionReq="true" />
+		<transaction tranDataId="FDA006" type="NA" bmgOpCode="OP1235" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="FDA007" type="endTran" bmgOpCode="OP1236" tranDataOpCode="FDA007"  headerId="LBL9999" homeOptionReq="true"  />
+	</tx>
+	<tx id="tx2.2" tranId="AuthNVerify">
+		<transaction tranDataId="AUTH000" type="loginpwd" bmgOpCode="OP0214" tranDataOpCode="AUTH000"  headerId="WELCOME_MSG_CUSTOMERNAME"/>
+		<transaction tranDataId="AUTH001" type="loginpwd" bmgOpCode="OP0109" tranDataOpCode="AUTH001"  headerId="WELCOME_MSG" />
+	</tx>
+	<tx id="tx2.3" tranId="MobileWalletTopUp">
+		<transaction tranDataId="MWTU000" type="NA" bmgOpCode="OP0670" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true"  />
+		<transaction tranDataId="MWTU001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU001" headerId="label.mymno"  backOptionReq="true"/>
+		<transaction tranDataId="MWTU002" type="msisdn" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU002" headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="MWTU003" type="amount" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU003"  headerId="LBL9999"  backOptionReq="true" />
+		<!-- Kadikope -->
+		<transaction tranDataId="MWTU007" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU007"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="MWTU008" type="list" bmgOpCode="OP0950" tranDataOpCode="MWTU008"  headerId="LBL9999"  backOptionReq="true" />
+		<!-- Kadikope -->
+		<transaction tranDataId="MWTU004" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU004"  headerId="LBL9999"  backOptionReq="true" homeOptionReq="true" />
+		<transaction tranDataId="MWTU005" type="confirm" bmgOpCode="OP0671" tranDataOpCode="MWTU005" headerId="label.transaction"  backOptionReq="true" />
+		<transaction tranDataId="MWTU006" type="endTran" bmgOpCode="OP0603" tranDataOpCode="MWTU006"  headerId="LBL9999" homeOptionReq="true" />
+	</tx>
+
+	<tx id="tx2.4" tranId="BalanceEnquiryMainAccount">
+		<transaction tranDataId="BEMA000"  type="endTran" bmgOpCode="OP0301" tranDataOpCode="BEMA000"  headerId="LBL9999" homeOptionReq="true"/>
+	</tx>
+
+	<tx id="tx2.5" tranId="MiniStatementMainAccount">
+		<transaction tranDataId="MSMA000" type="endTran" bmgOpCode="OP0401" tranDataOpCode="MSMA000"  headerId="LBL9999" homeOptionReq="true"/>
+	</tx>
+
+	<tx id="tx2.6" tranId="AirtimeTopup">
+		<transaction tranDataId="ATT000" type="NA" bmgOpCode="OP0660" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true"  />
+		<transaction tranDataId="ATT001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT001"  headerId="label.select.airtime.youroperator"  backOptionReq="true" />
+		<!-- CR82 -->
+		<transaction tranDataId="ATT0021" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT0021"  headerId="label.select.aritime.won.oth.option"  backOptionReq="true" />
+		<transaction tranDataId="ATT0022" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT0022"  headerId="label.select.payment.option"  backOptionReq="true" />
+		<transaction tranDataId="ATT1022" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT1022"  headerId="label.select.new.beneficiary.youroperator"  backOptionReq="true"  />
+		<transaction tranDataId="ATT1023" type="msisdn" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT1023"  headerId="LBL9999"  backOptionReq="true"  />
+		<!-- CR82 End -->
+		<transaction tranDataId="ATT002" type="msisdn" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT002"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="ATT003" type="amount" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT003"  headerId="LBL9999"  backOptionReq="true" />
+		<!-- Kadikope -->
+		<transaction tranDataId="ATT007" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT007"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="ATT008" type="list" bmgOpCode="OP0950" tranDataOpCode="ATT008"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="ATT009" type="confirm" bmgOpCode="OP0661" tranDataOpCode="ATT009"  headerId="LBL9999"  backOptionReq="true" />
+		<!-- Kadikope End-->
+	    <transaction tranDataId="ATT004" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT004"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="ATT005" type="confirm" bmgOpCode="OP0661" tranDataOpCode="ATT005"  headerId="LBL9999" backOptionReq="true" />
+		<transaction tranDataId="ATT006" type="confirm" bmgOpCode="OP0603" tranDataOpCode="ATT006"  headerId="LBL9999" homeOptionReq="true"/>
+		<!-- CR82 -->
+		<transaction tranDataId="ATT0023" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT0023"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="ATT0024" type="confirm" bmgOpCode="OP0612" tranDataOpCode="ATT0024"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="ATT0025" type="endTran" bmgOpCode="OP0613" tranDataOpCode="ATT0025"  headerId="LBL9999" homeOptionReq="true" />
+		<!-- CR82 End -->
+		<!-- CR82 Saved BenF -->
+		<transaction tranDataId="ATT0026" type="NA" bmgOpCode="OP0600" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999" />
+		<transaction tranDataId="ATT0027" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT0027"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="ATT0028" type="NA" bmgOpCode="OP0601" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999" />
+
+
+		<!-- CR82 Delete BenF -->
+		<transaction tranDataId="ATT1024" type="confirm" bmgOpCode="OP0601" tranDataOpCode="ATT1024"  headerId="label.airtime.biller.deletion.askconfirm"  backOptionReq="true" homeOptionReq="true"/>
+		<transaction tranDataId="ATT1025" type="endTran" bmgOpCode="OP0640" tranDataOpCode="ATT1025"  headerId="LBL9999" homeOptionReq="true"  />
+		<!-- CR82 Edit BenF -->
+		<transaction tranDataId="ATT1026" type="confirm" bmgOpCode="OP0612" tranDataOpCode="ATT1026"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="ATT1027" type="endTran" bmgOpCode="OP0613" tranDataOpCode="ATT1027"  headerId="LBL9999" homeOptionReq="true"  />
+		</tx>
+
+	<tx id="tx2.7" tranId="TwoFactorVerify">
+		<transaction tranDataId="TFV001" type="NA" bmgOpCode="OP0114" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999" />
+		<transaction tranDataId="TFV002" type="twoFactAns" bmgOpCode="OP0114" tranDataOpCode="TFV002"  headerId="LBL9999" />
+		<transaction tranDataId="TFV003" type="NA" bmgOpCode="OP0115" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999" />
+	</tx>
+
+	<!-- ADDED TO INCLUDE DEBIT CARD VALIDATION IN SELF REGISTRATION		-->
+	<tx id="tx2.8" tranId="SelfRegistration">
+		<transaction tranDataId="SLR0001" type="searcher" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="SLR0001"  headerId="welcome.enter.branch.code" backOptionReq="true"/>
+		<transaction tranDataId="SLR001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="SLR001"  headerId="label.select.branch.name"  backOptionReq="true" />
+		<transaction tranDataId="SLR002" type="accountNo" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="SLR002"  headerId="welcome.self.reg.acc.num" backOptionReq="true"/>
+		<!-- Bmg call added to minimize response time for confirm screen	-->
+		<transaction tranDataId="SLR003" type="confirm" bmgOpCode="OP0119" tranDataOpCode="SLR003"  headerId="label.accept.terms.conditions" backOptionReq="true"/>
+		<transaction tranDataId="SLR004" type="NA" bmgOpCode="OP0116" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"/>
+		<transaction tranDataId="SLR005" type="twoFactAnsDOB" bmgOpCode="OP0114" tranDataOpCode="SLR005"  headerId="LBL9999" backOptionReq="true"/>
+		<transaction tranDataId="SLR006" type="NA" bmgOpCode="OP0115" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999" />
+		<!-- Debit card no & expiry date in MMYY format to be entered by user step chnage header id as to include random num in header-->
+		<transaction tranDataId="SLR008" type="debitCardNo" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="SLR008"  headerId="LBL9999" backOptionReq="true"/>
+		<transaction tranDataId="SLR009" type="debitCardExpDt" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="SLR009"  headerId="LBL9999" backOptionReq="true"/>
+		<!-- Debit card no & expiry date verification step -->
+		<transaction tranDataId="SLR010" type="NA" bmgOpCode="OP0118" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999" />
+		<transaction tranDataId="SLR007" type="endTran" bmgOpCode="OP0117" tranDataOpCode="SLR007"  headerId="LBL9999" />
+	</tx>
+
+	<tx id="tx2.9" tranId="FirstLoginChangePin">
+		<transaction tranDataId="FLCP002" type="password" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="FLCP002" headerId="label.enter.new.pin"  />
+		<transaction tranDataId="FLCP003" type="password" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="FLCP003" headerId="label.reenter.new.pin"  backOptionReq="true"/>
+		<transaction tranDataId="FLCP004" type="endTran" bmgOpCode="OP0112" tranDataOpCode="FLCP004" headerId="label.pin.updated.success" />
+	</tx>
+
+	<tx id="tx3.0" tranId="WelcomeScreen">
+		<transaction tranDataId="WSMABE000"  type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="WSMABE000"  headerId="LBL9999" />
+	</tx>
+
+	<tx id="tx3.1" tranId="CashSendOneTimePayment">
+		<transaction tranDataId="CSOTP001" type="csmsisdn" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="CSOTP001" headerId="label.cashsend.benef.mobile.number" backOptionReq="true" optional="true" />
+		<transaction tranDataId="CSOTP002" type="amount" bmgOpCode="OP0580" tranDataOpCode="CSOTP002" headerId="LBL9999" backOptionReq="true"/>
+		<transaction tranDataId="CSOTP003" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="CSOTP003" headerId="label.cashsend.from.account" backOptionReq="true"/>
+		<transaction tranDataId="CSOTP004" type="atmpin" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="CSOTP004" headerId="label.atm.access.pin" backOptionReq="true"/>
+		<transaction tranDataId="CSOTP005" type="atmpin" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="CSOTP005" headerId="label.atm.access.pin.reenter" backOptionReq="true"/>
+		<transaction tranDataId="CSOTP006" type="confirm" bmgOpCode="OP0581" tranDataOpCode="CSOTP006" headerId="label.cashsend.details" backOptionReq="true"/>
+		<transaction tranDataId="CSOTP007" type="endTran" bmgOpCode="OP0582" tranDataOpCode="CSOTP007" headerId="label.cashsend.result" homeOptionReq="true"/>
+	</tx>
+
+	<tx id="tx3.2" tranId="EditBenefInternal">
+		<transaction tranDataId="EBI000" type="NA" bmgOpCode="OP0510" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999" />
+		<transaction tranDataId="EBI001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="EBI001"  headerId="label.select.beneficiary"  backOptionReq="true"  />
+		<transaction tranDataId="EBI002" type="accountNo" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="EBI002"  headerId="label.enter.benef.acc.num"  backOptionReq="true" />
+		<transaction tranDataId="EBI003" type="searcher" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="EBI003"  headerId="label.enter.branch.name"  backOptionReq="true" />
+		<transaction tranDataId="EBI004" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="EBI004"  headerId="label.select.branch.name"  backOptionReq="true" />
+		<transaction tranDataId="EBI008" type="accountNo" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="EBI008"  headerId="label.enter.benef.acc.num"  backOptionReq="true" />
+		<transaction tranDataId="EBI005" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="EBI005"  headerId="label.enter.benef.nick.name"  backOptionReq="true" />
+		<transaction tranDataId="EBI006" type="confirm" bmgOpCode="OP1010" tranDataOpCode="EBI006"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="EBI007" type="endTran" bmgOpCode="OP1011" tranDataOpCode="EBI007"  headerId="LBL9999" homeOptionReq="true" />
+	</tx>
+
+	<tx id="tx3.3" tranId="EditBenefExternal">
+		<transaction tranDataId="EBE001" type="list" bmgOpCode="OP0520" tranDataOpCode="EBE001"  headerId="label.select.beneficiary"  backOptionReq="true" />
+		<transaction tranDataId="EBE002" type="searcherAlphaNum" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="EBE002"  headerId="label.olaft.enter.bank.name"  backOptionReq="true" />
+		<transaction tranDataId="EBE003" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="EBE003"  headerId="label.select.bank.name"  backOptionReq="true" />
+		<transaction tranDataId="EBE004" type="searcher" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="EBE004"  headerId="label.enter.branch.name"  backOptionReq="true" />
+		<transaction tranDataId="EBE005" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="EBE005"  headerId="label.select.branch.name"  backOptionReq="true" />
+		<transaction tranDataId="EBE006" type="accountNo" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="EBE006"  headerId="label.enter.benef.acc.num"  backOptionReq="true" />
+		<transaction tranDataId="EBE007" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="EBE007"  headerId="label.enter.benef.name"  backOptionReq="true" />
+		<transaction tranDataId="EBE008" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="EBE008"  headerId="label.enter.benef.nick.name"  backOptionReq="true" />
+		<transaction tranDataId="EBE009" type="confirm" bmgOpCode="OP1010" tranDataOpCode="EBE009"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="EBE010" type="endTran" bmgOpCode="OP1011" tranDataOpCode="EBE010"  headerId="LBL9999" homeOptionReq="true" />
+	</tx>
+	<tx id="tx3.4" tranId="HelloMoneyDemo">
+		<transaction tranDataId="HMD000"  type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="HMD000"  headerId="LBL9999" />
+	</tx>
+
+	<tx id="tx3.5" tranId="ContactUs">
+		<transaction tranDataId="CU000"  type="endTran" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="CU000"  headerId="label.contact.us" backOptionReq="true"/>
+	</tx>
+
+	<tx id="tx3.6" tranId="ChangeLanguage">
+		<transaction tranDataId="CHNGLANG001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="CHNGLANG001"  headerId="label.select.language"/>
+		<transaction tranDataId="CHNGLANG002" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="CHNGLANG002"  headerId="LBL9999"  backOptionReq="true" />
+	</tx>
+
+	<tx id="tx3.7" tranId="OldSession">
+		<transaction tranDataId="OS000"  type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OS000"  headerId="LBL9999"/>
+	</tx>
+
+	<tx id="tx3.8" tranId="NewSession">
+		<transaction tranDataId="NS000"  type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="NS000"  headerId="LBL9999"/>
+	</tx>
+
+	<tx id="tx3.9" tranId="ForexRate">
+		<transaction tranDataId="FXR000"  type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="FXR000"  headerId="label.select" backOptionReq="true" />
+		<transaction tranDataId="FXR001"  type="endTran" bmgOpCode="OP0750" tranDataOpCode="FXR001"  headerId="LBL9999"  homeOptionReq="true"/>
+	</tx>
+
+	<tx id="tx4.0" tranId="CreditCardAtAGlance">
+		<transaction tranDataId="AAG002" type="NA" bmgOpCode="OP0950" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true"  />
+		<transaction tranDataId="AAG000" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="AAG000"  headerId="label.select"  backOptionReq="true" />
+		<transaction tranDataId="AAG001" type="endTran" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="AAG001"  headerId="LBL9999" homeOptionReq="true" backOptionReq="true"/>
+	</tx>
+
+	<tx id="tx4.1" tranId="CreditCardStatement">
+		<transaction tranDataId="CCS000" type="list" bmgOpCode="OP0950" tranDataOpCode="CCS000"  headerId="label.select"  backOptionReq="true" />
+		<transaction tranDataId="CCS001" type="list" bmgOpCode="OP0951" tranDataOpCode="CCS001"  headerId="label.select"  backOptionReq="true" />
+		<transaction tranDataId="CCS002" type="endTran" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="CCS002"  headerId="LBL9999" homeOptionReq="true" backOptionReq="true"/>
+	</tx>
+
+	<tx id="tx4.2" tranId="CreditCardUnbillerTxDetails">
+		<transaction tranDataId="CCUTD000" type="list" bmgOpCode="OP0950" tranDataOpCode="CCUTD000"  headerId="label.select"  backOptionReq="true" />
+		<transaction tranDataId="CCUTD001" type="list" bmgOpCode="OP0952" tranDataOpCode="CCUTD001"  headerId="LBL9999"   homeOptionReq="true" backOptionReq="true" />
+		<transaction tranDataId="CCUTD002" type="endTran" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="CCUTD002"  headerId="LBL9999" homeOptionReq="true" backOptionReq="true"/>
+	</tx>
+
+	<tx id="tx4.3" tranId="CreditCardPaymentInternal">
+		<transaction tranDataId="CCP000" type="list" bmgOpCode="OP0950" tranDataOpCode="CCP000"  headerId="label.select"  backOptionReq="true" />
+		<transaction tranDataId="CCP001" type="confirm" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="CCP001"  headerId="LBL9999"  backOptionReq="true" />
+	     <transaction tranDataId="CCP002" type="amount" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="CCP002"  headerId="label.ccp.enter.amount"  backOptionReq="true"/>
+		 <transaction tranDataId="CCP003" type="list" bmgOpCode="OP0957" tranDataOpCode="CCP003"  headerId="label.ccp.select.accnum"  backOptionReq="true"/>
+	    <transaction tranDataId="CCP004" type="confirm" bmgOpCode="OP0956" tranDataOpCode="CCP004"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="CCP005" type="endTran" bmgOpCode="OP0954" tranDataOpCode="CCP005"  headerId="LBL9999" homeOptionReq="true" />
+
+	</tx>
+
+	<tx id="tx4.4" tranId="CreditCardThirdPartyPayment">
+		<transaction tranDataId="CCP3P001" type="accountNo" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="CCP3P001"  headerId="label.enter.third.party.cc.no"  backOptionReq="true" />
+		<transaction tranDataId="CCP3P002" type="NA" bmgOpCode="OP0955" tranDataOpCode="NEGUIRENDER"  headerId="label.enter.third.party.cc.no"  backOptionReq="true" />
+		<transaction tranDataId="CCP3P003" type="amount" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="CCP3P003"  headerId="label.enter.third.party.cc.amt"  backOptionReq="true" />
+		<transaction tranDataId="CCP3P004" type="list" bmgOpCode="OP0957" tranDataOpCode="CCP3P004"  headerId="label.enter.third.party.sel.frm.acc"  backOptionReq="true" />
+		<transaction tranDataId="CCP3P005" type="confirm" bmgOpCode="OP0956" tranDataOpCode="CCP3P005"  headerId="label.transaction"  backOptionReq="true" />
+		<transaction tranDataId="CCP3P006" type="endTran" bmgOpCode="OP0958" tranDataOpCode="CCP3P006"  headerId="LBL9999" homeOptionReq="true" />
+	</tx>
+
+
+	<tx id="tx4.5" tranId="BranchLocator">
+		<transaction tranDataId="BL001" type="searcherAlphaNum" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="BL001"  headerId="label.enter.city.name"  backOptionReq="true" />
+		<transaction tranDataId="BL002" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="BL002"  headerId="label.select.city.name"  backOptionReq="true" />
+		<transaction tranDataId="BL003" type="searcherAlphaNum" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="BL003"  headerId="label.enter.area.name"  backOptionReq="true" />
+		<transaction tranDataId="BL004" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="BL004"  headerId="label.select.area.name"  backOptionReq="true" />
+		<transaction tranDataId="BL005" type="endTran" bmgOpCode="OP0960" tranDataOpCode="BL005"  headerId="LBL9999"  backOptionReq="true" homeOptionReq="true" />
+	</tx>
+
+	<tx id="tx4.6" tranId="AtmLocator">
+		<transaction tranDataId="AL001" type="searcherAlphaNum" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="AL001"  headerId="label.enter.city.name"  backOptionReq="true" />
+		<transaction tranDataId="AL002" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="AL002"  headerId="label.select.city.name"  backOptionReq="true" />
+		<transaction tranDataId="AL003" type="searcherAlphaNum" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="AL003"  headerId="label.enter.area.name"  backOptionReq="true" />
+		<transaction tranDataId="AL004" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="AL004"  headerId="label.select.area.name"  backOptionReq="true" />
+		<transaction tranDataId="AL005" type="endTran" bmgOpCode="OP0960" tranDataOpCode="AL005"  headerId="LBL9999"  backOptionReq="true" homeOptionReq="true" />
+	</tx>
+
+	<tx id="tx4.7" tranId="UserMigration">
+		<transaction tranDataId="UM001" type="searcher" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="UM001"  headerId="label.um.enter.branch.code" />
+		<transaction tranDataId="UM002" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="UM002"  headerId="label.um.select.branch.name"  backOptionReq="true" />
+		<transaction tranDataId="UM003" type="accountNo" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="UM003"  headerId="label.um.acc.num" backOptionReq="true"/>
+		<transaction tranDataId="UM004" type="NA" bmgOpCode="OP0961" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"/>
+		<transaction tranDataId="UM005" type="twoFactAnsDOB" bmgOpCode="OP0962" tranDataOpCode="UM005"  headerId="LBL9999" backOptionReq="true" />
+		<transaction tranDataId="UM006" type="NA" bmgOpCode="OP0963" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999" />
+		<transaction tranDataId="UM007" type="password" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="UM007"  headerId="label.um.enter.new.pin"  backOptionReq="true" />
+		<transaction tranDataId="UM008" type="password" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="UM008"  headerId="label.um.reenter.new.pin"  backOptionReq="true" />
+		<transaction tranDataId="UM009" type="endTran" bmgOpCode="OP0964" tranDataOpCode="UM009"  headerId="label.um.success" />
+	</tx>
+
+	<tx id="tx4.8" tranId="DiningOffer">
+		<transaction tranDataId="BD001" type="searcherAlphaNum" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="BD001"  headerId="label.bdo.enter.city.name" backOptionReq="true"/>
+		<transaction tranDataId="BD002" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="BD002"  headerId="label.bdo.select.city.name" backOptionReq="true"/>
+		<transaction tranDataId="BD003" type="searcherAlphaNum" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="BD003"  headerId="label.bdo.enter.restaurant.name"  backOptionReq="true" />
+		<transaction tranDataId="BD004" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="BD004"  headerId="label.bdo.select.restaurant.name" backOptionReq="true"/>
+		<transaction tranDataId="BD005" type="endTran" bmgOpCode="OP0975" tranDataOpCode="BD005"  headerId="LBL9999" homeOptionReq="true"/>
+	</tx>
+
+	<tx id="tx4.9" tranId="EasyInstallmentOffer">
+		<transaction tranDataId="EI001" type="searcherAlphaNum" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="EI001"  headerId="label.eio.enter.partner.name" backOptionReq="true"/>
+		<transaction tranDataId="EI002" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="EI002"  headerId="label.eio.select.partner.name" backOptionReq="true"/>
+		<transaction tranDataId="EI003" type="endTran" bmgOpCode="OP0976" tranDataOpCode="EI003"  headerId="LBL9999"  homeOptionReq="true"/>
+	</tx>
+
+	<tx id="tx5.0" tranId="CallMeBack">
+		<transaction tranDataId="CM001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="CM001"  headerId="label.cmb.besiness.area.select" backOptionReq="true"/>
+		<transaction tranDataId="CM002" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="CM002"  headerId="label.cmb.service.category.select" backOptionReq="true"/>
+		<transaction tranDataId="CM003" type="endTran" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="CM003"  headerId="LBL9999"  homeOptionReq="true"/>
+	</tx>
+
+	<tx id="tx5.1" tranId="IamInterested">
+		<transaction tranDataId="II001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="II001"  headerId="label.select.product"  backOptionReq="true" />
+		<transaction tranDataId="II002" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="II002"  headerId="label.select.subproduct"  backOptionReq="true" />
+		<transaction tranDataId="II003" type="endTran" bmgOpCode="OP0977" tranDataOpCode="II003"  headerId="LBL9999"  homeOptionReq="true" />
+	</tx>
+	<!--CR#46 Credit card Link -->
+	<tx id="tx5.2" tranId="CreditCardLink">
+		<!--  <transaction tranDataId="CCL000" type="creditcardnumber" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="CCL000"  headerId="label.enter.credit.card.number"  backOptionReq="true" />-->
+		<transaction tranDataId="CCL000" type="confirm" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="CCL000"  headerId="LBL9999"  backOptionReq="true" homeOptionReq="true" />
+		<transaction tranDataId="CCL001" type="endTran" bmgOpCode="OP0959" tranDataOpCode="CCL001"  headerId="LBL9999" homeOptionReq="true" backOptionReq="true"/>
+	</tx>
+	 <!--KITS Changes Strats  -->
+     <tx id="tx5.3" tranId="KITSRegistration">
+		<transaction tranDataId="KR001" type="list" bmgOpCode="OP0978" tranDataOpCode="KR001"  headerId="label.select.accnum"  backOptionReq="true" />
+		<transaction tranDataId="KR002" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="KR002"  headerId="label.kits.primary.account" backOptionReq="true"/>
+		<transaction tranDataId="KR003" type="confirm" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="KR003"  headerId="label.kits.details"  backOptionReq="true" />
+		<transaction tranDataId="KR004" type="endTran" bmgOpCode="OP0979" tranDataOpCode="KR004"  headerId="LBL9999"  homeOptionReq="true" />
+	</tx>
+	 <tx id="tx5.4" tranId="KITSDeRegistration">
+		<!--<transaction tranDataId="KDR001" type="list" bmgOpCode="OP0978" tranDataOpCode="KDR001"  headerId="label.select.accnum"  backOptionReq="true" />
+		--><transaction tranDataId="KDR002" type="confirm" bmgOpCode="OP0981" tranDataOpCode="KDR002"  headerId="label.kits.deregistration.details"  backOptionReq="true" />
+		<transaction tranDataId="KDR003" type="endTran" bmgOpCode="OP0982" tranDataOpCode="KDR003"  headerId="LBL9999"  homeOptionReq="true" />
+	</tx>
+
+	<tx id="tx5.5" tranId="SendToPhone">
+	    <transaction tranDataId="SP001" type="list" bmgOpCode="OP0985" tranDataOpCode="SP001"  headerId="label.select.accnum"  backOptionReq="true" />
+		<transaction tranDataId="SP002" type="csmsisdn" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="SP002"  headerId="label.kits.mobile.number"  backOptionReq="true" />
+		<transaction tranDataId="SP003" type="list" bmgOpCode="OP0983" tranDataOpCode="SP003"  headerId="label.kits.select.bank.name"  backOptionReq="true" />
+		<transaction tranDataId="SP004" type="amount" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="SP004"  headerId="label.kits.amount"  backOptionReq="true" />
+		<transaction tranDataId="SP005" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="SP005"  headerId="label.kits.reason"  backOptionReq="true" />
+		<transaction tranDataId="SP006" type="confirm" bmgOpCode="OP0797" tranDataOpCode="SP006"  headerId="label.confirm"  backOptionReq="true" />
+		<transaction tranDataId="SP007" type="endTran" bmgOpCode="OP0980" tranDataOpCode="SP007"  headerId="LBL9999"  homeOptionReq="true" />
+	</tx>
+
+	<tx id="tx5.6" tranId="SendToAccount">
+	    <transaction tranDataId="SA001" type="list" bmgOpCode="OP0985" tranDataOpCode="SA001"  headerId="label.select.accnum"  backOptionReq="true" />
+		<transaction tranDataId="SA002" type="accountNo" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="SA002"  headerId="label.kits.account.number"  backOptionReq="true" />
+		<transaction tranDataId="SA003" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="SA003"  headerId="label.olaft.enter.bank.name"  backOptionReq="true" />
+		<transaction tranDataId="SA004" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="SA004"  headerId="label.select.bank.name"  backOptionReq="true" />
+		<transaction tranDataId="SA005" type="amount" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="SA005"  headerId="label.kits.amount"  backOptionReq="true" />
+		<transaction tranDataId="SA006" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="SA006"  headerId="label.kits.reason"  backOptionReq="true" />
+		<transaction tranDataId="SA007" type="confirm" bmgOpCode="OP0797" tranDataOpCode="SA007"  headerId="label.kits.details"  backOptionReq="true" />
+		<transaction tranDataId="SA008" type="endTran" bmgOpCode="OP0980" tranDataOpCode="SA008"  headerId="LBL9999"  homeOptionReq="true" />
+	</tx>
+	<!--KITS Changes Ends  -->
+
+	<tx id="tx5.7" tranId="ForgotPin">
+	<transaction tranDataId="FOGP100" type="confirm" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="FOGP001"  headerId="LBL9999" />
+		<transaction tranDataId="FOGP0001" type="searcher" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="FOGP0001"  headerId="welcome.enter.branch.code" backOptionReq="true"/>-->
+		<transaction tranDataId="FOGP001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="FOGP001"  headerId="label.select.branch.name"  backOptionReq="true" />
+		<transaction tranDataId="FOGP002" type="accountNo" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="FOGP002"  headerId="welcome.self.reg.acc.num" backOptionReq="true"/>
+		<!-- Bmg call added to minimize response time for confirm screen	-->
+		<transaction tranDataId="FOGP003" type="NA" bmgOpCode="OP0119" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999" backOptionReq="true"/>
+		<transaction tranDataId="FOGP004" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"/>
+		<transaction tranDataId="FOGP005" type="twoFactAnsDOB" bmgOpCode="OP0114" tranDataOpCode="FOGP005"  headerId="LBL9999" backOptionReq="true"/>
+		<transaction tranDataId="FOGP006" type="NA" bmgOpCode="OP0115" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999" />
+		<!-- Debit card no & expiry date in MMYY format to be entered by user step chnage header id as to include random num in header-->
+		<transaction tranDataId="FOGP008" type="debitCardNo" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="FOGP008"  headerId="LBL9999" backOptionReq="true"/>
+		<transaction tranDataId="FOGP009" type="debitCardExpDt" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="FOGP009"  headerId="LBL9999" backOptionReq="true"/>
+		<!-- Debit card no & expiry date verification step -->
+		<transaction tranDataId="FOGP010" type="NA" bmgOpCode="OP0118" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999" backOptionReq="true" />
+		<transaction tranDataId="FOGP011" type="password" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="FOGP011"  headerId="label.forgot.enter.new.pin"  backOptionReq="true" />
+		<transaction tranDataId="FOGP012" type="password" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="FOGP012"  headerId="label.forgot.reenter.new.pin"  backOptionReq="true" />
+		<transaction tranDataId="FOGP013" type="endTran" bmgOpCode="OP0112" tranDataOpCode="FOGP013"  headerId="label.forgot.pin.updated.success"  />
+		<!--<transaction tranDataId="FOGP007" type="endTran" bmgOpCode="OP0117" tranDataOpCode="FOGP007"  headerId="LBL9999" />	-->
+	</tx>
+	<!-- Lead Generation -->
+	<tx id="tx5.4" tranId="LeadGeneration">
+		<transaction tranDataId="LG000" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="LG000"  headerId="menu.lead.generation.product"  backOptionReq="true" />
+		<transaction tranDataId="LG001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="LG001"  headerId="menu.lead.generation.sub.product" backOptionReq="true"/>
+		<transaction tranDataId="LG002" type="confirm" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="LG002"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="LG003" type="endTran" bmgOpCode="OP0984" tranDataOpCode="LG003"  headerId="LBL9999" homeOptionReq="true" />
+	</tx>
+
+	<!-- CR85 Start -->
+	<tx id="tx5.5" tranId="RegisterBeneficiaryOtherBankAC">
+		<transaction tranDataId="RBOBA01" type="searcherAlphaNum" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="RBOBA01"  headerId="label.olaft.enter.bank.name"  backOptionReq="true" />
+		<transaction tranDataId="RBOBA02" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="RBOBA02"  headerId="label.select.bank.name"  backOptionReq="true" />
+		<transaction tranDataId="RBOBA03" type="searcher" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="RBOBA03"  headerId="label.enter.branch.name"  backOptionReq="true" />
+		<transaction tranDataId="RBOBA04" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="RBOBA04"  headerId="label.select.branch.name"  backOptionReq="true" />
+		<transaction tranDataId="RBOBA05" type="accountNo" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="RBOBA05"  headerId="label.enter.benef.acc.num"  backOptionReq="true" />
+		<transaction tranDataId="RBOBA06" type="address" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="RBOBA06"  headerId="label.enter.address"  backOptionReq="true" />
+		<transaction tranDataId="RBOBA08" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="RBOBA08"  headerId="label.enter.benef.nick.name"  backOptionReq="true" />
+		<transaction tranDataId="RBOBA09" type="confirm" bmgOpCode="OP0641" tranDataOpCode="RBOBA09"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="RBOBA10" type="endTran" bmgOpCode="OP0642" tranDataOpCode="RBOBA10"  headerId="LBL9999" homeOptionReq="true" />
+	</tx>
+
+	<tx id="tx5.6" tranId="FundTxOtherBankAC">
+		<transaction tranDataId="KEBAFT000" type="NA" bmgOpCode="OP0520" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="KEBAFT001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="KEBAFT001"  headerId="label.select.beneficiary"  backOptionReq="true" />
+		<transaction tranDataId="KEBAFT002" type="amount" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="KEBAFT002" headerId="label.enter.amount"  backOptionReq="true" />
+		<transaction tranDataId="KEBAFT003" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="KEBAFT003" headerId="label.fundtr.fundtrans.from"  backOptionReq="true" />
+		<transaction tranDataId="KEBAFT004" type="resonOfPayment" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="KEBAFT004" headerId="label.reason.of.payment"  backOptionReq="true" />
+		<transaction tranDataId="KEBAFT005" type="NA" bmgOpCode="OP0521" tranDataOpCode="NEGUIRENDER" headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="KEBAFT006" type="confirm" bmgOpCode="OP0986" tranDataOpCode="KEBAFT006" headerId="label.transaction"  backOptionReq="true"/>
+		<transaction tranDataId="KEBAFT007" type="endTran" bmgOpCode="OP0987" tranDataOpCode="KEBAFT007" headerId="label.transaction.success" homeOptionReq="true" />
+	</tx>
+
+	<tx id="tx5.7" tranId="EditBeneficiaryOtherBankAC">
+		<transaction tranDataId="EBOBA00" type="list" bmgOpCode="OP0520" tranDataOpCode="EBOBA00"  headerId="label.beneficiary.name"  backOptionReq="true" />
+		<transaction tranDataId="EBOBA01" type="searcherAlphaNum" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="EBOBA01"  headerId="label.olaft.enter.bank.name"  backOptionReq="true" />
+		<transaction tranDataId="EBOBA02" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="EBOBA02"  headerId="label.select.bank.name"  backOptionReq="true" />
+		<transaction tranDataId="EBOBA03" type="searcher" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="EBOBA03"  headerId="label.enter.branch.name"  backOptionReq="true" />
+		<transaction tranDataId="EBOBA04" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="EBOBA04"  headerId="label.select.branch.name"  backOptionReq="true" />
+		<transaction tranDataId="EBOBA05" type="accountNo" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="EBOBA05"  headerId="label.enter.benef.acc.num"  backOptionReq="true" />
+		<transaction tranDataId="EBOBA06" type="address" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="EBOBA06"  headerId="label.enter.address"  backOptionReq="true" />
+		<transaction tranDataId="EBOBA07" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="EBOBA07"  headerId="label.enter.benef.nick.name"  backOptionReq="true" />
+		<transaction tranDataId="EBOBA08" type="confirm" bmgOpCode="OP1010" tranDataOpCode="EBOBA08"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="EBOBA09" type="endTran" bmgOpCode="OP1011" tranDataOpCode="EBOBA09"  headerId="LBL9999" homeOptionReq="true" />
+	</tx>
+
+	<tx id="tx5.8" tranId="OtherBankAcctDelBenef">
+		<transaction tranDataId="OBADB0" type="NA" bmgOpCode="OP0520" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="OBADB1" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OBADB1"  headerId="label.select.benef.nickname"  backOptionReq="true" />
+		<transaction tranDataId="OBADB2" type="confirm" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OBADB2"  headerId="label.del.benef.dtls"  backOptionReq="true" />
+		<transaction tranDataId="OBADB3" type="endTran" bmgOpCode="OP0640" tranDataOpCode="OBADB3"  headerId="LBL9999" homeOptionReq="true"/>
+	</tx>
+	<!-- CR85 End -->
+
+	<!--  KadiKope KEBRB Start		-->
+		<tx id="tx5.9" tranId="OwnLinkedAcctFundTxCredit">
+		<transaction tranDataId="AAG002" type="NA" bmgOpCode="OP0950" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true"/>
+		<transaction tranDataId="OLFT001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OLFT001"  headerId="label.fundtr.fundCredit.from"  backOptionReq="true"/>
+		<transaction tranDataId="OLFT002" type="list" bmgOpCode="OP0500" tranDataOpCode="OLFT002"  headerId="label.fundtrans.to"  backOptionReq="true" />
+		<transaction tranDataId="OLFT003" type="amount" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OLFT003" headerId="label.enter.amount"  backOptionReq="true"/>
+		<transaction tranDataId="OLFT004" type="confirm" bmgOpCode="OP0501" tranDataOpCode="OLFT004" headerId="label.transaction"  backOptionReq="true"/>
+		<transaction tranDataId="OLFT005" type="endTran" bmgOpCode="OP0502" tranDataOpCode="OLFT005" headerId="label.transaction.success" homeOptionReq="true"/>
+		</tx>
+	<!--  KadiKope KEBRB End		-->
+	<!-- FreeDialUSSD STARTS-->
+	<tx id="tx6.0" tranId="FreeDialUssdAirTupUP">
+		<transaction tranDataId="FDU000" type="NA" bmgOpCode="OP0672" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999" />
+		<transaction tranDataId="FDU001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="FDU001"  headerId="label.select.airtime.youroperator"/>
+		<transaction tranDataId="FDU002" type="amount" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="FDU002"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="FDU003" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="FDU003"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="FDU004" type="confirm" bmgOpCode="OP0673" tranDataOpCode="FDU004"  headerId="LBL9999" backOptionReq="true" />
+		<transaction tranDataId="FDU005" type="end" bmgOpCode="OP0674" tranDataOpCode="FDU005"  headerId="LBL9999"/>
+	</tx>
+	<!-- FreeDialUSSD ENDS-->
+</transactionItems>

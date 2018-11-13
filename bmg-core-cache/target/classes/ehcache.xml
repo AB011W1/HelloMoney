@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+
+  <!--
+    <cacheManagerPeerProviderFactory
+    class="net.sf.ehcache.distribution.RMICacheManagerPeerProviderFactory"
+    properties="peerDiscovery=manual,rmiUrls=//124.136.3.107:1099/com.mcfe.barclays.dc.base.MCFEGblDataCtxt"/>
+
+    <cacheManagerPeerListenerFactory
+    class="net.sf.ehcache.distribution.RMICacheManagerPeerListenerFactory"
+    properties="hostName=124.136.3.107,port=1099,socketTimeoutMillis=120000"/>
+  -->
+
+  <diskStore path="java.io.tmpdir" />
+
+    <cache name="MCFE_APP_CACHE.sysParamCacheModel"
+    maxElementsInMemory="1000" eternal="false" timeToIdleSeconds="900"
+    timeToLiveSeconds="900" overflowToDisk="false"
+    memoryStoreEvictionPolicy="LRU" />
+
+    <cache name="MCFE_APP_CACHE.interestRatesCacheModel"
+    maxElementsInMemory="1000" eternal="false" timeToIdleSeconds="900"
+    timeToLiveSeconds="900" overflowToDisk="false"
+    memoryStoreEvictionPolicy="LRU" />
+
+  <defaultCache name="defaultCache" maxElementsInMemory="10000"
+    eternal="false" timeToIdleSeconds="900" timeToLiveSeconds="900"
+    overflowToDisk="true" />
+
+  <cache name="DynamicItem.dynamicItemCache" maxElementsInMemory="100"
+    eternal="false" timeToIdleSeconds="900" timeToLiveSeconds="900"
+    overflowToDisk="false" memoryStoreEvictionPolicy="LRU" />
+
+  <cache name="MCFE_APP_CACHE.componentCacheModel"
+    maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="900"
+    timeToLiveSeconds="900" overflowToDisk="false"
+    memoryStoreEvictionPolicy="LRU" />
+
+  <cache name="MCFE_APP_CACHE.mccCacheModel" maxElementsInMemory="10000"
+    eternal="false" timeToIdleSeconds="900" timeToLiveSeconds="900"
+    overflowToDisk="false" memoryStoreEvictionPolicy="LRU" />
+
+  <cache name="MCFE_APP_CACHE.lovCacheModel" maxElementsInMemory="1000"
+    eternal="false" timeToIdleSeconds="900" timeToLiveSeconds="900"
+    overflowToDisk="false" memoryStoreEvictionPolicy="LRU" />
+
+  <cache name="MCFE_APP_CACHE.messageCacheModel"
+    maxElementsInMemory="1000" eternal="false" timeToIdleSeconds="900"
+    timeToLiveSeconds="900" overflowToDisk="false"
+    memoryStoreEvictionPolicy="LRU" />
+
+  <cache name="MCFE_APP_CACHE.scriptCacheModel"
+    maxElementsInMemory="1000" eternal="false" timeToIdleSeconds="900"
+    timeToLiveSeconds="900" overflowToDisk="false"
+    memoryStoreEvictionPolicy="LRU" />
+
+
+
+  <cache name="MCFE_APP_CACHE.txnHeaderCacheModel"
+    maxElementsInMemory="1000" eternal="false" timeToIdleSeconds="900"
+    timeToLiveSeconds="900" overflowToDisk="false"
+    memoryStoreEvictionPolicy="LRU" />
+
+  <cache name="MCFE_APP_CACHE.urlBizMapCacheModel"
+    maxElementsInMemory="1000" eternal="false" timeToIdleSeconds="900"
+    timeToLiveSeconds="900" overflowToDisk="false"
+    memoryStoreEvictionPolicy="LRU" />
+
+  <cache name="MCFE_APP_CACHE.featureBlackoutCacheModel"
+    maxElementsInMemory="1000" eternal="false" timeToIdleSeconds="900"
+    timeToLiveSeconds="900" overflowToDisk="false"
+    memoryStoreEvictionPolicy="LRU" />
+
+  <cache name="MCFE_APP_CACHE.preferenceCache" maxElementsInMemory="10000"
+    eternal="false" timeToIdleSeconds="900" timeToLiveSeconds="900"
+    overflowToDisk="false" memoryStoreEvictionPolicy="LRU" />
+
+  <cache name="MCFE_APP_CACHE.systemQuickAccessCache" maxElementsInMemory="10000"
+    eternal="false" timeToIdleSeconds="900" timeToLiveSeconds="900"
+    overflowToDisk="false" memoryStoreEvictionPolicy="LRU" />
+
+  <cache name="MCFEGBLDataContext" maxElementsInMemory="30000"
+    eternal="false" overflowToDisk="true" timeToIdleSeconds="3000"
+    timeToLiveSeconds="2000" diskPersistent="false">
+  </cache>
+
+    <cache name="APPEhCache" maxElementsInMemory="10000"
+    eternal="false" timeToIdleSeconds="900" timeToLiveSeconds="900"
+    overflowToDisk="false" memoryStoreEvictionPolicy="LRU" />
+
+  <!--
+
+
+
+   Added for testing
+
+   --><cache name="MCFE_APP_CACHE.prodEligibilityCacheModel"
+    maxElementsInMemory="1000" eternal="false" timeToIdleSeconds="900"
+    timeToLiveSeconds="900" overflowToDisk="false"
+    memoryStoreEvictionPolicy="LRU" />
+
+
+     <cache name="MCFE_APP_CACHE.getBillrsLstCacheModel"
+    maxElementsInMemory="1000" eternal="false" timeToIdleSeconds="900"
+    timeToLiveSeconds="900" overflowToDisk="false"
+    memoryStoreEvictionPolicy="LRU" />
+
+ </ehcache>

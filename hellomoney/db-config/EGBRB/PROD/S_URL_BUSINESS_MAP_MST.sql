@@ -1,0 +1,13 @@
+
+-----------------------		URL INSERTION QUERY FOR EGBRB - PRODUCTION   --------------------------
+DELETE FROM S_URL_BUSINESS_MAP_MST WHERE SYSTEM_ID='MB' AND BUSINESS_ID='EGBRB' AND URL_PATTERN='https://www.eg.secure.barclays.com/bmg';
+
+INSERT INTO S_URL_BUSINESS_MAP_MST (SYSTEM_ID, BUSINESS_ID, URL_PATTERN, LANGUAGE_ID) VALUES ('MB','EGBRB','https://www.eg.secure.barclays.com/bmg','EN');
+
+DELETE FROM S_URL_BUSINESS_MAP_MST WHERE SYSTEM_ID='MB' AND BUSINESS_ID='EGBRB' AND URL_PATTERN='https://egc2bir-dr.barclays.intranet/bmg';
+
+DELETE FROM S_URL_BUSINESS_MAP_MST WHERE SYSTEM_ID='MB' AND BUSINESS_ID='EGBRB' AND URL_PATTERN='https://egc2bir-live.barclays.intranet/bmg';
+
+INSERT INTO S_URL_BUSINESS_MAP_MST (SYSTEM_ID, BUSINESS_ID, URL_PATTERN, LANGUAGE_ID) VALUES ('MB','EGBRB','https://egc2bir-live.barclays.intranet/bmg','EN');
+
+COMMIT;

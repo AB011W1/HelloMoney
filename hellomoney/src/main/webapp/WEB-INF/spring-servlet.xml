@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	 					http://www.springframework.org/schema/context
+	  					http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	  					http://www.springframework.org/schema/mvc
+	  					http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+	<import resource="classpath:ussd-controller-config.xml" />
+	<import resource="classpath:ussd-menu-config.xml" />
+	<import resource="classpath:ussd-auth-bean-config.xml" />
+	<import resource="classpath:ussd-requests-config.xml" />
+	<import resource="classpath:ussd-jsonparser-config.xml" />
+	<import resource="classpath:ussd-bmginvoker-config.xml" />
+	<import resource="classpath:ussd-common-config.xml" />
+	<import resource="classpath:datasource-config.xml" />
+	<import resource="classpath:ussd_services_dao_config.xml" />
+	<import resource="classpath:ussd_services.xml" />
+	<import resource="classpath:ussd-jsonparser-mapping.xml" />
+	<import resource="classpath:ussd-requestbuilder-mapping.xml" />
+	<import resource="classpath:applicationResources/locale.xml" />
+	<import resource="classpath:ussd-session-cache-config.xml" />
+	<!--
+
+
+
+	 Loads Spring's scheduler related configurations
+-->
+	<import resource="classpath:spring-scheduler.xml" />
+	<import resource="classpath:ussd-dummy-response-config.xml" />
+	<import resource="classpath:ussd-dummyresponse-builder-mapping.xml" />
+
+	<context:annotation-config />
+
+</beans>

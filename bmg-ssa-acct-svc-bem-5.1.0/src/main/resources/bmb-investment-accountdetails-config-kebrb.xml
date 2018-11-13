@@ -1,0 +1,267 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+ Investment Account Details Controller Starts here
+	   Mutual Funds Controller Section
+	<bean id="KEBRBretrieveMutualFundDetailsController"
+		class="com.barclays.bmg.mvc.controller.accountdetails.MutualFundDetailsController" parent="bmbAbstractController">
+		<property name="mutualFundDetailsOperation" ref="mutualFundDetailsOperation" />
+		<property name="bmbJsonBuilder" ref="KEBRBmutualFundDetailsJSONBldr" />
+	</bean>
+	  Structured Notes Controller Section
+	<bean id="KEBRBretrieveStructuredNoteDetailsController"
+		class="com.barclays.bmg.mvc.controller.accountdetails.StructuredNoteDetailsController" parent="bmbAbstractController">
+		<property name="structuredNoteDetailsOperation" ref="KEBRBstructuredNoteDetailsOperation" />
+		<property name="bmbJsonBuilder" ref="KEBRBstructuredNoteDetailsJSONBldr"/>
+
+	</bean>
+	  Bond Controller Section
+	<bean id="KEBRBretrieveBondsDetailsController"
+		class="com.barclays.bmg.mvc.controller.accountdetails.BondDetailsController" parent="bmbAbstractController">
+		<property name="bondDetailsOperation" ref="KEBRBbondDetailsOperation" />
+		<property name="bmbJsonBuilder" ref="KEBRBbondDetailsJSONBldr" />
+	</bean>
+ Investment Account Details Controller Ends here
+	<bean id="KEBRBmutualFundDetailsJSONBldr"
+		class="com.barclays.bmg.json.model.builder.accountdetails.MutualFundDetailsJSONBldr"
+		parent="bmbCommonJSONBuilder" />
+
+	<bean id="KEBRBstructuredNoteDetailsJSONBldr"
+		class="com.barclays.bmg.json.model.builder.accountdetails.StructuredNoteDetailsJSONBldr"
+		parent="bmbCommonJSONBuilder" />
+
+	<bean id="KEBRBbondDetailsJSONBldr"
+		class="com.barclays.bmg.json.model.builder.accountdetails.BondDetailsJSONBldr"
+		parent="bmbCommonJSONBuilder" />
+
+
+	 Mutual Fund Details Operation
+	<bean id="KEBRBmutualFundDetailsOperation"
+		class="com.barclays.bmg.operation.accountdetails.MutualFundDetailsOperation"
+		parent="bmbCommonOperation">
+		<property name="investmentAccountDetailsService" ref="KEBRBinvestmentAccountDetailsServiceImpl" />
+	</bean>
+
+
+	 Structured Note Details Operation
+	<bean id="KEBRBstructuredNoteDetailsOperation"
+		class="com.barclays.bmg.operation.accountdetails.StructuredNoteDetailsOperation"
+		parent="bmbCommonOperation">
+		<property name="investmentAccountDetailsService" ref="KEBRBinvestmentAccountDetailsServiceImpl" />
+	</bean>
+
+
+	 Bond Details Operation
+	<bean id="KEBRBbondDetailsOperation"
+		class="com.barclays.bmg.operation.accountdetails.BondDetailsOperation"
+		parent="bmbCommonOperation">
+		<property name="investmentAccountDetailsService" ref="KEBRBinvestmentAccountDetailsServiceImpl" />
+	</bean>
+
+
+
+		Investment Detail Service is common for all investment i.e. Mutual
+		Fund, Structured Note and Bond
+
+	<bean id="KEBRBinvestmentAccountDetailsServiceImpl"
+		class="com.barclays.bmg.service.accountdetails.impl.InvestmentAccountDetailsServiceImpl">
+		<property name="investmentAccountDetailsDAO" ref="KEBRBinvestmentAccountDetailsDAO" />
+	</bean>
+
+
+	<bean id="KEBRBinvestmentAccountDetailsDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface"
+			value="com.barclays.bmg.dao.accountdetails.InvestmentAccountDetailsDAO" />
+		<property name="daoFrontController"
+			ref="investmentAccountDetailsDAOFrontControllerImpl" />
+	</bean>
+
+	<bean id="KEBRBinvestmentAccountDetailsDAOFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+
+				<entry key="RETRIEVEMUTUALFUNDLISTBYASSETCLASS" value-ref="KEBRBmutualFundDetailsDAOController" />
+				<entry key="RETRIEVESTRUCTUREDNOTELISTBYASSETCLASS" value-ref="KEBRBstructuredNoteDetailsDAOController" />
+				<entry key="RETRIEVEBONDLISTBYASSETCLASS" value-ref="KEBRBbondDetailsDAOController" />
+			</map>
+		</property>
+	</bean>
+
+	  Mutual Fund Section
+
+	 Mutual Fund Details DAO Controller
+	<bean id="KEBRBmutualFundDetailsDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.MutualFundDetailsDAOController">
+		<property name="mutualFundDetailsReqAdptOperation" ref="KEBRBmutualFundDetailsReqAdptOperation" />
+		<property name="investmentTransmissionOperation" ref="KEBRBmutualFundTransmissionOperation" />
+		<property name="mutualFundDetailsRespAdptOperation" ref="KEBRBmutualFundDetailsRespAdptOperation" />
+	</bean>
+
+
+	 Mutual Fund Details Request Adapter Operation
+	<bean id="KEBRBmutualFundDetailsReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.investment.MutualFundDetailsReqAdptOperation">
+		<property name="mutualFundDetailsHeaderAdapter" ref="KEBRBmutualFundDetailsHeaderAdapter" />
+		<property name="mutualFundDetailsPayloadAdapter" ref="KEBRBmutualFundDetailsPayloadAdapter" />
+	</bean>
+
+
+	<bean id="KEBRBmutualFundDetailsHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.MutualFundDetailsHeaderAdapter">
+	</bean>
+
+	<bean id="KEBRBmutualFundDetailsPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.MutualFundDetailsPayloadAdapter">
+	</bean>
+
+
+	 Mutual Fund Details Response Adapter Operation
+	<bean id="KEBRBmutualFundDetailsRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.investment.MutualFundDetailsRespAdptOperation">
+	</bean>
+
+
+	 Transmission Operation and Service - Mutual Fund
+	<bean id="KEBRBmutualFundTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="KEBRBmutualFundDetailsTransmissionService" />
+	</bean>
+
+	<bean id="KEBRBmutualFundDetailsTransmissionService"
+		class="com.barclays.bmg.dao.service.impl.MutualFundDetailsTransmissionService">
+		<property name="remoteService" ref="KEBRBmutualFundDetailsWebServiceImpl" />
+	</bean>
+
+	 Mutual Fund  WEB Service Implementation
+	<bean id="KEBRBmutualFundDetailsWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.AccountManagement.AccountManagement_PortType" />
+		<property name="portName" value="AccountManagementSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.AccountManagement.AccountManagement_Service" />
+		<property name="endpointAddress"
+			value="https://mb9t.wload.barclays.co.uk:8800/bem/AccountManagement/" />
+		<property name="endpointAddressName" value="AccountManagement_EndPoint" />
+		<property name="cacheKey" value="mutualFundAccountDetails" />
+	</bean>
+
+
+	  Structured Note Section
+
+	 Structured Note Details DAO Controller
+	<bean id="KEBRBstructuredNoteDetailsDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.StructuredNoteDetailsDAOController">
+		<property name="strutNoteDetailsReqAdptOperation" ref="KEBRBstructuredNoteDetailsReqAdptOperation" />
+		<property name="investmentTransmissionOperation" ref="KEBRBstrutNoteTransmissionOperation" />
+		<property name="strutNoteDetailsRespAdptOperation" ref="KEBRBstructuredNoteDetailsRespAdptOperation" />
+	</bean>
+
+	 Structured Note Details Request Adapter Operation
+	<bean id="KEBRBstructuredNoteDetailsReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.investment.StructuredNoteDetailsReqAdptOperation">
+		<property name="strutNoteDetailsHeaderAdapter" ref="KEBRBstructuredNoteDetailsHeaderAdapter" />
+		<property name="strutNoteDetailsPayloadAdapter" ref="KEBRBstructuredNoteDetailsPayloadAdapter" />
+	</bean>
+
+	<bean id="KEBRBstructuredNoteDetailsHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.StructuredNoteDetailsHeaderAdapter">
+	</bean>
+
+	<bean id="KEBRBstructuredNoteDetailsPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.StructuredNoteDetailsPayloadAdapter">
+	</bean>
+
+	 Structured Note Details Response Adapter Operation
+	<bean id="KEBRBstructuredNoteDetailsRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.investment.StructuredNoteDetailsRespAdptOperation">
+	</bean>
+
+	 Transmission Operation and Service - Structured Note
+	<bean id="KEBRBstrutNoteTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="KEBRBstructuredNoteDetailsTransmissionService" />
+	</bean>
+
+	<bean id="KEBRBstructuredNoteDetailsTransmissionService"
+		class="com.barclays.bmg.dao.service.impl.StructuredNoteDetailsTransmissionService">
+		<property name="remoteService" ref="KEBRBstructuredNoteDetailsWebServiceImpl" />
+	</bean>
+
+	 Structured Note  WEB Service Implementation
+	<bean id="KEBRBstructuredNoteDetailsWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.AccountManagement.AccountManagement_PortType" />
+		<property name="portName" value="AccountManagementSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.AccountManagement.AccountManagement_Service" />
+		<property name="endpointAddress"
+			value="https://mb9t.wload.barclays.co.uk:8800/bem/AccountManagement/" />
+		<property name="endpointAddressName" value="AccountManagement_EndPoint" />
+		<property name="cacheKey" value="structuredNoteAccountDetails" />
+	</bean>
+
+
+	  Bond Section
+
+	 Bond Details DAO Controller
+	<bean id="KEBRBbondDetailsDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.BondDetailsDAOController">
+		<property name="bondDetailsReqAdptOperation" ref="KEBRBbondDetailsReqAdptOperation" />
+		<property name="investmentTransmissionOperation" ref="KEBRBbondTransmissionOperation" />
+		<property name="bondDetailsRespAdptOperation" ref="KEBRBbondDetailsRespAdptOperation" />
+	</bean>
+
+	 Bond Details Request Adapter Operation
+	<bean id="KEBRBbondDetailsReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.investment.BondDetailsReqAdptOperation">
+		<property name="bondDetailsHeaderAdapter" ref="KEBRBbondDetailsHeaderAdapter" />
+		<property name="bondDetailsPayloadAdapter" ref="KEBRBbondDetailsPayloadAdapter" />
+	</bean>
+
+	<bean id="KEBRBbondDetailsHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.BondDetailsHeaderAdapter">
+	</bean>
+
+	<bean id="KEBRBbondDetailsPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.BondDetailsPayloadAdapter">
+	</bean>
+
+	 Bond Details Response Adapter Operation
+	<bean id="KEBRBbondDetailsRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.investment.BondDetailsRespAdptOperation">
+	</bean>
+
+	 Transmission Operation and Service - Bond
+	<bean id="KEBRBbondTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="KEBRBbondDetailsTransmissionService" />
+	</bean>
+
+	<bean id="KEBRBbondDetailsTransmissionService"
+		class="com.barclays.bmg.dao.service.impl.BondDetailsTransmissionService">
+		<property name="remoteService" ref="KEBRBbondDetailsWebServiceImpl" />
+	</bean>
+
+	 Bond  WEB Service Implementation
+	<bean id="KEBRBbondDetailsWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.AccountManagement.AccountManagement_PortType" />
+		<property name="portName" value="AccountManagementSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.AccountManagement.AccountManagement_Service" />
+		<property name="endpointAddress"
+			value="https://mb9t.wload.barclays.co.uk:8800/bem/AccountManagement/" />
+		<property name="endpointAddressName" value="AccountManagement_EndPoint" />
+		<property name="cacheKey" value="bondAccountDetails" />
+	</bean>
+
+
+
+
+
+</beans>-->

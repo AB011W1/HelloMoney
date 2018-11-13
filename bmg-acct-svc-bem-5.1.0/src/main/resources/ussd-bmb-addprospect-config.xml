@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="addProspectController" class="com.barclays.bmg.mvc.controller.addprospect.AddProspectController" parent="bmbAbstractCommandController">
+		<property name="addProspectOperation" ref="addProspectOperation" />
+		<property name="sessionActivityOperation" ref="sessionSummaryRetrievalOperation" />
+		<property name="bmbJsonBuilder" ref="addProspectJSONBuilder" />
+		<property name="supportedMethods" value="POST,GET" />
+		<property name="commandName" value="addProspectCommand" />
+		<property name="commandClass" value="com.barclays.bmg.mvc.command.addprospect.AddProspectCommand" />
+	</bean>
+	<bean id="addProspectOperation" class="com.barclays.bmg.operation.addprospect.AddProspectOperation" parent="bmbCommonOperation">
+		<property name="addProspectService" ref="addProspectService" />
+	</bean>
+	<bean id="addProspectJSONBuilder" class="com.barclays.bmg.json.model.builder.addprospect.AddProspectJSONBuilder" parent="bmbCommonJSONBuilder"/>
+
+	<bean id="addProspectService" class="com.barclays.bmg.service.impl.AddProspectServiceImpl">
+		<property name="addProspectDAO" ref="addProspectDAO" />
+	</bean>
+	<bean id="addProspectDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.AddProspectDAO" />
+		<property name="daoFrontController" ref="addProspectDAOFrontControllerImpl" />
+	</bean>
+
+	<bean id="addProspectDAOFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="ADDPROSPECT" value-ref="addProspectDAOController" />
+			</map>
+		</property>
+	</bean>
+	<bean id="addProspectDAOController" class="com.barclays.bmg.dao.processing.accountservices.AddProspectDAOController">
+		<property name="addProspectReqAdptOperation" ref="addProspectReqAdptOperation" />
+		<property name="transmissionOperation" ref="addProspectTransmissionOperation" />
+		<property name="addProspectResAdptOperation" ref="addProspectResAdptOperation" />
+	</bean>
+	<bean id="addProspectReqAdptOperation" class="com.barclays.bmg.dao.operation.addprospect.AddProspectReqAdptOperation">
+		<property name="addProspectHeaderAdapter" ref="addProspectHeaderAdapter" />
+		<property name="addProspectPayloadAdapter" ref="addProspectPayloadAdapter" />
+	</bean>
+	<bean id="addProspectHeaderAdapter" class="com.barclays.bmg.dao.addprospect.adapter.AddProspectHeaderAdapter" />
+
+	<bean id="addProspectPayloadAdapter" class="com.barclays.bmg.dao.addprospect.adapter.AddProspectPayloadAdapter" />
+
+	<bean id="addProspectTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="addProspectTransmissionService" />
+	</bean>
+
+	<bean id="addProspectTransmissionService" class="com.barclays.bmg.dao.service.impl.AddProspectTransmissionService">
+		<property name="remoteService" ref="addProspectWebService" />
+	</bean>
+
+	<bean id="addProspectResAdptOperation" class="com.barclays.bmg.dao.operation.addprospect.AddProspectResAdptOperation" />
+
+	<bean id="addProspectWebService" class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface" value="com.barclays.bem.ProspectManagement.ProspectManagement_PortType" />
+		<property name="portName" value="ProspectManagementSOAP" />
+		<property name="jaxRpcServiceInterface" value="com.barclays.bem.ProspectManagement.ProspectManagement_Service" />
+		<property name="endpointAddress" value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="ProspectManagement_EndPoint" />
+		<property name="cacheKey" value="prospectManagementCacheKey" />
+	</bean>
+
+	</beans>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.6" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true">  
+  <class id="1" language="java" name="com.barclays.ussd.controller.USSDAbstractController" project="ussd-common" 
+    file="/ussd-common/src/main/java/com/barclays/ussd/controller/USSDAbstractController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position x="1425" y="37" width="423" height="130"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.barclays.ussd.auth.controller.BaseController" project="ussd-auth" 
+    file="/ussd-auth/src/main/java/com/barclays/ussd/auth/controller/BaseController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position x="41" y="207" width="353" height="202"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.barclays.ussd.auth.controller.AuthController" project="ussd-auth" 
+    file="/ussd-auth/src/main/java/com/barclays/ussd/auth/controller/AuthController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position x="1173" y="207" width="500" height="382"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.barclays.ussd.auth.controller.ChangePinController" project="ussd-auth" 
+    file="/ussd-auth/src/main/java/com/barclays/ussd/auth/controller/ChangePinController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position x="2818" y="207" width="615" height="130"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.barclays.ussd.controller.USSDMainController" project="ussd-menu" 
+    file="/ussd-menu/src/main/java/com/barclays/ussd/controller/USSDMainController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position x="434" y="207" width="699" height="328"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.barclays.ussd.auth.controller.NonHMCustomerController" project="ussd-auth" 
+    file="/ussd-auth/src/main/java/com/barclays/ussd/auth/controller/NonHMCustomerController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position x="2368" y="207" width="410" height="112"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="com.barclays.ussd.auth.controller.ChangeLanguageController" project="ussd-auth" 
+    file="/ussd-auth/src/main/java/com/barclays/ussd/auth/controller/ChangeLanguageController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position x="1713" y="207" width="615" height="148"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <generalization id="8">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <generalization id="9">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <generalization id="10">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <generalization id="11">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <generalization id="12">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <generalization id="13">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

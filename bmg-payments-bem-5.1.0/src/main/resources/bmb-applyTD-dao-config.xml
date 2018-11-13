@@ -1,0 +1,68 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+
+	<bean id="applyTDDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.ApplyTDDAO" />
+		<property name="daoFrontController" ref="applyTDDaoFrontControllerImpl" />
+	</bean>
+
+	<bean id="applyTDDaoFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="ADDPROBLEM" value-ref="applyTDDAOController" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="problemManagementWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.ProblemManagement.ProblemManagement_PortType" />
+		<property name="portName" value="ProblemManagementSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.ProblemManagement.ProblemManagement_Service" />
+		<property name="endpointAddress"
+			value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="ProblemManagement_EndPoint" />
+		<property name="cacheKey" value="applyTDService" />
+	</bean>
+
+<!--  Report Problem -->
+	<bean id="applyTDDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.ApplyTDDAOController">
+		<property name="reqAdptOperation" ref="applyTDReqAdptOperation" />
+		<property name="transmissionOperation" ref="applyTDTransmissionOperation" />
+		<property name="resAdptOperation" ref="applyTDRespAdptOperation" />
+	</bean>
+
+	<bean id="applyTDReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.ApplyTDReqAdptOperation">
+		<property name="applyTDHeaderAdapter" ref="applyTDHeaderAdapter" />
+		<property name="applyTDPayloadAdapter" ref="applyTDPayloadAdapter" />
+	</bean>
+
+	<bean id="applyTDTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="applyTDTransmissionService" />
+	</bean>
+
+	<bean id="applyTDTransmissionService"
+		class="com.barclays.bmg.dao.service.impl.ApplyTDTransmissionService">
+		<property name="remoteService" ref="problemManagementWebServiceImpl" />
+	</bean>
+	<bean id="applyTDHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.ApplyTDHeaderAdapter">
+	</bean>
+	<bean id="applyTDPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.ApplyTDPayloadAdapter">
+	</bean>
+
+	<bean id="applyTDRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.ApplyTDRespAdptOperation">
+	</bean>
+
+
+</beans>

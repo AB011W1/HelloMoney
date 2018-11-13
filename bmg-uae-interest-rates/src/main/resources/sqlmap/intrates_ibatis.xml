@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="MCFE_APP_CACHE">
+
+
+	<typeAlias alias="cacheController"
+		type="com.barclays.bmg.cache.IbatisCacheController" />
+
+	<cacheModel id="interestRatesCacheModel" type="cacheController"
+		readOnly="true" serialize="true">
+		<property name="configFile" value="/ehcache.xml" />
+		<property name="CacheSize" value="1000" />
+	</cacheModel>
+
+
+	<!-- Alias for the classes -->
+	<typeAlias alias="intrateDTO" type="com.barclays.bmg.dto.IntrateDTO" />
+
+	<resultMap id="intrateCache" class="intrateDTO">
+		<result property="businessID" column="BUSINESS_ID" />
+		<result property="productCode" column="PRODUCT_CD" />
+		<result property="effectiveDtm" column="EFFECTIVE_DTM" />
+		<result property="ccy" column="CCY" />
+		<result property="channel" column="CHANNEL" />
+		<result property="custSeg" column="CUSTOMER_SEGMENT" />
+		<result property="tenureMonth" column="TENURE_MONTH" />
+		<result property="tenureDay" column="TENURE_DAY" />
+
+		<result property="from" column="AMT_SLAB_FROM" />
+		<result property="to" column="AMT_SLAB_TO" />
+		<result property="intrate" column="INTEREST_RATE" />
+		<result property="intvar" column="INTEREST_VARIANCE" />
+		<result property="panrate" column="PENALTY_RATE" />
+		<result property="panvar" column="PENALTY_VARIANCE" />
+		<result property="tenureType" column="TENURE_TYPE" />
+		<result property="prodDesc" column="PRODUCT_DESC" />
+	</resultMap>
+
+
+	<select id="loadIntrateCache" resultMap="intrateCache" cacheModel="interestRatesCacheModel">
+		select
+		a.TENURE_TYPE,a.BUSINESS_ID,a.PRODUCT_CD,a.EFFECTIVE_DTM,a.CCY,a.CHANNEL,a.CUSTOMER_SEGMENT,a.TENURE_MONTH,a.TENURE_DAY,a.AMT_SLAB_FROM,
+		a.AMT_SLAB_TO,a.INTEREST_RATE,a.INTEREST_VARIANCE,a.PENALTY_RATE,a.PENALTY_VARIANCE
+		,b.PRODUCT_DESC
+		from C_INTEREST_RATE_MST a, C_PRODUCT_MST b, C_BUSINESS_MST C
+		where a.BUSINESS_ID = #businessId# and a.BUSINESS_ID=B.BUSINESS_ID and a.BUSINESS_ID=C.BUSINESS_ID
+		<isNotNull prepend="AND" property="productCode">
+			a.PRODUCT_CD = #productCode#
+          </isNotNull>
+		and a.PRODUCT_CD = b.PRODUCT_CD
+		AND	a.ccy=b.CURRENCY_CD
+		order by a.PRODUCT_CD,a.AMT_SLAB_FROM,a.AMT_SLAB_TO,a.TENURE_MONTH,a.TENURE_DAY
+	</select>
+
+	<select id="loadIntrateCacheForFCRCountry" resultMap="intrateCache" cacheModel="interestRatesCacheModel">
+		select
+		a.TENURE_TYPE,a.BUSINESS_ID,a.PRODUCT_CD,a.EFFECTIVE_DTM,a.CCY,a.CHANNEL,a.CUSTOMER_SEGMENT,a.TENURE_MONTH,a.TENURE_DAY,a.AMT_SLAB_FROM,
+		a.AMT_SLAB_TO,a.INTEREST_RATE,a.INTEREST_VARIANCE,a.PENALTY_RATE,a.PENALTY_VARIANCE
+		,b.PRODUCT_DESC
+		from C_INTEREST_RATE_MST a, C_PRODUCT_MST b, C_BUSINESS_MST C
+		where a.BUSINESS_ID = #businessId# and a.BUSINESS_ID=B.BUSINESS_ID and a.BUSINESS_ID=C.BUSINESS_ID
+		<isNotNull prepend="AND" property="localCurrency">
+			a.ccy=b.CURRENCY_CD
+			AND b.CURRENCY_CD=C.LCY_CD
+          </isNotNull>
+		and a.PRODUCT_CD = b.PRODUCT_CD
+		order by a.PRODUCT_CD,a.AMT_SLAB_FROM,a.AMT_SLAB_TO,a.TENURE_MONTH,a.TENURE_DAY
+	</select>
+
+</sqlMap>

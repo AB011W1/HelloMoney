@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!-- DEV endpoints URLs-->
+
+<BMGServiceEndPoints>
+	<baseURL>
+		<stub></stub>
+		<real>http://BDSPUKD00003914:8080/tzbrb/dataserv</real>
+	</baseURL>
+</BMGServiceEndPoints>

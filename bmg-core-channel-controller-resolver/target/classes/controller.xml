@@ -1,0 +1,1645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cr="http://www.component.custom.com/bmb/controllerresolver"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+	http://www.component.custom.com/bmb/controllerresolver http://www.component.custom.com/bmb/controllerresolver/controller-resolver.xsd">
+
+	<cr:request-to-controller-mapper id="requestMapper">
+		<cr:resolver business-id="GHBRB" resolver-ref="GHBRBResolver" />
+		<cr:resolver business-id="BWBRB" resolver-ref="BWBRBResolver" />
+		<cr:resolver business-id="MUBRB" resolver-ref="MUBRBResolver" />
+		<cr:resolver business-id="MUBOB" resolver-ref="MUBOBResolver" />
+		<cr:resolver business-id="EGBRB" resolver-ref="EGBRBResolver" />
+		<cr:resolver business-id="KEBRB" resolver-ref="KEBRBResolver" />
+		<cr:resolver business-id="UGBRB" resolver-ref="UGBRBResolver" />
+		<cr:resolver business-id="MZBRB" resolver-ref="MZBRBResolver" />
+		<cr:resolver business-id="TZBRB" resolver-ref="TZBRBResolver" />
+		<cr:resolver business-id="SCBRB" resolver-ref="SCBRBResolver" />
+		<cr:resolver business-id="ZMBRB" resolver-ref="ZMBRBResolver" />
+		<cr:resolver business-id="ZWBRB" resolver-ref="ZWBRBResolver" />
+		<cr:resolver business-id="AEBRB" resolver-ref="AEBRBResolver" />
+		<cr:resolver business-id="DEFAULT_SSA" resolver-ref="DEFAULT_SSAResolver" />
+		<cr:resolver business-id="COMMON" resolver-ref="CommonResolver" />
+	</cr:request-to-controller-mapper>
+
+
+
+
+	<cr:controller-ref-resolver id="CommonResolver">
+		<cr:controller op-code="authenticationFailure" svc-ver="1.0"
+			ref="authenticationFailureController" default="true" />
+		<cr:controller op-code="authenticationFailure" svc-ver="2.0"
+			ref="authenticationFailureController" default="false" />
+
+		<cr:controller op-code="authenticationFailure" ref="authenticationFailureController" />
+
+	</cr:controller-ref-resolver>
+	<!-- Default SSA Resolver -->
+	<cr:controller-ref-resolver id="DEFAULT_SSAResolver">
+
+		<cr:controller op-code="authenticationFailure" svc-ver="1.0"
+			ref="authenticationFailureController" default="true" />
+		<cr:controller op-code="authenticationFailure" svc-ver="2.0"
+			ref="authenticationFailureController" default="false" />
+
+		<cr:controller op-code="authenticationFailure" ref="authenticationFailureController" />
+		<!-- Authentication -->
+		<cr:controller op-code="OP0100" svc-ver="1.0"
+			ref="loginControllerVer1" default="true" />
+		<cr:controller op-code="OP0100" svc-ver="2.0"
+			ref="loginController" default="false" />
+		<cr:controller op-code="OP0100" ref="loginController" />
+
+		<cr:controller op-code="OP0101" svc-ver="1.0"
+			ref="otpValidationControllerVer1" default="true" />
+		<cr:controller op-code="OP0101" svc-ver="2.0"
+			ref="otpValidationController" default="false" />
+		<cr:controller op-code="OP0101" ref="otpValidationController" />
+
+		<cr:controller op-code="OP0103" svc-ver="1.0"
+			ref="resendOTPController" default="true" />
+		<cr:controller op-code="OP0103" svc-ver="2.0"
+			ref="resendOTPController" default="false" />
+		<cr:controller op-code="OP0103" ref="resendOTPController" />
+
+		<cr:controller op-code="OP0104" svc-ver="1.0"
+			ref="logoutControllerVer1" default="true" />
+		<cr:controller op-code="OP0104" svc-ver="2.0"
+			ref="logoutController" default="false" />
+		<cr:controller op-code="OP0104" ref="logoutController" />
+
+		<cr:controller op-code="OP0105" svc-ver="1.0"
+			ref="inValidateSessionControllerVer1" default="true" />
+		<cr:controller op-code="OP0105" svc-ver="2.0"
+			ref="inValidateSessionController" default="false" />
+		<cr:controller op-code="OP0105" ref="inValidateSessionController" />
+
+		<cr:controller op-code="termsOfUse" svc-ver="1.0"
+			ref="termsOfUseDetailController" default="true" />
+		<cr:controller op-code="termsOfUse" svc-ver="2.0"
+			ref="termsOfUseDetailController" default="false" />
+		<cr:controller op-code="termsOfUse" ref="termsOfUseDetailController" />
+
+		<cr:controller op-code="OP0106" svc-ver="1.0"
+			ref="termsOfUseAcceptController" default="true" />
+		<cr:controller op-code="OP0106" svc-ver="2.0"
+			ref="termsOfUseAcceptController" default="false" />
+		<cr:controller op-code="OP0106" ref="termsOfUseAcceptController" />
+
+		<!-- Default SSA Countries Resolver Section Continue -->
+
+		<cr:controller op-code="OP0107" svc-ver="1.0"
+			ref="txnSecondAuthOTPController" default="true" />
+		<cr:controller op-code="OP0107" svc-ver="2.0"
+			ref="txnSecondAuthOTPController" default="false" />
+		<cr:controller op-code="OP0107" ref="txnSecondAuthOTPController" />
+
+		<cr:controller op-code="OP0108" svc-ver="1.0"
+			ref="txnSecondAuthSQAController" default="true" />
+		<cr:controller op-code="OP0108" svc-ver="2.0"
+			ref="txnSecondAuthSQAController" default="false" />
+		<cr:controller op-code="OP0108" ref="txnSecondAuthSQAController" />
+
+		<cr:controller op-code="postLogin" svc-ver="1.0"
+			ref="postLoginControllerVer1" default="true" />
+		<cr:controller op-code="postLogin" svc-ver="2.0"
+			ref="postLoginController" default="false" />
+		<cr:controller op-code="postLogin" ref="postLoginController" />
+
+		<cr:controller op-code="OP0111" svc-ver="1.0"
+			ref="cancelLoginController" default="true" />
+		<cr:controller op-code="OP0111" svc-ver="2.0"
+			ref="cancelLoginController" default="false" />
+		<cr:controller op-code="OP0111" ref="cancelLoginController" />
+
+		<cr:controller op-code="OP0112" svc-ver="1.0"
+			ref="changePasswordController" default="true" />
+		<cr:controller op-code="OP0112" svc-ver="2.0"
+			ref="changePasswordController" default="false" />
+		<cr:controller op-code="OP0112" ref="changePasswordController" />
+
+		<cr:controller op-code="OP0113" svc-ver="1.0"
+			ref="updateLangPrefController" default="true" />
+		<cr:controller op-code="OP0113" svc-ver="2.0"
+			ref="updateLangPrefController" default="false" />
+		<cr:controller op-code="OP0113" ref="updateLangPrefController" />
+
+		<!-- Challenge Question -->
+		<cr:controller op-code="OP0114" svc-ver="1.0"
+			ref="challengeQuestionAndPositionController" default="true" />
+		<cr:controller op-code="OP0114" svc-ver="2.0"
+			ref="challengeQuestionAndPositionController" default="false" />
+		<cr:controller op-code="OP0114" ref="challengeQuestionAndPositionController" />
+		<!-- Challenge Question -->
+
+		<!--  Validate user for the USSD -->
+		<cr:controller op-code="OP0214" svc-ver="1.0"
+			ref="verifyUSSDUserController" default="true" />
+		<cr:controller op-code="OP0214" svc-ver="2.0"
+			ref="verifyUSSDUserController" default="false" />
+		<cr:controller op-code="OP0214" ref="verifyUSSDUserController" />
+
+
+		<!-- Second Authentication (2FA)-->
+		<cr:controller op-code="OP0115" svc-ver="1.0"
+			ref="secondAuthController" default="true" />
+		<cr:controller op-code="OP0115" svc-ver="2.0"
+			ref="secondAuthController" default="false" />
+		<cr:controller op-code="OP0115" ref="secondAuthController" />
+		<!-- Second Authentication (2FA)-->
+
+		<!-- Self Registration Initialization-->
+		<cr:controller op-code="OP0116" svc-ver="1.0"
+			ref="selfRegistrationInitController" default="true" />
+		<cr:controller op-code="OP0116" svc-ver="2.0"
+			ref="selfRegistrationInitController" default="false" />
+		<cr:controller op-code="OP0116" ref="selfRegistrationInitController" />
+		<!-- Self Registration Initialization-->
+
+		<!-- Self Registration Execution-->
+		<cr:controller op-code="OP0117" svc-ver="1.0"
+			ref="selfRegistrationExecutionController" default="true" />
+		<cr:controller op-code="OP0117" svc-ver="2.0"
+			ref="selfRegistrationExecutionController" default="false" />
+		<cr:controller op-code="OP0117" ref="selfRegistrationExecutionController" />
+
+		<cr:controller op-code="OP0118" svc-ver="1.0"
+			ref="selfRegistrationDebitCardController" default="true" />
+		<cr:controller op-code="OP0118" svc-ver="2.0"
+			ref="selfRegistrationDebitCardController" default="false" />
+		<cr:controller op-code="OP0118" ref="selfRegistrationDebitCardController" />
+
+		<!-- Bmg call added to minimize response time for confirm screen	-->
+		<cr:controller op-code="OP0119" svc-ver="1.0"
+			ref="selfRegistrationAccountValidationController" default="true" />
+		<cr:controller op-code="OP0119" svc-ver="2.0"
+			ref="selfRegistrationAccountValidationController" default="false" />
+		<cr:controller op-code="OP0119" ref="selfRegistrationAccountValidationController" />
+
+		<!-- Self Registration Execution-->
+
+		<!-- Account Summary -->
+		<cr:controller op-code="OP0200" svc-ver="1.0"
+			ref="atAGlanceControllerVer1" default="true" />
+		<cr:controller op-code="OP0200" svc-ver="2.0"
+			ref="atAGlanceController" default="false" />
+		<cr:controller op-code="OP0200" ref="atAGlanceController" />
+
+		<!-- Account Details CASA and TD -->
+		<cr:controller op-code="OP0301" svc-ver="1.0"
+			ref="casaAccoutDetailsControllerVer1" default="true" />
+		<cr:controller op-code="OP0301" svc-ver="2.0"
+			ref="casaAccoutDetailsController" default="false" />
+		<cr:controller op-code="OP0301" ref="casaAccoutDetailsController" />
+
+		<!-- Default SSA Countries Resolver Section Continue -->
+
+		<cr:controller op-code="OP0302" svc-ver="1.0"
+			ref="tdAccountDetailsControllerVer1" default="true" />
+		<cr:controller op-code="OP0302" svc-ver="2.0"
+			ref="tdAccountDetailsController" default="false" />
+		<cr:controller op-code="OP0302" ref="tdAccountDetailsController" />
+
+		<cr:controller op-code="OP0401" svc-ver="1.0"
+			ref="casaTrnxnActivityControllerVer1" default="true" />
+		<cr:controller op-code="OP0401" svc-ver="2.0"
+			ref="casaTrnxnActivityController" default="false" />
+		<cr:controller op-code="OP0401" ref="casaTrnxnActivityController" />
+
+		<cr:controller op-code="OP0404" svc-ver="2.0"
+			ref="casaTrnxnHistoryActivityController" default="false" />
+		<cr:controller op-code="OP0404" ref="casaTrnxnHistoryActivityController" />
+
+		<!-- Own and Internal Fund Transfer -->
+		<cr:controller op-code="OP0500" svc-ver="1.0"
+			ref="fundTransferInitControllerVer1" default="true" />
+		<cr:controller op-code="OP0500" svc-ver="2.0"
+			ref="fundTransferInitController" default="false" />
+		<cr:controller op-code="OP0500" ref="fundTransferInitController" />
+
+		<cr:controller op-code="OP0501" svc-ver="1.0"
+			ref="fTValidationControllerVer1" default="true" />
+		<cr:controller op-code="OP0501" svc-ver="2.0"
+			ref="fTValidationController" default="false" />
+		<cr:controller op-code="OP0501" ref="fTValidationController" />
+
+		<cr:controller op-code="OP0510" svc-ver="1.0"
+			ref="internalFTInitController" default="true" />
+		<cr:controller op-code="OP0510" svc-ver="2.0"
+			ref="internalFTInitController" default="false" />
+		<cr:controller op-code="OP0510" ref="internalFTInitController" />
+
+		<!-- Default SSA Countries Resolver Section Continue -->
+
+		<cr:controller op-code="OP0511" svc-ver="1.0"
+			ref="internalFTValidationController" default="true" />
+		<cr:controller op-code="OP0511" svc-ver="2.0"
+			ref="internalFTValidationController" default="false" />
+		<cr:controller op-code="OP0511" ref="internalFTValidationController" />
+
+		<cr:controller op-code="OP0513" svc-ver="1.0"
+			ref="internalFTDetailsController" default="true" />
+		<cr:controller op-code="OP0513" svc-ver="2.0"
+			ref="internalFTDetailsController" default="false" />
+		<cr:controller op-code="OP0513" ref="internalFTDetailsController" />
+
+		<cr:controller op-code="OP0502" svc-ver="1.0"
+			ref="fundTransferExecutionControllerVer1" default="true" />
+		<cr:controller op-code="OP0502" svc-ver="2.0"
+			ref="fundTransferExecutionController" default="false" />
+		<cr:controller op-code="OP0502" ref="fundTransferExecutionController" />
+
+		<!-- Bill Payment  -->
+		<cr:controller op-code="OP0600" svc-ver="1.0"
+			ref="retrievePayeeListControllerVer1" default="true" />
+		<cr:controller op-code="OP0600" svc-ver="2.0"
+			ref="retrievePayeeListController" default="false" />
+		<cr:controller op-code="OP0600" ref="retrievePayeeListController" />
+
+		<cr:controller op-code="OP0601" svc-ver="1.0"
+			ref="retrievePayeeInfoControllerVer1" default="true" />
+		<cr:controller op-code="OP0601" svc-ver="2.0"
+			ref="retrievePayeeInfoController" default="false" />
+		<cr:controller op-code="OP0601" ref="retrievePayeeInfoController" />
+
+		<!-- Default SSA Countries Resolver Section Continue -->
+
+		<cr:controller op-code="OP0602" svc-ver="1.0"
+			ref="paymentFormSubmissionControllerVer1" default="true" />
+		<cr:controller op-code="OP0602" svc-ver="2.0"
+			ref="paymentFormSubmissionController" default="false" />
+		<cr:controller op-code="OP0602" ref="paymentFormSubmissionController" />
+
+		<cr:controller op-code="OP0603" svc-ver="1.0"
+			ref="confirmPaymentExecutionControllerVer1" default="true" />
+		<cr:controller op-code="OP0603" svc-ver="2.0"
+			ref="confirmPaymentExecutionController" default="false" />
+		<cr:controller op-code="OP0603"
+			ref="confirmPaymentExecutionController" />
+
+		<cr:controller op-code="authenticationFailure" svc-ver="1.0"
+			ref="authenticationFailureController" default="true" />
+		<cr:controller op-code="authenticationFailure" svc-ver="2.0"
+			ref="authenticationFailureController" default="false" />
+		<cr:controller op-code="authenticationFailure" ref="authenticationFailureController" />
+		<!-- Bank Draft and Manager's Cheque -->
+		<cr:controller op-code="OP0540" svc-ver="2.0"
+			ref="bankDraftStepOneController" default="true" />
+		<cr:controller op-code="OP0541" svc-ver="2.0"
+			ref="retreiveBankDraftPayeeInfoController" default="true" />
+		<cr:controller op-code="OP0542" svc-ver="2.0"
+			ref="bankDraftFormValidationController" default="true" />
+		<cr:controller op-code="OP0543" svc-ver="2.0"
+			ref="executePurchaseBankDraftController" default="true" />
+
+		<cr:controller op-code="OP0544" svc-ver="2.0"
+			ref="managersChequeStepOneController" default="true" />
+		<cr:controller op-code="OP0545" svc-ver="2.0"
+			ref="retreiveManagersChequePayeeInfoController" default="true" />
+		<cr:controller op-code="OP0546" svc-ver="2.0"
+			ref="managersChequeFormValidationController" default="true" />
+		<cr:controller op-code="OP0547" svc-ver="2.0"
+			ref="executeManagersChequeDraftController" default="true" />
+
+		<!-- Default SSA Countries Resolver Section Continue -->
+
+		<cr:controller op-code="OP0549" svc-ver="2.0"
+			ref="retreiveBankDraftPayeeDetailsController" default="true" />
+		<cr:controller op-code="OP0550" svc-ver="2.0"
+			ref="retreiveManagersChequePayeeDetailsController" default="true" />
+		<!-- Branch Look Up -->
+		<!--
+			<cr:controller op-code="OP0548" svc-ver="2.0"
+			ref="branchLookUpController" default="true" />
+		-->
+
+
+		<!--Branch look up-->
+		<cr:controller op-code="OP9901" svc-ver="2.0"
+			ref="branchLookUpController" default="true" />
+
+		<!--  External Fund Transfer -->
+
+		<cr:controller op-code="OP0520" svc-ver="1.0"
+			ref="retreiveFTExternalPayeeListController" default="true" />
+		<cr:controller op-code="OP0520" svc-ver="2.0"
+			ref="retreiveFTExternalPayeeListController" default="false" />
+		<cr:controller op-code="OP0520"
+			ref="retreiveFTExternalPayeeListController" />
+
+		<cr:controller op-code="OP0521" svc-ver="1.0"
+			ref="retreiveFTExternalPayeeInfoController" default="true" />
+		<cr:controller op-code="OP0521" svc-ver="2.0"
+			ref="retreiveFTExternalPayeeInfoController" default="false" />
+		<cr:controller op-code="OP0521"
+			ref="retreiveFTExternalPayeeInfoController" />
+
+		<!-- Default SSA Countries Resolver Section Continue -->
+
+		<cr:controller op-code="OP0522" svc-ver="1.0"
+			ref="externalFTPaymentFormSubmissionController" default="true" />
+		<cr:controller op-code="OP0522" svc-ver="2.0"
+			ref="externalFTPaymentFormSubmissionController" default="false" />
+		<cr:controller op-code="OP0522"
+			ref="externalFTPaymentFormSubmissionController" />
+
+		<cr:controller op-code="OP0523" svc-ver="1.0"
+			ref="externalFundTransferExecutionController" default="true" />
+		<cr:controller op-code="OP0523" svc-ver="2.0"
+			ref="externalFundTransferExecutionController" default="false" />
+		<cr:controller op-code="OP0523"
+			ref="externalFundTransferExecutionController" />
+
+		<!-- Default SSA Countries Resolver Section Continue -->
+
+		<cr:controller op-code="OP0524" svc-ver="1.0"
+			ref="getExternalBeneficiaryDetailsController" default="true" />
+		<cr:controller op-code="OP0524" svc-ver="2.0"
+			ref="getExternalBeneficiaryDetailsController" default="false" />
+		<cr:controller op-code="OP0524"
+			ref="getExternalBeneficiaryDetailsController" />
+
+		<!-- International Fund Transfer -->
+
+		<cr:controller op-code="OP0530" svc-ver="1.0"
+			ref="retreiveInternationalPayeeListController" default="true" />
+		<cr:controller op-code="OP0530" svc-ver="2.0"
+			ref="retreiveInternationalPayeeListController" default="false" />
+		<cr:controller op-code="OP0530"
+			ref="retreiveInternationalPayeeListController" />
+
+		<cr:controller op-code="OP0531" svc-ver="1.0"
+			ref="retreiveInternationalPayeeInfoController" default="true" />
+		<cr:controller op-code="OP0531" svc-ver="2.0"
+			ref="retreiveInternationalPayeeInfoController" default="false" />
+		<cr:controller op-code="OP0531"
+			ref="retreiveInternationalPayeeInfoController" />
+
+		<cr:controller op-code="OP0532" svc-ver="1.0"
+			ref="internationalFTPaymentFormSubmissionController" default="true" />
+		<cr:controller op-code="OP0532" svc-ver="2.0"
+			ref="internationalFTPaymentFormSubmissionController" default="false" />
+		<cr:controller op-code="OP0532"
+			ref="internationalFTPaymentFormSubmissionController" />
+
+		<!-- Default SSA Countries Resolver Section Continue -->
+
+		<cr:controller op-code="OP0533" svc-ver="1.0"
+			ref="internationalFundTransferExecutionController" default="true" />
+		<cr:controller op-code="OP0533" svc-ver="2.0"
+			ref="internationalFundTransferExecutionController" default="false" />
+		<cr:controller op-code="OP0533"
+			ref="internationalFundTransferExecutionController" />
+
+		<cr:controller op-code="OP0534" svc-ver="1.0"
+			ref="getInternationalBeneficiaryDetailsController" default="true" />
+		<cr:controller op-code="OP0534" svc-ver="2.0"
+			ref="getInternationalBeneficiaryDetailsController" default="false" />
+		<cr:controller op-code="OP0534"
+			ref="getInternationalBeneficiaryDetailsController" />
+
+		<!--  Urgent Domestic Fund Transfer Starts here-->
+
+		<cr:controller op-code="OP0560" svc-ver="1.0"
+			ref="retreiveUrgentExternalPayeeListController" default="true" />
+		<cr:controller op-code="OP0560" svc-ver="2.0"
+			ref="retreiveUrgentExternalPayeeListController" default="false" />
+		<cr:controller op-code="OP0560"
+			ref="retreiveUrgentExternalPayeeListController" />
+
+		<cr:controller op-code="OP0561" svc-ver="1.0"
+			ref="retreiveUrgentPayeeInfoController" default="true" />
+		<cr:controller op-code="OP0561" svc-ver="2.0"
+			ref="retreiveUrgentPayeeInfoController" default="false" />
+		<cr:controller op-code="OP0561"
+			ref="retreiveUrgentPayeeInfoController" />
+
+		<!-- Default SSA Countries Resolver Section Continue -->
+
+		<cr:controller op-code="OP0562" svc-ver="1.0"
+			ref="urgentFTPaymentFormSubmissionController" default="true" />
+		<cr:controller op-code="OP0562" svc-ver="2.0"
+			ref="urgentFTPaymentFormSubmissionController" default="false" />
+		<cr:controller op-code="OP0562"
+			ref="urgentFTPaymentFormSubmissionController" />
+
+		<cr:controller op-code="OP0563" svc-ver="1.0"
+			ref="urgentFundTransferExecutionController" default="true" />
+		<cr:controller op-code="OP0563" svc-ver="2.0"
+			ref="urgentFundTransferExecutionController" default="false" />
+		<cr:controller op-code="OP0563"
+			ref="urgentFundTransferExecutionController" />
+
+		<cr:controller op-code="OP0564" svc-ver="1.0"
+			ref="getUrgentBeneficiaryDetailsController" default="true" />
+		<cr:controller op-code="OP0564" svc-ver="2.0"
+			ref="getUrgentBeneficiaryDetailsController" default="false" />
+		<cr:controller op-code="OP0564"
+			ref="getUrgentBeneficiaryDetailsController" />
+		<!--  Urgent Domestic Fund Transfer ends here-->
+
+
+		<!-- Start Cheque Book  -->
+
+		<cr:controller op-code="OP0901" svc-ver="1.0"
+			ref="chequeBookRequestInitController" default="true" />
+		<cr:controller op-code="OP0901" svc-ver="2.0"
+			ref="chequeBookRequestInitController" default="false" />
+
+		<cr:controller op-code="OP0902" svc-ver="1.0"
+			ref="chequeBookRequestValidationController" default="true" />
+		<cr:controller op-code="OP0902" svc-ver="2.0"
+			ref="chequeBookRequestValidationController" default="false" />
+
+		<cr:controller op-code="OP0903" svc-ver="1.0"
+			ref="chequeBookRequestExecuteController" default="true" />
+		<cr:controller op-code="OP0903" svc-ver="2.0"
+			ref="chequeBookRequestExecuteController" default="false" />
+
+		<!-- End Cheque Book  -->
+		<!--  added for biller registrations -->
+ 		<cr:controller op-code="OP0611" svc-ver="1.0"  ref="addOrgBeneficiaryFormSubmissionController" default="true" />
+		<cr:controller op-code="OP0611" svc-ver="2.0" ref="addOrgBeneficiaryFormSubmissionController" default="false" />
+        <cr:controller op-code="OP0611"  ref="addOrgBeneficiaryFormSubmissionController"/>
+
+  		<cr:controller op-code="OP0612" svc-ver="1.0"  ref="addOrgFormSubmissionValidationController" default="true" />
+		<cr:controller op-code="OP0612" svc-ver="2.0" ref="addOrgFormSubmissionValidationController" default="false" />
+        <cr:controller op-code="OP0612" ref="addOrgFormSubmissionValidationController"/>
+
+        <cr:controller op-code="OP0613" svc-ver="1.0"  ref="addOrgBenefeciaryExecutionController" default="true" />
+		<cr:controller op-code="OP0613" svc-ver="2.0" ref="addOrgBenefeciaryExecutionController" default="false" />
+        <cr:controller op-code="OP0613" ref="addOrgBenefeciaryExecutionController"/>
+
+       <!-- ValidateUser controller -->
+       <cr:controller op-code="OP0110" svc-ver="1.0"  ref="validateUserController" default="true" />
+	   <cr:controller op-code="OP0110" svc-ver="2.0" ref="validateUserController"  default="false" />
+	   <cr:controller op-code="OP0110" ref="validateUserController" />
+
+	   <!-- verify controller -->
+       <cr:controller op-code="OP0198" svc-ver="1.0"  ref="verifyUserController" default="true" />
+	   <cr:controller op-code="OP0198" svc-ver="2.0" ref="verifyUserController"  default="false" />
+	   <cr:controller op-code="OP0198" ref="verifyUserController" />
+
+	   <!-- Apply TD  controllers -->
+       <cr:controller op-code="OP1234" svc-ver="1.0"  ref="applyTDInitController" default="true" />
+	   <cr:controller op-code="OP1234" svc-ver="2.0" ref="applyTDInitController"  default="false" />
+	   <cr:controller op-code="OP1234" ref="applyTDInitController" />
+
+	   <cr:controller op-code="OP1235" svc-ver="1.0"  ref="applyTDValidationController" default="true" />
+	   <cr:controller op-code="OP1235" svc-ver="2.0" ref="applyTDValidationController"  default="false" />
+	   <cr:controller op-code="OP1235" ref="applyTDValidationController" />
+
+	   <cr:controller op-code="OP1236" svc-ver="1.0"  ref="applyTDExecutionController" default="true" />
+	   <cr:controller op-code="OP1236" svc-ver="2.0" ref="applyTDExecutionController"  default="false" />
+	   <cr:controller op-code="OP1236" ref="applyTDExecutionController" />
+
+
+<!-- Internal Non-Registered Barclays one time transfer SSA -->
+
+		<cr:controller op-code="OP0568" svc-ver="1.0"
+			ref="internalNonRegisteredOneTimeFundTransferInitController" default="true" />
+		<cr:controller op-code="OP05068" svc-ver="2.0"
+			ref="internalNonRegisteredOneTimeFundTransferInitController" default="false" />
+		<cr:controller op-code="OP0568" ref="internalNonRegisteredOneTimeFundTransferInitControllerVer" />
+
+		<cr:controller op-code="OP0569" svc-ver="1.0"
+			ref="internalNonRegisteredOneTimeFTFormSubmissionController" default="true" />
+		<cr:controller op-code="OP0569" svc-ver="2.0"
+			ref="internalNonRegisteredOneTimeFTFormSubmissionController" default="false" />
+		<cr:controller op-code="OP0569"
+			ref="internalNonRegisteredOneTimeFTFormSubmissionController" />
+
+		<cr:controller op-code="OP0570" svc-ver="1.0"
+			ref="internalNonRegisteredOneTimeFundTransferExecutionController" default="true" />
+		<cr:controller op-code="OP0570" svc-ver="2.0"
+			ref="internalNonRegisteredOneTimeFundTransferExecutionController" default="false" />
+		<cr:controller op-code="OP0570"
+			ref="internalNonRegisteredOneTimeFundTransferExecutionController" />
+
+		<!-- End of Internal Non-Registered Barclays one time transfer SSA -->
+
+		<!-- Del Benf , Add Ind Benf, Search Txn Hist, View Bill Pay, One Time Bill pay -->
+		<cr:controller op-code="OP0640" svc-ver="1.0"
+			ref="deleteBeneficiaryController" default="true" />
+		<cr:controller op-code="OP0640" svc-ver="2.0"
+			ref="deleteBeneficiaryController" default="false" />
+		<cr:controller op-code="OP0640" ref="deleteBeneficiaryController" />
+
+		<cr:controller op-code="OP0641" svc-ver="1.0"
+			ref="addBeneficiaryFormSubmissionController" default="true" />
+		<cr:controller op-code="OP0641" svc-ver="2.0"
+			ref="addBeneficiaryFormSubmissionController" default="false" />
+		<cr:controller op-code="OP0641" ref="addBeneficiaryFormSubmissionController" />
+
+		<cr:controller op-code="OP0642" svc-ver="1.0"
+			ref="addBeneficiaryExecutionController" default="true" />
+		<cr:controller op-code="OP0642" svc-ver="2.0"
+			ref="addBeneficiaryExecutionController" default="false" />
+		<cr:controller op-code="OP0642" ref="addBeneficiaryExecutionController" />
+
+		<cr:controller op-code="OP0643" svc-ver="1.0"
+			ref="searchTransactionHistoryController" default="true" />
+		<cr:controller op-code="OP0643" svc-ver="2.0"
+			ref="searchTransactionHistoryController" default="false" />
+		<cr:controller op-code="OP0643" ref="searchTransactionHistoryController" />
+
+		<cr:controller op-code="OP0644" svc-ver="1.0"
+			ref="viewBillPaymentDetailsController" default="true" />
+		<cr:controller op-code="OP0644" svc-ver="2.0"
+			ref="viewBillPaymentDetailsController" default="false" />
+		<cr:controller op-code="OP0644" ref="viewBillPaymentDetailsController" />
+
+		<cr:controller op-code="OP0650" svc-ver="1.0"
+			ref="oneTimeBillPayInitController" default="true" />
+		<cr:controller op-code="OP0650" svc-ver="2.0"
+			ref="oneTimeBillPayInitController" default="false" />
+		<cr:controller op-code="OP0650" ref="oneTimeBillPayInitController" />
+
+		<cr:controller op-code="OP0651" svc-ver="1.0"
+			ref="oneTimeBillPayFormSubmissionController" default="true" />
+		<cr:controller op-code="OP0651" svc-ver="2.0"
+			ref="oneTimeBillPayFormSubmissionController" default="false" />
+		<cr:controller op-code="OP0651" ref="oneTimeBillPayFormSubmissionController" />
+
+		<!-- air time Top up -->
+		<cr:controller op-code="OP0660" svc-ver="1.0" ref="airTimeTopUpInItController" default="true" />
+		<cr:controller op-code="OP0660" svc-ver="2.0" ref="airTimeTopUpInItController" default="false" />
+		<cr:controller op-code="OP0660" ref="airTimeTopUpInItController" />
+
+		<cr:controller op-code="OP0661" svc-ver="1.0" ref="airTimeTopUpValidateController" default="true" />
+		<cr:controller op-code="OP0661" svc-ver="2.0" ref="airTimeTopUpValidateController" default="false" />
+		<cr:controller op-code="OP0661" ref="airTimeTopUpValidateController" />
+		<!-- air time Top up -->
+
+		<!-- Mobile Wallet Top up -->
+		<cr:controller op-code="OP0670" svc-ver="1.0" ref="mWalletUpInItController" default="true" />
+		<cr:controller op-code="OP0670" svc-ver="2.0" ref="mWalletUpInItController" default="false" />
+		<cr:controller op-code="OP0670" ref="mWalletUpInItController" />
+
+		<cr:controller op-code="OP0671" svc-ver="1.0" ref="mWalletValidateController" default="true" />
+		<cr:controller op-code="OP0671" svc-ver="2.0" ref="mWalletValidateController" default="false" />
+		<cr:controller op-code="OP0671" ref="mWalletValidateController" />
+		<!-- Mobile Wallet Top up -->
+
+		<!-- FreeDialUSSD STARTS -->
+		<cr:controller op-code="OP0672" svc-ver="1.0" ref="freeDilaAirTopUpInItController" default="true" />
+		<cr:controller op-code="OP0672" svc-ver="2.0" ref="freeDilaAirTopUpInItController" default="false" />
+		<cr:controller op-code="OP0672" ref="freeDilaAirTopUpInItController" />
+
+		<cr:controller op-code="OP0673" svc-ver="1.0" ref="freeDilaAirTopUpValidateController" default="true" />
+		<cr:controller op-code="OP0673" svc-ver="2.0" ref="freeDilaAirTopUpValidateController" default="false" />
+		<cr:controller op-code="OP0673" ref="freeDilaAirTopUpValidateController" />
+
+		<cr:controller op-code="OP0674" svc-ver="1.0" ref="freeDilaAirTopUpPaymentExecutionController" default="true" />
+		<cr:controller op-code="OP0674" svc-ver="2.0" ref="freeDilaAirTopUpPaymentExecutionController" default="false" />
+		<cr:controller op-code="OP0674"	ref="freeDilaAirTopUpPaymentExecutionController" />
+		<!-- FreeDialUSSD ENDS -->
+
+		<!-- Verify User with Pin -->
+		<cr:controller op-code="OP0109" svc-ver="1.0" ref="ussdLgnVrfyUsrPnController" default="true" />
+		<cr:controller op-code="OP0109" svc-ver="2.0" ref="ussdLgnVrfyUsrPnController" default="false" />
+		<cr:controller op-code="OP0109" ref="ussdLgnVrfyUsrPnController" />
+
+		<!-- Retrieve All Customer Account List -->
+		<cr:controller op-code="OP0201" svc-ver="1.0" ref="retrieveAllCustAcctController" default="true" />
+		<cr:controller op-code="OP0201" svc-ver="2.0" ref="retrieveAllCustAcctController" default="false" />
+		<cr:controller op-code="OP0201" ref="retrieveAllCustAcctController" />
+
+		<cr:controller op-code="OP0202" svc-ver="1.0" ref="retrieveAllCustAcctController" default="true" />
+		<cr:controller op-code="OP0202" svc-ver="2.0" ref="retrieveAllCustAcctController" default="false" />
+		<cr:controller op-code="OP0202" ref="retrieveAllCustAcctController" />
+
+		<!-- End -->
+
+	<!--Order Paper Statement Request -->
+		<cr:controller op-code="OP0910" svc-ver="2.0"
+			ref="statmentInitRequestController" default="false" />
+
+		<cr:controller op-code="OP0911" svc-ver="2.0"
+			ref="statmentRequestController" default="false" />
+
+		<cr:controller op-code="OP0912" svc-ver="2.0"
+			ref="statmentExcecuteRequestController" default="false" />
+
+		<cr:controller op-code="OP0701" svc-ver="1.0"
+			ref="interestRatesController" default="true" />
+		<cr:controller op-code="OP0701" svc-ver="2.0"
+			ref="interestRatesController" default="false" />
+		<cr:controller op-code="OP0701" ref="interestRatesController" />
+
+	</cr:controller-ref-resolver>
+	<!-- End of Defaul SSA Resolver -->
+
+
+	<!-- GHBRBResolver -->
+	<cr:controller-ref-resolver id="GHBRBResolver"
+		extends="DEFAULT_SSA">
+
+		<cr:controller op-code="OP0523" svc-ver="1.0"
+			ref="ghanaExternalFundTransferExecutionController" default="true" />
+		<cr:controller op-code="OP0523" svc-ver="2.0"
+			ref="ghanaExternalFundTransferExecutionController" default="false" />
+		<cr:controller op-code="OP0523"
+			ref="ghanaExternalFundTransferExecutionController" />
+
+	</cr:controller-ref-resolver>
+
+	<!-- BWBRBResolver -->
+	<cr:controller-ref-resolver id="BWBRBResolver"
+		extends="DEFAULT_SSA">
+	</cr:controller-ref-resolver>
+
+	<!-- SCBRBResolver -->
+	<cr:controller-ref-resolver id="SCBRBResolver"
+		extends="DEFAULT_SSA">
+	</cr:controller-ref-resolver>
+
+	<!-- ZWBRBResolver -->
+	<cr:controller-ref-resolver id="ZWBRBResolver"
+		extends="DEFAULT_SSA">
+	</cr:controller-ref-resolver>
+
+
+	<!-- ZMBRBResolver -->
+	<cr:controller-ref-resolver id="ZMBRBResolver"
+		extends="DEFAULT_SSA">
+	</cr:controller-ref-resolver>
+
+
+	<!-- MUBRBResolver -->
+	<cr:controller-ref-resolver id="MUBRBResolver"
+		extends="DEFAULT_SSA">
+
+		<cr:controller op-code="OP0604" svc-ver="1.0"
+			ref="retrieveMTPPayeeInfoController" default="true" />
+		<cr:controller op-code="OP0604" svc-ver="2.0"
+			ref="retrieveMTPPayeeInfoController" default="false" />
+		<cr:controller op-code="OP0604" ref="retrieveMTPPayeeInfoController" />
+
+		<cr:controller op-code="OP0605" svc-ver="1.0"
+			ref="retrieveBCDPayeeInfoController" default="true" />
+		<cr:controller op-code="OP0605" svc-ver="2.0"
+			ref="retrieveBCDPayeeInfoController" default="false" />
+		<cr:controller op-code="OP0605" ref="retrieveBCDPayeeInfoController" />
+
+		<cr:controller op-code="OP0606" svc-ver="1.0"
+			ref="retrieveCCPPayeeInfoController" default="true" />
+		<cr:controller op-code="OP0606" svc-ver="2.0"
+			ref="retrieveCCPPayeeInfoController" default="false" />
+		<cr:controller op-code="OP0606" ref="retrieveCCPPayeeInfoController" />
+
+		<cr:controller op-code="OP0303" svc-ver="1.0"
+			ref="creditCardAccoutDetailsControllerVer1" default="true" />
+		<cr:controller op-code="OP0303" svc-ver="2.0"
+			ref="creditCardAccoutDetailsController" default="false" />
+		<cr:controller op-code="OP0303"
+			ref="creditCardAccoutDetailsController" />
+
+		<cr:controller op-code="OP0402" svc-ver="1.0"
+			ref="creditCardUnbilledTransControllerVer1" default="true" />
+		<cr:controller op-code="OP0402" svc-ver="2.0"
+			ref="creditCardUnbilledTransController" default="false" />
+		<cr:controller op-code="OP0402"
+			ref="creditCardUnbilledTransController" />
+
+		<cr:controller op-code="OP0403" svc-ver="1.0"
+			ref="creditCardStmtTransControllerVer1" default="true" />
+		<cr:controller op-code="OP0403" svc-ver="2.0"
+			ref="creditCardStmtTransController" default="false" />
+		<cr:controller op-code="OP0403" ref="creditCardStmtTransController" />
+	<!--CR#46	-->
+	<cr:controller op-code="OP0959" svc-ver="1.0"
+			ref="creditCardLinkConfirmControllerVer1" default="true" />
+		<cr:controller op-code="OP0959" svc-ver="2.0"
+			ref="creditCardLinkConfirmController" default="false" />
+		<cr:controller op-code="OP0959"
+			ref="creditCardLinkConfirmController" />
+
+	</cr:controller-ref-resolver>
+
+	<!-- MUBOBResolver -->
+	<cr:controller-ref-resolver id="MUBOBResolver"
+		extends="DEFAULT_SSA">
+
+		<cr:controller op-code="OP0604" svc-ver="1.0"
+			ref="retrieveMTPPayeeInfoController" default="true" />
+		<cr:controller op-code="OP0604" svc-ver="2.0"
+			ref="retrieveMTPPayeeInfoController" default="false" />
+		<cr:controller op-code="OP0604" ref="retrieveMTPPayeeInfoController" />
+
+		<!--	Credit Card is not available in Mauritius Offshore	-->
+
+
+	</cr:controller-ref-resolver>
+
+	<!-- EGBRBResolver -->
+	<cr:controller-ref-resolver id="EGBRBResolver"
+		extends="DEFAULT_SSA">
+		<cr:controller op-code="OP0102" svc-ver="1.0"
+			ref="sqaValidationControllerVer1" default="true" />
+		<cr:controller op-code="OP0102" svc-ver="2.0"
+			ref="sqaValidationController" default="false" />
+		<cr:controller op-code="OP0102" ref="sqaValidationController" />
+	</cr:controller-ref-resolver>
+
+
+	<!-- TZBRBResolver -->
+	<cr:controller-ref-resolver id="TZBRBResolver"
+		extends="DEFAULT_SSA">
+
+		<!-- Additional for TZBRB -->
+		<cr:controller op-code="OP0102" svc-ver="1.0"
+			ref="sqaValidationControllerVer1" default="true" />
+		<cr:controller op-code="OP0102" svc-ver="2.0"
+			ref="sqaValidationController" default="false" />
+		<cr:controller op-code="OP0102" ref="sqaValidationController" />
+
+	</cr:controller-ref-resolver>
+
+
+	<!-- KEBRBResolver -->
+	<cr:controller-ref-resolver id="KEBRBResolver"
+		extends="DEFAULT_SSA">
+
+
+		<!--
+			<cr:controller op-code="OP0100" svc-ver="1.0"
+			ref="loginControllerVer1" default="true" /> <cr:controller
+			op-code="OP0100" svc-ver="2.0" ref="loginController" default="false"
+			/> <cr:controller op-code="OP0100" ref="loginController" />
+		-->
+
+		<!-- Additional for KEBRB -->
+		<cr:controller op-code="OP0102" svc-ver="1.0"
+			ref="sqaValidationControllerVer1" default="true" />
+		<cr:controller op-code="OP0102" svc-ver="2.0"
+			ref="sqaValidationController" default="false" />
+		<cr:controller op-code="OP0102" ref="sqaValidationController" />
+
+		<!--
+			<cr:controller op-code="OP0104" svc-ver="1.0"
+			ref="logoutControllerVer1" default="true" /> <cr:controller
+			op-code="OP0104" svc-ver="2.0" ref="logoutController" default="false"
+			/> <cr:controller op-code="OP0104" ref="logoutController" />
+		--><!-- KEBRB -->
+
+		<!--
+			<cr:controller op-code="OP0105" svc-ver="1.0"
+			ref="inValidateSessionControllerVer1" default="true" />
+			<cr:controller op-code="OP0105" svc-ver="2.0"
+			ref="inValidateSessionController" default="false" /> <cr:controller
+			op-code="OP0105" ref="inValidateSessionController" /> <cr:controller
+			op-code="OP0111" svc-ver="1.0" ref="cancelLoginController"
+			default="true" /> <cr:controller op-code="OP0111" svc-ver="2.0"
+			ref="cancelLoginController" default="false" /> <cr:controller
+			op-code="OP0111" ref="cancelLoginController" /> <cr:controller
+			op-code="termsOfUse" svc-ver="1.0" ref="termsOfUseDetailController"
+			default="true" /> <cr:controller op-code="termsOfUse" svc-ver="2.0"
+			ref="termsOfUseDetailController" default="false" /> <cr:controller
+			op-code="termsOfUse" ref="termsOfUseDetailController" />
+
+			<cr:controller op-code="OP0106" svc-ver="1.0"
+			ref="termsOfUseAcceptController" default="true" /> <cr:controller
+			op-code="OP0106" svc-ver="2.0" ref="termsOfUseAcceptController"
+			default="false" /> <cr:controller op-code="OP0106"
+			ref="termsOfUseAcceptController" /> <cr:controller op-code="OP0107"
+			svc-ver="1.0" ref="txnSecondAuthOTPController" default="true" />
+			<cr:controller op-code="OP0107" svc-ver="2.0"
+			ref="txnSecondAuthOTPController" default="false" /> <cr:controller
+			op-code="OP0107" ref="txnSecondAuthOTPController" />
+		-->
+		<cr:controller op-code="OP0108" svc-ver="1.0"
+			ref="txnSecondAuthSQAController" default="true" />
+		<cr:controller op-code="OP0108" svc-ver="2.0"
+			ref="txnSecondAuthSQAController" default="false" />
+		<cr:controller op-code="OP0108" ref="txnSecondAuthSQAController" />
+
+		<!-- KEBRB -->
+
+		<!--
+			<cr:controller op-code="postLogin" svc-ver="1.0"
+			ref="postLoginControllerVer1" default="true" /> <cr:controller
+			op-code="postLogin" svc-ver="2.0" ref="postLoginController"
+			default="false" /> <cr:controller op-code="postLogin"
+			ref="postLoginController" /> <cr:controller op-code="OP0200"
+			svc-ver="1.0" ref="atAGlanceControllerVer1" default="true" />
+			<cr:controller op-code="OP0200" svc-ver="2.0"
+			ref="atAGlanceController" default="false" /> <cr:controller
+			op-code="OP0200" ref="atAGlanceController" /> <cr:controller
+			op-code="OP0301" svc-ver="1.0" ref="casaAccoutDetailsControllerVer1"
+			default="true" /> <cr:controller op-code="OP0301" svc-ver="2.0"
+			ref="casaAccoutDetailsController" default="false" /> <cr:controller
+			op-code="OP0301" ref="casaAccoutDetailsController" /> <cr:controller
+			op-code="OP0302" svc-ver="1.0" ref="tdAccountDetailsControllerVer1"
+			default="true" /> <cr:controller op-code="OP0302" svc-ver="2.0"
+			ref="tdAccountDetailsController" default="false" /> <cr:controller
+			op-code="OP0302" ref="tdAccountDetailsController" /> <cr:controller
+			op-code="OP0401" svc-ver="1.0" ref="casaTrnxnActivityControllerVer1"
+			default="true" /> <cr:controller op-code="OP0401" svc-ver="2.0"
+			ref="casaTrnxnActivityController" default="false" /> <cr:controller
+			op-code="OP0401" ref="casaTrnxnActivityController" />
+		-->
+		<!-- KEBRB  - DFT Internal -->
+
+
+		<!--
+			<cr:controller op-code="OP0510" svc-ver="1.0"
+			ref="internalFTInitController" default="true" /> <cr:controller
+			op-code="OP0510" svc-ver="2.0" ref="internalFTInitController"
+			default="false" /> <cr:controller op-code="OP0510"
+			ref="internalFTInitController" />
+		-->
+		<!--
+			<cr:controller op-code="OP0511" svc-ver="1.0"
+			ref="internalFTValidationController" default="true" /> <cr:controller
+			op-code="OP0511" svc-ver="2.0" ref="internalFTValidationController"
+			default="false" /> <cr:controller op-code="OP0511"
+			ref="internalFTValidationController" />
+		-->
+		<!--
+			<cr:controller op-code="OP0513" svc-ver="1.0"
+			ref="internalFTDetailsController" default="true" /> <cr:controller
+			op-code="OP0513" svc-ver="2.0" ref="internalFTDetailsController"
+			default="false" /> <cr:controller op-code="OP0513"
+			ref="internalFTDetailsController" />
+		--><!-- Override on SSA for DFT & Own due to FCR call -->
+
+		<cr:controller op-code="OP0502" svc-ver="1.0"
+			ref="KEBRBfundTransferExecutionControllerVer1" default="true" />
+		<cr:controller op-code="OP0502" svc-ver="2.0"
+			ref="KEBRBfundTransferExecutionController" default="false" />
+		<cr:controller op-code="OP0502"
+			ref="KEBRBfundTransferExecutionController" />
+
+		<!-- KEBRB -->
+
+
+		<!--
+			<cr:controller op-code="OP0600" svc-ver="1.0"
+			ref="KEBRBretrievePayeeListControllerVer1" default="true" />
+			<cr:controller op-code="OP0600" svc-ver="2.0"
+			ref="KEBRBretrievePayeeListController" default="false" />
+			<cr:controller op-code="OP0600"
+			ref="KEBRBretrievePayeeListController" /> <cr:controller
+			op-code="OP0601" svc-ver="1.0"
+			ref="KEBRBretrievePayeeInfoControllerVer1" default="true" />
+			<cr:controller op-code="OP0601" svc-ver="2.0"
+			ref="KEBRBretrievePayeeInfoController" default="false" />
+			<cr:controller op-code="OP0601"
+			ref="KEBRBretrievePayeeInfoController" /> <cr:controller
+			op-code="OP0602" svc-ver="1.0"
+			ref="KEBRBpaymentFormSubmissionControllerVer1" default="true" />
+			<cr:controller op-code="OP0602" svc-ver="2.0"
+			ref="KEBRBpaymentFormSubmissionController" default="false" />
+			<cr:controller op-code="OP0602"
+			ref="KEBRBpaymentFormSubmissionController" />
+		-->
+		<cr:controller op-code="OP0603" svc-ver="1.0"
+			ref="KEBRBconfirmPaymentExecutionControllerVer1" default="true" />
+		<cr:controller op-code="OP0603" svc-ver="2.0"
+			ref="KEBRBconfirmPaymentExecutionController" default="false" />
+		<cr:controller op-code="OP0603"
+			ref="KEBRBconfirmPaymentExecutionController" />
+
+
+		<!--
+			<cr:controller op-code="OP0604" svc-ver="1.0"
+			ref="retrieveMTPPayeeInfoController" default="true" /> <cr:controller
+			op-code="OP0604" svc-ver="2.0" ref="retrieveMTPPayeeInfoController"
+			default="false" /> <cr:controller op-code="OP0604"
+			ref="retrieveMTPPayeeInfoController" />
+		-->
+
+		<!-- KEBRB -->
+
+		<!--
+			BarclayCard Payments & Credit card payment is not part of default SSA
+			country so providing implementation below same as did for Mauritius
+		-->
+
+		<cr:controller op-code="OP0605" svc-ver="1.0"
+			ref="retrieveBCDPayeeInfoController" default="true" />
+		<cr:controller op-code="OP0605" svc-ver="2.0"
+			ref="retrieveBCDPayeeInfoController" default="false" />
+		<cr:controller op-code="OP0605" ref="retrieveBCDPayeeInfoController" />
+
+		<cr:controller op-code="OP0606" svc-ver="1.0"
+			ref="retrieveCCPPayeeInfoController" default="true" />
+		<cr:controller op-code="OP0606" svc-ver="2.0"
+			ref="retrieveCCPPayeeInfoController" default="false" />
+		<cr:controller op-code="OP0606" ref="retrieveCCPPayeeInfoController" />
+
+		<cr:controller op-code="OP0303" svc-ver="1.0"
+			ref="creditCardAccoutDetailsControllerVer1" default="true" />
+		<cr:controller op-code="OP0303" svc-ver="2.0"
+			ref="creditCardAccoutDetailsController" default="false" />
+		<cr:controller op-code="OP0303"
+			ref="creditCardAccoutDetailsController" />
+
+		<cr:controller op-code="OP0402" svc-ver="1.0"
+			ref="creditCardUnbilledTransControllerVer1" default="true" />
+		<cr:controller op-code="OP0402" svc-ver="2.0"
+			ref="creditCardUnbilledTransController" default="false" />
+		<cr:controller op-code="OP0402"
+			ref="creditCardUnbilledTransController" />
+
+		<!-- KEBRB -->
+
+		<cr:controller op-code="OP0403" svc-ver="1.0"
+			ref="creditCardStmtTransControllerVer1" default="true" />
+		<cr:controller op-code="OP0403" svc-ver="2.0"
+			ref="creditCardStmtTransController" default="false" />
+		<cr:controller op-code="OP0403" ref="creditCardStmtTransController" />
+
+		<cr:controller op-code="authenticationFailure" svc-ver="1.0"
+			ref="authenticationFailureController" default="true" />
+		<cr:controller op-code="authenticationFailure" svc-ver="2.0"
+			ref="authenticationFailureController" default="false" />
+		<cr:controller op-code="authenticationFailure" ref="authenticationFailureController" />
+
+
+		<cr:controller op-code="OP0304" svc-ver="1.0"
+			ref="retrieveMutualFundDetailsController" default="true" />
+		<cr:controller op-code="OP0304" svc-ver="2.0"
+			ref="retrieveMutualFundDetailsController" default="false" />
+		<cr:controller op-code="OP0304"
+			ref="retrieveMutualFundDetailsController" />
+
+		<cr:controller op-code="OP0305" svc-ver="1.0"
+			ref="retrieveStructuredNoteDetailsController" default="true" />
+		<cr:controller op-code="OP0305" svc-ver="2.0"
+			ref="retrieveStructuredNoteDetailsController" default="false" />
+		<cr:controller op-code="OP0305"
+			ref="retrieveStructuredNoteDetailsController" />
+
+		<cr:controller op-code="OP0306" svc-ver="1.0"
+			ref="retrieveBondsDetailsController" default="true" />
+		<cr:controller op-code="OP0306" svc-ver="2.0"
+			ref="retrieveBondsDetailsController" default="false" />
+		<cr:controller op-code="OP0306" ref="retrieveBondsDetailsController" />
+
+
+		<!-- KEBRB -->
+
+		<!--
+			<cr:controller op-code="OP0701" svc-ver="1.0"
+			ref="KEBRBinterestRatesController" default="true" /> <cr:controller
+			op-code="OP0701" svc-ver="2.0" ref="KEBRBinterestRatesController"
+			default="false" /> <cr:controller op-code="OP0701"
+			ref="KEBRBinterestRatesController" />
+		-->
+
+		<!-- External Fund Transfer -->
+		<cr:controller op-code="OP0520" svc-ver="1.0"
+			ref="KEBRBretreiveFTExternalPayeeListController" default="true" />
+		<cr:controller op-code="OP0520" svc-ver="2.0"
+			ref="KEBRBretreiveFTExternalPayeeListController" default="false" />
+		<cr:controller op-code="OP0520"
+			ref="KEBRBretreiveFTExternalPayeeListController" />
+
+		<cr:controller op-code="OP0521" svc-ver="1.0"
+			ref="KEBRBretreiveFTExternalPayeeInfoController" default="true" />
+		<cr:controller op-code="OP0521" svc-ver="2.0"
+			ref="KEBRBretreiveFTExternalPayeeInfoController" default="false" />
+		<cr:controller op-code="OP0521"
+			ref="KEBRBretreiveFTExternalPayeeInfoController" />
+
+		<cr:controller op-code="OP0522" svc-ver="1.0"
+			ref="KEBRBexternalFTPaymentFormSubmissionController" default="true" />
+		<cr:controller op-code="OP0522" svc-ver="2.0"
+			ref="KEBRBexternalFTPaymentFormSubmissionController" default="false" />
+		<cr:controller op-code="OP0522"
+			ref="KEBRBexternalFTPaymentFormSubmissionController" />
+
+		<cr:controller op-code="OP0523" svc-ver="1.0"
+			ref="KEBRBexternalFundTransferExecutionController" default="true" />
+		<cr:controller op-code="OP0523" svc-ver="2.0"
+			ref="KEBRBexternalFundTransferExecutionController" default="false" />
+		<cr:controller op-code="OP0523"
+			ref="KEBRBexternalFundTransferExecutionController" />
+
+		<!-- KEBRB -->
+
+		<cr:controller op-code="OP0524" svc-ver="1.0"
+			ref="KEBRBgetExternalBeneficiaryDetailsController" default="true" />
+		<cr:controller op-code="OP0524" svc-ver="2.0"
+			ref="KEBRBgetExternalBeneficiaryDetailsController" default="false" />
+		<cr:controller op-code="OP0524"
+			ref="KEBRBgetExternalBeneficiaryDetailsController" />
+
+		<!-- International Fund Transfer -->
+		<cr:controller op-code="OP0530" svc-ver="1.0"
+			ref="retreiveInternationalPayeeListController" default="true" />
+		<cr:controller op-code="OP0530" svc-ver="2.0"
+			ref="retreiveInternationalPayeeListController" default="false" />
+		<cr:controller op-code="OP0530"
+			ref="retreiveInternationalPayeeListController" />
+
+		<cr:controller op-code="OP0531" svc-ver="1.0"
+			ref="KEBRBretreiveInternationalPayeeInfoController" default="true" />
+		<cr:controller op-code="OP0531" svc-ver="2.0"
+			ref="KEBRBretreiveInternationalPayeeInfoController" default="false" />
+		<cr:controller op-code="OP0531"
+			ref="KEBRBretreiveInternationalPayeeInfoController" />
+
+		<cr:controller op-code="OP0532" svc-ver="1.0"
+			ref="KEBRBinternationalFTPaymentFormSubmissionController" default="true" />
+		<cr:controller op-code="OP0532" svc-ver="2.0"
+			ref="KEBRBinternationalFTPaymentFormSubmissionController" default="false" />
+		<cr:controller op-code="OP0532"
+			ref="KEBRBinternationalFTPaymentFormSubmissionController" />
+
+		<cr:controller op-code="OP0533" svc-ver="1.0"
+			ref="internationalFundTransferExecutionController" default="true" />
+		<cr:controller op-code="OP0533" svc-ver="2.0"
+			ref="internationalFundTransferExecutionController" default="false" />
+		<cr:controller op-code="OP0533"
+			ref="internationalFundTransferExecutionController" />
+
+		<!-- KEBRB -->
+
+		<cr:controller op-code="OP0534" svc-ver="1.0"
+			ref="KEBRBgetInternationalBeneficiaryDetailsController" default="true" />
+		<cr:controller op-code="OP0534" svc-ver="2.0"
+			ref="KEBRBgetInternationalBeneficiaryDetailsController" default="false" />
+		<cr:controller op-code="OP0534"
+			ref="KEBRBgetInternationalBeneficiaryDetailsController" />
+
+
+		<!-- Bank Draft -->
+		<!--
+			<cr:controller op-code="OP0540" svc-ver="2.0"
+			ref="bankDraftStepOneController" default="true" /> <cr:controller
+			op-code="OP0541" svc-ver="2.0"
+			ref="retreiveBankDraftPayeeInfoController" default="true" />
+			<cr:controller op-code="OP0542" svc-ver="2.0"
+			ref="bankDraftFormValidationController" default="true" />
+			<cr:controller op-code="OP0543" svc-ver="2.0"
+			ref="executePurchaseBankDraftController" default="true" />
+		--><!-- KEBRB -->
+
+		<!-- Bank Draft -->
+
+		<!--
+			It's not in use. REMOVE-CODE-SECTION <cr:controller op-code="OP0548"
+			svc-ver="2.0" ref="KEBRBbranchLookUpController" default="true" />
+		-->
+
+		<!--Branch look up-->
+		<cr:controller op-code="OP9901" svc-ver="2.0"
+			ref="branchLookUpController" default="true" />
+
+		<cr:controller op-code="OP0549" svc-ver="2.0"
+			ref="retreiveBankDraftPayeeDetailsController" default="true" />
+		<cr:controller op-code="OP0550" svc-ver="2.0"
+			ref="retreiveManagersChequePayeeDetailsController" default="true" />
+
+
+		<!-- KEBRB -->
+
+		<!--  Urgent Domestic Fund Transfer Starts here-->
+
+		<cr:controller op-code="OP0560" svc-ver="1.0"
+			ref="retreiveUrgentExternalPayeeListController" default="true" />
+		<cr:controller op-code="OP0560" svc-ver="2.0"
+			ref="retreiveUrgentExternalPayeeListController" default="false" />
+		<cr:controller op-code="OP0560"
+			ref="retreiveUrgentExternalPayeeListController" />
+
+
+		<cr:controller op-code="OP0561" svc-ver="1.0"
+			ref="retreiveUrgentPayeeInfoController" default="true" />
+		<cr:controller op-code="OP0561" svc-ver="2.0"
+			ref="retreiveUrgentPayeeInfoController" default="false" />
+		<cr:controller op-code="OP0561"
+			ref="retreiveUrgentPayeeInfoController" />
+
+		<cr:controller op-code="OP0562" svc-ver="1.0"
+			ref="urgentFTPaymentFormSubmissionController" default="true" />
+		<cr:controller op-code="OP0562" svc-ver="2.0"
+			ref="urgentFTPaymentFormSubmissionController" default="false" />
+		<cr:controller op-code="OP0562"
+			ref="urgentFTPaymentFormSubmissionController" />
+
+		<cr:controller op-code="OP0563" svc-ver="1.0"
+			ref="urgentFundTransferExecutionController" default="true" />
+		<cr:controller op-code="OP0563" svc-ver="2.0"
+			ref="urgentFundTransferExecutionController" default="false" />
+		<cr:controller op-code="OP0563"
+			ref="urgentFundTransferExecutionController" />
+
+		<!-- KEBRB -->
+
+		<cr:controller op-code="OP0564" svc-ver="1.0"
+			ref="getUrgentBeneficiaryDetailsController" default="true" />
+		<cr:controller op-code="OP0564" svc-ver="2.0"
+			ref="getUrgentBeneficiaryDetailsController" default="false" />
+		<cr:controller op-code="OP0564"
+			ref="getUrgentBeneficiaryDetailsController" />
+		<!--  Urgent Domestic Fund Transfer ends here-->
+
+	</cr:controller-ref-resolver>
+
+
+	<!-- UGBRBResolver -->
+	<cr:controller-ref-resolver id="UGBRBResolver"
+		extends="KEBRB">
+
+
+	</cr:controller-ref-resolver>
+
+	<!-- MZBRBResolver -->
+	<cr:controller-ref-resolver id="MZBRBResolver"
+		extends="KEBRB">
+
+
+	</cr:controller-ref-resolver>
+
+	<!-- AEBRBResolver  -->
+	<cr:controller-ref-resolver id="AEBRBResolver">
+		<cr:controller op-code="OP0100" svc-ver="1.0"
+			ref="loginControllerVer1" default="true" />
+		<cr:controller op-code="OP0100" svc-ver="2.0"
+			ref="loginController" default="false" />
+		<cr:controller op-code="OP0100" ref="loginController" />
+
+		<cr:controller op-code="OP0102" svc-ver="1.0"
+			ref="sqaValidationControllerVer1" default="true" />
+		<cr:controller op-code="OP0102" svc-ver="2.0"
+			ref="sqaValidationController" default="false" />
+		<cr:controller op-code="OP0102" ref="sqaValidationController" />
+
+		<cr:controller op-code="OP0104" svc-ver="1.0"
+			ref="logoutControllerVer1" default="true" />
+		<cr:controller op-code="OP0104" svc-ver="2.0"
+			ref="logoutController" default="false" />
+		<cr:controller op-code="OP0104" ref="logoutController" />
+
+		<cr:controller op-code="OP0105" svc-ver="1.0"
+			ref="inValidateSessionControllerVer1" default="true" />
+		<cr:controller op-code="OP0105" svc-ver="2.0"
+			ref="inValidateSessionController" default="false" />
+		<cr:controller op-code="OP0105" ref="inValidateSessionController" />
+
+		<cr:controller op-code="OP0111" svc-ver="1.0"
+			ref="cancelLoginController" default="true" />
+		<cr:controller op-code="OP0111" svc-ver="2.0"
+			ref="cancelLoginController" default="false" />
+		<cr:controller op-code="OP0111" ref="cancelLoginController" />
+
+		<cr:controller op-code="termsOfUse" svc-ver="1.0"
+			ref="termsOfUseDetailController" default="true" />
+		<cr:controller op-code="termsOfUse" svc-ver="2.0"
+			ref="termsOfUseDetailController" default="false" />
+		<cr:controller op-code="termsOfUse" ref="termsOfUseDetailController" />
+
+		<cr:controller op-code="OP0106" svc-ver="1.0"
+			ref="termsOfUseAcceptController" default="true" />
+		<cr:controller op-code="OP0106" svc-ver="2.0"
+			ref="termsOfUseAcceptController" default="false" />
+		<cr:controller op-code="OP0106" ref="termsOfUseAcceptController" />
+
+		<cr:controller op-code="OP0107" svc-ver="1.0"
+			ref="txnSecondAuthOTPController" default="true" />
+		<cr:controller op-code="OP0107" svc-ver="2.0"
+			ref="txnSecondAuthOTPController" default="false" />
+		<cr:controller op-code="OP0107" ref="txnSecondAuthOTPController" />
+
+		<!-- AEBRB -->
+
+		<cr:controller op-code="OP0108" svc-ver="1.0"
+			ref="txnSecondAuthSQAController" default="true" />
+		<cr:controller op-code="OP0108" svc-ver="2.0"
+			ref="txnSecondAuthSQAController" default="false" />
+		<cr:controller op-code="OP0108" ref="txnSecondAuthSQAController" />
+
+		<cr:controller op-code="postLogin" svc-ver="1.0"
+			ref="postLoginControllerVer1" default="true" />
+		<cr:controller op-code="postLogin" svc-ver="2.0"
+			ref="postLoginController" default="false" />
+		<cr:controller op-code="postLogin" ref="postLoginController" />
+
+		<cr:controller op-code="OP0200" svc-ver="1.0"
+			ref="atAGlanceControllerVer1" default="true" />
+		<cr:controller op-code="OP0200" svc-ver="2.0"
+			ref="atAGlanceController" default="false" />
+		<cr:controller op-code="OP0200" ref="atAGlanceController" />
+
+		<cr:controller op-code="OP0301" svc-ver="1.0"
+			ref="casaAccoutDetailsControllerVer1" default="true" />
+		<cr:controller op-code="OP0301" svc-ver="2.0"
+			ref="casaAccoutDetailsController" default="false" />
+		<cr:controller op-code="OP0301" ref="casaAccoutDetailsController" />
+
+		<cr:controller op-code="OP0302" svc-ver="1.0"
+			ref="tdAccountDetailsControllerVer1" default="true" />
+		<cr:controller op-code="OP0302" svc-ver="2.0"
+			ref="tdAccountDetailsController" default="false" />
+		<cr:controller op-code="OP0302" ref="tdAccountDetailsController" />
+
+		<!-- AEBRB -->
+
+		<cr:controller op-code="OP0401" svc-ver="1.0"
+			ref="casaTrnxnActivityControllerVer1" default="true" />
+		<cr:controller op-code="OP0401" svc-ver="2.0"
+			ref="casaTrnxnActivityController" default="false" />
+		<cr:controller op-code="OP0401" ref="casaTrnxnActivityController" />
+
+		<cr:controller op-code="OP0500" svc-ver="1.0"
+			ref="fundTransferInitControllerVer1" default="true" />
+		<cr:controller op-code="OP0500" svc-ver="2.0"
+			ref="fundTransferInitController" default="false" />
+		<cr:controller op-code="OP0500" ref="fundTransferInitController" />
+
+		<cr:controller op-code="OP0501" svc-ver="1.0"
+			ref="fTValidationControllerVer1" default="true" />
+		<cr:controller op-code="OP0501" svc-ver="2.0"
+			ref="fTValidationController" default="false" />
+		<cr:controller op-code="OP0501" ref="fTValidationController" />
+
+		<cr:controller op-code="OP0510" svc-ver="1.0"
+			ref="internalFTInitController" default="true" />
+		<cr:controller op-code="OP0510" svc-ver="2.0"
+			ref="internalFTInitController" default="false" />
+		<cr:controller op-code="OP0510" ref="internalFTInitController" />
+
+		<cr:controller op-code="OP0511" svc-ver="1.0"
+			ref="internalFTValidationController" default="true" />
+		<cr:controller op-code="OP0511" svc-ver="2.0"
+			ref="internalFTValidationController" default="false" />
+		<cr:controller op-code="OP0511" ref="internalFTValidationController" />
+
+		<cr:controller op-code="OP0513" svc-ver="1.0"
+			ref="internalFTDetailsController" default="true" />
+		<cr:controller op-code="OP0513" svc-ver="2.0"
+			ref="internalFTDetailsController" default="false" />
+		<cr:controller op-code="OP0513" ref="internalFTDetailsController" />
+
+		<!-- AEBRB -->
+
+		<cr:controller op-code="OP0502" svc-ver="1.0"
+			ref="fundTransferExecutionControllerVer1" default="true" />
+		<cr:controller op-code="OP0502" svc-ver="2.0"
+			ref="fundTransferExecutionController" default="false" />
+		<cr:controller op-code="OP0502" ref="fundTransferExecutionController" />
+
+		<cr:controller op-code="OP0600" svc-ver="1.0"
+			ref="retrievePayeeListControllerVer1" default="true" />
+		<cr:controller op-code="OP0600" svc-ver="2.0"
+			ref="retrievePayeeListController" default="false" />
+		<cr:controller op-code="OP0600" ref="retrievePayeeListController" />
+
+		<cr:controller op-code="OP0601" svc-ver="1.0"
+			ref="retrievePayeeInfoControllerVer1" default="true" />
+		<cr:controller op-code="OP0601" svc-ver="2.0"
+			ref="retrievePayeeInfoController" default="false" />
+		<cr:controller op-code="OP0601" ref="retrievePayeeInfoController" />
+
+		<cr:controller op-code="OP0602" svc-ver="1.0"
+			ref="paymentFormSubmissionControllerVer1" default="true" />
+		<cr:controller op-code="OP0602" svc-ver="2.0"
+			ref="paymentFormSubmissionController" default="false" />
+		<cr:controller op-code="OP0602" ref="paymentFormSubmissionController" />
+
+		<cr:controller op-code="OP0603" svc-ver="1.0"
+			ref="confirmPaymentExecutionControllerVer1" default="true" />
+		<cr:controller op-code="OP0603" svc-ver="2.0"
+			ref="confirmPaymentExecutionController" default="false" />
+		<cr:controller op-code="OP0603"
+			ref="confirmPaymentExecutionController" />
+
+		<!-- AEBRB -->
+
+		<cr:controller op-code="OP0604" svc-ver="1.0"
+			ref="retrieveMTPPayeeInfoController" default="true" />
+		<cr:controller op-code="OP0604" svc-ver="2.0"
+			ref="retrieveMTPPayeeInfoController" default="false" />
+		<cr:controller op-code="OP0604" ref="retrieveMTPPayeeInfoController" />
+
+		<cr:controller op-code="OP0605" svc-ver="1.0"
+			ref="retrieveBCDPayeeInfoController" default="true" />
+		<cr:controller op-code="OP0605" svc-ver="2.0"
+			ref="retrieveBCDPayeeInfoController" default="false" />
+		<cr:controller op-code="OP0605" ref="retrieveBCDPayeeInfoController" />
+
+		<cr:controller op-code="OP0606" svc-ver="1.0"
+			ref="retrieveCCPPayeeInfoController" default="true" />
+		<cr:controller op-code="OP0606" svc-ver="2.0"
+			ref="retrieveCCPPayeeInfoController" default="false" />
+		<cr:controller op-code="OP0606" ref="retrieveCCPPayeeInfoController" />
+
+		<cr:controller op-code="OP0303" svc-ver="1.0"
+			ref="creditCardAccoutDetailsControllerVer1" default="true" />
+		<cr:controller op-code="OP0303" svc-ver="2.0"
+			ref="creditCardAccoutDetailsController" default="false" />
+		<cr:controller op-code="OP0303"
+			ref="creditCardAccoutDetailsController" />
+
+		<cr:controller op-code="OP0402" svc-ver="1.0"
+			ref="creditCardUnbilledTransControllerVer1" default="true" />
+		<cr:controller op-code="OP0402" svc-ver="2.0"
+			ref="creditCardUnbilledTransController" default="false" />
+		<cr:controller op-code="OP0402"
+			ref="creditCardUnbilledTransController" />
+
+		<!-- AEBRB -->
+
+		<cr:controller op-code="OP0403" svc-ver="1.0"
+			ref="creditCardStmtTransControllerVer1" default="true" />
+		<cr:controller op-code="OP0403" svc-ver="2.0"
+			ref="creditCardStmtTransController" default="false" />
+		<cr:controller op-code="OP0403" ref="creditCardStmtTransController" />
+
+		<cr:controller op-code="authenticationFailure" svc-ver="1.0"
+			ref="authenticationFailureController" default="true" />
+		<cr:controller op-code="authenticationFailure" svc-ver="2.0"
+			ref="authenticationFailureController" default="false" />
+		<cr:controller op-code="authenticationFailure" ref="authenticationFailureController" />
+
+		<cr:controller op-code="OP0304" svc-ver="1.0"
+			ref="retrieveMutualFundDetailsController" default="true" />
+		<cr:controller op-code="OP0304" svc-ver="2.0"
+			ref="retrieveMutualFundDetailsController" default="false" />
+		<cr:controller op-code="OP0304"
+			ref="retrieveMutualFundDetailsController" />
+
+		<cr:controller op-code="OP0305" svc-ver="1.0"
+			ref="retrieveStructuredNoteDetailsController" default="true" />
+		<cr:controller op-code="OP0305" svc-ver="2.0"
+			ref="retrieveStructuredNoteDetailsController" default="false" />
+		<cr:controller op-code="OP0305"
+			ref="retrieveStructuredNoteDetailsController" />
+
+		<cr:controller op-code="OP0306" svc-ver="1.0"
+			ref="retrieveBondsDetailsController" default="true" />
+		<cr:controller op-code="OP0306" svc-ver="2.0"
+			ref="retrieveBondsDetailsController" default="false" />
+		<cr:controller op-code="OP0306" ref="retrieveBondsDetailsController" />
+
+		<!-- AEBRB -->
+
+		<cr:controller op-code="OP0701" svc-ver="1.0"
+			ref="interestRatesController" default="true" />
+		<cr:controller op-code="OP0701" svc-ver="2.0"
+			ref="interestRatesController" default="false" />
+		<cr:controller op-code="OP0701" ref="interestRatesController" />
+		<!-- External Fund Transfer -->
+		<cr:controller op-code="OP0520" svc-ver="1.0"
+			ref="retreiveFTExternalPayeeListController" default="true" />
+		<cr:controller op-code="OP0520" svc-ver="2.0"
+			ref="retreiveFTExternalPayeeListController" default="false" />
+		<cr:controller op-code="OP0520"
+			ref="retreiveFTExternalPayeeListController" />
+
+		<cr:controller op-code="OP0521" svc-ver="1.0"
+			ref="retreiveFTExternalPayeeInfoController" default="true" />
+		<cr:controller op-code="OP0521" svc-ver="2.0"
+			ref="retreiveFTExternalPayeeInfoController" default="false" />
+		<cr:controller op-code="OP0521"
+			ref="retreiveFTExternalPayeeInfoController" />
+
+		<cr:controller op-code="OP0522" svc-ver="1.0"
+			ref="externalFTPaymentFormSubmissionController" default="true" />
+		<cr:controller op-code="OP0522" svc-ver="2.0"
+			ref="externalFTPaymentFormSubmissionController" default="false" />
+		<cr:controller op-code="OP0522"
+			ref="externalFTPaymentFormSubmissionController" />
+
+		<cr:controller op-code="OP0523" svc-ver="1.0"
+			ref="externalFundTransferExecutionController" default="true" />
+		<cr:controller op-code="OP0523" svc-ver="2.0"
+			ref="externalFundTransferExecutionController" default="false" />
+		<cr:controller op-code="OP0523"
+			ref="externalFundTransferExecutionController" />
+
+		<!-- AEBRB -->
+
+		<cr:controller op-code="OP0524" svc-ver="1.0"
+			ref="getExternalBeneficiaryDetailsController" default="true" />
+		<cr:controller op-code="OP0524" svc-ver="2.0"
+			ref="getExternalBeneficiaryDetailsController" default="false" />
+		<cr:controller op-code="OP0524"
+			ref="getExternalBeneficiaryDetailsController" />
+		<!-- International Fund Transfer -->
+		<cr:controller op-code="OP0530" svc-ver="1.0"
+			ref="retreiveInternationalPayeeListController" default="true" />
+		<cr:controller op-code="OP0530" svc-ver="2.0"
+			ref="retreiveInternationalPayeeListController" default="false" />
+		<cr:controller op-code="OP0530"
+			ref="retreiveInternationalPayeeListController" />
+
+		<cr:controller op-code="OP0531" svc-ver="1.0"
+			ref="retreiveInternationalPayeeInfoController" default="true" />
+		<cr:controller op-code="OP0531" svc-ver="2.0"
+			ref="retreiveInternationalPayeeInfoController" default="false" />
+		<cr:controller op-code="OP0531"
+			ref="retreiveInternationalPayeeInfoController" />
+
+		<cr:controller op-code="OP0532" svc-ver="1.0"
+			ref="internationalFTPaymentFormSubmissionController" default="true" />
+		<cr:controller op-code="OP0532" svc-ver="2.0"
+			ref="internationalFTPaymentFormSubmissionController" default="false" />
+		<cr:controller op-code="OP0532"
+			ref="internationalFTPaymentFormSubmissionController" />
+
+		<!-- AEBRB -->
+
+		<cr:controller op-code="OP0533" svc-ver="1.0"
+			ref="internationalFundTransferExecutionController" default="true" />
+		<cr:controller op-code="OP0533" svc-ver="2.0"
+			ref="internationalFundTransferExecutionController" default="false" />
+		<cr:controller op-code="OP0533"
+			ref="internationalFundTransferExecutionController" />
+
+		<cr:controller op-code="OP0534" svc-ver="1.0"
+			ref="getInternationalBeneficiaryDetailsController" default="true" />
+		<cr:controller op-code="OP0534" svc-ver="2.0"
+			ref="getInternationalBeneficiaryDetailsController" default="false" />
+		<cr:controller op-code="OP0534"
+			ref="getInternationalBeneficiaryDetailsController" />
+
+		<cr:controller op-code="OP0901" svc-ver="1.0"
+			ref="chequeBookRequestInitController" default="true" />
+		<cr:controller op-code="OP0901" svc-ver="2.0"
+			ref="chequeBookRequestInitController" default="false" />
+
+		<cr:controller op-code="OP0902" svc-ver="1.0"
+			ref="chequeBookRequestValidationController" default="true" />
+		<cr:controller op-code="OP0902" svc-ver="2.0"
+			ref="chequeBookRequestValidationController" default="false" />
+
+		<cr:controller op-code="OP0903" svc-ver="1.0"
+			ref="chequeBookRequestExecuteController" default="true" />
+		<cr:controller op-code="OP0903" svc-ver="2.0"
+			ref="chequeBookRequestExecuteController" default="false" />
+
+
+
+		<!-- Bank Draft -->
+		<cr:controller op-code="OP0540" svc-ver="2.0"
+			ref="bankDraftStepOneController" default="true" />
+		<cr:controller op-code="OP0541" svc-ver="2.0"
+			ref="retreiveBankDraftPayeeInfoController" default="true" />
+		<cr:controller op-code="OP0542" svc-ver="2.0"
+			ref="bankDraftFormValidationController" default="true" />
+		<cr:controller op-code="OP0543" svc-ver="2.0"
+			ref="executePurchaseBankDraftController" default="true" />
+
+		<!-- AEBRB -->
+
+		<cr:controller op-code="OP0544" svc-ver="2.0"
+			ref="managersChequeStepOneController" default="true" />
+		<cr:controller op-code="OP0545" svc-ver="2.0"
+			ref="retreiveManagersChequePayeeInfoController" default="true" />
+		<cr:controller op-code="OP0546" svc-ver="2.0"
+			ref="managersChequeFormValidationController" default="true" />
+		<cr:controller op-code="OP0547" svc-ver="2.0"
+			ref="executeManagersChequeDraftController" default="true" />
+
+
+		<cr:controller op-code="OP0549" svc-ver="2.0"
+			ref="retreiveBankDraftPayeeDetailsController" default="true" />
+		<cr:controller op-code="OP0550" svc-ver="2.0"
+			ref="retreiveManagersChequePayeeDetailsController" default="true" />
+
+		<!--
+			<cr:controller op-code="OP0548" svc-ver="2.0"
+			ref="branchLookUpController" default="true" />
+		-->
+
+		<!-- Branch look up -->
+		<cr:controller op-code="OP9901" svc-ver="2.0"
+			ref="branchLookUpController" default="true" />
+
+		<!-- AEBRB -->
+
+		<!--  Urgent Domestic Fund Transfer Starts here-->
+
+		<cr:controller op-code="OP0560" svc-ver="1.0"
+			ref="retreiveUrgentExternalPayeeListController" default="true" />
+		<cr:controller op-code="OP0560" svc-ver="2.0"
+			ref="retreiveUrgentExternalPayeeListController" default="false" />
+		<cr:controller op-code="OP0560"
+			ref="retreiveUrgentExternalPayeeListController" />
+
+		<cr:controller op-code="OP0561" svc-ver="1.0"
+			ref="retreiveUrgentPayeeInfoController" default="true" />
+		<cr:controller op-code="OP0561" svc-ver="2.0"
+			ref="retreiveUrgentPayeeInfoController" default="false" />
+		<cr:controller op-code="OP0561"
+			ref="retreiveUrgentPayeeInfoController" />
+
+		<cr:controller op-code="OP0562" svc-ver="1.0"
+			ref="urgentFTPaymentFormSubmissionController" default="true" />
+		<cr:controller op-code="OP0562" svc-ver="2.0"
+			ref="urgentFTPaymentFormSubmissionController" default="false" />
+		<cr:controller op-code="OP0562"
+			ref="urgentFTPaymentFormSubmissionController" />
+
+		<cr:controller op-code="OP0563" svc-ver="1.0"
+			ref="urgentFundTransferExecutionController" default="true" />
+		<cr:controller op-code="OP0563" svc-ver="2.0"
+			ref="urgentFundTransferExecutionController" default="false" />
+		<cr:controller op-code="OP0563"
+			ref="urgentFundTransferExecutionController" />
+
+		<!-- AEBRB -->
+
+		<cr:controller op-code="OP0564" svc-ver="1.0"
+			ref="getUrgentBeneficiaryDetailsController" default="true" />
+		<cr:controller op-code="OP0564" svc-ver="2.0"
+			ref="getUrgentBeneficiaryDetailsController" default="false" />
+		<cr:controller op-code="OP0564"
+			ref="getUrgentBeneficiaryDetailsController" />
+		<!--  Urgent Domestic Fund Transfer ends here-->
+
+	<!--	CR#83 ApplyProduct-->
+	<cr:controller op-code="OP0984" svc-ver="1.0"
+			ref="applyProductConfirmController" default="true" />
+		<cr:controller op-code="OP0984" svc-ver="2.0"
+			ref="applyProductConfirmController" default="false" />
+		<cr:controller op-code="OP0984"
+			ref="applyProductConfirmController" />
+		<!--  Urgent Domestic Fund Transfer ends here-->
+
+
+		 <!-- KITS LOOK UP API CALL  START-->
+		<cr:controller op-code="OP0978" svc-ver="1.0"
+			ref="searchIndividualCustforDeDupCheckController" default="true" />
+		<cr:controller op-code="OP0978" svc-ver="2.0"
+			ref="searchIndividualCustforDeDupCheckController" default="false" />
+		<cr:controller op-code="OP0978"
+		    ref="searchIndividualCustforDeDupCheckController" />
+ 		<!-- KITS LOOK UP API CALL  END-->
+
+ 		<!-- KITS REGISTRATION API CALL  START-->
+		<cr:controller op-code="OP0979" svc-ver="1.0"
+			ref="createIndividualCustomerController" default="true" />
+		<cr:controller op-code="OP0979" svc-ver="2.0"
+			ref="createIndividualCustomerController" default="false" />
+		<cr:controller op-code="OP0979"
+		    ref="createIndividualCustomerController" />
+ 		<!-- KITS REGISTRATION API CALL  END-->
+
+		<!-- KITS MAKE BILL PAYMENT API CALL  START-->
+		<cr:controller op-code="OP0980" svc-ver="1.0"
+			ref="kitsOutwardPaymentController" default="true" />
+		<cr:controller op-code="OP0980" svc-ver="2.0"
+			ref="kitsOutwardPaymentController" default="false" />
+		<cr:controller op-code="OP0980"
+		    ref="kitsOutwardPaymentController" />
+ 		<!-- KITS MAKE BILL PAYMENT API CALL  END-->
+
+ 		<!-- 14102016 G01022861 Strat -->
+ 		<cr:controller op-code="OP0981" svc-ver="1.0"
+			ref="searchIndividualCustforDeDupCheckController" default="true" />
+		<cr:controller op-code="OP0981" svc-ver="2.0"
+			ref="searchIndividualCustforDeDupCheckController" default="false" />
+		<cr:controller op-code="OP0981"
+		    ref="searchIndividualCustforDeDupCheckController" />
+ 		<!-- KITS MAKE BILL PAYMENT API CALL  END-->
+
+ 		<cr:controller op-code="OP0982" svc-ver="1.0"
+			ref="createIndividualCustomerController" default="true" />
+		<cr:controller op-code="OP0982" svc-ver="2.0"
+			ref="createIndividualCustomerController" default="false" />
+		<cr:controller op-code="OP0982"
+		    ref="createIndividualCustomerController" />
+ 		<!-- KITS MAKE BILL PAYMENT API CALL  END-->
+
+ 		<cr:controller op-code="OP0983" svc-ver="1.0"
+			ref="searchIndividualCustforDeDupCheckController" default="true" />
+		<cr:controller op-code="OP0983" svc-ver="2.0"
+			ref="searchIndividualCustforDeDupCheckController" default="false" />
+		<cr:controller op-code="OP0983"
+		    ref="searchIndividualCustforDeDupCheckController" />
+
+<!--		    <cr:controller op-code="OP0984" svc-ver="1.0"-->
+<!--			ref="KitsOutwardPaymentValidationController" default="true" />-->
+<!--		<cr:controller op-code="OP0984" svc-ver="2.0"-->
+<!--			ref="KitsOutwardPaymentValidationController" default="false" />-->
+<!--		<cr:controller op-code="OP0984"-->
+<!--		    ref="KitsOutwardPaymentValidationController" />-->
+
+	<cr:controller op-code="OP0985" svc-ver="1.0"
+			ref="KitsfundTransferInitController" default="true" />
+		<cr:controller op-code="OP0985" svc-ver="2.0"
+			ref="KitsfundTransferInitController" default="false" />
+		<cr:controller op-code="OP0985"
+		    ref="KitsfundTransferInitController" />
+ 		<!-- KITS MAKE BILL PAYMENT API CALL  END-->
+ 	<!-- 14102016 G01022861 END -->
+
+
+ 	<!-- CPB CALL START-->
+		<cr:controller op-code="OP0797" svc-ver="1.0"
+			ref="cpbPesaLinkSendToPhoneAccountController" default="true" />
+		<cr:controller op-code="OP0797" svc-ver="2.0"
+			ref="cpbPesaLinkSendToPhoneAccountController" default="false" />
+		<cr:controller op-code="OP0797"
+		    ref="cpbPesaLinkSendToPhoneAccountController" />
+ 	<!-- CPB CALL  END-->
+
+	</cr:controller-ref-resolver>
+
+</beans>

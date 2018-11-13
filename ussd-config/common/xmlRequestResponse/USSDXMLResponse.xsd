@@ -1,0 +1,26 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="RESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="HEADER">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="MSISDN"/>
+			   <xs:element type="xs:string" name="NONCE"/>
+              <xs:element type="xs:string" name="SESSIONID"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BODY">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="DISPLAYTEXT"/>
+              <xs:element type="xs:string" name="STATUS"/>
+			  <xs:element type="xs:string" name="EXTRA" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

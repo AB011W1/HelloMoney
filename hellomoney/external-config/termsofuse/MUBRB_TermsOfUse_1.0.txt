@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style type="text/css">
+<!--
+body
+	{
+	margin		:0;
+	padding		:0;
+	font-family	:arial,helvetica,sans-serif;
+	color		:#006FA4;}
+
+#wrapper
+	{
+	padding		:10px;
+	margin		:0 auto;}
+
+#header
+	{
+	text-align	:center;}
+
+
+#wrapper #header p
+	{
+	font-size	:0.8em;
+	margin		:0px auto;
+	padding		:0 0 5px 0 ;}
+
+#wrapper #header h2
+	{
+	font-size	:0.8em;
+	margin		:0px auto;
+	padding		:5px 0 0 0;}
+
+.divider
+	{
+	border-bottom	:1px solid #006FA4;}
+
+
+h1
+	{
+	margin		:0;
+	padding		:0 0 5px 0;
+	font-size	:1.2em;
+	font-weight	:bold;}
+
+h2
+	{
+	margin		:0 0 5px 0;
+	padding		:8px 0 0 0;
+	font-size	:0.9em;
+	font-weight	:bold;}
+
+#wrapper p
+	{
+	font-size	:0.8em;
+	margin		:0 0 5px 15px;
+	padding		:8px 0 0 0;}
+
+ #wrapper ul, #wrapper ol
+	{
+	margin-top	:0px;
+	padding-top	:0px;}
+
+ #wrapper ul li, #wrapper ol li
+	{
+	font-size	:0.8em;
+	margin-top	:2px;}
+
+ #wrapper ol li ol li
+	{
+	font-size	:1em;
+	margin		:5px 0 5px 0;}
+
+ #wrapper p.subsection
+	{
+	margin-left	:15px;
+	margin-top	:2px;}
+
+ #wrapper p.subsection span
+	{
+	display		:block;
+	margin-left	:15px;}
+-->
+
+</style>
+
+</head>
+
+
+
+<body>
+<div id="wrapper">
+
+<div id="header">
+<h1>Terms and Conditions</h1>
+<div class="divider"></div></div>
+
+<div id="text">
+
+<p>By clicking "Accept", you agree to be bound by the Barclays Internet Banking terms of use (the Agreement).</p>
+
+<h2>BARCLAYS BANK MAURITIUS LIMITED INTERNET BANKING TERMS OF USE (RET 37A)</h2>
+
+<p>The Agreement sets forth that BARCLAYS BANK MAURITIUS LIMITED (BARCLAYS), incorporated in Mauritius, Company No. 68913, having its registered office at Sir William Newton Street, Port Louis, Mauritius. Business Registration No. C10068913 grants, and the individual who accepts these terms of use (hereinafter "the User") agrees to, a free software user license, property of BARCLAYS, which is personal and non-transferable, limited, non-exclusive and available by means of a telematic download process to directly log onto the BARCLAYS homepage.</p>
+
+<p>The Agreement shall be read in conjunction with and subject to the Barclays Retail Website Terms of Use and Barclays Internet Retail Terms and Conditions (the Terms and Conditions)</p>
+
+<p>The Agreement regulates the acquiring/downloading of the computer application - Barclays Mobile Banking (the Application) by the User onto his/her personal computer device. This Application will allow the User, once it has been downloaded by the latter, to access and use the functionalities of the online banking services if the User is registered for the latter with BARCLAYS.</p>
+
+<p>All the products and services contained in the Application are provided by BARCLAYS. in accordance with banking services, current regulations and under the supervision of the Bank of Mauritius and other regulatory bodies.</p>
+
+<p>The User has been informed and accepts that the submission of an application to register as a BARCLAYS customer or to sign up for any of the products or services included in this Application, in no way implies the establishment of a commercial relationship with BARCLAYS until all the requirements laid down by BARCLAYS for applying for the products or services have been met.</p>
+
+<p>The submission of applications for signing up for any of the products or services included in this Application on the part of the User who fails to meet the requirements set forth by BARCLAYS, shall be the sole responsibility of the User, the latter exempting BARCLAYS from any liability in this regard.</p>
+
+<p>The access and use on the part of the User of some of the functionalities of BARCLAYS online banking services will be possible if the User has registered for these services and functionalities.</p>
+
+<p>The Application functionalities and the service provided will be the same as the online banking services, always bearing in mind that some of them may not be fully operative due to the characteristics of the mobile device used. The Terms and Conditions will be applicable to this Application where applicable and appropriate.</p>
+
+<p>The downloading of the Application and/or the functionalities incorporated are initially, and unless otherwise communicated with sufficient notice, free of charge. However, the connection, browsing and calls will be invoiced by the User's mobile operator according to the tariff for which the User has registered.</p>
+
+<p>The use of the Application is limited to that described in this document. Its use for any other purpose is strictly forbidden and shall be considered an infringement of intellectual and industrial property regulations, BARCLAYS being able to demand liability for non-fulfillment of this term according to legislation in force.</p>
+
+<p>The User assumes any damages for the use of the Application, including the installation of the software on his/her mobile device. BARCLAYS does not give any guarantee regarding the Application, none of the parties being liable to the other in the event of failure to comply with the obligations as a result of force majeure or unforeseeable events.</p>
+
+<p>BARCLAYS reserves the right to make changes in the Application and the software, at any time and without notice. BARCLAYS also reserves the right to change, partially or totally, the Terms & Conditions, as well as to include other new ones, upon prior notice to the User, through the mobile device, prior to the corresponding download. The new Terms & Conditions will be understood as being accepted by the User once the corresponding download has been made.</p>
+
+<p>Likewise, BARCLAYS may update, change or withdraw the information contained in the Application, even being able to restrict or forbid access to this information, without prior notice. BARCLAYS reserves the right to withdraw, limit or prevent access to the Application if technical problems arise due to events or circumstances beyond the control of BARCLAYS that, in its opinion, could limit or invalidate the security levels required for the correct functioning of the Application.</p>
+
+<p>BARCLAYS will be able to unilaterally terminate the Agreement, thus cancelling the licence granted, by giving the User prior notice, through the mobile device. The User may also unilaterally terminate the Agreement without prior notice to BARCLAYS by means of uninstalling the Application from the mobile device. The personal data given by the User through any of the functionalities allowed by the Application shall be stored on a file belonging to BARCLAYS, being exclusively used for the provision of the corresponding service. If the User provides personal data of third parties, he/she declares and ensures BARCLAYS that he/she has the corresponding third party's authorisation and consent.</p>
+
+<p>The Agreement will be governed by Mauritian law. In the event of any discrepancy that may arise regarding its interpretation and/or execution, the parties submit to the jurisdiction of the Courts of Mauritius.</p>
+
+
+</div>
+</div>
+</body>
+</html>

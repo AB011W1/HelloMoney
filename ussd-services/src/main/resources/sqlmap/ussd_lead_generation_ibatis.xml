@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="MCFE">
+
+	<typeAlias alias="leadGenProductDTO" type="com.barclays.ussd.dto.LeadGenProductDTO" />
+
+	<resultMap id="leadGenProdInfo" class="leadGenProductDTO">
+		<result property="productName" column="PROD_NAME" />
+		<result property="subProductName" column="SUB_PROD_NAME" />
+		<result property="businessId" column="BUSINESS_ID" />
+		<result property="productStatus" column="PROD_STATUS" />
+		<result property="sequenceNo" column="SEQUENCE_NO" />
+		<result property="langId" column="LANG_ID" />
+	</resultMap>
+
+	<select id="leadProductList" resultMap="leadGenProdInfo">
+		SELECT P.PROD_NAME,P.SUB_PROD_NAME,P.BUSINESS_ID,P.PROD_STATUS,
+		P.SEQUENCE_NO,P.LANG_ID FROM LEAD_BANK_PRODUCT P
+		WHERE P.BUSINESS_ID = #businessId# AND P.PROD_STATUS='A' AND UPPER(P.LANG_ID) = #langId# ORDER BY P.SEQUENCE_NO
+	</select>
+
+	<select id="leadProductSubList" resultMap="leadGenProdInfo">
+		SELECT P.PROD_NAME,P.SUB_PROD_NAME,P.BUSINESS_ID,P.PROD_STATUS,
+		P.SEQUENCE_NO,P.LANG_ID FROM LEAD_BANK_PRODUCT P
+		WHERE P.BUSINESS_ID = #businessId# AND P.PROD_NAME = #productName# AND P.PROD_STATUS='A' AND UPPER(P.LANG_ID) = #langId# ORDER BY P.SEQUENCE_NO
+	</select>
+
+</sqlMap>
