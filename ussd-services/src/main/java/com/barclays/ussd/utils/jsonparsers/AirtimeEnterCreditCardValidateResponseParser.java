@@ -8,13 +8,11 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import org.apache.commons.collections.CollectionUtils;
 import org.apache.log4j.Logger;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
-import com.barclays.bmg.constants.BillPaymentConstants;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
@@ -29,14 +27,8 @@ import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
 import com.barclays.ussd.utils.UssdResourceBundle;
-import com.barclays.ussd.utils.jsonparsers.bean.airtime.Account;
 import com.barclays.ussd.utils.jsonparsers.bean.airtime.AirtimeValidatePayData;
 import com.barclays.ussd.utils.jsonparsers.bean.airtime.AirtimeValidateResponse;
-import com.barclays.ussd.utils.jsonparsers.bean.billpay.AccountData;
-import com.barclays.ussd.utils.jsonparsers.bean.billpay.FromAcntLst;
-import com.barclays.ussd.utils.jsonparsers.bean.billpay.Payee;
-import com.barclays.ussd.utils.jsonparsers.bean.login.AuthUserData;
-import com.barclays.ussd.utils.jsonparsers.bean.login.AuthenticateUserPayData;
 import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
 
 /**
@@ -116,12 +108,10 @@ public class AirtimeEnterCreditCardValidateResponseParser implements BmgBaseJson
     	    Locale locale = new Locale(language, countryCode);
     	    String confirmLabel = ussdResourceBundle.getLabel(USSDConstants.LABEL_AIRTIME_CONFIRM, locale);
     	    String fromAccLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(DEBIACCNUM_LABEL, locale);
-    	    String amountLabel = ussdResourceBundle.getLabel(USSDConstants.USSD_TRANSACTION_MWALLETE_AMOUNT, locale);
     	    String mobileNumLabel = ussdResourceBundle.getLabel(USSDConstants.USSD_TRANSACTION_MWALLETE_MOBILE, locale);
     	    String airtimeServiceLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel("label.transaction.service", locale);
     	    userInputMap.put("BillerName", airtimeValidatePayData.getPrvder().getBillerName());
 
-    	    Account account = airtimeValidatePayData.getSrcAcct();
     	    CustomerMobileRegAcct cusstAccount=   (CustomerMobileRegAcct) airtimeValidatePayData.getCreditcardJsonModel();
 
     	    pageBody.append(airtimeTopupAmountLabel);

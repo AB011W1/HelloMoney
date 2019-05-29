@@ -18,7 +18,7 @@ import com.barclays.bmg.fxrate.service.response.FxRateServiceResponse;
 import com.barclays.bmg.service.accountdetails.request.CreditCardAccountActivityServiceRequest;
 
 
-public class FxBoardRatesRespAdptOperation extends AbstractResAdptOperation {
+public class FxBoardRatesRespAdptOperation extends AbstractResAdptOperationAcct {
 
 	private String productTypeCodeCash="CASH";
 	private static final String invalid_CurrencyNotAvailable = "FXR00171";

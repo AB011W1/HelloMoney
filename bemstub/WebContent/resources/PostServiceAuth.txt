@@ -1,0 +1,13 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <p425:InitialAfterLoginSuccessResponse xmlns:p425="http://grcb.barclays.com/mcfe/ssc/authentication/InitialAfterLoginSucess">
+      <p425:responseHeader xsi:nil="true"/>
+      <p425:customerInfo xsi:nil="true"/>
+      <p425:loginDetails>
+        <lastLoginTime>2014-02-21T13:14:45.971Z</lastLoginTime>
+        <showConversionMessage>0</showConversionMessage>
+      </p425:loginDetails>
+    </p425:InitialAfterLoginSuccessResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

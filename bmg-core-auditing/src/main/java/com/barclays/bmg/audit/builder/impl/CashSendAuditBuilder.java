@@ -39,14 +39,23 @@ public class CashSendAuditBuilder extends AbstractTransactionAuditBuilder {
 	screenData.addField(field9);
 
 	Date txnDate = Calendar.getInstance().getTime();
-	String fromAcctNo = request.getCashSendRequestDTO().getActNo();
-	String currency = request.getCashSendRequestDTO().getCurr();
-	Double txnAmount = Double.parseDouble(request.getCashSendRequestDTO().getTxnAmt());
-
+	String fromAcctNo = null; String currency = null;
+	Double txnAmount = 0.0;
+	if(null != request){
+		fromAcctNo = request.getCashSendRequestDTO().getActNo();
+		currency = request.getCashSendRequestDTO().getCurr();
+		txnAmount = Double.parseDouble(request.getCashSendRequestDTO().getTxnAmt());
+	}
+	if(null != fromAcctNo)
+		transactionAuditDTO.setFromAccount(fromAcctNo);
+	if(null != currency)
+		transactionAuditDTO.setTransactionCurrency(currency);
+	if(null != txnAmount)
+		transactionAuditDTO.setTransactionAmount(txnAmount);
 	transactionAuditDTO.setTransactionDateTime(txnDate);
-	transactionAuditDTO.setTransactionAmount(txnAmount);
-	transactionAuditDTO.setTransactionCurrency(currency);
-	transactionAuditDTO.setFromAccount(fromAcctNo);
+
+
+
 
 	if (request != null) {
 	    Context context = request.getContext();
@@ -108,15 +117,21 @@ public class CashSendAuditBuilder extends AbstractTransactionAuditBuilder {
 	Date txnDate = Calendar.getInstance().getTime();
 
 	CashSendOneTimeExecuteOperationRequest request = (CashSendOneTimeExecuteOperationRequest) args[0];
-
-	String fromAcctNo = request.getCashSendRequestDTO().getActNo();
-	String currency = request.getCashSendRequestDTO().getCurr();
-	Double txnAmount = Double.parseDouble(request.getCashSendRequestDTO().getTxnAmt());
-
+	String fromAcctNo = null; String currency = null;
+	Double txnAmount = 0.0;
+	if(null != request){
+		fromAcctNo = request.getCashSendRequestDTO().getActNo();
+		currency = request.getCashSendRequestDTO().getCurr();
+		txnAmount = Double.parseDouble(request.getCashSendRequestDTO().getTxnAmt());
+	}
+	if(null != fromAcctNo)
+		transactionAuditDTO.setFromAccount(fromAcctNo);
+	if(null != currency)
+		transactionAuditDTO.setTransactionCurrency(currency);
+	if(null != txnAmount)
+		transactionAuditDTO.setTransactionAmount(txnAmount);
 	transactionAuditDTO.setTransactionDateTime(txnDate);
-	transactionAuditDTO.setTransactionAmount(txnAmount);
-	transactionAuditDTO.setTransactionCurrency(currency);
-	transactionAuditDTO.setFromAccount(fromAcctNo);
+
 
 	if (request != null) {
 	    Context context = request.getContext();

@@ -4,10 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
 
 import com.barclays.bmg.constants.FundTransferConstants;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
@@ -16,14 +13,10 @@ import com.barclays.ussd.bmg.factory.request.BmgBaseRequestBuilder;
 import com.barclays.ussd.svc.context.USSDBaseRequest;
 import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
-import com.barclays.ussd.utils.UssdResourceBundle;
 import com.barclays.ussd.utils.jsonparsers.bean.fundtransfer.ownfundtransfer.AccountDetails;
 
 public class GhipsSaveBenefConfirmRequestBuilder implements
 		BmgBaseRequestBuilder {
-
-  	@Autowired
-    UssdResourceBundle ussdResourceBundle;
 
     private static final String MM_DD_YYYY = "MM/dd/yyyy";
     private static final String REM3 = "rem3";

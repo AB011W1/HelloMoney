@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.barclays.bmg.constants.BillPaymentConstants;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
@@ -19,12 +17,9 @@ import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
-import com.barclays.ussd.utils.UssdMenuBuilder;
 
 public class MobileWalletTopUpPaymentTypeJsonParser implements BmgBaseJsonParser,
 		ScreenSequenceCustomizer {
-	@Autowired
-	UssdMenuBuilder ussdMenuBuilder;
 	private static final String MOBILEWALLET_OTH_NUM_ONEOFF = "label.other.number.oneoff";
 	private static final String MOBILEWALLET_OTH_NUM_SAVDBNF = "label.other.number.savdbnf";
 	private static final String MOBILEWALLET_OTH_NUM_NEWBNF = "label.other.number.newbnf";

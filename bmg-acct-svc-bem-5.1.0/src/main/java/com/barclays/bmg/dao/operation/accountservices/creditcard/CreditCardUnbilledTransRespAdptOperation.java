@@ -10,13 +10,13 @@ import com.barclays.bmg.constants.AccountErrorCodeConstant;
 import com.barclays.bmg.constants.AccountServiceResponseCodeConstant;
 import com.barclays.bmg.constants.ErrorCodeConstant;
 import com.barclays.bmg.dao.core.context.WorkContext;
-import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperation;
+import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperationAcct;
 import com.barclays.bmg.dto.CreditCardActivityDTO;
 import com.barclays.bmg.exception.BMBDataAccessException;
 import com.barclays.bmg.mapper.CreditCardUnbilledTransMapper;
 import com.barclays.bmg.service.accountdetails.response.CreditCardUnbilledTransServiceResponse;
 
-public class CreditCardUnbilledTransRespAdptOperation extends AbstractResAdptOperation {
+public class CreditCardUnbilledTransRespAdptOperation extends AbstractResAdptOperationAcct {
 
     public CreditCardUnbilledTransServiceResponse adaptResponseForCreditCardUnbilledTrans(WorkContext workContext, Object obj) throws Exception {
 

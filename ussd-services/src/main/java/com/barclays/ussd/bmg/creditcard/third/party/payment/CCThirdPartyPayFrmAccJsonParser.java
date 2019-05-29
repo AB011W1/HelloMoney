@@ -26,7 +26,7 @@ import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
 
 /**
  * @author BTCI
- * 
+ *
  */
 public class CCThirdPartyPayFrmAccJsonParser implements BmgBaseJsonParser {
 
@@ -35,7 +35,7 @@ public class CCThirdPartyPayFrmAccJsonParser implements BmgBaseJsonParser {
 
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
 
-	MenuItemDTO menuDTO = null;
+	MenuItemDTO menuDTO = new MenuItemDTO();
 	ObjectMapper mapper = new ObjectMapper();
 	try {
 	    AuthUserData creditCardList = mapper.readValue(responseBuilderParamsDTO.getJsonString(), AuthUserData.class);
@@ -75,12 +75,18 @@ public class CCThirdPartyPayFrmAccJsonParser implements BmgBaseJsonParser {
 	return menuDTO;
     }
 
-    private MenuItemDTO renderMenuOnScreen(List<CustomerMobileRegAcct> list, ResponseBuilderParamsDTO responseBuilderParamsDTO) {
+    private MenuItemDTO renderMenuOnScreen(List<CustomerMobileRegAcct> list, ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
 	int index = 1;
 	StringBuilder pageBody = new StringBuilder();
 	MenuItemDTO menuItemDTO = new MenuItemDTO();
 
 	if ((list != null) && (!list.isEmpty())) {
+		 for(int i =0;i<list.size();i++)
+		    	if(list.get(i).getGroupWalletIndicator()!=null && list.get(i).getGroupWalletIndicator().equals("Y"))
+		    		list.remove(i);
+		if (list == null || list.isEmpty() || list.size() == 0) {
+			   throw new USSDNonBlockingException(USSDExceptions.USSD_NO_ELIGIBLE_ACCTS.getBmgCode());
+		}
 	    for (CustomerMobileRegAcct accountDetail : list) {
 		pageBody.append(USSDConstants.NEW_LINE);
 		pageBody.append(index);

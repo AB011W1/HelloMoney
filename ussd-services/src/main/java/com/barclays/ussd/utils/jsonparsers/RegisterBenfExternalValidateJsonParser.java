@@ -123,10 +123,10 @@ public class RegisterBenfExternalValidateJsonParser implements BmgBaseJsonParser
     else
     	confirmLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(CONFIRM_LABEL,
 		    new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));
-	String nameLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(LABEL_NAME,
-		    new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));
 
 	if(responseBuilderParamsDTO.getUssdSessionMgmt().getBusinessId().equals("MZBRB")){
+		String nameLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(LABEL_NAME,
+				new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));
 		pageBody.append(USSDConstants.NEW_LINE);
 		String nibNoLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(NIBNO_LABEL,
 			    new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));

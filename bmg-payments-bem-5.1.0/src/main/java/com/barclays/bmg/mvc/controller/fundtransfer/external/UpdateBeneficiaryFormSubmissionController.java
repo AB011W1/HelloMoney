@@ -71,8 +71,9 @@ public class UpdateBeneficiaryFormSubmissionController extends BMBAbstractComman
 
 	}
 
-	UpdateBeneficiaryFormSubmissionOperationResponse updateBeneficiaryFormSubmissionOperationResponse = validateUpdateBeneficiaryInternal(
-		context, updateBeneficiaryFormSubmissionCommand);
+	UpdateBeneficiaryFormSubmissionOperationResponse updateBeneficiaryFormSubmissionOperationResponse = new UpdateBeneficiaryFormSubmissionOperationResponse();
+	if(null != context && null != updateBeneficiaryFormSubmissionCommand)
+		updateBeneficiaryFormSubmissionOperationResponse = validateUpdateBeneficiaryInternal(context, updateBeneficiaryFormSubmissionCommand);
 
 	if (updateBeneficiaryFormSubmissionOperationResponse.isSuccess()) {
 	    updateBeneficiaryFormSubmissionOperationResponse = updateBeneficiaryOperation.validateForm(updateBeneficiaryOperationRequest);

@@ -1,6 +1,7 @@
 package com.barclays.bmg.service.request;
 
 import java.math.BigDecimal;
+import java.util.Map;
 
 import com.barclays.bmg.context.RequestContext;
 
@@ -13,7 +14,18 @@ public class RetreiveChargeDetailsServiceRequest extends RequestContext {
     private String custSegmentCode;
     private boolean isStaff;
 
-    //CPB change 08/05/2017
+
+    Map<String, Object> contextMap ;
+
+    public Map<String, Object> getContextMap() {
+		return contextMap;
+	}
+
+	public void setContextMap(Map<String, Object> contextMap) {
+		this.contextMap = contextMap;
+	}
+
+	//CPB change 08/05/2017
     private String branchCode;
     //Biller ID change - CBP 29/09/2017
     private String billerID;

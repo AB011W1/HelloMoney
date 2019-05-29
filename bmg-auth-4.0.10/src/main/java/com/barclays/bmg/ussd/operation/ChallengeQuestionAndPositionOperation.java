@@ -27,9 +27,9 @@ import com.barclays.bmg.ussd.service.ChallengeQuestionAndPositionService;
  * * ****************** Revision History ********************** </br> Project Name is <b>bmg-auth-4.0.10</b> </br> The file name is
  * <b>ChallengeQuestionAndPositionOperation.java</b> </br> Description is <b>Initial Version</b> </br> Updated Date is <b>May 21, 2013</b> </br>
  * ***********************************************************
- * 
+ *
  * @author E20043104
- * 
+ *
  */
 public class ChallengeQuestionAndPositionOperation extends BMBCommonOperation {
 
@@ -41,7 +41,7 @@ public class ChallengeQuestionAndPositionOperation extends BMBCommonOperation {
 
     /**
      * Getter for ChallengeQuestionAndPositionService
-     * 
+     *
      *@param none
      *@return ChallengeQuestionAndPositionService
      */
@@ -51,7 +51,7 @@ public class ChallengeQuestionAndPositionOperation extends BMBCommonOperation {
 
     /**
      * Setter for ChallengeQuestionAndPositionService
-     * 
+     *
      * @param ChallengeQuestionAndPositionService
      * @return void
      */
@@ -62,7 +62,7 @@ public class ChallengeQuestionAndPositionOperation extends BMBCommonOperation {
     /**
      * This method getChallengeQuestions has the purpose to pass operation request and service request parameters for the purpose of making call to
      * bem service.
-     * 
+     *
      * @param ChallengeQuestionAndPositionOperationRequest
      * @return ChallengeQuestionAndPositionOperationResponse
      */
@@ -90,7 +90,7 @@ public class ChallengeQuestionAndPositionOperation extends BMBCommonOperation {
 
     /**
      * This method getChallengeQuesServiceRequest has the purpose to construct service request from the operation request.
-     * 
+     *
      * @param ChallengeQuestionAndPositionOperationRequest
      * @return ChallengeQuestionAndPositionServiceRequest
      */
@@ -115,7 +115,7 @@ public class ChallengeQuestionAndPositionOperation extends BMBCommonOperation {
 
     /**
      * This method getChallengeQuestionRespFromService has the purpose to fetch the positions to challenge questions ,to be shown to the user.
-     * 
+     *
      * @param ChallengeQuestionAndPositionServiceRequest
      * @return ChallengeQuestionAndPositionOperationResponse
      */

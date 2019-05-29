@@ -7,8 +7,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.annotation.Resource;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -43,7 +41,6 @@ public class IntNonRegFTBranchCodeListJsonParser implements BmgBaseJsonParser, S
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
 
 	MenuItemDTO menuDTO = null;
-	USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
 	//added for Ghana branch code letter
 	List<UssdBranchLookUpDTO> branchList = null;
 	try {

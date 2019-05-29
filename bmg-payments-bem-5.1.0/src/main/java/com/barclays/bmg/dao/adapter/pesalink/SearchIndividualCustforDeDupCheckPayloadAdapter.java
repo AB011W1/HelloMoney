@@ -2,7 +2,6 @@ package com.barclays.bmg.dao.adapter.pesalink;
 
 
 import com.barclays.bem.SearchIndividualCustInformation.IndividualCustomerSearch;
-import com.barclays.bem.SearchIndividualCustInformation.SearchIndividualCustomerInformationRequest;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.dao.core.context.impl.DAOContext;
 import com.barclays.bmg.service.request.pesalink.SearchIndividualCustforDeDupCheckServiceRequest;
@@ -18,8 +17,6 @@ public class SearchIndividualCustforDeDupCheckPayloadAdapter {
 
 			SearchIndividualCustforDeDupCheckServiceRequest request=
 				(SearchIndividualCustforDeDupCheckServiceRequest)args[0];
-
-			SearchIndividualCustomerInformationRequest requestBody = new SearchIndividualCustomerInformationRequest();
 
 			IndividualCustomerSearch individualCustomerSearch=new IndividualCustomerSearch();
 			String mobileNumber=request.getMobileNumber();

@@ -1,7 +1,5 @@
 package com.barclays.ussd.utils.jsonparsers;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -12,10 +10,9 @@ import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.barclays.bmg.context.BMBContextHolder;
+import com.barclays.bmg.context.BMGContextHolder;
+import com.barclays.bmg.context.BMGGlobalContext;
 import com.barclays.bmg.dao.product.impl.ListValueResDAOImpl;
-import com.barclays.bmg.service.product.request.ListValueResServiceRequest;
-import com.barclays.bmg.service.product.response.ListValueResByGroupServiceResponse;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
@@ -28,12 +25,6 @@ import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
 import com.barclays.ussd.utils.UssdResourceBundle;
-import com.barclays.ussd.utils.jsonparsers.bean.airtime.Account;
-import com.barclays.ussd.utils.jsonparsers.bean.airtime.AirtimeValidatePayData;
-import com.barclays.ussd.utils.jsonparsers.bean.airtime.AirtimeValidateResponse;
-import com.barclays.ussd.utils.jsonparsers.bean.fundtransfer.ownfundtransfer.OneTimeCashSendValidate;
-import com.barclays.ussd.utils.jsonparsers.bean.fundtransfer.ownfundtransfer.OneTimeCashSendValidatePayData;
-import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
 import com.barclays.ussd.utils.jsonparsers.bean.pesalink.CpbPesaLinkValidate;
 import com.barclays.ussd.utils.jsonparsers.bean.pesalink.CpbPesaLinkValidatePayData;
 
@@ -67,27 +58,27 @@ public class KitsSendToAccountConfirmDetailsJsonParser implements BmgBaseJsonPar
 					menuDTO = renderMenuOnScreen(cpbValidateObj.getPayData(), responseBuilderParamsDTO);
 				}else if (cpbValidateObj.getPayHdr() != null
 						&& TRANSACTION_AMT_LIMIT_ERROR.equalsIgnoreCase(cpbValidateObj.getPayHdr().getResCde())) {
-				    throw new USSDNonBlockingException(USSDExceptions.USSD_BILL_PAY_TRAN_AMT_LIMIT_EXCEEDED.getBmgCode());
+				    throw new USSDNonBlockingException(USSDExceptions.USSD_BILL_PAY_TRAN_AMT_LIMIT_EXCEEDED.getBmgCode(),true);
 				} else if (cpbValidateObj.getPayHdr() != null) {
 				    LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
-				    throw new USSDNonBlockingException(cpbValidateObj.getPayHdr().getResCde());
+				    throw new USSDNonBlockingException(cpbValidateObj.getPayHdr().getResCde(),true);
 				} else {
 				    LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
-				    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+				    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 				}
 		 }
     } catch (JsonParseException e) {
 	    LOGGER.error("JsonParseException : ", e);
-	    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+	    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 	} catch (JsonMappingException e) {
 	    LOGGER.error("JsonParseException : ", e);
-	    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+	    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 	} catch (Exception e) {
 	    LOGGER.error("Exception : ", e);
 	    if (e instanceof USSDNonBlockingException) {
-		throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode());
+		throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode(),true);
 	    } else {
-		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 	    }
 	}
 	 return menuDTO;
@@ -125,13 +116,11 @@ public class KitsSendToAccountConfirmDetailsJsonParser implements BmgBaseJsonPar
         String amount=null;
         String reason=null;
         int bankNameSequence=0;
-        List<String> bankList=new ArrayList<String>();
-        List<String> sortCodeList=new ArrayList<String>();
         pageBody.append(USSDConstants.NEW_LINE);
 	    pageBody.append(NumLabel);
 
     	accNum = userInputMap.get(USSDInputParamsEnum.KITS_STA_ACCOUNT_NUMBER.getParamName());
-    	bankList=(List<String>)ussdSessionMgmt.getTxSessions().get(USSDInputParamsEnum.KITS_STA_BANK_CODE_LIST.getTranId());
+    	List<String> bankList=(List<String>)ussdSessionMgmt.getTxSessions().get(USSDInputParamsEnum.KITS_STA_BANK_CODE_LIST.getTranId());
     	bankNameSequence=Integer.parseInt(userInputMap.get(USSDInputParamsEnum.KITS_STA_BANK_CODE_LIST.getParamName()))-1;
     	bankName =bankList.get(bankNameSequence);
     	Map<String, String> bankDetailsMap = (Map<String, String>)ussdSessionMgmt.getTxSessions().get("BankDeatilsMap");
@@ -170,7 +159,10 @@ public class KitsSendToAccountConfirmDetailsJsonParser implements BmgBaseJsonPar
 
 		//CPB change
 		// Removing PilotValue check(pilotValue !=null && pilotValue.equalsIgnoreCase("Y")) its not going with Regulatory 6.0.0 changes - 02/11/2017
-	    if(responseBuilderParamsDTO.getUssdSessionMgmt().getBusinessId().equals("KEBRB") && cpbValidatePayData.getTransactionFeeAmount()!=null){
+	  //CBP Change
+	    BMGGlobalContext logContext = BMGContextHolder.getLogContext();
+
+	    if(((logContext!=null && logContext.getContextMap().get("isCBPFLAG").equals("Y"))|| (logContext !=null && logContext.getBusinessId().equals("KEBRB"))) && cpbValidatePayData.getTransactionFeeAmount()!=null){
 
 	    	if(cpbValidatePayData.getTransactionFeeAmount().getAmt()!=null){
 	    		Double accumulatedCharge = 0.0;
@@ -182,7 +174,8 @@ public class KitsSendToAccountConfirmDetailsJsonParser implements BmgBaseJsonPar
 					roundedAccumulatedVal =(double) Math.round(accumulatedCharge * 100) / 100;
 				}
 
-			    pageBody.append(USSDConstants.NEW_LINE);
+				//Commented for Kits Pesalink 7.0.0
+				pageBody.append(USSDConstants.NEW_LINE);
 			    pageBody.append(transactionFeeLabel);
 				pageBody.append(cpbValidatePayData.getTransactionFeeAmount().getCurr());
 				pageBody.append(USSDConstants.SINGLE_WHITE_SPACE);

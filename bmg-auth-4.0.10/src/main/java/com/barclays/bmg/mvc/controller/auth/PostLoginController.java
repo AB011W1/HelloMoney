@@ -5,8 +5,6 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.lang.StringUtils;
-
 import com.barclays.bmg.constants.AuthResponseCodeConstants;
 import com.barclays.bmg.constants.SessionConstant;
 import com.barclays.bmg.context.Context;
@@ -20,9 +18,9 @@ import com.barclays.bmg.operation.response.PostAuthenticationOperationResponse;
 
 /**
  * This file is stubbed for testing purpose. MockResponses are used for temporary purposes.
- * 
+ *
  * @author E20041929
- * 
+ *
  */
 public class PostLoginController extends BMBAbstractController {
 
@@ -87,11 +85,6 @@ public class PostLoginController extends BMBAbstractController {
 
 		// Added tempUri for UAE Prod issues
 		// String tempUri = requestUri;
-		String tempUri = "/dataserv?opCde=OP0200";
-		if (!StringUtils.isEmpty(serVerUri)) {
-		    tempUri += "&" + serVerUri;
-		}
-
 		// logger.debug("tempUri:-" + tempUri);
 
 		/*
@@ -118,7 +111,7 @@ public class PostLoginController extends BMBAbstractController {
 
     /**
      * make request for post login
-     * 
+     *
      * @param request
      * @return
      */
@@ -169,7 +162,11 @@ public class PostLoginController extends BMBAbstractController {
 	this.serVerUri = serVerUri;
     }
 
-    @Override
+    public String getSerVerUri() {
+		return serVerUri;
+	}
+
+	@Override
     protected String getActivityId() {
 	// TODO Auto-generated method stub
 	return null;

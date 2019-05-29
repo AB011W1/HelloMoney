@@ -48,18 +48,22 @@ public class BmgBaseResponseBuilder {
 	MenuItemDTO menuItemDTO = null;
 
 	if (!skipNode) {
+		LOGGER.debug("Parser Invoked : "+bmgBaseJsonParser.toString());
 	    // parse the json and populate MenuItemDTO for menu render on the phone
 	    menuItemDTO = bmgBaseJsonParser.parseJsonIntoJava(responseBuilderParamsDTO);
 	}
 	if (menuItemDTO == null && !StringUtils.equals(responseBuilderParamsDTO.getTranDataOpCode(), USSDConstants.NEGATE_UI_RENDERING)) {
 	    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getUssdErrorCode());
 	}
-	currentRunningTransaction.setNextScreenSequenceNumber(menuItemDTO.getNextScreenSequenceNumber());
+	if(null != menuItemDTO)
+		currentRunningTransaction.setNextScreenSequenceNumber(menuItemDTO.getNextScreenSequenceNumber());
 	if (StringUtils.equals(responseBuilderParamsDTO.getTranDataOpCode(), USSDConstants.NEGATE_UI_RENDERING)) {
 	    response.setMenuItemDTO(null);
 	} else {
 	    response.setMenuItemDTO(menuItemDTO);
 	}
+	if(null != menuItemDTO && null != menuItemDTO.getPageBody())
+		LOGGER.debug("Page Parsed : "+menuItemDTO.getPageBody());
 	return response;
     }
 

@@ -15,7 +15,7 @@ package com.barclays.bmg.ussd.dao.operation;
 import com.barclays.bem.HMCreateCustomer.CreateHMCustomerResponseType;
 import com.barclays.bmg.constants.ResponseCodeConstants;
 import com.barclays.bmg.dao.core.context.WorkContext;
-import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperation;
+import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperationAcct;
 import com.barclays.bmg.ussd.auth.service.response.SelfRegistrationInitServiceResponse;
 
 /**
@@ -26,7 +26,7 @@ import com.barclays.bmg.ussd.auth.service.response.SelfRegistrationInitServiceRe
  * @author E20043104
  * 
  */
-public class SelfRegistrationInitResAdptOperation extends AbstractResAdptOperation {
+public class SelfRegistrationInitResAdptOperation extends AbstractResAdptOperationAcct {
 
     /**
      * This method adaptResponseForRegistartionInitialization has the purpose to adapt response for registration initialization.

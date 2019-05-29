@@ -1,0 +1,197 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <p481:RetrieveCreditCardUnbilledTransactionsResponse xmlns:p481="http://barclays.com/bem/RetrieveCreditCardUnbilledTransactions">
+      <p481:ResponseHeader>
+        <ServiceContext>
+          <ServiceID>RetrieveCreditCardUnbilledTransactions</ServiceID>
+          <ConsumerUniqueRefNo>13859753493159</ConsumerUniqueRefNo>
+          <OriginalConsumerUniqueRefNo>13859753493159</OriginalConsumerUniqueRefNo>
+          <ServiceDateTime>2013-12-02T11:09:10.335Z</ServiceDateTime>
+          <ServiceVersionNo>6.0.0</ServiceVersionNo>
+        </ServiceContext>
+        <BankUserContext>
+          <StaffType>Regular</StaffType>
+          <StaffID>IFE</StaffID>
+          <AuthorizerID>Z00019789</AuthorizerID>
+        </BankUserContext>
+        <ServiceResStatus>
+          <ServiceResCode>00000</ServiceResCode>
+          <ServiceResDesc>Success</ServiceResDesc>
+          <ServiceRespDateTime>2013-12-02T09:09:11.168Z</ServiceRespDateTime>
+          <ServiceUniqueRefNo>683dd32e-5b31-11e3-95af-233531e70000</ServiceUniqueRefNo>
+        </ServiceResStatus>
+      </p481:ResponseHeader>
+      <p481:CreditCardUnbilledTransactionList>
+        <p481:CreditCardAccountNumber>1234560111</p481:CreditCardAccountNumber>
+        <p481:CreditCardAccountOrgCode>240</p481:CreditCardAccountOrgCode>
+        <p481:TransactionActivityList>
+          <p481:TransactionActivityInfo>
+            <p481:CreditCardNumber>1234560111</p481:CreditCardNumber>
+            <p481:CreditCardTransactions xmlns:p634="http://barclays.com/bem/TransactionHistory" xmlns:p513="http://barclays.com/bem/CreditCardTransactionHistory">
+              <p634:SourceAccountCurrencyAmount>55.66</p634:SourceAccountCurrencyAmount>
+              <p634:TransactionTypeCode>3227</p634:TransactionTypeCode>
+              <p634:StatementTxnDesc1>FOREX FEE</p634:StatementTxnDesc1>
+              <p634:CreditDebitTypeCode>D</p634:CreditDebitTypeCode>
+              <p634:PostingDate>2014-02-20</p634:PostingDate>
+              <p634:LCYAmount>55.66</p634:LCYAmount>
+              <p634:TransactionCurrencyAmount>0.0</p634:TransactionCurrencyAmount>
+              <p634:TransactionCurrencyCode/>
+              <p634:TransactionReferenceNumber>VT140510070000010000004</p634:TransactionReferenceNumber>
+              <p634:GLCode>1</p634:GLCode>
+              <p634:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+                <p74:AuthorizationStatusCode/>
+              </p634:UserAuditDetails>
+              <p634:EffectiveDate>2014-02-20</p634:EffectiveDate>
+              <p513:MerchantInfo>
+                <p513:MerchantNumber/>
+                <p513:MerchantName>FOREX FEE</p513:MerchantName>
+                <p513:MerchantType>0</p513:MerchantType>
+                <p513:MerchantCountryCode/>
+              </p513:MerchantInfo>
+              <p513:SalesClerk>P01</p513:SalesClerk>
+              <p513:PurchaseOrderNumber/>
+              <p513:Points>0</p513:Points>
+              <p513:ProgramCode>0</p513:ProgramCode>
+              <p513:StockKeepingUnit>0</p513:StockKeepingUnit>
+              <p513:PurchasedItemNumber>90370</p513:PurchasedItemNumber>
+              <p513:SequenceNumber>1</p513:SequenceNumber>
+              <p513:CreditPlan>10001</p513:CreditPlan>
+              <p513:StoreNumber>999999998</p513:StoreNumber>
+              <p513:TicketNumber/>
+              <p513:InsuranceTypeCode/>
+              <p513:LogicModule>7</p513:LogicModule>
+              <p513:Department/>
+              <p513:CashBack>7</p513:CashBack>
+            </p481:CreditCardTransactions>
+          </p481:TransactionActivityInfo>
+          <p481:TransactionActivityInfo>
+            <p481:CreditCardNumber>41011012340128</p481:CreditCardNumber>
+            <p481:CreditCardTransactions xmlns:p634="http://barclays.com/bem/TransactionHistory" xmlns:p513="http://barclays.com/bem/CreditCardTransactionHistory">
+              <p634:SourceAccountCurrencyAmount>2272.0</p634:SourceAccountCurrencyAmount>
+              <p634:TransactionTypeCode>6131</p634:TransactionTypeCode>
+              <p634:StatementTxnDesc1>International Transact CY            CY</p634:StatementTxnDesc1>
+              <p634:CreditDebitTypeCode>D</p634:CreditDebitTypeCode>
+              <p634:PostingDate>2014-02-20</p634:PostingDate>
+              <p634:LCYAmount>2272.0</p634:LCYAmount>
+              <p634:TransactionCurrencyAmount>250.0</p634:TransactionCurrencyAmount>
+              <p634:TransactionCurrencyCode>EUR</p634:TransactionCurrencyCode>
+              <p634:TransactionFxRate xmlns:p920="http://barclays.com/bem/TransactionFxRate">
+                <p920:EffectiveFXRate>0.110035</p920:EffectiveFXRate>
+              </p634:TransactionFxRate>
+              <p634:TransactionReferenceNumber>VT140510070000010000004</p634:TransactionReferenceNumber>
+              <p634:GLCode>2</p634:GLCode>
+              <p634:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+                <p74:AuthorizationStatusCode>005773</p74:AuthorizationStatusCode>
+              </p634:UserAuditDetails>
+              <p634:EffectiveDate>2014-02-18</p634:EffectiveDate>
+              <p513:MerchantInfo>
+                <p513:MerchantNumber>888888888888888</p513:MerchantNumber>
+                <p513:MerchantName>International Transact CY            CY</p513:MerchantName>
+                <p513:MerchantType>5999</p513:MerchantType>
+                <p513:MerchantCountryCode/>
+              </p513:MerchantInfo>
+              <p513:SalesClerk/>
+              <p513:PurchaseOrderNumber/>
+              <p513:Points>0</p513:Points>
+              <p513:ProgramCode>0</p513:ProgramCode>
+              <p513:StockKeepingUnit>0</p513:StockKeepingUnit>
+              <p513:PurchasedItemNumber>4</p513:PurchasedItemNumber>
+              <p513:SequenceNumber>1</p513:SequenceNumber>
+              <p513:CreditPlan>10001</p513:CreditPlan>
+              <p513:StoreNumber>999999998</p513:StoreNumber>
+              <p513:TicketNumber/>
+              <p513:InsuranceTypeCode/>
+              <p513:LogicModule>1</p513:LogicModule>
+              <p513:Department/>
+              <p513:CashBack>1</p513:CashBack>
+            </p481:CreditCardTransactions>
+          </p481:TransactionActivityInfo>
+          <p481:TransactionActivityInfo>
+            <p481:CreditCardNumber>41011012340128</p481:CreditCardNumber>
+            <p481:CreditCardTransactions xmlns:p634="http://barclays.com/bem/TransactionHistory" xmlns:p513="http://barclays.com/bem/CreditCardTransactionHistory">
+              <p634:SourceAccountCurrencyAmount>15.0</p634:SourceAccountCurrencyAmount>
+              <p634:TransactionTypeCode>8030</p634:TransactionTypeCode>
+              <p634:StatementTxnDesc1>NORMAL PAYMENT</p634:StatementTxnDesc1>
+              <p634:CreditDebitTypeCode>C</p634:CreditDebitTypeCode>
+              <p634:PostingDate>2014-02-20</p634:PostingDate>
+              <p634:LCYAmount>15.0</p634:LCYAmount>
+              <p634:TransactionCurrencyAmount>0.0</p634:TransactionCurrencyAmount>
+              <p634:TransactionCurrencyCode/>
+              <p634:TransactionReferenceNumber>09999999980209000300010</p634:TransactionReferenceNumber>
+              <p634:GLCode>2</p634:GLCode>
+              <p634:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+                <p74:AuthorizationStatusCode/>
+              </p634:UserAuditDetails>
+              <p634:EffectiveDate>2014-02-09</p634:EffectiveDate>
+              <p513:MerchantInfo>
+                <p513:MerchantNumber>999999998</p513:MerchantNumber>
+                <p513:MerchantName>NORMAL PAYMENT</p513:MerchantName>
+                <p513:MerchantType>0</p513:MerchantType>
+                <p513:MerchantCountryCode/>
+              </p513:MerchantInfo>
+              <p513:SalesClerk/>
+              <p513:PurchaseOrderNumber/>
+              <p513:Points>0</p513:Points>
+              <p513:ProgramCode>0</p513:ProgramCode>
+              <p513:StockKeepingUnit>0</p513:StockKeepingUnit>
+              <p513:PurchasedItemNumber>10</p513:PurchasedItemNumber>
+              <p513:SequenceNumber>0</p513:SequenceNumber>
+              <p513:CreditPlan>10001</p513:CreditPlan>
+              <p513:StoreNumber>999999998</p513:StoreNumber>
+              <p513:TicketNumber/>
+              <p513:InsuranceTypeCode/>
+              <p513:LogicModule>30</p513:LogicModule>
+              <p513:Department/>
+              <p513:CashBack>30</p513:CashBack>
+            </p481:CreditCardTransactions>
+          </p481:TransactionActivityInfo>
+          <p481:TransactionActivityInfo>
+            <p481:CreditCardNumber>41011012340128</p481:CreditCardNumber>
+            <p481:CreditCardTransactions xmlns:p634="http://barclays.com/bem/TransactionHistory" xmlns:p513="http://barclays.com/bem/CreditCardTransactionHistory">
+              <p634:SourceAccountCurrencyAmount>10.0</p634:SourceAccountCurrencyAmount>
+              <p634:TransactionTypeCode>8001</p634:TransactionTypeCode>
+              <p634:StatementTxnDesc1>PURCHASE</p634:StatementTxnDesc1>
+              <p634:CreditDebitTypeCode>D</p634:CreditDebitTypeCode>
+              <p634:PostingDate>2014-02-20</p634:PostingDate>
+              <p634:LCYAmount>10.0</p634:LCYAmount>
+              <p634:TransactionCurrencyAmount>0.0</p634:TransactionCurrencyAmount>
+              <p634:TransactionCurrencyCode/>
+              <p634:TransactionReferenceNumber>09999999980209000290013</p634:TransactionReferenceNumber>
+              <p634:GLCode>2</p634:GLCode>
+              <p634:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+                <p74:AuthorizationStatusCode/>
+              </p634:UserAuditDetails>
+              <p634:EffectiveDate>2014-02-09</p634:EffectiveDate>
+              <p513:MerchantInfo>
+                <p513:MerchantNumber>999999998</p513:MerchantNumber>
+                <p513:MerchantName>PURCHASE</p513:MerchantName>
+                <p513:MerchantType>0</p513:MerchantType>
+                <p513:MerchantCountryCode/>
+              </p513:MerchantInfo>
+              <p513:SalesClerk/>
+              <p513:PurchaseOrderNumber/>
+              <p513:Points>0</p513:Points>
+              <p513:ProgramCode>0</p513:ProgramCode>
+              <p513:StockKeepingUnit>0</p513:StockKeepingUnit>
+              <p513:PurchasedItemNumber>90013</p513:PurchasedItemNumber>
+              <p513:SequenceNumber>1</p513:SequenceNumber>
+              <p513:CreditPlan>10001</p513:CreditPlan>
+              <p513:StoreNumber>999999998</p513:StoreNumber>
+              <p513:TicketNumber/>
+              <p513:InsuranceTypeCode/>
+              <p513:LogicModule>1</p513:LogicModule>
+              <p513:Department/>
+              <p513:CashBack>1</p513:CashBack>
+            </p481:CreditCardTransactions>
+          </p481:TransactionActivityInfo>
+        </p481:TransactionActivityList>
+        <p481:PaginationFlag>0</p481:PaginationFlag>
+        <p481:PageInfo xmlns:p110="http://barclays.com/bem/PageInformationResponse">
+          <p110:PaginationKeyRecordFlag>0</p110:PaginationKeyRecordFlag>
+        </p481:PageInfo>
+        <p481:CurrencyCode>818</p481:CurrencyCode>
+      </p481:CreditCardUnbilledTransactionList>
+    </p481:RetrieveCreditCardUnbilledTransactionsResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

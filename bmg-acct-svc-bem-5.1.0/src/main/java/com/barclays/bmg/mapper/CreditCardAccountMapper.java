@@ -97,7 +97,7 @@ public class CreditCardAccountMapper {
 	for (CreditCardAccount cas : sourceObject) {
 	    creditCardAccountDTOList.add(mapBeanVision(cas, null));
 	}
-	return ObjectDataMapping(creditCardAccountDTOList);// Added only for
+	return objectDataMapping(creditCardAccountDTOList);// Added only for
 
 	// VPlus suport -
 	// creditCardAccountDTOList;
@@ -324,7 +324,7 @@ public class CreditCardAccountMapper {
     }
 
     // Method to support VPlus only
-    public List<CreditCardAccountDTO> ObjectDataMapping(List<CreditCardAccountDTO> creditCardAccountDTOList) {
+    public List<CreditCardAccountDTO> objectDataMapping(List<CreditCardAccountDTO> creditCardAccountDTOList) {
 
 	String prev = null;
 	String curr = null;

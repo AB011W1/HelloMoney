@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="MCFE">
+	<!-- Alias for the classes -->
+	<typeAlias alias="sessionInformation" type="com.barclays.bmg.security.dto.SessionInformationDTO" />
+
+
+	<!-- result map for FcTempPasswordDTO -->
+	<resultMap id="sessionInformationMap" class="sessionInformation">
+		<result property="sessionID" column="SESSION_ID" />
+		<result property="principalID" column="PRINCIPAL_ID" />
+		<result property="lastRequestDate" column="LAST_REQUEST_DATE" />
+		<result property="expiredFlag" column="EXPIRED_FLG" />
+	</resultMap>
+
+
+	<select id="secFindAllPrincipal" resultMap="sessionInformationMap">
+		SELECT SESSION_ID, PRINCIPAL_ID, LAST_REQUEST_DATE, EXPIRED_FLG FROM S_HTTP_SESSION
+	</select>
+
+	<select id="secGetSessionByID" resultMap="sessionInformationMap">
+		SELECT SESSION_ID, PRINCIPAL_ID, LAST_REQUEST_DATE, EXPIRED_FLG
+		FROM S_HTTP_SESSION
+		WHERE SESSION_ID = #sessionID#
+	</select>
+
+	<select id="secGetSessionUsedByPrincipal" resultMap="sessionInformationMap">
+		SELECT SESSION_ID, PRINCIPAL_ID, LAST_REQUEST_DATE, EXPIRED_FLG
+		FROM S_HTTP_SESSION
+		WHERE PRINCIPAL_ID = #principalID#
+	</select>
+
+	<insert id="secRegisterNewSession">
+		INSERT INTO S_HTTP_SESSION(SESSION_ID,PRINCIPAL_ID,LAST_REQUEST_DATE,EXPIRED_FLG)
+		VALUES(#sessionID#,#principalID#,#lastRequestDate#,#expiredFlag#)
+	</insert>
+
+	<delete id="secRemoveSession">
+		DELETE FROM S_HTTP_SESSION WHERE SESSION_ID=#sessionID#
+	</delete>
+
+	<update id="secUpdateSession">
+		UPDATE S_HTTP_SESSION
+		SET SESSION_ID=#sessionID#,PRINCIPAL_ID=#principalID#,LAST_REQUEST_DATE=#lastRequestDate#,EXPIRED_FLG=#expiredFlag#
+		WHERE SESSION_ID=#sessionID#
+	</update>
+</sqlMap>

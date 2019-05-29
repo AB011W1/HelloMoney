@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+	<bean id="validateUserController"
+		class="com.barclays.bmg.mvc.controller.auth.ValidateUserController"
+		parent="bmbAbstractCommandController">
+		<property name="validateUserOperation" ref="validateUserOperation" />
+		<property name="commandName" value="ValidateUserCommand" />
+		<property name="commandClass" value="com.barclays.bmg.mvc.command.auth.ValidateUserCommand" />
+		<!--<property name="validator" ref="sqaValidator" />
+		--><property name="bmbJSONBldr" ref="validateUserJSONBldr" />
+	</bean>
+
+	<bean id="verifyUserController"
+		class="com.barclays.bmg.mvc.controller.auth.VerifyUserController"
+		parent="bmbAbstractCommandController">
+		<property name="veifyUserOperation" ref="verifyUserOperation" />
+		<property name="commandName" value="ValidateUserCommand" />
+		<property name="commandClass" value="com.barclays.bmg.mvc.command.auth.ValidateUserCommand" />
+		<!--<property name="validator" ref="sqaValidator" />
+		--><property name="bmbJSONBldr" ref="verifyUserJSONBldr" />
+	</bean>
+
+	<bean id="validateUserJSONBldr"
+		class="com.barclays.bmg.json.model.builder.auth.ValidateUserJSONBldr" />
+
+	<bean id="verifyUserJSONBldr"
+		class="com.barclays.bmg.json.model.builder.auth.VerifyUserUserJSONBldr" />
+
+
+	<bean id="validateUserOperation" class="com.barclays.bmg.operation.ValidateUserOperation"
+		parent="bmbCommonOperation">
+		<property name="validateUserService" ref="validateUserService" />
+	</bean>
+
+	<bean id="verifyUserOperation" class="com.barclays.bmg.operation.VerifyUserOperation"
+		parent="bmbCommonOperation"/>
+
+
+	<bean id="validateUserService" class="com.barclays.bmg.service.impl.ValidateUserService">
+		<property name="validateUserDAO" ref="validateUserDAO" />
+
+	</bean>
+
+	<bean id="validateUserDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.ValidateUserDAO" />
+		<property name="daoFrontController" ref="validateUserDAOFrontControllerImpl" />
+	</bean>
+
+	<bean id="validateUserDAOFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="VALIDATEUSERIGNORECASE" value-ref="validateUserDAOController" />
+
+			</map>
+		</property>
+	</bean>
+	<bean id="validateUserDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.ValidateUserDAOController">
+		<property name="validateUserReqAdptOperation" ref="validateUserReqAdptOperation" />
+		<property name="transmissionOperation1" ref="transmissionOperation1" />
+		<property name="validateUserResAdptOperation" ref="validateUserResAdptOperation" />
+	</bean>
+
+	<bean id="validateUserReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.ValidateUserReqAdptOperation">
+		<property name="hostMessageHeaderAdapter" ref="hostMessageHeaderAdapter1" />
+		<property name="validateUserPayloadAdapter" ref="validateUserPayloadAdapter" />
+	</bean>
+
+	<bean id="validateUserPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.ValidateUserPayloadAdapter">
+	</bean>
+	<bean id="hostMessageHeaderAdapter1"
+		class="com.barclays.bmg.dao.accountservices.adapter.ValidateUserHeaderAdapter">
+	</bean>
+
+	<bean id="validateUserResAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.ValidateUserResAdptOperation">
+	</bean>
+	<bean id="transmissionOperation1" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="validateUsertransmissionService" />
+	</bean>
+	<bean id="validateUsertransmissionService"
+		class="com.barclays.bmg.dao.service.impl.ValidateUserTransmissionService">
+		<property name="remoteService" ref="authenticationWebServiceImpl" />
+	</bean>
+	<bean id="authenticationWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.grcb.mcfe.ssc.AuthenticationService.AuthenticationService_PortType" />
+		<property name="portName" value="AuthenticationServiceSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.grcb.mcfe.ssc.AuthenticationService.AuthenticationService_Service" />
+		<property name="endpointAddress"
+			value="http://widd.wload.global:32237/authService/services/AuthenticationServiceSOAP" />
+		<!--
+			<property name="endpointAddressName" value="Authentication_EndPoint"
+			/>
+		-->
+		<property name="endpointAddressName" value="AuthenticationServiceSSC_EndPoint" />
+		<property name="cacheKey" value="authenticationService" />
+	</bean>
+</beans>

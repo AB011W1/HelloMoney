@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+	<bean id="logMessageAdvice"
+		class="com.barclays.bmg.logging.BMBLogAroundAdvice">
+	</bean>
+
+	<bean id="remoteLoggingService"
+		class="com.barclays.bmg.logging.service.impl.RemoteLoggingServiceImpl">
+		<property name="loggingDAO" ref="remoteLoggingDAO"/>
+	</bean>
+
+	<bean id="remoteLoggingDAO"
+		class="com.barclays.bmg.logging.dao.impl.RemoteLoggingDAOImpl">
+		<property name="jmsLogSender" ref="jmsLogSender"/>
+	</bean>
+
+	<bean id="jmsLogSender"
+		class="com.barclays.bmg.logging.jms.JMSLogSender">
+		<property name="providerURL" value="iiop://notused:2809"/>
+        <property name="queueBindingName" value="jndi/LoggerSSA.Queue"/>
+        <property name="qcfBindingName" value="jndi/LoggerSSA.MQCF"/>
+        <property name="initialContextFactoryName" value="com.ibm.websphere.naming.WsnInitialContextFactory"/>
+	</bean>
+
+	<bean id="propertyPlaceholderConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+ 		 <property name="locations">
+  	 	 <list>
+      		<value>classpath:mcfe.properties</value>
+   		 </list>
+  		</property>
+	</bean>
+
+	<bean id="bmbLogConfiguration" class="com.barclays.bmg.logging.config.BMBLogConfiguration">
+		<constructor-arg value="bmb-logging.properties"/>
+
+	</bean>
+
+
+</beans>

@@ -1,0 +1,70 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+	<bean id="systemParameterService"
+		class="com.barclays.bmg.service.impl.SystemParameterServiceImpl">
+		<property name="systemParameterDAO" ref="systemParameterDAO"></property>
+
+
+	</bean>
+
+
+	<bean id="scriptResourceService" class="com.barclays.bmg.service.impl.ScriptResourceServiceImpl">
+		<property name="scriptResourceDAO" ref="scriptResourceDAO" />
+
+	</bean>
+
+	<bean id="urlBusinessMapService" class="com.barclays.bmg.service.impl.UrlBusinessMapServiceImpl">
+		<property name="urlBusinessMapDAO" ref="urlBusinessMapDAO" />
+
+	</bean>
+
+	<bean id="entitlementService" class="com.barclays.bmg.service.impl.EntitlementServiceImpl">
+		<property name="entitlementDAO" ref="entitlementDAO"></property>
+	</bean>
+
+	<bean id="messageResourceService"
+		class="com.barclays.bmg.service.impl.MessageResourceServiceImpl">
+		<property name="messageResourceDAO" ref="messageResourceDAO" />
+	</bean>
+
+	<bean id="reportProblemService" class="com.barclays.bmg.service.impl.ReportProblemServiceImpl">
+		<property name="reportProblemDAO" ref="reportProblemDAO" />
+	</bean>
+
+	<bean id="featureBlackoutServiceImpl"
+		class="com.barclays.bmg.service.featureblackout.impl.FeatureBlackoutServiceImpl">
+		<property name="featureBlackoutDAO" ref="featureBlackoutDAOImpl" />
+	</bean>
+
+	<!-- ListValueRes -->
+
+	<bean id="listValueResService"
+		class="com.barclays.bmg.service.product.impl.ListValueResServiceImpl">
+		<property name="listValueResDAO" ref="listValueResDAO" />
+	</bean>
+
+	<bean id="listValueResDAO" class="com.barclays.bmg.dao.product.impl.ListValueResDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+
+	<bean id="componentResService"
+		class="com.barclays.bmg.service.product.impl.ComponentResServiceImpl">
+		<property name="componentResDAO" ref="componentResDAO" />
+	</bean>
+
+	<bean id="componentResDAO" class="com.barclays.bmg.dao.product.impl.ComponentResDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+	<bean id="bmgFormatUtils"
+		class="com.barclays.bmg.service.utils.BMGFormatUtils" scope="prototype" >
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="listValueResService" ref="listValueResService" />
+		<property name="componentResService" ref="componentResService" />
+	</bean>
+
+</beans>

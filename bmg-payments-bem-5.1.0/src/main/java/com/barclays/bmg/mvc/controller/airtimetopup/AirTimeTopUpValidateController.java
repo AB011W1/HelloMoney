@@ -126,7 +126,7 @@ public class AirTimeTopUpValidateController extends BMBAbstractCommandController
 
 	AirTimeTopUpValidateCommand airTimeTopUpValidateCommand = (AirTimeTopUpValidateCommand) command;
 	String extra=airTimeTopUpValidateCommand.getExtra();
-	if(airTimeTopUpValidateCommand.getBillerId().equals("AIRTELCR-5") && extra!=null && extra.equals("FREEDIALAIRTEL")){
+	if((airTimeTopUpValidateCommand.getBillerId().equals("AIRTELCR-5") || airTimeTopUpValidateCommand.getBillerId().equals("AIRTELZMBANKTOWALLET-2")) && extra!=null && (extra.equals("FREEDIALAIRTEL") || extra.equals("FREEDIALAIRTELZM"))){
 		billerCatId="MobileMoney";
 		context.setActivityId("PMT_BP_MOBILE_WALLET_ONETIME");
 	}else
@@ -179,9 +179,12 @@ if (IDENTIFIRE.equalsIgnoreCase(creditCardFlag)) {
 
         	getSelectedAccountOperationRequest.setAcctNumber(getAccountNumber(airTimeTopUpValidateCommand.getCreditcardNo(),
     				request,BMGProcessConstants.CREDIT_PAYMENT));
+  			//Change to filter blocked card on selection
+    		String ccNumber = request.getParameterMap().get("ccNumber")!= null ? request.getParameterMap().get("ccNumber").toString() : "";
+    		getSelectedAccountOperationRequest.setCreditCardNumber(ccNumber);
         	getSelectedAccountOperationResponse = getSelectedAccountOperation.getSelectedCreditCardAccount(getSelectedAccountOperationRequest);
         }else{
-        	if(extra!=null && extra.equals("FREEDIALAIRTEL"))
+        	if(extra!=null && (extra.equals("FREEDIALAIRTEL") || extra.equals("FREEDIALAIRTELZM")))
         		getSelectedAccountOperationRequest.setAcctNumber(getAccountNumber(
     					airTimeTopUpValidateCommand.getActNo(), request,
     					BMGProcessConstants.ACCOUNTS_PROCESS));
@@ -214,11 +217,11 @@ airTimeTopUpValidateResponse = airTimeTopUpValidate.validateRequest(context, air
 	    formValidateOperationRequest.setTxnType(getPayGrp());
         formValidateOperationRequest.setCreditCardFlag(creditCardFlag);
 
-        if(extra!=null && extra.equals("FREEDIALAIRTEL"))
+        if(extra!=null && (extra.equals("FREEDIALAIRTEL") || extra.equals("FREEDIALAIRTELZM")))
         	formValidateOperationRequest.getContext().setActivityId("PMT_BP_MOBILE_WALLET_ONETIME");
 
 	    formValidateOperationResponse = formValidateOperation.validateForm(formValidateOperationRequest);
-	    if(extra!=null && extra.equals("FREEDIALAIRTEL") && formValidateOperationResponse.getResCde()!=null && formValidateOperationResponse.getResCde().equals("BMB90011"))
+	    if(extra!=null && (extra.equals("FREEDIALAIRTEL") || extra.equals("FREEDIALAIRTELZM")) && formValidateOperationResponse.getResCde()!=null && formValidateOperationResponse.getResCde().equals("BMB90011"))
 	    	formValidateOperationResponse.setResCde("BMB90012");
 	    AirTimeTopUpValidateServiceRequest airTimeTopUpValidateServiceRequest = new AirTimeTopUpValidateServiceRequest();
 	    if(IDENTIFIRE.equalsIgnoreCase(creditCardFlag))
@@ -278,7 +281,7 @@ airTimeTopUpValidateServiceRequest.setContext(context);
 	    beneficiaryDTO.setActionCode(airTimeTopUpValidateCommand.getActionCode());
 	    beneficiaryDTO.setStoreNumber(airTimeTopUpValidateCommand.getStoreNumber());
 
-	    if(extra!=null && extra.equals("FREEDIALAIRTEL"))
+	    if(extra!=null && (extra.equals("FREEDIALAIRTEL") || extra.equals("FREEDIALAIRTELZM")))
 	    	transactionDTO.setTxnType("MobileWallet");
 	    transactionDTO.setBeneficiaryDTO(beneficiaryDTO);
 	    setIntoProcessMap(request, BMGProcessConstants.BILL_PAYMENT, BillPaymentConstants.TRANSACTION_DTO, transactionDTO);

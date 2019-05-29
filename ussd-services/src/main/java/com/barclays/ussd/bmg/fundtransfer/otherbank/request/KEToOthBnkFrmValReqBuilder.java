@@ -9,13 +9,9 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.barclays.bmg.service.lookup.BranchLookUpService;
-import com.barclays.bmg.service.lookup.impl.BranchLookUpServiceImpl;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bmg.dto.RequestBuilderParamsDTO;
 import com.barclays.ussd.bmg.factory.request.BmgBaseRequestBuilder;
-import com.barclays.ussd.exception.USSDBlockingException;
-import com.barclays.ussd.exception.USSDNonBlockingException;
 import com.barclays.ussd.svc.context.USSDBaseRequest;
 import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
@@ -26,8 +22,6 @@ public class KEToOthBnkFrmValReqBuilder implements BmgBaseRequestBuilder {
 
 	  @Autowired
 	    UssdResourceBundle ussdResourceBundle;
-		@Autowired
-		private BranchLookUpService branchLookUpService;
 
 	    private static final String MM_DD_YYYY = "MM/dd/yyyy";
 	    private static final String REM3 = "rem3";

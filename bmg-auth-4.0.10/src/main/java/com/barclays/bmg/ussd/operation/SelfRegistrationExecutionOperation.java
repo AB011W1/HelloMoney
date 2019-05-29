@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.barclays.bmg.audit.annotation.AuditSupport;
 import com.barclays.bmg.constants.ActivityConstant;
 import com.barclays.bmg.constants.AuditConstant;
@@ -41,6 +43,7 @@ import com.barclays.bmg.service.response.RetrieveAllCustAcctServiceResponse;
 import com.barclays.bmg.ussd.auth.operation.request.SelfRegistrationExecutionOperationRequest;
 import com.barclays.bmg.ussd.auth.operation.response.SelfRegistrationExecutionOperationResponse;
 import com.barclays.bmg.ussd.auth.service.request.AddDetailstoMCEServiceRequest;
+import com.barclays.bmg.ussd.auth.service.request.RegisterCustomerToProductServiceRequest;
 import com.barclays.bmg.ussd.auth.service.request.ReissuePinServiceRequest;
 import com.barclays.bmg.ussd.auth.service.request.RetrieveCustomerDetailsServiceRequest;
 import com.barclays.bmg.ussd.auth.service.request.SMSDetailsServiceRequest;
@@ -52,6 +55,7 @@ import com.barclays.bmg.ussd.auth.service.response.RetrieveCustomerDetailsServic
 import com.barclays.bmg.ussd.auth.service.response.SelfRegistrationExecutionServiceResponse;
 import com.barclays.bmg.ussd.auth.service.response.UpdateDetailstoMCEServiceResponse;
 import com.barclays.bmg.ussd.service.AddDetailstoMCEService;
+import com.barclays.bmg.ussd.service.RegisterCustomerToProductService;
 import com.barclays.bmg.ussd.service.ReissuePinService;
 import com.barclays.bmg.ussd.service.RetrieveCustomerDetailsService;
 import com.barclays.bmg.ussd.service.SMSDetailsService;
@@ -121,6 +125,7 @@ public class SelfRegistrationExecutionOperation extends BMBCommonOperation {
      */
     private RetrieveAllCustAcctService retrieveAllCustAcctService;
 
+
     /**
      * This method getDetailsAndRegister has the purpose to get customer details and register it.
      *
@@ -179,10 +184,10 @@ public class SelfRegistrationExecutionOperation extends BMBCommonOperation {
 	    if (retrieveAllCustAcctServiceResponse.isSuccess() && (userStatusInMCE == null)
 		    || (userStatusInMCE != null && userStatusInMCE.equalsIgnoreCase(""))) {
 		doRegistration(selfRegisExecServiceRequest, selfRegisExecOperationResponse, context);
-	    } else if (retrieveAllCustAcctServiceResponse.isSuccess() && !userStatusInMCE.equals(null)
+	    } else if (retrieveAllCustAcctServiceResponse.isSuccess() && null != userStatusInMCE
 		    && (userStatusInMCE.equalsIgnoreCase("DEREGISTER") || userStatusInMCE.equalsIgnoreCase("BLOCK"))) {
 		doReRegistration(selfRegisExecServiceRequest, selfRegisExecOperationResponse, context, userStatusInMCE, mobilePhoneMCE);
-	    } else if (retrieveAllCustAcctServiceResponse.isSuccess() && !userStatusInMCE.equals(null)
+	    } else if (retrieveAllCustAcctServiceResponse.isSuccess() && null != userStatusInMCE
 		    && (userStatusInMCE.equalsIgnoreCase("ACTIVE") || userStatusInMCE.equalsIgnoreCase("SUSPEND"))) {
 		doReRegistration(selfRegisExecServiceRequest, selfRegisExecOperationResponse, context, userStatusInMCE, mobilePhoneMCE);
 	    } else {
@@ -861,4 +866,36 @@ public class SelfRegistrationExecutionOperation extends BMBCommonOperation {
 	this.retrieveAllCustAcctService = retrieveAllCustAcctService;
     }
 
+
+    /**
+     * For Airtel Registration
+     */
+
+    private RegisterCustomerToProductService registerCustomerToProductService;
+
+
+
+    public RegisterCustomerToProductService getRegisterCustomerToProductService() {
+		return registerCustomerToProductService;
+	}
+
+	public void setRegisterCustomerToProductService(
+			RegisterCustomerToProductService registerCustomerToProductService) {
+		this.registerCustomerToProductService = registerCustomerToProductService;
+	}
+
+	/**
+     * for Airtel Registration(RegisterCustomerToProduct service)
+     */
+      public void acknowledgeRegisterCutomerToProduct(SelfRegistrationExecutionOperationRequest request){
+
+    	RegisterCustomerToProductServiceRequest registerCustomerToProductServiceRequest=new RegisterCustomerToProductServiceRequest();
+    	Context context = request.getContext();
+    	loadParameters(context, ActivityConstant.COMMON_ID, ActivityConstant.SEC_COMMON_ID);
+    	registerCustomerToProductServiceRequest.setContext(context);
+    	registerCustomerToProductServiceRequest.setBeneficiaryFirstName("ABC");
+    	registerCustomerToProductServiceRequest.setBeneficiaryLastName("BCD");
+
+    	registerCustomerToProductService.getcustomerDetails(registerCustomerToProductServiceRequest);
+    }
 }

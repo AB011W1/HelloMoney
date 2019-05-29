@@ -7,7 +7,7 @@ import com.barclays.bem.UAERetrieveBillDetails.UAERetrieveBillDetailsResponse;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.service.response.InqueryBillServiceResponse;
 
-public class InqueryBillRespAdptOperation extends AbstractResAdptOperation{
+public class InqueryBillRespAdptOperation extends AbstractResAdptOperationAcct{
 
 	public InqueryBillServiceResponse adaptResponse(WorkContext workContext, Object obj){
 

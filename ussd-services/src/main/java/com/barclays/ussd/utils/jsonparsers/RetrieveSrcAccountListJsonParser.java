@@ -9,7 +9,6 @@ import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
-import org.codehaus.jackson.map.ObjectMapper;
 
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
@@ -24,6 +23,7 @@ import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
 import com.barclays.ussd.utils.jsonparsers.bean.fundtransfer.ownfundtransfer.AccountDetails;
+import com.barclays.ussd.utils.jsonparsers.bean.login.AuthUserData;
 import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
 
 public class RetrieveSrcAccountListJsonParser implements BmgBaseJsonParser {// , ScreenSequenceCustomizer {
@@ -32,9 +32,6 @@ public class RetrieveSrcAccountListJsonParser implements BmgBaseJsonParser {// ,
     private static final Logger LOGGER = Logger.getLogger(RetrieveSrcAccountListJsonParser.class);
 
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
-	String jsonString = responseBuilderParamsDTO.getJsonString();
-	MenuItemDTO menuDTO = null;
-	ObjectMapper mapper = new ObjectMapper();
 	String serviceName = responseBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getCurrentRunningTransaction().getServiceName();
 	USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
 
@@ -58,11 +55,13 @@ public class RetrieveSrcAccountListJsonParser implements BmgBaseJsonParser {// ,
 				responseBuilderParamsDTO.getUssdSessionMgmt().getTxSessions()
 						.put(USSDInputParamsEnum.OLAFT_PAYEE_LIST.getTranId(),lstPayeeAcntsOrigional);
 
-				menuDTO = renderMenuOnScreen(srcList, responseBuilderParamsDTO, null);
+				MenuItemDTO menuDTO = renderMenuOnScreen(srcList, responseBuilderParamsDTO, null);
+				return menuDTO;
 			} else {
 				List<CustomerMobileRegAcct> cardList = (List<CustomerMobileRegAcct>) ussdSessionMgmt.getTxSessions().get(
 					    								USSDInputParamsEnum.OLAFT_SOURCE_LIST.getTranId());
-				menuDTO = renderMenuOnScreen(null, responseBuilderParamsDTO, cardList);
+				MenuItemDTO menuDTO = renderMenuOnScreen(null, responseBuilderParamsDTO, cardList);
+				return menuDTO;
 			}
 		 /*
 	     * if (responseBuilderParamsDTO.getUssdSessionMgmt().getTxSessions() == null) { Map<String, Object> txSessionMap = new HashMap<String,
@@ -90,27 +89,48 @@ public class RetrieveSrcAccountListJsonParser implements BmgBaseJsonParser {// ,
 		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
 	    }
 	}
-	return menuDTO;
+
     }
 
     /**
      * @param payData
      * @param responseBuilderParamsDTO
      * @return MenuItemDTO
+     * @throws USSDNonBlockingException
      */
     private MenuItemDTO renderMenuOnScreen(ArrayList<AccountDetails> srcList, ResponseBuilderParamsDTO responseBuilderParamsDTO,
-    		List<CustomerMobileRegAcct> cardList) {
+    		List<CustomerMobileRegAcct> cardList) throws USSDNonBlockingException {
 	int index = 1;
 	StringBuilder pageBody = new StringBuilder();
 	MenuItemDTO menuItemDTO = new MenuItemDTO();
+	USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
+	AuthUserData authData= ((AuthUserData)ussdSessionMgmt.getUserAuthObj());
+    List<CustomerMobileRegAcct> acts=authData.getPayData().getCustActs();
 	if ("OwnLinkedAcctFundTx".equals(responseBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails()
 			.getCurrentRunningTransaction().getServiceName())) {
+		if(srcList != null && !srcList.isEmpty())
+		{
+			if(acts != null && acts.size() > 0)
+			{
+				List<String> GpAcc=new ArrayList<String>();
+				 for(int i =0;i<acts.size();i++)
+				    	if(acts.get(i).getGroupWalletIndicator()!=null && acts.get(i).getGroupWalletIndicator().equals("Y"))
+				    		GpAcc.add(acts.get(i).getMkdActNo());
+
+					 for(int j=0;j<srcList.size();j++)
+						 if(GpAcc.contains(srcList.get(j).getMkdActNo()))
+							 srcList.remove(j);
+			}
+			if(srcList == null || srcList.isEmpty() || srcList.size() == 0){
+				throw new USSDNonBlockingException(USSDExceptions.USSD_NO_ELIGIBLE_ACCTS.getBmgCode());
+			}
 			for (AccountDetails accountDetail : srcList) {
 				pageBody.append(USSDConstants.NEW_LINE);
 				pageBody.append(index++);
 				pageBody.append(USSDConstants.DOT_SEPERATOR);
 				pageBody.append(accountDetail.getMkdActNo());
 			}
+		}
 		} else {
 			if(cardList != null && !cardList.isEmpty())
 			for (CustomerMobileRegAcct cardNo : cardList) {

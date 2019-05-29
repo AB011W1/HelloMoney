@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="MCFE_APP_CACHE">
+  <!-- Alias for the classes -->
+  <typeAlias alias="componentResDTO"
+    type="com.barclays.bmg.dto.ComponentResCacheDTO" /><!--
+  <typeAlias alias="componentCacheDTO"
+        type="com.barclays.mcfe.ssc.retail.common.bean.ComponentCacheDTO" />
+  --><typeAlias alias="booleanHandler"
+    type="com.barclays.bmg.typehandler.StringBooleanHandler" />
+
+  <typeAlias alias="cacheController" type="com.barclays.bmg.cache.IbatisCacheController"/>
+  <cacheModel id="componentCacheModel" type="cacheController"
+    readOnly="true" serialize="true">
+    <property name="configFile" value="/ehcache.xml" />
+    <property name="CacheSize" value="10000" />
+  </cacheModel>
+
+
+
+  <!-- result map for ComponentResCacheDTO -->
+  <resultMap id="componentResCache" class="componentResDTO" >
+    <result property="languageId" column="LANGUAGE_ID" />
+    <result property="labelValue" column="LABEL_VALUE" />
+    <result property="toolTip" column="TOOL_TIP" />
+    <result property="helpText" column="HELP_TEXT" />
+    <result property="required" column="REQUIRED_FLG" typeHandler="booleanHandler" />
+    <result property="rendered" column="RENDERED_FLG" typeHandler="booleanHandler" />
+    <result property="hasHelpText" column="HAS_HELP_TEXT_FLG" typeHandler="booleanHandler" />
+    <result property="format" column="FORMATTER_STRING"/>
+    <result property="length" column="LENGTH"/>
+    <result property="messageKey" column="MESSAGE_KEY"/>
+    <!--<result property="refNoMessageKey1" column="REF_NO_MESSAGE_KEY_1"/>
+    <result property="key" column="COMPONENT_KEY" />
+    <result property="businessid" column="BUSINESS_ID" />
+    <result property="billerid" column="BILLER_ID" />
+  --></resultMap><!--
+
+  <resultMap id="componentCache" class="componentCacheDTO" >
+        <result property="key" column="COMPONENT_KEY" />
+        <result property="orderIndex" column="DISP_ORDER" />
+    </resultMap>
+
+  -->
+  <typeAlias alias="labelvaluedetailsdto"
+    type="com.barclays.bmg.dto.LabelValueDetailsDTO" />
+   <resultMap id="labelvaluedetailsdtomap" class="labelvaluedetailsdto" >
+   <result property="labelValue" column="LABEL_VALUE" />
+   </resultMap>
+
+    <statement id="getLabelByKey" resultMap="labelvaluedetailsdtomap">
+  	SELECT distinct crMSt.LABEL_VALUE FROM C_COMPONENT_RES_MST crMSt
+  	where
+  	crMSt.BUSINESS_ID=#businessid# and crMSt.LANGUAGE_ID=#languageId# and crMSt.SYSTEM_ID='UB' and
+	crMSt.COMPONENT_KEY in
+	(
+	select cmst.COMPONENT_KEY
+	from C_COMPONENT_MST cmst
+	where cmst.BUSINESS_ID=#businessid# and cmst.SYSTEM_ID='UB' and
+		cmst.COMPONENT_KEY=
+		(
+		select cubp.REF_NO_KEY_1 from C_BILLER_MST cubp
+		where cubp.BILLER_ID=#billerid# and cubp.BUSINESS_ID=#businessid#
+		)
+	)
+  	</statement><!--
+
+  <statement id="getConfirmLabelByKey" resultMap="labelvaluedetailsdtomap">
+  	SELECT distinct crMSt.LABEL_VALUE FROM C_COMPONENT_RES_MST crMSt
+  	where
+  	crMSt.BUSINESS_ID=#businessid# and crMSt.LANGUAGE_ID=#languageId# and crMSt.SYSTEM_ID='UB' and
+	crMSt.COMPONENT_KEY in
+	(
+	select cmst.COMPONENT_KEY
+	from C_COMPONENT_MST cmst
+	where cmst.BUSINESS_ID=#businessid# and cmst.SYSTEM_ID='UB' and
+		cmst.COMPONENT_KEY=
+		(
+		select cubp.REF_NO_TEXT_1 from C_BILLER_MST cubp
+		where cubp.BILLER_ID=#billerid# and cubp.BUSINESS_ID=#businessid#
+		)
+	)
+
+  </statement>
+
+  -->
+
+  <statement  id="findComponentResByKey" resultMap="componentResCache">
+     select b.LANGUAGE_ID,b.LABEL_VALUE,b.TOOL_TIP,b.HELP_TEXT,b.LENGTH,a.REQUIRED_FLG,a.RENDERED_FLG,a.HAS_HELP_TEXT_FLG,c.FORMATTER_STRING,c.MESSAGE_KEY
+      from C_COMPONENT_MST a
+      join C_COMPONENT_RES_MST b
+        on a.COMPONENT_KEY=b.COMPONENT_KEY and a.SYSTEM_ID=b.SYSTEM_ID and a.BUSINESS_ID=b.BUSINESS_ID and a.SCREEN_ID=b.SCREEN_ID
+ left join C_FORMATTER_MST c
+        on a.FORMATTER_ID=c.FORMATTER_ID and a.SYSTEM_ID=c.SYSTEM_ID and a.BUSINESS_ID=c.BUSINESS_ID
+     where a.SYSTEM_ID =#systemId#
+       and a.BUSINESS_ID=#businessId#
+       and a.COMPONENT_KEY=#componentKey#
+       and b.LANGUAGE_ID=#langId#
+       and a.SCREEN_ID=#screenId#
+       <isNotNull prepend="AND" property="DELETE_FLG">
+        and a.DELETE_FLG != 'Y'
+        </isNotNull>
+    </statement><!--
+
+    <statement id="findComponentByKey" resultMap="componentCache" >
+        SELECT
+          COMPONENT_KEY,
+          DISP_ORDER
+        FROM
+            C_COMPONENT_MST
+        WHERE
+          SYSTEM_ID =#systemId# and
+          BUSINESS_ID=#businessId# and
+          COMPONENT_KEY=#componentKey# and
+          SCREEN_ID=#screenId#
+    </statement>
+--></sqlMap>

@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" output="target/classes" path="src/main/java"/>
 	<classpathentry kind="src" output="target/classes" path="src/main/resources"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SHM_Lib">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SHM_Lib"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/SHM_Server_Lib"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/bmg-ssa-payments-bem-5.1.0"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/bmg-ssa-acct-svc-bem-5.1.0"/>
@@ -38,5 +33,10 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/ussd-common"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/ussd-bmg-adapter"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/softtag/SHMDocs/BCAG/ROA_Luna_files/LunaProvider.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

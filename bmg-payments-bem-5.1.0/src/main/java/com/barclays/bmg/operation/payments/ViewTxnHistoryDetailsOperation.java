@@ -1,13 +1,10 @@
 package com.barclays.bmg.operation.payments;
 
-import java.util.List;
-
 import com.barclays.bmg.audit.annotation.AuditSupport;
 import com.barclays.bmg.constants.ActivityConstant;
 import com.barclays.bmg.constants.AuditConstant;
 import com.barclays.bmg.context.Context;
 import com.barclays.bmg.context.RequestContext;
-import com.barclays.bmg.dto.BillerDTO;
 import com.barclays.bmg.operation.request.billpayment.ViewTxnHistoryDetailsOperationRequest;
 import com.barclays.bmg.operation.response.billpayment.ViewTxnHistoryDetailsOperationResponse;
 import com.barclays.bmg.service.ViewTxnHistoryDetailsService;
@@ -54,11 +51,10 @@ public abstract class ViewTxnHistoryDetailsOperation extends BMBPaymentsOperatio
 
     protected String getBillerNameById(String billerId, RequestContext requestContext) {
 	String billerName = null;
-	List<BillerDTO> billerList = getAllBillerList(requestContext);
 	/*
 	 * for (int i = 0; i < billerList.size(); i++) { BillerDTO biller = billerList.get(i); if (null != billerId &&
 	 * biller.getBillerId().equals(billerId)) { billerName = biller.getBillerName(); break; }
-	 * 
+	 *
 	 * }
 	 */
 	BillerServiceRequest request = new BillerServiceRequest();

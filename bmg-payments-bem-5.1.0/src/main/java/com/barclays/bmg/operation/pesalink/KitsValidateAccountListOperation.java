@@ -14,10 +14,6 @@ public class KitsValidateAccountListOperation extends BMBCommonOperation {
 
 		ValidateAccountListOperationResponse response = new ValidateAccountListOperationResponse();
 		response.setContext(request.getContext());
-
-		List<? extends CustomerAccountDTO> srcAcctLst = request.getSrcAcctLst();
-		List<? extends CustomerAccountDTO> destAcctLst = request.getDestAcctLst();
-
 //    	if(srcAcctLst!=null && srcAcctLst.size()==1){
 //    		if(destAcctLst!=null && destAcctLst.size()==1){
 //    			response.setResCde(FundTransferResponseCodeConstants.OWN_FT_ONLY_ONE_ACCOUNT);

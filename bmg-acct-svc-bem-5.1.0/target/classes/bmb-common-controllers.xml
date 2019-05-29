@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+
+	<bean name="bmbAbstractCommandController"
+		class="com.barclays.bmg.mvc.controller.auth.BMBAbstractCommandController" abstract="true">
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="featureBlackoutService" ref="featureBlackoutServiceImpl" />
+		<property name="requestUri" value="/dataserv?opCde=authenticationFailure" />
+		<property name="serVerUri" value="serVer=2.0" />
+		<property name="supportedMethods" value="POST" />
+	</bean>
+
+	<bean name="bmbAbstractController"
+		class="com.barclays.bmg.mvc.controller.auth.BMBAbstractController" abstract="true">
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="featureBlackoutService" ref="featureBlackoutServiceImpl" />
+		<property name="requestUri" value="/dataserv?opCde=authenticationFailure" />
+		<property name="serVerUri" value="serVer=2.0" />
+		<property name="supportedMethods" value="POST" />
+	</bean>
+
+	<util:list id="skipOpCodes">
+		<value>OP0100</value>
+		<value>OP0101</value>
+		<value>OP0102</value>
+		<value>OP0103</value>
+		<value>OP0105</value>
+		<value>authenticationFailure</value>
+		<value>OP0111</value>
+		<value>OP0800</value>
+		<value>OP9901</value>
+		<value>OP0110</value>
+		<value>OP0198</value>
+		<value>OP0109</value>
+		<value>OP0112</value>
+		<value>OP0114</value>
+		<value>OP0115</value>
+		<value>OP0116</value>
+		<value>OP0117</value>
+
+		<!-- <value>OP1000</value>
+		<value>OP1001</value>
+		<value>OP1002</value> -->
+	</util:list>
+</beans>

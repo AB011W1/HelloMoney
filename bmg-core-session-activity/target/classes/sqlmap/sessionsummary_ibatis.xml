@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="MCFECache">
+
+    <!-- Alias for the classes -->
+    <typeAlias alias="sessionActivity" type="com.barclays.bmg.service.sessionactivity.dto.SessionActivityDTO" />
+
+	<!-- result map -->
+	<resultMap id="sessionActivity" class="sessionActivity">
+	  <result property="userId" column="USER_ID"/>
+	  <result property="sessionId" column="SESS_ID"/>
+      <result property="systemId" column="SYSTEM_ID"/>
+	  <result property="businessId" column="BUSINESS_ID"/>
+	  <result property="txnTyp" column="TXN_TYP"/>
+	  <result property="txnTime" column="TXN_TIME"/>
+	  <result property="acctFrom" column="ACCT_FROM"/>
+	  <result property="acctTo" column="ACCT_TO"/>
+	  <result property="amount" column="AMOUNT"/>
+	  <result property="status" column="STATUS"/>
+	  <result property="refNo" column="REF_NO"/>
+	  <result property="details" column="DETAILS"/>
+	</resultMap>
+
+    <insert id="insertSessionActivity">
+        INSERT INTO S_SES_SUMMARY_HST (BUSINESS_ID, SYSTEM_ID, USER_ID, SESS_ID, TXN_TYP, TXN_TIME, ACCT_FROM, ACCT_TO, AMOUNT, STATUS, REF_NO, DETAILS)
+        VALUES (#businessId#, #systemId#, #userId#, #sessionId#, #txnTyp#, #txnTime#, #acctFrom#, #acctTo#, #amount#, #status#, #refNo#, #details#)
+    </insert>
+
+    <select id="findSessionActivityBySession" resultMap="sessionActivity">
+		  select
+		      S_TXN_LOG_TXN.USER_ID,
+		      S_TXN_LOG_TXN.SESS_ID,
+		      S_TXN_LOG_TXN.SYSTEM_ID,
+		      S_TXN_LOG_TXN.BUSINESS_ID,
+		      S_TXN_LOG_TXN.TXN_TYP,
+		      S_TXN_LOG_TXN.TXN_TIME,
+		      S_TXN_LOG_TXN.ACCT_FROM,
+		      S_TXN_LOG_TXN.ACCT_TO,
+		      S_TXN_LOG_TXN.AMOUNT,
+		      S_TXN_LOG_TXN.STATUS,
+		      S_TXN_LOG_TXN.REF_NO,
+		      S_TXN_LOG_TXN.DETAILS
+		  from S_SES_SUMMARY_HST S_TXN_LOG_TXN
+		  where
+		      S_TXN_LOG_TXN.BUSINESS_ID = #businessId#
+		      and
+		      S_TXN_LOG_TXN.SYSTEM_ID = #systemId#
+		      and
+		      S_TXN_LOG_TXN.USER_ID = #userId#
+		      and
+		      S_TXN_LOG_TXN.SESS_ID = #sessionId#
+		  order by
+              S_TXN_LOG_TXN.TXN_TIME
+	</select>
+
+	<select id="findSessionActivityByUser" resultMap="sessionActivity">
+		  select
+		      S_TXN_LOG_TXN.USER_ID,
+		      S_TXN_LOG_TXN.SESS_ID,
+		      S_TXN_LOG_TXN.SYSTEM_ID,
+		      S_TXN_LOG_TXN.BUSINESS_ID,
+		      S_TXN_LOG_TXN.TXN_TYP,
+		      S_TXN_LOG_TXN.TXN_TIME,
+		      S_TXN_LOG_TXN.ACCT_FROM,
+		      S_TXN_LOG_TXN.ACCT_TO,
+		      S_TXN_LOG_TXN.AMOUNT,
+		      S_TXN_LOG_TXN.STATUS,
+		      S_TXN_LOG_TXN.REF_NO,
+		      S_TXN_LOG_TXN.DETAILS
+		  from S_SES_SUMMARY_HST S_TXN_LOG_TXN
+		  where
+		      S_TXN_LOG_TXN.BUSINESS_ID = #businessId#
+		      and
+		      S_TXN_LOG_TXN.SYSTEM_ID = #systemId#
+		      and
+		      S_TXN_LOG_TXN.USER_ID = #userId#
+		  order by
+              S_TXN_LOG_TXN.TXN_TIME
+	</select>
+
+	<select id="listSessionActivityByUserAndType"   resultMap="sessionActivity">
+		  select
+		      S_TXN_LOG_TXN.USER_ID,
+		      S_TXN_LOG_TXN.SESS_ID,
+		      S_TXN_LOG_TXN.SYSTEM_ID,
+		      S_TXN_LOG_TXN.BUSINESS_ID,
+		      S_TXN_LOG_TXN.TXN_TYP,
+		      S_TXN_LOG_TXN.TXN_TIME,
+		      S_TXN_LOG_TXN.ACCT_FROM,
+		      S_TXN_LOG_TXN.ACCT_TO,
+		      S_TXN_LOG_TXN.AMOUNT,
+		      S_TXN_LOG_TXN.STATUS,
+		      S_TXN_LOG_TXN.REF_NO,
+		      S_TXN_LOG_TXN.DETAILS
+		  from S_SES_SUMMARY_HST S_TXN_LOG_TXN
+		  where
+		      S_TXN_LOG_TXN.BUSINESS_ID = #businessId#
+		      and
+		      S_TXN_LOG_TXN.SYSTEM_ID = #systemId#
+		      and
+		      S_TXN_LOG_TXN.USER_ID = #userId#
+		      and
+		      S_TXN_LOG_TXN.TXN_TYP = #txnTyp#
+		      and
+		      S_TXN_LOG_TXN.TXN_TIME >= #txnTime#
+		  order by
+              S_TXN_LOG_TXN.TXN_TIME desc
+	</select>
+
+	<!--<select id="listLogInAndOutByUseridAndSessionid"   resultMap="sessionSummary">
+		  select
+		      S_TXN_LOG_TXN.USER_ID,
+		      S_TXN_LOG_TXN.SESS_ID,
+		      S_TXN_LOG_TXN.SYSTEM_ID,
+		      S_TXN_LOG_TXN.BUSINESS_ID,
+		      S_TXN_LOG_TXN.TXN_TYP,
+		      S_TXN_LOG_TXN.TXN_TIME,
+		      S_TXN_LOG_TXN.ACCT_FROM,
+		      S_TXN_LOG_TXN.ACCT_TO,
+		      S_TXN_LOG_TXN.AMOUNT,
+		      S_TXN_LOG_TXN.STATUS,
+		      S_TXN_LOG_TXN.REF_NO
+		  from S_TXN_LOG_TXN
+		  where
+		      S_TXN_LOG_TXN.BUSINESS_ID = #businessId#
+		      and
+		      S_TXN_LOG_TXN.SYSTEM_ID = #systemId#
+		      and
+		      S_TXN_LOG_TXN.USER_ID = #userId#
+		      and
+		      S_TXN_LOG_TXN.SESS_ID = #sessId#
+		      and (
+		      S_TXN_LOG_TXN.TXN_TYP = 'LogIn'
+		      or
+		      S_TXN_LOG_TXN.TXN_TYP = 'LogOut'
+		      )
+	</select>-->
+</sqlMap>

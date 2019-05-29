@@ -86,13 +86,9 @@ public class OneTimeCashSendSubmitJsonParser implements BmgBaseJsonParser {
 
 	    String cashSendIdLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(CASHSEND_ID_LABEL,
 		    new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));
-	    String amountLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(AMOUNT_LABEL,
-		    new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));
 	    String mobilNoLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(MOBILE_NO_LABEL,
 		    new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));
 	    String beneficiaryPinLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(BENEFICIARY_PIN_LABEL,
-		    new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));
-	    String currency = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(CURRENCY_LABEL,
 		    new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));
 
 

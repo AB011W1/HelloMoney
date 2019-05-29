@@ -1,7 +1,6 @@
 package com.barclays.bmg.operation.accountdetails;
 
 import java.util.List;
-import java.util.Map;
 
 import com.barclays.bmg.audit.annotation.AuditSupport;
 import com.barclays.bmg.constants.AccountServiceResponseCodeConstant;
@@ -23,7 +22,7 @@ import com.barclays.bmg.service.accounts.response.AllAccountServiceResponse;
 
 /**
  * @author BMB Team
- * 
+ *
  */
 
 public class CreditCardUnbilledTransOperation extends AbstractCreditCardOperation {
@@ -33,10 +32,10 @@ public class CreditCardUnbilledTransOperation extends AbstractCreditCardOperatio
 
     /**
      * 1. retrieve the creditcard account details 2. retrieve creditcard unbilled transactions
-     * 
+     *
      * @param request
      * @return
-     * 
+     *
      */
     @AuditSupport(auditType = AuditConstant.AUDIT_TYPE_TRANSACTION, activityState = AuditConstant.SRC_COM_SSC, serviceDescription = "SD_RETRIEVE_CCD_UNBILLED_TRANS", stepId = "1", activityType = "auditCCDUnbilledTrans")
     public CreditCardUnbilledTransOperationResponse retrieveCreditCardUnbilledTrans(CreditCardUnbilledTransOperationRequest request) {
@@ -44,11 +43,9 @@ public class CreditCardUnbilledTransOperation extends AbstractCreditCardOperatio
 	CreditCardUnbilledTransOperationResponse returnCCUnbilledTransOperationResp = new CreditCardUnbilledTransOperationResponse();
 	boolean respSuccessFlg = false;
 	String respCode = "";
-	String orgCode = "";
 	Context context = request.getContext();
 
 	super.loadParameters(context, ActivityConstant.COMMON_ID, ActivityConstant.SEC_COMMON_ID, context.getActivityId());
-	Map<String, Object> contextMap = context.getContextMap();
 
 	AllAccountServiceRequest allAccountServiceRequest = new AllAccountServiceRequest();
 	allAccountServiceRequest.setContext(context);
@@ -82,12 +79,6 @@ public class CreditCardUnbilledTransOperation extends AbstractCreditCardOperatio
 			if (accNo.equalsIgnoreCase(reqAccNo)) {
 
 			    creditCardAccountDTO = (CreditCardAccountDTO) customerAccountDTO;
-
-			    if (creditCardAccountDTO.getPrimary() != null) {
-
-				orgCode = creditCardAccountDTO.getPrimary().getCreditCardOrgCode();
-
-			    }
 			    break;
 
 			}
@@ -96,11 +87,11 @@ public class CreditCardUnbilledTransOperation extends AbstractCreditCardOperatio
 
 		/*
 		 * List<CreditCardDTO> addSupplimentrylist = null;
-		 * 
+		 *
 		 * addSupplimentrylist = getAddSupplimentry(creditCardAccountDTO, context, orgCode, reqAccNo);
-		 * 
+		 *
 		 * if (addSupplimentrylist != null) {
-		 * 
+		 *
 		 * for (int i = 0; i < addSupplimentrylist.size(); i++) { creditCardAccountDTO.addSupplementary(addSupplimentrylist.get(i)); } }
 		 */
 

@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+<!-- Account Details Controller Starts here -->
+
+	<bean id="casaAccoutDetailsController"
+		class="com.barclays.bmg.mvc.controller.accountdetails.CasaAccountDetailsController" parent="bmbAbstractCommandController">
+		<property name="commandName" value="accountCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.accountdetails.AccountDetailsCommand" />
+		<property name="validator" ref="accountDetailsValidator" />
+
+		<property name="casaDetailsOperation" ref="casaDetailsOperation" />
+		<property name="bmbJsonBuilder" ref="casaAccountDetailsJSONBldr" />
+	</bean>
+
+	<bean id="tdAccountDetailsController"
+		class="com.barclays.bmg.mvc.controller.accountdetails.TDAccountDetailsController" parent="bmbAbstractCommandController">
+		<property name="tdAccountDetailsOperation" ref="tdAccountDetailsOperation" />
+		<property name="bmbJSONBuilder" ref="tdAccountDetailsJSONBuilder" />
+		<property name="commandName" value="tdDetailsCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.accountdetails.AccountDetailsCommand" />
+		<property name="validator" ref="tdAccountDetailsValidator" />
+	</bean>
+
+<!-- Account Details Controller Ends here -->
+
+	<!-- Casa Account Details -->
+	<bean name="accountDetailsValidator"
+		class="com.barclays.bmg.mvc.validator.accountdetails.AccountDetailsValidator" />
+
+
+
+	<!-- CASA Trnxn Activity  -->
+	<bean name="casaTrxActivityValidator"
+		class="com.barclays.bmg.mvc.validator.accountdetails.CasaTransactionActivityValidator" />
+
+	<bean name="tdAccountDetailsValidator"
+		class="com.barclays.bmg.mvc.validator.accountdetails.TDAccountDetailsCommandValidator" />
+
+	<bean id="tdAccountDetailsJSONBuilder"
+		class="com.barclays.bmg.json.model.builder.accountdetails.TDAccountDetailsJSONBldr"
+		parent="bmbCommonJSONBuilder">
+	</bean>
+
+
+	<bean id="casaTrnxnActivityController"
+		class="com.barclays.bmg.mvc.controller.accountdetails.CasaTransactionActivityController" parent="bmbAbstractCommandController">
+		<property name="commandName" value="casaTrxActivityCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.accountdetails.CasaTransactionActivityCommand" />
+		<property name="validator" ref="casaTrxActivityValidator" />
+
+		<property name="casaTransactionActivityOperation" ref="casaTransactionActivityOperation" />
+		<property name="casaDetailsOperation" ref="casaDetailsOperation" />
+		<property name="bmbJsonBuilder" ref="casaTransactionActivityJSONBldr" />
+	</bean>
+
+	<bean id="casaAccountDetailsJSONBldr"	class="com.barclays.bmg.json.model.builder.accountdetails.CasaAccountDetailsJSONBldr"  parent="bmbCommonJSONBuilder" />
+
+	<bean id="casaTransactionActivityJSONBldr"	class="com.barclays.bmg.json.model.builder.accountdetails.CasaTransactionActivityJSONBldr" />
+
+
+    <bean id="casaDetailsOperation"	class="com.barclays.bmg.operation.accountdetails.CASADetailsOperation" parent="bmbCommonOperation" >
+    	<property name="allAccountService" ref="allAccountService"/>
+		<property name="casaDetailsService" ref="casaDetailsServiceImpl"/>
+		<!--<property name="productService" ref="productServiceImpl"/>-->
+		<property name="productEligibilityService" ref="productEligibilityServiceImpl"/>
+	</bean>
+
+	<bean id="casaTransactionActivityOperation"	class="com.barclays.bmg.operation.accountdetails.CasaTransactionActivityOperation" parent="bmbCommonOperation">
+		<property name="allAccountService" ref="allAccountService"/>
+		<property name="casaDetailsService" ref="casaDetailsServiceImpl"/>
+	</bean>
+
+	<bean id="casaDetailsServiceImpl"	class="com.barclays.bmg.service.accountdetails.impl.CASADetailsServiceImpl">
+		<property name="casaDetailsDAO" ref="casaDetailsDAO"/>
+	</bean>
+
+
+	<bean id="casaDetailsDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.accountdetails.CASADetailsDAO" />
+		<property name="daoFrontController" ref="casaDetailsDaoFrontControllerImpl" />
+	</bean>
+
+	<bean id="casaDetailsDaoFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="RETRIEVECASADETAILS" value-ref="casaDetailsDAOController" />
+				<entry key="RETRIEVECASATRANSACTIONACTIVITY" value-ref="casaAccountActivityDAOController" />
+				<entry key="RETRIEVEACCTTRANSACTIONHISTORY" value-ref="casaAccountTransactionHistoryDAOController" />
+
+			</map>
+		</property>
+	</bean>
+
+	<bean id="casaDetailsWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.AccountManagement.AccountManagement_PortType" />
+		<property name="portName" value="AccountManagementSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.AccountManagement.AccountManagement_Service" />
+		<property name="endpointAddress"
+			value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="AccountManagement_EndPoint" />
+		<property name="cacheKey" value="casaAccountDetails" />
+	</bean>
+
+	<bean id="casaDetailsDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.CASADetailsDAOController">
+		<property name="casaDetailsReqAdptOperation" ref="casaDetailsReqAdptOperation" />
+		<property name="transmissionOperation" ref="casaDetailsTransmissionOperation" />
+		<property name="casaDetailsRespAdptOperation" ref="casaDetailsRespAdptOperation" />
+	</bean>
+
+	<bean id="casaDetailsReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.CASADetailsReqAdptOperation">
+		<property name="casaDetailsHeaderAdapter" ref="casaDetailsHeaderAdapter" />
+		<property name="casaDetailsPayloadAdapter" ref="casaDetailsPayloadAdapter" />
+	</bean>
+
+	<bean id="casaDetailsRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.CASADetailsRespAdptOperation">
+	</bean>
+
+
+	<bean id="casaDetailsPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.CASADetailsPayloadAdapter">
+	</bean>
+
+	<bean id="casaDetailsTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="casaDetailsTransmissionService" />
+	</bean>
+	<bean id="casaDetailsTransmissionService" class="com.barclays.bmg.dao.service.impl.CASADetailsTransmissionService">
+		<property name="remoteService" ref="casaDetailsWebServiceImpl" />
+	</bean>
+
+	<bean id="casaDetailsHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.CASADetailsHeaderAdapter">
+	</bean>
+
+	<!-- RETRIEVE CASA TRANSACTION ACTIVITY   -->
+
+	<bean id="casaAccountActivityDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.CASAAccountActivityDAOController">
+		<property name="casaAccountActivityReqAdptOperation" ref="casaAccountActivityReqAdptOperation" />
+		<property name="transmissionOperation" ref="casaAccountActivityTransmissionOperation" />
+		<property name="casaAccountActivityRespAdptOperation" ref="casaAccountActivityRespAdptOperation" />
+	</bean>
+
+	<bean id="casaAccountActivityReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.CASAAccountActivityReqAdptOperation">
+		<property name="casaAccountActivityHeaderAdapter" ref="casaAccountActivityHeaderAdapter" />
+		<property name="casaAccountActivityPayloadAdapter" ref="casaAccountActivityPayloadAdapter" />
+	</bean>
+
+
+	<bean id="casaAccountActivityRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.CASAAccountActivityRespAdptOperation">
+
+	</bean>
+
+
+	<bean id="casaAccountActivityHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.CASAAccountActivityHeaderAdapter">
+	</bean>
+
+
+	<bean id="casaAccountActivityPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.CASAAccountActivityPayloadAdapter">
+	</bean>
+
+
+
+	<bean id="casaAccountActivityTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="casaAccountActivityTransmissionService" />
+	</bean>
+
+	<bean id="casaAccountActivityTransmissionService" class="com.barclays.bmg.dao.service.impl.CASAAccountActivityTransmissionService">
+		<property name="remoteService" ref="casaAccountActivityWebServiceImpl" />
+	</bean>
+
+	<bean id="casaAccountActivityWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.AccountReporting.AccountReporting_PortType" />
+		<property name="portName" value="AccountReportingSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.AccountReporting.AccountReporting_Service" />
+		<property name="endpointAddress"
+			value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="AccountReporting_EndPoint" />
+		<property name="cacheKey" value="casaAccountActivity" />
+
+	</bean>
+	<!-- TD Account Details Configuration -->
+<bean id="tdAccountDetailsOperation"
+		class="com.barclays.bmg.operation.accountdetails.TDAccountDetailsOperation" parent="bmbCommonOperation">
+		<property name="allAccountService" ref="allAccountService" />
+		<property name="listValueResService" ref="listValueResService" />
+		<property name="productEligibilityService" ref="productEligibilityServiceImpl" />
+		<property name="tdDetailsService" ref="tdDetailsService" />
+	</bean>
+
+	<bean  id="tdDetailsService"
+		class="com.barclays.bmg.service.accountdetails.impl.TDDetailsServiceImpl">
+		<property name="tdDetailsDAO" ref="tdDetailsDAO" />
+	</bean>
+
+  <bean id="tdDetailsDAO"
+		class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.accountdetails.TDDetailsDAO" />
+		<property name="daoFrontController" ref="tdDetailsDAOControllerImpl" />
+	</bean>
+
+	<bean id="tdDetailsDAOControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<!-- retrieveCreditCardTransactionActivity -->
+				<entry key="RETREIVETDDETAILS" value-ref="tdAccountDetailsDAOController" />
+
+			</map>
+		</property>
+	</bean>
+
+  <bean id="tdAccountDetailsDAOController"
+    class="com.barclays.bmg.dao.processing.accountservices.TDDetailsDAOController">
+    <property name="tdDetailsReqAdptOperation" ref="tdDetailsReqAdptOperation" />
+    <property name="transmissionOperation" ref="tdDetailsTransmissionOperation" />
+    <property name="tdDetailsRespAdptOperation" ref="tdDetailsRespAdptOperation" />
+  </bean>
+
+  <bean id="tdDetailsReqAdptOperation"
+    class="com.barclays.bmg.dao.operation.accountservices.TDDetailsReqAdptOperation">
+    <property name="tdDetailsHeaderAdapter" ref="tdDetailsHeaderAdapter" />
+    <property name="tdDetailsPayloadAdapter" ref="tdDetailsPayloadAdapter" />
+  </bean>
+
+  <bean id="tdDetailsTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+    <property name="transmissionService" ref="tdDetailsTransmissionService" />
+  </bean>
+
+  <bean id="tdDetailsTransmissionService"
+    class="com.barclays.bmg.dao.service.impl.TDDetailsTransmissionService">
+    <property name="remoteService" ref="casaDetailsWebServiceImpl" />
+  </bean>
+  <bean id="tdDetailsHeaderAdapter"
+    class="com.barclays.bmg.dao.accountservices.adapter.TDDetailsHeaderAdapter">
+  </bean>
+  <bean id="tdDetailsPayloadAdapter"
+    class="com.barclays.bmg.dao.accountservices.adapter.TDDetailsPayloadAdapter">
+  </bean>
+
+  <bean id="tdDetailsRespAdptOperation"
+    class="com.barclays.bmg.dao.operation.accountservices.TDDetailsRespAdptOperation">
+  </bean>
+
+
+  <!-- Added for the Mini Statement  -->
+
+  <bean id="casaTrnxnHistoryActivityController"
+		class="com.barclays.bmg.ministatement.mvc.controller.MiniStatmentRequestController" parent="bmbAbstractCommandController">
+		<property name="commandName" value="casaTrxActivityCommand" />
+		<property name="commandClass" value="com.barclays.bmg.mvc.command.accountdetails.CasaTransactionActivityCommand" />
+		<property name="casaTransactionActivityOperation" ref="casaTransactionActivityOperation" />
+		<property name="casaDetailsOperation" ref="casaDetailsOperation" />
+		<property name="bmbJSONBuilder" ref="casaAccountMiniStetementJSONBldr" />
+
+	</bean>
+
+<bean id="casaAccountMiniStetementJSONBldr"	class="com.barclays.bmg.json.model.builder.accountdetails.CasaAccountMiniStetementJSONBldr"  parent="bmbCommonJSONBuilder" />
+
+<bean id="casaAccountTransactionHistoryDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.CASAAccountTransactionHistoryDAOController">
+		<property name="accountTnxHistoryActivityReqAdptOperation" ref="accountTnxHistoryActivityReqAdptOperation" />
+		<property name="transmissionOperation" ref="accountTrnxHistoryTransmissionOperation" />
+		<property name="accountTrnxHistoryRespAdptOperation" ref="accountTrnxHistoryRespAdptOperation" />
+	</bean>
+
+<bean id="accountTnxHistoryActivityReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.CASAAccountTnxHistoryActivityReqAdptOperation">
+		<property name="accountTrnxHistoryActivityHeaderAdapter" ref="accountTrnxHistoryActivityHeaderAdapter" />
+		<property name="accountTrnxHistoryPayloadAdapter" ref="accountTrnxHistoryPayloadAdapter" />
+	</bean>
+
+<bean id="accountTrnxHistoryPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.CASAAccountTrnxHistoryPayloadAdapter">
+	</bean>
+
+<bean id="accountTrnxHistoryActivityHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.CASAAccountTrnxHistoryActivityHeaderAdapter">
+	</bean>
+
+<bean id="accountTrnxHistoryRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.CASAAccountTrnxHistoryRespAdptOperation">
+	</bean>
+
+<bean id="accountTrnxHistoryTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="accountTrnxHistoryTransmissionService" />
+	</bean>
+
+	<bean id="accountTrnxHistoryTransmissionService" class="com.barclays.bmg.dao.service.impl.CASAAccountTrnxHistoryTransmissionService">
+		<property name="remoteService" ref="accountTrnxHistoryWebServiceImpl" />
+	</bean>
+
+	<bean id="accountTrnxHistoryWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.AccountReporting.AccountReporting_PortType" />
+		<property name="portName" value="AccountReportingSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.AccountReporting.AccountReporting_Service" />
+		<property name="endpointAddress"
+			value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="AccountReporting_EndPoint" />
+
+		<property name="cacheKey" value="casaAccountActivity" />
+
+	</bean>
+
+</beans>

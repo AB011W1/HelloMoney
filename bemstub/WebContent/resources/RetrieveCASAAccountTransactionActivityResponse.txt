@@ -1,0 +1,68 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Body>
+    <p198:RetrieveCASAAccountTransactionActivityResponse xmlns:p198="http://barclays.com/bem/RetrieveCASAAcctTransactionActivity">
+      <p198:ResponseHeader>
+        <ServiceContext>
+          <ServiceID>RetrieveCASAAcctTransactionActivity</ServiceID>
+          <ConsumerUniqueRefNo>15160871552532-01</ConsumerUniqueRefNo>
+          <OriginalConsumerUniqueRefNo>15160871640707</OriginalConsumerUniqueRefNo>
+          <ServiceDateTime>2018-01-16T10:19:24.070Z</ServiceDateTime>
+          <ServiceVersionNo>6.0.0</ServiceVersionNo>
+          <OverrideRequestFlag>0</OverrideRequestFlag>
+        </ServiceContext>
+        <BankUserContext>
+          <StaffType>Regular</StaffType>
+          <StaffID>668046</StaffID>
+          <AuthorizerID>Z00019789</AuthorizerID>
+        </BankUserContext>
+        <ServiceResStatus>
+          <ServiceResCode>00000</ServiceResCode>
+          <ServiceResDesc>SUCCESS</ServiceResDesc>
+          <ServiceRespDateTime>2018-01-16T07:19:24.316Z</ServiceRespDateTime>
+          <ServiceUniqueRefNo xsi:nil="true"/>
+        </ServiceResStatus>
+      </p198:ResponseHeader>
+      <p198:CASAAccountTransactionList>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:TransactionDateTime>2018-01-16T10:18:37.801Z</p634:TransactionDateTime>
+          <p634:TransactionTypeCode>IT</p634:TransactionTypeCode>
+          <p634:TransactionCurrencyAmount>224215.26</p634:TransactionCurrencyAmount>
+          <p634:TransactionReferenceNumber>15160870532897</p634:TransactionReferenceNumber>
+          <p634:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+            <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount">
+              <p631:AccountNumber>********0279</p631:AccountNumber>
+            </p355:BeneficiaryAccountInfo>
+            <p355:BeneficiaryName>NAM_CUST_FIRST_12414 NAM_CUST_MID_12414 NAM_CUST_LAST_12414</p355:BeneficiaryName>
+          </p634:Beneficiary>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:TransactionDateTime>2018-01-11T10:46:38.867Z</p634:TransactionDateTime>
+          <p634:TransactionTypeCode>IT</p634:TransactionTypeCode>
+          <p634:TransactionCurrencyAmount>55.0</p634:TransactionCurrencyAmount>
+          <p634:TransactionReferenceNumber>15156567759771</p634:TransactionReferenceNumber>
+          <p634:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+            <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount">
+              <p631:AccountNumber>********9459</p631:AccountNumber>
+            </p355:BeneficiaryAccountInfo>
+            <p355:BeneficiaryName>NAM_CUST_FULL_10112</p355:BeneficiaryName>
+          </p634:Beneficiary>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:TransactionDateTime>2018-01-09T10:39:40.617Z</p634:TransactionDateTime>
+          <p634:TransactionTypeCode>IT</p634:TransactionTypeCode>
+          <p634:TransactionCurrencyAmount>26905.83</p634:TransactionCurrencyAmount>
+          <p634:TransactionReferenceNumber>15154835623925</p634:TransactionReferenceNumber>
+          <p634:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+            <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount">
+              <p631:AccountNumber>********0279</p631:AccountNumber>
+            </p355:BeneficiaryAccountInfo>
+            <p355:BeneficiaryName>NAM_CUST_FIRST_12414 NAM_CUST_MID_12414 NAM_CUST_LAST_12414</p355:BeneficiaryName>
+          </p634:Beneficiary>
+        </p198:TransactionActivity>
+        <p198:PageInfo xmlns:p110="http://barclays.com/bem/PageInformationResponse">
+          <p110:TotalNumberOfRecords>3</p110:TotalNumberOfRecords>
+        </p198:PageInfo>
+      </p198:CASAAccountTransactionList>
+    </p198:RetrieveCASAAccountTransactionActivityResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

@@ -1,16 +1,11 @@
 package com.barclays.ussd.utils.jsonparsers;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
-import org.codehaus.jackson.JsonParseException;
-import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
@@ -22,15 +17,9 @@ import com.barclays.ussd.utils.BmgBaseJsonParser;
 import com.barclays.ussd.utils.PaginationEnum;
 import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDExceptions;
-import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
 import com.barclays.ussd.utils.UssdResourceBundle;
-import com.barclays.ussd.utils.jsonparsers.bean.airtime.Account;
-import com.barclays.ussd.utils.jsonparsers.bean.airtime.AirtimeValidatePayData;
-import com.barclays.ussd.utils.jsonparsers.bean.airtime.AirtimeValidateResponse;
-import com.barclays.ussd.utils.jsonparsers.bean.login.AuthUserData;
-import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
 import com.barclays.ussd.utils.jsonparsers.bean.pesalink.SearchIndividualCustInformationResponse;
 @SuppressWarnings("unchecked")
 public class KitsDeregisterConfirmDetailsJsonParser implements BmgBaseJsonParser {
@@ -70,20 +59,20 @@ public class KitsDeregisterConfirmDetailsJsonParser implements BmgBaseJsonParser
     				}
     				else if (searchIndividualCustInformationResponse.getPayHdr() != null) {
     				    LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
-    				    throw new USSDNonBlockingException(searchIndividualCustInformationResponse.getPayHdr().getResCde());
+    				    throw new USSDNonBlockingException(searchIndividualCustInformationResponse.getPayHdr().getResCde(),true);
     				}
     				}else {
     					LOGGER.error("Invalid response got from the BMG " + responseBuilderParamsDTO.getBmgOpCode());
-    					throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+    					throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
     				    }
 
     	}catch(Exception e)
     	{
     		LOGGER.error("Exception : ", e);
     	    if (e instanceof USSDNonBlockingException) {
-    		throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode());
+    		throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode(),true);
     	    } else {
-    		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+    		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
     	    }
     	}
 
@@ -96,8 +85,6 @@ public class KitsDeregisterConfirmDetailsJsonParser implements BmgBaseJsonParser
 	    MenuItemDTO menuItemDTO = null;
 
 	    USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
-
-	    Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
 	    menuItemDTO = new MenuItemDTO();
 	    StringBuilder pageBody = new StringBuilder();
 	    UssdResourceBundle ussdResourceBundle = responseBuilderParamsDTO.getUssdResourceBundle();

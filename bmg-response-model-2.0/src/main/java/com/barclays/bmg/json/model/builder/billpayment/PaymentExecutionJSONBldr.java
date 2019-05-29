@@ -53,10 +53,10 @@ public class PaymentExecutionJSONBldr extends BMBMultipleResponseJSONBuilder {
 			paymentConfirmBean.setBemRefNo(response.getTrnRef());
 			paymentConfirmBean.setTxnRefNo(response.getTrnRef());
 			paymentConfirmBean.setTxnResRefNo(response.getTrnRef());
-			paymentConfirmBean.setResDtTm(BMGFormatUtility.getLongDate(response
-					.getTrnDate()));
-			paymentConfirmBean.setTxnDtTm(BMGFormatUtility.getLongDate(response
-					.getTrnDate()));
+			if(null != response.getTrnDate()){
+				paymentConfirmBean.setResDtTm(BMGFormatUtility.getLongDate(response.getTrnDate()));
+				paymentConfirmBean.setTxnDtTm(BMGFormatUtility.getLongDate(response.getTrnDate()));
+			}
 			paymentConfirmBean.setPymntRefNo(response.getPymntRefNo());
 			paymentConfirmBean.setRcptNo(response.getRcptNo());
 			paymentConfirmBean.setTokenNo(response.getTokenNo());

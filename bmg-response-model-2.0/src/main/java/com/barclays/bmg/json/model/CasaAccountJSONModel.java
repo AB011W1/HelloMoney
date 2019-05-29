@@ -21,7 +21,26 @@ public class CasaAccountJSONModel extends AccountJSONModel {
 	private String ibanNo;
 	private String brnCde;
 	private String brnNam;
+	//For groupwallet
+    private String bankCif;
+	private String groupWalletIndicator;
 
+
+    public String getBankCif() {
+		return bankCif;
+	}
+
+	public void setBankCif(String bankCif) {
+		this.bankCif = bankCif;
+	}
+
+	public String getGroupWalletIndicator() {
+		return groupWalletIndicator;
+	}
+
+	public void setGroupWalletIndicator(String groupWalletIndicator) {
+		this.groupWalletIndicator = groupWalletIndicator;
+	}
 	public CasaAccountJSONModel(CASAAccountDTO accountDTO) {
 		super(accountDTO);
 
@@ -56,6 +75,8 @@ public class CasaAccountJSONModel extends AccountJSONModel {
 
 		this.ibanNo = accountDTO.getIban();
 		this.brnCde = accountDTO.getBranchCode();
+		this.bankCif=accountDTO.getBankCif();
+		this.groupWalletIndicator=accountDTO.getGroupWalletIndicator();
 	}
 
 	public CasaAccountJSONModel() {

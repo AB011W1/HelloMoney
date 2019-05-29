@@ -5,7 +5,7 @@ import com.barclays.bem.BEMServiceHeader.ServiceResStatus;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.service.response.ApplyTDServiceResponse;
 
-public class ApplyTDRespAdptOperation extends AbstractResAdptOperation {
+public class ApplyTDRespAdptOperation extends AbstractResAdptOperationAcct {
 
 	public ApplyTDServiceResponse adaptResponse(WorkContext workContext,Object obj) {
 

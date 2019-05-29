@@ -46,6 +46,8 @@ public class MiniStatmentRequestController extends BMBAbstractCommandController 
 
 		CASADetailsOperationRequest casaDetailsOperationRequest = new CASADetailsOperationRequest();
 		casaDetailsOperationRequest.setAccountNo(getAccountNumber(miniStmtRequestCommand.getActNo(),request, BMGProcessConstants.ACCOUNTS_PROCESS));
+		if(casaDetailsOperationRequest.getAccountNo()==null)
+			casaDetailsOperationRequest.setAccountNo(miniStmtRequestCommand.getActNo());
 		casaDetailsOperationRequest.setContext(context);
 
 		CASADetailsOperationResponse casaDetailsOperationResponse = casaDetailsOperation.retrieveCASAAccountDTO(casaDetailsOperationRequest);
@@ -53,6 +55,8 @@ public class MiniStatmentRequestController extends BMBAbstractCommandController 
 		CasaTransactionActivityOperationRequest casaTranxActvOperationReq = new CasaTransactionActivityOperationRequest();
 		casaTranxActvOperationReq.setContext(context);
 		casaTranxActvOperationReq.setAccountNo(getAccountNumber(miniStmtRequestCommand.getActNo(),request, BMGProcessConstants.ACCOUNTS_PROCESS));
+		if(casaTranxActvOperationReq.getAccountNo()==null)
+			casaTranxActvOperationReq.setAccountNo(miniStmtRequestCommand.getActNo());
 		casaTranxActvOperationReq.setCasaAccountDTO(casaDetailsOperationResponse.getCasaAccountDTO());
 
 		CasaTransactionTrnxHistoryOperationResponse casaTranxHstryOperationResp = casaTransactionActivityOperation.retrieveCasaTransactionHistoryActivity(casaTranxActvOperationReq);

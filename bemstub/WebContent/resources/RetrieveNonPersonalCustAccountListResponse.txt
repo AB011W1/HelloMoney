@@ -1,0 +1,85 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Body>
+    <p383:RetrieveNonPersonalCustAccountListResponse xmlns:p383="http://barclays.com/bem/RetrieveNonPersonalCustAccountList">
+      <p383:ResponseHeader>
+        <ServiceContext>
+          <ServiceID>RetrieveNonPersonalCustAcctList</ServiceID>
+          <ConsumerUniqueRefNo>15160870015619-01</ConsumerUniqueRefNo>
+          <OriginalConsumerUniqueRefNo>15160870016699</OriginalConsumerUniqueRefNo>
+          <ServiceDateTime>2018-01-16T10:16:41.669Z</ServiceDateTime>
+          <ServiceVersionNo>6.0.0</ServiceVersionNo>
+          <OverrideRequestFlag>0</OverrideRequestFlag>
+        </ServiceContext>
+        <BankUserContext>
+          <StaffType>Regular</StaffType>
+          <StaffID>IFE</StaffID>
+          <AuthorizerID>Z00019789</AuthorizerID>
+        </BankUserContext>
+        <ServiceResStatus>
+          <ServiceResCode>00000</ServiceResCode>
+          <ServiceResDesc>Success</ServiceResDesc>
+          <ServiceRespDateTime>2018-01-16T07:16:43.090Z</ServiceRespDateTime>
+          <ServiceUniqueRefNo xsi:nil="true"/>
+        </ServiceResStatus>
+      </p383:ResponseHeader>
+      <p383:NonPersonalCustAcctList>
+        <p383:Accounts>
+          <p383:AccountDetails xmlns:p264="http://barclays.com/bem/CreateNonPersonalCASAAccount">
+            <p264:AccountCreationStatusCode>0</p264:AccountCreationStatusCode>
+            <p264:AccountCreateStatus xsi:nil="true"/>
+            <p264:ProductInfo xmlns:p521="http://barclays.com/bem/Product">
+              <p521:ProductCode>103</p521:ProductCode>
+              <p521:ProductName>BUSINESS CURRENT ACCOUNT</p521:ProductName>
+            </p264:ProductInfo>
+          </p383:AccountDetails>
+          <p383:AccountAdditionalInfo xmlns:p973="http://barclays.com/bem/Account" xmlns:p874="http://barclays.com/bem/AccountAdditionalDetails">
+            <p973:AccountNumber>********1116</p973:AccountNumber>
+            <p973:AccountCurrencyCode>TZS      </p973:AccountCurrencyCode>
+            <p973:AccountTitle>COD_ACCT_TITLE_011103001116</p973:AccountTitle>
+            <p973:AccountCurrentBalance xmlns:p412="http://barclays.com/bem/Balance">
+              <p412:AccountCCYBalance>2.688549832832E10</p412:AccountCCYBalance>
+            </p973:AccountCurrentBalance>
+            <p973:DomicileBranch xmlns:p466="http://barclays.com/bem/Branch">
+              <p466:BranchCode>********</p466:BranchCode>
+              <p466:BranchName>SAMORA AVENUE</p466:BranchName>
+            </p973:DomicileBranch>
+            <p973:JointAccountRelationship xmlns:p468="http://barclays.com/bem/JointAccountHoldersRelationship">
+              <p468:RelationshipTypeCode>SOW</p468:RelationshipTypeCode>
+            </p973:JointAccountRelationship>
+            <p973:CustomerNumber>10273</p973:CustomerNumber>
+            <p973:AccountStatus>CH-8</p973:AccountStatus>
+            <p874:AccountLevel>4</p874:AccountLevel>
+          </p383:AccountAdditionalInfo>
+        </p383:Accounts>
+        <p383:Accounts>
+          <p383:AccountDetails xmlns:p264="http://barclays.com/bem/CreateNonPersonalCASAAccount">
+            <p264:AccountCreationStatusCode>0</p264:AccountCreationStatusCode>
+            <p264:AccountCreateStatus xsi:nil="true"/>
+            <p264:ProductInfo xmlns:p521="http://barclays.com/bem/Product">
+              <p521:ProductCode>105</p521:ProductCode>
+              <p521:ProductName>USD CURRENT ACCOUNT</p521:ProductName>
+            </p264:ProductInfo>
+          </p383:AccountDetails>
+          <p383:AccountAdditionalInfo xmlns:p973="http://barclays.com/bem/Account" xmlns:p874="http://barclays.com/bem/AccountAdditionalDetails">
+            <p973:AccountNumber>********0279</p973:AccountNumber>
+            <p973:AccountCurrencyCode>USD      </p973:AccountCurrencyCode>
+            <p973:AccountTitle>COD_ACCT_TITLE_011105000279    </p973:AccountTitle>
+            <p973:AccountCurrentBalance xmlns:p412="http://barclays.com/bem/Balance">
+              <p412:AccountCCYBalance>4.94640909E7</p412:AccountCCYBalance>
+            </p973:AccountCurrentBalance>
+            <p973:DomicileBranch xmlns:p466="http://barclays.com/bem/Branch">
+              <p466:BranchCode>********</p466:BranchCode>
+              <p466:BranchName>SAMORA AVENUE</p466:BranchName>
+            </p973:DomicileBranch>
+            <p973:JointAccountRelationship xmlns:p468="http://barclays.com/bem/JointAccountHoldersRelationship">
+              <p468:RelationshipTypeCode>SOW</p468:RelationshipTypeCode>
+            </p973:JointAccountRelationship>
+            <p973:CustomerNumber>10273</p973:CustomerNumber>
+            <p973:AccountStatus>CH-8</p973:AccountStatus>
+            <p874:AccountLevel>1</p874:AccountLevel>
+          </p383:AccountAdditionalInfo>
+        </p383:Accounts>
+      </p383:NonPersonalCustAcctList>
+    </p383:RetrieveNonPersonalCustAccountListResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

@@ -31,7 +31,18 @@ public class USSDNonBlockingException extends Exception {
      *
      * @return the error code
      */
-    public String getErrorCode() {
+    //Added for KITS error codes
+    private boolean isKitsFlow;
+
+    public boolean isKitsFlow() {
+		return isKitsFlow;
+	}
+
+	public void setKitsFlow(boolean isKitsFlow) {
+		this.isKitsFlow = isKitsFlow;
+	}
+
+	public String getErrorCode() {
 	return errorCode;
     }
 
@@ -84,6 +95,18 @@ public class USSDNonBlockingException extends Exception {
     public USSDNonBlockingException(final String errorCode, final String errorMsg) {
 	this.errorCode = errorCode;
 	this.errorMsg = errorMsg;
+    }
+
+    //Added for KITS error code display
+    public USSDNonBlockingException(final String errorCode,final boolean isKitsFlow) {
+    	this.errorCode = errorCode;
+    	this.isKitsFlow = isKitsFlow;
+    }
+
+    public USSDNonBlockingException(final String errorCode, final String errorMsg,final boolean isKitsFlow) {
+    	this.errorCode = errorCode;
+    	this.errorMsg = errorMsg;
+    	this.isKitsFlow = isKitsFlow;
     }
 
     /**

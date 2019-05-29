@@ -20,7 +20,7 @@ public class FirstLoginChangePinConfirmJsonParser implements BmgBaseJsonParser {
     private static final Logger LOGGER = Logger.getLogger(FirstLoginChangePinConfirmJsonParser.class);
 
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException, USSDBlockingException {
-	MenuItemDTO menuDTO = null;
+	MenuItemDTO menuDTO = new MenuItemDTO();
 	ObjectMapper mapper = new ObjectMapper();
 
 	try {
@@ -65,7 +65,8 @@ public class FirstLoginChangePinConfirmJsonParser implements BmgBaseJsonParser {
 		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
 	    }
 	}
-	setNextScreenSequenceNumber(menuDTO);
+	if(null != menuDTO)
+		setNextScreenSequenceNumber(menuDTO);
 	return menuDTO;
     }
 

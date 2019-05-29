@@ -73,6 +73,7 @@ public class KitsSendToPhoneReasonJsonParser implements BmgBaseJsonParser,System
     		LOGGER.error(USSDExceptions.USSD_KITS_REASON_INVALID_LEN.getUssdErrorCode(), e);
     		e.addErrorParam(reasonMaxLength);
     		e.setErrorCode(USSDExceptions.USSD_KITS_REASON_INVALID_LEN.getUssdErrorCode());
+    		e.setKitsFlow(true);
     		throw e;
     	}
     }
@@ -85,7 +86,7 @@ public class KitsSendToPhoneReasonJsonParser implements BmgBaseJsonParser,System
     	if (listValueCacheDTO == null) {
     		LOGGER.fatal("System preferences not set for" + listValReq.getListValueKey());
     		throw new USSDNonBlockingException(USSDExceptions.USSD_SYS_PREF_MISSING.getBmgCode(),
-    				USSDExceptions.USSD_SYS_PREF_MISSING.getUssdErrorCode());
+    				USSDExceptions.USSD_SYS_PREF_MISSING.getUssdErrorCode(),true);
     	}
     	return listValueCacheDTO.getLabel();
     }

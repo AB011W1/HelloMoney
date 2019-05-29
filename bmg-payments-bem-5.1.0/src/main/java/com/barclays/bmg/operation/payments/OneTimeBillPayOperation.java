@@ -51,6 +51,7 @@ public class OneTimeBillPayOperation extends BMBPaymentsOperation {
 	    beneficiaryDTO.setDestinationBranchCode(billerDTO.getBranchCode());
 	    beneficiaryDTO.setCurrency(billerDTO.getCurrency());
 
+	    beneficiaryDTO.setBillAggregatorId(billerDTO.getBillAggregatorId());
 	    beneficiaryDTO.setBillerName(billerDTO.getBillerName());
 	    beneficiaryDTO.setBillerId(billerDTO.getBillerId());
 	    beneficiaryDTO.setCurrency(billerDTO.getCurrency());

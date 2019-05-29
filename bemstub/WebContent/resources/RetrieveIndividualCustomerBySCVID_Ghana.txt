@@ -1,0 +1,44 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Body>
+    <p634:RetrieveIndividualCustomerBySCVIDResponse xmlns:p634="http://barclays.com/bem/RetrieveIndividualCustBySCVID">
+      <p634:ResponseHeader>
+        <ServiceContext>
+          <ServiceID>RetrieveIndividualCustBySCVID</ServiceID>
+          <ConsumerUniqueRefNo>91514877722160</ConsumerUniqueRefNo>
+          <OriginalConsumerUniqueRefNo>91514877722160</OriginalConsumerUniqueRefNo>
+          <ServiceDateTime>2018-01-02T07:22:03.430Z</ServiceDateTime>
+          <ServiceVersionNo>6.0.0</ServiceVersionNo>
+          <OverrideRequestFlag>0</OverrideRequestFlag>
+        </ServiceContext>
+        <BankUserContext>
+          <StaffType>Regular</StaffType>
+          <StaffID>IFE</StaffID>
+          <AuthorizerID>Z00019789</AuthorizerID>
+        </BankUserContext>
+        <ServiceResStatus>
+          <ServiceResCode>00000</ServiceResCode>
+          <ServiceResDesc>Success</ServiceResDesc>
+          <ServiceRespDateTime>2018-01-02T07:22:03.588Z</ServiceRespDateTime>
+          <ServiceUniqueRefNo xsi:nil="true"/>
+        </ServiceResStatus>
+      </p634:ResponseHeader>
+      <p634:IndividualCustomerDetailsResponse>
+        <p634:FirstName>*******************************0889</p634:FirstName>
+        <p634:LastName>*******************************0889</p634:LastName>
+        <p634:MobileNumber>**********4087</p634:MobileNumber>
+        <p634:DateofBirth>1973-05-04</p634:DateofBirth>
+        <p634:CustomerIdentificationType>
+          <p634:CustomerIdentificationDocTypeCode>I</p634:CustomerIdentificationDocTypeCode>
+          <p634:CustomerIdentificationNumber>*****0889</p634:CustomerIdentificationNumber>
+        </p634:CustomerIdentificationType>
+        <p634:SCVID>100001754437</p634:SCVID>
+        <p634:SCVStatusTypeCode>NO LINK</p634:SCVStatusTypeCode>
+        <p634:SalutationTypeCode>Mr</p634:SalutationTypeCode>
+        <p634:ProductProcessorDetails>
+          <p634:ProductProcessorTypeCode>BK</p634:ProductProcessorTypeCode>
+          <p634:ProductProcessorId>120400889</p634:ProductProcessorId>
+        </p634:ProductProcessorDetails>
+      </p634:IndividualCustomerDetailsResponse>
+    </p634:RetrieveIndividualCustomerBySCVIDResponse>
+  </soapenv:Body>
+</soapenv:Envelope> 

@@ -13,7 +13,6 @@ import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
-import com.barclays.bmg.constants.BillPaymentConstants;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
@@ -29,8 +28,6 @@ import com.barclays.ussd.utils.UssdResourceBundle;
 import com.barclays.ussd.utils.jsonparsers.bean.airtime.Account;
 import com.barclays.ussd.utils.jsonparsers.bean.airtime.AirtimeValidatePayData;
 import com.barclays.ussd.utils.jsonparsers.bean.airtime.AirtimeValidateResponse;
-import com.barclays.ussd.utils.jsonparsers.bean.billpay.Payee;
-import com.barclays.ussd.utils.jsonparsers.bean.login.AuthUserData;
 
 /**
  * @author BTCI
@@ -113,7 +110,6 @@ public class AirtimeValidateResponseParser implements BmgBaseJsonParser {
 	    Locale locale = new Locale(language, countryCode);
 	    String confirmLabel = ussdResourceBundle.getLabel(USSDConstants.LABEL_AIRTIME_CONFIRM, locale);
 	    String fromAccLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(DEBIACCNUM_LABEL, locale);
-	    String amountLabel = ussdResourceBundle.getLabel(USSDConstants.USSD_TRANSACTION_MWALLETE_AMOUNT, locale);
 	    String mobileNumLabel = ussdResourceBundle.getLabel(USSDConstants.USSD_TRANSACTION_MWALLETE_MOBILE, locale);
 	    String airtimeServiceLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel("label.transaction.service", locale);
 	    userInputMap.put("BillerName", airtimeValidatePayData.getPrvder().getBillerName());

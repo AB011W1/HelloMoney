@@ -232,7 +232,7 @@ public class BMGJaxRpcPortProxyFactoryBean extends JaxRpcPortProxyFactoryBean im
 	    com.ibm.ws.webservices.engine.client.Stub _stub = (com.ibm.ws.webservices.engine.client.Stub) stub;
 	    _stub.setTimeout(timeout);
 	} catch (Exception e) {
-	    
+
 	}
     }
 

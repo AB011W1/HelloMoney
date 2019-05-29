@@ -19,7 +19,7 @@ import com.barclays.bmg.mapper.CASAAccountActivityToCoreAccountActivity;
 import com.barclays.bmg.service.accountdetails.request.CASAAccountActivityServiceRequest;
 import com.barclays.bmg.service.accountdetails.response.CASAAccountActivityServiceResponse;
 
-public class CASAAccountActivityRespAdptOperation extends AbstractResAdptOperation {
+public class CASAAccountActivityRespAdptOperation extends AbstractResAdptOperationAcct {
 
     public CASAAccountActivityServiceResponse adaptResponseForCASAAccountActivity(WorkContext workContext, Object obj) throws Exception {
 

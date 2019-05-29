@@ -1,0 +1,306 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <p739:SearchFundsTransferHistoryResponse xmlns:p739="http://barclays.com/bem/SearchFundsTransferHistory">
+      <p739:ResponseHeader>
+        <ServiceContext>
+          <ServiceID>SearchFundsTransferHistory</ServiceID>
+          <ConsumerUniqueRefNo>61498712458486</ConsumerUniqueRefNo>
+          <OriginalConsumerUniqueRefNo>61498712458486</OriginalConsumerUniqueRefNo>
+          <ServiceDateTime>2017-06-29T06:00:58.499Z</ServiceDateTime>
+          <ServiceVersionNo>6.0.0</ServiceVersionNo>
+          <OverrideRequestFlag>0</OverrideRequestFlag>
+        </ServiceContext>
+        <BankUserContext>
+          <StaffType>Regular</StaffType>
+          <StaffID>IFE</StaffID>
+          <AuthorizerID>Z00019789</AuthorizerID>
+        </BankUserContext>
+        <ServiceResStatus>
+          <ServiceResCode>00000</ServiceResCode>
+          <ServiceResDesc>Success</ServiceResDesc>
+          <ServiceRespDateTime>2017-06-29T05:00:58.775Z</ServiceRespDateTime>
+          <ServiceUniqueRefNo xsi:nil="true"/>
+        </ServiceResStatus>
+      </p739:ResponseHeader>
+      <p739:FundTransferHistoryList>
+        <p739:FundsTransferSummary xmlns:p869="http://barclays.com/bem/FundsTransferSummary">
+          <p869:FundsTransferType>BP</p869:FundsTransferType>
+          <p869:TransactionDateTime>2017-06-29T06:00:47.017Z</p869:TransactionDateTime>
+          <p869:DebitAccountNumber>***5419</p869:DebitAccountNumber>
+          <p869:DebitAccountCurrencyCode>BWP</p869:DebitAccountCurrencyCode>
+          <p869:DebitAmount>3.0</p869:DebitAmount>
+          <p869:CreditAccountCurrencyCode>BWP</p869:CreditAccountCurrencyCode>
+          <p869:CreditAmount>3.0</p869:CreditAmount>
+          <p869:TrxReferenceNumber>41498712417459</p869:TrxReferenceNumber>
+          <p869:BillerCode>WUC-2</p869:BillerCode>
+          <p869:BillerName>Water Utilities Corporation</p869:BillerName>
+          <p869:BillerReferenceNumber>491456</p869:BillerReferenceNumber>
+          <p869:TransactionStatusCode>SUCCESS</p869:TransactionStatusCode>
+          <p869:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+          </p869:UserAuditDetails>
+          <p869:Channel>UB</p869:Channel>
+          <p869:CustomerNumber>100000320078</p869:CustomerNumber>
+          <p869:InitiatingCustomerName xmlns:p940="http://barclays.com/bem/IndividualName">
+            <p940:FullName>*******************************1032</p940:FullName>
+          </p869:InitiatingCustomerName>
+        </p739:FundsTransferSummary>
+        <p739:FundsTransferSummary xmlns:p869="http://barclays.com/bem/FundsTransferSummary">
+          <p869:FundsTransferType>BP</p869:FundsTransferType>
+          <p869:TransactionDateTime>2017-06-29T05:59:54.274Z</p869:TransactionDateTime>
+          <p869:DebitAccountNumber>***5419</p869:DebitAccountNumber>
+          <p869:DebitAccountCurrencyCode>BWP</p869:DebitAccountCurrencyCode>
+          <p869:DebitAmount>3.0</p869:DebitAmount>
+          <p869:CreditAccountCurrencyCode>BWP</p869:CreditAccountCurrencyCode>
+          <p869:CreditAmount>3.0</p869:CreditAmount>
+          <p869:TrxReferenceNumber>41498712373614</p869:TrxReferenceNumber>
+          <p869:BillerCode>BPC</p869:BillerCode>
+          <p869:BillerName>BPC - Postpaid</p869:BillerName>
+          <p869:BillerReferenceNumber>491478</p869:BillerReferenceNumber>
+          <p869:TransactionStatusCode>IN PROCESS</p869:TransactionStatusCode>
+          <p869:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+          </p869:UserAuditDetails>
+          <p869:Channel>UB</p869:Channel>
+          <p869:CustomerNumber>100000320078</p869:CustomerNumber>
+          <p869:InitiatingCustomerName xmlns:p940="http://barclays.com/bem/IndividualName">
+            <p940:FullName>*******************************1032</p940:FullName>
+          </p869:InitiatingCustomerName>
+        </p739:FundsTransferSummary>
+        <p739:FundsTransferSummary xmlns:p869="http://barclays.com/bem/FundsTransferSummary">
+          <p869:FundsTransferType>BP</p869:FundsTransferType>
+          <p869:TransactionDateTime>2017-06-29T05:58:08.587Z</p869:TransactionDateTime>
+          <p869:DebitAccountNumber>***5419</p869:DebitAccountNumber>
+          <p869:DebitAccountCurrencyCode>BWP</p869:DebitAccountCurrencyCode>
+          <p869:DebitAmount>1.0</p869:DebitAmount>
+          <p869:CreditAccountCurrencyCode>BWP</p869:CreditAccountCurrencyCode>
+          <p869:CreditAmount>1.0</p869:CreditAmount>
+          <p869:TrxReferenceNumber>91498712261946</p869:TrxReferenceNumber>
+          <p869:BillerCode>WUC-2</p869:BillerCode>
+          <p869:BillerName>Water Utilities Corporation</p869:BillerName>
+          <p869:BillerReferenceNumber>491456</p869:BillerReferenceNumber>
+          <p869:TransactionStatusCode>SUCCESS</p869:TransactionStatusCode>
+          <p869:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+          </p869:UserAuditDetails>
+          <p869:Channel>UB</p869:Channel>
+          <p869:CustomerNumber>100000320078</p869:CustomerNumber>
+          <p869:InitiatingCustomerName xmlns:p940="http://barclays.com/bem/IndividualName">
+            <p940:FullName>*******************************1032</p940:FullName>
+          </p869:InitiatingCustomerName>
+        </p739:FundsTransferSummary>
+        <p739:FundsTransferSummary xmlns:p869="http://barclays.com/bem/FundsTransferSummary">
+          <p869:FundsTransferType>BP</p869:FundsTransferType>
+          <p869:TransactionDateTime>2017-06-29T01:04:51.683Z</p869:TransactionDateTime>
+          <p869:DebitAccountNumber>***5398</p869:DebitAccountNumber>
+          <p869:DebitAccountCurrencyCode>BWP</p869:DebitAccountCurrencyCode>
+          <p869:DebitAmount>10.0</p869:DebitAmount>
+          <p869:CreditAccountCurrencyCode>BWP</p869:CreditAccountCurrencyCode>
+          <p869:CreditAmount>10.0</p869:CreditAmount>
+          <p869:TrxReferenceNumber>11498708989466</p869:TrxReferenceNumber>
+          <p869:BillerCode>WUC-2</p869:BillerCode>
+          <p869:BillerName>Water Utilities Corporation</p869:BillerName>
+          <p869:BillerReferenceNumber>142536</p869:BillerReferenceNumber>
+          <p869:TransactionStatusCode>MANUAL_RECONCILIATION_REQUIRED</p869:TransactionStatusCode>
+          <p869:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+          </p869:UserAuditDetails>
+          <p869:Channel>UB</p869:Channel>
+          <p869:CustomerNumber>100000320078</p869:CustomerNumber>
+          <p869:InitiatingCustomerName xmlns:p940="http://barclays.com/bem/IndividualName">
+            <p940:FullName>*******************************1032</p940:FullName>
+          </p869:InitiatingCustomerName>
+        </p739:FundsTransferSummary>
+        <p739:FundsTransferSummary xmlns:p869="http://barclays.com/bem/FundsTransferSummary">
+          <p869:FundsTransferType>BP</p869:FundsTransferType>
+          <p869:TransactionDateTime>2017-06-29T00:57:38.423Z</p869:TransactionDateTime>
+          <p869:DebitAccountNumber>***5398</p869:DebitAccountNumber>
+          <p869:DebitAccountCurrencyCode>BWP</p869:DebitAccountCurrencyCode>
+          <p869:DebitAmount>10.0</p869:DebitAmount>
+          <p869:CreditAccountCurrencyCode>BWP</p869:CreditAccountCurrencyCode>
+          <p869:CreditAmount>10.0</p869:CreditAmount>
+          <p869:TrxReferenceNumber>21498708657069</p869:TrxReferenceNumber>
+          <p869:BillerCode>WUC-2</p869:BillerCode>
+          <p869:BillerName>Water Utilities Corporation</p869:BillerName>
+          <p869:BillerReferenceNumber>491445</p869:BillerReferenceNumber>
+          <p869:TransactionStatusCode>MANUAL_RECONCILIATION_REQUIRED</p869:TransactionStatusCode>
+          <p869:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+          </p869:UserAuditDetails>
+          <p869:Channel>UB</p869:Channel>
+          <p869:CustomerNumber>100000320078</p869:CustomerNumber>
+          <p869:InitiatingCustomerName xmlns:p940="http://barclays.com/bem/IndividualName">
+            <p940:FullName>*******************************1032</p940:FullName>
+          </p869:InitiatingCustomerName>
+        </p739:FundsTransferSummary>
+        <p739:FundsTransferSummary xmlns:p869="http://barclays.com/bem/FundsTransferSummary">
+          <p869:FundsTransferType>BP</p869:FundsTransferType>
+          <p869:TransactionDateTime>2017-06-29T00:56:52.764Z</p869:TransactionDateTime>
+          <p869:DebitAccountNumber>***5398</p869:DebitAccountNumber>
+          <p869:DebitAccountCurrencyCode>BWP</p869:DebitAccountCurrencyCode>
+          <p869:DebitAmount>10.0</p869:DebitAmount>
+          <p869:CreditAccountCurrencyCode>BWP</p869:CreditAccountCurrencyCode>
+          <p869:CreditAmount>10.0</p869:CreditAmount>
+          <p869:TrxReferenceNumber>71498708611333</p869:TrxReferenceNumber>
+          <p869:BillerCode>WUC-2</p869:BillerCode>
+          <p869:BillerName>Water Utilities Corporation</p869:BillerName>
+          <p869:BillerReferenceNumber>491445</p869:BillerReferenceNumber>
+          <p869:TransactionStatusCode>MANUAL_RECONCILIATION_REQUIRED</p869:TransactionStatusCode>
+          <p869:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+          </p869:UserAuditDetails>
+          <p869:Channel>UB</p869:Channel>
+          <p869:CustomerNumber>100000320078</p869:CustomerNumber>
+          <p869:InitiatingCustomerName xmlns:p940="http://barclays.com/bem/IndividualName">
+            <p940:FullName>*******************************1032</p940:FullName>
+          </p869:InitiatingCustomerName>
+        </p739:FundsTransferSummary>
+        <p739:FundsTransferSummary xmlns:p869="http://barclays.com/bem/FundsTransferSummary">
+          <p869:FundsTransferType>IT</p869:FundsTransferType>
+          <p869:TransactionDateTime>2017-06-06T07:15:10.025Z</p869:TransactionDateTime>
+          <p869:DebitAccountNumber>***5419</p869:DebitAccountNumber>
+          <p869:DebitAccountCurrencyCode>BWP</p869:DebitAccountCurrencyCode>
+          <p869:DebitAmount>11.0</p869:DebitAmount>
+          <p869:CreditAccountNumber>***5398</p869:CreditAccountNumber>
+          <p869:CreditAccountCurrencyCode>BWP</p869:CreditAccountCurrencyCode>
+          <p869:CreditAmount>11.0</p869:CreditAmount>
+          <p869:TrxReferenceNumber>61496729693536</p869:TrxReferenceNumber>
+          <p869:PayeeName>FAMILY NAME 100011032</p869:PayeeName>
+          <p869:TransactionStatusCode>SUCCESS</p869:TransactionStatusCode>
+          <p869:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+          </p869:UserAuditDetails>
+          <p869:Channel>UB</p869:Channel>
+          <p869:CustomerNumber>100000320078</p869:CustomerNumber>
+          <p869:InitiatingCustomerName xmlns:p940="http://barclays.com/bem/IndividualName">
+            <p940:FullName>*******************************1032</p940:FullName>
+          </p869:InitiatingCustomerName>
+        </p739:FundsTransferSummary>
+        <p739:FundsTransferSummary xmlns:p869="http://barclays.com/bem/FundsTransferSummary">
+          <p869:FundsTransferType>BP</p869:FundsTransferType>
+          <p869:TransactionDateTime>2017-06-05T11:45:43.772Z</p869:TransactionDateTime>
+          <p869:DebitAccountNumber>***5419</p869:DebitAccountNumber>
+          <p869:DebitAccountCurrencyCode>BWP</p869:DebitAccountCurrencyCode>
+          <p869:DebitAmount>15.0</p869:DebitAmount>
+          <p869:CreditAccountCurrencyCode>BWP</p869:CreditAccountCurrencyCode>
+          <p869:CreditAmount>15.0</p869:CreditAmount>
+          <p869:TrxReferenceNumber>71496659543672</p869:TrxReferenceNumber>
+          <p869:BillerCode>WUC-2</p869:BillerCode>
+          <p869:BillerName>Water Utilities Corporation</p869:BillerName>
+          <p869:BillerReferenceNumber>22215423</p869:BillerReferenceNumber>
+          <p869:TransactionStatusCode>SUCCESS</p869:TransactionStatusCode>
+          <p869:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+          </p869:UserAuditDetails>
+          <p869:Channel>UB</p869:Channel>
+          <p869:CustomerNumber>100000320078</p869:CustomerNumber>
+          <p869:InitiatingCustomerName xmlns:p940="http://barclays.com/bem/IndividualName">
+            <p940:FullName>*******************************1032</p940:FullName>
+          </p869:InitiatingCustomerName>
+        </p739:FundsTransferSummary>
+        <p739:FundsTransferSummary xmlns:p869="http://barclays.com/bem/FundsTransferSummary">
+          <p869:FundsTransferType>BP</p869:FundsTransferType>
+          <p869:TransactionDateTime>2017-06-05T11:39:57.595Z</p869:TransactionDateTime>
+          <p869:DebitAccountNumber>***5419</p869:DebitAccountNumber>
+          <p869:DebitAccountCurrencyCode>BWP</p869:DebitAccountCurrencyCode>
+          <p869:DebitAmount>20.0</p869:DebitAmount>
+          <p869:CreditAccountCurrencyCode>BWP</p869:CreditAccountCurrencyCode>
+          <p869:CreditAmount>20.0</p869:CreditAmount>
+          <p869:TrxReferenceNumber>31496659197277</p869:TrxReferenceNumber>
+          <p869:BillerCode>WUC-2</p869:BillerCode>
+          <p869:BillerName>Water Utilities Corporation</p869:BillerName>
+          <p869:BillerReferenceNumber>154278963</p869:BillerReferenceNumber>
+          <p869:TransactionStatusCode>FAILURE</p869:TransactionStatusCode>
+          <p869:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+          </p869:UserAuditDetails>
+          <p869:Channel>UB</p869:Channel>
+          <p869:CustomerNumber>100000320078</p869:CustomerNumber>
+          <p869:InitiatingCustomerName xmlns:p940="http://barclays.com/bem/IndividualName">
+            <p940:FullName>*******************************1032</p940:FullName>
+          </p869:InitiatingCustomerName>
+        </p739:FundsTransferSummary>
+        <p739:FundsTransferSummary xmlns:p869="http://barclays.com/bem/FundsTransferSummary">
+          <p869:FundsTransferType>BP</p869:FundsTransferType>
+          <p869:TransactionDateTime>2017-06-05T11:34:41.696Z</p869:TransactionDateTime>
+          <p869:DebitAccountNumber>***5419</p869:DebitAccountNumber>
+          <p869:DebitAccountCurrencyCode>BWP</p869:DebitAccountCurrencyCode>
+          <p869:DebitAmount>40.0</p869:DebitAmount>
+          <p869:CreditAccountCurrencyCode>BWP</p869:CreditAccountCurrencyCode>
+          <p869:CreditAmount>40.0</p869:CreditAmount>
+          <p869:TrxReferenceNumber>51496658881509</p869:TrxReferenceNumber>
+          <p869:BillerCode>WUC-2</p869:BillerCode>
+          <p869:BillerName>Water Utilities Corporation</p869:BillerName>
+          <p869:BillerReferenceNumber>8521479</p869:BillerReferenceNumber>
+          <p869:TransactionStatusCode>FAILURE</p869:TransactionStatusCode>
+          <p869:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+          </p869:UserAuditDetails>
+          <p869:Channel>UB</p869:Channel>
+          <p869:CustomerNumber>100000320078</p869:CustomerNumber>
+          <p869:InitiatingCustomerName xmlns:p940="http://barclays.com/bem/IndividualName">
+            <p940:FullName>*******************************1032</p940:FullName>
+          </p869:InitiatingCustomerName>
+        </p739:FundsTransferSummary>
+        <p739:FundsTransferSummary xmlns:p869="http://barclays.com/bem/FundsTransferSummary">
+          <p869:FundsTransferType>BP</p869:FundsTransferType>
+          <p869:TransactionDateTime>2017-02-16T09:54:39.442Z</p869:TransactionDateTime>
+          <p869:DebitAccountNumber>***5419</p869:DebitAccountNumber>
+          <p869:DebitAccountCurrencyCode>BWP</p869:DebitAccountCurrencyCode>
+          <p869:DebitAmount>500.0</p869:DebitAmount>
+          <p869:CreditAccountCurrencyCode>BWP</p869:CreditAccountCurrencyCode>
+          <p869:CreditAmount>500.0</p869:CreditAmount>
+          <p869:TrxReferenceNumber>41487249679253</p869:TrxReferenceNumber>
+          <p869:BillerCode>MYZAKA-2</p869:BillerCode>
+          <p869:BillerName>MyZaka</p869:BillerName>
+          <p869:BillerReferenceNumber>26771467530</p869:BillerReferenceNumber>
+          <p869:TransactionStatusCode>FAILURE</p869:TransactionStatusCode>
+          <p869:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+          </p869:UserAuditDetails>
+          <p869:Channel>UB</p869:Channel>
+          <p869:CustomerNumber>100000320078</p869:CustomerNumber>
+          <p869:InitiatingCustomerName xmlns:p940="http://barclays.com/bem/IndividualName">
+            <p940:FullName>*******************************1032</p940:FullName>
+          </p869:InitiatingCustomerName>
+        </p739:FundsTransferSummary>
+        <p739:FundsTransferSummary xmlns:p869="http://barclays.com/bem/FundsTransferSummary">
+          <p869:FundsTransferType>BP</p869:FundsTransferType>
+          <p869:TransactionDateTime>2017-02-16T09:54:12.150Z</p869:TransactionDateTime>
+          <p869:DebitAccountNumber>***5419</p869:DebitAccountNumber>
+          <p869:DebitAccountCurrencyCode>BWP</p869:DebitAccountCurrencyCode>
+          <p869:DebitAmount>500.0</p869:DebitAmount>
+          <p869:CreditAccountCurrencyCode>BWP</p869:CreditAccountCurrencyCode>
+          <p869:CreditAmount>500.0</p869:CreditAmount>
+          <p869:TrxReferenceNumber>61487249579328</p869:TrxReferenceNumber>
+          <p869:BillerCode>MYZAKA-2</p869:BillerCode>
+          <p869:BillerName>MyZaka</p869:BillerName>
+          <p869:BillerReferenceNumber>26771467530</p869:BillerReferenceNumber>
+          <p869:TransactionStatusCode>FAILURE</p869:TransactionStatusCode>
+          <p869:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+          </p869:UserAuditDetails>
+          <p869:Channel>UB</p869:Channel>
+          <p869:CustomerNumber>100000320078</p869:CustomerNumber>
+          <p869:InitiatingCustomerName xmlns:p940="http://barclays.com/bem/IndividualName">
+            <p940:FullName>*******************************1032</p940:FullName>
+          </p869:InitiatingCustomerName>
+        </p739:FundsTransferSummary>
+        <p739:TotalRecordCount>12</p739:TotalRecordCount>
+      </p739:FundTransferHistoryList>
+    </p739:SearchFundsTransferHistoryResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

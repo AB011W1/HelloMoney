@@ -37,12 +37,17 @@ public class LeadGenerationProductSubListJsonParser implements BmgBaseJsonParser
 		LinkedHashMap<String,String> prodSubProdNameMap=new LinkedHashMap<String,String>();
 		MenuItemDTO menuDTO = null;
 		try {
-			Map<String, String> userInputMap = responseBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap();
+			Map<String, String> userInputMap = new HashMap<String, String>();
+			if(null != responseBuilderParamsDTO)
+				userInputMap = responseBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap();
 			String selProductName=userInputMap.get(USSDConstants.LEAD_GEN_PRODUCT_NAME);
-			Map<String, Object> txSessions = responseBuilderParamsDTO.getUssdSessionMgmt().getTxSessions();
-			leadSubProdList = (List<String>) txSessions.get(
+			Map<String, Object> txSessions = new HashMap<String, Object>();
+			if(null != responseBuilderParamsDTO)
+				txSessions = responseBuilderParamsDTO.getUssdSessionMgmt().getTxSessions();
+			if(null != txSessions)
+				leadSubProdList = (List<String>) txSessions.get(
 					USSDInputParamsEnum.LEAD_GENERATION_PROD_SUB_LST.getTranId());
-			if(txSessions.get("prodSubProdNameMap")!=null){
+			if(null != txSessions && txSessions.get("prodSubProdNameMap")!=null){
 				prodSubProdNameMap=(LinkedHashMap<String, String>) txSessions.get("prodSubProdNameMap");
 			}
 			if(leadSubProdList==null){
@@ -55,21 +60,23 @@ public class LeadGenerationProductSubListJsonParser implements BmgBaseJsonParser
 					}
 				}
 			}
-			menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, leadSubProdList, "");
+			if(null != responseBuilderParamsDTO && null != leadSubProdList)
+				menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, leadSubProdList, "");
 			if (txSessions == null) {
 				txSessions = new HashMap<String, Object>(8);
 			}
 			txSessions.put(USSDInputParamsEnum.LEAD_GENERATION_PROD_SUB_LST.getTranId(), leadSubProdList);
 			txSessions.put("prodSubProdNameMap", prodSubProdNameMap);
-			responseBuilderParamsDTO.getUssdSessionMgmt().setTxSessions(txSessions);
+			if(null != responseBuilderParamsDTO)
+				responseBuilderParamsDTO.getUssdSessionMgmt().setTxSessions(txSessions);
 
 		} catch (Exception e) {
 			LOGGER.error("Exception : ", e);
-			if (e instanceof USSDNonBlockingException) {
+/*			if (e instanceof USSDNonBlockingException) {
 				throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode());
-			} else {
+			} else {*/
 				throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
-			}
+			//}
 		}
 		return menuDTO;
 	}

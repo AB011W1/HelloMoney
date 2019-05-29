@@ -1,6 +1,7 @@
 package com.barclays.ussd.utils.jsonparsers;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -18,6 +19,8 @@ import com.barclays.ussd.utils.USSDExceptions;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
+import com.barclays.ussd.utils.jsonparsers.bean.login.AuthUserData;
+import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
 import com.barclays.ussd.utils.jsonparsers.bean.otbp.OTBPInitAccount;
 
 public class OneTimeBillPayAcctNumJsonParser implements BmgBaseJsonParser {
@@ -26,7 +29,6 @@ public class OneTimeBillPayAcctNumJsonParser implements BmgBaseJsonParser {
 
     @Override
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
-	MenuItemDTO menuDTO = null;
 	//for Kadikope
 	Map<String, Object> txSessions = responseBuilderParamsDTO.getUssdSessionMgmt().getTxSessions();
 	if(txSessions.containsKey(USSDConstants.CREDIT_CARD_FT_ONETIME_CASA)){
@@ -36,7 +38,8 @@ public class OneTimeBillPayAcctNumJsonParser implements BmgBaseJsonParser {
 	try {
 	    List<OTBPInitAccount> accList = (List<OTBPInitAccount>) ussdSessionMgmt.getTxSessions().get(
 		    USSDInputParamsEnum.ONE_TIME_BILL_PYMNT_ACNT_NOS.getTranId());
-	    menuDTO = renderMenuOnScreen(accList, responseBuilderParamsDTO);
+	    MenuItemDTO menuDTO = renderMenuOnScreen(accList, responseBuilderParamsDTO);
+	    return menuDTO;
 	} catch (Exception e) {
 	    LOGGER.error("Exception : ", e);
 	    if (e instanceof USSDNonBlockingException) {
@@ -45,19 +48,37 @@ public class OneTimeBillPayAcctNumJsonParser implements BmgBaseJsonParser {
 		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
 	    }
 	}
-	return menuDTO;
+
     }
 
     /**
      * @param payData
      * @param responseBuilderParamsDTO
      * @return MenuItemDTO
+     * @throws USSDNonBlockingException
      */
-    private MenuItemDTO renderMenuOnScreen(List<OTBPInitAccount> payData, ResponseBuilderParamsDTO responseBuilderParamsDTO) {
+    private MenuItemDTO renderMenuOnScreen(List<OTBPInitAccount> payData, ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
 	int index = 1;
 	StringBuilder pageBody = new StringBuilder();
 	MenuItemDTO menuItemDTO = new MenuItemDTO();
+	USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
+	AuthUserData authData= ((AuthUserData)ussdSessionMgmt.getUserAuthObj());
+    List<CustomerMobileRegAcct> acts=authData.getPayData().getCustActs();
 	if (payData != null) {
+		if(acts != null && acts.size() > 0)
+		{
+			List<String> GpAcc=new ArrayList<String>();
+			 for(int i =0;i<acts.size();i++)
+			    	if(acts.get(i).getGroupWalletIndicator()!=null && acts.get(i).getGroupWalletIndicator().equals("Y"))
+			    		GpAcc.add(acts.get(i).getMkdActNo());
+
+				 for(int j=0;j<payData.size();j++)
+					 if(GpAcc.contains(payData.get(j).getMkdActNo()))
+						 payData.remove(j);
+		}
+		if (payData == null || payData.isEmpty() || payData.size() == 0) {
+		    throw new USSDNonBlockingException(USSDExceptions.USSD_NO_ELIGIBLE_ACCTS.getBmgCode());
+		}
 	    for (OTBPInitAccount acctDet : payData) {
 		pageBody.append(USSDConstants.NEW_LINE);
 		pageBody.append(index++);

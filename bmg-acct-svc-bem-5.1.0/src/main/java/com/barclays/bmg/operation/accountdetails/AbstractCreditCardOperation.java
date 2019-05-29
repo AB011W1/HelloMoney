@@ -11,17 +11,17 @@ import com.barclays.bmg.operation.BMBCommonOperation;
 
 /**
  * @author BMB Team
- * 
+ *
  */
 public abstract class AbstractCreditCardOperation extends BMBCommonOperation {
 
-    private final String PRIMARY_CARD = "PRI";
-    private final String REPLACEMENT_CARD = "REP";
-    private final String SUPPLIMENTARY_CARD = "SUP";
+    private String PRIMARY_CARD = "PRI";
+    private String REPLACEMENT_CARD = "REP";
+    private String SUPPLIMENTARY_CARD = "SUP";
 
     /**
      * returns the Primary Card ransaction history
-     * 
+     *
      * @param detailAccountDTO
      * @param activityList
      * @return
@@ -46,7 +46,7 @@ public abstract class AbstractCreditCardOperation extends BMBCommonOperation {
 
     /**
      * returns the Primary Card ransaction history
-     * 
+     *
      * @param detailAccountDTO
      * @param activityList
      * @return
@@ -67,7 +67,7 @@ public abstract class AbstractCreditCardOperation extends BMBCommonOperation {
 
     /**
      * Returns Supplementary card transaction history
-     * 
+     *
      * @param detailAccountDTO
      * @param activityList
      * @return
@@ -102,7 +102,7 @@ public abstract class AbstractCreditCardOperation extends BMBCommonOperation {
 
     /**
      * returns the Replaced card transaction history
-     * 
+     *
      * @param detailAccountDTO
      * @param activityList
      * @return
@@ -143,7 +143,7 @@ public abstract class AbstractCreditCardOperation extends BMBCommonOperation {
 
     /**
      * returns the replacement card numbers
-     * 
+     *
      * @param detailAccountDTO
      * @param activityList
      * @return
@@ -164,7 +164,7 @@ public abstract class AbstractCreditCardOperation extends BMBCommonOperation {
 
     /**
      * returns credit card account activity for a card number
-     * 
+     *
      * @param creditCardAccount
      * @param cardNumber
      * @param sourceDTOList
@@ -197,27 +197,27 @@ public abstract class AbstractCreditCardOperation extends BMBCommonOperation {
     /*
      * private List<CreditCardActivityDTO> getRecentTransactionForCrediCard(int recentTrxNumber, List<CreditCardActivityDTO> sourceActivityList) {
      * List<CreditCardActivityDTO> returnList = new ArrayList<CreditCardActivityDTO>(); if (sourceActivityList != null) {
-     * 
+     *
      * int sourceListSize = sourceActivityList.size();
-     * 
+     *
      * if (sourceListSize > recentTrxNumber) { for (int i = 0; i < recentTrxNumber; i++) {
-     * 
+     *
      * returnList.add(sourceActivityList.get(i));
-     * 
+     *
      * }
-     * 
+     *
      * } else {
-     * 
+     *
      * returnList = sourceActivityList;
-     * 
+     *
      * } }
-     * 
+     *
      * return returnList; }
      */
 
     /**
      * returns the replacement card activity list
-     * 
+     *
      * @param replacementCardNumber
      * @param activityList
      * @return
@@ -237,7 +237,7 @@ public abstract class AbstractCreditCardOperation extends BMBCommonOperation {
 
     /**
      * Check whether the card is replacement card
-     * 
+     *
      * @param cardNumber
      * @param detailAccountDTO
      * @return
@@ -275,13 +275,13 @@ public abstract class AbstractCreditCardOperation extends BMBCommonOperation {
      * List<CreditCardActivityDTO> returnActivityList = null; if (activityDTOList != null) { for (CreditCardTransactionHistoryDTO activityDTO :
      * activityDTOList) { if (cardNumber.equals(activityDTO.getCardNumber())) { returnActivityList = activityDTO.getCreditCardActivityList(); break; }
      * }
-     * 
+     *
      * } return returnActivityList; }
      */
 
     /**
      * get the credit card transaction history list for a card number
-     * 
+     *
      * @param cardNo
      * @param primaryCardHistory
      * @param replacementCardGroupedHistoryList

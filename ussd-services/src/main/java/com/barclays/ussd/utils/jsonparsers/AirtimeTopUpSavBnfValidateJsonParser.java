@@ -11,7 +11,6 @@ import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
-import com.barclays.ussd.auth.bean.UserProfile;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
 import com.barclays.ussd.exception.USSDNonBlockingException;
@@ -35,7 +34,6 @@ public class AirtimeTopUpSavBnfValidateJsonParser implements BmgBaseJsonParser {
 
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
 	MenuItemDTO menuDTO = null;
-	ObjectMapper mapper = new ObjectMapper();
 	 menuDTO = renderMenuOnScreen( responseBuilderParamsDTO);
 
 	return menuDTO;
@@ -68,7 +66,6 @@ public class AirtimeTopUpSavBnfValidateJsonParser implements BmgBaseJsonParser {
 		Biller biller = mnoList.get(Integer.parseInt(billerUserIdx) - 1);
 		String mnoSelected =biller.getBillerName();
 		String nickName = userInputMap.get(USSDInputParamsEnum.AIRTIME_TOPUP_SAVE_BEN_NICK_NAME.getParamName());
-		UserProfile userProfile = ussdSessionMgmt.getUserProfile();
 		List<String> params = new ArrayList<String>(1);
 		params.add(mobilenumber);
 		params.add(mnoSelected);

@@ -10,6 +10,7 @@ import org.springframework.validation.BindException;
 
 import com.barclays.bmg.constants.ActivityConstant;
 import com.barclays.bmg.context.Context;
+import com.barclays.bmg.dao.accountservices.adapter.MakePayBillPayloadAdapter;
 import com.barclays.bmg.json.model.builder.BMBJSONBuilder;
 import com.barclays.bmg.json.response.model.BMBBaseResponseModel;
 import com.barclays.bmg.mvc.controller.auth.BMBAbstractCommandController;
@@ -36,6 +37,9 @@ public class SearchIndividualCustforDeDupCheckController extends BMBAbstractComm
 
     	SearchIndividualCustforDeDupCheckOperationResponse searchIndividualCustforDeDupCheckOperationResponse=searchIndividualCustforDeDupCheckOperation.retrieveCustomerInfo(searchIndividualCustforDeDupCheckOperationRequest);
 
+    	//Added for Makebillpayment request for KITS
+    	if(searchIndividualCustforDeDupCheckOperationResponse.getIndividualCustomerBasicOpResList() != null)
+    		MakePayBillPayloadAdapter.setCreditorName(searchIndividualCustforDeDupCheckOperationResponse.getIndividualCustomerBasicOpResList().get(0).getIndividualName());
 
     	return (BMBBaseResponseModel) bmbJSONBuilder.createJSONResponse(searchIndividualCustforDeDupCheckOperationResponse);
     }

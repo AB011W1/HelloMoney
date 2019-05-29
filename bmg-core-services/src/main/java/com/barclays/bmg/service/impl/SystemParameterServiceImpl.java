@@ -40,4 +40,13 @@ public class SystemParameterServiceImpl implements SystemParameterService {
 		return systemParameterServiceResponse;
 	}
 
+	@Override
+	public SystemParameterListServiceResponse getCountryWiseSysParamsByParamId(
+			SystemParameterServiceRequest request) {
+
+		SystemParameterListServiceResponse systemParameterServiceResponse = systemParameterDAO.getCountryWiseSysParamsByParamId(request);
+
+		return systemParameterServiceResponse;
+	}
+
 }

@@ -9,27 +9,19 @@ import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
-import com.barclays.ussd.auth.bean.USSDSessionManagement;
+
 import com.barclays.ussd.bean.MenuItemDTO;
-import com.barclays.ussd.bean.MsisdnDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
-import com.barclays.ussd.exception.USSDBlockingException;
 import com.barclays.ussd.exception.USSDNonBlockingException;
 import com.barclays.ussd.utils.BmgBaseJsonParser;
 import com.barclays.ussd.utils.PaginationEnum;
-import com.barclays.ussd.utils.SystemPreferenceValidator;
 import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDExceptions;
-import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
-import com.barclays.ussd.utils.UssdMenuBuilder;
 import com.barclays.ussd.utils.jsonparsers.bean.login.AuthUserData;
 import com.barclays.ussd.utils.jsonparsers.bean.login.AuthenticateUserPayData;
 import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
-import com.barclays.ussd.validation.USSDCompositeValidator;
-import com.barclays.ussd.validation.USSDMobileLengthValidator;
 
 public class KitsDeregisterAccountNumberJsonParser implements BmgBaseJsonParser {
 
@@ -37,34 +29,34 @@ public class KitsDeregisterAccountNumberJsonParser implements BmgBaseJsonParser 
     private static final Logger LOGGER = Logger.getLogger(KitsDeregisterAccountNumberJsonParser.class);
 
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
-	MenuItemDTO menuDTO = null;
 	try {
 	    AuthUserData userAuthObj = (AuthUserData) responseBuilderParamsDTO.getUssdSessionMgmt().getUserAuthObj();
 	    if (userAuthObj != null) {
 		if (userAuthObj.getPayHdr() != null && USSDExceptions.SUCCESS.getBmgCode().equalsIgnoreCase(userAuthObj.getPayHdr().getResCde())) {
 		    List<CustomerMobileRegAcct> custActs = userAuthObj.getPayData().getCustActs();
 		    Collections.sort(custActs, new KITSDeregisterAccountSummaryCustomerAccountComparator());
-		    menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, userAuthObj);
+		    MenuItemDTO menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, userAuthObj);
+		    return menuDTO;
 		} else if (userAuthObj.getPayHdr() != null) {
 		    LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
-		    throw new USSDNonBlockingException(userAuthObj.getPayHdr().getResCde());
+		    throw new USSDNonBlockingException(userAuthObj.getPayHdr().getResCde(),true);
 		} else {
 		    LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
-		    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+		    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 		}
 	    } else {
 		LOGGER.error("Invalid response got from the BMG " + responseBuilderParamsDTO.getBmgOpCode());
-		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 	    }
 	} catch (Exception e) {
 	    LOGGER.error("Exception : ", e);
 	    if (e instanceof USSDNonBlockingException) {
-		throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode());
+		throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode(),true);
 	    } else {
-		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 	    }
 	}
-	return menuDTO;
+
     }
 
     /**
@@ -72,8 +64,9 @@ public class KitsDeregisterAccountNumberJsonParser implements BmgBaseJsonParser 
      * @param userAuthObj
      * @param warningMsg
      * @return MenuItemDTO
+     * @throws USSDNonBlockingException
      */
-    private MenuItemDTO renderMenuOnScreen(ResponseBuilderParamsDTO responseBuilderParamsDTO, AuthUserData userAuthObj) {
+    private MenuItemDTO renderMenuOnScreen(ResponseBuilderParamsDTO responseBuilderParamsDTO, AuthUserData userAuthObj) throws USSDNonBlockingException {
 
 		MenuItemDTO menuItemDTO = null;
 		AuthenticateUserPayData acntPayData = userAuthObj.getPayData();
@@ -85,10 +78,15 @@ public class KitsDeregisterAccountNumberJsonParser implements BmgBaseJsonParser 
 				Map<String, Object> txSessions = new HashMap<String, Object>(acntPayData.getCustActs().size());
 
 			//	txSessions.put(USSDInputParamsEnum.KITS_DEREG_ACCOUNT_NUM.getTranId(), acntPayData.getCustActs());
-
-
 				responseBuilderParamsDTO.getUssdSessionMgmt().setTxSessions(txSessions);
-				for (CustomerMobileRegAcct accountDetail : acntPayData.getCustActs()) {
+				List<CustomerMobileRegAcct> acts=acntPayData.getCustActs();
+				 for(int i =0;i<acts.size();i++)
+				    	if(acts.get(i).getGroupWalletIndicator()!=null && acts.get(i).getGroupWalletIndicator().equals("Y"))
+				    		acts.remove(i);
+				 if (acts == null || acts.isEmpty() || acts.size() == 0) {
+					    throw new USSDNonBlockingException(USSDExceptions.USSD_NO_ELIGIBLE_ACCTS.getBmgCode());
+					}
+				for (CustomerMobileRegAcct accountDetail : acts){//acntPayData.getCustActs()) {
 					pageBody.append(USSDConstants.NEW_LINE);
 					pageBody.append(index);
 					pageBody.append(USSDConstants.DOT_SEPERATOR);
@@ -102,7 +100,8 @@ public class KitsDeregisterAccountNumberJsonParser implements BmgBaseJsonParser 
 				menuItemDTO.setPaginationType(PaginationEnum.LISTED);
 			}
 		}
-		setNextScreenSequenceNumber(menuItemDTO);
+		if(null != menuItemDTO)
+			setNextScreenSequenceNumber(menuItemDTO);
 		return menuItemDTO;
     }
 
@@ -130,4 +129,3 @@ public class KitsDeregisterAccountNumberJsonParser implements BmgBaseJsonParser 
 		}
 
 	}
-

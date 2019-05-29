@@ -15,4 +15,14 @@ public class EncryptionConstants {
     public static final String CASHSENDKEYSTORE = "CASHSENDKEYSTORE";
     public static final String CASHSENDKEYSTOREKEY = "CASHSENDKEYSTOREKEY";
     public static final String CASHSENDENCRYPTLOGIC = "CASHSENDENCRYPTLOGIC";
+
+    /** Cash send Hsm constants */
+    public static final String CASHSENDPASS = "CASHSENDPASS";
+    public static final String CASHSENDPROVIDER = "CASHSENDPROVIDER";
+    public static final String CASHKEYSTPROVIDER = "CASHKEYSTPROVIDER";
+    public static final String CASHSENDALIAS = "CASHSENDALIAS";
+    public static final String ENCRYPTIONMETHOD = "ENCRYPTIONMETHOD";
+    public static final String PINLENGTH = "PINLENGTH";
+    public static final String PINPADDING = "PINPADDING";
+    public static final String SLOT = "SLOT";
 }

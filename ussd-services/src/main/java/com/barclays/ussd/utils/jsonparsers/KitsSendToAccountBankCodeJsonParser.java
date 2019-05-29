@@ -65,12 +65,14 @@ public class KitsSendToAccountBankCodeJsonParser implements BmgBaseJsonParser,Sy
 	    	{
 	    		USSDNonBlockingException e= new USSDNonBlockingException();
 	    		e.setErrorCode(USSDExceptions.USSD_BANK_CODE_LIST_INVALID.getUssdErrorCode());
+	    		e.setKitsFlow(true);
 	    		throw e;
 	    	}
 	    	if(StringUtils.isNumericSpace(userInput))
 	    	{
 	    		USSDNonBlockingException e= new USSDNonBlockingException();
 	    		e.setErrorCode(USSDExceptions.USSD_BANK_CODE_LIST_INVALID.getUssdErrorCode());
+	    		e.setKitsFlow(true);
 	    		throw e;
 	    	}
 	    }

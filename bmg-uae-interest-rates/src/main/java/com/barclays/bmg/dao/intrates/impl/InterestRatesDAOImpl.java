@@ -22,28 +22,27 @@ public class InterestRatesDAOImpl extends BaseDAOImpl implements
 		final String BUSINESS_ID 	= 	"businessId";
 		final String CATEGORY_CODE	=	"categoryCode";
 		final String LOCAL_CURRENCY = "localCurrency";
-		
+
 		InterestRatesServiceResponse intRatesServiceResponse = new InterestRatesServiceResponse();
 
 		Context context = request.getContext();
 
 		Map parameterMap = new HashMap();
-		
-		List<IntrateDTO> intRatesDTOList = new ArrayList<IntrateDTO>();
 		parameterMap.put(BUSINESS_ID, context.getBusinessId());
 		parameterMap.put(CATEGORY_CODE,request.getCategoryCode());
 		if(request.isFCRCountryFlag())
 		{
 			parameterMap.put(LOCAL_CURRENCY, request.getContext().getLocalCurrency());
-			intRatesDTOList =  this.queryForList(
+			List<IntrateDTO> intRatesDTOList =  this.queryForList(
 					SqlMapSystemConstants.INTRATE_CACHE_FOR_FCR_COUNTRY, parameterMap);
+			intRatesServiceResponse.setIntrateDTOList(intRatesDTOList);
 		}
 		else
 		{
-			intRatesDTOList = this.queryForList(
+			List<IntrateDTO> intRatesDTOList = this.queryForList(
 				SqlMapSystemConstants.INTRATE_CACHE, parameterMap);
+			intRatesServiceResponse.setIntrateDTOList(intRatesDTOList);
 		}
-		intRatesServiceResponse.setIntrateDTOList(intRatesDTOList);
 
 		return intRatesServiceResponse;
 

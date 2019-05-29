@@ -8,7 +8,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
 
 /**
  * @author BTCI
- * 
+ *
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class OTBPSubmitPayData {
@@ -27,6 +27,9 @@ public class OTBPSubmitPayData {
 
 	@JsonProperty
 	private String txnDtTm;
+
+	@JsonProperty
+	private String tokenNo;
 
 	/**
 	 * @return the bemRefNo
@@ -102,4 +105,20 @@ public class OTBPSubmitPayData {
 	public void setTxnDtTm(String txnDtTm) {
 		this.txnDtTm = txnDtTm;
 	}
+
+	/**
+	 * @return the token
+	 */
+	public String getToken() {
+		return tokenNo;
+	}
+
+	/**
+	 * @param token the token to set
+	 */
+	public void setToken(String token) {
+		this.tokenNo = token;
+	}
+
+
 }

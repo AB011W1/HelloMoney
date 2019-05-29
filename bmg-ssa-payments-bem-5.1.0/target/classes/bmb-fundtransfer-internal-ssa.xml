@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:util="http://www.springframework.org/schema/util"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+
+	<bean id="domesticFundTransferDAOController"
+		class="com.barclays.bmg.dao.processing.fundtransfer.domestic.ssa.DomesticFundTransferDAOController">
+		<property name="domesticFundTransferReqAdptOperation" ref="domesticFundTransferReqAdptOperation" />
+		<property name="transmissionOperation" ref="domesticFundTransferTransmissionOperation" />
+		<property name="domesticFundTransferRespAdptOperation" ref="domesticFundTransferRespAdptOperation" />
+	</bean>
+
+	<bean id="domesticFundTransferReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.fundtransfer.domestic.ssa.DomesticFundTransferReqAdptOperation">
+		<property name="domesticFundTransferPayloadAdapter" ref="domesticFundTransferPayloadAdapter" />
+	</bean>
+
+	<bean id="domesticFundTransferPayloadAdapter"
+		class="com.barclays.bmg.dao.adapter.fundtransfer.domestic.ssa.DomesticFundTransferPayloadAdapter">
+	</bean>
+
+	<bean id="domesticFundTransferRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.fundtransfer.domestic.ssa.DomesticFundTransferRespAdptOperation">
+	</bean>
+
+</beans>

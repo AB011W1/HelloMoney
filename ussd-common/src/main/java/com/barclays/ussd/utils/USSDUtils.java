@@ -7,7 +7,6 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashSet;
@@ -17,16 +16,14 @@ import java.util.Locale;
 import java.util.Random;
 import java.util.Set;
 
-import javax.swing.text.StyledEditorKit.BoldAction;
-
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 import com.barclays.ussd.auth.bean.USSDRequest;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
-import com.barclays.ussd.bean.NavigationOptionsDTO;
 import com.barclays.ussd.bean.CurrentRunningTransaction;
 import com.barclays.ussd.bean.MenuItemDTO;
+import com.barclays.ussd.bean.NavigationOptionsDTO;
 import com.barclays.ussd.bean.USSDLocale;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
 import com.barclays.ussd.common.configuration.ConfigurationManager;
@@ -69,7 +66,7 @@ public final class USSDUtils {
 	USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
 	CurrentRunningTransaction currentRunningTransaction = ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction();
 	NavigationOptionsDTO backHomeOptions = responseBuilderParamsDTO.getBackHomeOptions();
-
+	LOGGER.debug("Current Transaction : "+currentRunningTransaction);
 	if (TRUE.equalsIgnoreCase(currentRunningTransaction.getBackOptionReq())
 		&& TRUE.equalsIgnoreCase(currentRunningTransaction.getHomeOptionReq())) {
 	    pageFooter.append(USSDConstants.GO_BACK_N_HOME_LABEL_ID);
@@ -301,8 +298,6 @@ public final class USSDUtils {
     	debitCardNumberList.add("1234567841123456");
     	debitCardNumberList.add("1234566891123456");
     	debitCardNumberList.add("1234567891123456");
-    	boolean check=USSDUtils.validateRandomDebitCardDigits(positions, userEntereddebitCardNumbers, debitCardNumberList);
-
 
     	Set<Integer> randomPositions = new HashSet<Integer>();
     	List<Integer> firstSixDigitsList = new ArrayList<Integer>();//this list holds next 6 digits after the 6th position of the valid debit card nos i.e. with status code='C'
@@ -442,7 +437,7 @@ public final class USSDUtils {
     	for(Date date:debitCardExpiryDateList){
 
     		LOGGER.info("USSDUtils validateDebitCardDigitsExpiryDate Formatted date"+dateFormat.format(date));
-    		if(dateFormat.format(date).toString().equals(userEnteredDebitCardExpiryDate)){
+    		if(dateFormat.format(date).equals(userEnteredDebitCardExpiryDate)){
     			return true;}
     	}
 

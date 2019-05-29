@@ -6,7 +6,6 @@ package com.barclays.ussd.utils.jsonparsers;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -42,8 +41,6 @@ public class BillPayConfirmJsonParser implements BmgBaseJsonParser {
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
 	MenuItemDTO menuDTO = null;
 	ObjectMapper mapper = new ObjectMapper();
-	USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
-	Map<String, Object> txSessions = ussdSessionMgmt.getTxSessions();
 	try {
 
 	    BillPayConfirm billPayConfirm = mapper.readValue(responseBuilderParamsDTO.getJsonString(), BillPayConfirm.class);
@@ -107,22 +104,6 @@ public class BillPayConfirmJsonParser implements BmgBaseJsonParser {
 	pageBody.append(txnRefNo);
 
 	//CPB demo changes
-	USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
-	String confirm_lbl_demo= responseBuilderParamsDTO.getUssdResourceBundle().getLabel(USSDConstants.PAY_BILL_CONFIRM_LBL,
-		    new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));
-	/*if(displayMessage.equalsIgnoreCase(confirm_lbl_demo)){
-
-		String transactionFeeLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(TRANSACTION_FEE_LABEL,
-				    new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));
-		if(responseBuilderParamsDTO.getUssdSessionMgmt().getBusinessId().equals("KEBRB")){
-			pageBody.append(USSDConstants.NEW_LINE);
-			pageBody.append(USSDConstants.SINGLE_WHITE_SPACE);
-			pageBody.append(transactionFeeLabel);
-			pageBody.append(USSDConstants.SINGLE_WHITE_SPACE);
-			pageBody.append("KES 5");
-		}
-	}*/
-
 	menuItemDTO.setPageBody(pageBody.toString());
 	menuItemDTO.setPageHeader(responseBuilderParamsDTO.getHeaderId());
 	menuItemDTO.setPageBody(pageBody.toString());

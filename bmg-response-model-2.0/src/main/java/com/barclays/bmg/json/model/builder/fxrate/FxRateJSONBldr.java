@@ -50,7 +50,8 @@ public class FxRateJSONBldr extends BMBMultipleResponseJSONBuilder implements BM
 	    header.setResMsg(response.getResMsg());
 	}
 	header.setSerVer(ResponseIdConstants.RESPONSE_SERVICE_VERSION);
-	header.setResId(getResponseId(response.getTxnTyp()));
+	if(null != response)
+		header.setResId(getResponseId(response.getTxnTyp()));
 	return header;
     }
 

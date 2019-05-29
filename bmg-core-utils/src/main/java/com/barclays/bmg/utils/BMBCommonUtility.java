@@ -206,7 +206,7 @@ public class BMBCommonUtility {
     	SimpleDateFormat dateFormat=new SimpleDateFormat("MMyy");
     	Date date=debitCardExpiryDateList.get(debitCardCount-1);
     		LOGGER.info("USSDUtils validateDebitCardDigitsExpiryDate Formatted date"+dateFormat.format(date));
-    		if(dateFormat.format(date).toString().equals(userEnteredDebitCardExpiryDate)){
+    		if(dateFormat.format(date).equals(userEnteredDebitCardExpiryDate)){
     			return true;
     			}
     	LOGGER.info("Exit USSDUtils validateDebitCardDigitsExpiryDate");

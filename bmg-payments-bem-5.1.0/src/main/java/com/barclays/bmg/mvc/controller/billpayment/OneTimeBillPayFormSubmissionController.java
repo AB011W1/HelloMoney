@@ -1,6 +1,7 @@
 package com.barclays.bmg.mvc.controller.billpayment;
 
 import java.math.BigDecimal;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -102,13 +103,15 @@ public class OneTimeBillPayFormSubmissionController extends BMBAbstractCommandCo
 	getSelectedAccountOperationRequest.setContext(context);
     	getSelectedAccountOperationRequest.setAcctNumber(getAccountNumber(oneTimeBillPayFormSubmitCommand.getCreditcardNo(),
     			httpRequest,BMGProcessConstants.CREDIT_PAYMENT));
+      	//Change to filter blocked card on selection
+		String ccNumber = httpRequest.getParameterMap().get("ccNumber")!= null ? httpRequest.getParameterMap().get("ccNumber").toString() : "";
+		getSelectedAccountOperationRequest.setCreditCardNumber(ccNumber);
     	selSourceAcctOpResp = getSelectedAccountOperation.getSelectedCreditCardAccount(getSelectedAccountOperationRequest);
     	transactionDTO.getBeneficiaryDTO().setActionCode(oneTimeBillPayFormSubmitCommand.getActionCode());
     	transactionDTO.getBeneficiaryDTO().setStoreNumber(oneTimeBillPayFormSubmitCommand.getStoreNumber());
-}else
-	{
-	context.setActivityId(getActivityId(txnTyp));
-	getSelectedAccountOperationRequest.setContext(context);
+	} else {
+		context.setActivityId(getActivityId(txnTyp));
+		getSelectedAccountOperationRequest.setContext(context);
 // Get Source Account
 		getSelectedAccountOperationRequest.setAcctNumber(getAccountNumber(oneTimeBillPayFormSubmitCommand.getFromActNumber(), httpRequest,
 			BMGProcessConstants.BILL_PAYMENT));
@@ -124,7 +127,11 @@ public class OneTimeBillPayFormSubmissionController extends BMBAbstractCommandCo
 	    txnAmount.setCurrency(oneTimeBillPayFormSubmitCommand.getCurrency());
 	}
 
-	if(context.getActivityId().equals("PMT_BP_BILLPAY_ONETIME") && context.getBusinessId().equals("KEBRB")){
+	// Check for Uganda
+	//CBP changes
+	Map<String, Object> contextMap = context.getContextMap();
+	if(context.getActivityId().equals("PMT_BP_BILLPAY_ONETIME") && (context.getBusinessId().equals("GHBRB")|| context.getBusinessId().equals("KEBRB")|| context.getBusinessId().equals("UGBRB")
+    		|| context.getBusinessId().equals("ZMBRB") || context.getBusinessId().equals("BWBRB"))){
 		context.setOpCde(httpRequest.getParameter("opCde"));
 	}
 	FormValidateOperationResponse formValidateOperationResponse = null;

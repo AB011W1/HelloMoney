@@ -16,7 +16,7 @@ import com.barclays.ussd.utils.jsonparsers.bean.vlpb.BillerListVO;
 
 /**
  * @author BTCI
- * 
+ *
  */
 public class VLPBBillerDetRequest implements BmgBaseRequestBuilder {
 
@@ -34,7 +34,8 @@ public class VLPBBillerDetRequest implements BmgBaseRequestBuilder {
 	request.setMsisdnNo(requestBuilderParamsDTO.getMsisdnNo());
 	requestParamMap.put(USSDConstants.BMG_LOCAL_KE_OPCODE_PARAM_NAME, requestBuilderParamsDTO.getBmgOpCode());
 	requestParamMap.put(USSDConstants.BMG_LOCAL_KE_SERVICE_VER_NAME, USSDConstants.BMG_SERVICE_VERSION_VALUE);
-	requestParamMap.put(USSDInputParamsEnum.VLPB_DETAILS.getParamName(), billList.getTransRefNo());
+	if(null != billList)
+		requestParamMap.put(USSDInputParamsEnum.VLPB_DETAILS.getParamName(), billList.getTransRefNo());
 	request.setRequestParamMap(requestParamMap);
 	return request;
     }

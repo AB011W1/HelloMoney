@@ -1,5 +1,6 @@
 package com.barclays.ussd.utils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
@@ -10,6 +11,7 @@ import com.barclays.bmg.constants.SystemParameterConstant;
 import com.barclays.bmg.dto.SystemParameterDTO;
 import com.barclays.bmg.service.SystemParameterService;
 import com.barclays.bmg.service.request.SystemParameterServiceRequest;
+import com.barclays.bmg.service.response.SystemParameterListServiceResponse;
 import com.barclays.bmg.service.response.SystemParameterServiceResponse;
 import com.barclays.ussd.exception.USSDNonBlockingException;
 
@@ -112,5 +114,23 @@ public class UssdServiceEnabler {
     	if(response!=null && response.getSystemParameterDTO()!=null && response.getSystemParameterDTO().getParameterValue()!=null)
     		status=response.getSystemParameterDTO().getParameterValue();
     	return status;
+    }
+
+    public List<SystemParameterDTO> getCountryWiseStatusFlagList(String businessId){
+    	SystemParameterDTO systemParameterDTO = new SystemParameterDTO();
+    	systemParameterDTO.setBusinessId(businessId);
+    	systemParameterDTO.setSystemId(SYSTEM_ID_UB);
+    	systemParameterDTO.setParameterId("StatusFlag");
+    	systemParameterDTO.setParameterValue("N");
+
+    	SystemParameterServiceRequest systemParameterServiceRequest = new SystemParameterServiceRequest();
+    	systemParameterServiceRequest.setSystemParameterDTO(systemParameterDTO);
+
+    	SystemParameterListServiceResponse response = systemParameterService.getCountryWiseSysParamsByParamId(systemParameterServiceRequest);
+
+    	List<SystemParameterDTO> spList=new ArrayList<SystemParameterDTO>();
+    	if(response!=null && response.getSystemParameterDTOList()!=null)
+    		spList=response.getSystemParameterDTOList();
+    	return spList;
     }
 }

@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.ServletContextAware;
 
-
 import com.barclays.ussd.auth.USSDresquest.USSDBaseRequestMapper;
 import com.barclays.ussd.auth.bean.USSDRequest;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
@@ -52,6 +51,8 @@ public class AuthController extends USSDAbstractController implements ServletCon
 	private static final String FORWARD_FREE_DIAL ="/hellomoney/freedialpage";
 	private static final String FREE_DIAL_AIRTIME_TOPUP = ConfigurationManager.getString("FREE_DIAL_AIRTIME_TOPUP");
 	private static final String FREE_DIAL_AIRTIME = ConfigurationManager.getString("FREE_DIAL_AIRTIME");
+	//added for Zambia FreeDialUSSD
+	private static final String FREE_DIAL_AIRTIME_ZM = ConfigurationManager.getString("FREE_DIAL_AIRTIME_ZM");
 	private static final String FREE_DIAL_AIRTIME_TOPUP_ERRORMSG = "FREE_DIAL_AIRTIME_TOPUP_ERRORMSG";
 
 	//FreeDialUSSD FOR MWALLET
@@ -174,7 +175,8 @@ public class AuthController extends USSDAbstractController implements ServletCon
 	    msisdn = ussdRequest.getMsisdn();
 	    // boolean inputIsNull = isInputNull(ussdRequest.getInput());
 	    String msisdnWithCountry = ussdRequest.getMsisdnWithCountry();
-	    action = (String) request.getAttribute(USSDSessionConstants.INPUT_ACTION);
+	    if(null != request)
+	    	action = (String) request.getAttribute(USSDSessionConstants.INPUT_ACTION);
 
 	    // Get the user profile from the session if the user session is active
 
@@ -230,7 +232,7 @@ public class AuthController extends USSDAbstractController implements ServletCon
 						 throw e;
 					}
 					//FreeDialUSSD AIRTIME
-				}else if(ussdRequest.getExtra()!=null && ussdRequest.getExtra().equalsIgnoreCase(FREE_DIAL_AIRTIME)&& ussdSessionManagement.getBusinessId().equalsIgnoreCase("GHBRB") ){
+				}else if(ussdRequest.getExtra()!=null && (ussdRequest.getExtra().equalsIgnoreCase(FREE_DIAL_AIRTIME) || ussdRequest.getExtra().equalsIgnoreCase(FREE_DIAL_AIRTIME_ZM))&& (ussdSessionManagement.getBusinessId().equalsIgnoreCase("GHBRB") || ussdSessionManagement.getBusinessId().equalsIgnoreCase("ZMBRB"))){
 					if(null != languagesList.get(0)){
 						freeDialUssdErrorMsg = ussdResourceBundle.getLabel(FREE_DIAL_MWALLET_ERRORMSG, new Locale(languagesList.get(0),ussdSessionManagement.getCountryCode()));
 						 e.setErrMsg(freeDialUssdErrorMsg);
@@ -243,7 +245,8 @@ public class AuthController extends USSDAbstractController implements ServletCon
 				}
 
 			}
-			requestDispatcher.forward(request, response);
+			if(null != request && null != response)
+				requestDispatcher.forward(request, response);
 			return EMPTY_STRING;
 		    } else {
 			throw e;
@@ -290,11 +293,23 @@ public class AuthController extends USSDAbstractController implements ServletCon
 		// bank
 	    //Forgot pin Issue 2295
 	    String errorMessage = ussdResourceBundle.getLabel(profile.getErrorMsg(), new Locale(profile.getLanguage(), profile.getCountryCode()));
-	    if(profile.getBusinessId().equalsIgnoreCase("MZBRB")|| profile.getBusinessId().equalsIgnoreCase("TZNBC")){
-	    	profile.setErrorMsg(errorMessage + USSDConstants.NEW_LINE);
-	    }else{
-	    	String FORGOT_PIN_LABEL = ussdResourceBundle.getLabel("FORGOT_PIN_LABEL", new Locale(profile.getLanguage(), profile.getCountryCode()));
-		    profile.setErrorMsg(errorMessage  + USSDConstants.NEW_LINE + FORGOT_PIN_LABEL);
+	    if(profile.getBusinessId().equalsIgnoreCase("MZBRB") && "BEM09032".equalsIgnoreCase(profile.getErrorMsg()))
+	    {
+		    profile.setErrorMsg(errorMessage  + USSDConstants.NEW_LINE);
+	    }
+	    else if("BEM09032".equalsIgnoreCase(profile.getErrorMsg()))
+	    {
+	    	String CUS_FORGOT_PIN_LABEL = ussdResourceBundle.getLabel("CUS_FORGOT_PIN_LABEL", new Locale(profile.getLanguage(), profile.getCountryCode()));
+		    profile.setErrorMsg(errorMessage  + USSDConstants.NEW_LINE + CUS_FORGOT_PIN_LABEL);
+	    }
+	    else {
+	    	if(profile.getBusinessId().equalsIgnoreCase("MZBRB")|| profile.getBusinessId().equalsIgnoreCase("TZNBC")){
+	    		profile.setErrorMsg(errorMessage + USSDConstants.NEW_LINE);
+	    	}
+	    	else{
+	    		String FORGOT_PIN_LABEL = ussdResourceBundle.getLabel("FORGOT_PIN_LABEL", new Locale(profile.getLanguage(), profile.getCountryCode()));
+	    		profile.setErrorMsg(errorMessage  + USSDConstants.NEW_LINE + FORGOT_PIN_LABEL);
+	    		}
 	    }
 		return responseMsg.generateXmlResponseString(request, profile, msisdnWithCountry);
 	    }
@@ -393,16 +408,10 @@ public class AuthController extends USSDAbstractController implements ServletCon
 			LOGGER.debug("Old session does not exist for the user");
 		    }
 		}
-		// httpSession.setAttribute(USSDConstants.OLD_SESSION_FLAG, false);
-		// ussdUserSessionManager.addUserSession(ussdRequest.getMsisdnWithCountry(), httpSession, profile.getBusinessId(), profile
-		// .getCountryCode());
+
 	    }
-	    sessionMgmt = (USSDSessionManagement) httpSession.getAttribute(msisdn);
-	    /*
-	     * String currentScreenNodeId = sessionMgmt.getCurrentScreenNodeId(); boolean transactionFlag = sessionMgmt.isTransactionFlag(); if
-	     * (transactionFlag || (currentScreenNodeId != null && !StringUtils.equalsIgnoreCase(currentScreenNodeId,
-	     * USSDConstants.WELCOME_PAGE_NODE_ID))) { return FORWARD_NAVIGATION; }
-	     */
+	    if(null != httpSession)
+	    	sessionMgmt = (USSDSessionManagement) httpSession.getAttribute(msisdn);
 
 	    if (LOGGER.isDebugEnabled()) {
 		LOGGER.debug("On successful authentication, starting a new http session.");
@@ -418,11 +427,15 @@ public class AuthController extends USSDAbstractController implements ServletCon
 	    // sessiontmp = request.getSession(true);
 
 	    // session.setMaxInactiveInterval(USSDConstants.SESSION_TIME_OUT);
-	    httpSession.setAttribute("auth", "true");
-	    sessionMgmt.setScreenId(USSDConstants.WELCOME_PAGE_SCREEN_ID);
-	    sessionMgmt.setCurrentScreenNodeId(USSDConstants.WELCOME_PAGE_NODE_ID);
-	    sessionMgmt.setFirstRequest(false);
-	    sessionMgmt.setUserProfile(profile);
+	    if(null != httpSession)
+	    	httpSession.setAttribute("auth", "true");
+	    if(null != sessionMgmt){
+	    	sessionMgmt.setScreenId(USSDConstants.WELCOME_PAGE_SCREEN_ID);
+		    sessionMgmt.setCurrentScreenNodeId(USSDConstants.WELCOME_PAGE_NODE_ID);
+		    sessionMgmt.setFirstRequest(false);
+		    sessionMgmt.setUserProfile(profile);
+	    }
+
 
 	    if (!StringUtils.isEmpty(msisdn)) {
 		if (sessionMgmt == null) {
@@ -437,16 +450,16 @@ public class AuthController extends USSDAbstractController implements ServletCon
 		LOGGER.debug("Exit from authenication method for the user  ");
 	    }
 	    String status=ussdServiceEnabler.getStatusFlag(businessId, extra);
-	    if (sessionMgmt.isPinChangeReq()) {
+	    if (null != sessionMgmt && sessionMgmt.isPinChangeReq()) {
 		page = FORWARD_CHANGE_PIN_CONTROLLER;
 
-	    }else if (sessionMgmt.isForgotPinFlow()) {
+	    }else if (null != sessionMgmt && sessionMgmt.isForgotPinFlow()) {
 			page = FORWARD_FORGOT_PIN;
 
 	    }else if(status.equals("N"))
 	    	throw new USSDBlockingException("BMB90013");
 	    else if (extra != null&& status.equals("Y")){//FreeDialUSSD changes
-	    	if(extra.equalsIgnoreCase(FREE_DIAL_AIRTIME_TOPUP) || extra.equalsIgnoreCase(FREE_DIAL_AIRTIME) || extra.equalsIgnoreCase(FREE_DIAL_MWALLET)){
+	    	if(extra.equalsIgnoreCase(FREE_DIAL_AIRTIME_TOPUP) || extra.equalsIgnoreCase(FREE_DIAL_AIRTIME) || extra.equalsIgnoreCase(FREE_DIAL_AIRTIME_ZM) || extra.equalsIgnoreCase(FREE_DIAL_MWALLET)){
 	    		page = FORWARD_FREE_DIAL;
 	    	}else {
 	    		page = FORWARD_WELCOME_SCREEN;
@@ -686,9 +699,9 @@ public class AuthController extends USSDAbstractController implements ServletCon
 		    languageCode = profile.getLanguage();
 		}
 
-		if (MIGRATED.equals(profile.getUsrSta())) {
+		if (null != ussdSessionMgmt && MIGRATED.equals(profile.getUsrSta())) {
 		    welcomeMessage = ussdResourceBundle.getLabel(WELCOME_MSG_MIGRATED, new Locale(languageCode, ussdSessionMgmt.getCountryCode()));
-		} else {
+		} else if(null != ussdSessionMgmt){
 		    welcomeMessage = ussdResourceBundle.getLabel(WELCOME_MSG, new Locale(languageCode, ussdSessionMgmt.getCountryCode()));
 
 		 // CR-77
@@ -705,27 +718,29 @@ public class AuthController extends USSDAbstractController implements ServletCon
 			 }else{
 				 welcomeMessage = welcomeMessage.concat(USSDConstants.NEW_LINE);
 			 }
-
-		    welcomeMessage = welcomeMessage.concat(ussdResourceBundle.getLabel(LBL_PASS, new Locale(languageCode, ussdSessionMgmt
+			 if(null != ussdSessionMgmt)
+				 welcomeMessage = welcomeMessage.concat(ussdResourceBundle.getLabel(LBL_PASS, new Locale(languageCode, ussdSessionMgmt
 			    .getCountryCode())));
 		    //Forgot Pin Change
-		    if(!ussdSessionMgmt.getBusinessId().equals("MZBRB"))
+		    if(null != ussdSessionMgmt && !ussdSessionMgmt.getBusinessId().equals("MZBRB"))
 		    welcomeMessage = welcomeMessage.concat(" "+ussdResourceBundle.getLabel(LABEL_FORGOT_PIN_PRESS, new Locale(languageCode, ussdSessionMgmt
 				    .getCountryCode())));
 		}
 	    }
-	    ussdSessionMgmt.setScreenId(USSDConstants.HOME_PAGE_SCREEN_ID);
+	    if(null != ussdSessionMgmt)
+	    	ussdSessionMgmt.setScreenId(USSDConstants.HOME_PAGE_SCREEN_ID);
 	    profile.setMsg(welcomeMessage);
 	    profile.setLanguage(languageCode);
-	    ussdSessionMgmt.setUserProfile(profile);
+	    if(null != ussdSessionMgmt)
+	    	ussdSessionMgmt.setUserProfile(profile);
 
 	} catch (final Exception e) {
 	    LOGGER.error("Fatal Error occured during the session initilization for the User   and Exit from the method", e);
-	    if (e instanceof USSDBlockingException) {
+	    /*if (e instanceof USSDBlockingException) {
 		throw new USSDBlockingException(((USSDBlockingException) e).getErrCode());
-	    } else {
+	    } else {*/
 		throw new USSDBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
-	    }
+	    //}
 
 	}
     }

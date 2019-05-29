@@ -52,6 +52,27 @@ public class CASAAccountDTO extends CustomerAccountDTO {
 
     private boolean operativeFlag = false;
 
+    //For groupwallet
+    private String bankCif;
+	private String groupWalletIndicator;
+
+
+    public String getBankCif() {
+		return bankCif;
+	}
+
+	public void setBankCif(String bankCif) {
+		this.bankCif = bankCif;
+	}
+
+	public String getGroupWalletIndicator() {
+		return groupWalletIndicator;
+	}
+
+	public void setGroupWalletIndicator(String groupWalletIndicator) {
+		this.groupWalletIndicator = groupWalletIndicator;
+	}
+
     @Override
     public String toString() {
 	StringBuilder sb = new StringBuilder();

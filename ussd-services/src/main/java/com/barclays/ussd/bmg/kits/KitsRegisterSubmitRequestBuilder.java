@@ -1,6 +1,5 @@
 package com.barclays.ussd.bmg.kits;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,8 +30,7 @@ public class KitsRegisterSubmitRequestBuilder implements BmgBaseRequestBuilder {
 		requestParamMap.put("mobileNo",requestBuilderParamsDTO.getMsisdnNo());
 
 		//Account Number input
-		List<CustomerMobileRegAcct> accList=new ArrayList<CustomerMobileRegAcct>();
-        accList= (List<CustomerMobileRegAcct>) ussdSessionMgmt.getTxSessions().get(USSDInputParamsEnum.KITS_REG_ACCOUNT_NUM.getTranId());
+		 List<CustomerMobileRegAcct> accList= (List<CustomerMobileRegAcct>) ussdSessionMgmt.getTxSessions().get(USSDInputParamsEnum.KITS_REG_ACCOUNT_NUM.getTranId());
         int selectedAccSeq=Integer.parseInt(userInputMap.get(USSDInputParamsEnum.KITS_REG_ACCOUNT_NUM.getParamName()))-1;
         CustomerMobileRegAcct acc=accList.get(selectedAccSeq);
 		requestParamMap.put("accountNo",acc.getActNo());

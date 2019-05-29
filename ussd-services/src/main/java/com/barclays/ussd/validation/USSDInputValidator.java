@@ -2,6 +2,7 @@ package com.barclays.ussd.validation;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -219,17 +220,30 @@ public final class USSDInputValidator {
 			} else if (USSDConstants.DATA_TYPE_END_TRAN.equalsIgnoreCase(type)) {
 				blnResult = validateEndTrans(userInput, errorCodes, backOption, homeOption, currentTransaction);//CR-86
 			} else if (USSDConstants.DATA_TYPE_NA.equalsIgnoreCase(type)) {
+				String tran=ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranDataId();
+				if(tran!=null && tran.equals("MWGP0029")){
+					int input=Integer.parseInt(userInput.trim());
+					Set<String> tranList=ussdSessionMgmt.getFinalTransactionList();
+					if(tranList!=null && input>tranList.size()){
+						errorCodes.add(USSDExceptions.USSD_USER_INPUT_INVALID.getUssdErrorCode());
+						blnResult=false;
+					}
+					else
+						blnResult=true;
+				}else{
 				if(null != ussdSessionMgmt && null != ussdSessionMgmt.getUserTransactionDetails() && null != ussdSessionMgmt.getUserTransactionDetails().getUserInputMap()
 						&& ussdSessionMgmt.getUserTransactionDetails().getUserInputMap().containsKey("selectedBillerOtbp")){
 					String strSelectedBillerOtbp = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap().get("selectedBillerOtbp");
 					if(strSelectedBillerOtbp!= null && strSelectedBillerOtbp !="" && strSelectedBillerOtbp.equals("WUC-2")
 							&& !currentTransaction.getTranDataId().equals("OTBPSB011")){
 						blnResult = validateWUCRefNo(userInput, errorCodes );
-					}else{
+					}
+					else{
 						blnResult = true;
 					}
 				}else{
 					blnResult = true;
+				}
 				}
 			} else if (USSDConstants.DATA_TYPE_PWRD.equalsIgnoreCase(type)) {
 				blnResult = validatePassword(userInput, errorCodes);
@@ -287,8 +301,7 @@ public final class USSDInputValidator {
 				blnResult = validateWUCRefNo(userInput, errorCodes);
 			}else if (USSDConstants.DATA_TYPE_WUC_REF_NO.equalsIgnoreCase(type)) {
 				blnResult = validateWUCRefNo(userInput, errorCodes );
-			}else if (USSDConstants.DATA_TYPE_MZ_REF_NO.equalsIgnoreCase(type) && ussdSessionMgmt.getBusinessId().equals("MZBRB") &&
-					ussdSessionMgmt.getUserTransactionDetails().getUserInputMap().get("selectedBillerOtbp").equals("CREDELEC-2")) {
+			}else if (USSDConstants.DATA_TYPE_MZ_REF_NO.equalsIgnoreCase(type) && ussdSessionMgmt.getBusinessId().equals("MZBRB")) {
 				blnResult = validateMZRefNo(userInput, errorCodes);
 			}
 
@@ -636,7 +649,8 @@ public final class USSDInputValidator {
 
 		if(tranId.equalsIgnoreCase("ATT007")|| tranId.equalsIgnoreCase("OTBP014")
 				|| tranId.equalsIgnoreCase("BP007")|| tranId.equalsIgnoreCase("MWTU007")
-				|| tranId.equalsIgnoreCase("OBAFTNRC00") || tranId.equalsIgnoreCase("OBAFT018") ){
+				|| tranId.equalsIgnoreCase("OBAFTNRC00") || tranId.equalsIgnoreCase("OBAFT018")
+				){
 			if (!StringUtils.isEmpty(userInput) && StringUtils.isNumeric(userInput)) {
 				blnResult = LongValidator.getInstance().isInRange(Long.parseLong(userInput), 1, 2);
 			}

@@ -7,13 +7,13 @@ import com.barclays.bmg.constants.AccountErrorCodeConstant;
 import com.barclays.bmg.constants.AccountServiceResponseCodeConstant;
 import com.barclays.bmg.constants.ErrorCodeConstant;
 import com.barclays.bmg.dao.core.context.WorkContext;
-import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperation;
+import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperationAcct;
 import com.barclays.bmg.dto.CreditCardAccountDTO;
 import com.barclays.bmg.exception.BMBDataAccessException;
 import com.barclays.bmg.mapper.CreditCardAccountToCoreCreditCardAccount;
 import com.barclays.bmg.service.accountdetails.response.CreditCardAccountDetailsServiceResponse;
 
-public class CreditCardAccountDetailsRespAdptOperation extends AbstractResAdptOperation {
+public class CreditCardAccountDetailsRespAdptOperation extends AbstractResAdptOperationAcct {
 
     public CreditCardAccountDetailsServiceResponse adaptResponseForCreditCardAccountDetails(WorkContext workContext, Object obj) throws Exception {
 

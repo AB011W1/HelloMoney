@@ -10,13 +10,10 @@ import com.barclays.bmg.context.Context;
 import com.barclays.bmg.json.model.builder.BMBJSONBuilder;
 import com.barclays.bmg.json.response.model.BMBBaseResponseModel;
 import com.barclays.bmg.mvc.command.accountdetails.ApplyProductConfirmCommand;
-
 import com.barclays.bmg.mvc.controller.auth.BMBAbstractCommandController;
 import com.barclays.bmg.operation.accounts.ApplyProductConfirmOperation;
-
 import com.barclays.bmg.operation.accounts.request.ApplyProductConfirmOperationRequest;
 import com.barclays.bmg.operation.accounts.request.ApplyProductConfirmOperationResponse;
-import com.barclays.bmg.operation.response.fundtransfer.external.AddOrgBeneficiaryOperationResponse;
 import com.barclays.bmg.utils.BMBCommonUtility;
 
 public class ApplyProductConfirmController extends
@@ -43,9 +40,7 @@ BMBAbstractCommandController {
 
 		applyProductConfirmOperationRequest.setPrimaryAccountNumber(applyProductConfirmCommand.getPrimaryAccountNumber());
 		applyProductConfirmOperationRequest.setMobileNumber(applyProductConfirmCommand.getMobileNumber());
-		ApplyProductConfirmOperationResponse applyProductConfirmOperationResponse = new ApplyProductConfirmOperationResponse();
-
-		applyProductConfirmOperationResponse= applyProductConfirmOperation.applyProduct(applyProductConfirmOperationRequest);
+		ApplyProductConfirmOperationResponse applyProductConfirmOperationResponse= applyProductConfirmOperation.applyProduct(applyProductConfirmOperationRequest);
 
 		/* Code starts for SMS */
 		if (applyProductConfirmOperationResponse != null)

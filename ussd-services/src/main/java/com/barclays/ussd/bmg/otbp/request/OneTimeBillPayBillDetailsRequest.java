@@ -33,9 +33,8 @@ public class OneTimeBillPayBillDetailsRequest implements BmgBaseRequestBuilder {
 
 		//Set the fields for MakeBillPaymentRequest - CPB 26/05
 		String cpbflag = (String)txSessions.get("CpbMakeBillPaymentFields");
-		if(cpbflag !=null && cpbflag.equals("CpbMakeBillPaymentFields") && businessId.equals("KEBRB")){
-			TransactionAmt chargeAmount = new TransactionAmt();
-			chargeAmount = (TransactionAmt)txSessions.get("CpbChargeAmount");
+		if(cpbflag !=null && cpbflag.equals("CpbMakeBillPaymentFields") && (businessId.equals("KEBRB")|| businessId.equals("UGBRB")|| businessId.equals("GHBRB"))){
+			TransactionAmt chargeAmount = (TransactionAmt)txSessions.get("CpbChargeAmount");
 			String cpbChargeAmount = chargeAmount.getAmt();
 			requestParamMap.put("CpbChargeAmount", String.valueOf(cpbChargeAmount));
 			requestParamMap.put("CpbFeeGLAccount", (String)txSessions.get("CpbFeeGLAccount"));

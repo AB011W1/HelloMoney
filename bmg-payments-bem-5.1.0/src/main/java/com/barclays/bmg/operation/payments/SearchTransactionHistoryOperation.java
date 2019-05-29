@@ -61,6 +61,12 @@ public class SearchTransactionHistoryOperation extends BMBCommonOperation {
 	SearchTransactionHistoryServiceRequest searchTransactionHistoryServiceRequest = new SearchTransactionHistoryServiceRequest();
 	searchTransactionHistoryServiceRequest.setContext(context);
 	searchTransactionHistoryServiceRequest.setTransactionHistoryDTO(request.getTransactionHistoryDTO());
+	if(request.isGroupWalletFlow()!=null && request.isGroupWalletFlow().equals("true")){
+		searchTransactionHistoryServiceRequest.setGroupWalletFlow(request.isGroupWalletFlow());
+		searchTransactionHistoryServiceRequest.setBillerCode(request.getBillerCode());
+		searchTransactionHistoryServiceRequest.setDebitAccountNumber(request.getDebitAccountNumber());
+		searchTransactionHistoryServiceRequest.setFundsTransferType(request.getFundsTransferType());
+	}
 	SearchTransactionHistoryServiceResponse searchTransactionHistoryServiceResponse = searchTransactionHistoryService
 		.searchTransactionHistory(searchTransactionHistoryServiceRequest);
 	List<TransactionHistoryDTO> transactionHistoryDTOList = searchTransactionHistoryServiceResponse.getTransactionHistoryDTOList();

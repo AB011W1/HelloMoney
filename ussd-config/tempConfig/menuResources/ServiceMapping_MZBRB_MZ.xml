@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<serviceMappings>
+	<version>1.0</version>
+
+	<pageHeader>
+		<countryCode>MZ</countryCode>
+		<isdCode>256</isdCode>
+		<businessId>MZBRB</businessId>
+	</pageHeader>
+
+	<srv tranId="MZ_BAL_ENQ" importTran="BalanceEnquiry" firstScreenSequencerId="1"/>
+	<srv tranId="MZ_CHK_BK_REQ" importTran="ChequeBookRequest" firstScreenSequencerId="1"/>
+	<srv tranId="MZ_OWN_LNK_FND_TX" importTran="OwnLinkedAcctFundTx" firstScreenSequencerId="1"/>
+	<srv tranId="MZ_OT_BNK_FND_TX" importTran="ExtBankAcctFundTx" firstScreenSequencerId="1"/>
+	<srv tranId="MZ_MINI_STMT" importTran="MiniStatement" firstScreenSequencerId="1"/>
+	<srv tranId="MZ_PAY_BILLS" importTran="BillPay" firstScreenSequencerId="1"/>
+	<srv tranId="MZ_VIEW_BILLERS" importTran="ViewMyBillers" firstScreenSequencerId="1"/>
+	<srv tranId="MZ_OTHER_BARC_FND_TX_REG" importTran="OtherBarclaysAcctFundTxReg" firstScreenSequencerId="1" />
+	<!--CR#48 -->
+	<srv tranId="MZ_OTHER_BARC_FND_TX_UNREG" importTran="OtherBarclaysAcctFundTxUnReg" firstScreenSequencerId="4"/>
+	<srv tranId="MZ_DEL_BENF_BARCLAYS" importTran="OtherBarcAcctDelBenef" firstScreenSequencerId="1" />
+	<srv tranId="MZ_DEL_BENF_NON_BARCLAYS" importTran="NonBarcAcctDelBenef" />
+	<srv tranId="MZ_STMT_REQ" importTran="StatementRequest" firstScreenSequencerId="1" />
+	<!--CR#48 -->
+	<srv tranId="MZ_REG_BENF_INT" importTran="RegisterBarclaysBenf" firstScreenSequencerId="5" />
+	<srv tranId="MZ_REG_BENF_EXT" importTran="RegisterOtherBankBenf" firstScreenSequencerId="1"/>
+	<srv tranId="MZ_VIEW_LAST_PAID_BILLS" importTran="ViewLastPaidBills" firstScreenSequencerId="1" />
+	<srv tranId="MZ_LANG_PREF" importTran="LanguagePreference" firstScreenSequencerId="1" />
+	<srv tranId="MZ_CHNG_PIN" importTran="ChangePin" firstScreenSequencerId="1" />
+	<srv tranId="MZ_REG_BILLERS" importTran="RegisterBillers" firstScreenSequencerId="1"/>
+	<srv tranId="MZ_DEL_BILLERS" importTran="DeleteBillers" firstScreenSequencerId="1"/>
+	<srv tranId="MZ_ONE_TIME_PAYMNTS" importTran="OneTimePayments" firstScreenSequencerId="1"/>
+	<srv tranId="MZ_VIEW_FD" importTran="ViewFd" firstScreenSequencerId="1" />
+	<srv tranId="MZ_APPLY_FD" importTran="ApplyFd" firstScreenSequencerId="1"/>
+	<srv tranId="MZ_MOBILE_WALLET_TOP_UP" importTran="MobileWalletTopUp" firstScreenSequencerId="1" />
+	<srv tranId="MZ_BAL_ENQ_MAIN_ACCT" importTran="BalanceEnquiryMainAccount" firstScreenSequencerId="1" />
+	<srv tranId="MZ_MINI_STMT_MAIN_ACCT" importTran="MiniStatementMainAccount" firstScreenSequencerId="1" />
+	<srv tranId="MZ_AIRTIME_TOPUP" importTran="AirtimeTopup" firstScreenSequencerId="1" />
+	<srv tranId="MZ_SELF_REG" importTran="SelfRegistration" firstScreenSequencerId="3"/>
+	<srv tranId="MZ_TWO_FACTOR" importTran="TwoFactorVerify" firstScreenSequencerId="1"/>
+	<srv tranId="MZ_WELCOME_BAL_ENQ" importTran="WelcomeScreenBalanceEnquiry" firstScreenSequencerId="1"/>
+	<srv tranId="MZ_CASH_SEND_ADD_BENEFICIARY" importTran="CSAddBeneficiary" firstScreenSequencerId="1"/>
+	<srv tranId="MZ_CASH_SEND_BENEF_LIST" importTran="CSBeneficiaryList" firstScreenSequencerId="1"/>
+	<srv tranId="MZ_CASH_SEND_DELETE_BENEF" importTran="CSDeleteBeneficiary" firstScreenSequencerId="1"/>
+	<srv tranId="MZ_CASH_SEND_ONE_TIME_PAYMNTS" importTran="CashSendOneTimePayment" firstScreenSequencerId="1"/>
+	<srv tranId="MZ_HM_DEMO" importTran="HelloMoneyDemo" firstScreenSequencerId="1"/>
+	<srv tranId="MZ_CONTACT_US" importTran="ContactUs" firstScreenSequencerId="1"/>
+	<srv tranId="MZ_SELFREG_CONTACT_US" importTran="ContactUs" firstScreenSequencerId="1"/>
+	<srv tranId="MZ_USER_MIGRATION" importTran="UserMigration" firstScreenSequencerId="1"/>
+    <srv tranId="MZ_VIEW_FX_RATE" importTran="ForexRate" firstScreenSequencerId="1"/>
+    <srv tranId="MZ_EDIT_BENF_INT" importTran="EditBenefInternal" firstScreenSequencerId="1"/>
+    <srv tranId="MZ_EDIT_BENF_EXT" importTran="EditBenefExternal" firstScreenSequencerId="1"/>
+	<srv tranId="MZ_MOBILE_WALLET" importTran="MobileWalletTopUp" firstScreenSequencerId="1"/>
+	<!-- Forgot Pin changes -->
+	<!--<srv tranId="MZ_FOR_PIN" importTran="ForgotPin"  firstScreenSequencerId="1"/>
+	--><!-- Lead Generation -->
+	<srv tranId="MZ_LEAD_GENERATION"  importTran="LeadGeneration" firstScreenSequencerId="1"/>
+
+	<!-- DFT Start -->
+	<srv tranId="MZ_REG_BENF_OTHER_BANK_AC" importTran="RegisterBeneficiaryOtherBankAC" firstScreenSequencerId="8"/>
+	<srv tranId="MZ_DEL_BENF_OTHER" importTran="OtherBankAcctDelBenef" firstScreenSequencerId="1"/>
+	<srv tranId="MZ_SAVED_PAYEE_FND_TX" importTran="FundTxOtherBankAC" firstScreenSequencerId="1"/>
+	<srv tranId="MZ_MOBILE_WALLET_TOP_UP" importTran="MobileWalletTopUp"  firstScreenSequencerId="1"/>
+
+	<!-- DFT End -->
+
+	<!--Skip Nodes Syntax Starts-->
+	<!--
+	<srv tranId="GH_REG_BENF_EXT" importTran="RegisterOtherBankBenf">
+	  <skipNode tranDataId="ROTHBB003" defaultValue="" />
+	  <skipNode tranDataId="ROTHBB004" defaultValue="" />
+  	</srv>
+  	-->
+  	<!--Skip Nodes Syntax Endss-->
+
+	<!--<skippedScreens>
+		<srv tranId="MZ_REG_BENF_INT" importTran="RegisterBarclaysBenf">
+			<skipNode tranDataId="RBB0002" defaultValue="" />
+			<skipNode tranDataId="RBB002" defaultValue="" />
+		</srv>
+		<srv tranId="MZ_OTHER_BARC_FND_TX_UNREG" importTran="OtherBarclaysAcctFundTxUnReg">
+			<skipNode tranDataId="OBAFTNR0012" defaultValue="" />
+			<skipNode tranDataId="OBAFTNR012" defaultValue="" />
+		</srv>
+		<srv tranId="MZ_SELF_REG" importTran="SelfRegistration">
+			<skipNode tranDataId="SLR0001" defaultValue="" />
+			<skipNode tranDataId="SLR001" defaultValue="" />
+		</srv>
+	</skippedScreens>
+
+
+	--><!-- Supported Languages -->
+	<languages displayLabelId="LANG01">
+		<lang locale="pr_MZ" default="true"/>
+		<lang locale="en_MZ" />
+	</languages>
+
+	<navigationOptions>
+		<back option="*"/>
+		<home option="#"/>
+		<scrollUp option="**"/>
+		<scrollDown option="##"/>
+	</navigationOptions>
+
+	<msisdn>
+		<cclen>3</cclen>
+		<snlen>9</snlen>
+		<ccvalue>258</ccvalue>
+	</msisdn>
+
+	<twoFactQuesSet>
+		<question quesId="Q4"/>
+	</twoFactQuesSet>
+
+	<selfRegQuesSet>
+		<question quesId="Q5"/>
+	</selfRegQuesSet>
+
+	<customizedServices>
+		<tx id="tx0.3" tranId="MiniStatement">
+			<transaction tranDataId="MS000" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true"  />
+			<transaction tranDataId="MS001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MS001"  headerId="label.select.accnum"  backOptionReq="true"/>
+			<transaction tranDataId="MS002" type="endTran" bmgOpCode="OP0404" tranDataOpCode="MS002"  headerId="LBL9999" homeOptionReq="true" backOptionReq="true"/>
+		</tx>
+	<tx id="tx5.5" tranId="RegisterBeneficiaryOtherBankAC">
+		<transaction tranDataId="RBOBA08" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="RBOBA08"  headerId="label.enter.benef.name"  backOptionReq="true" />
+		<transaction tranDataId="RBOBA011" type="nib" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="RBOBA011"  headerId="label.nib.no"  backOptionReq="true" />
+		<transaction tranDataId="RBOBA09" type="confirm" bmgOpCode="OP0641" tranDataOpCode="RBOBA09"  headerId="label.added.payee"  backOptionReq="true" />
+		<transaction tranDataId="RBOBA10" type="endTran" bmgOpCode="OP0642" tranDataOpCode="RBOBA10"  headerId="LBL9999" homeOptionReq="true" />
+	</tx>
+	<tx id="tx5.8" tranId="OtherBankAcctDelBenef">
+		<transaction tranDataId="OBADB0" type="NA" bmgOpCode="OP0520" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="OBADB1" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OBADB1"  headerId="label.delete.payee.selection"  backOptionReq="true" />
+		<transaction tranDataId="OBADB2" type="confirm" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OBADB2"  headerId="label.delete.confirm"  backOptionReq="true" />
+		<transaction tranDataId="OBADB3" type="endTran" bmgOpCode="OP0640" tranDataOpCode="OBADB3"  headerId="LBL9999" homeOptionReq="true"/>
+	</tx>
+
+	<tx id="tx5.6" tranId="FundTxOtherBankAC">
+		<transaction tranDataId="KEBAFT000" type="NA" bmgOpCode="OP0520" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="KEBAFT001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="KEBAFT001"  headerId="label.select.beneficiary"  backOptionReq="true" />
+		<transaction tranDataId="KEBAFT002" type="amount" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="KEBAFT002" headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="KEBAFT003" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="KEBAFT003" headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="KEBAFT004" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="KEBAFT004" headerId="label.reason.of.payment"  backOptionReq="true" />
+		<transaction tranDataId="KEBAFT005" type="NA" bmgOpCode="OP0521" tranDataOpCode="NEGUIRENDER" headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="KEBAFT006" type="confirm" bmgOpCode="OP0522" tranDataOpCode="KEBAFT006" headerId="label.transaction"  backOptionReq="true"/>
+		<transaction tranDataId="KEBAFT007" type="endTran" bmgOpCode="OP0523" tranDataOpCode="KEBAFT007" headerId="label.DFT.success" homeOptionReq="true" />
+	</tx>
+
+	<tx id="tx2.3" tranId="MobileWalletTopUp">
+		<transaction tranDataId="MWTU000" type="NA" bmgOpCode="OP0670" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true"  />
+		<transaction tranDataId="MWTU001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU001" headerId="label.select.mobileWallet.operator"  backOptionReq="true"/>
+		<!-- CR#47 -->
+		<transaction tranDataId="MWTU0021" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU0021"  headerId="label.select.won.oth.option"  backOptionReq="true" />
+		<!-- CR#47 -->
+		<!-- CR82 -->
+		<transaction tranDataId="MWTU0022" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU0022"  headerId="label.select.payment.option"  backOptionReq="true" />
+		<transaction tranDataId="MWTU1022" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU1022"  headerId="label.select.new.beneficiary.youroperator"  backOptionReq="true"  />
+		<transaction tranDataId="MWTU1023" type="msisdn" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU1023"  headerId="LBL9999"  backOptionReq="true"  />
+
+		<!-- CR82 End -->
+		<transaction tranDataId="MWTU002" type="msisdn" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU002" headerId="LBL9999"  backOptionReq="true" />
+
+		<transaction tranDataId="MWTU003" type="amount" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU003"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="MWTU004" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU004"  headerId="LBL9999"  backOptionReq="true" />
+		<!-- CR#60 -->
+		<transaction tranDataId="MWTU005" type="confirm" bmgOpCode="OP0671" tranDataOpCode="MWTU005"  headerId="LBL9999"  backOptionReq="true" />
+		<!-- CR#60 -->
+		<transaction tranDataId="MWTU006" type="confirm" bmgOpCode="OP0603" tranDataOpCode="MWTU006"  headerId="LBL9999" homeOptionReq="true" />
+		<!-- CR82 -->
+		<transaction tranDataId="MWTU0023" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU0023"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="MWTU0024" type="confirm" bmgOpCode="OP0612" tranDataOpCode="MWTU0024"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="MWTU0025" type="endTran" bmgOpCode="OP0613" tranDataOpCode="MWTU0025"  headerId="LBL9999" homeOptionReq="true" />
+
+		<!-- CR82 Delete BenF -->
+		<transaction tranDataId="MWTU1024" type="confirm" bmgOpCode="OP0601" tranDataOpCode="MWTU1024"  headerId="label.airtime.biller.deletion.askconfirm"  backOptionReq="true" homeOptionReq="true"/>
+		<transaction tranDataId="MWTU1025" type="endTran" bmgOpCode="OP0640" tranDataOpCode="MWTU1025"  headerId="LBL9999" homeOptionReq="true"  />
+
+		<!-- CR82 Saved BenF -->
+		<transaction tranDataId="MWTU0026" type="NA" bmgOpCode="OP0600" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999" />
+		<transaction tranDataId="MWTU0027" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU0027"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="MWTU0028" type="NA" bmgOpCode="OP0601" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999" />
+		<!-- CR82 End -->
+		<!-- CR82 Edit BenF -->
+		<transaction tranDataId="MWTU1026" type="confirm" bmgOpCode="OP0612" tranDataOpCode="MWTU1026"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="MWTU1027" type="endTran" bmgOpCode="OP0613" tranDataOpCode="MWTU1027"  headerId="LBL9999" homeOptionReq="true"  />
+
+		</tx>
+
+		<tx id="tx1.9" tranId="OneTimePayments">
+	    <transaction tranDataId="OTBP000" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="NEGUIRENDER" headerId="LBL9999"  backOptionReq="true"/>
+		<transaction tranDataId="OTBP001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OTBP001" headerId="label.selectbiller"  backOptionReq="true"/>
+		<transaction tranDataId="OTBP003" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OTBP003"  headerId="label.select.area"  backOptionReq="true" />
+		<transaction tranDataId="OTBP004" type="mzrefno" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OTBP004" headerId="label.enter.billerrefnum"  backOptionReq="true" />
+		<transaction tranDataId="OTBP005" type="amount" bmgOpCode="OP0650" tranDataOpCode="OTBP005"  headerId="label.enter.the.bill.amount"  backOptionReq="true" />
+		<transaction tranDataId="OTBP014" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OTBP014"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="OTBP015" type="list" bmgOpCode="OP0950" tranDataOpCode="OTBP015"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="OTBP006" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OTBP006"  headerId="label.paybill.select.accnum"  backOptionReq="true" />
+		<transaction tranDataId="OTBP007" type="confirm" bmgOpCode="OP0651" tranDataOpCode="OTBP007"  headerId="label.transaction"  backOptionReq="true" />
+		<transaction tranDataId="OTBP008" type="confirm" bmgOpCode="OP0603" tranDataOpCode="OTBP008"  headerId="LBL9999" homeOptionReq="true"/>
+		<transaction tranDataId="OTBPSB011" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OTBPSB011"  headerId="label.enter.customer.nickname"  homeOptionReq="true" />
+		<transaction tranDataId="OTBPSB012" type="confirm" bmgOpCode="OP0612" tranDataOpCode="OTBPSB012"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="OTBPSB013" type="endTran" bmgOpCode="OP0613" tranDataOpCode="OTBPSB013"  headerId="LBL9999" homeOptionReq="true" />
+	</tx>
+	</customizedServices>
+
+</serviceMappings>

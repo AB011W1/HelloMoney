@@ -155,5 +155,6 @@ public final class SystemPreferenceConstants {
     public static final String KITS_REASON_LENGTH_MAX = "KITS_REASON_LENGTH_MAX";
     public static final String KITS_BANK = "KITS_BANK";
 
-
+    /** The Control Number length max. */
+    public static final String CONTROL_NUMBER_LENGTH_MAX = "CONTROL_NUMBER_LENGTHMAX";
 }

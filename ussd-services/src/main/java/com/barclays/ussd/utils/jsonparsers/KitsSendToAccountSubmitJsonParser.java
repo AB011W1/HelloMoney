@@ -3,7 +3,6 @@ package com.barclays.ussd.utils.jsonparsers;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -23,7 +22,6 @@ import com.barclays.ussd.utils.USSDExceptions;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
 import com.barclays.ussd.utils.UssdResourceBundle;
-import com.barclays.ussd.utils.jsonparsers.bean.airtime.AirtimeSubmitResponse;
 import com.barclays.ussd.utils.jsonparsers.bean.billpay.BillPayConfirm;
 
 public class KitsSendToAccountSubmitJsonParser implements BmgBaseJsonParser{
@@ -37,8 +35,6 @@ public class KitsSendToAccountSubmitJsonParser implements BmgBaseJsonParser{
 	    public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
 	    	MenuItemDTO menuDTO = null;
 	    	ObjectMapper mapper = new ObjectMapper();
-	    	USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
-	    	Map<String, Object> txSessions = ussdSessionMgmt.getTxSessions();
 	    	try {
 
 	    	    BillPayConfirm billPayConfirm = mapper.readValue(responseBuilderParamsDTO.getJsonString(), BillPayConfirm.class);
@@ -58,24 +54,24 @@ public class KitsSendToAccountSubmitJsonParser implements BmgBaseJsonParser{
 
 	    		} else if (billPayConfirm.getPayHdr() != null) {
 	    		    LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
-	    		    throw new USSDNonBlockingException(billPayConfirm.getPayHdr().getResCde());
+	    		    throw new USSDNonBlockingException(billPayConfirm.getPayHdr().getResCde(),true);
 	    		} else {
 	    		    LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
-	    		    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+	    		    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 	    		}
 	    	    }
 	    	} catch (JsonParseException e) {
 	    	    LOGGER.error("JsonParseException : ", e);
-	    	    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+	    	    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 	    	} catch (JsonMappingException e) {
 	    	    LOGGER.error("JsonParseException : ", e);
-	    	    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+	    	    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 	    	} catch (Exception e) {
 	    	    LOGGER.error("Exception : ", e);
 	    	    if (e instanceof USSDNonBlockingException) {
-	    		throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode());
+	    		throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode(),true);
 	    	    } else {
-	    		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+	    		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 	    	    }
 	    	}
 	    	return menuDTO;

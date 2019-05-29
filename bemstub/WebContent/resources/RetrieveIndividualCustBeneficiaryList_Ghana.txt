@@ -1,0 +1,614 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Body>
+    <p67:RetrieveIndividualCustomerBeneficiaryListResponse xmlns:p67="http://barclays.com/bem/RetrieveIndividualCustBeneficiaryList">
+      <p67:ResponseHeader>
+        <ServiceContext>
+          <ServiceID>RetrieveIndividualCustBeneficiaryList</ServiceID>
+          <ConsumerUniqueRefNo>21515749422070-1</ConsumerUniqueRefNo>
+          <OriginalConsumerUniqueRefNo>21515749422070-1</OriginalConsumerUniqueRefNo>
+          <ServiceDateTime>2018-01-12T09:30:22.485Z</ServiceDateTime>
+          <ServiceVersionNo>6.0.0</ServiceVersionNo>
+          <OverrideRequestFlag>0</OverrideRequestFlag>
+        </ServiceContext>
+        <BankUserContext>
+          <StaffType>Regular</StaffType>
+          <StaffID>IFE</StaffID>
+          <AuthorizerID>Z00019789</AuthorizerID>
+        </BankUserContext>
+        <ServiceResStatus>
+          <ServiceResCode>00000</ServiceResCode>
+          <ServiceResDesc>Success</ServiceResDesc>
+          <ServiceRespDateTime>2018-01-12T09:30:22.828Z</ServiceRespDateTime>
+          <ServiceUniqueRefNo xsi:nil="true"/>
+        </ServiceResStatus>
+      </p67:ResponseHeader>
+      <p67:BeneficiaryList>
+        <p67:CustomerNumber>100001754437</p67:CustomerNumber>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_891678650</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount">
+            <p631:AccountNumber>1037906</p631:AccountNumber>
+          </p355:BeneficiaryAccountInfo>
+          <p355:BeneficiaryName>test3333</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>test3333</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>DAC</p355:BeneficiaryTypeCode>
+          <p355:BeneficiaryLifecycleStatusCode>INACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:BeneficiaryPaymentChannelTypeCode>LOCAL</p355:BeneficiaryPaymentChannelTypeCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>G01002434</p74:Createdby>
+            <p74:CreateDateTime>2015-07-29T06:13:58.748Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>G01002434</p74:LastMaintainedByUserID>
+          </p355:UserAuditDetails>
+          <p355:ActionToAuthorize>ADD</p355:ActionToAuthorize>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_867166111</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount">
+            <p631:AccountNumber>1063288</p631:AccountNumber>
+          </p355:BeneficiaryAccountInfo>
+          <p355:BeneficiaryName>test22</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>test23</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>DAC</p355:BeneficiaryTypeCode>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:BeneficiaryPaymentChannelTypeCode>LOCAL</p355:BeneficiaryPaymentChannelTypeCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2015-07-14T05:18:33.572Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>G01002434</p74:LastMaintainedByUserID>
+            <p74:LastMaintainedDateTime>2015-08-03T11:07:36.924Z</p74:LastMaintainedDateTime>
+          </p355:UserAuditDetails>
+          <p355:ActionToAuthorize>DEL</p355:ActionToAuthorize>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_852791712</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount">
+            <p631:AccountNumber>0708102493</p631:AccountNumber>
+          </p355:BeneficiaryAccountInfo>
+          <p355:BeneficiaryName>test7</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>test7</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>DAC</p355:BeneficiaryTypeCode>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:BeneficiaryPaymentChannelTypeCode>LOCAL</p355:BeneficiaryPaymentChannelTypeCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2015-07-07T08:35:42.609Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>G01002434</p74:LastMaintainedByUserID>
+            <p74:LastMaintainedDateTime>2015-08-03T11:07:25.380Z</p74:LastMaintainedDateTime>
+          </p355:UserAuditDetails>
+          <p355:ActionToAuthorize>DEL</p355:ActionToAuthorize>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_859139437</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount">
+            <p631:AccountNumber>1063288</p631:AccountNumber>
+          </p355:BeneficiaryAccountInfo>
+          <p355:BeneficiaryName>test33</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>test33</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>DAC</p355:BeneficiaryTypeCode>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:BeneficiaryPaymentChannelTypeCode>LOCAL</p355:BeneficiaryPaymentChannelTypeCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2015-07-10T09:27:53.098Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>G01002434</p74:LastMaintainedByUserID>
+            <p74:LastMaintainedDateTime>2015-08-03T11:07:48.936Z</p74:LastMaintainedDateTime>
+          </p355:UserAuditDetails>
+          <p355:ActionToAuthorize>DEL</p355:ActionToAuthorize>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_867846085</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount">
+            <p631:AccountNumber>1063288</p631:AccountNumber>
+          </p355:BeneficiaryAccountInfo>
+          <p355:BeneficiaryName>test22</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>test24</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>DAC</p355:BeneficiaryTypeCode>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:BeneficiaryPaymentChannelTypeCode>LOCAL</p355:BeneficiaryPaymentChannelTypeCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2015-07-14T10:30:04.511Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>G01002434</p74:LastMaintainedByUserID>
+            <p74:LastMaintainedDateTime>2015-08-03T11:07:58.007Z</p74:LastMaintainedDateTime>
+          </p355:UserAuditDetails>
+          <p355:ActionToAuthorize>DEL</p355:ActionToAuthorize>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_859357242</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount">
+            <p631:AccountNumber>1054588</p631:AccountNumber>
+          </p355:BeneficiaryAccountInfo>
+          <p355:BeneficiaryName>Shubhay</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>Shubhay</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>DAC</p355:BeneficiaryTypeCode>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:BeneficiaryPaymentChannelTypeCode>LOCAL</p355:BeneficiaryPaymentChannelTypeCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2015-07-10T10:50:20.043Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>G01002434</p74:LastMaintainedByUserID>
+            <p74:LastMaintainedDateTime>2015-08-03T04:57:30.014Z</p74:LastMaintainedDateTime>
+          </p355:UserAuditDetails>
+          <p355:ActionToAuthorize>DEL</p355:ActionToAuthorize>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_942414976</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount"/>
+          <p355:BeneficiaryName>DSTV</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>DSTEST</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>BP</p355:BeneficiaryTypeCode>
+          <p355:ConsumerPrimaryReferenceNumber>12345678</p355:ConsumerPrimaryReferenceNumber>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>G01002434</p74:Createdby>
+            <p74:CreateDateTime>2015-08-27T10:29:05.562Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>E20032642</p74:LastMaintainedByUserID>
+            <p74:LastMaintainedDateTime>2015-08-27T10:42:08.671Z</p74:LastMaintainedDateTime>
+            <p74:AuthorizedBy>E20032642</p74:AuthorizedBy>
+            <p74:AuthorizedDateTime>2015-08-27T10:42:08.671Z</p74:AuthorizedDateTime>
+          </p355:UserAuditDetails>
+          <p355:EntityCode>DSTV-5</p355:EntityCode>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_889431617</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount">
+            <p631:AccountNumber>1040543</p631:AccountNumber>
+          </p355:BeneficiaryAccountInfo>
+          <p355:BeneficiaryName>TEST1234</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>TEST1234</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>DAC</p355:BeneficiaryTypeCode>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:BeneficiaryPaymentChannelTypeCode>LOCAL</p355:BeneficiaryPaymentChannelTypeCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>G01002434</p74:Createdby>
+            <p74:CreateDateTime>2015-07-27T12:19:32.814Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>E20032642</p74:LastMaintainedByUserID>
+            <p74:LastMaintainedDateTime>2015-07-27T12:23:17.957Z</p74:LastMaintainedDateTime>
+            <p74:AuthorizedBy>E20032642</p74:AuthorizedBy>
+            <p74:AuthorizedDateTime>2015-07-27T12:23:17.957Z</p74:AuthorizedDateTime>
+          </p355:UserAuditDetails>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_851909726</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount">
+            <p631:AccountNumber>1008258</p631:AccountNumber>
+          </p355:BeneficiaryAccountInfo>
+          <p355:BeneficiaryName>LONG_NAME                   1082812</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>Test101</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>IAC</p355:BeneficiaryTypeCode>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>G01002434</p74:Createdby>
+            <p74:CreateDateTime>2015-07-06T07:19:09.526Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>E20043132</p74:LastMaintainedByUserID>
+            <p74:LastMaintainedDateTime>2015-07-16T11:55:23.085Z</p74:LastMaintainedDateTime>
+            <p74:AuthorizedBy>E20043132</p74:AuthorizedBy>
+            <p74:AuthorizedDateTime>2015-07-16T11:55:23.085Z</p74:AuthorizedDateTime>
+          </p355:UserAuditDetails>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_848417656</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount">
+            <p631:AccountNumber>10213056</p631:AccountNumber>
+          </p355:BeneficiaryAccountInfo>
+          <p355:BeneficiaryName>LONG_NAME                   1037906</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>TEST12</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>IAC</p355:BeneficiaryTypeCode>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>G01002434</p74:Createdby>
+            <p74:CreateDateTime>2015-06-30T12:08:02.224Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>E20043132</p74:LastMaintainedByUserID>
+            <p74:LastMaintainedDateTime>2015-07-16T11:55:42.748Z</p74:LastMaintainedDateTime>
+            <p74:AuthorizedBy>E20043132</p74:AuthorizedBy>
+            <p74:AuthorizedDateTime>2015-07-16T11:55:42.748Z</p74:AuthorizedDateTime>
+          </p355:UserAuditDetails>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_1743597894</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount"/>
+          <p355:BeneficiaryName>Airtel Airtime</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>BrijNFT</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>AT</p355:BeneficiaryTypeCode>
+          <p355:ConsumerPrimaryReferenceNumber>123123123</p355:ConsumerPrimaryReferenceNumber>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2017-12-07T06:46:50.640Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>IFE</p74:LastMaintainedByUserID>
+            <p74:LastMaintainedDateTime>2017-12-07T11:46:51.436Z</p74:LastMaintainedDateTime>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+            <p74:AuthorizedDateTime>2017-12-07T06:46:50.640Z</p74:AuthorizedDateTime>
+          </p355:UserAuditDetails>
+          <p355:EntityCode>AIRTELTOPUPGH-2</p355:EntityCode>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_1729329873</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount"/>
+          <p355:BeneficiaryName>Airtel Airtime</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>Airtel</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>AT</p355:BeneficiaryTypeCode>
+          <p355:ConsumerPrimaryReferenceNumber>120091750</p355:ConsumerPrimaryReferenceNumber>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2017-11-21T16:38:11.452Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>IFE</p74:LastMaintainedByUserID>
+            <p74:LastMaintainedDateTime>2017-11-21T16:38:11.943Z</p74:LastMaintainedDateTime>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+            <p74:AuthorizedDateTime>2017-11-21T16:38:11.452Z</p74:AuthorizedDateTime>
+          </p355:UserAuditDetails>
+          <p355:EntityCode>AIRTELTOPUPGH-2</p355:EntityCode>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_1734417943</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount"/>
+          <p355:BeneficiaryName>Vodafone Airtime</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>Test44</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>AT</p355:BeneficiaryTypeCode>
+          <p355:ConsumerPrimaryReferenceNumber>243915357</p355:ConsumerPrimaryReferenceNumber>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2017-11-29T10:40:43.859Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>IFE</p74:LastMaintainedByUserID>
+            <p74:LastMaintainedDateTime>2017-11-29T10:40:44.500Z</p74:LastMaintainedDateTime>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+            <p74:AuthorizedDateTime>2017-11-29T10:40:43.859Z</p74:AuthorizedDateTime>
+          </p355:UserAuditDetails>
+          <p355:EntityCode>VODAFONETOPUPGH-2</p355:EntityCode>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_1737647787</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount"/>
+          <p355:BeneficiaryName>Airtel Airtime</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>Airtime22</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>AT</p355:BeneficiaryTypeCode>
+          <p355:ConsumerPrimaryReferenceNumber>571139342</p355:ConsumerPrimaryReferenceNumber>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2017-12-05T11:10:26.805Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>IFE</p74:LastMaintainedByUserID>
+            <p74:LastMaintainedDateTime>2017-12-05T11:10:26.883Z</p74:LastMaintainedDateTime>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+            <p74:AuthorizedDateTime>2017-12-05T11:10:26.805Z</p74:AuthorizedDateTime>
+          </p355:UserAuditDetails>
+          <p355:EntityCode>AIRTELTOPUPGH-2</p355:EntityCode>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_915507615</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount"/>
+          <p355:BeneficiaryName>DSTV</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>DSTV01</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>BP</p355:BeneficiaryTypeCode>
+          <p355:ConsumerPrimaryReferenceNumber>4122338470</p355:ConsumerPrimaryReferenceNumber>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2015-08-18T05:19:21.996Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>IFE</p74:LastMaintainedByUserID>
+            <p74:LastMaintainedDateTime>2015-08-18T06:19:22.122Z</p74:LastMaintainedDateTime>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+            <p74:AuthorizedDateTime>2015-08-18T05:19:21.996Z</p74:AuthorizedDateTime>
+          </p355:UserAuditDetails>
+          <p355:EntityCode>DSTV-5</p355:EntityCode>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_915630712</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount"/>
+          <p355:BeneficiaryName>GOTV</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>GOTVTEST</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>BP</p355:BeneficiaryTypeCode>
+          <p355:ConsumerPrimaryReferenceNumber>3009878904</p355:ConsumerPrimaryReferenceNumber>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2015-08-18T05:31:20.050Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>IFE</p74:LastMaintainedByUserID>
+            <p74:LastMaintainedDateTime>2015-08-18T06:31:20.095Z</p74:LastMaintainedDateTime>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+            <p74:AuthorizedDateTime>2015-08-18T05:31:20.050Z</p74:AuthorizedDateTime>
+          </p355:UserAuditDetails>
+          <p355:EntityCode>GOTV-5</p355:EntityCode>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_931148263</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount"/>
+          <p355:BeneficiaryName>MTN POSTPAID</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>MTNTEST1</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>BP</p355:BeneficiaryTypeCode>
+          <p355:ConsumerPrimaryReferenceNumber>544358800</p355:ConsumerPrimaryReferenceNumber>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2015-08-25T09:35:35.228Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>IFE</p74:LastMaintainedByUserID>
+            <p74:LastMaintainedDateTime>2015-08-25T10:35:35.276Z</p74:LastMaintainedDateTime>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+            <p74:AuthorizedDateTime>2015-08-25T09:35:35.228Z</p74:AuthorizedDateTime>
+          </p355:UserAuditDetails>
+          <p355:EntityCode>MTNPP-5</p355:EntityCode>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_1730252958</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount"/>
+          <p355:BeneficiaryName>StarTimes</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>Tset44</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>BP</p355:BeneficiaryTypeCode>
+          <p355:ConsumerPrimaryReferenceNumber>120091750</p355:ConsumerPrimaryReferenceNumber>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2017-11-21T17:54:38.464Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>IFE</p74:LastMaintainedByUserID>
+            <p74:LastMaintainedDateTime>2017-11-21T17:54:38.543Z</p74:LastMaintainedDateTime>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+            <p74:AuthorizedDateTime>2017-11-21T17:54:38.464Z</p74:AuthorizedDateTime>
+          </p355:UserAuditDetails>
+          <p355:EntityCode>StarTimes-5</p355:EntityCode>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_903571716</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount">
+            <p631:AccountNumber>10213056</p631:AccountNumber>
+          </p355:BeneficiaryAccountInfo>
+          <p355:BeneficiaryName>TEST4444</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>TEST4444</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>DAC</p355:BeneficiaryTypeCode>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:BeneficiaryPaymentChannelTypeCode>LOCAL</p355:BeneficiaryPaymentChannelTypeCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2015-08-04T10:41:35.660Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>IFE</p74:LastMaintainedByUserID>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+          </p355:UserAuditDetails>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_879601500</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount">
+            <p631:AccountNumber>1000332</p631:AccountNumber>
+          </p355:BeneficiaryAccountInfo>
+          <p355:BeneficiaryName>ravitest1</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>ravitest1</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>DAC</p355:BeneficiaryTypeCode>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:BeneficiaryPaymentChannelTypeCode>LOCAL</p355:BeneficiaryPaymentChannelTypeCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2015-07-20T14:40:18.674Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>IFE</p74:LastMaintainedByUserID>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+          </p355:UserAuditDetails>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_864853117</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount">
+            <p631:AccountNumber>1682874</p631:AccountNumber>
+          </p355:BeneficiaryAccountInfo>
+          <p355:BeneficiaryName>alok333</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>alok333</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>DAC</p355:BeneficiaryTypeCode>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:BeneficiaryPaymentChannelTypeCode>LOCAL</p355:BeneficiaryPaymentChannelTypeCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2015-07-13T10:23:46.136Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>IFE</p74:LastMaintainedByUserID>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+          </p355:UserAuditDetails>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_879557568</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount">
+            <p631:AccountNumber>3505012</p631:AccountNumber>
+          </p355:BeneficiaryAccountInfo>
+          <p355:BeneficiaryName>Testravi1</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>Testravi1</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>DAC</p355:BeneficiaryTypeCode>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:BeneficiaryPaymentChannelTypeCode>LOCAL</p355:BeneficiaryPaymentChannelTypeCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2015-07-20T14:38:17.073Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>IFE</p74:LastMaintainedByUserID>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+          </p355:UserAuditDetails>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_881154462</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount">
+            <p631:AccountNumber>3505012</p631:AccountNumber>
+          </p355:BeneficiaryAccountInfo>
+          <p355:BeneficiaryName>Testravi1</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>Testravi12</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>DAC</p355:BeneficiaryTypeCode>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:BeneficiaryPaymentChannelTypeCode>LOCAL</p355:BeneficiaryPaymentChannelTypeCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2015-07-20T14:38:17.073Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>IFE</p74:LastMaintainedByUserID>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+          </p355:UserAuditDetails>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_848243255</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount">
+            <p631:AccountNumber>1032168</p631:AccountNumber>
+          </p355:BeneficiaryAccountInfo>
+          <p355:BeneficiaryName>LONG_NAME 1215931</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>TEST8</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>IAC</p355:BeneficiaryTypeCode>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:BeneficiaryPaymentChannelTypeCode>LOCAL</p355:BeneficiaryPaymentChannelTypeCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2015-06-30T09:20:07.960Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>IFE</p74:LastMaintainedByUserID>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+          </p355:UserAuditDetails>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_848376960</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount">
+            <p631:AccountNumber>1069557</p631:AccountNumber>
+          </p355:BeneficiaryAccountInfo>
+          <p355:BeneficiaryName>LONG_NAME 1039283</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>TEST10</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>IAC</p355:BeneficiaryTypeCode>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:BeneficiaryPaymentChannelTypeCode>LOCAL</p355:BeneficiaryPaymentChannelTypeCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2015-06-30T13:44:14.679Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>IFE</p74:LastMaintainedByUserID>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+          </p355:UserAuditDetails>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_881207404</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount">
+            <p631:AccountNumber>1001285</p631:AccountNumber>
+          </p355:BeneficiaryAccountInfo>
+          <p355:BeneficiaryName>LONG_NAME 1040543</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>TEST911</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>IAC</p355:BeneficiaryTypeCode>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:BeneficiaryPaymentChannelTypeCode>LOCAL</p355:BeneficiaryPaymentChannelTypeCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2015-07-21T11:23:55.104Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>IFE</p74:LastMaintainedByUserID>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+          </p355:UserAuditDetails>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_973334322</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount">
+            <p631:AccountNumber>2453090</p631:AccountNumber>
+          </p355:BeneficiaryAccountInfo>
+          <p355:BeneficiaryName>LONG_NAME 1023975</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>TEST0409</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>IAC</p355:BeneficiaryTypeCode>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:BeneficiaryPaymentChannelTypeCode>LOCAL</p355:BeneficiaryPaymentChannelTypeCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2015-09-04T04:45:44.920Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>IFE</p74:LastMaintainedByUserID>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+          </p355:UserAuditDetails>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_884751275</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount">
+            <p631:AccountNumber>1068038</p631:AccountNumber>
+          </p355:BeneficiaryAccountInfo>
+          <p355:BeneficiaryName>LONG_NAME 3514764</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>CASHSEND</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>IAC</p355:BeneficiaryTypeCode>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:BeneficiaryPaymentChannelTypeCode>LOCAL</p355:BeneficiaryPaymentChannelTypeCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2015-07-23T08:36:55.709Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>IFE</p74:LastMaintainedByUserID>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+          </p355:UserAuditDetails>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_1361957751</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount">
+            <p631:AccountNumber>1068038</p631:AccountNumber>
+          </p355:BeneficiaryAccountInfo>
+          <p355:BeneficiaryName>LONG_NAME 1070774</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>h</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>IAC</p355:BeneficiaryTypeCode>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:BeneficiaryPaymentChannelTypeCode>LOCAL</p355:BeneficiaryPaymentChannelTypeCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2017-01-11T06:51:22.749Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>IFE</p74:LastMaintainedByUserID>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+          </p355:UserAuditDetails>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_1357680175</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount">
+            <p631:AccountNumber>3359977</p631:AccountNumber>
+          </p355:BeneficiaryAccountInfo>
+          <p355:BeneficiaryName>LONG_NAME 1120362</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>Test1212</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>IAC</p355:BeneficiaryTypeCode>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:BeneficiaryPaymentChannelTypeCode>LOCAL</p355:BeneficiaryPaymentChannelTypeCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2017-01-09T06:22:29.972Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>IFE</p74:LastMaintainedByUserID>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+          </p355:UserAuditDetails>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_1490055541</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount">
+            <p631:AccountNumber>1068038</p631:AccountNumber>
+          </p355:BeneficiaryAccountInfo>
+          <p355:BeneficiaryName>MRS PHINDILE M NEPS</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>testbene1</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>RT</p355:BeneficiaryTypeCode>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:BeneficiaryPaymentChannelTypeCode>LOCAL</p355:BeneficiaryPaymentChannelTypeCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2017-04-12T09:25:09.176Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>IFE</p74:LastMaintainedByUserID>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+          </p355:UserAuditDetails>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_1764801628</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount"/>
+          <p355:BeneficiaryName>Airtel Money&#160;&#160; </p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>Tset</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>WT</p355:BeneficiaryTypeCode>
+          <p355:ConsumerPrimaryReferenceNumber>120400889</p355:ConsumerPrimaryReferenceNumber>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2018-01-10T10:25:17.694Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>IFE</p74:LastMaintainedByUserID>
+            <p74:LastMaintainedDateTime>2018-01-10T10:25:17.937Z</p74:LastMaintainedDateTime>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+            <p74:AuthorizedDateTime>2018-01-10T10:25:17.694Z</p74:AuthorizedDateTime>
+          </p355:UserAuditDetails>
+          <p355:EntityCode>AIRTELCR-5</p355:EntityCode>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_1597470148</p355:BeneficiaryID>
+          <p355:BeneficiaryAccountInfo xmlns:p631="http://barclays.com/bem/TransactionAccount"/>
+          <p355:BeneficiaryName>MTN Mobile Money</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>MTNMN</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>WT</p355:BeneficiaryTypeCode>
+          <p355:ConsumerPrimaryReferenceNumber>264001331</p355:ConsumerPrimaryReferenceNumber>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2017-07-05T12:01:15.247Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>IFE</p74:LastMaintainedByUserID>
+            <p74:LastMaintainedDateTime>2017-07-05T13:01:15.374Z</p74:LastMaintainedDateTime>
+            <p74:AuthorizedBy>Z00019789</p74:AuthorizedBy>
+            <p74:AuthorizedDateTime>2017-07-05T12:01:15.247Z</p74:AuthorizedDateTime>
+          </p355:UserAuditDetails>
+          <p355:EntityCode>MTNCR-5</p355:EntityCode>
+        </p67:Beneficiary>
+        <p67:PageInfo xmlns:p110="http://barclays.com/bem/PageInformationResponse">
+          <p110:TotalNumberOfRecords>38</p110:TotalNumberOfRecords>
+        </p67:PageInfo>
+      </p67:BeneficiaryList>
+    </p67:RetrieveIndividualCustomerBeneficiaryListResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

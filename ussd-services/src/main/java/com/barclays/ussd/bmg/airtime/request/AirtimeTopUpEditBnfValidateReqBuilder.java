@@ -8,9 +8,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.auth.bean.UserProfile;
-import com.barclays.ussd.bean.BillerArea;
 import com.barclays.ussd.bmg.dto.RequestBuilderParamsDTO;
 import com.barclays.ussd.bmg.factory.request.BmgBaseRequestBuilder;
 import com.barclays.ussd.common.services.IBillersLstService;
@@ -20,15 +18,11 @@ import com.barclays.ussd.sysprefs.services.ListValueCacheDTO;
 import com.barclays.ussd.sysprefs.services.ListValueResByGroupServiceResponse;
 import com.barclays.ussd.sysprefs.services.ListValueResServiceImpl;
 import com.barclays.ussd.sysprefs.services.ListValueResServiceRequest;
-import com.barclays.ussd.utils.SystemPreferenceConstants;
 import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDExceptions;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.jsonparsers.bean.airtime.Biller;
 import com.barclays.ussd.utils.jsonparsers.bean.billpay.Beneficiery;
-import com.barclays.ussd.utils.jsonparsers.bean.mobilewallettopup.SrcAccount;
-import com.barclays.ussd.validation.USSDCompositeValidator;
-import com.barclays.ussd.validation.USSDLengthValidator;
 
 public class AirtimeTopUpEditBnfValidateReqBuilder implements BmgBaseRequestBuilder {
     private static final String PAY_GRP = "payGrp";
@@ -46,7 +40,6 @@ public class AirtimeTopUpEditBnfValidateReqBuilder implements BmgBaseRequestBuil
 	USSDBaseRequest request = new USSDBaseRequest();
 	Map<String, String> requestParamMap = new HashMap<String, String>();
 	Map<String, String> userInputMap = requestBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap();
-	UserProfile userProfile = requestBuilderParamsDTO.getUssdSessionMgmt().getUserProfile();
 /*	String payNickNameMaxLength = getSystemPreferenceData(userProfile, SystemPreferenceConstants.SYS_PARAM_BNF,
 		SystemPreferenceConstants.PAYEE_NICKNAME_LENGTH_MAX);
 */
@@ -79,7 +72,6 @@ public class AirtimeTopUpEditBnfValidateReqBuilder implements BmgBaseRequestBuil
 	    private String billerType;
 	    private String billerAccNum;
 	    private String areaCode;*/
-	String payeeId = "";
 	Beneficiery bene =null;
 	if (requestBuilderParamsDTO.getUssdSessionMgmt().getTxSessions() != null
 		&& requestBuilderParamsDTO.getUssdSessionMgmt().getTxSessions().get(USSDInputParamsEnum.AIRTIME_TOPUP_PAYEE_LIST.getTranId()) != null) {
@@ -87,10 +79,10 @@ public class AirtimeTopUpEditBnfValidateReqBuilder implements BmgBaseRequestBuil
 		    USSDInputParamsEnum.AIRTIME_TOPUP_PAYEE_LIST.getTranId());
 	    if (!lstBenef.isEmpty()) {
 	    	bene= lstBenef.get(Integer.parseInt(userInputMap.get(USSDInputParamsEnum.AIRTIME_TOPUP_PAYEE_LIST.getParamName())) - 1);
-		payeeId = bene.getPayId();
 	    }
 	}
-	requestParamMap.put(USSDInputParamsEnum.AIRTIME_TOPUP_SAVE_BEN_NICK_NAME.getParamName(),bene.getDisLbl());
+	if(null != bene)
+		requestParamMap.put(USSDInputParamsEnum.AIRTIME_TOPUP_SAVE_BEN_NICK_NAME.getParamName(),bene.getDisLbl());
 	requestParamMap.put(USSDInputParamsEnum.REG_BILLER_GET_REFNO.getParamName(), userInputMap.get(USSDInputParamsEnum.AIRTIME_MOB_NUM.getParamName()));
 	requestParamMap.put(USSDInputParamsEnum.AIRTIME_MNO_LIST.getParamName(), billerId);
 	requestParamMap.put(USSDConstants.BMG_LOCAL_KE_OPCODE_PARAM_NAME, requestBuilderParamsDTO.getBmgOpCode());

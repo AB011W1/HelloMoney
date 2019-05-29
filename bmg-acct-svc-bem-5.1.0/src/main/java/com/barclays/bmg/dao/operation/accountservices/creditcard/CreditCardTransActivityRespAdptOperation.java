@@ -12,7 +12,7 @@ import com.barclays.bmg.constants.AccountServiceResponseCodeConstant;
 import com.barclays.bmg.constants.ErrorCodeConstant;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.dao.core.context.impl.DAOContext;
-import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperation;
+import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperationAcct;
 import com.barclays.bmg.dto.CreditCardActivityDTO;
 import com.barclays.bmg.dto.CreditCardStmtAccountInfoDTO;
 import com.barclays.bmg.dto.CreditCardStmtBalanceInfoDTO;
@@ -23,7 +23,7 @@ import com.barclays.bmg.service.accountdetails.request.CreditCardAccountActivity
 import com.barclays.bmg.service.accountdetails.response.CreditCardTransActivityServiceResponse;
 import com.barclays.bmg.utils.ConvertUtils;
 
-public class CreditCardTransActivityRespAdptOperation extends AbstractResAdptOperation {
+public class CreditCardTransActivityRespAdptOperation extends AbstractResAdptOperationAcct {
 
     public CreditCardTransActivityServiceResponse adaptResponseForCreditCardTransActivity(WorkContext workContext, Object obj) throws Exception {
 

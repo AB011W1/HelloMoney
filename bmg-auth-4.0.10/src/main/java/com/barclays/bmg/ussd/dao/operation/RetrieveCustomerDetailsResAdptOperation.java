@@ -25,7 +25,7 @@ import com.barclays.bmg.constants.ResponseCodeConstants;
 import com.barclays.bmg.context.Context;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.dao.core.context.impl.DAOContext;
-import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperation;
+import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperationAcct;
 import com.barclays.bmg.ussd.auth.service.request.RetrieveCustomerDetailsServiceRequest;
 import com.barclays.bmg.ussd.auth.service.response.RetrieveCustomerDetailsServiceResponse;
 
@@ -37,7 +37,7 @@ import com.barclays.bmg.ussd.auth.service.response.RetrieveCustomerDetailsServic
  * @author E20043104
  * 
  */
-public class RetrieveCustomerDetailsResAdptOperation extends AbstractResAdptOperation {
+public class RetrieveCustomerDetailsResAdptOperation extends AbstractResAdptOperationAcct {
 
     /**
      * This method adaptResponseForDetails has the purpose to adapt response for retrieving details

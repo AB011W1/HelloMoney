@@ -1,6 +1,5 @@
 package com.barclays.bmg.ussd.operation;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -27,7 +26,6 @@ public class RetrieveindividualCustCardListOperation extends BMBCommonOperation 
      */
     public RetrieveindividualCustCardListOperationResponse retrieveCustCardList(RetrieveindividualCustCardListOperationRequest request) {
     	  LOGGER.debug(" Entry RetrieveindividualCustCardListOperation retrieveCustCardList");
-    	List<DebitCardDTO>  debitCardDTOList=new ArrayList<DebitCardDTO>();
     	Context context = request.getContext();
     	loadParameters(context, ActivityConstant.COMMON_ID,
 				ActivityConstant.SEC_COMMON_ID);
@@ -47,15 +45,18 @@ public class RetrieveindividualCustCardListOperation extends BMBCommonOperation 
 
 	if (retrieveindividualCustCardListServiceResponse != null && retrieveindividualCustCardListServiceResponse.getDebitCardDTOList() != null
 		&& retrieveindividualCustCardListServiceResponse.getDebitCardDTOList().size() !=0) {
-		debitCardDTOList=retrieveindividualCustCardListServiceResponse.getDebitCardDTOList();
+		List<DebitCardDTO>  debitCardDTOList=retrieveindividualCustCardListServiceResponse.getDebitCardDTOList();
 		retrieveindividualCustCardListOperationResponse.setDebitCardDTOList(debitCardDTOList);
 		retrieveindividualCustCardListOperationResponse.setSuccess(true);
 	}
 	   else {
 
 		   retrieveindividualCustCardListOperationResponse.setSuccess(false);
-	   	   retrieveindividualCustCardListOperationResponse.setResMsg(retrieveindividualCustCardListServiceResponse.getResMsg());
-		   retrieveindividualCustCardListOperationResponse.setResCde(retrieveindividualCustCardListServiceResponse.getResCde());
+		   if(null != retrieveindividualCustCardListServiceResponse){
+			   retrieveindividualCustCardListOperationResponse.setResMsg(retrieveindividualCustCardListServiceResponse.getResMsg());
+			   retrieveindividualCustCardListOperationResponse.setResCde(retrieveindividualCustCardListServiceResponse.getResCde());
+		   }
+
 	   }
 
 	return retrieveindividualCustCardListOperationResponse;

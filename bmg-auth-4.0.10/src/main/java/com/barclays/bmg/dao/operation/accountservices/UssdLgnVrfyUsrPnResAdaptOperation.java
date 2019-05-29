@@ -30,7 +30,7 @@ import com.barclays.bmg.service.response.UssdLgnVrfyUsrPnServiceResponse;
  * 
  * @author e20037686 </br> * The Class UssdLgnVrfyUsrPnResAdaptOperation created using JRE 1.6.0_10
  */
-public class UssdLgnVrfyUsrPnResAdaptOperation extends AbstractResAdptOperation {
+public class UssdLgnVrfyUsrPnResAdaptOperation extends AbstractResAdptOperationAcct {
     /**
      * The method is written for Adapt response.
      * 

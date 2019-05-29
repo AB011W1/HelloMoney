@@ -1,5 +1,7 @@
 package com.barclays.bmg.mvc.controller.fundtransfer.own;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,6 +13,9 @@ import com.barclays.bmg.constants.BillPaymentConstants;
 import com.barclays.bmg.constants.FundTransferConstants;
 import com.barclays.bmg.constants.FundTransferResponseCodeConstants;
 import com.barclays.bmg.constants.SessionConstant;
+import com.barclays.bmg.constants.SystemParameterConstant;
+import com.barclays.bmg.context.BMGContextHolder;
+import com.barclays.bmg.context.BMGGlobalContext;
 import com.barclays.bmg.context.Context;
 import com.barclays.bmg.context.RequestContext;
 import com.barclays.bmg.dto.Charge;
@@ -78,34 +83,39 @@ public class OwnFundTransferExecuteController extends BMBAbstractCommandControll
 	    fundTransferExecuteOperationRequest.setContext(context);
 
 	    // Set the fields for MakeDomesticFundTransferRequest - CPB 30/05
-	    context.setOpCde(httpRequest.getParameter("opCde"));
-		Charge chargeDTO = null;
-		// need to add opcode for the respective CPB DomesticFundTransferRequest requests
-		if(httpRequest.getParameter("CpbMakeDomesticFundTransferFields") != null){
-			chargeDTO = new Charge();
-			if(httpRequest.getParameter("CpbMakeDomesticFundTransferFields").equals("setCpbDomesticInfoFields") && context.getBusinessId().equals("KEBRB")){
-				Double cpbChargeAmount = Double.parseDouble(httpRequest.getParameter("CpbChargeAmount"));
-				chargeDTO.setCpbChargeAmount(cpbChargeAmount);
-				chargeDTO.setFeeGLAccount((String)httpRequest.getParameter("CpbFeeGLAccount"));
-				Double cpbTaxAmount = Double.parseDouble(httpRequest.getParameter("CpbTaxAmount"));
-				chargeDTO.setTaxAmount(cpbTaxAmount);
-				chargeDTO.setTaxGLAccount((String)httpRequest.getParameter("CpbTaxGLAccount"));
-				chargeDTO.setChargeNarration((String)httpRequest.getParameter("CpbChargeNarration"));
-				chargeDTO.setExciseDutyNarration((String)httpRequest.getParameter("CpbExciseDutyNarration"));
-				chargeDTO.setTypeCode((String)httpRequest.getParameter("CpbtypeCode"));
-				chargeDTO.setValue((String)httpRequest.getParameter("CpbValue"));
-				chargeDTO.setCpbMakeBillPaymentFlag("setDomesticFundOthBarclaysFields");
+	    // Uganda CBP check
+	    //check CBP
+	    if(context.getBusinessId().equals("KEBRB") || context.getBusinessId().equals("UGBRB") || context.getBusinessId().equals("GHBRB")
+	    		|| context.getBusinessId().equals("ZMBRB") || context.getBusinessId().equals("BWBRB")){
+		    context.setOpCde(httpRequest.getParameter("opCde"));
+			Charge chargeDTO = null;
+			// need to add opcode for the respective CPB DomesticFundTransferRequest requests
+			if(httpRequest.getParameter("CpbMakeDomesticFundTransferFields") != null){
+				chargeDTO = new Charge();
+				if((context.getBusinessId().equals("KEBRB")|| context.getBusinessId().equals("UGBRB")) && httpRequest.getParameter("CpbMakeDomesticFundTransferFields").equals("setCpbDomesticInfoFields")){
+					Double cpbChargeAmount = Double.parseDouble(httpRequest.getParameter("CpbChargeAmount"));
+					chargeDTO.setCpbChargeAmount(cpbChargeAmount);
+					chargeDTO.setFeeGLAccount((String)httpRequest.getParameter("CpbFeeGLAccount"));
+					Double cpbTaxAmount = Double.parseDouble(httpRequest.getParameter("CpbTaxAmount"));
+					chargeDTO.setTaxAmount(cpbTaxAmount);
+					chargeDTO.setTaxGLAccount((String)httpRequest.getParameter("CpbTaxGLAccount"));
+					chargeDTO.setChargeNarration((String)httpRequest.getParameter("CpbChargeNarration"));
+					chargeDTO.setExciseDutyNarration((String)httpRequest.getParameter("CpbExciseDutyNarration"));
+					chargeDTO.setTypeCode((String)httpRequest.getParameter("CpbtypeCode"));
+					chargeDTO.setValue((String)httpRequest.getParameter("CpbValue"));
+					chargeDTO.setCpbMakeBillPaymentFlag("setDomesticFundOthBarclaysFields");
 
-			}else if(httpRequest.getParameter("CpbMakeDomesticFundTransferFields").equals("xelerateOffline")){
-				Double cpbChargeAmount = Double.parseDouble(httpRequest.getParameter("CpbChargeAmount"));
-				chargeDTO.setCpbChargeAmount(cpbChargeAmount);
-				Double cpbTaxAmount = Double.parseDouble(httpRequest.getParameter("CpbTaxAmount"));
-				chargeDTO.setTaxAmount(cpbTaxAmount);
-				chargeDTO.setCpbMakeBillPaymentFlag("xelerateOffline");
+				}else if(httpRequest.getParameter("CpbMakeDomesticFundTransferFields").equals("xelerateOffline")){
+					Double cpbChargeAmount = Double.parseDouble(httpRequest.getParameter("CpbChargeAmount"));
+					chargeDTO.setCpbChargeAmount(cpbChargeAmount);
+					Double cpbTaxAmount = Double.parseDouble(httpRequest.getParameter("CpbTaxAmount"));
+					chargeDTO.setTaxAmount(cpbTaxAmount);
+					chargeDTO.setCpbMakeBillPaymentFlag("xelerateOffline");
+				}
+				//set charge DTO
+				transactionDTO.setChargeDTO(chargeDTO);
 			}
-			//set charge DTO
-			transactionDTO.setChargeDTO(chargeDTO);
-		}
+	    }
 		fundTransferExecuteOperationRequest.setTransactionDTO(transactionDTO);
 
 	    try {

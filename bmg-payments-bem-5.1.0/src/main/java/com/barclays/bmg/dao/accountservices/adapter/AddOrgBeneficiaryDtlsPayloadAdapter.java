@@ -50,7 +50,7 @@ public class AddOrgBeneficiaryDtlsPayloadAdapter {
 	//WUC change - Botswana 21/06/2017
 	if(beneficiaryDTO.getBusinessId() !=null && beneficiaryDTO.getBusinessId().equals("BWBRB") && beneficiaryDTO.getBillerId().equals("WUC-2")){
 		String billRefNo2 = beneficiaryDTO.getBillRefNo2();
-		if (billRefNo2 != null || billRefNo2 != ""){
+		if (billRefNo2 != null){
 			organizationBeneficiary.setConsumerSecondaryReferenceNumber(beneficiaryDTO.getBillRefNo2());
 		}
 	}

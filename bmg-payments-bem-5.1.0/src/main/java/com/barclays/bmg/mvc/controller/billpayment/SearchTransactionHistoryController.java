@@ -65,7 +65,12 @@ public class SearchTransactionHistoryController extends
 						.getTransactionType());
 		searchTransactionHistoryOperationRequest
 				.setTransactionHistoryDTO(transactionHistoryDTO);
-
+		if(searchTransactionHistoryCommand.getGroupWalletFlow()!=null && searchTransactionHistoryCommand.getGroupWalletFlow().equals("true")){
+			searchTransactionHistoryOperationRequest.setGroupWalletFlow(searchTransactionHistoryCommand.getGroupWalletFlow());
+			searchTransactionHistoryOperationRequest.setBillerCode(searchTransactionHistoryCommand.getBillerCode());
+			searchTransactionHistoryOperationRequest.setDebitAccountNumber(searchTransactionHistoryCommand.getDebitAccountNumber());
+			searchTransactionHistoryOperationRequest.setFundsTransferType(searchTransactionHistoryCommand.getFundsTransferType());
+		}
 		SearchTransactionHistoryOperationResponse searchTransactionHistoryOperationResponse = searchTransactionHistoryOperation
 				.searchTransactionHistory(searchTransactionHistoryOperationRequest);
 		searchTransactionHistoryOperationResponse

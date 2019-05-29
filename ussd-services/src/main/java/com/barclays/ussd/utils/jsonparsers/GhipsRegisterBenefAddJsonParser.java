@@ -133,7 +133,8 @@ public class GhipsRegisterBenefAddJsonParser implements BmgBaseJsonParser {
 	pageBody.append(accountNumber);
 	pageBody.append(USSDConstants.NEW_LINE);
 	pageBody.append(bankNameLabel);
-	pageBody.append(branchCodeLookUpDTO.getBankName());
+	if(null != branchCodeLookUpDTO)
+		pageBody.append(branchCodeLookUpDTO.getBankName());
 	pageBody.append(USSDConstants.NEW_LINE);
 	pageBody.append(nickNameLabel);
 	pageBody.append(benefNickName);

@@ -15,7 +15,6 @@ public class RetrIndvCustByCCHeaderAdapter extends AbstractReqAdptOperation {
 
 	BEMReqHeader reqHeader = super.buildRequestHeader(workContext, ServiceIdConstants.SERVICE_RETRIEVE_CUSTOMER_BY_CREDITCARD_NUMBER);
 
-	String businessID = getBusinessId(workContext);
 	//Commented because issue with Credit Card Link for  Vision Plus R3 relase
 	//if (businessID.equalsIgnoreCase("KEBRB")) {
 	    RoutingIndicator routInd = new RoutingIndicator();

@@ -4,6 +4,7 @@ package com.barclays.bmg.dao.operation.pesalink;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 import org.apache.log4j.Logger;
 
 import com.barclays.bem.BEMServiceHeader.BEMResHeader;
@@ -16,14 +17,14 @@ import com.barclays.bmg.context.RequestContext;
 import com.barclays.bmg.context.ResponseContext;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.dao.core.context.impl.DAOContext;
-import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperation;
+import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperationAcct;
 import com.barclays.bmg.service.response.pesalink.BankSerRes;
 import com.barclays.bmg.service.response.pesalink.IndividualCustAdditionalInfoSerRes;
 import com.barclays.bmg.service.response.pesalink.IndividualCustomerBasicSerRes;
 import com.barclays.bmg.service.response.pesalink.SearchIndividualCustforDeDupCheckServiceResponse;
 
 
-public class SearchIndividualCustforDeDupCheckResAdptOperation extends AbstractResAdptOperation{
+public class SearchIndividualCustforDeDupCheckResAdptOperation extends AbstractResAdptOperationAcct{
 
 	    private static final Logger LOGGER = Logger.getLogger(SearchIndividualCustforDeDupCheckResAdptOperation.class);
 		public SearchIndividualCustforDeDupCheckServiceResponse adaptResponse(WorkContext workContext, Object obj){
@@ -64,29 +65,83 @@ public class SearchIndividualCustforDeDupCheckResAdptOperation extends AbstractR
 
 					}else if(activityId.equalsIgnoreCase("KITS_REGISTRATION_LOOKUP"))
 					{
-
+						//Added for new Lookup service change
+						String individualCustAdditionalInfo = null;
 						IndividualCustomerBasic[] individualCustomerBasicArray = bemResponse.getIndividualCustomerBasicDetails().getIndividualCustomerBasic();
-						List<IndividualCustomerBasicSerRes> list=populateCustomerDetailsList(individualCustomerBasicArray);
-						for(IndividualCustomerBasicSerRes individualCustomerBasicSerRes: list)
+						//Added for KITS enable/disable
+						String isKITS = context.getValue("isKITSFLAG").toString(); //BMBContextHolder.getContext().getValue("isKITSFLAG").toString();
+						if(isKITS != null)
 						{
-							for(BankSerRes bankSerRes: individualCustomerBasicSerRes.getBankSerResList() )
+							if(isKITS.equals("Y"))
 							{
-								bankNameList.add(bankSerRes.getBankName());
+								if(individualCustomerBasicArray[0] != null)
+									individualCustAdditionalInfo = individualCustomerBasicArray[0].getIndividualCustAdditionalInfo().getParticularIndicator();
+
+								if(null != individualCustAdditionalInfo && individualCustAdditionalInfo.equals("NOTREGISTERED"))
+								{
+									List<IndividualCustomerBasicSerRes> list=populateCustomerDetailsList(individualCustomerBasicArray);
+									if(list != null)
+									{
+										for(IndividualCustomerBasicSerRes individualCustomerBasicSerRes: list)
+										{
+											for(BankSerRes bankSerRes: individualCustomerBasicSerRes.getBankSerResList() )
+											{
+												bankNameList.add(bankSerRes.getBankName());
+											}
+//											if(bankNameList.isEmpty())
+//											{
+//												response.setResCde("BEMREGNOBANK");
+//												response.setSuccess(false);
+//											}
+//											else
+												if(bankNameList.contains("BARCLAYS"))
+											{
+												response.setResCde("BEMREG");
+												response.setSuccess(false);
+											}else{
+												response.setResMsg(bemResponse.getResponseHeader().getServiceResStatus().getServiceResDesc());
+												response.setResCde(bemResponse.getResponseHeader().getServiceResStatus().getServiceResCode());
+												response.setSuccess(true);
+											}
+										}
+									}
+
+								}
+								else if(null != individualCustAdditionalInfo && individualCustAdditionalInfo.equals("REGISTERED"))
+								{
+									response.setResMsg("REGISTERED");
+									response.setResCde("REGISTERED");
+									response.setSuccess(false);
+								}
 							}
-//							if(bankNameList.isEmpty())
-//							{
-//								response.setResCde("BEMREGNOBANK");
-//								response.setSuccess(false);
-//							}
-//							else
-								if(bankNameList.contains("BARCLAYS"))
+							else
 							{
-								response.setResCde("BEMREG");
-								response.setSuccess(false);
-							}else{
-								response.setResMsg(bemResponse.getResponseHeader().getServiceResStatus().getServiceResDesc());
-								response.setResCde(bemResponse.getResponseHeader().getServiceResStatus().getServiceResCode());
-								response.setSuccess(true);
+								List<IndividualCustomerBasicSerRes> list=populateCustomerDetailsList(individualCustomerBasicArray);
+								if(list != null)
+								{
+									for(IndividualCustomerBasicSerRes individualCustomerBasicSerRes: list)
+									{
+										for(BankSerRes bankSerRes: individualCustomerBasicSerRes.getBankSerResList() )
+										{
+											bankNameList.add(bankSerRes.getBankName());
+										}
+//										if(bankNameList.isEmpty())
+//										{
+//											response.setResCde("BEMREGNOBANK");
+//											response.setSuccess(false);
+//										}
+//										else
+											if(bankNameList.contains("BARCLAYS"))
+										{
+											response.setResCde("BEMREG");
+											response.setSuccess(false);
+										}else{
+											response.setResMsg(bemResponse.getResponseHeader().getServiceResStatus().getServiceResDesc());
+											response.setResCde(bemResponse.getResponseHeader().getServiceResStatus().getServiceResCode());
+											response.setSuccess(true);
+										}
+									}
+								}
 							}
 						}
 					}else if(activityId.equalsIgnoreCase("KITS_DEREGISTRATION_LOOKUP"))
@@ -155,27 +210,35 @@ public class SearchIndividualCustforDeDupCheckResAdptOperation extends AbstractR
 			}
 
 			List<IndividualCustomerBasicSerRes> individualCustomerBasicServiceResList= new ArrayList<IndividualCustomerBasicSerRes>();
-			List<IndividualCustomerBasic>  individualCustomerBasicList=Arrays.asList(individualCustomerBasicListArray);
+			List<IndividualCustomerBasic> individualCustomerBasicList = null;
+			if(null != individualCustomerBasicListArray)
+				individualCustomerBasicList=Arrays.asList(individualCustomerBasicListArray);
+			if(null != individualCustomerBasicList){
+				for(IndividualCustomerBasic details: individualCustomerBasicList)
+				{
+					IndividualCustomerBasicSerRes individualCustomerBasicSerRes=new IndividualCustomerBasicSerRes();
+					if(details.getIndividualName() != null)
+						individualCustomerBasicSerRes.setIndividualName(details.getIndividualName().getFullName());
+					com.barclays.bem.Bank.Bank [] bankArray =details.getCustomerBankInfo();
+					if(bankArray != null)
+					{
+						List<com.barclays.bem.Bank.Bank> bankList=Arrays.asList(bankArray);
+		                List<BankSerRes> sbankList= new ArrayList<BankSerRes>();
+		                for(com.barclays.bem.Bank.Bank bankDetails:bankList)
+		                {
+		                	BankSerRes sbank=new BankSerRes();
+		                	sbank.setBankCode(bankDetails.getISOBankCode().getBankCode());
+		                	sbank.setBankName(bankDetails.getBankName());
 
-			for(IndividualCustomerBasic details: individualCustomerBasicList)
-			{
-				IndividualCustomerBasicSerRes individualCustomerBasicSerRes=new IndividualCustomerBasicSerRes();
-				individualCustomerBasicSerRes.setIndividualName(details.getIndividualName().getFullName());
-				com.barclays.bem.Bank.Bank [] bankArray =details.getCustomerBankInfo();
-                List<com.barclays.bem.Bank.Bank> bankList=Arrays.asList(bankArray);
-                List<BankSerRes> sbankList= new ArrayList<BankSerRes>();
-                for(com.barclays.bem.Bank.Bank bankDetails:bankList)
-                {
-                	BankSerRes sbank=new BankSerRes();
-                	sbank.setBankCode(bankDetails.getISOBankCode().getBankCode());
-                	sbank.setBankName(bankDetails.getBankName());
+		                	sbankList.add(sbank);
+		                }
+		                individualCustomerBasicSerRes.setBankSerResList(sbankList);
+		                individualCustomerBasicServiceResList.add(individualCustomerBasicSerRes);
+					}
 
-                	sbankList.add(sbank);
-                }
-
-                individualCustomerBasicSerRes.setBankSerResList(sbankList);
-                individualCustomerBasicServiceResList.add(individualCustomerBasicSerRes);
+				}
 			}
+
 
 			if (LOGGER.isDebugEnabled()) {
 				LOGGER.debug(" Exit SearchIndividualCustforDeDupCheckResAdptOperation populateCustomerDetaislList individualCustomerBasicList  size"+individualCustomerBasicList.size());
@@ -190,7 +253,9 @@ public class SearchIndividualCustforDeDupCheckResAdptOperation extends AbstractR
 				LOGGER.debug(" Entry SearchIndividualCustforDeDupCheckResAdptOperation populateCustomerRegistrationDetails individualCustomerBasicListArray size"+individualCustomerBasicListArray.length);
 			}
 
-			IndividualCustomerBasic details=individualCustomerBasicListArray[0];
+			IndividualCustomerBasic details= new IndividualCustomerBasic();
+			if(null != individualCustomerBasicListArray)
+				details = individualCustomerBasicListArray[0];
 			IndividualCustAdditionalInfo individualCustAdditionalInfo=details.getIndividualCustAdditionalInfo();
 			IndividualCustAdditionalInfoSerRes custAdditionalInfo=new IndividualCustAdditionalInfoSerRes();
 

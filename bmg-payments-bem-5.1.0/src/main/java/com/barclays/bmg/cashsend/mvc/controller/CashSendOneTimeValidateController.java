@@ -11,6 +11,9 @@ import org.springframework.validation.BindException;
 
 import com.barclays.bmg.cashsend.mvc.command.CashSendRequestValidationCommand;
 import com.barclays.bmg.constants.BMGProcessConstants;
+import com.barclays.bmg.constants.SystemParameterConstant;
+import com.barclays.bmg.context.BMGContextHolder;
+import com.barclays.bmg.context.BMGGlobalContext;
 import com.barclays.bmg.context.Context;
 import com.barclays.bmg.dto.Amount;
 import com.barclays.bmg.dto.CashSendRequestDTO;
@@ -61,7 +64,12 @@ public class CashSendOneTimeValidateController extends BMBAbstractCommandControl
 	FormValidateOperationRequest formValidateOperationRequest = new FormValidateOperationRequest();
 
 	// Set OpCode for CashSend - CPB 16/05/2017
-	if(context.getActivityId().equals("PMT_FT_CS") && context.getBusinessId().equals("KEBRB")){
+	//CBP Change
+	//BMGGlobalContext logContext = BMGContextHolder.getLogContext();
+	if(context.getActivityId().equals("PMT_FT_CS") &&
+			(context!=null && context.getContextMap().get("isCBPFLAG").equals("Y") || (context.getBusinessId().equals("UGBRB")||context.getBusinessId().equals("GHBRB")
+		 || context.getBusinessId().equals("KEBRB")||
+			context.getBusinessId().equals("BWBRB")))){
 		context.setOpCde(request.getParameter("opCde"));
 	}
 
@@ -78,9 +86,9 @@ public class CashSendOneTimeValidateController extends BMBAbstractCommandControl
 	FormValidateOperationResponse formValidateOperationResponse = new FormValidateOperationResponse();
 
 	if (getSelectedAccountOperationResponse.isSuccess()) {
-	    if (formValidateOperationResponse.isSuccess()) {
+//	    if (formValidateOperationResponse.isSuccess()) {
 		formValidateOperationResponse = formValidateOperation.validateForm(formValidateOperationRequest);
-	    }
+//	    }
 
 	    formValidateOperationResponse.setMobileNo(cashSendRequestValidationCommand.getMobileNo());
 	}

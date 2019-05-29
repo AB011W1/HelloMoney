@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+   <!--  Interest Rates Controller Section  -->
+	<bean id="interestRatesController"
+		class="com.barclays.bmg.mvc.controller.intrates.InterestRatesController"
+		parent="bmbAbstractController">
+		<property name="intRatesOperation" ref="intRatesOperation" />
+		<property name="bmbJSONBuilder" ref="interestRatesJSONBldr" />
+	</bean>
+
+
+	<bean id="intRatesOperation"
+		class="com.barclays.bmg.operation.intrates.InterestRateOperation" parent="bmbCommonOperation">
+		<property name="intRatesService" ref="intratesServiceImpl" />
+		<property name="productEligibilityService" ref="productEligibilityServiceImpl"/>
+	</bean>
+
+	<bean id="interestRatesJSONBldr"
+		class="com.barclays.bmg.json.model.builder.intrates.InterestRatesJSONBldr">
+	</bean>
+
+	<bean id="intratesServiceImpl"
+		class="com.barclays.bmg.service.intrates.impl.InterestRatesServiceImpl">
+		<property name="intRatesDAO" ref="intratesDAOImpl" />
+	</bean>
+
+	<bean id="intratesDAOImpl" class="com.barclays.bmg.dao.intrates.impl.InterestRatesDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+</beans>

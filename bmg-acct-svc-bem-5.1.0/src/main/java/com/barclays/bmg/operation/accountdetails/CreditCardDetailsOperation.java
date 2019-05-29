@@ -10,7 +10,6 @@ import com.barclays.bmg.constants.ActivityConstant;
 import com.barclays.bmg.context.Context;
 import com.barclays.bmg.dto.CreditCardAccountDTO;
 import com.barclays.bmg.dto.CreditCardActivityDTO;
-import com.barclays.bmg.dto.CreditCardDTO;
 import com.barclays.bmg.dto.CreditCardStmtPointsInfoDTO;
 import com.barclays.bmg.dto.CreditCardTransactionHistoryDTO;
 import com.barclays.bmg.dto.CustomerAccountDTO;
@@ -28,7 +27,7 @@ import com.barclays.bmg.service.product.response.ProductEligibilityListServiceRe
 
 /**
  * @author BMB Team
- * 
+ *
  */
 
 public class CreditCardDetailsOperation extends AbstractCreditCardOperation {
@@ -48,10 +47,10 @@ public class CreditCardDetailsOperation extends AbstractCreditCardOperation {
     /**
      * 1. Retrieve the credit card account details. 2. Retrieve the credit card transactions. get the reward information. 3. Retrieve the credit card
      * un-billed transactions.
-     * 
+     *
      * @param request
      * @return
-     * 
+     *
      */
 
     public CreditCardDetailsOperationResponse retrieveCreditCardDetails(CreditCardDetailsOperationRequest request) {
@@ -82,12 +81,14 @@ public class CreditCardDetailsOperation extends AbstractCreditCardOperation {
 	// Retrive all account List from BEM
 	AllAccountServiceResponse allAccountServiceResp = allAccountService.retrieveAllAccount(allAccountServiceRequest);
 
-	List<? extends CustomerAccountDTO> customerAccountDTOList = allAccountServiceResp.getAccountList();
-	if (allAccountServiceResp != null && allAccountServiceResp.isSuccess()) {
+	List<? extends CustomerAccountDTO> customerAccountDTOList = new ArrayList<CustomerAccountDTO>();
+	if(null != allAccountServiceResp)
+		customerAccountDTOList = allAccountServiceResp.getAccountList();
+	if (null != allAccountServiceResp && allAccountServiceResp.isSuccess()) {
 	    customerAccountDTOList = allAccountServiceResp.getAccountList();
 	}
 
-	if (allAccountServiceResp != null && customerAccountDTOList != null && customerAccountDTOList.size() > 0) {
+	if (null != customerAccountDTOList && customerAccountDTOList.size() > 0) {
 
 	    List<CustomerAccountDTO> ccdAccountList = new ArrayList<CustomerAccountDTO>();
 
@@ -115,7 +116,7 @@ public class CreditCardDetailsOperation extends AbstractCreditCardOperation {
 	    if (ccdAccountList != null && !ccdAccountList.isEmpty()) {
 
 		for (CustomerAccountDTO customerDTO : ccdAccountList) {
-		    ccdMapList.put(customerDTO.getAccountNumber().toString(), customerDTO.getProductCode());
+		    ccdMapList.put(customerDTO.getAccountNumber(), customerDTO.getProductCode());
 		}
 	    }
 	}
@@ -126,12 +127,12 @@ public class CreditCardDetailsOperation extends AbstractCreditCardOperation {
 
 	    if (respSuccessFlg) {
 
-		List<CreditCardDTO> addSupplimentrylist = null;
+		/*List<CreditCardDTO> addSupplimentrylist = null;
 		if (addSupplimentrylist != null) {
 		    for (int i = 0; i < addSupplimentrylist.size(); i++) {
 			creditCardAccountDTO.addSupplementary(addSupplimentrylist.get(i));
 		    }
-		}
+		}*/
 
 		// Credit Card Unbilled Trans
 		CreditCardUnbilledTransServiceRequest ccUnbilledTransServiceReq = new CreditCardUnbilledTransServiceRequest();
@@ -213,7 +214,7 @@ public class CreditCardDetailsOperation extends AbstractCreditCardOperation {
 
     /**
      * Filter the Account list by using Product eligibility service
-     * 
+     *
      * @param accountList
      * @param request
      * @param response
@@ -243,7 +244,7 @@ public class CreditCardDetailsOperation extends AbstractCreditCardOperation {
 	 * The original code as below: ProductEligibilityListServiceResponse productEligListServiceResp = productEligibilityService
 	 * .getEligibleAccounts(productEligibilityServiceRequest); if (productEligListServiceResp.getAccountList() != null) {
 	 * productEligListServiceResp.getAccountList().size()); }
-	 * 
+	 *
 	 * return (List<CustomerAccountDTO>) productEligListServiceResp .getAccountList();
 	 */
 

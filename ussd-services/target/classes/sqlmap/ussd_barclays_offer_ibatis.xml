@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="MCFE">
+
+	<typeAlias alias="ussdOfferLookUpDTO" type="com.barclays.ussd.dto.UssdOfferLookUpDTO" />
+
+	<resultMap id="ussdOfferCityInfo" class="ussdOfferLookUpDTO">
+		<result property="cityName" column="CITY" />
+	</resultMap>
+
+	<resultMap id="ussdRestaurentInfo" class="ussdOfferLookUpDTO">
+		<result property="restaurentName" column="OFFER_RESTAURENT_NAME" />
+	</resultMap>
+
+	<resultMap id="ussdPartnerInfo" class="ussdOfferLookUpDTO">
+		<result property="partnerName" column="OFFER_PARTNER_NAME" />
+	</resultMap>
+
+
+	<select id="ussdRetrieveDiningCityList" resultMap="ussdOfferCityInfo">
+		SELECT distinct(OL.CITY) FROM OFFER_PROMO_OFFERS OPO, OFFER_PROMO_LOCATION_MAPPING OPLM , OFFER_LOCATION OL
+		where  OPO.OFFER_SYSTEM_ID = 'UB'
+		AND OPO.OFFER_BUSINESS_ID = #businessId#
+		AND OPO.OFFER_TYPE_ID = #offerTypeID#
+		AND OPO.PROMO_OFFER_ID = OPLM.PROMO_OFFER_ID
+		AND OPLM.LOCATION_ID = OL.LOCATION_ID
+		<dynamic prepend="">
+			<isNotNull prepend="AND" property="cityName">
+				UPPER(OL.CITY) like UPPER(#cityName#)
+	        </isNotNull>
+		</dynamic>
+	</select>
+
+
+	<select id="ussdRetrieveDiningRestarantList" resultMap="ussdRestaurentInfo">
+		SELECT distinct(OPO.OFFER_RESTAURENT_NAME) FROM OFFER_PROMO_OFFERS OPO, OFFER_PROMO_LOCATION_MAPPING OPLM , OFFER_LOCATION OL
+		where  OPO.OFFER_SYSTEM_ID = 'UB'
+		AND OPO.OFFER_BUSINESS_ID = #businessId#
+		AND OPO.OFFER_TYPE_ID = #offerTypeID#
+		AND OPO.PROMO_OFFER_ID = OPLM.PROMO_OFFER_ID
+		AND OPLM.LOCATION_ID = OL.LOCATION_ID
+		<dynamic prepend="">
+			<isNotNull prepend="AND" property="cityName">
+				UPPER(OL.CITY) like UPPER(#cityName#)
+	        </isNotNull>
+		</dynamic>
+		<dynamic prepend="">
+			<isNotNull prepend="AND" property="restaurentName">
+				UPPER(OPO.OFFER_RESTAURENT_NAME) like UPPER(#restaurentName#)
+	        </isNotNull>
+		</dynamic>
+	</select>
+
+
+
+	<select id="ussdRetrievePartnerList" resultMap="ussdPartnerInfo">
+		SELECT DISTINCT a.OFFER_PARTNER_NAME
+		from OFFER_PROMO_OFFERS a WHERE a.OFFER_BUSINESS_ID= #businessId#
+		<dynamic prepend="">
+			<isNotNull prepend="AND" property="offerTypeID">
+				UPPER(a.OFFER_TYPE_ID) like UPPER(#offerTypeID#)
+	        </isNotNull>
+		</dynamic>
+		<dynamic prepend="">
+			<isNotNull prepend="AND" property="partnerName">
+				UPPER(a.OFFER_PARTNER_NAME) like UPPER(#partnerName#)
+	        </isNotNull>
+		</dynamic>
+	</select>
+
+
+
+
+</sqlMap>

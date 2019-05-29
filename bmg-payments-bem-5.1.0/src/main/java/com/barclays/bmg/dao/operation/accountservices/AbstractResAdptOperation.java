@@ -27,7 +27,7 @@ public class AbstractResAdptOperation {
      * @return
      */
 
-    private static final Logger LOGGER = Logger.getLogger(AbstractResAdptOperation.class);
+    private static final Logger LOGGER = Logger.getLogger(AbstractResAdptOperationAcct.class);
 
     public String checkAuthResponse(AuthResHeader authResHeader) {
 

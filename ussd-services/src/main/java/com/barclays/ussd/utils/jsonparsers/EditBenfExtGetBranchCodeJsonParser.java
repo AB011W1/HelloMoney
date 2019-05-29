@@ -51,22 +51,24 @@ public class EditBenfExtGetBranchCodeJsonParser implements BmgBaseJsonParser,Scr
 		menuItemDTO.setNextScreenSequenceNumber(USSDSequenceNumberEnum.SEQUENCE_NUMBER_FIVE.getSequenceNo());
 	}
 	 public int getCustomNextScreen(String userInput, USSDSessionManagement ussdSessionMgmt) throws USSDBlockingException {
-			StringBuffer bankCodeLetter = new StringBuffer();
 			int seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FIVE.getSequenceNo();
 			Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
 			String branchName = userInput;
 			String businessId = ussdSessionMgmt.getBusinessId();
-			String transNodeId=ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
 			List<UssdBranchLookUpDTO> tempBranchList=null;
 			UssdBranchLookUpDTO bankCodeLookUpDTO=null;
 
 			tempBranchList = (List<UssdBranchLookUpDTO>) ussdSessionMgmt.getTxSessions().get(
 				USSDInputParamsEnum.EDIT_BENF_SELECT_BANK_NAME.getTranId());
-			bankCodeLookUpDTO = tempBranchList.get(Integer.parseInt(userInputMap.get(USSDInputParamsEnum.EDIT_BENF_SELECT_BANK_NAME
+			if(null != userInputMap)
+				bankCodeLookUpDTO = tempBranchList.get(Integer.parseInt(userInputMap.get(USSDInputParamsEnum.EDIT_BENF_SELECT_BANK_NAME
 				.getParamName())) - 1);
 
-			String bankCode = bankCodeLookUpDTO.getBankCode();
-			String bankName = bankCodeLookUpDTO.getBankName();
+			String bankCode = null,bankName = null;
+			if(null != bankCodeLookUpDTO){
+				bankCode = bankCodeLookUpDTO.getBankCode();
+				bankName = bankCodeLookUpDTO.getBankName();
+			}
 
 			List<UssdBranchLookUpDTO> branchList = branchLookUpDAOImpl.getBranchList(businessId, bankCode, bankName, branchName);
 

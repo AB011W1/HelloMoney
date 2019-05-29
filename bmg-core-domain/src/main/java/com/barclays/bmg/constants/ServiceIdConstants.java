@@ -69,4 +69,13 @@ public interface ServiceIdConstants {
     String SERVICE_SEARCH_INDIVIDUAL_CUST_DEDUP_CHECK="SearchIndividualCustInformation";
     String SERVICE_CREATE_INDIVIDUAL_CUSTOMER="CreateIndividualCustomer";
 
+    //GEPG Bill Details
+    String SERVICE_RETRIEVE_GEPG_BILL_DETAILS = "RetrieveBillDetails";
+
+    //GroupWallet Services
+    String RETRIEVE_NON_PERSONAL_CUST_ACCOUNT_LIST="RetrieveNonPersonalCustAcctList";
+    String MANAGE_FUND_TRANSFER_STATUS = "ManageFundTransferStatus";
+    String RETRIEVE_CASA_ACCOUNT_TRANSACTION_ACTIVITY = "RetrieveCASAAcctTransactionActivity";
+    String SEND_MULTIPLE_NOTIFICATIONS_ONEWAY = "SendMultipleNotifications";
+
 }

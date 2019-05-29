@@ -90,6 +90,27 @@ public class CustomerAccountDTO extends BaseDomainDTO implements Comparable {
     // Added for "verify user with pin"
     private String priInd;
 
+    //For groupwallet
+    private String bankCif;
+	private String groupWalletIndicator;
+
+
+    public String getBankCif() {
+		return bankCif;
+	}
+
+	public void setBankCif(String bankCif) {
+		this.bankCif = bankCif;
+	}
+
+	public String getGroupWalletIndicator() {
+		return groupWalletIndicator;
+	}
+
+	public void setGroupWalletIndicator(String groupWalletIndicator) {
+		this.groupWalletIndicator = groupWalletIndicator;
+	}
+
     /**
      * @return the priInd
      */
@@ -479,7 +500,7 @@ public class CustomerAccountDTO extends BaseDomainDTO implements Comparable {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see java.lang.Object#hashCode()
      */
     @Override

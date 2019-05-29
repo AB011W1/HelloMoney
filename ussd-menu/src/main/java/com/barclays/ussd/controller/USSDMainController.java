@@ -100,7 +100,7 @@ public class USSDMainController extends USSDAbstractController implements Servle
 	// Get the user data from the request
 	USSDRequest ussdRequest = (USSDRequest) request.getAttribute(USSDConstants.REQOBJ);
 	String msdinNumber = ussdRequest.getMsisdn();
-	String userInput = ussdRequest.getInput();
+	String userInput = ussdRequest.getInput()!= null ? ussdRequest.getInput() : "";
 
 	if (LOGGER.isDebugEnabled()) {
 	    LOGGER.debug("Menu navigation main controller starts.");

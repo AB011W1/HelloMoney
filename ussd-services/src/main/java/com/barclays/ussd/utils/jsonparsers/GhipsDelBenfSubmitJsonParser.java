@@ -57,7 +57,8 @@ public class GhipsDelBenfSubmitJsonParser implements BmgBaseJsonParser {
     		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
     	    }
     	}
-    	setNextScreenSequenceNumber(menuDTO);
+    	if(null != menuDTO)
+    		setNextScreenSequenceNumber(menuDTO);
     	return menuDTO;
         }
 

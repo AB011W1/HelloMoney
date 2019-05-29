@@ -9,7 +9,7 @@ import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.dto.BeneficiaryDTO;
 import com.barclays.bmg.service.response.RetreiveBeneficiaryDetailsServiceResponse;
 
-public class RetreiveOrgBeneficiaryDetailsRespAdptOperation extends AbstractResAdptOperation{
+public class RetreiveOrgBeneficiaryDetailsRespAdptOperation extends AbstractResAdptOperationAcct{
 
 	public RetreiveBeneficiaryDetailsServiceResponse adaptResponse(WorkContext workContext, Object obj){
 

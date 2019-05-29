@@ -1,7 +1,6 @@
 package com.barclays.ussd.utils.jsonparsers;
 
 import java.util.List;
-import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
@@ -34,11 +33,11 @@ public class REGBGetBillersJsonParser implements BmgBaseJsonParser, ScreenSequen
 	    menuDTO = renderMenuOnScreen(billerList, responseBuilderParamsDTO);
 	} catch (Exception e) {
 	    LOGGER.error("Exception : ", e);
-	    if (e instanceof USSDNonBlockingException) {
+/*	    if (e instanceof USSDNonBlockingException) {
 		throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode());
-	    } else {
+	    } else {*/
 		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
-	    }
+	    //}
 	}
 	return menuDTO;
     }
@@ -85,7 +84,6 @@ public class REGBGetBillersJsonParser implements BmgBaseJsonParser, ScreenSequen
     public int getCustomNextScreen(String userInput, USSDSessionManagement ussdSessionMgmt) throws USSDBlockingException {
 	int seqId = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FIVE.getSequenceNo();
 	String businessId = ussdSessionMgmt.getUserProfile().getBusinessId();
-	Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
 	if (StringUtils.equalsIgnoreCase(USSDConstants.BUSINESS_ID_UGBRB, businessId)) {
 	    List<BillersListDO> blrsLstDO = (List<BillersListDO>) ussdSessionMgmt.getTxSessions().get(
 		    USSDInputParamsEnum.REG_BILLER_GET_BILLERS.getTranId());

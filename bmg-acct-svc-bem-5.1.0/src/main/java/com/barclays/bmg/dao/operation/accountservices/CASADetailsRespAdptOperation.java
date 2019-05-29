@@ -12,7 +12,7 @@ import com.barclays.bmg.exception.BMBDataAccessException;
 import com.barclays.bmg.mapper.CASAAccountToCoreCASAAccount;
 import com.barclays.bmg.service.accountdetails.response.CASADetailsServiceResponse;
 
-public class CASADetailsRespAdptOperation extends AbstractResAdptOperation {
+public class CASADetailsRespAdptOperation extends AbstractResAdptOperationAcct {
 
     public CASADetailsServiceResponse adaptResponseForCASADetails(WorkContext workContext, Object obj) throws Exception {
 

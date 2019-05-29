@@ -16,7 +16,15 @@ public class PayHeader {
 	private String serVer;
 	@JsonProperty
 	private String expTrace;
-	
+	@JsonProperty
+	private String txnRefNo;
+
+	public String getTxnRefNo() {
+		return txnRefNo;
+	}
+	public void setTxnRefNo(String txnRefNo) {
+		this.txnRefNo = txnRefNo;
+	}
 	public String getResMsg() {
 		return resMsg;
 	}
@@ -47,5 +55,6 @@ public class PayHeader {
 	public void setExpTrace(String expTrace) {
 		this.expTrace = expTrace;
 	}
-	
+
 }
+

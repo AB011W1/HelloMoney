@@ -74,4 +74,6 @@ public interface ErrorCodeConstant {
     String CRYPTO_SHOULD_CHANGE_VALIDATION_FAILED_ERR = "9431";
 
     String THM_CONNECTIVITY = "009";
+    String URA_ERROR="219";
+    String MUBS_ERROR = "218";
 }

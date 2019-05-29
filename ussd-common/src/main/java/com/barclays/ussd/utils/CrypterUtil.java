@@ -19,7 +19,7 @@ import org.apache.log4j.Logger;
 
 /**
  * Class CrypterUtil.
- * 
+ *
  * @author
  */
 public class CrypterUtil {
@@ -37,7 +37,7 @@ public class CrypterUtil {
 
     /**
      * Gets values using method random number.
-     * 
+     *
      * @return random number
      */
     public static String getRandomNumber() {
@@ -50,7 +50,7 @@ public class CrypterUtil {
 
     /**
      * Random digit.
-     * 
+     *
      * @return as String
      */
     public static String randomDigit() {
@@ -65,7 +65,7 @@ public class CrypterUtil {
 
     /**
      * Gets values using method secure random.
-     * 
+     *
      * @return secure random
      */
     private static SecureRandom getSecureRandom() {
@@ -81,7 +81,7 @@ public class CrypterUtil {
 
     /**
      * Encrypt.
-     * 
+     *
      * @param ivBytes
      *            is a iv bytes
      * @param keyBytes
@@ -115,7 +115,7 @@ public class CrypterUtil {
     }
 
     /**
-     * 
+     *
      * @param nonce
      * @param msisdn
      * @param sessionId
@@ -136,7 +136,7 @@ public class CrypterUtil {
     // }
     /**
      * Decrypt.
-     * 
+     *
      * @param ivBytes
      *            is a iv bytes
      * @param keyBytes
@@ -174,7 +174,7 @@ public class CrypterUtil {
     }
 
     /**
-     * 
+     *
      * @param nonce
      * @param msisdn
      * @param sessionId
@@ -196,7 +196,7 @@ public class CrypterUtil {
     // }
     /**
      * This method generates secret key that can be represented as a byte array and have no "key" parameters associated with them.
-     * 
+     *
      * @param key
      * @return
      * @throws Exception
@@ -263,7 +263,7 @@ public class CrypterUtil {
     // // System.out.println("decrypted: " + decrypted);
     //
     // } catch (Exception e) { // TODO Auto-generated catch block
-    // 
+    //
     // }
     // }
     public static void main(String[] args) {
@@ -295,8 +295,7 @@ public class CrypterUtil {
 	    System.out.println(" * decrypt Password =" + new String(decrypt));
 
 	} catch (Exception e) {
-	    
-
+	    e.printStackTrace();
 	}
 
     }

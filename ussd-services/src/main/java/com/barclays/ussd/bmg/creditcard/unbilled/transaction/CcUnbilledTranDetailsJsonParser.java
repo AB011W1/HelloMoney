@@ -8,7 +8,6 @@ import java.util.Locale;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
-import org.codehaus.jackson.map.ObjectMapper;
 
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
@@ -25,7 +24,7 @@ import com.barclays.ussd.utils.USSDUtils;
 
 /**
  * @author BTCI
- * 
+ *
  */
 public class CcUnbilledTranDetailsJsonParser implements BmgBaseJsonParser {
 
@@ -39,7 +38,6 @@ public class CcUnbilledTranDetailsJsonParser implements BmgBaseJsonParser {
 
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
 	MenuItemDTO menuDTO = null;
-	ObjectMapper mapper = new ObjectMapper();
 	try {
 	    USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
 

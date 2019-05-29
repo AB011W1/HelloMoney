@@ -4,7 +4,7 @@ import com.barclays.bem.UpdatePIN.UpdatePINResponse;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.service.response.PasswordChangeServiceResponse;
 
-public class ChangePasswordResAdptOperation extends AbstractResAdptOperation {
+public class ChangePasswordResAdptOperation extends AbstractResAdptOperationAcct {
 
     public PasswordChangeServiceResponse adaptResponseChangePassword(WorkContext workContext, Object obj) throws Exception {
 

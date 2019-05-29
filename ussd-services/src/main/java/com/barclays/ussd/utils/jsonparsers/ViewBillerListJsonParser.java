@@ -20,7 +20,7 @@ import com.barclays.ussd.utils.jsonparsers.bean.billpay.Beneficiery;
 
 /**
  * @author BTCI This class is json parser for displaying list of billers
- * 
+ *
  */
 public class ViewBillerListJsonParser implements BmgBaseJsonParser {
 
@@ -35,11 +35,11 @@ public class ViewBillerListJsonParser implements BmgBaseJsonParser {
 	    menuDTO = renderMenuOnScreen(billerLst, responseBuilderParamsDTO);
 	} catch (Exception e) {
 	    LOGGER.error("Exception : ", e);
-	    if (e instanceof USSDNonBlockingException) {
+	    /*if (e instanceof USSDNonBlockingException) {
 		throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode());
-	    } else {
+	    } else {*/
 		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
-	    }
+	    //}
 	}
 	return menuDTO;
     }

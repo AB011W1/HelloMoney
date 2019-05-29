@@ -23,7 +23,7 @@ import com.barclays.bmg.dao.core.context.impl.DAOContext;
 import com.barclays.bmg.service.request.TacticalHelloMoneyEncryptPinServiceRequest;
 import com.barclays.bmg.service.response.TacticalHelloMoneyEncryptPinServiceResponse;
 
-public class ThmEncryptPinResAdaptOperation extends AbstractResAdptOperation {
+public class ThmEncryptPinResAdaptOperation extends AbstractResAdptOperationAcct {
 
     public TacticalHelloMoneyEncryptPinServiceResponse adaptResponse(WorkContext workContext, Object obj) {
 	TacticalHelloMoneyEncryptPinServiceResponse response = new TacticalHelloMoneyEncryptPinServiceResponse();

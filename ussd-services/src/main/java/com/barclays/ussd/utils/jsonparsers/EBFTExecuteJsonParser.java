@@ -25,7 +25,7 @@ import com.barclays.ussd.utils.jsonparsers.bean.fundtransfer.otherbank.OtBnkFTEx
 
 /**
  * @author BTCI
- * 
+ *
  */
 public class EBFTExecuteJsonParser implements BmgBaseJsonParser {
 
@@ -96,7 +96,8 @@ public class EBFTExecuteJsonParser implements BmgBaseJsonParser {
 	    menuItemDTO.setPaginationType(PaginationEnum.LISTED);
 	    menuItemDTO.setStatus(USSDConstants.STATUS_END);
 	}
-	setNextScreenSequenceNumber(menuItemDTO);
+	if(null != menuItemDTO)
+		setNextScreenSequenceNumber(menuItemDTO);
 	return menuItemDTO;
     }
 

@@ -12,6 +12,8 @@
  */
 package com.barclays.bmg.mvc.controller.accountdetails;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -22,6 +24,7 @@ import com.barclays.bmg.constants.ActivityConstant;
 import com.barclays.bmg.constants.BMGProcessConstants;
 import com.barclays.bmg.constants.SessionConstant;
 import com.barclays.bmg.context.Context;
+import com.barclays.bmg.dto.CustomerAccountDTO;
 import com.barclays.bmg.dto.CustomerDTO;
 import com.barclays.bmg.json.model.builder.BMBJSONBuilder;
 import com.barclays.bmg.json.response.model.BMBBaseResponseModel;
@@ -102,7 +105,7 @@ public class RetrieveAllCustAcctController extends BMBAbstractCommandController 
 	}
 	RetrieveAllCustAcctOperationRequest opReq = makeRequest(request, context);
 	RetrieveAllCustAcctOperationResponse opRes = retrieveAllCustAcctOperation.retrieveAllCustAccount(opReq);
-
+	List<? extends CustomerAccountDTO> accList = null;
 	if (opRes != null) {
 	    boolean isSuccess = opRes.isSuccess();
 	    if (isSuccess) {
@@ -121,13 +124,14 @@ public class RetrieveAllCustAcctController extends BMBAbstractCommandController 
 
 			//Changes for caching of account list & reduce one call to enhance performance
 			setUserMapIntoSession(request, SessionConstant.SESSION_ACCOUNT_LIST+context.getSessionId(), opRes.getAccountList());
-
+			accList=opRes.getAccountList();
 
 		    }
 		    SessionSummaryOperationRequest seOperationRequest = new SessionSummaryOperationRequest();
 		    seOperationRequest.setContext(createContext(request));
 		    sessionActivityOperation.persistLoginInformation(seOperationRequest);
 		}
+
 		AccountSummaryOperationRequest accountSummaryOperationRequest = makeRequest(request);
 		accountSummaryOperationRequest.setAccountType(accountType);
 		AccountSummaryOperationResponse acntSmryOpRes = accountSummaryOperation.retrieveAllAccount(accountSummaryOperationRequest);
@@ -138,6 +142,19 @@ public class RetrieveAllCustAcctController extends BMBAbstractCommandController 
 		    opRes.setResMsg(acntSmryOpRes.getResMsg());
 		    opRes.setErrTyp(acntSmryOpRes.getErrTyp());
 		}
+
+		List<? extends CustomerAccountDTO> newAccList=opRes.getAccountList();
+		if(null != accList){
+			for(CustomerAccountDTO dto : accList){
+				for(CustomerAccountDTO ndto:newAccList){
+					if(dto.getAccountNumber().equals(ndto.getAccountNumber())){
+						ndto.setBankCif(dto.getBankCif());
+						ndto.setGroupWalletIndicator(dto.getGroupWalletIndicator());
+					}
+				}
+			}
+		}
+
 		clearCorrelationIds(request, BMGProcessConstants.ACCOUNTS_PROCESS);
 		mapCorrelationIds(opRes.getAccountList(), opReq, request, opRes, BMGProcessConstants.ACCOUNTS_PROCESS);
 	    }

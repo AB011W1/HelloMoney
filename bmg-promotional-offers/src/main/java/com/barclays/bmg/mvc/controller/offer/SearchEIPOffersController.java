@@ -11,7 +11,6 @@ import com.barclays.bmg.constants.SessionConstant;
 import com.barclays.bmg.context.Context;
 import com.barclays.bmg.json.model.builder.BMBJSONBuilder;
 import com.barclays.bmg.json.response.model.BMBBaseResponseModel;
-import com.barclays.bmg.mvc.command.offer.SearchEipOfferCommand;
 import com.barclays.bmg.mvc.controller.auth.BMBAbstractCommandController;
 import com.barclays.bmg.operation.offer.SearchEIPOfferOperation;
 import com.barclays.bmg.operation.offer.request.EIPOfferOperationRequest;
@@ -25,8 +24,6 @@ public class SearchEIPOffersController extends BMBAbstractCommandController {
     @Override
     protected BMBBaseResponseModel handle1(HttpServletRequest request, HttpServletResponse response, Object command, BindException errors)
 	    throws Exception {
-
-	SearchEipOfferCommand searchEipOfferCmd = (SearchEipOfferCommand) command;
 
 	EIPOfferOperationRequest eipOfferOperReq = makeRequest(request);
 	// eipOfferOperReq.setCategory(searchEipOfferCmd.getCat());

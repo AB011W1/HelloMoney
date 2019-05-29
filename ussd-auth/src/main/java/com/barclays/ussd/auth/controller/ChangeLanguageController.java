@@ -70,7 +70,7 @@ public class ChangeLanguageController extends USSDAbstractController implements 
 
     /**
      * Handler.
-     * 
+     *
      * @param request
      *            the request
      * @param response
@@ -189,7 +189,7 @@ public class ChangeLanguageController extends USSDAbstractController implements 
     }
 
     /**
-     * 
+     *
      * @param msisdn
      * @param userProfile
      * @param inputTxt

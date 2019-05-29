@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
-import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.barclays.ussd.auth.bean.UserProfile;
@@ -36,7 +35,6 @@ public class OBADBRenderPayeeAcctListJsonParser implements BmgBaseJsonParser {
 
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
 	MenuItemDTO menuDTO = null;
-	ObjectMapper mapper = new ObjectMapper();
 
 	try {
 	    List<OBAFTBeneficiary> bnfLst = (List<OBAFTBeneficiary>) responseBuilderParamsDTO.getUssdSessionMgmt().getTxSessions().get(

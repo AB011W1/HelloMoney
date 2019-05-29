@@ -1,0 +1,54 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <p279:RetrieveCASAAccountDetailsResponse xmlns:p279="http://barclays.com/bem/RetrieveCASAAcctDetails">
+      <p279:ResponseHeader>
+        <ServiceContext>
+          <ServiceID>RetrieveCASAAcctDetails</ServiceID>
+          <ConsumerUniqueRefNo>13971122055786</ConsumerUniqueRefNo>
+          <OriginalConsumerUniqueRefNo>13971122055786</OriginalConsumerUniqueRefNo>
+          <ServiceDateTime>2014-04-10T02:43:26.285Z</ServiceDateTime>
+          <ServiceVersionNo>6.0.0</ServiceVersionNo>
+          <OverrideRequestFlag>0</OverrideRequestFlag>
+        </ServiceContext>
+        <BankUserContext>
+          <StaffType>Regular</StaffType>
+          <StaffID>IFE</StaffID>
+          <AuthorizerID>Z00019789</AuthorizerID>
+        </BankUserContext>
+        <ServiceResStatus>
+          <ServiceResCode>00000</ServiceResCode>
+          <ServiceResDesc>Success</ServiceResDesc>
+          <ServiceRespDateTime>2014-04-10T06:43:26.597Z</ServiceRespDateTime>
+          <ServiceUniqueRefNo xsi:nil="true"/>
+        </ServiceResStatus>
+      </p279:ResponseHeader>
+      <p279:CASAAccountDetails>
+        <p279:CASAAccountSummary xmlns:p973="http://barclays.com/bem/Account" xmlns:p235="http://barclays.com/bem/CASAAccountSummary">
+          <p973:AccountNumber>1230064</p973:AccountNumber>
+          <p973:AccountCurrencyCode>MUR</p973:AccountCurrencyCode>
+          <p973:AccountTitle>LONG_NAME                   1000064</p973:AccountTitle>
+          <p973:Product xmlns:p521="http://barclays.com/bem/Product">
+            <p521:ProductCode>89</p521:ProductCode>
+            <p521:ProductTypeCode>PREMIER CURRENT</p521:ProductTypeCode>
+          </p973:Product>
+          <p973:AccountAvailableBalance xmlns:p412="http://barclays.com/bem/Balance">
+            <p412:AccountCCYBalance>842501.59</p412:AccountCCYBalance>
+          </p973:AccountAvailableBalance>
+          <p973:AccountCurrentBalance xmlns:p412="http://barclays.com/bem/Balance">
+            <p412:AccountCCYBalance>842562.79</p412:AccountCCYBalance>
+          </p973:AccountCurrentBalance>
+          <p973:DomicileBranch xmlns:p466="http://barclays.com/bem/Branch">
+            <p466:BranchCode>********</p466:BranchCode>
+          </p973:DomicileBranch>
+        </p279:CASAAccountSummary>
+        <p279:CASAAccountBalance xmlns:pn32477653="http://barclays.com/bem/CASAAccountBalance">
+          <pn32477653:TotalUnclearFundAmount>0.0</pn32477653:TotalUnclearFundAmount>
+          <pn32477653:TotalCASAHoldAmount>-61.2</pn32477653:TotalCASAHoldAmount>
+          <pn32477653:MinimumRequiredBalanceAmount>0.0</pn32477653:MinimumRequiredBalanceAmount>
+          <pn32477653:NetAvailableBalanceForWithdrawal>842501.59</pn32477653:NetAvailableBalanceForWithdrawal>
+        </p279:CASAAccountBalance>
+      </p279:CASAAccountDetails>
+    </p279:RetrieveCASAAccountDetailsResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

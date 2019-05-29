@@ -42,6 +42,8 @@ public class IntNonRegValidateReqBuilder implements BmgBaseRequestBuilder {
 	String userCreditSelection = userInputMap.get(USSDInputParamsEnum.INT_NR_FT_CREDIT_LIST.getParamName());
 	CustomerMobileRegAcct creditCard = creditCardList.get(Integer.parseInt(userCreditSelection) - 1);
 	requestParamMap.put("frActNo", creditCard.getActNo());
+    //Added card no details to fetch only selected card
+	requestParamMap.put("ccNumber", creditCard.getCrdNo());
 	requestParamMap.put("CREDIT_CARD_TRAN", "CREDIT_CARD_TRAN");
 	curr = creditCard.getCurr();
 	} else {

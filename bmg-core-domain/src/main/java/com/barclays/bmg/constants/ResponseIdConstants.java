@@ -219,4 +219,7 @@ public interface ResponseIdConstants {
     // CPB response Details
     String CPB_PESALINK_RESPONSE_ID = "RES0587";
 
+    //ToDo Update the Response code GePG Bill Details
+    String GEPG_BILL_DETAILS = "RES000";
+
 }

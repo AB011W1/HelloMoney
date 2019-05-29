@@ -107,7 +107,9 @@ public class AuthenticateUserJsonParser implements BmgBaseJsonParser {
 		    menuDTO = handleShouldChangePinFlow(responseBuilderParamsDTO, menuDTO, userAuthObj);
 		} else if (userAuthObj.getPayHdr() != null && (StringUtils.equalsIgnoreCase(USSDExceptions.BEM9431.getBmgCode(), resCode))) {
 		    throw new USSDNonBlockingException(USSDExceptions.BEM9431.getBmgCode());
-		} else if (userAuthObj.getPayHdr() != null) {
+		}else if (userAuthObj.getPayHdr() != null && (StringUtils.equalsIgnoreCase(USSDExceptions.BEM09032.getBmgCode(), resCode))) {
+		    throw new USSDNonBlockingException(USSDExceptions.BEM09032.getBmgCode());
+		}else if (userAuthObj.getPayHdr() != null) {
 		    LOGGER.error("Error while servicing Option Code " + responseBuilderParamsDTO.getBmgOpCode());
 		    throw new USSDBlockingException(userAuthObj.getPayHdr().getResCde());
 		} else {

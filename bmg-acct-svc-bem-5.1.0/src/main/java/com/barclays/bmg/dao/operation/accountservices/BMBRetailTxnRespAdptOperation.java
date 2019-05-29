@@ -13,7 +13,7 @@ import com.barclays.bmg.service.request.ReportProblemServiceRequest;
  * @author E20027734
  * 
  */
-public class BMBRetailTxnRespAdptOperation extends AbstractResAdptOperation {
+public class BMBRetailTxnRespAdptOperation extends AbstractResAdptOperationAcct {
     private ReportProblemService reportProblemService;
 
     protected boolean checkResponseHeader(WorkContext workContext, BEMResHeader resHeader, RetailTxnCheckHeaderReq retailTxnCheckHeaderReq) {

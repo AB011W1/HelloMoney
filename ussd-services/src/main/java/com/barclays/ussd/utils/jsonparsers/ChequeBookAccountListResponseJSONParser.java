@@ -9,7 +9,6 @@ import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
-import org.codehaus.jackson.map.ObjectMapper;
 
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
@@ -23,6 +22,8 @@ import com.barclays.ussd.utils.USSDExceptions;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
+import com.barclays.ussd.utils.jsonparsers.bean.login.AuthUserData;
+import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
 import com.barclays.ussd.utils.jsonparsers.bean.request.chqueBookReq.AccountChequBookDetails;
 import com.barclays.ussd.utils.jsonparsers.bean.request.chqueBookReq.ChequeBookSizeList;
 
@@ -31,9 +32,6 @@ public class ChequeBookAccountListResponseJSONParser implements BmgBaseJsonParse
     private static final Logger LOGGER = Logger.getLogger(ChequeBookAccountListResponseJSONParser.class);
 
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
-	String jsonString = responseBuilderParamsDTO.getJsonString();
-	MenuItemDTO menuDTO = null;
-	ObjectMapper mapper = new ObjectMapper();
 
 	try {
 
@@ -44,22 +42,23 @@ public class ChequeBookAccountListResponseJSONParser implements BmgBaseJsonParse
 	    ArrayList<AccountChequBookDetails> SrcActList = (ArrayList<AccountChequBookDetails>) responseBuilderParamsDTO.getUssdSessionMgmt()
 		    .getTxSessions().get(USSDInputParamsEnum.CHECK_BK_SRC_ACT.getTranId());
 
-	    menuDTO = renderMenuOnScreen(SrcActList, responseBuilderParamsDTO);
+	    MenuItemDTO menuDTO = renderMenuOnScreen(SrcActList, responseBuilderParamsDTO);
+	    return menuDTO;
 	    /*
 	     * if (chequeBookRequestJSON != null) { if (chequeBookRequestJSON.getPayHdr() != null &&
 	     * USSDExceptions.SUCCESS.getBmgCode().equalsIgnoreCase(chequeBookRequestJSON.getPayHdr().getResCde())) {
 	     * Collections.sort(chequeBookRequestJSON.getPayData().getSrcLst(), new ChequeBookCustomerAccountComparator()); menuDTO =
 	     * renderMenuOnScreen(chequeBookRequestJSON.getPayData(), responseBuilderParamsDTO);
-	     * 
+	     *
 	     * if (responseBuilderParamsDTO.getUssdSessionMgmt().getTxSessions() == null) { Map<String, Object> txSessionMap = new HashMap<String,
 	     * Object>(3); responseBuilderParamsDTO.getUssdSessionMgmt().setTxSessions(txSessionMap); } // set the src accnt list to the session
 	     * responseBuilderParamsDTO.getUssdSessionMgmt().getTxSessions().put(USSDInputParamsEnum.CHECK_BK_SRC_ACT.getTranId(),
 	     * chequeBookRequestJSON.getPayData().getSrcLst());
-	     * 
+	     *
 	     * // set the book size list to the session
 	     * responseBuilderParamsDTO.getUssdSessionMgmt().getTxSessions().put(USSDInputParamsEnum.CHECK_BK_SIZE.getTranId(),
 	     * chequeBookRequestJSON.getPayData().getBkSizeLst());
-	     * 
+	     *
 	     * } else if (chequeBookRequestJSON.getPayHdr() != null) { LOGGER.error("Error while servicing " +
 	     * responseBuilderParamsDTO.getBmgOpCode()); throw new USSDNonBlockingException(chequeBookRequestJSON.getPayHdr().getResCde()); } else {
 	     * LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode()); throw new
@@ -79,19 +78,37 @@ public class ChequeBookAccountListResponseJSONParser implements BmgBaseJsonParse
 	    }
 	}
 
-	return menuDTO;
+
     }
 
     /**
      * @param chequeBookRequestBeanJSON
      * @param responseBuilderParamsDTO
      * @return MenuItemDTO
+     * @throws USSDNonBlockingException
      */
-    private MenuItemDTO renderMenuOnScreen(ArrayList<AccountChequBookDetails> SrcActList, ResponseBuilderParamsDTO responseBuilderParamsDTO) {
+    private MenuItemDTO renderMenuOnScreen(ArrayList<AccountChequBookDetails> SrcActList, ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
 	int index = 1;
 	StringBuilder pageBody = new StringBuilder();
 	MenuItemDTO menuItemDTO = new MenuItemDTO();
+	USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
+	AuthUserData authData= ((AuthUserData)ussdSessionMgmt.getUserAuthObj());
+    List<CustomerMobileRegAcct> acts=authData.getPayData().getCustActs();
 	if (SrcActList != null && !SrcActList.isEmpty()) {
+		if(acts != null && acts.size() > 0)
+		{
+			List<String> GpAcc=new ArrayList<String>();
+			 for(int i =0;i<acts.size();i++)
+			    	if(acts.get(i).getGroupWalletIndicator()!=null && acts.get(i).getGroupWalletIndicator().equals("Y"))
+			    		GpAcc.add(acts.get(i).getMkdActNo());
+
+				 for(int j=0;j<SrcActList.size();j++)
+					 if(GpAcc.contains(SrcActList.get(j).getMkdActNo()))
+						 SrcActList.remove(j);
+		}
+		if(SrcActList == null || SrcActList.isEmpty() || SrcActList.size() == 0){
+			throw new USSDNonBlockingException(USSDExceptions.USSD_NO_ELIGIBLE_ACCTS.getBmgCode());
+		}
 	    for (AccountChequBookDetails accountDetail : SrcActList) {
 		pageBody.append(USSDConstants.NEW_LINE);
 		pageBody.append(index);

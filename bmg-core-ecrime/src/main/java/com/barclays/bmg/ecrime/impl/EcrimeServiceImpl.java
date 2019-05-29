@@ -7,7 +7,6 @@ import java.util.Date;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -217,14 +216,12 @@ public class EcrimeServiceImpl implements EcrimeService {
 		fields = objMap.convertValue(bean, Map.class);
 	    }
 
-	    Set<String> entrySet = fields.keySet();
-
-	    for (String entry : entrySet) {
-		Object value = fields.get(entry);
+	    for ( Map.Entry<String, Object> entry : fields.entrySet()) {
+		Object value = fields.get(entry.getKey());
 
 		if (value instanceof String || value instanceof Long || value instanceof Integer || value instanceof Float || value instanceof Double
 			|| value instanceof Boolean) {
-		    KeyPair keyPair = new KeyPair(entry, value.toString());
+		    KeyPair keyPair = new KeyPair(entry.getKey(), value.toString());
 		    list.add(keyPair);
 		} else {
 		    if (value != null) {

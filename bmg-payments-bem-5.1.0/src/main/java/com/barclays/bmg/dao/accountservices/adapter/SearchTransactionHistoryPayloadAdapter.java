@@ -30,6 +30,11 @@ public class SearchTransactionHistoryPayloadAdapter {
 
 		SearchTransactionHistoryServiceRequest searchTransactionHistoryServiceRequest = (SearchTransactionHistoryServiceRequest) args[0];
 		Context context = searchTransactionHistoryServiceRequest.getContext();
+		if(searchTransactionHistoryServiceRequest.isGroupWalletFlow()!=null && searchTransactionHistoryServiceRequest.isGroupWalletFlow().equals("true")){
+			fundsTransferHistory.setBillerCode(searchTransactionHistoryServiceRequest.getBillerCode());
+			fundsTransferHistory.setDebitAccountNumber(searchTransactionHistoryServiceRequest.getDebitAccountNumber());
+			fundsTransferHistory.setFundsTransferType(searchTransactionHistoryServiceRequest.getFundsTransferType());
+		}else{
 		fundsTransferHistory
 				.setFundsTransferType(searchTransactionHistoryServiceRequest
 						.getTransactionHistoryDTO().getTransactionType());
@@ -47,7 +52,7 @@ public class SearchTransactionHistoryPayloadAdapter {
 		 */
 		// fundsTransferHistory.setFromTransactionDate(fromTransactionDate);
 		// fundsTransferHistory.setToTransactionDate(toTransactionDate);
-
+		}
 		return fundsTransferHistory;
 	}
 

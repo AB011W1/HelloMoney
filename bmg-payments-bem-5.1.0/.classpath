@@ -19,7 +19,7 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/bmg-core-view"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/bmg-response-model-2.0"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/bmg-core-utils"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/bcag-connect"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/ussd-common"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/hsm-connect"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

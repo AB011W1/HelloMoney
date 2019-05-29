@@ -4,27 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.barclays.bmg.constants.BillPaymentConstants;
-import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.auth.bean.UserProfile;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
-import com.barclays.ussd.exception.USSDBlockingException;
 import com.barclays.ussd.exception.USSDNonBlockingException;
 import com.barclays.ussd.sysprefs.services.ListValueCacheDTO;
 import com.barclays.ussd.sysprefs.services.ListValueResByGroupServiceResponse;
 import com.barclays.ussd.sysprefs.services.ListValueResServiceImpl;
 import com.barclays.ussd.sysprefs.services.ListValueResServiceRequest;
 import com.barclays.ussd.utils.BmgBaseJsonParser;
-import com.barclays.ussd.utils.ScreenSequenceCustomizer;
 import com.barclays.ussd.utils.SystemPreferenceConstants;
 import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDExceptions;
-import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
 
@@ -60,11 +54,11 @@ public class MobileWalletTopUpSavBnfNickNameJsonParser implements BmgBaseJsonPar
 			menuItemDTO.setPageBody(pageBody.toString());
 	} catch (USSDNonBlockingException e) {
 		LOGGER.error("Exception : ", e);
-	    if (e instanceof USSDNonBlockingException) {
+	    //if (e instanceof USSDNonBlockingException) {
 		throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode());
-	    } else {
+	    /*} else {
 		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
-	    }
+	    }*/
 	}
 	USSDUtils.appendHomeAndBackOption(menuItemDTO, responseBuilderParamsDTO);
 	menuItemDTO.setPageHeader(responseBuilderParamsDTO.getHeaderId());

@@ -68,7 +68,6 @@ public class PayBillPayloadAdapter {
 	billPayment.setBillAmount(payBillServiceRequest.getBillAmount().doubleValue());
 
 	// remarks
-	String narrative = payBillServiceRequest.getTxnNote();
 	String billRefNo1 = beenBeneficiaryDTO.getBillRefNo1();
 	// if (narrative != null) {
 	// narrative = narrative.replaceAll(":BillerName", beenBeneficiaryDTO.getBillerName());
@@ -120,8 +119,13 @@ public class PayBillPayloadAdapter {
 	transactionAccount.setAccountNumber(beenBeneficiaryDTO.getDestinationAccountNumber());
 	transactionAccount.setAccountCurrencyCode(beenBeneficiaryDTO.getCurrency());
 	billPayment.getBillerDetails().setBeneficiaryAccountInfo(transactionAccount);
-
+	String actionCode=payBillServiceRequest.getBeneficiaryDTO().getActionCode();
 	billPayment.setPaymentChannelCode(beenBeneficiaryDTO.getPaymentChannelId());
+
+	/*if(beenBeneficiaryDTO.getBusinessId() !=null &&
+	beenBeneficiaryDTO.getBusinessId().equals("GHBRB")&&
+	actionCode!=null && actionCode.equals("FREEDIALAIRTEL"))
+		billPayment.setPaymentChannelCode("MNO");*/
 	billPayment.setDebitAmount(payBillServiceRequest.getBillAmount().doubleValue());
 
 	if (beenBeneficiaryDTO.isMobileProvider()) {
@@ -137,7 +141,7 @@ public class PayBillPayloadAdapter {
 	// WUC change - Botswana 20/06/2017
 	if(beenBeneficiaryDTO.getBusinessId() !=null && beenBeneficiaryDTO.getBusinessId().equals("BWBRB") && beenBeneficiaryDTO.getBillerId().equals("WUC-2")){
 		String billRefNo2 = beenBeneficiaryDTO.getBillRefNo2();
-		if (billRefNo2 != null || billRefNo2 != ""){
+		if (billRefNo2 != null){
 			billPayment.setSecondaryReferenceNumber(billRefNo2);
 		}
 	}
@@ -203,8 +207,8 @@ public class PayBillPayloadAdapter {
 	    billPayment.setTransactionSubCategoryCode(PAYMENT_SUB_CATEGORY_MW);
 	}
 
-	String actionCode=payBillServiceRequest.getBeneficiaryDTO().getActionCode();
-	if(actionCode!=null && actionCode.equals("FREEDIALAIRTEL")){
+	// Condition added for Zambia FreeDialAirtel
+	if(actionCode!=null && (actionCode.equals("FREEDIALAIRTEL") || actionCode.equals("FREEDIALAIRTELZM"))){
 		billPayment.setTransactionSubCategoryCode(PAYMENT_SUB_CATEGORY_MW);
 	}
 	// eBox Charges Changes End

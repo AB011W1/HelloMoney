@@ -1,0 +1,27 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Body>
+    <p303:ManageFundTransferStatusResponse xmlns:p303="http://barclays.com/bem/ManageFundTransferStatus">
+      <p303:ResponseHeader>
+        <ServiceContext>
+          <ServiceID>ManageFundTransferStatus</ServiceID>
+          <ConsumerUniqueRefNo>15160870532897</ConsumerUniqueRefNo>
+          <OriginalConsumerUniqueRefNo>15160871178010</OriginalConsumerUniqueRefNo>
+          <ServiceDateTime>2018-01-16T10:18:37.801Z</ServiceDateTime>
+          <ServiceVersionNo>6.0.0</ServiceVersionNo>
+          <OverrideRequestFlag>0</OverrideRequestFlag>
+        </ServiceContext>
+        <BankUserContext>
+          <StaffType>Regular</StaffType>
+          <StaffID>668046</StaffID>
+          <AuthorizerID>Z00019789</AuthorizerID>
+        </BankUserContext>
+        <ServiceResStatus>
+          <ServiceResCode>00000</ServiceResCode>
+          <ServiceResDesc>Success</ServiceResDesc>
+          <ServiceRespDateTime>2018-01-16T07:18:38.442Z</ServiceRespDateTime>
+          <ServiceUniqueRefNo xsi:nil="true"/>
+        </ServiceResStatus>
+      </p303:ResponseHeader>
+    </p303:ManageFundTransferStatusResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

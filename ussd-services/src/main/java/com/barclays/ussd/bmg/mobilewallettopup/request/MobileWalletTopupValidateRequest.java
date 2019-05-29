@@ -110,6 +110,8 @@ public class MobileWalletTopupValidateRequest implements BmgBaseRequestBuilder {
 		String userCreditSelection = userInputMap.get(USSDInputParamsEnum.MOBILE_WALLET_CREDIT_CARD_LIST.getParamName());
 		CustomerMobileRegAcct creditCard = creditCardList.get(Integer.parseInt(userCreditSelection) - 1);
 		requestParamMap.put(USSDInputParamsEnum.MOBILE_WALLET_FROM_ACCOUNT.getParamName(), creditCard.getActNo());
+        //Added card no details to fetch only selected card
+		requestParamMap.put("ccNumber", creditCard.getCrdNo());
 		requestParamMap.put("CrditCardFlag", USSDConstants.CREDIT_MOBILE_WALLET);
 		BillerCreditDTO billerCreditDTO = (BillerCreditDTO) txSessions.get("BillerCreditDTO");
 		requestParamMap.put("actionCode", billerCreditDTO.getActionCode());

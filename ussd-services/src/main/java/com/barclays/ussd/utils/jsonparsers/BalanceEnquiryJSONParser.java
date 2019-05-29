@@ -137,7 +137,8 @@ public class BalanceEnquiryJSONParser implements BmgBaseJsonParser {
 		menuItemDTO.setStatus(USSDConstants.STATUS_CONTINUE);
 	    }
 	}
-	setNextScreenSequenceNumber(menuItemDTO);
+	if(null != menuItemDTO)
+		setNextScreenSequenceNumber(menuItemDTO);
 	return menuItemDTO;
     }
 

@@ -6,11 +6,11 @@ import com.barclays.bmg.constants.AddProspectErrorCodeConstant;
 import com.barclays.bmg.constants.ErrorCodeConstant;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.dao.core.context.impl.DAOContext;
-import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperation;
+import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperationAcct;
 import com.barclays.bmg.service.request.AddProspectServiceRequest;
 import com.barclays.bmg.service.response.AddProspectServiceResponse;
 
-public class AddProspectResAdptOperation extends AbstractResAdptOperation {
+public class AddProspectResAdptOperation extends AbstractResAdptOperationAcct {
 
     public AddProspectServiceResponse adaptResponse(WorkContext workContext, Object obj) throws Exception {
 

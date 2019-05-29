@@ -5,11 +5,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.validation.BindException;
 
-import com.barclays.bmg.constants.ActivityConstant;
 import com.barclays.bmg.constants.ActivityIdConstantBean;
 import com.barclays.bmg.constants.BMGProcessConstants;
-import com.barclays.bmg.constants.BillPaymentConstants;
-import com.barclays.bmg.constants.FundTransferConstants;
 import com.barclays.bmg.context.Context;
 import com.barclays.bmg.context.RequestContext;
 import com.barclays.bmg.dto.BeneficiaryDTO;
@@ -64,8 +61,8 @@ public class AddOrgBenefeciaryExecutionController1 extends BMBAbstractCommandCon
 	boolean isEditFlow=false;
 	String payeeId="";
 	if(httpRequest.getParameter("isEditFlow")!=null){
-		isEditFlow=Boolean.parseBoolean(httpRequest.getParameter("isEditFlow").toString());
-		payeeId=httpRequest.getParameter("payeeId").toString();
+		isEditFlow=Boolean.parseBoolean(httpRequest.getParameter("isEditFlow"));
+		payeeId=httpRequest.getParameter("payeeId");
 	}
 	//CR82 Added for Edit
 	if(isEditFlow){
@@ -87,9 +84,8 @@ public class AddOrgBenefeciaryExecutionController1 extends BMBAbstractCommandCon
 		.deleteBeneficiary(deleteBeneficiaryOperationRequest);
 		if(deleteBeneficiaryOperationResponse!=null && deleteBeneficiaryOperationResponse.isSuccess()){
 		prepareAndSetBeneficiaryDTO(userInputDetailsFromSession, billerRegistrationOpRequest);
-		AddOrgBeneficiaryOperationResponse addOrgBeneficiaryOperationResponse = new AddOrgBeneficiaryOperationResponse();
 		try {
-		    addOrgBeneficiaryOperationResponse = addOrgBeneficiaryOperation.registerBillers(billerRegistrationOpRequest);
+			AddOrgBeneficiaryOperationResponse addOrgBeneficiaryOperationResponse = addOrgBeneficiaryOperation.registerBillers(billerRegistrationOpRequest);
 		    addOrgBeneficiaryOperationResponse.setBeneficiaryDTO(billerRegistrationOpRequest.getBeneficiaryDTO());
 
 		    /* Code starts for SMS */

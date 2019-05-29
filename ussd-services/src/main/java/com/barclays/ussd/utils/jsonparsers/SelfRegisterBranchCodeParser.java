@@ -46,9 +46,12 @@ public class SelfRegisterBranchCodeParser implements BmgBaseJsonParser,ScreenSeq
 	CurrentRunningTransaction currentTrans= null;//CR-86
 	boolean backflow= false;
 	try {
-	    Map<String, String> userInputMap = responseBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap();
+	    Map<String, String> userInputMap = new HashMap<String, String>();
+	    if(null != responseBuilderParamsDTO)
+	    	userInputMap = responseBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap();
 	    String branchCodeLetter = userInputMap.get(USSDInputParamsEnum.SELFREG_BRANCH_SEARCHER.getParamName());
-	    branchList = ussdBranchLookUpDAOImpl.getBranchCodeList(responseBuilderParamsDTO.getUssdSessionMgmt().getBusinessId(), branchCodeLetter);
+	    if(null != responseBuilderParamsDTO)
+	    	branchList = ussdBranchLookUpDAOImpl.getBranchCodeList(responseBuilderParamsDTO.getUssdSessionMgmt().getBusinessId(), branchCodeLetter);
 	    if (branchList != null && branchList.size() != 0) {
 		menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, branchList);
 
@@ -61,10 +64,10 @@ public class SelfRegisterBranchCodeParser implements BmgBaseJsonParser,ScreenSeq
 		txSessions.put(responseBuilderParamsDTO.getTranDataId(), branchList);
 		//txSessions.put(USSDInputParamsEnum.SELFREG_BRANCH.getTranId(), branchList);
 	    } else {
-	    	LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
 	    	//CR-86 back flow changes Forgot pin branchCode invalid
 	    	if(responseBuilderParamsDTO != null &&
 	    			responseBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails()!= null){
+	    		LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
 	    		currentTrans=responseBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getCurrentRunningTransaction();
 	    		if(currentTrans != null && currentTrans.getTranNodeId().equalsIgnoreCase("ussd3.00")){
 	    			backflow=true;

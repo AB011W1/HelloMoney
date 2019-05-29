@@ -7,7 +7,7 @@ import com.barclays.bem.problem.CaseEntity;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.service.response.ReportProblemServiceResponse;
 
-public class ReportProblemRespAdptOperation extends AbstractResAdptOperation{
+public class ReportProblemRespAdptOperation extends AbstractResAdptOperationAcct{
 
 	public ReportProblemServiceResponse adaptResponse(WorkContext workContext, Object obj){
 		ReportProblemServiceResponse response = new ReportProblemServiceResponse();

@@ -11,8 +11,8 @@ import com.barclays.bmg.service.response.offer.TermsAndCondServiceResponse;
 
 public class PromoOfferTermsAndCondDAOImpl extends BaseDAOImpl implements PromoOfferTermsAndCondDAO {
 
-	private final String OFFER_TYP = "offerType";
-	private final String LOAD_TC = "loadTermsAndCondition";
+	private String OFFER_TYP = "offerType";
+	private String LOAD_TC = "loadTermsAndCondition";
 
 	@Override
 	public TermsAndCondServiceResponse retrieveTermsAndCondition(

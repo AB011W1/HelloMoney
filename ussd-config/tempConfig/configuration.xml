@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<configuration>
+
+  <system />
+
+<!-- env specific configuration files -->
+  <xml fileName="WebserviceEndPoints.xml" config-at="BMGEndPoint"/>
+
+<!-- Common configuration files -->
+
+<!-- applicationResources -->
+  <properties fileName="applicationResources/application.properties"	/>
+  <properties fileName="applicationResources/dynamicCache.properties"	/>
+  <properties fileName="applicationResources/sequencer.properties"	/>
+  <!--<properties fileName="applicationResources/country_profile_TZBRB_TZ.properties"	/>
+
+--></configuration>

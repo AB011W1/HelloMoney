@@ -20,11 +20,9 @@ import com.barclays.ussd.utils.BmgBaseJsonParser;
 import com.barclays.ussd.utils.PaginationEnum;
 import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDExceptions;
-import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
 import com.barclays.ussd.utils.UssdResourceBundle;
-import com.barclays.ussd.utils.jsonparsers.bean.login.AuthUserData;
 import com.barclays.ussd.utils.jsonparsers.bean.mobilewallettopup.MobileWalletTxConfirm;
 
 public class MobileWalletTopupConfirmJsonParser implements BmgBaseJsonParser {
@@ -38,7 +36,6 @@ public class MobileWalletTopupConfirmJsonParser implements BmgBaseJsonParser {
 	MenuItemDTO menuDTO = null;
 	ObjectMapper mapper = new ObjectMapper();
 	USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
-	Map<String, Object> txSessions = ussdSessionMgmt.getTxSessions();
 	try {
 
 	    MobileWalletTxConfirm mobileWalletTxConfirm = mapper.readValue(jsonString, MobileWalletTxConfirm.class);
@@ -116,7 +113,6 @@ public class MobileWalletTopupConfirmJsonParser implements BmgBaseJsonParser {
 	MenuItemDTO menuItemDTO = new MenuItemDTO();
 	StringBuilder pageBody = new StringBuilder();
 	String txIdLabel = getLabel(responseBuilderParamsDTO, USSDConstants.TRAN_ID_LABEL_ID);
-	String amtLabel=getLabel(responseBuilderParamsDTO, USSDConstants.USSD_TRANSACTION_MWALLETE_AMOUNT);
 	String mblLabel=getLabel(responseBuilderParamsDTO, USSDConstants.USSD_TRANSACTION_MWALLETE_MOBILE);
 	String srvcLabel=getLabel(responseBuilderParamsDTO, USSDConstants.USSD_TRANSACTION_MWALLETE_SERVICE);
 	pageBody.append(displayMessage);

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<import resource="classpath:bmb-applyTD-dao-config.xml" />
+
+	<bean id="applyTDInitController"
+		class="com.barclays.bmg.mvc.controller.billpayment.ApplyTDInitController" parent="bmbAbstractCommandController">
+		<property name="retrieveAccountListOperation" ref="retrieveAccountListOperation" />
+		<property name="bmbJSONBuilder" ref="applyTDDetailsJSONBuilder" />
+		<property name="commandName" value="applyTDDetailsCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.accountdetails.AccountDetailsCommand" />
+	</bean>
+
+	<bean id="applyTDValidationController"
+		class="com.barclays.bmg.mvc.controller.billpayment.ApplyTDValidationController1" parent="bmbAbstractCommandController">
+		<property name="applyTDValidateOperation" ref="applyTDValidateOperation" />
+		<property name="bmbJSONBuilder" ref="applyTDValidationJSONBuilder" />
+		<property name="commandName" value="applyTDValidationCommand" />
+		<property name="validator" ref="applyTDCommandValidator" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.ApplyTDSourceAccountDetailsCommand" />
+	</bean>
+
+    <bean id="applyTDCommandValidator"
+		class="com.barclays.bmg.chequebook.mvc.validator.ApplyTDValidationCommandValidator" >
+	</bean>
+
+	<bean id="applyTDDetailsJSONBuilder"
+		class="com.barclays.bmg.json.model.builder.accountdetails.ApplyTDSourceAccountDetailsJSONBldr"
+		parent="bmbCommonJSONBuilder">
+	</bean>
+     <bean id="applyTDValidationJSONBuilder"
+		class="com.barclays.bmg.json.model.builder.fundtransfer.external.ApplyTDValidationControllerJSONBldr"
+		parent="bmbCommonJSONBuilder">
+	</bean>
+	<bean id="retrieveAccountListOperation"
+		class="com.barclays.bmg.operation.accountservices.RetrieveAccountListOperation" parent="bmbPaymentsOperation">
+	</bean>
+	 <bean id="applyTDValidateOperation"
+		class="com.barclays.bmg.dao.operation.ApplyTDValidateOperation" parent="bmbPaymentsOperation">
+	</bean>
+
+
+
+
+	<bean id="applyTDExecutionController"
+		class="com.barclays.bmg.mvc.controller.billpayment.ApplyTDExecutionController" parent="bmbAbstractCommandController">
+		<property name="applyTDAddProbmlemOperation" ref="applyTDAddProblemOperation" />
+		<property name="bmbJSONBuilder" ref="applyTDExecJSONBuilder" />
+		<property name="commandName" value="applyTDExecutionCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.ApplyTDAddProblemCommand" />
+	</bean>
+
+
+     <bean id="applyTDExecJSONBuilder"
+		class="com.barclays.bmg.json.model.builder.fundtransfer.external.ApplyTDExecControllerJSONBldr"
+		parent="bmbCommonJSONBuilder">
+	</bean>
+
+    <bean id="applyTDAddProblemOperation"
+		class="com.barclays.bmg.dao.operation.ApplyTDAddProbmlemOperation" parent="bmbPaymentsOperation">
+	</bean>
+ </beans>

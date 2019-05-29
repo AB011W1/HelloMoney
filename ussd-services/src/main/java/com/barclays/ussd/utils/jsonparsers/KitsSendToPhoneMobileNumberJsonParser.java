@@ -60,6 +60,7 @@ public class KitsSendToPhoneMobileNumberJsonParser implements BmgBaseJsonParser,
 	    	try {
 	    		validator.validate(userInput);
 	    	} catch (USSDNonBlockingException e) {
+	    		e.setKitsFlow(true);
 	    		throw e;
 	    	}
 	    }

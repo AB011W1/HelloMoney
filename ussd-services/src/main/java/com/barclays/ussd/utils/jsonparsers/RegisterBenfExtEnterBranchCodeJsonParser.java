@@ -3,9 +3,9 @@ package com.barclays.ussd.utils.jsonparsers;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.log4j.Logger;
+
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
@@ -37,7 +37,6 @@ public class RegisterBenfExtEnterBranchCodeJsonParser implements BmgBaseJsonPars
 	    else
 	    	branchList = (List<UssdBranchLookUpDTO>) ussdSessionMgmt.getTxSessions().get(
 	    			USSDInputParamsEnum.REG_BEN_EXT_BRANCH_CODE_LIST.getTranId());
-	    Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
 	    if (branchList !=null  &&  branchList.size() != 0) {
 		menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, branchList);
 		if(transNodeId.equals("ussd0.4.3.4.2"))

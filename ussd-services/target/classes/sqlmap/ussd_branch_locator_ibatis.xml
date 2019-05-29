@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="MCFE">
+
+	<typeAlias alias="ussdBranchLocatorDTO" type="com.barclays.ussd.dto.UssdBranchLocatorLookUpDTO" />
+
+	<resultMap id="ussdAreaInfo" class="ussdBranchLocatorDTO">
+		<result property="branchName" column="NAME" />
+	</resultMap>
+
+	<resultMap id="ussdCityInfo" class="ussdBranchLocatorDTO">
+		<result property="cityName" column="CITY" />
+	</resultMap>
+
+
+	<resultMap id="ussdChequeBranchInfo" class="ussdBranchLocatorDTO">
+		<result property="branchName" column="BRANCHNAME" />
+		<result property="branchCode" column="BRANCHCODE" />
+		<result property="cityName" column="CITY_NAME" />
+	</resultMap>
+
+	<select id="ussdRetrieveBranchCityList" resultMap="ussdCityInfo">
+		SELECT DISTINCT a.CITY
+		from C_Branch_MST a WHERE a.BUSINESS_ID= #businessId#
+		<dynamic prepend="">
+			<isNotNull prepend="AND" property="cityName">
+				UPPER(a.CITY) like UPPER(#cityName#)
+	        </isNotNull>
+		</dynamic>
+	</select>
+
+	<select id="ussdRetrieveBranchAreaList" resultMap="ussdAreaInfo">
+		SELECT DISTINCT a.NAME
+		from C_BRANCH_MST a WHERE a.BUSINESS_ID= #businessId#
+		<dynamic prepend="">
+			<isNotNull prepend="AND" property="branchName">
+				UPPER(a.NAME) like UPPER(#branchName#)
+	        </isNotNull>
+		</dynamic>
+		<dynamic prepend="">
+			<isNotNull prepend="AND" property="cityName">
+				UPPER(a.CITY) like UPPER(#cityName#)
+	        </isNotNull>
+		</dynamic>
+	</select>
+
+	<select id="ussdRetrieveAtmCityList" resultMap="ussdCityInfo">
+		SELECT DISTINCT a.CITY
+		from C_Atm_MST a WHERE a.BUSINESS_ID= #businessId#
+		<dynamic prepend="">
+			<isNotNull prepend="AND" property="cityName">
+				UPPER(a.CITY) like UPPER(#cityName#)
+	        </isNotNull>
+		</dynamic>
+	</select>
+
+	<select id="ussdRetrieveAtmAreaList" resultMap="ussdAreaInfo">
+		SELECT DISTINCT a.NAME
+		from C_Atm_MST a WHERE a.BUSINESS_ID= #businessId#
+		<dynamic prepend="">
+			<isNotNull prepend="AND" property="branchName">
+				UPPER(a.NAME) like UPPER(#branchName#)
+	        </isNotNull>
+		</dynamic>
+		<dynamic prepend="">
+			<isNotNull prepend="AND" property="cityName">
+				UPPER(a.CITY) like UPPER(#cityName#)
+	        </isNotNull>
+		</dynamic>
+	</select>
+
+<!--
+	<select id="ussdRetrieveChequeBookBranchList" resultMap="ussdChequeBranchInfo">
+			SELECT DISTINCT a.BRANCHNAME,a.BRANCHCODE,a.CITY_NAME from  C_BANKROUTING_MST a where a.BUSINESS_ID= #businessId#
+			and
+			a.BANKCODE='003'
+			<dynamic prepend="">
+				<isNotNull prepend="AND" property="branchName">
+					UPPER(a.BRANCHNAME) like UPPER(#branchName#)
+		        </isNotNull>
+			</dynamic>
+			ORDER BY BRANCHNAME
+	</select>
+ -->
+
+ <select id="ussdRetrieveChequeBookBranchList" resultMap="ussdChequeBranchInfo">
+			SELECT a.BRANCHNAME,a.BRANCHCODE,a.CITY_NAME from  C_BANKROUTING_MST a where a.BUSINESS_ID= #businessId# AND a.BRANCHCODE !='GP'
+			<dynamic prepend="">
+				<isNotNull prepend="AND" property="bankName">
+					UPPER(a.BANKNAME) like UPPER(#bankName#)
+		        </isNotNull>
+			</dynamic>
+			<dynamic prepend="">
+				<isNotNull prepend="AND" property="branchName">
+				( UPPER(a.BRANCHNAME) like UPPER(#branchName#)
+				OR
+				 a.BRANCHCODE like #branchName#
+	        	)
+	        	</isNotNull>
+		    </dynamic>
+			ORDER BY BRANCHNAME
+	</select>
+<!-- TZNBC -->
+<select id="ussdRetrieveChequeBookBranchListTZNBC" resultMap="ussdChequeBranchInfo">
+			SELECT a.BRANCHNAME,a.BRANCHCODE,a.CITY_NAME from  C_BANKROUTING_MST a where a.BUSINESS_ID= #businessId# AND a.BRANCHCODE !='GP'
+			<dynamic prepend="">
+				<isNotNull prepend="AND" property="bankName">
+					UPPER(a.BANKNAME) like UPPER(#bankName#)
+		        </isNotNull>
+			</dynamic>
+			<dynamic prepend="">
+				<isNotNull prepend="AND" property="branchName">
+				( UPPER(a.BRANCHNAME) like UPPER(#branchName#)
+				OR
+				 a.BRANCHCODE like #branchName#
+	        	)
+	        	</isNotNull>
+			</dynamic>
+			ORDER BY BRANCHNAME
+	</select>
+
+
+
+</sqlMap>

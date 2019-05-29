@@ -35,8 +35,7 @@ public class OBAFTConfirmRequestBuilder implements BmgBaseRequestBuilder {
 	//Set the fields for MakeDomesticFundTransferRequest - CPB 30/05/2017
 	String cpbflag = (String)txSessions.get("CpbMakeDomesticFundTransferFields");
 	if(cpbflag !=null && cpbflag.equals("CpbMakeDomesticFundTransferFields")){
-		TransactionAmt chargeAmount = new TransactionAmt();
-		chargeAmount = (TransactionAmt)txSessions.get("CpbChargeAmount");
+		 TransactionAmt chargeAmount = (TransactionAmt)txSessions.get("CpbChargeAmount");
 		String cpbChargeAmount = chargeAmount.getAmt();
 		requestParamMap.put("CpbChargeAmount", String.valueOf(cpbChargeAmount));
 		requestParamMap.put("CpbFeeGLAccount", (String)txSessions.get("CpbFeeGLAccount"));

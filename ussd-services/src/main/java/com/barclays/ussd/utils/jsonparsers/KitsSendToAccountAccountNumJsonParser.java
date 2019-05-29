@@ -3,9 +3,9 @@ package com.barclays.ussd.utils.jsonparsers;
 import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
-import com.barclays.ussd.bean.MsisdnDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
 import com.barclays.ussd.exception.USSDBlockingException;
 import com.barclays.ussd.exception.USSDNonBlockingException;
@@ -14,21 +14,15 @@ import com.barclays.ussd.utils.PaginationEnum;
 import com.barclays.ussd.utils.SystemPreferenceValidator;
 import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDExceptions;
-import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
-import com.barclays.ussd.utils.UssdMenuBuilder;
 import com.barclays.ussd.utils.UssdResourceBundle;
-import com.barclays.ussd.validation.USSDAccountNoLengthValidator;
 import com.barclays.ussd.validation.USSDCompositeValidator;
-import com.barclays.ussd.validation.USSDMobileLengthValidator;
 
 public class KitsSendToAccountAccountNumJsonParser implements BmgBaseJsonParser,SystemPreferenceValidator
 {
 
 	    private static final String KITS_ACCTN_NO_LEN = "KITS_ACCTN_NO_LEN";
-	    @Autowired
-	    UssdMenuBuilder ussdMenuBuilder;
 	    @Autowired
 	    private UssdResourceBundle ussdResourceBundle;
 
@@ -80,6 +74,7 @@ public class KitsSendToAccountAccountNumJsonParser implements BmgBaseJsonParser,
 	    	{
 	    		USSDNonBlockingException e= new USSDNonBlockingException();
 	    		e.setErrorCode(USSDExceptions.USSD_INVALID_ACCT_NO.getUssdErrorCode());
+	    		e.setKitsFlow(true);
 	    		throw e;
 	    	}
 

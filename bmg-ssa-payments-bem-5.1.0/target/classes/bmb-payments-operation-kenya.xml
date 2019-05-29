@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+	<!-- Override for kenya -->
+
+	<bean id="KEBRBretrieveFTPayeeListOperation"
+		class="com.barclays.bmg.operation.beneficiary.RetrievePayeeListOperation"
+		parent="bmbPaymentsOperation">
+		<property name="listValueResService" ref="listValueResService" />
+		<property name="PAYEE_TYPE_GROUP" value="FT_FACADE_DEST" />
+		<property name="payGroupTxnType" ref="KEBRBpayGroupTxnType" />
+	</bean>
+
+
+	<util:map id="KEBRBpayGroupTxnType" map-class="java.util.HashMap">
+		<entry key="INT2" value="DT" />
+		<entry key="BKD" value="PBC" />
+		<entry key="MC" value="PMC" />
+		<entry key="OWN" value="OWN" />
+		<entry key="CCP" value="CCP" />
+		<entry key="LOAN" value="LP" />
+		<entry key="INTERNAL" value="IT" />
+		<entry key="INTL" value="INTL" />
+		<entry key="LOAN" value="LP" />
+	</util:map>
+
+</beans>

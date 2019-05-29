@@ -51,7 +51,9 @@ public class RetrieveIndCustBySCVIDResAdptOperation {
 
 	ppMap.put("FirstName", retrieveIndCustBySCVIDServiceResponse.getFirstName());
 	ppMap.put("LastName", retrieveIndCustBySCVIDServiceResponse.getLastName());
-	CustomerIdentificationType cidTypeArr[]=retrieveIndividualCustomerBySCVIDResponse.getIndividualCustomerDetailsResponse().getCustomerIdentificationType();
+	CustomerIdentificationType cidTypeArr[]= null;
+	if(null != retrieveIndividualCustomerBySCVIDResponse)
+		cidTypeArr = retrieveIndividualCustomerBySCVIDResponse.getIndividualCustomerDetailsResponse().getCustomerIdentificationType();
 	CustomerIdentificationType customerIdentificationType = null;
 	if(cidTypeArr!=null){
 		for(int i=0;i<cidTypeArr.length;i++){

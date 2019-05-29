@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+	<bean id="auditRecord"
+		class="com.barclays.bmg.audit.BMBAuditRecord">
+		<property name="auditService" ref="auditService" />
+		<property name="messageResourceService" ref="messageResourceService" />
+		<!-- <property name="auditBuilder" ref="auditBuilder" /> -->
+	</bean>
+
+	<bean id="auditService"
+		class="com.barclays.bmg.audit.service.impl.JMSAuditService">
+		<property name="auditDAO" ref="auditDAO" />
+
+	</bean>
+
+	<bean id="auth"
+    class="com.barclays.bmg.audit.builder.impl.AuthenticationTransactionAuditBuilder">
+  </bean>
+
+	<bean id="auditAccountSummary"
+    class="com.barclays.bmg.audit.builder.impl.AccountSummaryTransactionAuditBuilder">
+  </bean>
+
+  <bean id="auditAcctList"
+    class="com.barclays.bmg.audit.builder.impl.RetrieveAcctListTransactionAuditBuilder">
+  </bean>
+
+  <bean id="auditCASADetail"
+    class="com.barclays.bmg.audit.builder.impl.CASADetailTransactionAuditBuilder">
+  </bean>
+
+   <bean id="auditCASAActivity"
+    class="com.barclays.bmg.audit.builder.impl.CASAActivityTransactionAuditBuilder">
+  </bean>
+
+  <bean id="auditTDDetail"
+    class="com.barclays.bmg.audit.builder.impl.TDDetailTransactionAuditBuilder">
+  </bean>
+
+  <bean id="auditPayeeList"
+    class="com.barclays.bmg.audit.builder.impl.RetrievePayeeListTransactionAuditBuilder">
+  </bean>
+
+  <bean id="auditPayeeInfo"
+    class="com.barclays.bmg.audit.builder.impl.RetrievePayeeInfoTransactionAuditBuilder">
+  </bean>
+
+  <bean id="auditPayeeBillerInfo"
+    class="com.barclays.bmg.audit.builder.impl.RetrievePayeeBillerInfoTransactionAuditBuilder">
+  </bean>
+
+
+  <bean id="auditOwnCreditCardInfo"
+    class="com.barclays.bmg.audit.builder.impl.OwnCreditCardInfoTransactionAuditBuilder">
+  </bean>
+
+  <bean id="auditBCDPayeeInfo"
+    class="com.barclays.bmg.audit.builder.impl.RetrieveBCDPayeeInfoTransactionAuditBuilder">
+  </bean>
+
+  <bean id="auditDomesticFundTransfer"
+    class="com.barclays.bmg.audit.builder.impl.DomesticFundTransferTransactionAuditBuilder">
+  </bean>
+
+  <bean id="auditInternationalFundTransfer"
+    class="com.barclays.bmg.audit.builder.impl.InternationalFundTransferTransactionAuditBuilder">
+  </bean>
+
+  <bean id="auditBillPayment"
+    class="com.barclays.bmg.audit.builder.impl.BillPaymentTransactionAuditBuilder">
+  </bean>
+
+  <bean id="auditPurchaseBankDraft"
+    class="com.barclays.bmg.audit.builder.impl.PurchaseBankDraftTransactionAuditBuilder">
+  </bean>
+
+   <bean id="auditChequeBookRequest"
+    class="com.barclays.bmg.audit.builder.impl.ChequeBookRequestTransactionAuditBuilder">
+  </bean>
+
+  <bean id="auditSystemAccess"
+    class="com.barclays.bmg.audit.builder.impl.SystemAccessAuditBuilder">
+  </bean>
+
+  <bean id="auditBillPaymentEnquiry" class="com.barclays.bmg.audit.builder.impl.BillPaymentEnquiryAuditBuilder">
+  </bean>
+
+	<bean id="auditDAO"
+		class="com.barclays.bmg.audit.dao.impl.JMSAuditDAO">
+		<property name="jmsSender" ref="auditJMSQueue" />
+
+	</bean>
+
+	<bean id="auditJMSQueue"
+    class="com.barclays.mcfe.audit.jms.QueueSender">
+  </bean>
+
+  <!--<bean id="auditJMSQueue"
+    class="com.barclays.bmg.audit.jms.BMBQueueSender">
+  </bean>
+
+
+	--><!--<bean id="bmbLogConfiguration" class="com.barclays.bmg.logging.config.BMBLogConfiguration">
+		<constructor-arg value="bmb-logging.properties"/>
+
+	</bean>
+
+	--><!--<bean id="propertyPlaceholderConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+ 		 <property name="locations">
+  	 	 <list>
+      		<value>classpath:bmb-logging.properties</value>
+   		 </list>
+  </property>
+</bean>
+
+
+-->
+  <bean id="addBeneficiary" class="com.barclays.bmg.audit.builder.impl.AddBeneficiaryExecuteAuditBuilder">
+  </bean>
+
+  <bean id="addOrgBeneficiary" class="com.barclays.bmg.audit.builder.impl.AddOrgBeneficiaryExecuteAuditBuilder">
+  </bean>
+
+  <bean id="statementRequestExecute" class="com.barclays.bmg.audit.builder.impl.StatementRequestExecuteAuditBuilder">
+  </bean>
+
+  <bean id="smsDetails" class="com.barclays.bmg.audit.builder.impl.SMSDetailsAuditBuilder">
+  </bean>
+
+  <bean id="changePassword" class="com.barclays.bmg.audit.builder.impl.ChangePasswordAuditBuilder">
+  </bean>
+
+  <bean id="auditInterestRate" class="com.barclays.bmg.audit.builder.impl.InterestRateAuditBuilder">
+  </bean>
+
+  <bean id="auditDeleteBeneficiary" class="com.barclays.bmg.audit.builder.impl.DeleteBeneficiaryAuditBuilder">
+  </bean>
+
+  <bean id="auditSearchTransactionHistory" class="com.barclays.bmg.audit.builder.impl.SearchTransactionHistoryAuditBuilder">
+  </bean>
+
+  <bean id="auditSelfRegistration" class="com.barclays.bmg.audit.builder.impl.SelfRegistrationExecutionAuditBuilder">
+  </bean>
+
+  <bean id="auditLogin" class="com.barclays.bmg.audit.builder.impl.UssdLgnVrfyUsrPnAuditBuilder">
+  </bean>
+
+  <bean id="updateLanguagePreference" class="com.barclays.bmg.audit.builder.impl.UpdateLanguagePreferenceAuditBuilder">
+  </bean>
+
+	<bean id="auditFxRate" class="com.barclays.bmg.audit.builder.impl.FxRateAuditBuilder"/>
+  	<bean id="auditUpdateBeneficiary" class="com.barclays.bmg.audit.builder.impl.UpdateBeneficiaryAuditBuilder"/>
+  	<bean id="auditCCDAtAGlance" class="com.barclays.bmg.audit.builder.impl.AtAGlanceAuditBuilder"/>
+  	<bean id="auditCCDUnbilledTrans" class="com.barclays.bmg.audit.builder.impl.CreditCardUnbilledTransAuditBuilder"/>
+  	<bean id="auditCCDStmtTrans" class="com.barclays.bmg.audit.builder.impl.CreditCardStmtTransAuditBuilder"/>
+  	<bean id="auditOwnBillPayment" class="com.barclays.bmg.audit.builder.impl.OwnBillPaymentTransactionAuditBuilder"/>
+  	<bean id="auditOtherBarclayBillPayment" class="com.barclays.bmg.audit.builder.impl.OtherBarclayBillPaymentTransAuditBuilder"/>
+  	<bean id="auditCashSend" class="com.barclays.bmg.audit.builder.impl.CashSendAuditBuilder"/>
+  	<bean id="auditBranchLocator" class="com.barclays.bmg.audit.builder.impl.BranchLocatorAuditBuilder"/>
+	<bean id="auditAtmLocator" class="com.barclays.bmg.audit.builder.impl.AtmLocatorAuditBuilder"/>
+	<!--CR#46-->
+	<bean id="auditCCDLink" class="com.barclays.bmg.audit.builder.impl.CreditCardLinkAuditBuilder"/>
+	<!--CR#83 Apply product-->
+	<bean id="auditApplyProd" class="com.barclays.bmg.audit.builder.impl.ApplyProductAuditBuilder"/>
+	</beans>

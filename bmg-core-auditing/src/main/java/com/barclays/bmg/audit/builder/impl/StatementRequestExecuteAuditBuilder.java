@@ -134,7 +134,7 @@ public class StatementRequestExecuteAuditBuilder extends AbstractTransactionAudi
 		screenData.addField(field9);
 
 	    } catch (Exception ex) {
-
+	    	ex.printStackTrace();
 	    }
 
 	}
@@ -145,7 +145,7 @@ public class StatementRequestExecuteAuditBuilder extends AbstractTransactionAudi
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see com.barclays.bmg.audit.builder.BMGTransactionAuditBuilder#buildFromResponse(java.lang.Object[], java.lang.Object)
      */
     @Override
@@ -228,7 +228,7 @@ public class StatementRequestExecuteAuditBuilder extends AbstractTransactionAudi
 		screenData.addField(field10);
 
 	    } catch (Exception ex) {
-
+	    	ex.printStackTrace();
 	    }
 	}
 

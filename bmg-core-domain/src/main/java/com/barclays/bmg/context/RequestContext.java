@@ -1,7 +1,7 @@
 package com.barclays.bmg.context;
 
 public class RequestContext {
-    private Context context;
+    protected Context context;
 
     public Context getContext() {
 	return context;

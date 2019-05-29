@@ -1,0 +1,80 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <p67:RetrieveIndividualCustomerBeneficiaryListResponse xmlns:p67="http://barclays.com/bem/RetrieveIndividualCustBeneficiaryList">
+      <p67:ResponseHeader>
+        <ServiceContext>
+          <ServiceID>RetrieveIndividualCustBeneficiaryList</ServiceID>
+          <ConsumerUniqueRefNo>13934079774287-1</ConsumerUniqueRefNo>
+          <OriginalConsumerUniqueRefNo>13934079774287-1</OriginalConsumerUniqueRefNo>
+          <ServiceDateTime>2014-02-26T11:46:18.138Z</ServiceDateTime>
+          <ServiceVersionNo>6.0.0</ServiceVersionNo>
+          <OverrideRequestFlag>0</OverrideRequestFlag>
+        </ServiceContext>
+        <BankUserContext>
+          <StaffType>Regular</StaffType>
+          <StaffID>IFE</StaffID>
+          <AuthorizerID>Z00019789</AuthorizerID>
+        </BankUserContext>
+        <ServiceResStatus>
+          <ServiceResCode>00000</ServiceResCode>
+          <ServiceResDesc>Success</ServiceResDesc>
+          <ServiceRespDateTime>2014-02-26T09:46:18.470Z</ServiceRespDateTime>
+          <ServiceUniqueRefNo xsi:nil="true"/>
+        </ServiceResStatus>
+      </p67:ResponseHeader>
+      <p67:BeneficiaryList>
+        <p67:CustomerNumber>100000941113</p67:CustomerNumber>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_505603808</p355:BeneficiaryID>
+          <p355:BeneficiaryName>MultiChoice - DSTV</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>DSTV New Payee</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>BP</p355:BeneficiaryTypeCode>
+          <p355:ConsumerPrimaryReferenceNumber>35195017</p355:ConsumerPrimaryReferenceNumber>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2014-02-12T12:19:24.856Z</p74:CreateDateTime>
+            <p74:LastMaintainedDateTime>2014-02-12T12:32:36.984Z</p74:LastMaintainedDateTime>
+            <p74:AuthorizedDateTime>2014-02-12T12:32:36.984Z</p74:AuthorizedDateTime>
+          </p355:UserAuditDetails>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_507627675</p355:BeneficiaryID>
+          <p355:BeneficiaryName>MultiChoice - GOTV</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>GOTV New</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>BP</p355:BeneficiaryTypeCode>
+          <p355:ConsumerPrimaryReferenceNumber>48785478</p355:ConsumerPrimaryReferenceNumber>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>E20012870</p74:Createdby>
+            <p74:CreateDateTime>2014-02-18T12:15:24.521Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>G04656669</p74:LastMaintainedByUserID>
+            <p74:LastMaintainedDateTime>2014-02-18T13:25:51.241Z</p74:LastMaintainedDateTime>
+            <p74:AuthorizedBy>G04656669</p74:AuthorizedBy>
+            <p74:AuthorizedDateTime>2014-02-18T13:25:51.241Z</p74:AuthorizedDateTime>
+          </p355:UserAuditDetails>
+        </p67:Beneficiary>
+        <p67:Beneficiary xmlns:p355="http://barclays.com/bem/Beneficiary">
+          <p355:BeneficiaryID>BENE_505776146</p355:BeneficiaryID>
+          <p355:BeneficiaryName>MultiChoice - GOTV</p355:BeneficiaryName>
+          <p355:BeneficiaryNickName>GOTV New Payee</p355:BeneficiaryNickName>
+          <p355:BeneficiaryTypeCode>BP</p355:BeneficiaryTypeCode>
+          <p355:ConsumerPrimaryReferenceNumber>44568796</p355:ConsumerPrimaryReferenceNumber>
+          <p355:BeneficiaryLifecycleStatusCode>ACTIVE</p355:BeneficiaryLifecycleStatusCode>
+          <p355:UserAuditDetails xmlns:p74="http://barclays.com/bem/UserAuditDetails">
+            <p74:Createdby>IFE</p74:Createdby>
+            <p74:CreateDateTime>2014-02-12T12:21:31.310Z</p74:CreateDateTime>
+            <p74:LastMaintainedByUserID>G04656669</p74:LastMaintainedByUserID>
+            <p74:LastMaintainedDateTime>2014-02-19T07:10:22.393Z</p74:LastMaintainedDateTime>
+            <p74:AuthorizedBy>G04656669</p74:AuthorizedBy>
+            <p74:AuthorizedDateTime>2014-02-19T07:10:22.393Z</p74:AuthorizedDateTime>
+          </p355:UserAuditDetails>
+        </p67:Beneficiary>
+        <p67:PageInfo xmlns:p110="http://barclays.com/bem/PageInformationResponse">
+          <p110:TotalNumberOfRecords>3</p110:TotalNumberOfRecords>
+        </p67:PageInfo>
+      </p67:BeneficiaryList>
+    </p67:RetrieveIndividualCustomerBeneficiaryListResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

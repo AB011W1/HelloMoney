@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+	<!-- RetrieveNonPersonalCustAcctList Configuration Starts -->
+
+	<bean id="groupWalletAccountInitController"
+		class="com.barclays.bmg.groupwallet.mvc.controller.GroupWalletAccountInitController"
+		parent="bmbAbstractCommandController">
+		<property name="retrieveGroupWalletAccountListOperation" ref="retrieveGroupWalletAccountListOperation" />
+		<property name="groupWalletOneTimeJsonBldr" ref="groupWalletOneTimeJsonBldr" />
+		<property name="activityId" value="PMT_MW_GW" />
+	</bean>
+
+	<bean id="retrieveGroupWalletAccountListOperation"
+		class="com.barclays.bmg.operation.accountservices.RetrieveGroupWalletAccountListOperation" parent="bmbCommonOperation">
+		<property name="allGroupWalletAccountService" ref="allGroupWalletAccountService" />
+	</bean>
+
+	<bean id="allGroupWalletAccountService" class="com.barclays.bmg.service.accounts.impl.AllGroupWalletAccountServiceImpl">
+		<property name="allGroupWalletAccountDAO" ref="allGroupWalletAccountDAO"/>
+		<property name="listValueResDAO" ref="listValueResDAO"/>
+	</bean>
+
+	<bean id="allGroupWalletAccountDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.accounts.AllGroupWalletAccountDAO" />
+		<property name="daoFrontController" ref="gwDaoFrontControllerImpl" />
+	</bean>
+
+	<bean id="gwDaoFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="RETRIEVEALLGROUPWALLETACCOUNT" value-ref="groupWalletAccountSummaryDAOController" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="groupWalletAccountSummaryDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.GroupWalletAccountSummaryDAOController">
+		<property name="groupWalletAccountSummaryReqAdptOperation" ref="groupWalletAccountSummaryReqAdptOperation" />
+		<property name="groupWalletAccountSummaryTransmissionOperation" ref="groupWalletAccountSummaryTransmissionOperation" />
+		<property name="groupWalletAccountSummaryRespAdptOperation" ref="groupWalletAccountSummaryRespAdptOperation" />
+	</bean>
+
+	<bean id="groupWalletAccountSummaryReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.GroupWalletAccountSummaryReqAdptOperation">
+		<property name="groupWalletAccountSummaryHeaderAdapter" ref="groupWalletAccountSummaryHeaderAdapter" />
+		<property name="groupWalletAccountSummaryPayloadAdapter" ref="groupWalletAccountSummaryPayloadAdapter" />
+	</bean>
+
+	<bean id="groupWalletAccountSummaryHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.GroupWalletAccountSummaryHeaderAdapter">
+	</bean>
+
+	<bean id="groupWalletAccountSummaryPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.GroupWalletAccountSummaryPayloadAdapter">
+	</bean>
+
+	<bean id="groupWalletAccountSummaryTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="groupWalletAccountSummaryTransmissionService" />
+	</bean>
+
+	<bean id="groupWalletAccountSummaryRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.GroupWalletAccountSummaryRespAdptOperation">
+	</bean>
+
+
+	<bean id="groupWalletAccountSummaryTransmissionService" class="com.barclays.bmg.dao.service.impl.GWWSTransmissionService">
+		<property name="remoteService" ref="groupWalletAccountMgmtWebServiceImpl" />
+	</bean>
+
+	<bean id="groupWalletAccountMgmtWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.NonPersonalAccountManagement.NonPersonalAccountManagement_PortType" />
+		<property name="portName" value="NonPersonalAccountManagementSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.NonPersonalAccountManagement.NonPersonalAccountManagement_Service" />
+		<property name="endpointAddress"
+			value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="NonPersonalAccountManagement_EndPoint" />
+		<!--<property name="endpointAddressName" value="RetrieveIndividualCustAcctList_EndPoint" />
+		--><property name="cacheKey" value="nonPersonalAccountService" />
+	</bean>
+
+	<bean id="groupWalletOneTimeJsonBldr"
+		class="com.barclays.bmg.json.model.builder.pesalink.GroupWalletOneTimeJsonBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<!-- RetrieveNonPersonalCustAcctList Configuration Ends -->
+
+	<!-- ManageFundtransferStatus service Configuration starts -->
+		<bean id="manageFundTransferStatusController"
+		class="com.barclays.bmg.groupwallet.mvc.controller.ManageFundTransferStatusController"
+		parent="bmbAbstractCommandController">
+		<property name="manageFundtransferStatusOperation" ref="manageFundtransferStatusOperation" />
+		<property name="manageFundtransferStatusJsonBldr" ref="manageFundtransferStatusJsonBldr" />
+		<property name="makeBillPaymentOperation" ref="KEBRBmakeBillPaymentOperation" />
+		<property name="domesticFundTransferExecuteOperation" ref="domesticFundTransferExecuteOperation" />
+		<property name="domesticbmbJSONBuilder" ref="domesticFundTransferJSONBldr" />
+		<property name="bmbJSONBuilder" ref="paymentExecutionJSONBldr" />
+		<property name="commandName" value="manageFundtransferStatusCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.pesalink.ManageFundtransferStatusCommand" />
+		<property name="validator" ref="manageFundtransferStatusCommandValidator" />
+		<property name="activityId" value="PMT_MW_GW" />
+	</bean>
+
+  <bean id="manageFundtransferStatusCommandValidator"
+		class="com.barclays.bmg.mvc.validator.pesalink.ManageFundtransferStatusCommandValidator">
+	</bean>
+
+	<bean id="manageFundtransferStatusOperation"
+		class="com.barclays.bmg.operation.payments.ManageFundtransferStatusOperation" parent="bmbPaymentsOperation">
+		<property name="manageFundtransferStatusService" ref="manageFundtransferStatusService" />
+		<property name="retrieveIndCustBySCVIDService" ref="retrieveIndCustBySCVIDService" />
+		<property name="sendMultipleNotificationsService" ref="sendMultipleNotificationsService" />
+	</bean>
+
+	<bean id="manageFundtransferStatusService"
+		class="com.barclays.bmg.service.impl.ManageFundtransferStatusServiceImpl">
+		<property name="manageFundtransferStatusDAO" ref="manageFundtransferStatusDAO" />
+	</bean>
+	<bean id="manageFundtransferStatusDAO"
+		class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.ManageFundtransferStatusDAO" />
+		<property name="daoFrontController" ref="manageFundtransferStatusDaoFrontControllerImpl" />
+	</bean>
+
+	<bean id="manageFundtransferStatusDaoFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="MANAGEFUNDTRANSFERSTATUS" value-ref="manageFundtransferStatusDAOController" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="manageFundtransferStatusDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.ssa.ManageFundtransferStatusDAOController">
+		<property name="manageFundtransferStatusReqAdptOperation" ref="manageFundtransferStatusReqAdptOperation" />
+		<property name="transmissionOperation" ref="manageFundtransferStatusTransmissionOperation" />
+		<property name="manageFundtransferStatusRespAdptOperation" ref="manageFundtransferStatusRespAdptOperation" />
+	</bean>
+
+	<bean id="manageFundtransferStatusReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.ssa.ManageFundtransferStatusReqAdptOperation">
+		<property name="manageFundtransferStatusHeaderAdapter" ref="manageFundtransferStatusHeaderAdapter" />
+		<property name="manageFundtransferStatusPayloadAdapter" ref="manageFundtransferStatusPayloadAdapter" />
+	</bean>
+
+	<bean id="manageFundtransferStatusTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="manageFundtransferStatusTransmissionService" />
+	</bean>
+
+	<bean id="manageFundtransferStatusTransmissionService"
+		class="com.barclays.bmg.dao.service.impl.ssa.ManageFundtransferStatusTransmissionService">
+		<property name="remoteService" ref="manageFundtransferStatusWebServiceImpl" />
+	</bean>
+	<bean id="manageFundtransferStatusHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.ssa.ManageFundtransferStatusHeaderAdapter">
+	</bean>
+	<bean id="manageFundtransferStatusPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.ssa.ManageFundtransferStatusPayloadAdapter">
+	</bean>
+
+	<bean id="manageFundtransferStatusRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.ssa.ManageFundtransferStatusRespAdptOperation">
+	</bean>
+
+<bean id="manageFundtransferStatusJsonBldr"
+		class="com.barclays.bmg.json.model.builder.pesalink.ManageFundtransferStatusJsonBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<bean id="manageFundtransferStatusWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.FinancialTransactionProcessing.FinancialTransactionProcessing_PortType" />
+		<property name="portName" value="FinancialTransactionProcessingSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.FinancialTransactionProcessing.FinancialTransactionProcessing_Service" />
+		<property name="endpointAddress"
+			value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="ManageFundtransferStatus_EndPoint" />
+		<property name="cacheKey" value="manageFundtransferStatusService" />
+	</bean>
+
+	<!-- ManageFundtransferStatus service Configuration Ends -->
+
+	<!-- RetrieveCASAAccountTransactionActivity Service configuration Starts RetrevCASAAcctTranActivity retrevCASAAcctTranActivity-->
+
+	<bean id="retrieveCASAAccountTransactionActivityController"
+		class="com.barclays.bmg.groupwallet.mvc.controller.RetrevCASAAcctTranActivityController"
+		parent="bmbAbstractCommandController">
+		<property name="retrevCASAAcctTranActivityListOperation" ref="retrevCASAAcctTranActivityListOperation" />
+		<property name="retrevCASAAcctTranActivityJsonBldr" ref="retrevCASAAcctTranActivityJsonBldr" />
+		<property name="commandName" value="retrieveCASAAccountTransactionActivityCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.pesalink.RetrieveCASAAcctTranActivityCommand" />
+		<property name="validator" ref="retrieveCASAAcctTranActivityCmdValidator" />
+		<property name="activityId" value="PMT_MW_RETRV_GW" />
+	</bean>
+ <bean id="retrieveCASAAcctTranActivityCmdValidator"
+		class="com.barclays.bmg.mvc.validator.pesalink.RetrieveCASAAcctTranActivityCmdValidator">
+	</bean>
+
+	<bean id="retrevCASAAcctTranActivityListOperation"
+		class="com.barclays.bmg.operation.accountservices.RetrevCASAAcctTranActivityListOperation" parent="bmbCommonOperation">
+		<property name="retrevCASAAcctTranActivityService" ref="retrevCASAAcctTranActivityService" />
+	</bean>
+
+	<bean id="retrevCASAAcctTranActivityService" class="com.barclays.bmg.service.impl.RetrevCASAAcctTranActivityServiceImpl">
+		<property name="retrevCASAAcctTranActivityDAO" ref="retrevCASAAcctTranActivityDAO"/>
+	</bean>
+
+	<bean id="retrevCASAAcctTranActivityDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.RetrevCASAAcctTranActivityDAO" />
+		<property name="daoFrontController" ref="retrevCASAAcctTranActivityFrontControllerImpl" />
+	</bean>
+
+	<bean id="retrevCASAAcctTranActivityFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="RETREVCASAACCTTRANACTIVITY" value-ref="retrevCASAAcctTranActivityDAOController" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="retrevCASAAcctTranActivityDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.RetrevCASAAcctTranActivityDAOController">
+		<property name="retrevCASAAcctTranActivityReqAdptOperation" ref="retrevCASAAcctTranActivityReqAdptOperation" />
+		<property name="retrevCASAAcctTranActivityTransmissionOperation" ref="retrevCASAAcctTranActivityTransmissionOperation" />
+		<property name="retrevCASAAcctTranActivityRespAdptOperation" ref="retrevCASAAcctTranActivityRespAdptOperation" />
+	</bean>
+
+	<bean id="retrevCASAAcctTranActivityReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.RetrevCASAAcctTranActivityReqAdptOperation">
+		<property name="retrevCASAAcctTranActivityHeaderAdapter" ref="retrevCASAAcctTranActivityHeaderAdapter" />
+		<property name="retrevCASAAcctTranActivityPayloadAdapter" ref="retrevCASAAcctTranActivityPayloadAdapter" />
+	</bean>
+
+	<bean id="retrevCASAAcctTranActivityHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.RetrevCASAAcctTranActivityHeaderAdapter">
+	</bean>
+
+	<bean id="retrevCASAAcctTranActivityPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.RetrevCASAAcctTranActivityPayloadAdapter">
+	</bean>
+
+	<bean id="retrevCASAAcctTranActivityTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="retrevCASAAcctTranActivityTransmissionService" />
+	</bean>
+
+	<bean id="retrevCASAAcctTranActivityRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.RetrevCASAAcctTranActivityRespAdptOperation">
+	</bean>
+
+
+	<bean id="retrevCASAAcctTranActivityTransmissionService" class="com.barclays.bmg.dao.service.impl.RetrevCASAAcctTranActivityTransmissionService">
+		<property name="remoteService" ref="retrevCASAAcctTranActivityWebServiceImpl" />
+	</bean>
+
+	<bean id="retrevCASAAcctTranActivityWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.AccountReporting.AccountReporting_PortType" />
+		<property name="portName" value="AccountReportingSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.AccountReporting.AccountReporting_Service" />
+		<property name="endpointAddress"
+			value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="TransactionActivityRetrival_EndPoint" />
+		<!--<property name="endpointAddressName" value="RetrieveIndividualCustAcctList_EndPoint" />
+		--><property name="cacheKey" value="RetrieveCASAAccountTransactionActivity" />
+	</bean>
+
+	<bean id="retrevCASAAcctTranActivityJsonBldr"
+		class="com.barclays.bmg.json.model.builder.pesalink.RetrevCASAAcctTranActivityJsonBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<!-- RetrieveCASAAccountTransactionActivity Service configuration Ends -->
+
+	<!-- SendMultipleNotifications Start -->
+
+	<bean id="sendMultipleNotificationsService" class="com.barclays.bmg.service.impl.SendMultipleNotificationsServiceImpl">
+		<property name="sendMultipleNotificationsDAO" ref="sendMultipleNotificationsDAO"/>
+	</bean>
+
+	<bean id="sendMultipleNotificationsDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.SendMultipleNotificationsDAO" />
+		<property name="daoFrontController" ref="sendMultipleNotificationsFrontControllerImpl" />
+	</bean>
+
+	<bean id="sendMultipleNotificationsFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="SENDMULTIPLENOTIFICATIONS" value-ref="sendMultipleNotificationsDAOController" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="sendMultipleNotificationsDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.SendMultipleNotificationsDAOController">
+		<property name="sendMultipleNotificationsReqAdptOperation" ref="sendMultipleNotificationsReqAdptOperation" />
+		<property name="sendMultipleNotificationsTransmissionOperation" ref="sendMultipleNotificationsTransmissionOperation" />
+		<property name="sendMultipleNotificationsRespAdptOperation" ref="sendMultipleNotificationsRespAdptOperation" />
+	</bean>
+
+	<bean id="sendMultipleNotificationsReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.SendMultipleNotificationsReqAdptOperation">
+		<property name="sendMultipleNotificationsHeaderAdapter" ref="sendMultipleNotificationsHeaderAdapter" />
+		<property name="sendMultipleNotificationsPayloadAdapter" ref="sendMultipleNotificationsPayloadAdapter" />
+	</bean>
+
+	<bean id="sendMultipleNotificationsHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.SendMultipleNotificationsHeaderAdapter">
+	</bean>
+
+	<bean id="sendMultipleNotificationsPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.SendMultipleNotificationsPayloadAdapter">
+	</bean>
+
+	<bean id="sendMultipleNotificationsTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="sendMultipleNotificationsTransmissionService" />
+	</bean>
+
+	<bean id="sendMultipleNotificationsRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.SendMultipleNotificationsRespAdptOperation">
+	</bean>
+
+
+	<bean id="sendMultipleNotificationsTransmissionService" class="com.barclays.bmg.dao.service.impl.SendMultipleNotificationsTransmissionService">
+		<property name="remoteService" ref="sendMultipleNotificationsWebServiceImpl" />
+	</bean>
+
+	<bean id="sendMultipleNotificationsWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="uk.co.barclays.www.rbb.tcvm.NotificationService.NotificationService_PortType" />
+		<property name="portName" value="NotificationServiceSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="uk.co.barclays.www.rbb.tcvm.NotificationService.NotificationService_Service" />
+		<property name="endpointAddress"
+			value="http://gbrdsr000000307.intranet.barcapint.com:8800/BXX5_SSA_sendNotificationOneWay" />
+		<property name="endpointAddressName" value="NotificationService_EndPoint" />
+		<property name="cacheKey" value="multipleNotificationService" />
+	</bean>
+
+	<!-- SendMultipleNotifications End -->
+</beans>

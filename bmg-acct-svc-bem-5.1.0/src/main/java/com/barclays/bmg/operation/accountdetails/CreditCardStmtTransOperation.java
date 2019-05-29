@@ -5,7 +5,6 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 import com.barclays.bmg.audit.annotation.AuditSupport;
 import com.barclays.bmg.constants.ActivityConstant;
@@ -30,7 +29,7 @@ import com.barclays.bmg.service.product.response.ListValueResByGroupServiceRespo
 
 /**
  * @author BMB team
- * 
+ *
  */
 
 public class CreditCardStmtTransOperation extends AbstractCreditCardOperation {
@@ -49,10 +48,10 @@ public class CreditCardStmtTransOperation extends AbstractCreditCardOperation {
 
     /**
      * 1. Retrieves creditcard statemented dates. 2. Retrieves creditcard account details. 3. Retrieves creditcard statementd transactions.
-     * 
+     *
      * @param request
      * @return
-     * 
+     *
      */
     @AuditSupport(auditType = AuditConstant.AUDIT_TYPE_TRANSACTION, activityState = AuditConstant.SRC_COM_SSC, serviceDescription = "SD_RETRIEVE_CCD_STATEMENT_TRANS", stepId = "1", activityType = "auditCCDStmtTrans")
     public CreditCardStmtTransOperationResponse retrieveCreditCardStmtTrans(CreditCardStmtTransOperationRequest request) {
@@ -61,7 +60,6 @@ public class CreditCardStmtTransOperation extends AbstractCreditCardOperation {
 	Context context = request.getContext();
 
 	loadParameters(context, ActivityConstant.COMMON_ID, ActivityConstant.SEC_COMMON_ID, context.getActivityId());
-	Map<String, Object> contextMap = context.getContextMap();
 	List<Calendar> ccStmtDates = null;
 	String respCode = "";
 	CreditCardAccountDTO creditCardAccountDTO = null;
@@ -69,7 +67,6 @@ public class CreditCardStmtTransOperation extends AbstractCreditCardOperation {
 	boolean respSuccessFlg = false;
 
 	String orgCode = "";
-	List<CreditCardStmtBalanceInfoDTO> stmtObjList = null;
 
 	String reqAccNo = request.getAccountNo();
 
@@ -115,8 +112,7 @@ public class CreditCardStmtTransOperation extends AbstractCreditCardOperation {
 			.retrieveCreditCardStatementDates(ccStmtDatesServiceReq);
 
 		if (ccStmtDatesServiceResp != null) {
-		    stmtObjList = new ArrayList<CreditCardStmtBalanceInfoDTO>();
-		    stmtObjList = ccStmtDatesServiceResp.getStatementObj();
+			List<CreditCardStmtBalanceInfoDTO> stmtObjList = ccStmtDatesServiceResp.getStatementObj();
 		    if (stmtObjList != null) {
 			ccStmtDates = getStmtDateList(stmtObjList);
 			respSuccessFlg = ccStmtDatesServiceResp.isSuccess();
@@ -211,11 +207,14 @@ public class CreditCardStmtTransOperation extends AbstractCreditCardOperation {
 	if (listResp != null) {
 	    listValuesDTOList = listResp.getListValueCahceDTO();
 	}
-	for (ListValueCacheDTO valueresDTO : listValuesDTOList) {
-	    if (valueresDTO.getKey() != null && SystemParameterConstant.CC_STATEMENT_LIST.equals(valueresDTO.getKey())) {
-		maxDisplayRecord = Integer.parseInt((valueresDTO.getLabel().trim()));
-	    }
+	if(null != listValuesDTOList){
+		for (ListValueCacheDTO valueresDTO : listValuesDTOList) {
+		    if (valueresDTO.getKey() != null && SystemParameterConstant.CC_STATEMENT_LIST.equals(valueresDTO.getKey())) {
+			maxDisplayRecord = Integer.parseInt((valueresDTO.getLabel().trim()));
+		    }
+		}
 	}
+
 	return maxDisplayRecord;
 
     }

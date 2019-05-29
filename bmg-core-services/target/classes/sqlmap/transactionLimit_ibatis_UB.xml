@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="TransactionLimit">
+  <!-- Alias for the classes -->
+  <typeAlias alias="TransactionLimit" type="com.barclays.bmg.dto.TransactionLimitDTO" /><!--
+  <typeAlias alias="InquiryFinanacialTransactionLimitDTO" type="com.barclays.mcfe.ssc.retail.core.dto.InquiryFinanacialTransactionLimitDTO" />
+-->
+    <typeAlias alias="cacheController" type="com.barclays.bmg.cache.IbatisCacheController"/>
+    <cacheModel id="limitCacheModel" type="cacheController"
+        readOnly="true" serialize="true">
+        <property name="configFile" value="/ehcache.xml" />
+        <property name="CacheSize" value="10000" />
+    </cacheModel><!--
+
+    result map for UserDTO
+  --><resultMap id="TransactionGlobalLimit" class="TransactionLimit">
+    <result property="systemId" column="SYSTEM_ID" />
+    <result property="businessId" column="BUSINESS_ID" />
+    <result property="transactionLimitType" column="TXN_LIMIT_TYP" />
+    <result property="transactionLimit" column="TXN_LIMIT_AMT" />
+    <result property="dailyLimit" column="DAILY_LIMIT_AMT" />
+    <result property="thresholdLimit" column="THRESHOLD_LIMIT_AMT" />
+  </resultMap>
+
+  <resultMap id="TransactionIndividualLimit" class="TransactionLimit">
+    <result property="customerId" column="CUST_ID" />
+    <result property="systemId" column="SYSTEM_ID" />
+    <result property="businessId" column="BUSINESS_ID" />
+    <result property="transactionLimitType" column="TXN_LIMIT_TYP" />
+    <result property="transactionLimit" column="TXN_LIMIT_AMT" />
+    <result property="dailyLimit" column="DAILY_LIMIT_AMT" />
+    <result property="thresholdLimit" column="THRESHOLD_LIMIT_AMT" />
+  </resultMap>
+
+
+  <select id="findGlobalTxnLimit" resultMap="TransactionGlobalLimit" cacheModel="limitCacheModel">
+    SELECT TXN_LIMIT_TYP, TXN_LIMIT_AMT,DAILY_LIMIT_AMT, THRESHOLD_LIMIT_AMT, SYSTEM_ID, BUSINESS_ID
+      FROM S_LIMIT_GLOBAL_MST
+      WHERE  BUSINESS_ID=#businessId# AND SYSTEM_ID=#systemId# and EXISTS (
+      select 1 from S_FUNCTION_CONFIG where BUSINESS_ID=#businessId# AND SYSTEM_ID=#systemId# and ACTIVITY_ID = #activityId# and TXN_LIMIT_TYP=S_LIMIT_GLOBAL_MST.TXN_LIMIT_TYP
+      )
+
+  </select>
+
+  <select id="findIndividualTxnLimit" resultMap="TransactionIndividualLimit">
+    SELECT TXN_LIMIT_TYP, TXN_LIMIT_AMT,DAILY_LIMIT_AMT, THRESHOLD_LIMIT_AMT, SYSTEM_ID, BUSINESS_ID,CUST_ID
+    FROM S_LIMIT_CUST_MST
+    WHERE  BUSINESS_ID=#businessId# AND SYSTEM_ID=#systemId# and CUST_ID=#customerId# and  EXISTS (
+        select 1 from S_FUNCTION_CONFIG where BUSINESS_ID=#businessId# AND SYSTEM_ID=#systemId#
+      and activity_id = #activityId# and TXN_LIMIT_TYP=S_LIMIT_CUST_MST.TXN_LIMIT_TYP )
+  </select>
+
+  <select id="findUsedTxnDailyLimit" 	resultClass="java.math.BigDecimal">
+    select DAILY_TOTAL_AMT from S_LIMIT_CUST_TOTAL
+    WHERE CUST_ID=#customerId# AND TXN_LIMIT_TYP =#transactionLimitType#
+    and BUSINESS_ID = #businessId# and SYSTEM_ID=#systemId# and to_char(TXN_DT, 'yyyy-MM-dd') = to_char(#transactionDate#, 'yyyy-MM-dd')
+
+  </select>
+
+  <select id="findTxnLimitTotalCount" 	resultClass="java.lang.Integer">
+    select count(*) from S_LIMIT_CUST_TOTAL
+    WHERE CUST_ID=#customerId# AND TXN_LIMIT_TYP =#transactionLimitType#
+    and BUSINESS_ID = #businessId# and SYSTEM_ID=#systemId#
+  </select>
+
+  <select id="findTxnLimitTotalCountToday" 	resultClass="java.lang.Integer">
+    select count(*) from S_LIMIT_CUST_TOTAL
+    WHERE CUST_ID=#customerId# AND TXN_LIMIT_TYP =#transactionLimitType#
+    and BUSINESS_ID = #businessId# and SYSTEM_ID=#systemId# and to_char(TXN_DT, 'yyyy-MM-dd') = to_char(#transactionDate#, 'yyyy-MM-dd')
+  </select>
+
+  <insert id="insertTxnLimitTotal">
+  insert into S_LIMIT_CUST_TOTAL (SYSTEM_ID, BUSINESS_ID, CUST_ID, TXN_LIMIT_TYP,TXN_DT,DAILY_TOTAL_AMT)
+  values (#systemId#, #businessId#, #customerId#, #transactionLimitType#,#transactionDate#,#amount#)
+  </insert>
+
+  <update id="updateTxnLimitTotalToday" >
+  update S_LIMIT_CUST_TOTAL
+  set DAILY_TOTAL_AMT =  DAILY_TOTAL_AMT + #amount#
+  where CUST_ID=#customerId# AND TXN_LIMIT_TYP =#transactionLimitType# and BUSINESS_ID = #businessId# and SYSTEM_ID=#systemId# and to_char(TXN_DT, 'yyyy-MM-dd') = to_char(#transactionDate#, 'yyyy-MM-dd')
+  </update>
+
+  <update id="updateTxnLimitTotal" >
+  update S_LIMIT_CUST_TOTAL
+  set DAILY_TOTAL_AMT =  #amount# , TXN_DT = #transactionDate#
+  where CUST_ID=#customerId# AND TXN_LIMIT_TYP =#transactionLimitType# and BUSINESS_ID = #businessId# and SYSTEM_ID=#systemId#
+  </update>
+
+  <select id="findTxnLimitType" resultClass="java.lang.String" cacheModel="limitCacheModel">
+    select  TXN_LIMIT_TYP from S_FUNCTION_CONFIG
+    where BUSINESS_ID=#businessId# AND SYSTEM_ID=#systemId# and ACTIVITY_ID = #activityId#
+  </select><!--
+
+  <select id="findMinPaymentAmount" resultClass="java.math.BigDecimal">
+  	SELECT min_payment_amount FROM c_biller_mst WHERE business_id=#businessId# AND biller_id=#billerId#
+  </select>
+
+
+  <select id="findUsedTxnDailyLimitForUB" 	resultClass="java.math.BigDecimal">
+    select SUM(DAILY_TOTAL_AMT) from S_LIMIT_CUST_TOTAL
+    WHERE CUST_ID=#customerId# AND TXN_LIMIT_TYP =#transactionLimitType#
+    and BUSINESS_ID = #businessId# and SYSTEM_ID=#systemId# and to_char(TXN_DT, 'yyyy-MM-dd') = to_char(#transactionDate#, 'yyyy-MM-dd')
+
+  </select>
+-->
+
+  <select id="findUsedTxnDailyLimitUB" 	resultClass="java.math.BigDecimal">
+    select DAILY_TOTAL_AMT from S_LIMIT_CUST_TOTAL
+    WHERE CUST_ID=#customerId# AND TXN_LIMIT_TYP =#transactionLimitType#
+    and BUSINESS_ID = #businessId# and SYSTEM_ID=#systemId# and to_char(TXN_DT, 'yyyy-MM-dd') = to_char(#transactionDate#, 'yyyy-MM-dd')
+
+  </select>
+
+  <select id="findTxnLimitTotalCountUB" 	resultClass="java.lang.Integer">
+    select count(*) from S_LIMIT_CUST_TOTAL
+    WHERE CUST_ID=#customerId# AND TXN_LIMIT_TYP =#transactionLimitType#
+    and BUSINESS_ID = #businessId# and SYSTEM_ID=#systemId#
+  </select>
+
+  <insert id="insertTxnLimitTotalUB">
+  insert into S_LIMIT_CUST_TOTAL (SYSTEM_ID, BUSINESS_ID, CUST_ID, TXN_LIMIT_TYP,TXN_DT,DAILY_TOTAL_AMT,TXN_COUNT)
+  values (#systemId#, #businessId#, #customerId#, #transactionLimitType#,#transactionDate#,#amount#,#txnCount#)
+  </insert>
+
+  <select id="findTxnLimitTotalCountTodayUB" 	resultClass="java.lang.Integer">
+    select count(*) from S_LIMIT_CUST_TOTAL
+    WHERE CUST_ID=#customerId# AND TXN_LIMIT_TYP =#transactionLimitType#
+    and BUSINESS_ID = #businessId# and SYSTEM_ID=#systemId# and to_char(TXN_DT, 'yyyy-MM-dd') = to_char(#transactionDate#, 'yyyy-MM-dd')
+  </select>
+
+  <update id="updateTxnLimitTotalTodayUB" >
+  update S_LIMIT_CUST_TOTAL
+  set DAILY_TOTAL_AMT =  DAILY_TOTAL_AMT + #amount# , TXN_COUNT=TXN_COUNT+1
+  where CUST_ID=#customerId# AND TXN_LIMIT_TYP =#transactionLimitType# and BUSINESS_ID = #businessId# and SYSTEM_ID=#systemId# and to_char(TXN_DT, 'yyyy-MM-dd') = to_char(#transactionDate#, 'yyyy-MM-dd')
+  </update>
+
+  <update id="updateTxnLimitTotalUB" >
+  update S_LIMIT_CUST_TOTAL
+  set DAILY_TOTAL_AMT =  #amount# , TXN_DT = #transactionDate#, TXN_COUNT=1
+  where CUST_ID=#customerId# AND TXN_LIMIT_TYP =#transactionLimitType# and BUSINESS_ID = #businessId# and SYSTEM_ID=#systemId#
+  </update>
+
+  <select id="findTxnLimitTxnCountUB" 	resultClass="java.lang.Integer">
+    select TXN_COUNT from S_LIMIT_CUST_TOTAL
+    WHERE CUST_ID=#customerId# AND TXN_LIMIT_TYP =#transactionLimitType#
+    and BUSINESS_ID = #businessId# and SYSTEM_ID=#systemId# and to_char(TXN_DT, 'yyyy-MM-dd') = to_char(#transactionDate#, 'yyyy-MM-dd')
+  </select>
+
+</sqlMap>

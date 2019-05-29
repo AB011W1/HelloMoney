@@ -31,7 +31,7 @@ public class UpdateBeneficiaryAuditBuilder extends AbstractTransactionAuditBuild
 
 	FieldDataDTO field8 = new FieldDataDTO();
 	field8.setFieldId(AuditConstant.SERTYP);
-	if (FundTransferConstants.PAYEE_TYPE_FUND_TRANSFER_INTERNAL.equals(request.getBeneficiaryDTO().getPayeeTypeCode())) {
+	if (null != request && FundTransferConstants.PAYEE_TYPE_FUND_TRANSFER_INTERNAL.equals(request.getBeneficiaryDTO().getPayeeTypeCode())) {
 	    field8.setValue(AuditConstant.SER_TYP_EDIT_BENEFICIARY_OTH);
 	} else {
 	    field8.setValue(AuditConstant.SER_TYP_EDIT_BENEFICIARY_DFT);
@@ -40,7 +40,7 @@ public class UpdateBeneficiaryAuditBuilder extends AbstractTransactionAuditBuild
 
 	FieldDataDTO field9 = new FieldDataDTO();
 	field9.setFieldId(AuditConstant.TXNSUBTYP);
-	if (FundTransferConstants.PAYEE_TYPE_FUND_TRANSFER_INTERNAL.equals(request.getBeneficiaryDTO().getPayeeTypeCode())) {
+	if (null != request && FundTransferConstants.PAYEE_TYPE_FUND_TRANSFER_INTERNAL.equals(request.getBeneficiaryDTO().getPayeeTypeCode())) {
 	    field9.setValue(AuditConstant.SUB_SER_TYP_EDIT_BENEFICIARY_OTH);
 
 	} else {
@@ -101,7 +101,7 @@ public class UpdateBeneficiaryAuditBuilder extends AbstractTransactionAuditBuild
 
 	FieldDataDTO field8 = new FieldDataDTO();
 	field8.setFieldId(AuditConstant.SERTYP);
-	if (FundTransferConstants.PAYEE_TYPE_FUND_TRANSFER_INTERNAL.equals(response.getBeneficiaryDTO().getPayeeTypeCode())) {
+	if (null != response && FundTransferConstants.PAYEE_TYPE_FUND_TRANSFER_INTERNAL.equals(response.getBeneficiaryDTO().getPayeeTypeCode())) {
 	    field8.setValue(AuditConstant.SER_TYP_EDIT_BENEFICIARY_OTH);
 	} else {
 	    field8.setValue(AuditConstant.SER_TYP_EDIT_BENEFICIARY_DFT);
@@ -110,7 +110,7 @@ public class UpdateBeneficiaryAuditBuilder extends AbstractTransactionAuditBuild
 
 	FieldDataDTO field9 = new FieldDataDTO();
 	field9.setFieldId(AuditConstant.TXNSUBTYP);
-	if (FundTransferConstants.PAYEE_TYPE_FUND_TRANSFER_INTERNAL.equals(response.getBeneficiaryDTO().getPayeeTypeCode())) {
+	if (null != response && FundTransferConstants.PAYEE_TYPE_FUND_TRANSFER_INTERNAL.equals(response.getBeneficiaryDTO().getPayeeTypeCode())) {
 	    field9.setValue(AuditConstant.SUB_SER_TYP_EDIT_BENEFICIARY_OTH);
 
 	} else {

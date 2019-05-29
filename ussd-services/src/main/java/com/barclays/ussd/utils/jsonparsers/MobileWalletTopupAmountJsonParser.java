@@ -154,8 +154,9 @@ public class MobileWalletTopupAmountJsonParser implements BmgBaseJsonParser, Sys
 	return listValueCacheDTO.getLabel();
     }
 
-    public int getCustomNextScreen(String userInput, USSDSessionManagement ussdSessionMgmt) throws USSDBlockingException {
-		int seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_SIX.getSequenceNo();
+    @SuppressWarnings("unchecked")
+	public int getCustomNextScreen(String userInput, USSDSessionManagement ussdSessionMgmt) throws USSDBlockingException {
+    	int seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_SIX.getSequenceNo();
 
 		Map<String, Object> txSessions = ussdSessionMgmt.getTxSessions();
 		Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();

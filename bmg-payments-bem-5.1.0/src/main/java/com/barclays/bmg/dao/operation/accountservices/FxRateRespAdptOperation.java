@@ -8,7 +8,7 @@ import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.fxrate.service.response.FxRateServiceResponse;
 
 
-public class FxRateRespAdptOperation extends AbstractResAdptOperation {
+public class FxRateRespAdptOperation extends AbstractResAdptOperationAcct {
 
 	public FxRateServiceResponse adaptResponse(WorkContext workContext, Object obj){
 

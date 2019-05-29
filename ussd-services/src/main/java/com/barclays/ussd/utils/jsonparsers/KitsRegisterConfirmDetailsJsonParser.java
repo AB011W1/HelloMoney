@@ -1,14 +1,10 @@
 package com.barclays.ussd.utils.jsonparsers;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
-import org.codehaus.jackson.JsonParseException;
-import org.codehaus.jackson.map.JsonMappingException;
-import org.codehaus.jackson.map.ObjectMapper;
 
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
@@ -17,14 +13,10 @@ import com.barclays.ussd.exception.USSDNonBlockingException;
 import com.barclays.ussd.utils.BmgBaseJsonParser;
 import com.barclays.ussd.utils.PaginationEnum;
 import com.barclays.ussd.utils.USSDConstants;
-import com.barclays.ussd.utils.USSDExceptions;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
 import com.barclays.ussd.utils.UssdResourceBundle;
-import com.barclays.ussd.utils.jsonparsers.bean.airtime.Account;
-import com.barclays.ussd.utils.jsonparsers.bean.airtime.AirtimeValidatePayData;
-import com.barclays.ussd.utils.jsonparsers.bean.airtime.AirtimeValidateResponse;
 import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
 @SuppressWarnings("unchecked")
 public class KitsRegisterConfirmDetailsJsonParser implements BmgBaseJsonParser {
@@ -64,8 +56,7 @@ public class KitsRegisterConfirmDetailsJsonParser implements BmgBaseJsonParser {
         String accNum=null;
         String primaryAcc=null;
 
-        List<CustomerMobileRegAcct> accList=new ArrayList<CustomerMobileRegAcct>();
-        accList= (List<CustomerMobileRegAcct>) ussdSessionMgmt.getTxSessions().get(USSDInputParamsEnum.KITS_REG_ACCOUNT_NUM.getTranId());
+        List<CustomerMobileRegAcct> accList= (List<CustomerMobileRegAcct>) ussdSessionMgmt.getTxSessions().get(USSDInputParamsEnum.KITS_REG_ACCOUNT_NUM.getTranId());
         int selectedAccSeq=Integer.parseInt(userInputMap.get(USSDInputParamsEnum.KITS_REG_ACCOUNT_NUM.getParamName()))-1;
         CustomerMobileRegAcct acc=accList.get(selectedAccSeq);
 

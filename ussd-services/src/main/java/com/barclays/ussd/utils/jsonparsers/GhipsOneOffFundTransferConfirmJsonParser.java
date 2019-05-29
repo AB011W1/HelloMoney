@@ -133,7 +133,8 @@ public class GhipsOneOffFundTransferConfirmJsonParser implements BmgBaseJsonPars
     	    menuItemDTO.setStatus(USSDConstants.STATUS_CONTINUE);
     	    menuItemDTO.setPaginationType(PaginationEnum.LISTED);
     	}
-    	setNextScreenSequenceNumber(menuItemDTO);
+    	if(null != menuItemDTO)
+    		setNextScreenSequenceNumber(menuItemDTO);
     	return menuItemDTO;
         }
 

@@ -4,8 +4,8 @@
 package com.barclays.ussd.utils.jsonparsers;
 
 import java.util.List;
+
 import org.apache.log4j.Logger;
-import org.codehaus.jackson.map.ObjectMapper;
 
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
@@ -21,7 +21,7 @@ import com.barclays.ussd.utils.jsonparsers.bean.fundtransfer.otherbank.BeneData;
 
 /**
  * @author BTCI
- * 
+ *
  */
 public class EBFTPayeeListJsonParser implements BmgBaseJsonParser {
 
@@ -30,7 +30,6 @@ public class EBFTPayeeListJsonParser implements BmgBaseJsonParser {
 
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
 	MenuItemDTO menuDTO = null;
-	ObjectMapper mapper = new ObjectMapper();
 	try {
 	    List<BeneData> payeeList = (List<BeneData>) responseBuilderParamsDTO.getUssdSessionMgmt().getTxSessions()
 		    .get(USSDInputParamsEnum.EXT_BANK_FT_TO_AC.getTranId());

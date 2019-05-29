@@ -30,7 +30,7 @@ public class OwnBillPaymentTransactionAuditBuilder extends AbstractTransactionAu
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see com.barclays.bmg.audit.builder.BMGTransactionAuditBuilder#buildFromRequest(java.lang.Object[], java.lang.Object)
      */
     @Override
@@ -41,7 +41,9 @@ public class OwnBillPaymentTransactionAuditBuilder extends AbstractTransactionAu
 	ScreenDataDTO screenData = new ScreenDataDTO();
 	screenData.setScreenId(SCRNAME_BP);
 
-	TransactionDTO transactionDTO = request.getTransactionDTO();
+	TransactionDTO transactionDTO = new TransactionDTO();
+	if(null != request)
+		transactionDTO = request.getTransactionDTO();
 	String toAcctNo = transactionDTO.getBeneficiaryDTO().getDestinationAccountNumber();
 	String cardNumber = transactionDTO.getBeneficiaryDTO().getCardNumber();
 	String fromAcctNo = transactionDTO.getSourceAcct().getAccountNumber();
@@ -131,7 +133,9 @@ public class OwnBillPaymentTransactionAuditBuilder extends AbstractTransactionAu
 
 	MakeBillPaymentOperationRequest request = (MakeBillPaymentOperationRequest) args[0];
 
-	TransactionDTO transactionDTO = request.getTransactionDTO();
+	TransactionDTO transactionDTO = new TransactionDTO();
+	if(null != request)
+		transactionDTO = request.getTransactionDTO();
 	String toAcctNo = transactionDTO.getBeneficiaryDTO().getDestinationAccountNumber();
 	String cardNumber = transactionDTO.getBeneficiaryDTO().getCardNumber();
 	String fromAcctNo = transactionDTO.getSourceAcct().getAccountNumber();

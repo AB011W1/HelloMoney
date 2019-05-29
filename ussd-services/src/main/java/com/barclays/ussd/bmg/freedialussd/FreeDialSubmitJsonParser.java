@@ -43,8 +43,6 @@ public class FreeDialSubmitJsonParser implements BmgBaseJsonParser {
 	String jsonString = responseBuilderParamsDTO.getJsonString();
 	MenuItemDTO menuDTO = null;
 	ObjectMapper mapper = new ObjectMapper();
-	USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
-	Map<String, Object> txSessions = ussdSessionMgmt.getTxSessions();
 
 	try {
 	    AirtimeSubmitResponse airtimeSubmitResponse = mapper.readValue(jsonString, AirtimeSubmitResponse.class);
@@ -68,7 +66,7 @@ public class FreeDialSubmitJsonParser implements BmgBaseJsonParser {
 			LOGGER.fatal("unable to service: " + airtimeSubmitResponse.getPayHdr().getResMsg());
 			USSDSessionManagement session = responseBuilderParamsDTO.getUssdSessionMgmt();
 			Map<String, Object> userInputMapAirtel = session.getTxSessions();
-			if(userInputMapAirtel!=null && userInputMapAirtel.get("extra").toString().equals("FREEDIALAIRTEL")){
+			if(userInputMapAirtel!=null && (userInputMapAirtel.get("extra").toString().equals("FREEDIALAIRTEL") || userInputMapAirtel.get("extra").toString().equals("FREEDIALAIRTELZM"))){
 				throw new USSDBlockingException(airtimeSubmitResponse.getPayHdr().getResCde());
 			}
 			else
@@ -124,7 +122,6 @@ public class FreeDialSubmitJsonParser implements BmgBaseJsonParser {
 	pageBody.append(txIdLabel);
 	pageBody.append(txnRefNo);
 
-	String amtLabel=getLabel(responseBuilderParamsDTO, USSDConstants.USSD_TRANSACTION_MWALLETE_AMOUNT);
 	String mblLabel=getLabel(responseBuilderParamsDTO, USSDConstants.USSD_TRANSACTION_MWALLETE_MOBILE);
 	String srvcLabel=getLabel(responseBuilderParamsDTO, USSDConstants.USSD_TRANSACTION_MWALLETE_SERVICE);
 	Map<String,String> userInputMap=responseBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap();

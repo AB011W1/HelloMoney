@@ -1,5 +1,6 @@
 package com.barclays.ussd.utils.jsonparsers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
@@ -13,19 +14,20 @@ import com.barclays.ussd.utils.USSDExceptions;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
+import com.barclays.ussd.utils.jsonparsers.bean.login.AuthUserData;
+import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
 import com.barclays.ussd.utils.jsonparsers.bean.otherbarclaysfundtx.OBAFTSrcAcct;
 
 public class OBAFTRetrieveSrcAccountListJsonParser implements BmgBaseJsonParser {
 
     @SuppressWarnings("unchecked")
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
-	MenuItemDTO menuDTO = null;
 	USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
 	List<OBAFTSrcAcct> srcAcctList = (List<OBAFTSrcAcct>) ussdSessionMgmt.getTxSessions().get(USSDInputParamsEnum.INT_FT_SOURCE_LIST.getTranId());
 	if (srcAcctList == null || srcAcctList.isEmpty()) {
 	    throw new USSDNonBlockingException(USSDExceptions.USSD_NO_ELIGIBLE_ACCTS.getBmgCode());
 	}
-	menuDTO = renderMenuOnScreen(srcAcctList, responseBuilderParamsDTO);
+	MenuItemDTO menuDTO = renderMenuOnScreen(srcAcctList, responseBuilderParamsDTO);
 	return menuDTO;
     }
 
@@ -33,12 +35,30 @@ public class OBAFTRetrieveSrcAccountListJsonParser implements BmgBaseJsonParser 
      * @param payData
      * @param responseBuilderParamsDTO
      * @return MenuItemDTO
+     * @throws USSDNonBlockingException
      */
-    private MenuItemDTO renderMenuOnScreen(List<OBAFTSrcAcct> srcAcctList, ResponseBuilderParamsDTO responseBuilderParamsDTO) {
+    private MenuItemDTO renderMenuOnScreen(List<OBAFTSrcAcct> srcAcctList, ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
 	int index = 1;
 	StringBuilder pageBody = new StringBuilder();
 	MenuItemDTO menuItemDTO = new MenuItemDTO();
+	USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
+	AuthUserData authData= ((AuthUserData)ussdSessionMgmt.getUserAuthObj());
+    List<CustomerMobileRegAcct> acts=authData.getPayData().getCustActs();
 	if (srcAcctList != null && !srcAcctList.isEmpty()) {
+		if(acts != null && acts.size() > 0)
+		{
+			List<String> GpAcc=new ArrayList<String>();
+			 for(int i =0;i<acts.size();i++)
+			    	if(acts.get(i).getGroupWalletIndicator()!=null && acts.get(i).getGroupWalletIndicator().equals("Y"))
+			    		GpAcc.add(acts.get(i).getMkdActNo());
+
+				 for(int j=0;j<srcAcctList.size();j++)
+					 if(GpAcc.contains(srcAcctList.get(j).getMkdActNo()))
+						 srcAcctList.remove(j);
+		}
+		if (srcAcctList == null || srcAcctList.isEmpty() || srcAcctList.size() == 0) {
+		    throw new USSDNonBlockingException(USSDExceptions.USSD_NO_ELIGIBLE_ACCTS.getBmgCode());
+		}
 	    for (OBAFTSrcAcct oBAFTSrcAcct : srcAcctList) {
 		pageBody.append(USSDConstants.NEW_LINE);
 		pageBody.append(index++);

@@ -211,8 +211,6 @@ public class UssdParser {
 
     public CurrentRunningTransaction getNextTransaction(Transaction userTransactionDetails, String serviceName, USSDSessionManagement ussdSessionMgmt) {
 	CurrentRunningTransaction currentRunningTransaction = null;
-	XPathFactory factory = XPathFactory.newInstance();
-	XPath xpath = factory.newXPath();
 
     final String businessCountryKey = ussdSessionMgmt.getBusinessId() + USSDConstants.SEPERATOR_UNDESCORE + ussdSessionMgmt.getCountryCode();
     final Map<String, CurrentRunningTransaction> transactionMap = ussdMenuBuilder.getTransactionMap();
@@ -223,8 +221,10 @@ public class UssdParser {
 
 	try {
 	    CurrentRunningTransaction currentRunningTransaction2 = userTransactionDetails.getCurrentRunningTransaction();
-	    String tranDataId = currentRunningTransaction2.getTranDataId();
-	    if (StringUtils.isEmpty(tranDataId)) {
+	    String tranDataId =null;
+	    if(null != currentRunningTransaction2)
+	    	tranDataId = currentRunningTransaction2.getTranDataId();
+	    if (null != currentRunningTransaction2 && StringUtils.isEmpty(tranDataId)) {
 			currentRunningTransaction2.setServiceName(serviceName);
 			// get the first child
 			// searchExpr = "//node[@id='" +
@@ -240,7 +240,7 @@ public class UssdParser {
 			currentRunningTransaction2.setNextScreenSequenceNumber(firstScreenSequenceNumber);
 
 
-	    } else {
+	    } else if(null != currentRunningTransaction2){
 		int nextScreenSequenceNumber = currentRunningTransaction2.getNextScreenSequenceNumber();
 		tranDataId = USSDUtils.getNextTransactionStep(currentRunningTransaction2.getServiceName(), nextScreenSequenceNumber);
 
@@ -249,7 +249,9 @@ public class UssdParser {
 	    }
 
 
-	    String searchKey = businessCountryKey + USSDConstants.SEPERATOR_UNDESCORE + currentRunningTransaction2.getTranId()
+	    String searchKey = null;
+	    if(null != currentRunningTransaction2)
+	    	searchKey = businessCountryKey + USSDConstants.SEPERATOR_UNDESCORE + currentRunningTransaction2.getTranId()
 		    + USSDConstants.SEPERATOR_UNDESCORE + tranDataId;
 
 	    currentRunningTransaction = transactionMap.get(searchKey);
@@ -266,11 +268,12 @@ public class UssdParser {
 		    currentRunningTransaction.toString();
 		}
 	    }
-
-		currentRunningTransaction.setTranId(currentRunningTransaction2.getTranId());
-		currentRunningTransaction.setTranNodeId(currentRunningTransaction2.getTranNodeId());
-		currentRunningTransaction.setServiceName(currentRunningTransaction2.getServiceName());
-		currentRunningTransaction.setNextScreenSequenceNumber(currentRunningTransaction2.getNextScreenSequenceNumber());
+	    if(null != currentRunningTransaction){
+	    	currentRunningTransaction.setTranId(currentRunningTransaction2.getTranId());
+			currentRunningTransaction.setTranNodeId(currentRunningTransaction2.getTranNodeId());
+			currentRunningTransaction.setServiceName(currentRunningTransaction2.getServiceName());
+			currentRunningTransaction.setNextScreenSequenceNumber(currentRunningTransaction2.getNextScreenSequenceNumber());
+	    }
 		userTransactionDetails.setCurrentRunningTransaction(currentRunningTransaction);
 	} catch (Exception e) {
 	    LOGGER.fatal("Exception ocurred while searching the next transaction", e);

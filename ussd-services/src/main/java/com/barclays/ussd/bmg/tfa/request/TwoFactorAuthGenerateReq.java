@@ -4,8 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.TwoFactorQuestion;
 import com.barclays.ussd.bmg.dto.RequestBuilderParamsDTO;
@@ -16,14 +14,10 @@ import com.barclays.ussd.svc.context.USSDBaseRequest;
 import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDExceptions;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
-import com.barclays.ussd.utils.UssdMenuBuilder;
 
 public class TwoFactorAuthGenerateReq implements BmgBaseRequestBuilder {
 
     private static final String TWO_FACT_PARAM_MOBILE_NUMBER = "mobileNumber";
-    @Autowired
-    private UssdMenuBuilder ussdMenuBuilder;
-
     @Override
     public USSDBaseRequest getRequestObject(RequestBuilderParamsDTO requestBuilderParamsDTO) throws USSDNonBlockingException, USSDBlockingException {
 

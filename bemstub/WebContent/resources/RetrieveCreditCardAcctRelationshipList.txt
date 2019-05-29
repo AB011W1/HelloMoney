@@ -1,0 +1,149 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <p822:RetrieveCreditCardAccountRelationshipListResponse xmlns:p822="http://barclays.com/bem/RetrieveCreditCardAcctRelationshipList">
+      <p822:ResponseHeader>
+        <ServiceContext>
+          <ServiceID>RetrieveCreditCardAcctRelationshipList</ServiceID>
+          <ConsumerUniqueRefNo>13933225954969</ConsumerUniqueRefNo>
+          <OriginalConsumerUniqueRefNo>13933225954969</OriginalConsumerUniqueRefNo>
+          <ServiceDateTime>2014-02-25T13:03:17.175Z</ServiceDateTime>
+          <ServiceVersionNo>6.0.0</ServiceVersionNo>
+          <OverrideRequestFlag>0</OverrideRequestFlag>
+        </ServiceContext>
+        <BankUserContext>
+          <StaffType>Regular</StaffType>
+          <StaffID>IFE</StaffID>
+          <AuthorizerID>Z00019789</AuthorizerID>
+        </BankUserContext>
+        <ServiceResStatus>
+          <ServiceResCode>00000</ServiceResCode>
+          <ServiceResDesc>Success</ServiceResDesc>
+          <ServiceRespDateTime>2014-02-25T10:03:17.921Z</ServiceRespDateTime>
+          <ServiceUniqueRefNo>0c9230c2-9e04-11e3-bbf7-167313a80000</ServiceUniqueRefNo>
+        </ServiceResStatus>
+      </p822:ResponseHeader>
+      <p822:AccountRelationshipInfo>
+        <p822:CreditCardAccountNumber>********2578</p822:CreditCardAccountNumber>
+        <p822:CreditCardAccountOrgCode>230</p822:CreditCardAccountOrgCode>
+        <p822:AccountRelatedCardList>
+          <p822:CreditCardBasic xmlns:p867="http://barclays.com/bem/CreditCardBasic">
+            <p867:CustomerNumber>0002300000001025603</p867:CustomerNumber>
+            <p867:CreditCardNumber>4263991234568442</p867:CreditCardNumber>
+            <p867:CreditCardOrgCode>230</p867:CreditCardOrgCode>
+            <p867:CreditCardSequenceNumber>1</p867:CreditCardSequenceNumber>
+            <p867:CardExpiryDate>2016-07-31</p867:CardExpiryDate>
+            <p867:EmbossedNameOnCard>BOAZ O KINYWA</p867:EmbossedNameOnCard>
+            <p867:CreditCardLifeCycleStatusCode>0</p867:CreditCardLifeCycleStatusCode>
+            <p867:CreditCardOwnershipTypeCode>P</p867:CreditCardOwnershipTypeCode>
+            <p867:CreditCardBlockCode>H</p867:CreditCardBlockCode>
+            <p867:TPInvalidTryCount>88</p867:TPInvalidTryCount>
+          </p822:CreditCardBasic>
+          <p822:CreditCardAdditionalInfo>
+            <p822:CardSuppressIndicator>0</p822:CardSuppressIndicator>
+          </p822:CreditCardAdditionalInfo>
+          <p822:RelatedCustomerInfo>
+            <p822:CustomerNumber>0002300000001025603</p822:CustomerNumber>
+            <p822:CustomerOrgCode>230</p822:CustomerOrgCode>
+            <p822:Relationship xmlns:p64="http://barclays.com/bem/Relationship">
+              <p64:AccountOwnershipTypeCode>PR</p64:AccountOwnershipTypeCode>
+            </p822:Relationship>
+            <p822:Individual xmlns:p409="http://barclays.com/bem/Individual">
+              <p409:IndividualName xmlns:p940="http://barclays.com/bem/IndividualName">
+                <p940:FirstName>BOAZ</p940:FirstName>
+                <p940:LastName>**NYWA</p940:LastName>
+                <p940:FullName>*******************NYWA</p940:FullName>
+                <p940:SalutationTypeCode>Mr</p940:SalutationTypeCode>
+              </p409:IndividualName>
+              <p409:MotherMaidenName>ODHIAMBO</p409:MotherMaidenName>
+              <p409:IndivualBirthInfo>
+                <p409:DateofBirth>1979-08-24</p409:DateofBirth>
+              </p409:IndivualBirthInfo>
+            </p822:Individual>
+            <p822:IndividualIDDocInfo xmlns:p308="http://barclays.com/bem/IndividualIDDoc">
+              <p308:CustomerIdentificationNumber>****4404</p308:CustomerIdentificationNumber>
+            </p822:IndividualIDDocInfo>
+          </p822:RelatedCustomerInfo>
+        </p822:AccountRelatedCardList>
+        <p822:AccountRelatedCardList>
+          <p822:CreditCardBasic xmlns:p867="http://barclays.com/bem/CreditCardBasic">
+            <p867:CustomerNumber>0002300000001025603</p867:CustomerNumber>
+            <p867:CreditCardNumber>4263991234562316</p867:CreditCardNumber>
+            <p867:CreditCardOrgCode>230</p867:CreditCardOrgCode>
+            <p867:CreditCardSequenceNumber>1</p867:CreditCardSequenceNumber>
+            <p867:CardExpiryDate>2016-07-31</p867:CardExpiryDate>
+            <p867:EmbossedNameOnCard>BOAZ O KINYWA</p867:EmbossedNameOnCard>
+            <p867:CreditCardLifeCycleStatusCode>F</p867:CreditCardLifeCycleStatusCode>
+            <p867:CreditCardOwnershipTypeCode>S</p867:CreditCardOwnershipTypeCode>
+            <p867:CreditCardBlockCode>L</p867:CreditCardBlockCode>
+            <p867:TPInvalidTryCount>88</p867:TPInvalidTryCount>
+          </p822:CreditCardBasic>
+          <p822:CreditCardAdditionalInfo>
+            <p822:CardSuppressIndicator>0</p822:CardSuppressIndicator>
+          </p822:CreditCardAdditionalInfo>
+          <p822:RelatedCustomerInfo>
+            <p822:CustomerNumber>0002300000001025603</p822:CustomerNumber>
+            <p822:CustomerOrgCode>230</p822:CustomerOrgCode>
+            <p822:Relationship xmlns:p64="http://barclays.com/bem/Relationship">
+              <p64:AccountOwnershipTypeCode>SU</p64:AccountOwnershipTypeCode>
+            </p822:Relationship>
+            <p822:Individual xmlns:p409="http://barclays.com/bem/Individual">
+              <p409:IndividualName xmlns:p940="http://barclays.com/bem/IndividualName">
+                <p940:FirstName>BOAZ</p940:FirstName>
+                <p940:LastName>**NYWA</p940:LastName>
+                <p940:FullName>*******************NYWA</p940:FullName>
+                <p940:SalutationTypeCode>Mr</p940:SalutationTypeCode>
+              </p409:IndividualName>
+              <p409:MotherMaidenName>ODHIAMBO</p409:MotherMaidenName>
+              <p409:IndivualBirthInfo>
+                <p409:DateofBirth>1979-08-24</p409:DateofBirth>
+              </p409:IndivualBirthInfo>
+            </p822:Individual>
+            <p822:IndividualIDDocInfo xmlns:p308="http://barclays.com/bem/IndividualIDDoc">
+              <p308:CustomerIdentificationNumber>****4404</p308:CustomerIdentificationNumber>
+            </p822:IndividualIDDocInfo>
+          </p822:RelatedCustomerInfo>
+        </p822:AccountRelatedCardList>
+        <p822:AccountRelatedCardList>
+          <p822:CreditCardBasic xmlns:p867="http://barclays.com/bem/CreditCardBasic">
+            <p867:CustomerNumber>0002300000001025603</p867:CustomerNumber>
+            <p867:CreditCardNumber>4263991234560002</p867:CreditCardNumber>
+            <p867:CreditCardOrgCode>230</p867:CreditCardOrgCode>
+            <p867:CreditCardSequenceNumber>1</p867:CreditCardSequenceNumber>
+            <p867:CardExpiryDate>2011-07-31</p867:CardExpiryDate>
+            <p867:EmbossedNameOnCard>BOAZ O KINYWA</p867:EmbossedNameOnCard>
+            <p867:CreditCardLifeCycleStatusCode>F</p867:CreditCardLifeCycleStatusCode>
+            <p867:CreditCardOwnershipTypeCode>S</p867:CreditCardOwnershipTypeCode>
+            <p867:CreditCardBlockCode>A</p867:CreditCardBlockCode>
+            <p867:TPInvalidTryCount>88</p867:TPInvalidTryCount>
+          </p822:CreditCardBasic>
+          <p822:CreditCardAdditionalInfo>
+            <p822:CardSuppressIndicator>0</p822:CardSuppressIndicator>
+          </p822:CreditCardAdditionalInfo>
+          <p822:RelatedCustomerInfo>
+            <p822:CustomerNumber>0002300000001025603</p822:CustomerNumber>
+            <p822:CustomerOrgCode>230</p822:CustomerOrgCode>
+            <p822:Relationship xmlns:p64="http://barclays.com/bem/Relationship">
+              <p64:AccountOwnershipTypeCode>SU</p64:AccountOwnershipTypeCode>
+            </p822:Relationship>
+            <p822:Individual xmlns:p409="http://barclays.com/bem/Individual">
+              <p409:IndividualName xmlns:p940="http://barclays.com/bem/IndividualName">
+                <p940:FirstName>BOAZ</p940:FirstName>
+                <p940:LastName>**NYWA</p940:LastName>
+                <p940:FullName>*******************NYWA</p940:FullName>
+                <p940:SalutationTypeCode>Mr</p940:SalutationTypeCode>
+              </p409:IndividualName>
+              <p409:MotherMaidenName>ODHIAMBO</p409:MotherMaidenName>
+              <p409:IndivualBirthInfo>
+                <p409:DateofBirth>1979-08-24</p409:DateofBirth>
+              </p409:IndivualBirthInfo>
+            </p822:Individual>
+            <p822:IndividualIDDocInfo xmlns:p308="http://barclays.com/bem/IndividualIDDoc">
+              <p308:CustomerIdentificationNumber>****4404</p308:CustomerIdentificationNumber>
+            </p822:IndividualIDDocInfo>
+          </p822:RelatedCustomerInfo>
+        </p822:AccountRelatedCardList>
+      </p822:AccountRelationshipInfo>
+    </p822:RetrieveCreditCardAccountRelationshipListResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

@@ -52,7 +52,7 @@ public class OwnFundTransferValidateRequestBuilder implements BmgBaseRequestBuil
 	String transactionRemarks = ussdResourceBundle.getLabel(USSDConstants.TRANSACTION_REMARKS_FT_BARCLAYS, new Locale(ussdSessionMgmt
 		.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));
 
-	requestParamMap.put(USSDConstants.TRANSACTION_DATE_PARAM_NAME, sdf.format(now.get(Calendar.DATE)).toString());
+	requestParamMap.put(USSDConstants.TRANSACTION_DATE_PARAM_NAME, sdf.format(now.get(Calendar.DATE)));
 	requestParamMap.put(USSDConstants.TRANSACTION_NOTE_PARAM_NAME, transactionRemarks);
 	requestParamMap.put(USSDConstants.BMG_LOCAL_KE_OPCODE_PARAM_NAME, requestBuilderParamsDTO.getBmgOpCode());
 	requestParamMap.put(USSDConstants.BMG_LOCAL_KE_SERVICE_VER_NAME, USSDConstants.BMG_SERVICE_VERSION_VALUE);

@@ -4,9 +4,9 @@
 package com.barclays.ussd.utils.jsonparsers;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -26,6 +26,7 @@ import com.barclays.ussd.auth.bean.UserProfile;
 import com.barclays.ussd.bean.BillersListDO;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
+import com.barclays.ussd.common.services.IBillersLstService;
 import com.barclays.ussd.exception.USSDBlockingException;
 import com.barclays.ussd.exception.USSDNonBlockingException;
 import com.barclays.ussd.sysprefs.services.ListValueCacheDTO;
@@ -42,7 +43,6 @@ import com.barclays.ussd.utils.USSDExceptions;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
-import com.barclays.ussd.utils.jsonparsers.bean.mobilewallettopup.MobileWalletProvider;
 import com.barclays.ussd.utils.jsonparsers.bean.otbp.OTBPInitAccount;
 import com.barclays.ussd.utils.jsonparsers.bean.otbp.OTBPInitResponse;
 import com.barclays.ussd.validation.USSDBackFlowValidator;
@@ -62,6 +62,9 @@ public class OneTimeBillPayEnterAmountParser implements BmgBaseJsonParser, Syste
     ListValueResServiceImpl listValueResService;
     @Autowired
     private BillerServiceImpl billerService;
+
+    @Autowired
+	private IBillersLstService billersLstService;
 
     @Override
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
@@ -161,14 +164,33 @@ public class OneTimeBillPayEnterAmountParser implements BmgBaseJsonParser, Syste
 	return listValueCacheDTO.getLabel();
     }
 
-    public int getCustomNextScreen(String userInput, USSDSessionManagement ussdSessionMgmt) throws USSDBlockingException {
+    @SuppressWarnings("unchecked")
+	public int getCustomNextScreen(String userInput, USSDSessionManagement ussdSessionMgmt) throws USSDBlockingException {
 	int seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_SEVEN.getSequenceNo();
 	Map<String, Object> txSessions = ussdSessionMgmt.getTxSessions();
 	Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
-	List<BillersListDO> blrsLstDO = (List<BillersListDO>) ussdSessionMgmt.getTxSessions().get(
+
+	//masterpass QR
+    String business_id=ussdSessionMgmt.getBusinessId();
+    String tranid=ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranId();
+    List<BillersListDO> blrsLstDO = new ArrayList<BillersListDO>();
+    BillersListDO OneTimePaymentSelected = new BillersListDO();
+    if((business_id!=null && "TZBRB".equals(business_id))  &&  (tranid!=null && "TZ_MASTERPASS_QR_BILLER".equals(tranid))){
+		try {
+			BillersListDO biller = this.billersLstService.getBillerInfo(ussdSessionMgmt
+						.getCountryCode(), "MPQR-3", ussdSessionMgmt
+						.getMsisdnNumber(), ussdSessionMgmt.getBusinessId());
+			blrsLstDO.add(biller);
+			OneTimePaymentSelected = blrsLstDO.get(0);
+		} catch (USSDNonBlockingException e) {
+			e.printStackTrace();
+		}
+    }else{
+	blrsLstDO = (List<BillersListDO>) ussdSessionMgmt.getTxSessions().get(
 		    USSDInputParamsEnum.ONE_TIME_BILL_PYMNT_BLRS_LST.getTranId());
 	String selectedOneTimePaymentProvider=	userInputMap.get(USSDInputParamsEnum.ONE_TIME_BILL_PYMNT_BLRS_LST.getParamName());
-	BillersListDO OneTimePaymentSelected = blrsLstDO.get(Integer.parseInt(selectedOneTimePaymentProvider) - 1);
+	OneTimePaymentSelected = blrsLstDO.get(Integer.parseInt(selectedOneTimePaymentProvider) - 1);
+    }
 
 	BillerServiceRequest request = new BillerServiceRequest();
 	request.setBusinessId(ussdSessionMgmt.getBusinessId());

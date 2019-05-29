@@ -22,7 +22,6 @@ public class RetreiveChargeDetailsRespAdptOperation {
     	Object[] args = daoContext.getArguments();
     	RetreiveChargeDetailsServiceRequest retrieveChargeReq = (RetreiveChargeDetailsServiceRequest) args[0];
         RetreiveChargeDetailsServiceResponse response = new RetreiveChargeDetailsServiceResponse();
-        Double chargeTaxAmount = 0.0;
         Double taxAmount = 0.0;
 
         RetrieveChargeDetailsResponse bemResponse = (RetrieveChargeDetailsResponse) obj;
@@ -53,7 +52,6 @@ public class RetreiveChargeDetailsRespAdptOperation {
 	                charges.add(c);
 	            }
 	        }
-       // chargeTaxAmount = chargeInfo.getTotalFeeAmount() + taxAmount;
         if(chargeInfo.getTotalFeeAmountCurrencyCode()!=null){
     		response.setTotalFeeAmount(new Amount(chargeInfo.getTotalFeeAmountCurrencyCode(),BigDecimal.valueOf(chargeInfo.getTotalFeeAmount())));
     	}else{

@@ -21,7 +21,7 @@ import com.barclays.bmg.mapper.CreditCardAccountMapper;
 import com.barclays.bmg.service.accounts.request.AllAccountServiceRequest;
 import com.barclays.bmg.service.accounts.response.AllAccountServiceResponse;
 
-public class AccountSummaryRespAdptOperation extends AbstractResAdptOperation {
+public class AccountSummaryRespAdptOperation extends AbstractResAdptOperationAcct {
 
     public static final String SOURCE_FCR = "FCR";
 
@@ -116,7 +116,7 @@ public class AccountSummaryRespAdptOperation extends AbstractResAdptOperation {
 
 		    if (checkHostErrorStatus(error.getSource(), error.getErrorCode(), allAccountServiceResponse)) {
 
-			returnCode = allAccountServiceResponse.getResCde().toString();
+			returnCode = allAccountServiceResponse.getResCde();
 
 			return returnCode;
 		    }
@@ -132,10 +132,10 @@ public class AccountSummaryRespAdptOperation extends AbstractResAdptOperation {
 
     /**
      * This method used to check whether there are any host error happens
-     * 
+     *
      * @param sourceHost
      * @param errorList
-     * 
+     *
      * @return
      */
     private boolean checkHostErrorStatus(String sourceHost, String error, AllAccountServiceResponse response) {

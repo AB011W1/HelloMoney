@@ -20,18 +20,17 @@ import com.barclays.bmg.context.ResponseContext;
 import com.barclays.bmg.dao.core.proxy.util.MaskingMode;
 import com.barclays.bmg.dao.core.proxy.util.MaskingRule;
 import com.barclays.bmg.dao.core.proxy.util.MaskingRuleImpl;
-import com.barclays.bmg.dao.product.impl.ComponentResDAOImpl;
 import com.barclays.bmg.dto.Amount;
 import com.barclays.bmg.dto.BeneficiaryDTO;
 import com.barclays.bmg.dto.BillerDTO;
 import com.barclays.bmg.dto.CustomerAccountDTO;
 import com.barclays.bmg.operation.BMBCommonOperation;
-import com.barclays.bmg.operation.request.fundtransfer.external.MergeBillerInfoOperationRequest;
 import com.barclays.bmg.service.AddOrganizationBeneficiaryService;
 import com.barclays.bmg.service.ApplyTDService;
 import com.barclays.bmg.service.BillerService;
 import com.barclays.bmg.service.RetreiveBeneficiaryDetailsService;
 import com.barclays.bmg.service.RetreivePayeeListService;
+import com.barclays.bmg.service.RetrieveBillDetailsService;
 import com.barclays.bmg.service.TransactionAbilityService;
 import com.barclays.bmg.service.TransactionLimitService;
 import com.barclays.bmg.service.accounts.AllAccountService;
@@ -70,6 +69,7 @@ public class BMBPaymentsOperation extends BMBCommonOperation {
     private BillerService billerService;
     private AddOrganizationBeneficiaryService addOrgBeneficairyService;
     private ApplyTDService applyTDAddProblemService;
+    private RetrieveBillDetailsService retrieveBillDetailsService;
 
     public AddOrganizationBeneficiaryService getAddOrgBeneficairyService() {
 	return addOrgBeneficairyService;
@@ -199,7 +199,9 @@ public class BMBPaymentsOperation extends BMBCommonOperation {
 	  * (request.getContext().getActivityId().equals(ActivityConstant.FUND_TRANSFER_INTERNAL_PAYEE_ACTIVITY_ID)) {
 	  * response.setResCde(BeneficiaryResponseCodeConstants.NO_PAYEES_REGISTERED); } }
 	  */
-	BeneficiaryDTO payeeListArray[]=payeeList.toArray(new BeneficiaryDTO[payeeList.size()]);
+	BeneficiaryDTO payeeListArray[]= null;
+	if(null != payeeList)
+		payeeListArray = payeeList.toArray(new BeneficiaryDTO[payeeList.size()]);
 
 	String businessId=request.getContext().getBusinessId();
 	if(businessId!=null&&businessId.equals("MZBRB")){
@@ -469,5 +471,20 @@ public class BMBPaymentsOperation extends BMBCommonOperation {
     public void setBillerService(BillerService billerService) {
 	this.billerService = billerService;
     }
+
+	/**
+	 * @return the retrieveBillDetailsService
+	 */
+	public RetrieveBillDetailsService getRetrieveBillDetailsService() {
+		return retrieveBillDetailsService;
+	}
+
+	/**
+	 * @param retrieveBillDetailsService the retrieveBillDetailsService to set
+	 */
+	public void setRetrieveBillDetailsService(
+			RetrieveBillDetailsService retrieveBillDetailsService) {
+		this.retrieveBillDetailsService = retrieveBillDetailsService;
+	}
 
 }

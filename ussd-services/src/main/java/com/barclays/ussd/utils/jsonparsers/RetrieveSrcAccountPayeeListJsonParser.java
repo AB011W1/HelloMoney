@@ -26,9 +26,12 @@ import com.barclays.ussd.utils.USSDExceptions;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
+import com.barclays.ussd.utils.jsonparsers.bean.billpay.AccountData;
 import com.barclays.ussd.utils.jsonparsers.bean.fundtransfer.ownfundtransfer.AccListPayData;
 import com.barclays.ussd.utils.jsonparsers.bean.fundtransfer.ownfundtransfer.AccountDetails;
 import com.barclays.ussd.utils.jsonparsers.bean.fundtransfer.ownfundtransfer.RetrieveAccList;
+import com.barclays.ussd.utils.jsonparsers.bean.login.AuthUserData;
+import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
 
 public class RetrieveSrcAccountPayeeListJsonParser implements BmgBaseJsonParser {// , ScreenSequenceCustomizer {
 
@@ -37,7 +40,7 @@ public class RetrieveSrcAccountPayeeListJsonParser implements BmgBaseJsonParser 
 
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
 	String jsonString = responseBuilderParamsDTO.getJsonString();
-	MenuItemDTO menuDTO = null;
+	MenuItemDTO menuDTO = new MenuItemDTO();
 	ObjectMapper mapper = new ObjectMapper();
 
 	try {
@@ -95,13 +98,30 @@ public class RetrieveSrcAccountPayeeListJsonParser implements BmgBaseJsonParser 
      * @param payData
      * @param responseBuilderParamsDTO
      * @return MenuItemDTO
+     * @throws USSDNonBlockingException
      */
-    private MenuItemDTO renderMenuOnScreen(AccListPayData payData, ResponseBuilderParamsDTO responseBuilderParamsDTO) {
+    private MenuItemDTO renderMenuOnScreen(AccListPayData payData, ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
 	int index = 1;
 	StringBuilder pageBody = new StringBuilder();
 	MenuItemDTO menuItemDTO = new MenuItemDTO();
+	USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();//CR82 changes
+    AuthUserData authData= ((AuthUserData)ussdSessionMgmt.getUserAuthObj());
+    List<CustomerMobileRegAcct> acts=authData.getPayData().getCustActs();
 	if (payData != null && payData.getSrcLst() != null && !payData.getSrcLst().isEmpty()) {
+		List<String> GpAcc=new ArrayList<String>();
+		 for(int i =0;i<acts.size();i++)
+		    	if(acts.get(i).getGroupWalletIndicator()!=null && acts.get(i).getGroupWalletIndicator().equals("Y"))
+		    		GpAcc.add(acts.get(i).getMkdActNo());
+		    List<AccountDetails> srcAcc=payData.getSrcLst();
+		    if(null != srcAcc){
+		    	for(int j=0;j<srcAcc.size();j++)
+					 if(GpAcc.contains(srcAcc.get(j).getMkdActNo()))
+						 srcAcc.remove(j);
+		    }
 
+			 if (srcAcc == null || srcAcc.isEmpty() || srcAcc.size() == 0) {
+				    throw new USSDNonBlockingException(USSDExceptions.USSD_NO_ELIGIBLE_ACCTS.getBmgCode());
+				}
 	    // for (AccountDetails accountDetail : payData.getPayLst()) {
 	    for (AccountDetails accountDetail : payData.getSrcLst()) {
 		pageBody.append(USSDConstants.NEW_LINE);

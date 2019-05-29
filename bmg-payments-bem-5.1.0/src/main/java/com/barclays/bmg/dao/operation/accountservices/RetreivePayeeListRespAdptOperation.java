@@ -14,7 +14,7 @@ import com.barclays.bmg.dao.core.proxy.util.MaskingRuleImpl;
 import com.barclays.bmg.dto.BeneficiaryDTO;
 import com.barclays.bmg.service.response.RetreivePayeeListServiceResponse;
 
-public class RetreivePayeeListRespAdptOperation extends AbstractResAdptOperation {
+public class RetreivePayeeListRespAdptOperation extends AbstractResAdptOperationAcct {
 
 	public RetreivePayeeListServiceResponse adaptResponse(WorkContext workContext,Object obj){
 

@@ -14,7 +14,6 @@ public class CreditCardStatementDatesHeaderAdapter extends AbstractReqAdptOperat
 
 	BEMReqHeader reqHeader = super.buildRequestHeader(workContext, SERVICE_RETRIEVE_CREDIT_CARD_ACCT_STATEMENT_DATES);
 
-	String businessID = getBusinessId(workContext);
 	//Commented because issue with Credit Card Link for  Vision Plus R3 relase
 
 	//if (businessID.equalsIgnoreCase("KEBRB")) {

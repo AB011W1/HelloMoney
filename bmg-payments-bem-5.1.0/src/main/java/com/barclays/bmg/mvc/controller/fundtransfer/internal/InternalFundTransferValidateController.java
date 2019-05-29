@@ -1,6 +1,7 @@
 package com.barclays.bmg.mvc.controller.fundtransfer.internal;
 
 import java.math.BigDecimal;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,6 +11,7 @@ import org.springframework.validation.BindException;
 import com.barclays.bmg.constants.ActivityIdConstantBean;
 import com.barclays.bmg.constants.BMGProcessConstants;
 import com.barclays.bmg.constants.FundTransferConstants;
+import com.barclays.bmg.constants.SystemParameterConstant;
 import com.barclays.bmg.context.Context;
 import com.barclays.bmg.context.ResponseContext;
 import com.barclays.bmg.dto.Amount;
@@ -59,6 +61,9 @@ public class InternalFundTransferValidateController extends BMBAbstractCommandCo
 	{
 		getSelectedAccountOperationRequest.setAcctNumber(getAccountNumber(interFundTransferCommand.getFrActNo(),
 				httpRequest,BMGProcessConstants.CREDIT_PAYMENT));
+      	//Change to filter blocked card on selection
+		String ccNumber = httpRequest.getParameterMap().get("ccNumber")!= null ? httpRequest.getParameterMap().get("ccNumber").toString() : "";
+		getSelectedAccountOperationRequest.setCreditCardNumber(ccNumber);
 		getSelectedAccountOperationResponse = getSelectedAccountOperation
 		.getSelectedCreditCardAccount(getSelectedAccountOperationRequest);
 	}else{
@@ -84,7 +89,11 @@ public class InternalFundTransferValidateController extends BMBAbstractCommandCo
 	if (getSelectedAccountOperationResponse.isSuccess() && retrievePayeeInfoOperationResponse.isSuccess()) {
 
 		// Set OpCode for OtherBarclays Registered FundTransfer - CPB 31/08/2017
-		if(context.getActivityId().equals("PMT_FT_INTERNAL_PAYEE") && context.getBusinessId().equals("KEBRB")){
+		// Uganda CBP Check
+
+		//check for CBP
+		 Map<String, Object> contextMap = context.getContextMap();
+		if(context.getActivityId().equals("PMT_FT_INTERNAL_PAYEE") && (contextMap!=null && contextMap.get(SystemParameterConstant.isCBPFLAG).equals("Y")|| context.getBusinessId().equalsIgnoreCase("KEBRB"))){
 			context.setOpCde(httpRequest.getParameter("opCde"));
 		}
 	    FormValidateOperationRequest formValidateOperationRequest = new FormValidateOperationRequest();

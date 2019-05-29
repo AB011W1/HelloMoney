@@ -21,7 +21,7 @@ import com.barclays.bmg.exception.BMBDataAccessException;
 import com.barclays.bmg.service.accountdetails.request.CASAAccountActivityServiceRequest;
 import com.barclays.bmg.service.accountdetails.response.CASAAccountTrnxHistoryServiceResponse;
 
-public class CASAAccountTrnxHistoryRespAdptOperation extends AbstractResAdptOperation {
+public class CASAAccountTrnxHistoryRespAdptOperation extends AbstractResAdptOperationAcct {
 
     public CASAAccountTrnxHistoryServiceResponse adaptResponseForCASAAccountActivity(WorkContext workContext, Object obj) throws Exception {
 

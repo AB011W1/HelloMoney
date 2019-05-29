@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="MCFE">
+
+	<typeAlias alias="promotionalOfferDto"	type="com.barclays.bmg.ibatis.dto.offer.PromotionalOfferDto" />
+
+	<typeAlias alias="cityDto" type="com.barclays.bmg.dto.offer.CityDTO" />
+
+	<typeAlias alias="termsAndConditionDTO" type="com.barclays.bmg.dto.offer.TermsAndConditionDTO" />
+
+	<typeAlias alias="offerCategoryDTO" type="com.barclays.bmg.dto.offer.OfferCategoryDTO" />
+
+
+	<resultMap id="promotionalOffer" class="promotionalOfferDto">
+		<result property="offerId" column="PROMO_OFFER_ID" />
+		<result property="offerDesc" column="OFFER_DESC" />
+		<result property="offerTypeDesc" column="OFFER_TYPE_DESC" />
+		<result property="resturantName" column="OFFER_RESTAURENT_NAME" />
+		<result property="cusine" column="OFFER_CUISINE" />
+		<result property="discountPercent" column="OFFER_DISCOUNT_PERCENTAGE" />
+		<result property="offerEndDate" column="OFFER_END_DATE" />
+		<result property="locationId" column="LOCATION_ID" />
+		<result property="cityName" column="CITY" />
+		<result property="cityAddress" column="ADDRESS" />
+		<result property="phoneNo" column="PHONE_NO" />
+		<result property="latitude" column="LATITUDE" />
+		<result property="longitude" column="LONGITUDE" />
+		<result property="offerTnc" column="OFFER_TERMS_COND_DESC" />
+	</resultMap>
+
+	<resultMap id="eipPromotionalOffer" class="promotionalOfferDto">
+		<result property="offerId" column="PROMO_OFFER_ID" />
+		<result property="offerDesc" column="OFFER_DESC" />
+		<result property="offerTypeDesc" column="OFFER_TYPE_DESC" />
+		<result property="resturantName" column="OFFER_RESTAURENT_NAME" />
+		<result property="cusine" column="OFFER_CUISINE" />
+		<result property="discountPercent" column="OFFER_DISCOUNT_PERCENTAGE" />
+		<result property="offerEndDate" column="OFFER_END_DATE" />
+		<result property="locationId" column="LOCATION_ID" />
+		<result property="cityName" column="CITY" />
+		<result property="cityAddress" column="ADDRESS" />
+		<result property="phoneNo" column="PHONE_NO" />
+		<result property="latitude" column="LATITUDE" />
+		<result property="longitude" column="LONGITUDE" />
+		<result property="partnerName" column="OFFER_PARTNER_NAME" />
+		<result property="eipOffer" column="OFFER_EIP_OFFER" />
+		<result property="catgoryId" column="OFFER_CATEGORY_ID" />
+		<result property="catgoryDesc" column="OFFER_CATEGORY_DESC" />
+		<result property="offerTnc" column="OFFER_TERMS_COND_DESC" />
+
+	</resultMap>
+
+
+	<resultMap id="dineCity" class="cityDto">
+		<result property="cityId" column="CITY_ID" />
+		<result property="cityName" column="CITY" />
+	</resultMap>
+
+	<resultMap id="offerCategory" class="offerCategoryDTO">
+		<result property="categoryId" column="OFFER_CATEGORY_ID" />
+		<result property="catgoryName" column="OFFER_CATEGORY_DESC" />
+	</resultMap>
+
+	<resultMap id="termsAndCondition" class="termsAndConditionDTO">
+		<result property="termsAndCondId" column="offer_terms_cond_id" />
+		<result property="termsAndCondDesc" column="offer_terms_cond_desc" />
+	</resultMap>
+
+
+	<select id="loadDiningOffers" resultMap="promotionalOffer">
+		SELECT PO.PROMO_OFFER_ID, PO.OFFER_DESC, OT.OFFER_TYPE_DESC,
+		PO.OFFER_START_DATE,PO.OFFER_END_DATE,
+		PO.OFFER_RESTAURENT_NAME,PO.OFFER_CUISINE,
+		PO.OFFER_DISCOUNT_PERCENTAGE,OL.LOCATION_ID, OL.CITY, OL.ADDRESS,
+		OL.PHONE_NO, OL.LATITUDE, OL.LONGITUDE, OTNC.OFFER_TERMS_COND_DESC
+		FROM OFFER_PROMO_OFFERS PO, OFFER_LOCATION OL, OFFER_PROMO_LOCATION_MAPPING POL,
+		OFFER_TYPE OT,OFFER_TERMSNCOND OTNC
+		WHERE PO.PROMO_OFFER_ID=POL.PROMO_OFFER_ID
+		AND POL.LOCATION_ID=OL.LOCATION_ID
+		AND PO.OFFER_TYPE_ID=OT.OFFER_TYPE_ID
+		AND PO.OFFER_TYPE_ID=1
+		AND PO.OFFER_TERMS_COND_ID=OTNC.OFFER_TERMS_COND_ID
+		AND PO.OFFER_SYSTEM_ID=#systemId#
+		AND PO.OFFER_BUSINESS_ID=#businessId#
+		AND to_date(SYSDATE,'DD-MON-YY') &lt;=PO.OFFER_END_DATE
+		<dynamic prepend="">
+		 <isNotNull prepend="AND" property="city">
+					UPPER(OL.CITY) like UPPER('%'||#location#||'%')
+	        </isNotNull>
+     		<isNotNull prepend="AND" property="resturantName">
+					(UPPER(PO.OFFER_RESTAURENT_NAME) like UPPER('%'||#resturantName#||'%'))
+	        </isNotNull>
+	       </dynamic>
+       ORDER BY PO.PROMO_OFFER_ID ASC
+	</select>
+
+	<select id="loadEIPOffers" resultMap="eipPromotionalOffer">
+		SELECT PO.PROMO_OFFER_ID, PO.OFFER_DESC, OT.OFFER_TYPE_DESC,
+		PO.OFFER_START_DATE,PO.OFFER_END_DATE,
+		PO.OFFER_RESTAURENT_NAME,PO.OFFER_CUISINE,
+		PO.OFFER_DISCOUNT_PERCENTAGE,OL.LOCATION_ID, OL.CITY, OL.ADDRESS,
+		OL.PHONE_NO, OL.LATITUDE, OL.LONGITUDE, PO.OFFER_EIP_OFFER, PO.OFFER_PARTNER_NAME,
+		PO.OFFER_CATEGORY_ID,OCAT.OFFER_CATEGORY_DESC, OTNC.OFFER_TERMS_COND_DESC
+		FROM OFFER_PROMO_OFFERS PO, OFFER_LOCATION OL, OFFER_PROMO_LOCATION_MAPPING POL,
+		OFFER_TYPE OT, OFFER_CATEGORY OCAT, OFFER_TERMSNCOND OTNC
+		WHERE PO.PROMO_OFFER_ID=POL.PROMO_OFFER_ID
+		AND POL.LOCATION_ID=OL.LOCATION_ID
+		AND PO.OFFER_TYPE_ID=OT.OFFER_TYPE_ID
+		AND PO.OFFER_CATEGORY_ID=OCAT.OFFER_CATEGORY_ID
+		AND PO.OFFER_TERMS_COND_ID=OTNC.OFFER_TERMS_COND_ID
+		AND PO.OFFER_TYPE_ID=2
+		AND PO.OFFER_SYSTEM_ID=#systemId#
+		AND PO.OFFER_BUSINESS_ID=#businessId#
+		AND to_date(SYSDATE,'DD-MON-YY') &lt;=PO.OFFER_END_DATE
+		<dynamic prepend="">
+
+		<isNotNull prepend="AND" property="partnerName">
+					UPPER(PO.OFFER_PARTNER_NAME) like UPPER('%'||#partnerName#||'%')
+	        </isNotNull>
+
+       </dynamic>
+       ORDER BY PO.PROMO_OFFER_ID ASC
+	</select>
+
+
+	<select id="allDineCities" resultMap="dineCity">
+		SELECT ROWNUM CITY_ID, CITY
+		FROM (SELECT DISTINCT OL.CITY
+		FROM OFFER_PROMO_OFFERS PO,
+		OFFER_LOCATION OL, OFFER_PROMO_LOCATION_MAPPING POL
+		WHERE PO.PROMO_OFFER_ID=POL.PROMO_OFFER_ID
+		AND POL.LOCATION_ID=OL.LOCATION_ID
+		AND PO.OFFER_SYSTEM_ID=#systemId#
+		AND PO.OFFER_BUSINESS_ID=#businessId#
+		AND	PO.OFFER_TYPE_ID=1
+		ORDER BY CITY ASC)
+	</select>
+
+	<select id="loadEIPCategorylist" resultMap="offerCategory">
+		SELECT OCAT.OFFER_CATEGORY_ID, OCAT.OFFER_CATEGORY_DESC
+		FROM OFFER_CATEGORY OCAT
+		where OCAT.BUSINESS_ID=#businessId#
+	</select>
+
+	<select id="loadTermsAndCondition" resultMap="termsAndCondition">
+		select tnc.offer_terms_cond_id , tnc.offer_terms_cond_desc from offer_termsncond tnc
+		where tnc.offer_terms_cond_id = #offerType#
+	</select>
+
+</sqlMap>

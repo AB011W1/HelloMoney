@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
     <wb-module deploy-name="hellomoney">
         <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/bmg-ssa-payments-bem-5.1.0/bmg-ssa-payments-bem-5.1.0">
             <dependency-type>uses</dependency-type>
@@ -90,10 +89,10 @@
         <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/bmg-uae-interest-rates/bmg-uae-interest-rates">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/bcag-connect/bcag-connect">
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/bmg-promotional-offers/bmg-promotional-offers">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/bmg-promotional-offers/bmg-promotional-offers">
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/hsm-connect/hsm-connect">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="java-output-path"/>

@@ -1,0 +1,111 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Body>
+    <p921:RetrieveIndividualCustomerAccountListResponse xmlns:p921="http://barclays.com/bem/RetrieveIndividualCustAcctList">
+      <p921:ResponseHeader>
+        <ServiceContext>
+          <ServiceID>RetrieveIndividualCustAcctList</ServiceID>
+          <ConsumerUniqueRefNo>61515133813922</ConsumerUniqueRefNo>
+          <OriginalConsumerUniqueRefNo>61515133813922</OriginalConsumerUniqueRefNo>
+          <ServiceDateTime>2018-01-05T06:30:14.016Z</ServiceDateTime>
+          <ServiceVersionNo>6.0.0</ServiceVersionNo>
+          <OverrideRequestFlag>0</OverrideRequestFlag>
+        </ServiceContext>
+        <BankUserContext>
+          <StaffType>Regular</StaffType>
+          <StaffID>IFE</StaffID>
+          <AuthorizerID>Z00019789</AuthorizerID>
+        </BankUserContext>
+        <ServiceResStatus>
+          <ServiceResCode>00000</ServiceResCode>
+          <ServiceResDesc>Success</ServiceResDesc>
+          <ServiceRespDateTime>2018-01-05T06:30:17.393Z</ServiceRespDateTime>
+          <ServiceUniqueRefNo>e53bc85e-f1e1-11e7-8f29-233531e70000</ServiceUniqueRefNo>
+        </ServiceResStatus>
+      </p921:ResponseHeader>
+      <p921:AccountList>
+        <p921:CASAAccountList>
+          <p921:CASAAccount xmlns:p973="http://barclays.com/bem/Account" xmlns:p235="http://barclays.com/bem/CASAAccountSummary">
+            <p973:AccountNumber>1107799</p973:AccountNumber>
+            <p973:AccountCurrencyCode>GHS</p973:AccountCurrencyCode>
+            <p973:Product xmlns:p521="http://barclays.com/bem/Product">
+              <p521:ProductCode>89</p521:ProductCode>
+            </p973:Product>
+            <p973:AccountLifecycleStatusCode>CASA-0</p973:AccountLifecycleStatusCode>
+            <p973:AccountAvailableBalance xmlns:p412="http://barclays.com/bem/Balance">
+              <p412:AccountCCYBalance>24900.48</p412:AccountCCYBalance>
+            </p973:AccountAvailableBalance>
+            <p973:AccountCurrentBalance xmlns:p412="http://barclays.com/bem/Balance">
+              <p412:AccountCCYBalance>24750.48</p412:AccountCCYBalance>
+            </p973:AccountCurrentBalance>
+            <p973:DomicileBranch xmlns:p466="http://barclays.com/bem/Branch">
+              <p466:BranchCode>36</p466:BranchCode>
+            </p973:DomicileBranch>
+            <p973:JointAccountRelationship xmlns:p468="http://barclays.com/bem/JointAccountHoldersRelationship">
+              <p468:RelationshipTypeCode>S</p468:RelationshipTypeCode>
+            </p973:JointAccountRelationship>
+          </p921:CASAAccount>
+          <p921:CASAAccount xmlns:p973="http://barclays.com/bem/Account" xmlns:p235="http://barclays.com/bem/CASAAccountSummary">
+            <p973:AccountNumber>1215931</p973:AccountNumber>
+            <p973:AccountCurrencyCode>GHS</p973:AccountCurrencyCode>
+            <p973:Product xmlns:p521="http://barclays.com/bem/Product">
+              <p521:ProductCode>87</p521:ProductCode>
+            </p973:Product>
+            <p973:AccountLifecycleStatusCode>CASA-0</p973:AccountLifecycleStatusCode>
+            <p973:AccountAvailableBalance xmlns:p412="http://barclays.com/bem/Balance">
+              <p412:AccountCCYBalance>455.87</p412:AccountCCYBalance>
+            </p973:AccountAvailableBalance>
+            <p973:AccountCurrentBalance xmlns:p412="http://barclays.com/bem/Balance">
+              <p412:AccountCCYBalance>505.87</p412:AccountCCYBalance>
+            </p973:AccountCurrentBalance>
+            <p973:DomicileBranch xmlns:p466="http://barclays.com/bem/Branch">
+              <p466:BranchCode>36</p466:BranchCode>
+            </p973:DomicileBranch>
+            <p973:JointAccountRelationship xmlns:p468="http://barclays.com/bem/JointAccountHoldersRelationship">
+              <p468:RelationshipTypeCode>S</p468:RelationshipTypeCode>
+            </p973:JointAccountRelationship>
+          </p921:CASAAccount>
+          <p921:CASAAccount xmlns:p973="http://barclays.com/bem/Account" xmlns:p235="http://barclays.com/bem/CASAAccountSummary">
+            <p973:AccountNumber>1109304</p973:AccountNumber>
+            <p973:AccountCurrencyCode>GBP</p973:AccountCurrencyCode>
+            <p973:Product xmlns:p521="http://barclays.com/bem/Product">
+              <p521:ProductCode>7</p521:ProductCode>
+            </p973:Product>
+            <p973:AccountLifecycleStatusCode>CASA-0</p973:AccountLifecycleStatusCode>
+            <p973:AccountAvailableBalance xmlns:p412="http://barclays.com/bem/Balance">
+              <p412:AccountCCYBalance>3.58</p412:AccountCCYBalance>
+            </p973:AccountAvailableBalance>
+            <p973:AccountCurrentBalance xmlns:p412="http://barclays.com/bem/Balance">
+              <p412:AccountCCYBalance>3.58</p412:AccountCCYBalance>
+            </p973:AccountCurrentBalance>
+            <p973:DomicileBranch xmlns:p466="http://barclays.com/bem/Branch">
+              <p466:BranchCode>64</p466:BranchCode>
+            </p973:DomicileBranch>
+            <p973:JointAccountRelationship xmlns:p468="http://barclays.com/bem/JointAccountHoldersRelationship">
+              <p468:RelationshipTypeCode>S</p468:RelationshipTypeCode>
+            </p973:JointAccountRelationship>
+          </p921:CASAAccount>
+          <p921:CASAAccount xmlns:p973="http://barclays.com/bem/Account" xmlns:p235="http://barclays.com/bem/CASAAccountSummary">
+            <p973:AccountNumber>1141119</p973:AccountNumber>
+            <p973:AccountCurrencyCode>USD</p973:AccountCurrencyCode>
+            <p973:Product xmlns:p521="http://barclays.com/bem/Product">
+              <p521:ProductCode>7</p521:ProductCode>
+            </p973:Product>
+            <p973:AccountLifecycleStatusCode>CASA-0</p973:AccountLifecycleStatusCode>
+            <p973:AccountAvailableBalance xmlns:p412="http://barclays.com/bem/Balance">
+              <p412:AccountCCYBalance>10310.83</p412:AccountCCYBalance>
+            </p973:AccountAvailableBalance>
+            <p973:AccountCurrentBalance xmlns:p412="http://barclays.com/bem/Balance">
+              <p412:AccountCCYBalance>10310.83</p412:AccountCCYBalance>
+            </p973:AccountCurrentBalance>
+            <p973:DomicileBranch xmlns:p466="http://barclays.com/bem/Branch">
+              <p466:BranchCode>64</p466:BranchCode>
+            </p973:DomicileBranch>
+            <p973:JointAccountRelationship xmlns:p468="http://barclays.com/bem/JointAccountHoldersRelationship">
+              <p468:RelationshipTypeCode>S</p468:RelationshipTypeCode>
+            </p973:JointAccountRelationship>
+          </p921:CASAAccount>
+        </p921:CASAAccountList>
+      </p921:AccountList>
+    </p921:RetrieveIndividualCustomerAccountListResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

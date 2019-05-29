@@ -28,10 +28,10 @@ public class AccountSummaryOperation extends BMBCommonOperation {
 
     /**
      * 1. Retrieve all account list form BEM 2. Retrieve product eligibility from DB 3. Filter account list with the product eligibility critiria.
-     * 
+     *
      * @param request
      * @return //EvictServiceCache
-     * 
+     *
      */
     @AuditSupport(auditType = AuditConstant.AUDIT_TYPE_TRANSACTION, activityState = AuditConstant.SRC_COM_SSC, serviceDescription = "SD_RETRIEVE_CUST_ACCT_LIST", stepId = "1", activityType = "auditAccountSummary")
     public AccountSummaryOperationResponse retrieveAllAccount(AccountSummaryOperationRequest request) {
@@ -53,7 +53,7 @@ public class AccountSummaryOperation extends BMBCommonOperation {
 	// Retrive all account List from BEM
 	AllAccountServiceResponse allAccountServiceResp = allAccountService.retrieveAllAccount(allAccountServiceRequest);
 	respCode = allAccountServiceResp.getResCde();
-	if (allAccountServiceResp != null && allAccountServiceResp.isSuccess()) {
+	if (allAccountServiceResp.isSuccess()) {
 	    respSuccessFlg = allAccountServiceResp.isSuccess();
 
 	    List<CustomerAccountDTO> filterActList = (List<CustomerAccountDTO>) allAccountServiceResp.getAccountList();
@@ -88,7 +88,7 @@ public class AccountSummaryOperation extends BMBCommonOperation {
     }
 
     /**
-     * 
+     *
      * @param request
      * @return
      */
@@ -108,7 +108,7 @@ public class AccountSummaryOperation extends BMBCommonOperation {
 	allAccountServiceRequest.setAccountType(request.getAccountType());
 	AllAccountServiceResponse allAccountServiceResp = allAccountService.retrieveCreditCardList(allAccountServiceRequest);
 	respSuccessFlg = allAccountServiceResp.isSuccess();
-	if (allAccountServiceResp != null && respSuccessFlg) {
+	if (respSuccessFlg) {
 	    respCode = allAccountServiceResp.getResCde();
 	    if (respSuccessFlg) {
 		List<CustomerAccountDTO> filterActList = getFilterActList(request, allAccountServiceResp.getAccountList());
@@ -140,7 +140,7 @@ public class AccountSummaryOperation extends BMBCommonOperation {
     }
 
     /**
-     * 
+     *
      * @param request
      * @param lstAccounts
      * @return
@@ -166,7 +166,7 @@ public class AccountSummaryOperation extends BMBCommonOperation {
 
     /**
      * Arrange the Account List
-     * 
+     *
      * @param filterActList
      * @return
      */
@@ -199,7 +199,7 @@ public class AccountSummaryOperation extends BMBCommonOperation {
 
     /**
      * Filter the Account list by using Product eligibility service
-     * 
+     *
      * @param accountList
      * @param request
      * @param response

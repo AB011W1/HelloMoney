@@ -7,6 +7,7 @@ import java.util.Map;
 
 import uk.co.barclays.www.rbb.tcvm.Common.ContactDetailsType;
 import uk.co.barclays.www.rbb.tcvm.Common.TypeCode;
+//import uk.co.barclays.www.rbb.tcvm.NotificationEventType.DynamicFieldType;
 import uk.co.barclays.www.rbb.tcvm.Notification.DeliveryDetailsType;
 import uk.co.barclays.www.rbb.tcvm.NotificationEventType.DynamicFieldType;
 import uk.co.barclays.www.rbb.tcvm.NotificationEventType.NotificationEventType;
@@ -25,11 +26,8 @@ import com.barclays.bmg.dao.core.proxy.util.MaskingRuleImpl;
 import com.barclays.bmg.dto.CreditCardAccountDTO;
 import com.barclays.bmg.operation.accounts.request.ApplyProductConfirmOperationRequest;
 import com.barclays.bmg.operation.accounts.request.ApplyProductConfirmOperationResponse;
-import com.barclays.bmg.operation.request.ChangePasswordOperationRequest;
 import com.barclays.bmg.operation.request.fundtransfer.DomesticFundTransferExecuteOperationRequest;
-import com.barclays.bmg.operation.request.fundtransfer.external.AddBeneficiaryOperationRequest;
 import com.barclays.bmg.operation.request.fundtransfer.external.AddOrgBenefeciaryOperationRequest;
-import com.barclays.bmg.operation.response.ChangePasswordOperationResponse;
 import com.barclays.bmg.operation.response.fundtransfer.DomesticFundTransferExecuteOperationResponse;
 import com.barclays.bmg.operation.response.fundtransfer.external.AddBeneficiaryOperationResponse;
 import com.barclays.bmg.operation.response.fundtransfer.external.AddOrgBeneficiaryOperationResponse;
@@ -113,7 +111,8 @@ public class SMSDetailsPayloadAdapter {
 	typeCode.setCode(request.getPriority());
 
 	notificationEventType.setEventPriority(typeCode);// database priority
-	notificationEventType.setEventIdentifier(eventIdentifier);// add in database
+	notificationEventType.setEventIdentifier_NotificationEventType(eventIdentifier);
+	//notificationEventType.setEventIdentifier(eventIdentifier);// add in database
 
 	/* setting dynamic fields according to the event id */
 	String activityId = "";
@@ -756,7 +755,7 @@ public class SMSDetailsPayloadAdapter {
 	 */
 	if (dynamicFieldList != null && dynamicFieldList.size() > 0) {
 	    dynamicField = dynamicFieldList.toArray(new DynamicFieldType[dynamicFieldList.size()]);
-	    notificationEventType.setDynamicField(dynamicField);
+	    notificationEventType.setDynamicField_NotificationEventType(dynamicField);
 	}
 
 	return notificationEventType;

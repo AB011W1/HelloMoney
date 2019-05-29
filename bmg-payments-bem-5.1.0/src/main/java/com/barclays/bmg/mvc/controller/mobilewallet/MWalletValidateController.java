@@ -149,10 +149,16 @@ public class MWalletValidateController extends BMBAbstractCommandController {
 	if ("CreditCardMW".equals(mWalletValidateCommand.getCrditCardFlag())) {
 		getSelectedAccountOperationRequest.setAcctNumber(getAccountNumber(mWalletValidateCommand.getActNo(),
 				request,BMGProcessConstants.CREDIT_PAYMENT));
+        //Change to filter blocked card on selection
+		String ccNumber = request.getParameterMap().get("ccNumber")!= null ? request.getParameterMap().get("ccNumber").toString() : "";
+		getSelectedAccountOperationRequest.setCreditCardNumber(ccNumber);
 		getSelectedAccountOperationResponse = getSelectedAccountOperation.getSelectedCreditCardAccount(getSelectedAccountOperationRequest);
 		} else {
 			getSelectedAccountOperationRequest.setAcctNumber(getAccountNumber(mWalletValidateCommand.getActNo(),
 					request,BMGProcessConstants.BILL_PAYMENT));
+			if(getSelectedAccountOperationRequest.getAcctNumber()==null)
+				if(mWalletValidateCommand.getActNo()!=null)
+					getSelectedAccountOperationRequest.setAcctNumber(mWalletValidateCommand.getActNo().trim());
 			getSelectedAccountOperationResponse = getSelectedAccountOperation
 					.getSelectedSourceAccount(getSelectedAccountOperationRequest);
 		}
@@ -166,7 +172,10 @@ public class MWalletValidateController extends BMBAbstractCommandController {
 	    FormValidateOperationRequest formValidateOperationRequest = new FormValidateOperationRequest();
 
 	    // Set OpCode for MWallet - CPB 16/05/2017
-		if(context.getActivityId().equals("PMT_BP_MOBILE_WALLET_ONETIME") && context.getBusinessId().equals("KEBRB")){
+	    // Check for UGBRB
+	    //Change CBP
+		Map<String, Object> contextMap = context.getContextMap();
+		if(context.getActivityId().equals("PMT_BP_MOBILE_WALLET_ONETIME") && (contextMap!=null && contextMap.get(SystemParameterConstant.isCBPFLAG).equals("Y") || context.getBusinessId().equals("KEBRB"))){
 			context.setOpCde(request.getParameter("opCde"));
 		}
 

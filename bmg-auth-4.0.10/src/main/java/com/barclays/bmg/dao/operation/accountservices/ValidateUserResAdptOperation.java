@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.barclays.bmg.constants.AuthResponseCodeConstants;
-import com.barclays.bmg.constants.AuthServiceErrorCodeConstant;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.dao.core.context.impl.DAOContext;
 import com.barclays.bmg.dto.CustomerDTO;
@@ -84,7 +83,7 @@ public class ValidateUserResAdptOperation extends AbstractAuthResAdaptOperation 
 
     /**
      * retrieve user info from response
-     * 
+     *
      * @param response
      * @return
      */
@@ -114,7 +113,7 @@ public class ValidateUserResAdptOperation extends AbstractAuthResAdaptOperation 
 
     /**
      * Check authentication response code
-     * 
+     *
      * @param authResHeader
      * @returnSEC00005
      */
@@ -125,12 +124,12 @@ public class ValidateUserResAdptOperation extends AbstractAuthResAdaptOperation 
 	// String resDesc = authResHeader.getServiceResStatus()
 	// .getServiceResDesc();
 
-	if (AuthServiceErrorCodeConstant.SEC_REGISTRATION_LOGINNAME_EXIST.equals(resCde)) {
+	//if (AuthServiceErrorCodeConstant.SEC_REGISTRATION_LOGINNAME_EXIST.equals(resCde)) {
 	    resCde = AuthResponseCodeConstants.AUTH_SUCCESS;
-	} else {
+	/*} else {
 	    // TODO change later AuthResponseCodeConstants.AUTH_INVALID_USERNAME;
 	    resCde = AuthResponseCodeConstants.AUTH_SUCCESS;
-	}
+	}*/
 
 	return resCde;
 
@@ -138,7 +137,7 @@ public class ValidateUserResAdptOperation extends AbstractAuthResAdaptOperation 
 
     /**
      * retrieve product processor details from response
-     * 
+     *
      * @param respCustomerInfo
      * @return
      */
@@ -174,7 +173,7 @@ public class ValidateUserResAdptOperation extends AbstractAuthResAdaptOperation 
 
     /**
      * retrieve postal address from response
-     * 
+     *
      * @param postalAddresses
      * @return
      */

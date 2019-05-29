@@ -54,7 +54,25 @@ public class FreeDialConfirmValidateRequestBuilder implements BmgBaseRequestBuil
 			requestParamMap.put(USSDInputParamsEnum.FREE_DIAL_ACCT_LIST.getParamName(), acctNo);
 			requestParamMap.put("extra", "FREEDIALAIRTEL");
 			requestParamMap.put("actionCode", "FREEDIALAIRTEL");
-		}else{
+		}
+		else if(userInputMapAirtel!=null && userInputMapAirtel.get("extra")!=null && userInputMapAirtel.get("extra").toString().equals("FREEDIALAIRTELZM")){
+			requestParamMap.put(USSDInputParamsEnum.FREE_DIAL_MOB_NUM.getParamName(), userInputMapAirtel.get("mblNo").toString());
+			requestParamMap.put(USSDInputParamsEnum.FREE_DIAL_AMOUNT.getParamName(), userInputMapAirtel.get("txnAmt").toString());
+			requestParamMap.put(USSDInputParamsEnum.FREE_DIAL_MNO_LIST.getParamName(), "AIRTELZMBANKTOWALLET-2");
+			AuthUserData aData=(AuthUserData)session.getUserAuthObj();
+			List<CustomerMobileRegAcct> cmra= aData.getPayData().getCustActs();
+			String acctNo=null;
+			for(CustomerMobileRegAcct racct:cmra)
+				if(racct.getPriInd().equals("Y")){
+					acctNo=racct.getActNo();
+					break;
+				}
+
+			requestParamMap.put(USSDInputParamsEnum.FREE_DIAL_ACCT_LIST.getParamName(), acctNo);
+			requestParamMap.put("extra", "FREEDIALAIRTELZM");
+			requestParamMap.put("actionCode", "FREEDIALAIRTELZM");
+		}
+		else{
 		Map<String, String> userInputMap = requestBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap();
 		Map<String, Object> txSessions = session.getTxSessions();
 		List<Biller> mnoList = (List<Biller>) txSessions.get(USSDInputParamsEnum.FREE_DIAL_MNO_LIST.getTranId());

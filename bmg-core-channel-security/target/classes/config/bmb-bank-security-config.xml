@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+            http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+    <bean id="percentCodec" class="org.owasp.esapi.codecs.PercentCodec" />
+    <bean id="cssCodec" class="org.owasp.esapi.codecs.CSSCodec" />
+    <bean id="htmlCodec" class="org.owasp.esapi.codecs.HTMLEntityCodec" />
+    <bean id="oracleCodec" class="org.owasp.esapi.codecs.OracleCodec" />
+    <bean id="javaScriptCodec" class="org.owasp.esapi.codecs.JavaScriptCodec" />
+
+    <bean id="encoder"
+        class="com.barclays.mcfe.secure.EncoderImpl"
+        scope="singleton">
+        <constructor-arg index="0">
+            <map>
+                <entry key="CSSCodec">
+                    <ref local="cssCodec" />
+                </entry>
+                <entry key="HTMLEntityCodec">
+                    <ref local="htmlCodec" />
+                </entry>
+                <entry key="OracleCodec">
+                    <ref local="oracleCodec" />
+                </entry>
+                <entry key="JavaScriptCodec">
+                    <ref local="javaScriptCodec" />
+                </entry>
+            </map>
+        </constructor-arg>
+    </bean>
+
+    <bean id="validator"
+        class="com.barclays.mcfe.secure.ValidatorImpl"
+        scope="singleton">
+        <constructor-arg ref="encoder" />
+        <constructor-arg ref="securityConfiguration" />
+    </bean>
+
+
+<!--
+    <bean id="esapi" class="org.owasp.esapi.ESAPI" scope="singleton">
+        <property name="securityConfiguration" ref="securityConfiguration" />
+    </bean>
+ -->
+    <bean id="securityConfiguration" class ="com.barclays.mcfe.secure.SecurityConfigurationImpl">
+        <constructor-arg ref="validations" />
+        <constructor-arg ref="security" />
+    </bean>
+
+    <bean id="validations" class="com.barclays.mcfe.secure.PropertiesBeanFactoryWrapper">
+        <property name="locations">
+            <list>
+                <value>classpath:config/bmbweb-validation.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="security" class="com.barclays.mcfe.secure.PropertiesBeanFactoryWrapper">
+        <property name="locations">
+            <list>
+                <value>classpath:config/security.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="esapiSecureFilter" class="com.barclays.mcfe.secure.filters.EsapiSecureFilter">
+        <constructor-arg ref="validator" />
+        <constructor-arg ref="securityConfiguration" />
+    </bean>
+
+     <bean id ="sessionBindingCheckFilter" class="com.barclays.mcfe.secure.filters.SessionBindingCheckFilter">
+        <constructor-arg ref="sessionBindingCheck" />
+        <constructor-arg ref="security" />
+    </bean>
+
+     <bean id="sessionBindingCheck" class="com.barclays.mcfe.secure.SessionBindingCheck">
+        <constructor-arg ref="security" />
+        <constructor-arg ref="seed" />
+    </bean>
+
+<!--     <bean id="csrfFlowExecutionListener" class="com.barclays.mcfe.secure.listeners.CsrfFlowExecutionListener" />-->
+
+     <!--<bean id="loginFlowExecutionListener" class="com.barclays.mcfe.secure.listeners.LoginFlowExecutionListener">
+        <constructor-arg ref="sessionBindingCheck" />
+        <constructor-arg ref="security" />
+
+     </bean>
+
+       --><bean id="sessionFixationFilter" class="com.barclays.mcfe.secure.filters.SessionFixationFilter">
+         <constructor-arg ref="sessionBindingCheck" />
+     </bean>
+
+    <bean id="encryptor" class="com.barclays.mcfe.secure.Java16Encryptor">
+      <constructor-arg ref="securityConfiguration" />
+    </bean>
+
+<!-- <import resource="classpath:config/services-config.xml"/>  -->
+<!--  Service Config -->
+
+     <bean id="seed" class="com.barclays.mcfe.secure.common.utils.impl.SeedImpl"/>
+
+    <bean id="csrfSecureRandom" class="com.barclays.mcfe.secure.common.CryptographyServiceImpl">
+	  <property name="tokenSeed" ref="seed"/>
+    </bean>
+
+    <bean id="csrftoken" class="com.barclays.mcfe.secure.common.utils.impl.GenerateEsapiTokenImpl">
+	  <property name="csrfSecureRandom" ref="csrfSecureRandom" />
+    </bean>
+
+</beans>

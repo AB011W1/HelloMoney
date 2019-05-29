@@ -118,6 +118,9 @@ public class RetrieveAllCustAcctResAdptOperation {
 			dto.setAccountNumber(type.getAccountNumber());
 			dto.setBranchCode(type.getBranchCode());
 			dto.setPriInd(type.getPrimaryIndicator());
+			dto.setBankCif(type.getEntityCustomerId());
+			if(type.getAccountIndicators()!=null && type.getAccountIndicators().length>=1)
+				dto.setGroupWalletIndicator(type.getAccountIndicators()[0].getValue());
 			// dto.setCurrentBookBalanceAmount(type.get)
 			// dto.setCurrency(CURR);
 			customerAccountList.add(dto);

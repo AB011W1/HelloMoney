@@ -10,12 +10,9 @@ import org.apache.log4j.Logger;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import com.barclays.bmg.context.BMBContextHolder;
-import com.barclays.bmg.dao.product.impl.ListValueResDAOImpl;
-import com.barclays.bmg.service.product.request.ListValueResServiceRequest;
-import com.barclays.bmg.service.product.response.ListValueResByGroupServiceResponse;
+import com.barclays.bmg.context.BMGContextHolder;
+import com.barclays.bmg.context.BMGGlobalContext;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
@@ -38,14 +35,10 @@ public class OneTimeCashSendValidateJsonParser implements BmgBaseJsonParser {
     private static final String TRANSACTION_AMT_LIMIT_ERROR = "BMB90011";
     private static final String CASHSEND_TRANSACTION_AMT_LIMIT_ERROR = "BMB90003";
     private static final String TRANSACTION_FEE_LABEL = "label.transactionfee.msg";
-    private String pilotValue = null;
     // Xcelerate is offline message
     private static final String XCELERATE_OFFLINE_LABEL = "label.xcelerate.offline.acceptance";
     /** The Constant LOGGER. */
     private static final Logger LOGGER = Logger.getLogger(OwnFundTransferValidateJsonParser.class);
-
-    @Autowired
-    ListValueResDAOImpl listValueResDAOImpl;
 
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
 	String jsonString = responseBuilderParamsDTO.getJsonString();
@@ -145,12 +138,19 @@ public class OneTimeCashSendValidateJsonParser implements BmgBaseJsonParser {
 		ListValueResByGroupServiceResponse listResp = listValueResDAOImpl.findListValueResByKey(listValueResServiceRequest);
 		pilotValue = listResp.getListValueCahceDTO().get(0).getLabel();*/
 
+	    // Demo mode
+	    /*pageBody.append(USSDConstants.NEW_LINE).append("Fee").append(USSDConstants.SINGLE_WHITE_SPACE).
+		append("UG").append(USSDConstants.SINGLE_WHITE_SPACE).append("12");*/
+
 	    if (!responseBuilderParamsDTO.isErrorneousPage()) {
 		pageBody.append(USSDConstants.NEW_LINE);
 		//CPB change
 		// Removing PilotValue check(pilotValue !=null && pilotValue.equalsIgnoreCase("Y")) its not going with Regulatory 6.0.0 changes - 02/11/2017
-		if(responseBuilderParamsDTO.getUssdSessionMgmt().getBusinessId().equals("KEBRB")){
-			if(oneTimeCashSendValidatePayData.getTransactionFeeAmount()!= null && oneTimeCashSendValidatePayData.getTransactionFeeAmount().getAmt()!=null){
+		//CBP Change
+
+		BMGGlobalContext logContext = BMGContextHolder.getLogContext();
+        if(null != logContext && null !=  logContext.getContextMap() && logContext.getContextMap().get("isCBPFLAG").equals("Y") || logContext.getBusinessId().equals("KEBRB")){
+			if((logContext!=null && logContext.getContextMap().get("isCBPFLAG").equals("Y") || logContext.getBusinessId().equals("KEBRB"))  && oneTimeCashSendValidatePayData.getTransactionFeeAmount()!= null && oneTimeCashSendValidatePayData.getTransactionFeeAmount().getAmt()!=null){
 
 				Double accumulatedCharge = 0.0;
 				Double roundedAccumulatedVal = 0.0;

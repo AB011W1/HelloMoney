@@ -35,11 +35,11 @@ public class RetrieveOBAFTPayeeAcctListJsonParser implements BmgBaseJsonParser {
 	    menuDTO = renderMenuOnScreen(benfList, responseBuilderParamsDTO);
 	} catch (Exception e) {
 	    LOGGER.error("Exception : ", e);
-	    if (e instanceof USSDNonBlockingException) {
+	    /*if (e instanceof USSDNonBlockingException) {
 		throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode());
-	    } else {
+	    } else {*/
 		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
-	    }
+	    //}
 	}
 	return menuDTO;
     }

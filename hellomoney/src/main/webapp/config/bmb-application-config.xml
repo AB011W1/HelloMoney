@@ -126,5 +126,6 @@
 	<import resource="classpath:ussd-bmb-addprospect-config.xml" />-->
      <!-- KITS Look Up API  -->
     <import resource="classpath:bmb-pesalink-config.xml" />
+    <import resource="classpath:bmb-groupwallet-config.xml" />
 
 	</beans>

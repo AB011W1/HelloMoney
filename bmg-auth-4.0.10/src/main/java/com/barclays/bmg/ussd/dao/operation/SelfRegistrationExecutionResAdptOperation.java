@@ -11,7 +11,7 @@ import com.barclays.bmg.constants.SystemParameterConstant;
 import com.barclays.bmg.context.Context;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.dao.core.context.impl.DAOContext;
-import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperation;
+import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperationAcct;
 import com.barclays.bmg.ussd.auth.service.request.SelfRegistrationExecutionServiceRequest;
 import com.barclays.bmg.ussd.auth.service.response.SelfRegistrationExecutionServiceResponse;
 
@@ -23,7 +23,7 @@ import com.barclays.bmg.ussd.auth.service.response.SelfRegistrationExecutionServ
  * @author E20043104
  *
  */
-public class SelfRegistrationExecutionResAdptOperation extends AbstractResAdptOperation {
+public class SelfRegistrationExecutionResAdptOperation extends AbstractResAdptOperationAcct {
 
     /**
      * This method adaptResponseForRegistrationExecution has the purpose to adapt the response for registration execution.

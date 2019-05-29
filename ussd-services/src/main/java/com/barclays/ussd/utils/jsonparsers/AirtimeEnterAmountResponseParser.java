@@ -4,7 +4,6 @@
 package com.barclays.ussd.utils.jsonparsers;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -12,7 +11,6 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.barclays.bem.Account.Account;
 import com.barclays.bmg.constants.BillPaymentConstants;
 import com.barclays.bmg.dto.BillerCreditDTO;
 import com.barclays.bmg.service.impl.BillerServiceImpl;
@@ -42,8 +40,6 @@ import com.barclays.ussd.utils.jsonparsers.bean.airtime.Biller;
 import com.barclays.ussd.utils.jsonparsers.bean.billpay.Beneficiery;
 import com.barclays.ussd.utils.jsonparsers.bean.billpay.Payee;
 import com.barclays.ussd.validation.USSDBackFlowValidator;
-import com.barclays.ussd.utils.jsonparsers.bean.mobilewallettopup.MobileWalletProvider;
-import com.barclays.ussd.utils.jsonparsers.bean.mobilewallettopup.SrcAccount;
 import com.barclays.ussd.validation.USSDCompositeValidator;
 import com.barclays.ussd.validation.USSDMinMaxRangeValidator;
 
@@ -114,38 +110,39 @@ public class AirtimeEnterAmountResponseParser implements BmgBaseJsonParser, Syst
 
     }
 
-     public int getCustomNextScreen(String userInput, USSDSessionManagement ussdSessionMgmt) throws USSDBlockingException {
-		int seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FIVE.getSequenceNo();
-		Map<String, Object> txSessions = ussdSessionMgmt.getTxSessions();
-		Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
-		BillerServiceRequest request = new BillerServiceRequest();
+    @SuppressWarnings("unchecked")
+    public int getCustomNextScreen(String userInput, USSDSessionManagement ussdSessionMgmt) throws USSDBlockingException {
+ 		int seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FIVE.getSequenceNo();
+ 		Map<String, Object> txSessions = ussdSessionMgmt.getTxSessions();
+ 		Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
+ 		BillerServiceRequest request = new BillerServiceRequest();
 
-		/*if(BillPaymentConstants.AT_MW_SAVED_BENEF.equalsIgnoreCase(userInputMap.get("AT_MW_SAVED_BENEF"))){
+ 		if(BillPaymentConstants.AT_MW_SAVED_BENEF.equalsIgnoreCase(userInputMap.get("AT_MW_SAVED_BENEF"))){
 			List<Beneficiery> beneficiaryList = (List<Beneficiery>) txSessions.get(USSDInputParamsEnum.AIRTIME_TOPUP_PAYEE_LIST.getTranId());
-			String selectedAirtimeTopupProvider = userInputMap.get(USSDInputParamsEnum.AIRTIME_TOPUP_PAYEE_LIST.getParamName());
-			Beneficiery airtimeTopupProviderSelected = beneficiaryList.get(Integer.parseInt(selectedAirtimeTopupProvider) - 1);
-			request.setBillerId(airtimeTopupProviderSelected.getBillerId());
-		} else {*/
-			List<Biller> mnoList = (List<Biller>) ussdSessionMgmt.getTxSessions().get(USSDInputParamsEnum.AIRTIME_MNO_LIST.getTranId());
+ 			String selectedAirtimeTopupProvider = userInputMap.get(USSDInputParamsEnum.AIRTIME_TOPUP_PAYEE_LIST.getParamName());
+ 			Beneficiery airtimeTopupProviderSelected = beneficiaryList.get(Integer.parseInt(selectedAirtimeTopupProvider) - 1);
+ 			request.setBillerId(airtimeTopupProviderSelected.getBillerId());
+ 		} else {
+ 			List<Biller> mnoList = (List<Biller>) ussdSessionMgmt.getTxSessions().get(USSDInputParamsEnum.AIRTIME_MNO_LIST.getTranId());
 			String selectedAirtimeTopupProvider = userInputMap.get(USSDInputParamsEnum.AIRTIME_MNO_LIST.getParamName());
 			Biller airtimeTopupProviderSelected = mnoList.get(Integer.parseInt(selectedAirtimeTopupProvider) - 1);
 			request.setBillerId(airtimeTopupProviderSelected.getBillerId());
-//		}
-		request.setBusinessId(ussdSessionMgmt.getBusinessId());
+ 		}
+ 		request.setBusinessId(ussdSessionMgmt.getBusinessId());
 
-		BillerServiceResponse billerServiceResponse = billerService.getActionCodeForBillerId(request);
-		LOGGER.debug("billerServiceResponse response:"+ billerServiceResponse + "Biller Id:"+request.getBillerId());
-		if (billerServiceResponse.getBillerCreditDTO() != null) {
-			BillerCreditDTO billerCreditDTO = billerServiceResponse.getBillerCreditDTO();
-			LOGGER.debug("billerCreditDTO response:"+ billerCreditDTO);
-			txSessions.put("BillerCreditDTO",billerCreditDTO);
-			String actionCode = billerServiceResponse.getBillerCreditDTO().getActionCode();
-			if (actionCode != null && !actionCode.isEmpty()) {
-				seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_TWENTYTWO.getSequenceNo();
-			}
-		}
+ 		BillerServiceResponse billerServiceResponse = billerService.getActionCodeForBillerId(request);
+ 		LOGGER.debug("billerServiceResponse response:"+ billerServiceResponse + "Biller Id:"+request.getBillerId());
+ 		if (billerServiceResponse.getBillerCreditDTO() != null) {
+ 			BillerCreditDTO billerCreditDTO = billerServiceResponse.getBillerCreditDTO();
+ 			LOGGER.debug("billerCreditDTO response:"+ billerCreditDTO);
+ 			txSessions.put("BillerCreditDTO",billerCreditDTO);
+ 			String actionCode = billerServiceResponse.getBillerCreditDTO().getActionCode();
+ 			if (actionCode != null && !actionCode.isEmpty()) {
+ 				seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_TWENTYTWO.getSequenceNo();
+ 			}
+ 		}
 
-		return seqNo;
+ 		return seqNo;
     }
 
     @Override

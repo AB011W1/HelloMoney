@@ -11,6 +11,8 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.barclays.bmg.context.BMBContextHolder;
+import com.barclays.bmg.context.BMGContextHolder;
+import com.barclays.bmg.context.BMGGlobalContext;
 import com.barclays.bmg.dao.product.impl.ListValueResDAOImpl;
 import com.barclays.bmg.service.product.request.ListValueResServiceRequest;
 import com.barclays.bmg.service.product.response.ListValueResByGroupServiceResponse;
@@ -144,8 +146,10 @@ public class OBAFTValidateJsonParser implements BmgBaseJsonParser {
 	    // CPB changes
 		// Removing PilotValue check(pilotValue !=null && pilotValue.equalsIgnoreCase("Y")) its not going with Regulatory 6.0.0 changes - 02/11/2017
 		String strCreditCardChk = ownFundTxValidatePayData.getMkdCrdNo();
-	    if(responseBuilderParamsDTO.getUssdSessionMgmt().getBusinessId().equals("KEBRB") && ownFundTxValidatePayData.getTxnChargeAmt()!=null
-	    		&& strCreditCardChk == null){
+		//CBP Change
+
+		BMGGlobalContext logContext = BMGContextHolder.getLogContext();
+	    if((logContext !=null && logContext.getContextMap().get("isCBPFLAG").equals("Y") || logContext.getBusinessId().equals("KEBRB")) && ownFundTxValidatePayData.getTxnChargeAmt()!=null  && strCreditCardChk == null){
 		    String transactionFeeLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(TRANSACTION_FEE_LABEL,
 				    new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));
 		    String xelerateOfflineLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(XCELERATE_OFFLINE_LABEL,

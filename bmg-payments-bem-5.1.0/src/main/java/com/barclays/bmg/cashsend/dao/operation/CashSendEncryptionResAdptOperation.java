@@ -5,12 +5,12 @@ import com.barclays.bem.EncryptCreditCardATMPin.CreditCardATMPinResponse;
 import com.barclays.bmg.cashsend.service.response.CashSendOneTimeExecuteServiceResponse;
 import com.barclays.bmg.constants.ResponseCodeConstants;
 import com.barclays.bmg.dao.core.context.WorkContext;
-import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperation;
+import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperationAcct;
 
 
 
 
-public class CashSendEncryptionResAdptOperation extends AbstractResAdptOperation {
+public class CashSendEncryptionResAdptOperation extends AbstractResAdptOperationAcct {
 
     public CashSendOneTimeExecuteServiceResponse adaptResponse(WorkContext workContext, Object obj) {
 
@@ -22,7 +22,7 @@ public class CashSendEncryptionResAdptOperation extends AbstractResAdptOperation
     	cashSendExecuteCashSendOneTimeExecuteServiceResponse.setServiceResponse(bemResponse.getResponseHeader().getServiceResStatus()
     		.getServiceResCode());
 
-    	if (bemResponse != null && checkResponseHeader(bemResponse.getResponseHeader())) {
+    	if (checkResponseHeader(bemResponse.getResponseHeader())) {
     	    cashSendExecuteCashSendOneTimeExecuteServiceResponse.setPin(bemResponse.getEncryptPinReponses().getEncryptPin());
 
     	    if (ResponseCodeConstants.SUCCESS_RES_CODE.equals(resCode)) {

@@ -11,6 +11,7 @@ import com.barclays.bmg.constants.ActivityConstant;
 import com.barclays.bmg.constants.BillPaymentResponseCodeConstants;
 import com.barclays.bmg.constants.FundTransferConstants;
 import com.barclays.bmg.constants.FundTransferResponseCodeConstants;
+import com.barclays.bmg.constants.SystemParameterConstant;
 import com.barclays.bmg.context.Context;
 import com.barclays.bmg.context.RequestContext;
 import com.barclays.bmg.context.ResponseContext;
@@ -65,13 +66,17 @@ public class InternalNonRegisteredFTFormValidateOperation extends BMBPaymentsOpe
 		FormValidateOperationResponse response = new FormValidateOperationResponse();
 		Context context = request.getContext();
 		response.setContext(context);
+
+
 		//Not sure why this is required
 		loadParameters(context, ActivityConstant.COMMON_ID, ActivityConstant.SEC_COMMON_ID);
 
 		response.setFxRateDTO(retrieveFxRate(request));
 
 		// CPB changes 31/05/2017
-		if(request.getContext().getBusinessId().equals("KEBRB")){
+		//CBP Changes
+		Map<String, Object> contextMap = context.getContextMap();
+		if((contextMap !=null && contextMap.get(SystemParameterConstant.isCBPFLAG).equals("Y")) || request.getContext().getBusinessId().equals("KEBRB")){
 			if(request.getCreditCardFlag() == null){
 				getTransactionFeeAndCharges(request, response);
 			}
@@ -156,7 +161,8 @@ public class InternalNonRegisteredFTFormValidateOperation extends BMBPaymentsOpe
 		List<Charge> charges = null;
 		//if (taskCode != null && taskCode.length() > 0) {
 		RetreiveChargeDetailsServiceRequest retreiveChargeDetailsServiceRequest = new RetreiveChargeDetailsServiceRequest();
-		if(request.getContext().getActivityId().equals("PMT_FT_INTERNAL_ONETIME")){
+
+		if(((sysMap !=null && sysMap.get(SystemParameterConstant.isCBPFLAG).equals("Y")) || request.getContext().getBusinessId().equals("KEBRB")) &&  request.getContext().getActivityId().equals("PMT_FT_INTERNAL_ONETIME")){
 			retreiveChargeDetailsServiceRequest
 					.setChargeDetailTaskCode("IT");
 		}
@@ -261,7 +267,7 @@ public class InternalNonRegisteredFTFormValidateOperation extends BMBPaymentsOpe
 		}
 
 		// Check for sufficient balance - CBP 22/09/2017
-		if(response !=null && response.getTaxAmount() !=null && response.getContext().getBusinessId().equals("KEBRB")){
+		if(response !=null && response.getTaxAmount() !=null && (response.getContext().getBusinessId().equals("KEBRB") || response.getContext().getBusinessId().equals("GHBRB")|| response.getContext().getBusinessId().equals("ZMBRB")|| response.getContext().getBusinessId().equals("BWBRB"))){
 			txnAmt = txnAmt.add(BigDecimal.valueOf(response.getTaxAmount()));
 		}
 

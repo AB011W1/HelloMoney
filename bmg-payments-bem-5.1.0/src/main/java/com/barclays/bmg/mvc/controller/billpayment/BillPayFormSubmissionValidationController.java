@@ -68,6 +68,9 @@ public class BillPayFormSubmissionValidationController  extends BMBAbstractComma
 			if ("CreditCardBP".equals(paymentCommand.getCrditCardFlag())) {
 			getSelectedAccountOperationRequest.setAcctNumber(getAccountNumber(paymentCommand.getFrActNo(),
 					httpRequest,BMGProcessConstants.CREDIT_PAYMENT));
+            //Change to filter blocked card on selection
+			String ccNumber = httpRequest.getParameterMap().get("ccNumber")!= null ? httpRequest.getParameterMap().get("ccNumber").toString() : "";
+			getSelectedAccountOperationRequest.setCreditCardNumber(ccNumber);
 			selSourceAcctOpResp = getSelectedAccountOperation.getSelectedCreditCardAccount(getSelectedAccountOperationRequest);
 			//adding actionCode and storeNumber
 			BeneficiaryDTO  beneficiary = transactionDTO.getBeneficiaryDTO();

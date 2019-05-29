@@ -10,9 +10,9 @@ import com.barclays.bmg.chequebook.service.response.ChequeBookExecuteServiceResp
 import com.barclays.bmg.constants.ResponseCodeConstants;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.dao.core.context.impl.DAOContext;
-import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperation;
+import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperationAcct;
 
-public class ChequeBookExecuteResAdptOperation extends AbstractResAdptOperation {
+public class ChequeBookExecuteResAdptOperation extends AbstractResAdptOperationAcct {
 
 	public ChequeBookExecuteServiceResponse adaptResponse(
 			WorkContext workContext, Object obj) {

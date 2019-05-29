@@ -3,8 +3,6 @@ package com.barclays.bmg.dao.impl;
 import java.util.Properties;
 
 import org.apache.log4j.Logger;
-
-import com.barclays.bcag.BCAGClient;
 import com.barclays.bmg.dao.TacticalHelloMoneyEncryptPinDAO;
 import com.barclays.bmg.service.request.TacticalHelloMoneyEncryptPinServiceRequest;
 import com.barclays.bmg.service.request.dto.EncryptionConstants;
@@ -23,18 +21,18 @@ public class TacticalHelloMoneyEncryptPinDAOImpl implements TacticalHelloMoneyEn
 
 	String propertiesFile = "THM_KE_CONFIG.properties";
 	String encryptionType = "THM_KE";
-	BCAGClient client = null;
+	/*BCAGClient client = null;
 	try {
 	    client = BCAGClient.getClient(encryptionType, propertiesFile, getBcagProperties(request));
 	} catch (Exception e) {
-	    
-	}
+
+	}*/
 
 	// Encrypt
 	LOGGER.debug("\nEncrypt with STHM_PIN_encrypt");
 	String cipherText = "";
 	try {
-	    cipherText = client.encrypt(pin);
+	    //cipherText = client.encrypt(pin);
 	} catch (Exception e) {
 	    LOGGER.error(e.getMessage());
 	}
@@ -46,7 +44,8 @@ public class TacticalHelloMoneyEncryptPinDAOImpl implements TacticalHelloMoneyEn
 	 *  } System.out.println("Decrypted Plaintext String : \"" + plaintextStr + "\"");
 	 */
 	// **** Close BCAG ****
-	client.close();
+	/*if(null != client)
+		client.close();*/
 	TacticalHelloMoneyEncryptPinServiceResponse response = new TacticalHelloMoneyEncryptPinServiceResponse();
 	response.setEncryptedPin(cipherText);
 	return response;

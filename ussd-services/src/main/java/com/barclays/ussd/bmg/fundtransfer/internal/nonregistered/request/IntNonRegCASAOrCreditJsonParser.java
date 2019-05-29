@@ -26,8 +26,6 @@ public class IntNonRegCASAOrCreditJsonParser implements BmgBaseJsonParser,Screen
 	private MenuItemDTO renderMenuOnScreen(
 			ResponseBuilderParamsDTO responseBuilderParamsDTO) {
 		MenuItemDTO menuItemDTO = new MenuItemDTO();
-		Map<String, Object> txSessions = responseBuilderParamsDTO
-				.getUssdSessionMgmt().getTxSessions();
 		USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO
 				.getUssdSessionMgmt();
 		String language = ussdSessionMgmt.getUserProfile().getLanguage();

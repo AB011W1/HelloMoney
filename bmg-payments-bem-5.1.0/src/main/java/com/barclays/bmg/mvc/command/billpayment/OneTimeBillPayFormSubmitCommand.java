@@ -18,7 +18,7 @@ public class OneTimeBillPayFormSubmitCommand {
     private String fromActNumber;
     private String currency;
     private String areaCode;
-private String creditCardFlag;
+    private String creditCardFlag;
     private String creditcardNo;
     public String getCreditcardNo() {
 		return creditcardNo;

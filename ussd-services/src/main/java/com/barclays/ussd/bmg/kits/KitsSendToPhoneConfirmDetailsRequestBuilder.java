@@ -8,21 +8,12 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
-import com.barclays.ussd.bean.MsisdnDTO;
 import com.barclays.ussd.bmg.dto.RequestBuilderParamsDTO;
 import com.barclays.ussd.bmg.factory.request.BmgBaseRequestBuilder;
-import com.barclays.ussd.exception.USSDBlockingException;
-import com.barclays.ussd.exception.USSDNonBlockingException;
 import com.barclays.ussd.svc.context.USSDBaseRequest;
 import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
-import com.barclays.ussd.utils.USSDUtils;
-import com.barclays.ussd.utils.UssdMenuBuilder;
 import com.barclays.ussd.utils.UssdResourceBundle;
-import com.barclays.ussd.utils.jsonparsers.bean.airtime.Account;
-import com.barclays.ussd.utils.jsonparsers.bean.airtime.Biller;
-import com.barclays.ussd.utils.jsonparsers.bean.billpay.AccountData;
-import com.barclays.ussd.utils.jsonparsers.bean.billpay.Beneficiery;
 import com.barclays.ussd.utils.jsonparsers.bean.fundtransfer.ownfundtransfer.AccountDetails;
 
 public class KitsSendToPhoneConfirmDetailsRequestBuilder implements BmgBaseRequestBuilder{
@@ -82,7 +73,6 @@ public class KitsSendToPhoneConfirmDetailsRequestBuilder implements BmgBaseReque
     	AccountDetails accountDetails = lstFromAcct.get(Integer.parseInt(srcAcNoInput) - 1);
     	String sourceAcct = accountDetails.getActNo();
     	String branchCode = accountDetails.getBrnCde();
-    	String curr = accountDetails.getCurr();
 
     	Map<String, String> requestParamMap = new HashMap<String, String>();
     	request.setMsisdnNo(requestBuilderParamsDTO.getMsisdnNo());

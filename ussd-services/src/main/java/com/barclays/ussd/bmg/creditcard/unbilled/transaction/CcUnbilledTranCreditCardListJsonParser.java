@@ -3,12 +3,15 @@
  */
 package com.barclays.ussd.bmg.creditcard.unbilled.transaction;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
 
+import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.creditcard.at.a.glance.RetrieveCreditCardListJsonParser;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
@@ -26,7 +29,7 @@ import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
 
 /**
  * @author BTCI
- * 
+ *
  */
 public class CcUnbilledTranCreditCardListJsonParser implements BmgBaseJsonParser {
 
@@ -34,14 +37,14 @@ public class CcUnbilledTranCreditCardListJsonParser implements BmgBaseJsonParser
     private static final Logger LOGGER = Logger.getLogger(RetrieveCreditCardListJsonParser.class);
 
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
-	MenuItemDTO menuDTO = null;
 	ObjectMapper mapper = new ObjectMapper();
 	try {
 	    AuthUserData creditCardListObj = mapper.readValue(responseBuilderParamsDTO.getJsonString(), AuthUserData.class);
 	    if (creditCardListObj != null) {
 		if (creditCardListObj.getPayHdr() != null
 			&& USSDExceptions.SUCCESS.getBmgCode().equalsIgnoreCase(creditCardListObj.getPayHdr().getResCde())) {
-		    menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, creditCardListObj);
+			MenuItemDTO menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, creditCardListObj);
+			return menuDTO;
 		} else if (creditCardListObj.getPayHdr() != null) {
 		    LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
 		    throw new USSDNonBlockingException(creditCardListObj.getPayHdr().getResCde());
@@ -61,7 +64,7 @@ public class CcUnbilledTranCreditCardListJsonParser implements BmgBaseJsonParser
 		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
 	    }
 	}
-	return menuDTO;
+
     }
 
     /**
@@ -75,6 +78,9 @@ public class CcUnbilledTranCreditCardListJsonParser implements BmgBaseJsonParser
 	    throws USSDNonBlockingException {
 	MenuItemDTO menuItemDTO = null;
 	AuthenticateUserPayData acntPayData = userAuthObj.getPayData();
+	USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();//CR82 changes
+    AuthUserData authData= ((AuthUserData)ussdSessionMgmt.getUserAuthObj());
+    List<CustomerMobileRegAcct> acts=authData.getPayData().getCustActs();
 	if (acntPayData != null) {
 	    if (acntPayData.getCustActs() != null && !acntPayData.getCustActs().isEmpty()) {
 		menuItemDTO = new MenuItemDTO();
@@ -83,7 +89,18 @@ public class CcUnbilledTranCreditCardListJsonParser implements BmgBaseJsonParser
 		Map<String, Object> txSessions = new HashMap<String, Object>(5);
 		txSessions.put(USSDInputParamsEnum.CR_CARD_UNBILLED_TRAN_CARD_LIST.getTranId(), acntPayData.getCustActs());
 		responseBuilderParamsDTO.getUssdSessionMgmt().setTxSessions(txSessions);
-		for (CustomerMobileRegAcct accountDetail : acntPayData.getCustActs()) {
+		 List<CustomerMobileRegAcct> srcAcc=acntPayData.getCustActs();
+		 List<String> GpAcc=new ArrayList<String>();
+		 for(int i =0;i<acts.size();i++)
+		    	if(acts.get(i).getGroupWalletIndicator()!=null && acts.get(i).getGroupWalletIndicator().equals("Y"))
+		    		GpAcc.add(acts.get(i).getMkdActNo());
+		 for(int j=0;j<srcAcc.size();j++)
+			 if(GpAcc.contains(srcAcc.get(j).getMkdActNo()))
+				 srcAcc.remove(j);
+		 if (srcAcc == null || srcAcc.isEmpty() || srcAcc.size() == 0) {
+			    throw new USSDNonBlockingException(USSDExceptions.USSD_NO_ELIGIBLE_ACCTS.getBmgCode());
+			}
+		for (CustomerMobileRegAcct accountDetail : srcAcc) {
 		    pageBody.append(USSDConstants.NEW_LINE);
 		    pageBody.append(index);
 		    pageBody.append(USSDConstants.DOT_SEPERATOR);

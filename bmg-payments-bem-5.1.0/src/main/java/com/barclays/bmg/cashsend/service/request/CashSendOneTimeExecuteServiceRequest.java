@@ -7,14 +7,14 @@ import com.barclays.bmg.dto.CashSendRequestDTO;
 
 public class CashSendOneTimeExecuteServiceRequest extends RequestContext {
     private CashSendRequestDTO cashSendRequestDTO;
-    private Properties bcagProperties;
+    private Properties hsmProperties;
 
-    public Properties getBcagProperties() {
-	return bcagProperties;
+    public Properties getHSMProperties() {
+	return hsmProperties;
     }
 
-    public void setBcagProperties(Properties bcagProperties) {
-	this.bcagProperties = bcagProperties;
+    public void setHSMProperties(Properties bcagProperties) {
+	this.hsmProperties = bcagProperties;
     }
 
     public CashSendRequestDTO getCashSendRequestDTO() {

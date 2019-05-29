@@ -83,7 +83,7 @@ public class ThmHttpClientExecutor {
 
     /**
      * Gets the host scheme.
-     * 
+     *
      * @return the host scheme
      */
     public String getHostScheme() {
@@ -92,7 +92,7 @@ public class ThmHttpClientExecutor {
 
     /**
      * Sets the host scheme.
-     * 
+     *
      * @param hostScheme
      *            the new host scheme
      */
@@ -102,7 +102,7 @@ public class ThmHttpClientExecutor {
 
     /**
      * Gets the max total connections.
-     * 
+     *
      * @return the max total connections
      */
     public int getMaxTotalConnections() {
@@ -111,7 +111,7 @@ public class ThmHttpClientExecutor {
 
     /**
      * Sets the max total connections.
-     * 
+     *
      * @param maxTotalConnections
      *            the new max total connections
      */
@@ -121,7 +121,7 @@ public class ThmHttpClientExecutor {
 
     /**
      * Gets the host config port.
-     * 
+     *
      * @return the host config port
      */
     public int getHostConfigPort() {
@@ -130,7 +130,7 @@ public class ThmHttpClientExecutor {
 
     /**
      * Sets the host config port.
-     * 
+     *
      * @param hostConfigPort
      *            the new host config port
      */
@@ -140,7 +140,7 @@ public class ThmHttpClientExecutor {
 
     /**
      * postHttpRequest.
-     * 
+     *
      * @param url
      *            the url
      * @param localContext
@@ -230,7 +230,7 @@ public class ThmHttpClientExecutor {
 
     /**
      * Http call.
-     * 
+     *
      * @param url
      *            the url
      * @param httpClient
@@ -249,7 +249,7 @@ public class ThmHttpClientExecutor {
 
 	final StringBuilder responseString = new StringBuilder();
 	HttpPost postRequest = null;
-
+	BufferedReader rd = null;
 	try {
 	    final HttpParams httpParameters = new BasicHttpParams();
 	    final int connectionTimeout = 300000;
@@ -265,7 +265,7 @@ public class ThmHttpClientExecutor {
 	    postRequest = new HttpPost(url);
 	    postRequest = preparePostBody(postRequest, custMSISDN, custPIN);
 	    response = httpClient.execute(postRequest);
-	    BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+	    rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
 	    String readLine = "";
 	    while ((readLine = rd.readLine()) != null) {
 		responseString.append(readLine);
@@ -302,6 +302,8 @@ public class ThmHttpClientExecutor {
 	    if (postRequest != null) {
 		postRequest.releaseConnection();
 	    }
+	    if(null != rd)
+	    	rd.close();
 	}
 
 	return responseString.toString();
@@ -309,7 +311,7 @@ public class ThmHttpClientExecutor {
 
     /**
      * Ssl trust.
-     * 
+     *
      * @param httpClient2
      *            the http client2
      * @param connManager2
@@ -360,7 +362,7 @@ public class ThmHttpClientExecutor {
 
     /**
      * Prepare post body.
-     * 
+     *
      * @param postRequest
      *            the post request
      * @param queryParamMap
@@ -381,7 +383,7 @@ public class ThmHttpClientExecutor {
 
     /**
      * Sets the scheme registry.
-     * 
+     *
      * @throws NoSuchAlgorithmException
      *             the no such algorithm exception
      * @throws KeyManagementException
@@ -412,7 +414,7 @@ public class ThmHttpClientExecutor {
 
     /**
      * Gets the http client.
-     * 
+     *
      * @return the http client
      */
     public DefaultHttpClient getHttpClient() {
@@ -421,7 +423,7 @@ public class ThmHttpClientExecutor {
 
     /**
      * Sets the http client.
-     * 
+     *
      * @param httpClient
      *            the new http client
      */
@@ -431,7 +433,7 @@ public class ThmHttpClientExecutor {
 
     /**
      * Sets the default max per route.
-     * 
+     *
      * @param defaultMaxPerRoute
      *            the new default max per route
      */
@@ -441,7 +443,7 @@ public class ThmHttpClientExecutor {
 
     /**
      * Gets the default max per route.
-     * 
+     *
      * @return the default max per route
      */
     public int getDefaultMaxPerRoute() {

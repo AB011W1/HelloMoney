@@ -62,7 +62,10 @@ public class FormValidateOperation extends BMBPaymentsOperation {
 	response.setFxRateDTO(retrieveFxRate(request));
 
 	// CPB changes 18/04/2017
-	if(request.getContext().getBusinessId().equals("KEBRB")){
+	// Check for UGBRB
+	//change CBP
+	Map<String, Object> contextMap = context.getContextMap();
+	if(contextMap !=null && contextMap.get(SystemParameterConstant.isCBPFLAG).equals("Y") || request.getContext().getBusinessId().equals("KEBRB")){
 		if(request.getCreditCardFlag() == null){		//!(request.getCreditCardFlag().equals("CreditCardMW")
 			getTransactionFeeAndCharges(request, response);
 		}
@@ -141,15 +144,23 @@ public class FormValidateOperation extends BMBPaymentsOperation {
 	//if (taskCode != null && taskCode.length() > 0) {
 	    RetreiveChargeDetailsServiceRequest retreiveChargeDetailsServiceRequest = new RetreiveChargeDetailsServiceRequest();
 	    //   retreiveChargeDetailsServiceRequest.setChargeDetailTaskCode(taskCode);
-
+	    // Check for UGBRB
+	    //Change CBP
+	    Map<String, Object> contextMap = request.getContext().getContextMap();
 	    if((request.getContext().getActivityId().equals("PMT_BP_MOBILE_WALLET_ONETIME") || request.getContext().getActivityId().equals("PMT_BP_BILLPAY_PAYEE")
-	    		|| request.getContext().getActivityId().equals("PMT_BP_BILLPAY_ONETIME")) && request.getContext().getBusinessId().equals("KEBRB")){
+	    		|| request.getContext().getActivityId().equals("PMT_BP_BILLPAY_ONETIME")) &&
+	    		((contextMap !=null && contextMap.get(SystemParameterConstant.isCBPFLAG).equals("Y")) || request.getContext().getBusinessId().equals("KEBRB"))){
 	    	retreiveChargeDetailsServiceRequest.setChargeDetailTaskCode("BP");
-	    } else if(request.getContext().getActivityId().equals("PMT_FT_CS") && request.getContext().getBusinessId().equals("KEBRB")){
+	    } else if(request.getContext().getActivityId().equals("PMT_FT_CS") && ((contextMap !=null && contextMap.get(SystemParameterConstant.isCBPFLAG).equals("Y"))|| request.getContext().getBusinessId().equals("KEBRB")) ){
 	    	retreiveChargeDetailsServiceRequest.setChargeDetailTaskCode("CS");
-	    } else if(request.getContext().getActivityId().equals("PMT_FT_INTERNAL_PAYEE") && request.getContext().getBusinessId().equals("KEBRB")){
+	    } else if(request.getContext().getActivityId().equals("PMT_FT_INTERNAL_PAYEE") && ((contextMap !=null && contextMap.get(SystemParameterConstant.isCBPFLAG).equals("Y"))|| request.getContext().getBusinessId().equals("KEBRB"))){
+	    	retreiveChargeDetailsServiceRequest.setChargeDetailTaskCode("IT");
+	    } else if(request.getContext().getActivityId().equals("PMT_FT_OWN") && (contextMap !=null && contextMap.get(SystemParameterConstant.isCBPFLAG).equals("Y")) && (request.getContext().getBusinessId().equals("UGBRB")||
+	    		request.getContext().getBusinessId().equals("ZMBRB") || request.getContext().getBusinessId().equals("GHBRB") || request.getContext().getBusinessId().equals("BWBRB"))){
+
 	    	retreiveChargeDetailsServiceRequest.setChargeDetailTaskCode("IT");
 	    }
+
 		retreiveChargeDetailsServiceRequest.setBranchCode(sysMap.get(SystemParameterConstant.SERVICE_HEADER_BRANCH_CODE).toString());
 	    retreiveChargeDetailsServiceRequest.setContext(request.getContext());
 	    retreiveChargeDetailsServiceRequest.setFrmAcct(request.getFrmAct().getAccountNumber());
@@ -251,7 +262,8 @@ public class FormValidateOperation extends BMBPaymentsOperation {
 	}
 
 	// Check for sufficient balance - CBP 22/09/2017
-	if(response !=null && response.getTaxAmount() !=null && response.getContext().getBusinessId().equals("KEBRB")){
+	if(response !=null && response.getTaxAmount() !=null && (response.getContext().getBusinessId().equals("KEBRB") || response.getContext().getBusinessId().equals("UGBRB") || response.getContext().getBusinessId().equals("GHBRB")
+			|| response.getContext().getBusinessId().equals("ZMBRB") || response.getContext().getBusinessId().equals("BWBRB"))){
 		txnAmt = txnAmt.add(BigDecimal.valueOf(response.getTaxAmount()));
 	}
 

@@ -5,6 +5,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
 import org.springframework.validation.BindException;
 
 import com.barclays.bmg.cashsend.mvc.command.CashSendOneTimeExecuteCommand;
@@ -25,6 +26,9 @@ import com.barclays.bmg.mvc.controller.auth.BMBAbstractCommandController;
 public class CashSendOneTimeExecuteController extends BMBAbstractCommandController {
 
     private BMBJSONBuilder bmbJSONBuilder;
+
+    private static final Logger LOGGER = Logger.getLogger(CashSendOneTimeExecuteController.class);
+
     private CashSendOneTimeExecuteOperation cashSendOneTimeExecuteOperation;
 
     @Override
@@ -62,6 +66,7 @@ public class CashSendOneTimeExecuteController extends BMBAbstractCommandControll
 	    CashSendOneTimeExecuteOperationRequest cashSendOneTimeExecuteOperationRequest = new CashSendOneTimeExecuteOperationRequest();
 	    cashSendOneTimeExecuteOperationRequest.setCashSendRequestDTO(cashSendRequestDTO);
 	    cashSendOneTimeExecuteOperationRequest.setContext(context);
+	    LOGGER.debug("encryptCashSendPin method call");
 	    cashSendOneTimeExecuteOperationResponse = cashSendOneTimeExecuteOperation.encryptCashSendPin(cashSendOneTimeExecuteOperationRequest);
 
 	    if ((cashSendOneTimeExecuteOperationResponse != null) && (cashSendOneTimeExecuteOperationResponse.getPin() != null)) {

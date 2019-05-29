@@ -36,7 +36,6 @@ public class XMLRequestResponseParser {
 	InputStream is = new ByteArrayInputStream(request.getBytes());
 
 	LOGGER.debug("creating USSDXMLRequestObject : ");
-	USSDXMLRequest requestObject = new USSDXMLRequest();
 	try {
 	    JAXBContext jaxbContext = JAXBContext.newInstance(USSDXMLRequest.class);
 	    Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
@@ -51,7 +50,8 @@ public class XMLRequestResponseParser {
 		}
 	    }
 	    jaxbUnmarshaller.setSchema(requestSchema);
-	    requestObject = (USSDXMLRequest) jaxbUnmarshaller.unmarshal(is);
+	    USSDXMLRequest requestObject = (USSDXMLRequest) jaxbUnmarshaller.unmarshal(is);
+	    return requestObject;
 	} catch (JAXBException e) {
 	    LOGGER.error("Error while parsing the request xml. XML: " + request + ".\n Error : " + e.getMessage());
 	    throw e;
@@ -59,11 +59,11 @@ public class XMLRequestResponseParser {
 	    try {
 		is.close();
 	    } catch (IOException e) {
-		
+	    	e.printStackTrace();
 	    }
 	}
 	// LOGGER.debug("Created USSDXMLRequestObject is : " + requestObject);
-	return requestObject;
+
     }
 
     /**
@@ -93,12 +93,12 @@ public class XMLRequestResponseParser {
 
 	} catch (JAXBException e) {
 	    LOGGER.error("Error while parsing the object to xml. Object: " + responseObject + ".\n Error : " + e.getMessage());
-	    
+
 	} finally {
 	    try {
 		os.close();
 	    } catch (IOException e) {
-		
+
 	    }
 	}
 	// LOGGER.debug("Created XML String is : " + os.toString());

@@ -1,7 +1,6 @@
 package com.barclays.bmg.cashsend.operation;
 
 import java.math.BigDecimal;
-import java.util.Date;
 import java.util.Map;
 import java.util.Properties;
 
@@ -29,6 +28,7 @@ import com.barclays.bmg.service.request.dto.EncryptionConstants;
 import com.barclays.bmg.ussd.auth.service.request.SMSDetailsServiceRequest;
 import com.barclays.bmg.ussd.service.SMSDetailsService;
 import com.barclays.ussd.utils.CrypterUtil;
+import com.barclays.ussd.utils.EncDecUtil;
 
 public class CashSendOneTimeExecuteOperation extends BMBPaymentsOperation {
 
@@ -70,14 +70,16 @@ public class CashSendOneTimeExecuteOperation extends BMBPaymentsOperation {
 		.executeCashSend(cashSendExecuteServiceRequest);
 
 	// Change below code accordingly get voucher ID from response
+	if(null != cashSendExecuteServiceResponse){
+		cashSendExecuteOperationResponse.setSuccess(cashSendExecuteServiceResponse.isSuccess());
+		cashSendExecuteOperationResponse.setTxnDt(cashSendExecuteServiceResponse.getTxnDt());
+		cashSendExecuteOperationResponse.setTxnRefNo(cashSendExecuteServiceResponse.getTxnRefNo());
+		cashSendExecuteOperationResponse.setVoucherId(cashSendExecuteServiceResponse.getSendCashResInfo().getVoucherId());
 
-	cashSendExecuteOperationResponse.setSuccess(cashSendExecuteServiceResponse.isSuccess());
-	cashSendExecuteOperationResponse.setTxnDt(cashSendExecuteServiceResponse.getTxnDt());
-	cashSendExecuteOperationResponse.setTxnRefNo(cashSendExecuteServiceResponse.getTxnRefNo());
-	cashSendExecuteOperationResponse.setVoucherId(cashSendExecuteServiceResponse.getSendCashResInfo().getVoucherId());
+		cashSendExecuteOperationResponse.setResCde(cashSendExecuteServiceResponse.getResCde());
+		cashSendExecuteOperationResponse.setResMsg(cashSendExecuteServiceResponse.getResMsg());
+	}
 
-	cashSendExecuteOperationResponse.setResCde(cashSendExecuteServiceResponse.getResCde());
-	cashSendExecuteOperationResponse.setResMsg(cashSendExecuteServiceResponse.getResMsg());
 
 	// what to send in txn message
 	// cashSendExecuteOperationResponse.setTxnMsg(cashSendExecuteServiceResponse.getTxnMsg());
@@ -88,7 +90,7 @@ public class CashSendOneTimeExecuteOperation extends BMBPaymentsOperation {
 	return cashSendExecuteOperationResponse;
     }
 
-    public CashSendOneTimeExecuteOperationResponse encryptCashSendPin(CashSendOneTimeExecuteOperationRequest request) {
+    public CashSendOneTimeExecuteOperationResponse encryptCashSendPin(CashSendOneTimeExecuteOperationRequest request) throws Exception {
 	CashSendOneTimeExecuteOperationResponse cashSendExecuteOperationResponse = new CashSendOneTimeExecuteOperationResponse();
 
 	CashSendOneTimeExecuteServiceRequest cashSendExecuteServiceRequest = new CashSendOneTimeExecuteServiceRequest();
@@ -100,7 +102,8 @@ public class CashSendOneTimeExecuteOperation extends BMBPaymentsOperation {
 
 	cashSendExecuteServiceRequest.setContext(context);
 	cashSendExecuteServiceRequest.setCashSendRequestDTO(request.getCashSendRequestDTO());
-	cashSendExecuteServiceRequest.setBcagProperties(fetchBCAGProperties(context));
+	LOGGER.debug("bcagproprties set");
+	cashSendExecuteServiceRequest.setHSMProperties(fetchHSMProperties(context));
 
 	CashSendOneTimeExecuteServiceResponse cashSendExecuteServiceResponse = cashSendOneTimeExecuteService
 		.encryptCashSendPin(cashSendExecuteServiceRequest);
@@ -109,30 +112,39 @@ public class CashSendOneTimeExecuteOperation extends BMBPaymentsOperation {
 	return cashSendExecuteOperationResponse;
     }
 
-    private Properties fetchBCAGProperties(Context context) {
-	Properties bcagProperties = new Properties();
+    private Properties fetchHSMProperties(Context context) throws Exception {
+    	Properties hsmProperties = new Properties();
+    	EncDecUtil encDecUtil = new EncDecUtil();
+    	hsmProperties.put(EncryptionConstants.CASHSENDPROVIDER, DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDPROVIDER));
+    	//TODO remove debug log after testing
+    	LOGGER.debug("CASHSENDPROVIDER: " + DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDPROVIDER));
+    	hsmProperties.put(EncryptionConstants.CASHKEYSTPROVIDER, DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHKEYSTPROVIDER));
+    	LOGGER.debug("CASHKEYSTPROVIDER: " + DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHKEYSTPROVIDER));
+    	hsmProperties.put(EncryptionConstants.CASHSENDALIAS, DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDALIAS));
+    	LOGGER.debug("CASHSENDALIAS: " + DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDALIAS));
+    	hsmProperties.put(EncryptionConstants.ENCRYPTIONMETHOD, DBParamFetchHelper.getSysParamValue(EncryptionConstants.ENCRYPTIONMETHOD));
+    	LOGGER.debug("ENCRYPTIONMETHOD: " + DBParamFetchHelper.getSysParamValue(EncryptionConstants.ENCRYPTIONMETHOD));
 
-	bcagProperties.put(EncryptionConstants.CASHSENDKEYSTORE, DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDKEYSTORE));
-	bcagProperties.put(EncryptionConstants.CASHSENDKEYSTOREKEY, DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDKEYSTOREKEY));
-	bcagProperties.put(EncryptionConstants.CASHSENDENCRYPTLOGIC, DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDENCRYPTLOGIC));
+    	hsmProperties.put(EncryptionConstants.SLOT, DBParamFetchHelper.getSysParamValue(EncryptionConstants.SLOT));
+    	LOGGER.debug("SLOT: " + DBParamFetchHelper.getSysParamValue(EncryptionConstants.SLOT));
+    	// Read Encrypted UserName and Password from DB
+    	//String hexEncryptedUserName = DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDUSERNAME);
+    	String hexEncryptedUserKey = DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDPASS);
+    	// Decrypt Password using utility.
+    	LOGGER.debug("decrypt method call of EncDecUtil");
+    	//EncDecrUtility call
+    	LOGGER.debug("CASHSENDPASS: " + DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDPASS));
+    	String decPass = encDecUtil.decrypt(hexEncryptedUserKey);
+    	hsmProperties.put(EncryptionConstants.CASHSENDPASS, decPass);
+    	LOGGER.debug("CASHSENDPASS: " + decPass);
+    	LOGGER.debug("End of decrypt method");
 
-	// Read Encrypeted UserName and Password from DB
-	String hexEncryptedUserName = DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDUSERNAME);
-	String hexEncryptedUserKey = DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDUSERKEY);
-	// Decrypt UserName,Password using CrypterUtil.
-	bcagProperties.put(EncryptionConstants.CASHSENDUSERNAME, decrypt(hexEncryptedUserName));
-	bcagProperties.put(EncryptionConstants.CASHSENDUSERKEY, decrypt(hexEncryptedUserKey));
+    	//Add Pin length and pin padding with hsm properties
+    	hsmProperties.put(EncryptionConstants.PINLENGTH, DBParamFetchHelper.getSysParamValue(EncryptionConstants.PINLENGTH));
+    	hsmProperties.put(EncryptionConstants.PINPADDING, DBParamFetchHelper.getSysParamValue(EncryptionConstants.PINPADDING));
 
-	// CHANGE THIS TO ENCRYPT/DECRYPT == ENDS
-
-	/*
-	 * THIS VARIABLE IS DEPENDENT ON JVM ARGUEMENT[BCAG.CurrenEnv]. IF IT IS LIVE, IT WILL GET THE LIST OF SERVERS FOR LIVE BASED ON
-	 * BCAGSERVERLIST, ELSE, IT WILL TAKE THE SERVER LIST BASED ON DR_BCAGSERVERLIST
-	 */
-	bcagProperties.put(EncryptionConstants.CASHSENDSERVERS, getServerList(context));
-
-	return bcagProperties;
-    }
+    	return hsmProperties;
+       }
 
     private String getServerList(Context context) {
 	Map<String, Object> contextMap = context.getContextMap();
@@ -156,10 +168,23 @@ public class CashSendOneTimeExecuteOperation extends BMBPaymentsOperation {
 	try {
 	    byteArrayToDecrypt = Hex.decodeHex(hexencoded.toCharArray());
 	    // Read IV and KEY from WAS and Decrypt it using CrypterUtil
-	    decrypt = CrypterUtil.decrypt(j2cAuthenticationDataUtil.getIV().getBytes(), j2cAuthenticationDataUtil.getKEY().getBytes(),
-	     byteArrayToDecrypt);
+	    if(null != j2cAuthenticationDataUtil && null != j2cAuthenticationDataUtil.getIV() && null != j2cAuthenticationDataUtil.getKEY()){
+	    	decrypt = CrypterUtil.decrypt(j2cAuthenticationDataUtil.getIV().getBytes(), j2cAuthenticationDataUtil.getKEY().getBytes(),
+	    			byteArrayToDecrypt);
+	    	LOGGER.debug("IV :" + j2cAuthenticationDataUtil.getIV() + " Key :" + j2cAuthenticationDataUtil.getKEY());
+	    }
+	    else
+	    {
+	    	if(null == j2cAuthenticationDataUtil)
+	    		LOGGER.debug("j2cAuthenticationDataUtil is null");
+	    	else{
+	    		LOGGER.debug("Iv and key is null");
+	    		//decrypt = CrypterUtil.decrypt("770A8A65DA156D24".getBytes(), "990A8A65DA156D24".getBytes(), byteArrayToDecrypt);
+	    	}
+
+	    }
 	    // TODO Remove HardCoding
-	    //decrypt = CrypterUtil.decrypt("770A8A65DA156D24".getBytes(), "990A8A65DA156D24".getBytes(), byteArrayToDecrypt);
+	   // decrypt = CrypterUtil.decrypt("770A8A65DA156D24".getBytes(), "990A8A65DA156D24".getBytes(), byteArrayToDecrypt);
 
 	} catch (Exception e) {
 	    LOGGER.error("decrypt exception occured  : " + e);

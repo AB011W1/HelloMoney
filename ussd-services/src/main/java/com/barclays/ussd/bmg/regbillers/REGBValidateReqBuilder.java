@@ -25,7 +25,6 @@ import com.barclays.ussd.utils.SystemPreferenceConstants;
 import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDExceptions;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
-import com.barclays.ussd.utils.jsonparsers.bean.mobilewallettopup.SrcAccount;
 import com.barclays.ussd.validation.USSDCompositeValidator;
 import com.barclays.ussd.validation.USSDLengthValidator;
 
@@ -97,7 +96,10 @@ public class REGBValidateReqBuilder implements BmgBaseRequestBuilder {
 	//CR-57
 	String businessId = requestBuilderParamsDTO.getUssdSessionMgmt().getBusinessId();
 	String refNum = StringUtils.EMPTY.equals(isFromSaveBiller)?userInputMap.get(USSDInputParamsEnum.REG_BILLER_GET_REFNO.getParamName()):userInputMap.get(USSDInputParamsEnum.ONE_TIME_BILL_PYMNT_BL_REF.getParamName());
-	String selectedFrmDstvType = StringUtils.EMPTY.equals(isFromSaveBiller)?userInputMap.get((USSDConstants.SELECTED_DSTV_BILLER_TYPE)):userInputMap.get((USSDConstants.SELECTED_DSTV_BILLER_TYPE));
+	String selectedFrmDstvType = userInputMap.get((USSDConstants.SELECTED_DSTV_BILLER_TYPE));
+			/*StringUtils.EMPTY.equals(isFromSaveBiller)
+			?userInputMap.get((USSDConstants.SELECTED_DSTV_BILLER_TYPE))
+			:userInputMap.get((USSDConstants.SELECTED_DSTV_BILLER_TYPE));*/
 
 
 	userInputMap.put(USSDInputParamsEnum.REG_BILLER_GET_REFNO.getParamName(), refNum);

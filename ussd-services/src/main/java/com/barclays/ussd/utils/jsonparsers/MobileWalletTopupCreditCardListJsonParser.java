@@ -3,19 +3,14 @@
  */
 package com.barclays.ussd.utils.jsonparsers;
 
-import java.util.HashMap;
-import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import org.apache.commons.collections.CollectionUtils;
 import org.apache.log4j.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
 
-import com.barclays.bmg.constants.BillPaymentConstants;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
-import com.barclays.ussd.bmg.creditcard.at.a.glance.RetrieveCreditCardListJsonParser;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
 import com.barclays.ussd.exception.USSDNonBlockingException;
 import com.barclays.ussd.utils.BmgBaseJsonParser;
@@ -25,10 +20,6 @@ import com.barclays.ussd.utils.USSDExceptions;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
-import com.barclays.ussd.utils.jsonparsers.bean.airtime.Account;
-import com.barclays.ussd.utils.jsonparsers.bean.billpay.AccountData;
-import com.barclays.ussd.utils.jsonparsers.bean.billpay.FromAcntLst;
-import com.barclays.ussd.utils.jsonparsers.bean.billpay.Payee;
 import com.barclays.ussd.utils.jsonparsers.bean.login.AuthUserData;
 import com.barclays.ussd.utils.jsonparsers.bean.login.AuthenticateUserPayData;
 import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
@@ -52,7 +43,6 @@ public class MobileWalletTopupCreditCardListJsonParser implements BmgBaseJsonPar
     		 if (creditCardListObj != null) {
     				if (creditCardListObj.getPayHdr() != null
     					&& USSDExceptions.SUCCESS.getBmgCode().equalsIgnoreCase(creditCardListObj.getPayHdr().getResCde())) {
-    				    List<CustomerMobileRegAcct> custActs = creditCardListObj.getPayData().getCustActs();
     				    menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, creditCardListObj);
     				} else if (creditCardListObj.getPayHdr() != null) {
     				    LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
@@ -119,7 +109,8 @@ public class MobileWalletTopupCreditCardListJsonParser implements BmgBaseJsonPar
 				throw new USSDNonBlockingException(USSDExceptions.USSD_NO_CREDIT_CARD_FOUND.getBmgCode());
 			    }
 		 }
-	setNextScreenSequenceNumber(menuItemDTO);
+    	if(null != menuItemDTO)
+    		setNextScreenSequenceNumber(menuItemDTO);
 	return menuItemDTO;
 	}
 

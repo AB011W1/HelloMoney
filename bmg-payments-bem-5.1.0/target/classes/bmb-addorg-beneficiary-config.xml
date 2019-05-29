@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:util="http://www.springframework.org/schema/util"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+<!-- External Fund Transfer Controller Starts Here -->
+    <bean id="addOrgBeneficiaryFormSubmissionController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.external.AddOrgBeneficiaryFormSubmissionController" parent="bmbAbstractCommandController">
+		<property name="addOrgBeneficiaryOperation" ref="addOrgBeneficiaryOperation" />
+ 		<property name="bmbJSONBuilder" ref="addOrgBeneficiaryFormSubmissionJSONBldr" />
+		<property name="commandName" value="addOrgBeneficiaryFormSubmissionCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.billpayment.AddOrgBeneficiaryFormSubmissionCommand" />
+ 		<property name="activityId" value="PMT_PAYEE_ADD_BP" />
+	</bean>
+
+   <bean id="addOrgBenefeciaryExecutionController"
+		class="com.barclays.bmg.mvc.controller.billpayment.AddOrgBenefeciaryExecutionController1" parent="bmbAbstractCommandController">
+		<property name="addOrgBeneficiaryOperation" ref="addOrgBeneficiaryOperation" />
+		<!-- CR82 Changes edit bene-->
+		<property name="deleteBeneficiaryOperation" ref="deleteBeneficiaryOperation" />
+		<property name="bmbJSONBuilder" ref="addOrgBeneficiaryExecControllerJSONBldr" />
+		<property name="commandName" value="addOrgBeneficiaryExecutionControllerCommand" />
+		<property name="commandClass"
+		value="com.barclays.bmg.mvc.command.billpayment.AddOrgBeneficiaryExecutionControllerCommand" />
+ 		<property name="activityId" value="PMT_PAYEE_ADD_BP" />
+	</bean>
+  <bean id="addOrgFormSubmissionValidationController"
+		class="com.barclays.bmg.mvc.controller.billpayment.AddOrgBeneficiaryFormValidationController" parent="bmbAbstractCommandController">
+		<property name="addOrgValidationOperation" ref="addOrgValidationOperation" />
+		<property name="bmbJSONBuilder" ref="addOrgBeneficiaryFormValidationJSONBldr" />
+		<property name="commandName" value="validationCommand" />
+		<property name="commandClass"
+		value="com.barclays.bmg.mvc.command.billpayment.AddorgBenefValidateCommand" />
+		<property name="validator" ref="billerDetailsValidateCommandValidator" />
+
+ 		<property name="activityId" value="PMT_PAYEE_ADD_BP" />
+	</bean>
+ 	<bean id="addOrgBeneficiaryFormSubmissionJSONBldr"
+		class="com.barclays.bmg.json.model.builder.fundtransfer.external.AddOrgBeneficiaryFormSubmissionJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+	<bean id="addOrgBeneficiaryFormValidationJSONBldr"
+		class="com.barclays.bmg.json.model.builder.fundtransfer.external.AddOrgBeneficiaryFormValidationJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+	<bean id="addOrgBeneficiaryExecControllerJSONBldr"
+		class="com.barclays.bmg.json.model.builder.fundtransfer.external.AddOrgBeneficiaryExecutionControllerJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+<bean id="billerDetailsValidateCommandValidator"
+		class="com.barclays.bmg.mvc.validator.fundtransfer.AddorgValidateCommandValidator">
+	</bean>
+</beans>

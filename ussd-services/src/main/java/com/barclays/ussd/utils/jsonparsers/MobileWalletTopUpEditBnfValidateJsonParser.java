@@ -11,7 +11,6 @@ import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
-import com.barclays.ussd.auth.bean.UserProfile;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
 import com.barclays.ussd.exception.USSDNonBlockingException;
@@ -23,7 +22,6 @@ import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
 import com.barclays.ussd.utils.UssdResourceBundle;
-import com.barclays.ussd.utils.jsonparsers.bean.airtime.Biller;
 import com.barclays.ussd.utils.jsonparsers.bean.billpay.Beneficiery;
 import com.barclays.ussd.utils.jsonparsers.bean.mobilewallettopup.MobileWalletProvider;
 import com.barclays.ussd.utils.jsonparsers.bean.regbiller.ValidateRegBillerBean;
@@ -37,7 +35,6 @@ public class MobileWalletTopUpEditBnfValidateJsonParser implements BmgBaseJsonPa
 
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
 	MenuItemDTO menuDTO = null;
-	ObjectMapper mapper = new ObjectMapper();
 	 menuDTO = renderMenuOnScreen( responseBuilderParamsDTO);
 
 	return menuDTO;
@@ -78,7 +75,6 @@ public class MobileWalletTopUpEditBnfValidateJsonParser implements BmgBaseJsonPa
 				Beneficiery bene = lstBenef.get(Integer.parseInt(beneficiarySelected) - 1);
 				nickName=bene.getDisLbl();
 			    }
-		UserProfile userProfile = ussdSessionMgmt.getUserProfile();
 		List<String> params = new ArrayList<String>(1);
 		params.add(nickName);
 		params.add(mobilenumber);

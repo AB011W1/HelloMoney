@@ -35,115 +35,149 @@ public class BillersListDO implements Serializable {
 
     private String billerAttributes;
 
+    private String billAggregatorId;
+
+    /* Presentment Flag*/
+    private String presentmentFlg;
+
+    private String refNoValidation_1;
+	/**
+	 * @return the businessId
+	 */
+	public String getBusinessId() {
+		return businessId;
+	}
+
+	/**
+	 * @param businessId the businessId to set
+	 */
+	public void setBusinessId(String businessId) {
+		this.businessId = businessId;
+	}
+
+	/**
+	 * @return the billerId
+	 */
+	public String getBillerId() {
+		return billerId;
+	}
+
+	/**
+	 * @param billerId the billerId to set
+	 */
+	public void setBillerId(String billerId) {
+		this.billerId = billerId;
+	}
+
+	/**
+	 * @return the billerNm
+	 */
+	public String getBillerNm() {
+		return billerNm;
+	}
+
+	/**
+	 * @param billerNm the billerNm to set
+	 */
+	public void setBillerNm(String billerNm) {
+		this.billerNm = billerNm;
+	}
+
+	/**
+	 * @return the billerCategoryId
+	 */
+	public String getBillerCategoryId() {
+		return billerCategoryId;
+	}
+
+	/**
+	 * @param billerCategoryId the billerCategoryId to set
+	 */
+	public void setBillerCategoryId(String billerCategoryId) {
+		this.billerCategoryId = billerCategoryId;
+	}
+
+	/**
+	 * @return the billerCategoryNm
+	 */
+	public String getBillerCategoryNm() {
+		return billerCategoryNm;
+	}
+
+	/**
+	 * @param billerCategoryNm the billerCategoryNm to set
+	 */
+	public void setBillerCategoryNm(String billerCategoryNm) {
+		this.billerCategoryNm = billerCategoryNm;
+	}
+
+	/**
+	 * @return the onlineBillerFlg
+	 */
+	public String getOnlineBillerFlg() {
+		return onlineBillerFlg;
+	}
+
+	/**
+	 * @param onlineBillerFlg the onlineBillerFlg to set
+	 */
+	public void setOnlineBillerFlg(String onlineBillerFlg) {
+		this.onlineBillerFlg = onlineBillerFlg;
+	}
+
+	/**
+	 * @return the billerAttributes
+	 */
 	public String getBillerAttributes() {
-	return billerAttributes;
-    }
+		return billerAttributes;
+	}
 
-    public void setBillerAttributes(String billerAttributes) {
-	this.billerAttributes = billerAttributes;
-    }
+	/**
+	 * @param billerAttributes the billerAttributes to set
+	 */
+	public void setBillerAttributes(String billerAttributes) {
+		this.billerAttributes = billerAttributes;
+	}
 
-    public String getOnlineBillerFlg() {
-	return onlineBillerFlg;
-    }
+	/**
+	 * @return the billAggregatorId
+	 */
+	public String getBillAggregatorId() {
+		return billAggregatorId;
+	}
 
-    public void setOnlineBillerFlg(String onlineBillerFlg) {
-	this.onlineBillerFlg = onlineBillerFlg;
-    }
+	/**
+	 * @param billAggregatorId the billAggregatorId to set
+	 */
+	public void setBillAggregatorId(String billAggregatorId) {
+		this.billAggregatorId = billAggregatorId;
+	}
 
-    /**
-     * Gets the business id.
-     *
-     * @return the businessId
-     */
-    public String getBusinessId() {
-	return businessId;
-    }
+	/**
+	 * @return the presentmentFlg
+	 */
+	public String getPresentmentFlg() {
+		return presentmentFlg;
+	}
 
-    /**
-     * Sets the business id.
-     *
-     * @param businessId
-     *            the businessId to set
-     */
-    public void setBusinessId(String businessId) {
-	this.businessId = businessId;
-    }
+	/**
+	 * @param presentmentFlg the presentmentFlg to set
+	 */
+	public void setPresentmentFlg(String presentmentFlg) {
+		this.presentmentFlg = presentmentFlg;
+	}
 
-    /**
-     * Gets the biller id.
-     *
-     * @return the billerId
-     */
-    public String getBillerId() {
-	return billerId;
-    }
+	/**
+	 * @return the refNoValidation_1
+	 */
+	public String getRefNoValidation_1() {
+		return refNoValidation_1;
+	}
 
-    /**
-     * Sets the biller id.
-     *
-     * @param billerId
-     *            the billerId to set
-     */
-    public void setBillerId(String billerId) {
-	this.billerId = billerId;
-    }
-
-    /**
-     * Gets the biller nm.
-     *
-     * @return the billerNm
-     */
-    public String getBillerNm() {
-	return billerNm;
-    }
-
-    /**
-     * Sets the biller nm.
-     *
-     * @param billerNm
-     *            the billerNm to set
-     */
-    public void setBillerNm(String billerNm) {
-	this.billerNm = billerNm;
-    }
-
-    /**
-     * Gets the biller category id.
-     *
-     * @return the billerCategoryId
-     */
-    public String getBillerCategoryId() {
-	return billerCategoryId;
-    }
-
-    /**
-     * Sets the biller category id.
-     *
-     * @param billerCategoryId
-     *            the billerCategoryId to set
-     */
-    public void setBillerCategoryId(String billerCategoryId) {
-	this.billerCategoryId = billerCategoryId;
-    }
-
-    /**
-     * Gets the biller category nm.
-     *
-     * @return the billerCategoryNm
-     */
-    public String getBillerCategoryNm() {
-	return billerCategoryNm;
-    }
-
-    /**
-     * Sets the biller category nm.
-     *
-     * @param billerCategoryNm
-     *            the billerCategoryNm to set
-     */
-    public void setBillerCategoryNm(String billerCategoryNm) {
-	this.billerCategoryNm = billerCategoryNm;
-    }
-
+	/**
+	 * @param refNoValidation_1 the refNoValidation_1 to set
+	 */
+	public void setRefNoValidation_1(String refNoValidation_1) {
+		this.refNoValidation_1 = refNoValidation_1;
+	}
 }

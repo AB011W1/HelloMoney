@@ -6,6 +6,8 @@ package com.barclays.ussd.utils.jsonparsers.bean.vlpb;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 
+import com.barclays.ussd.utils.jsonparsers.bean.airtime.Account;
+
 /**
  * @author BTCI
  *
@@ -39,6 +41,16 @@ public class TransHist {
 	@JsonProperty
 	private AmountInfo amountInfo;
 
+	@JsonProperty
+	private Account fromAccountInfo;
+
+	public Account getFromAccountInfo() {
+		return fromAccountInfo;
+	}
+
+	public void setFromAccountInfo(Account fromAccountInfo) {
+		this.fromAccountInfo = fromAccountInfo;
+	}
 	/**
 	 * @return the status
 	 */

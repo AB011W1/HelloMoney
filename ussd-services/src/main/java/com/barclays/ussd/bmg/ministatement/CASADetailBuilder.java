@@ -22,13 +22,13 @@ import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
 
 /**
  * @author BTCI
- * 
+ *
  */
 public class CASADetailBuilder implements BmgBaseRequestBuilder {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see com.barclays.ussd.bmg.factory.request.BmgBaseRequestBuilder#getRequestObject (com.barclays.ussd.bmg.dto.RequestBuilderParamsDTO)
      */
     @SuppressWarnings("unchecked")
@@ -46,7 +46,9 @@ public class CASADetailBuilder implements BmgBaseRequestBuilder {
 	List<CustomerMobileRegAcct> lstAccntDet = (List<CustomerMobileRegAcct>) ussdSessionMgmt.getTxSessions().get(
 		USSDInputParamsEnum.MINI_STMT_SEL_AC.getTranId());
 	String userInput = userInputMap.get(USSDInputParamsEnum.MINI_STMT_SEL_AC.getParamName());
-	CustomerMobileRegAcct userSelectedAccount = lstAccntDet.get(Integer.parseInt(userInput) - 1);
+	CustomerMobileRegAcct userSelectedAccount = new CustomerMobileRegAcct();
+	if(null != lstAccntDet)
+		userSelectedAccount = lstAccntDet.get(Integer.parseInt(userInput) - 1);
 
 	if (lstAccntDet != null && !lstAccntDet.isEmpty() && StringUtils.isNotBlank(userInput)) {
 	    request.setMsisdnNo(requestBuilderParamsDTO.getMsisdnNo());

@@ -21,7 +21,7 @@ import com.barclays.ussd.utils.jsonparsers.bean.billpay.Beneficiery;
 
 /**
  * @author BTCI
- * 
+ *
  */
 public class DelBillrPayeeLstParser implements BmgBaseJsonParser {
 
@@ -29,7 +29,7 @@ public class DelBillrPayeeLstParser implements BmgBaseJsonParser {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see com.barclays.ussd.utils.BmgBaseJsonParser#parseJsonIntoJava(com.barclays .ussd.bmg.dto.ResponseBuilderParamsDTO)
      */
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
@@ -40,11 +40,11 @@ public class DelBillrPayeeLstParser implements BmgBaseJsonParser {
 	    menuDTO = renderMenuOnScreen(benfList, responseBuilderParamsDTO);
 	} catch (Exception e) {
 	    LOGGER.error("Exception : ", e);
-	    if (e instanceof USSDNonBlockingException) {
+/*	    if (e instanceof USSDNonBlockingException) {
 		throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode());
-	    } else {
+	    } else {*/
 		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
-	    }
+	    //}
 	}
 	return menuDTO;
     }

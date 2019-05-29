@@ -26,7 +26,7 @@ import com.barclays.bmg.constants.ResponseCodeConstants;
 import com.barclays.bmg.context.Context;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.dao.core.context.impl.DAOContext;
-import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperation;
+import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperationAcct;
 import com.barclays.bmg.dto.QuesWithPosDTO;
 import com.barclays.bmg.ussd.auth.service.request.ChallengeQuestionAndPositionServiceRequest;
 import com.barclays.bmg.ussd.auth.service.response.ChallengeQuestionAndPositionServiceResponse;
@@ -39,7 +39,7 @@ import com.barclays.bmg.ussd.auth.service.response.ChallengeQuestionAndPositionS
  * @author E20043104
  * 
  */
-public class ChallengeQuestionAndPositionResAdptOperation extends AbstractResAdptOperation {
+public class ChallengeQuestionAndPositionResAdptOperation extends AbstractResAdptOperationAcct {
 
     /** The Constant LOGGER. */
     private static final Logger LOGGER = Logger.getLogger(ChallengeQuestionAndPositionResAdptOperation.class);

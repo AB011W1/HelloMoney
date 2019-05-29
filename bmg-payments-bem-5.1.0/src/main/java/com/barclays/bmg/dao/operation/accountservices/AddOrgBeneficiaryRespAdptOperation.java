@@ -8,7 +8,7 @@ import com.barclays.bmg.context.ResponseContext;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.service.response.AddOrgBeneficiaryServiceResponse;
 
-public class AddOrgBeneficiaryRespAdptOperation extends AbstractResAdptOperation {
+public class AddOrgBeneficiaryRespAdptOperation extends AbstractResAdptOperationAcct {
 
     public AddOrgBeneficiaryServiceResponse adaptResponse(WorkContext workContext, Object obj) {
 

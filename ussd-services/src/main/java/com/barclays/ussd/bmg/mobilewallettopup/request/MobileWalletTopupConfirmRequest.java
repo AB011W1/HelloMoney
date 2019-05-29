@@ -3,7 +3,6 @@ package com.barclays.ussd.bmg.mobilewallettopup.request;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bmg.dto.RequestBuilderParamsDTO;
 import com.barclays.ussd.bmg.factory.request.BmgBaseRequestBuilder;
 import com.barclays.ussd.svc.context.USSDBaseRequest;
@@ -23,13 +22,13 @@ public class MobileWalletTopupConfirmRequest implements BmgBaseRequestBuilder {
 	requestParamMap.put(USSDConstants.BMG_LOCAL_KE_SERVICE_VER_NAME, USSDConstants.BMG_SERVICE_VERSION_VALUE);
 
 	requestParamMap.put("isGHMWFreeDialUssdFlow", "TRUE");
+	requestParamMap.put("isGroupWalletFlow", "FALSE");
 
 	// Set MakeBillPayment request fields in Session  - CPB 15/05/2017
 	Map<String, Object> txSessions = requestBuilderParamsDTO.getUssdSessionMgmt().getTxSessions();
 	String cpbflag = (String)txSessions.get("CpbMakeBillPaymentFields");
 	if(cpbflag !=null && cpbflag.equals("CpbMakeBillPaymentFields")){
-		TransactionAmt chargeAmount = new TransactionAmt();
-		chargeAmount = (TransactionAmt)txSessions.get("CpbChargeAmount");
+		TransactionAmt chargeAmount = (TransactionAmt)txSessions.get("CpbChargeAmount");
 		String cpbChargeAmount = chargeAmount.getAmt();
 		requestParamMap.put("CpbChargeAmount", String.valueOf(cpbChargeAmount));
 		requestParamMap.put("CpbFeeGLAccount", (String)txSessions.get("CpbFeeGLAccount"));

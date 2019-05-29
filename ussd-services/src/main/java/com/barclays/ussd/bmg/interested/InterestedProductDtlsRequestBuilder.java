@@ -15,9 +15,6 @@ public class InterestedProductDtlsRequestBuilder implements BmgBaseRequestBuilde
 
 	USSDBaseRequest request = new USSDBaseRequest();
 	Map<String, String> requestParamMap = new HashMap<String, String>();
-	Map<String, String> userInputMap = requestBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap();
-
-	HashMap<String, Object> txSessionMap = (HashMap<String, Object>) requestBuilderParamsDTO.getUssdSessionMgmt().getTxSessions();
 
 	requestParamMap.put(USSDConstants.BMG_LOCAL_KE_OPCODE_PARAM_NAME, requestBuilderParamsDTO.getBmgOpCode());
 	requestParamMap.put(USSDConstants.BMG_LOCAL_KE_SERVICE_VER_NAME, USSDConstants.BMG_SERVICE_VERSION_VALUE);

@@ -1,7 +1,5 @@
 package com.barclays.ussd.utils.jsonparsers;
 
-import java.util.Map;
-
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
@@ -11,11 +9,9 @@ import com.barclays.ussd.utils.BmgBaseJsonParser;
 import com.barclays.ussd.utils.PaginationEnum;
 import com.barclays.ussd.utils.SystemPreferenceValidator;
 import com.barclays.ussd.utils.USSDConstants;
-import com.barclays.ussd.utils.USSDExceptions;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
 import com.barclays.ussd.validation.USSDBackFlowValidator;
-import com.barclays.ussd.validation.USSDCompositeValidator;
 
 public class OneTimeCashSendGetAtmPinJsonParser implements BmgBaseJsonParser , SystemPreferenceValidator {//CR-86 back Flow changes
 
@@ -50,7 +46,6 @@ public class OneTimeCashSendGetAtmPinJsonParser implements BmgBaseJsonParser , S
 	@Override
 	public void validate(String userInput, USSDSessionManagement ussdSessionMgmt)
 			throws USSDBlockingException, USSDNonBlockingException {
-		Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
 		USSDBackFlowValidator validator = new USSDBackFlowValidator();
 
 		try {

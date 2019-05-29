@@ -1,0 +1,28 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <p364:VerifyPINResponse xmlns:p364="http://barclays.com/bem/VerifyPIN">
+      <p364:ResponseHeader>
+        <ServiceContext>
+          <ServiceID>VerifyPin</ServiceID>
+          <ConsumerUniqueRefNo>13996297553739</ConsumerUniqueRefNo>
+          <OriginalConsumerUniqueRefNo>13996297553739</OriginalConsumerUniqueRefNo>
+          <ServiceDateTime>2014-05-09T12:02:35.422Z</ServiceDateTime>
+          <ServiceVersionNo>6.0.0</ServiceVersionNo>
+          <OverrideRequestFlag>0</OverrideRequestFlag>
+        </ServiceContext>
+        <BankUserContext>
+          <StaffType>Regular</StaffType>
+          <StaffID>IFE</StaffID>
+          <AuthorizerID>Z00019789</AuthorizerID>
+        </BankUserContext>
+        <ServiceResStatus>
+          <ServiceResCode>00000</ServiceResCode>
+          <ServiceResDesc>Success</ServiceResDesc>
+          <ServiceRespDateTime>2014-05-09T10:02:35.992Z</ServiceRespDateTime>
+          <ServiceUniqueRefNo xsi:nil="true"/>
+        </ServiceResStatus>
+      </p364:ResponseHeader>
+    </p364:VerifyPINResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

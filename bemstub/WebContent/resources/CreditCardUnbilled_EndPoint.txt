@@ -1,0 +1,37 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <p481:RetrieveCreditCardUnbilledTransactionsResponse xmlns:p481="http://barclays.com/bem/RetrieveCreditCardUnbilledTransactions">
+      <p481:ResponseHeader>
+        <ServiceContext>
+          <ServiceID>RetrieveCreditCardUnbilledTransactions</ServiceID>
+          <ConsumerUniqueRefNo>13933225954969</ConsumerUniqueRefNo>
+          <OriginalConsumerUniqueRefNo>13933225954969</OriginalConsumerUniqueRefNo>
+          <ServiceDateTime>2014-02-25T13:03:22.800Z</ServiceDateTime>
+          <ServiceVersionNo>6.0.0</ServiceVersionNo>
+          <OverrideRequestFlag>0</OverrideRequestFlag>
+        </ServiceContext>
+        <BankUserContext>
+          <StaffType>Regular</StaffType>
+          <StaffID>IFE</StaffID>
+          <AuthorizerID>Z00019789</AuthorizerID>
+        </BankUserContext>
+        <ServiceResStatus>
+          <ServiceResCode>00000</ServiceResCode>
+          <ServiceResDesc>Success</ServiceResDesc>
+          <ServiceRespDateTime>2014-02-25T10:03:24.610Z</ServiceRespDateTime>
+          <ServiceUniqueRefNo>108da8e6-9e04-11e3-bbf7-167313a80000</ServiceUniqueRefNo>
+        </ServiceResStatus>
+        <ErrorList>
+          <Error>
+            <ErrorCode>U9043</ErrorCode>
+            <ErrorDesc>NO TRANSACTIONS FOUND FOR REQUEST</ErrorDesc>
+            <Source>VisionPlus</Source>
+            <PPErrorCode>VPL5STD01I</PPErrorCode>
+            <PPErrorDesc>VMX.TRANSACTIONDETAIL.INQ : NO TRANSACTIONS FOUND FOR REQUEST</PPErrorDesc>
+          </Error>
+        </ErrorList>
+      </p481:ResponseHeader>
+    </p481:RetrieveCreditCardUnbilledTransactionsResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

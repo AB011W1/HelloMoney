@@ -1,0 +1,37 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <p480:RetrieveCreditCardRewardsSummaryByAccountResponse xmlns:p480="http://barclays.com/bem/RetrieveCCRewardsSummaryByAcct">
+      <p480:ResponseHeader>
+        <ServiceContext>
+          <ServiceID>RetrieveCCRewardsSummaryByAcct</ServiceID>
+          <ConsumerUniqueRefNo>13933225954969</ConsumerUniqueRefNo>
+          <OriginalConsumerUniqueRefNo>13933225954969</OriginalConsumerUniqueRefNo>
+          <ServiceDateTime>2014-02-25T13:03:18.170Z</ServiceDateTime>
+          <ServiceVersionNo>6.0.0</ServiceVersionNo>
+          <OverrideRequestFlag>0</OverrideRequestFlag>
+        </ServiceContext>
+        <BankUserContext>
+          <StaffType>Regular</StaffType>
+          <StaffID>IFE</StaffID>
+          <AuthorizerID>Z00019789</AuthorizerID>
+        </BankUserContext>
+        <ServiceResStatus>
+          <ServiceResCode>06000</ServiceResCode>
+          <ServiceResDesc>Business Error</ServiceResDesc>
+          <ServiceRespDateTime>2014-02-25T10:03:22.631Z</ServiceRespDateTime>
+          <ServiceUniqueRefNo>0f6f88e4-9e04-11e3-bbf7-167313a80000</ServiceUniqueRefNo>
+        </ServiceResStatus>
+        <ErrorList>
+          <Error>
+            <ErrorCode>S8402</ErrorCode>
+            <ErrorDesc>THIS REQUEST HAS TIMED OUT-SYSTEM UNAVIALABLE</ErrorDesc>
+            <Source>VisionPlus</Source>
+            <PPErrorCode>VPLVO3101E</PPErrorCode>
+            <PPErrorDesc>VMX.ACCT.POINTS.SUMMARY.INQ : THIS REQUEST HAS TIMED OUT-SYSTEM UNAVIALABLE </PPErrorDesc>
+          </Error>
+        </ErrorList>
+      </p480:ResponseHeader>
+    </p480:RetrieveCreditCardRewardsSummaryByAccountResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

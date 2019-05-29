@@ -15,7 +15,7 @@ package com.barclays.bmg.ussd.dao.operation;
 import com.barclays.bem.HMUpdateCustomer.UpdateHMCustomerResponseType;
 import com.barclays.bmg.constants.ResponseCodeConstants;
 import com.barclays.bmg.dao.core.context.WorkContext;
-import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperation;
+import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperationAcct;
 import com.barclays.bmg.ussd.auth.service.response.UpdateDetailstoMCEServiceResponse;
 
 /**
@@ -27,7 +27,7 @@ import com.barclays.bmg.ussd.auth.service.response.UpdateDetailstoMCEServiceResp
  * 
  */
 
-public class UpdateDetailstoMCEResAdptOperation extends AbstractResAdptOperation {
+public class UpdateDetailstoMCEResAdptOperation extends AbstractResAdptOperationAcct {
     /**
      * This method adaptResponseForMCE has the purpose to adapt Response from MCE
      * 

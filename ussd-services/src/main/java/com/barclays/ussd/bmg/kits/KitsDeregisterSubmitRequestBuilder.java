@@ -1,8 +1,6 @@
 package com.barclays.ussd.bmg.kits;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
@@ -13,7 +11,6 @@ import com.barclays.ussd.exception.USSDNonBlockingException;
 import com.barclays.ussd.svc.context.USSDBaseRequest;
 import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
-import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
 
 public class KitsDeregisterSubmitRequestBuilder implements BmgBaseRequestBuilder {
 	@SuppressWarnings("unchecked")
@@ -24,7 +21,6 @@ public class KitsDeregisterSubmitRequestBuilder implements BmgBaseRequestBuilder
 		USSDBaseRequest request = new USSDBaseRequest();
 		USSDSessionManagement ussdSessionMgmt = requestBuilderParamsDTO.getUssdSessionMgmt();
 		Map<String, String> requestParamMap = new HashMap<String, String>();
-		Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
 		Map<String, Object> txSessions = ussdSessionMgmt.getTxSessions();
 		request.setMsisdnNo(requestBuilderParamsDTO.getMsisdnNo());
 		request.setOpCde(requestBuilderParamsDTO.getBmgOpCode());

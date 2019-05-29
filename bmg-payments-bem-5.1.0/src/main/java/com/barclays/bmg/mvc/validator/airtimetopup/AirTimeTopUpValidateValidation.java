@@ -64,10 +64,8 @@ public class AirTimeTopUpValidateValidation implements  Validator{
 
 		String mobile = airTimeTopUpValidateCommand.getMblNo();
 
-		String creditCard=airTimeTopUpValidateCommand.getCreditcardNo();
-
 		String actNo=airTimeTopUpValidateCommand.getActNo();
-		
+
 		if(actNo!=null){
 				ValidationUtils.rejectIfEmptyOrWhitespace(errors, "actNo",
 				ResponseIdConstants.AIR_MTP_VALIDATION +

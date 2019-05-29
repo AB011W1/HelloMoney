@@ -7,7 +7,10 @@ import java.util.List;
 import java.util.Map;
 
 import com.barclays.bmg.constants.BMGConstants;
+import com.barclays.bmg.constants.SystemParameterConstant;
 import com.barclays.bmg.context.BMBContextHolder;
+import com.barclays.bmg.context.BMGContextHolder;
+import com.barclays.bmg.context.BMGGlobalContext;
 import com.barclays.bmg.context.Context;
 import com.barclays.bmg.dao.RetrieveAllCustAcctDAO;
 import com.barclays.bmg.dao.accounts.AllAccountDAO;
@@ -18,12 +21,14 @@ import com.barclays.bmg.dto.ListValueCacheDTO;
 import com.barclays.bmg.service.accounts.AllAccountService;
 import com.barclays.bmg.service.accounts.request.AllAccountServiceRequest;
 import com.barclays.bmg.service.accounts.response.AllAccountServiceResponse;
+import com.barclays.bmg.service.product.impl.ListValueResServiceImpl;
 import com.barclays.bmg.service.product.request.ListValueResServiceRequest;
 import com.barclays.bmg.service.product.response.ListValueResByGroupServiceResponse;
+import com.barclays.bmg.service.product.response.ListValueResServiceResponse;
 import com.barclays.bmg.service.request.RetrieveAllCustAcctServiceRequest;
 import com.barclays.bmg.service.response.RetrieveAllCustAcctServiceResponse;
 
-public class AllAccountServiceImpl implements AllAccountService {
+public class AllAccountServiceImpl implements AllAccountService  {
     AllAccountDAO allAccountDAO;
     ListValueResDAO listValueResDAO;
     RetrieveAllCustAcctDAO retrieveAllCustAcctDAO;
@@ -58,6 +63,28 @@ public class AllAccountServiceImpl implements AllAccountService {
 		    List<? extends CustomerAccountDTO> allLst = allAccountServiceResponse.getAccountList();
 		    List<CustomerAccountDTO> consoLst = new ArrayList<CustomerAccountDTO>();
 
+
+		  /*  ListValueResServiceRequest listValueResServiceRequest=new ListValueResServiceRequest();
+		    listValueResServiceRequest.setGroup("LOAN_PRODUCT_CODE");
+		    listValueResServiceRequest.setListValueKey("695");
+		    ListValueResServiceResponse listValueResServiceResponse=listValueResDAO.findListValueLabel(listValueResServiceRequest);
+		    System.out.println(listValueResServiceResponse);*/
+
+		    ListValueResServiceRequest requesttemp = new ListValueResServiceRequest();
+			Context context = allAccountServiceResponse.getContext();
+
+			requesttemp.setContext(context);
+			requesttemp.setGroup("LOAN_PRODUCT_CODE");
+			List<String> productCode=new ArrayList<String>();
+			ListValueResByGroupServiceResponse response = listValueResDAO.findListValueResByGroup(requesttemp);
+			if (response.getListValueCahceDTO() != null) {
+			    for (ListValueCacheDTO listVal : response.getListValueCahceDTO()) {
+				 productCode.add(listVal.getKey());
+
+			    }
+			}
+
+			Map<String, Object> contextMap = context.getContextMap();
 		    if (allLst != null && ussdLst != null) {
 
 			for (CustomerAccountDTO ussdDto : ussdLst) {
@@ -65,29 +92,62 @@ public class AllAccountServiceImpl implements AllAccountService {
 			    String ussdAcctNo = (ussdDto.getAccountNumber() != null ? ussdDto.getAccountNumber() : BMGConstants.EMPTYSTR);
 
 			    for (CustomerAccountDTO allDto : allLst) {
-				if (allDto instanceof CASAAccountDTO) {
-				    int allBrCd = (allDto.getBranchCode() != null ? Integer.parseInt(allDto.getBranchCode()) : ZERO);
-				    String allAcctNo = (allDto.getAccountNumber() != null ? allDto.getAccountNumber() : BMGConstants.EMPTYSTR);
+			    	//for (ListValueCacheDTO listVal : response.getListValueCahceDTO()) {
+			    		if((!(productCode.indexOf(allDto.getProductCode())>-1)) && (contextMap!=null && "Y".equals(contextMap.get(SystemParameterConstant.isLoanRepayment)) && "KEBRB".equals(context.getBusinessId())))
+			    		{
+			    			if (allDto instanceof CASAAccountDTO) {
+							    int allBrCd = (allDto.getBranchCode() != null ? Integer.parseInt(allDto.getBranchCode()) : ZERO);
+							    String allAcctNo = (allDto.getAccountNumber() != null ? allDto.getAccountNumber() : BMGConstants.EMPTYSTR);
 
-				    if (branchCodeCountryList.contains(BMBContextHolder.getContext().getBusinessId())) {
-					if (allBrCd == ussdBrCd && allAcctNo.equals(ussdAcctNo)) {
-					    CASAAccountDTO dto = (CASAAccountDTO) allDto;
-					    dto.setPriInd(ussdDto.getPriInd());
-					    consoLst.add(allDto);
-					    break;
-					}
-				    } else {
+							    if (branchCodeCountryList.contains(BMBContextHolder.getContext().getBusinessId())) {
+								if (allBrCd == ussdBrCd && allAcctNo.equals(ussdAcctNo)) {
+								    CASAAccountDTO dto = (CASAAccountDTO) allDto;
+								    dto.setPriInd(ussdDto.getPriInd());
+								    consoLst.add(allDto);
+								    break;
+								}
+							    } else {
 
-					if (allAcctNo.equals(ussdAcctNo)) {
-					    CASAAccountDTO dto = (CASAAccountDTO) allDto;
-					    dto.setPriInd(ussdDto.getPriInd());
-					    consoLst.add(allDto);
-					    break;
-					}
+								if (allAcctNo.equals(ussdAcctNo)) {
+								    CASAAccountDTO dto = (CASAAccountDTO) allDto;
+								    dto.setPriInd(ussdDto.getPriInd());
+								    consoLst.add(allDto);
+								    break;
+								}
 
-				    }
+							    }
 
-				}
+							}
+			    		}
+			    		else if(!("KEBRB".equals(context.getBusinessId())) || ("N".equals(contextMap.get(SystemParameterConstant.isLoanRepayment)) && "KEBRB".equals(context.getBusinessId())))
+			    		{
+
+			    			if (allDto instanceof CASAAccountDTO) {
+							    int allBrCd = (allDto.getBranchCode() != null ? Integer.parseInt(allDto.getBranchCode()) : ZERO);
+							    String allAcctNo = (allDto.getAccountNumber() != null ? allDto.getAccountNumber() : BMGConstants.EMPTYSTR);
+
+							    if (branchCodeCountryList.contains(BMBContextHolder.getContext().getBusinessId())) {
+								if (allBrCd == ussdBrCd && allAcctNo.equals(ussdAcctNo)) {
+								    CASAAccountDTO dto = (CASAAccountDTO) allDto;
+								    dto.setPriInd(ussdDto.getPriInd());
+								    consoLst.add(allDto);
+								    break;
+								}
+							    } else {
+
+								if (allAcctNo.equals(ussdAcctNo)) {
+								    CASAAccountDTO dto = (CASAAccountDTO) allDto;
+								    dto.setPriInd(ussdDto.getPriInd());
+								    consoLst.add(allDto);
+								    break;
+								}
+
+							    }
+
+							}
+
+			    		}
+			   // }
 			    }
 			}
 			if (!allLst.isEmpty())
@@ -95,7 +155,7 @@ public class AllAccountServiceImpl implements AllAccountService {
 		    }
 		}
 	    }
-	}
+}
 
 	if (allAccountServiceResponse != null)
 	    getCurrencyRate(allAccountServiceResponse);
@@ -177,3 +237,5 @@ public class AllAccountServiceImpl implements AllAccountService {
 	return allAccountDAO.retrieveAllAccount(request);
     }
 }
+
+

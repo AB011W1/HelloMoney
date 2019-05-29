@@ -4,6 +4,7 @@
 package com.barclays.ussd.bmg.creditcard.payment;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -14,6 +15,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
 
+import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.creditcard.at.a.glance.RetrieveCreditCardListJsonParser;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
@@ -31,7 +33,7 @@ import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
 
 /**
  * @author BTCI
- * 
+ *
  */
 public class CreditCardPaymentListJsonParser implements BmgBaseJsonParser {
 
@@ -39,7 +41,6 @@ public class CreditCardPaymentListJsonParser implements BmgBaseJsonParser {
     private static final Logger LOGGER = Logger.getLogger(RetrieveCreditCardListJsonParser.class);
 
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
-	MenuItemDTO menuDTO = null;
 	ObjectMapper mapper = new ObjectMapper();
 	try {
 	    AuthUserData creditCardListObj = mapper.readValue(responseBuilderParamsDTO.getJsonString(), AuthUserData.class);
@@ -48,7 +49,8 @@ public class CreditCardPaymentListJsonParser implements BmgBaseJsonParser {
 			&& USSDExceptions.SUCCESS.getBmgCode().equalsIgnoreCase(creditCardListObj.getPayHdr().getResCde())) {
 		    List<CustomerMobileRegAcct> custActs = creditCardListObj.getPayData().getCustActs();
 		    Collections.sort(custActs, new CreditCardPaymentListComparator());
-		    menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, creditCardListObj);
+		    MenuItemDTO menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, creditCardListObj);
+		    return menuDTO;
 		} else if (creditCardListObj.getPayHdr() != null) {
 		    LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
 		    throw new USSDNonBlockingException(creditCardListObj.getPayHdr().getResCde());
@@ -68,7 +70,7 @@ public class CreditCardPaymentListJsonParser implements BmgBaseJsonParser {
 		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
 	    }
 	}
-	return menuDTO;
+
     }
 
     /**
@@ -82,6 +84,9 @@ public class CreditCardPaymentListJsonParser implements BmgBaseJsonParser {
 	    throws USSDNonBlockingException {
 	MenuItemDTO menuItemDTO = null;
 	AuthenticateUserPayData acntPayData = userAuthObj.getPayData();
+	USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();//CR82 changes
+    AuthUserData authData= ((AuthUserData)ussdSessionMgmt.getUserAuthObj());
+    List<CustomerMobileRegAcct> acts=authData.getPayData().getCustActs();
 	if (acntPayData != null) {
 	    if (acntPayData.getCustActs() != null && !acntPayData.getCustActs().isEmpty()) {
 		menuItemDTO = new MenuItemDTO();
@@ -91,7 +96,19 @@ public class CreditCardPaymentListJsonParser implements BmgBaseJsonParser {
 		txSessions.put(USSDInputParamsEnum.CR_CARD_PAYMENT_LIST.getTranId(), acntPayData.getCustActs());
 
 		responseBuilderParamsDTO.getUssdSessionMgmt().setTxSessions(txSessions);
-		for (CustomerMobileRegAcct accountDetail : acntPayData.getCustActs()) {
+		List<String> GpAcc=new ArrayList<String>();
+		 for(int i =0;i<acts.size();i++)
+		    	if(acts.get(i).getGroupWalletIndicator()!=null && acts.get(i).getGroupWalletIndicator().equals("Y"))
+		    		GpAcc.add(acts.get(i).getMkdActNo());
+		    List<CustomerMobileRegAcct> srcAcc=acntPayData.getCustActs();
+
+			 for(int j=0;j<srcAcc.size();j++)
+				 if(GpAcc.contains(srcAcc.get(j).getMkdActNo()))
+					 srcAcc.remove(j);
+			 if (srcAcc == null || srcAcc.isEmpty() || srcAcc.size() == 0) {
+				    throw new USSDNonBlockingException(USSDExceptions.USSD_NO_ELIGIBLE_ACCTS.getBmgCode());
+				}
+		for (CustomerMobileRegAcct accountDetail : srcAcc) {
 		    pageBody.append(USSDConstants.NEW_LINE);
 		    pageBody.append(index);
 		    pageBody.append(USSDConstants.DOT_SEPERATOR);
@@ -139,4 +156,3 @@ class CreditCardPaymentListComparator implements Comparator<CustomerMobileRegAcc
 	return retVal;
     }
 }
-

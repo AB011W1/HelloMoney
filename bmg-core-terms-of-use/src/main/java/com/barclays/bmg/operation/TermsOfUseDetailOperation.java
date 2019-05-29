@@ -55,7 +55,7 @@ public class TermsOfUseDetailOperation extends BMBCommonOperation {
 				returnTermsOfUseOperationResp.setSuccess(true);
 
 			} catch (Exception e) {
-				
+
 				returnTermsOfUseOperationResp.setSuccess(false);
 			}
 
@@ -86,21 +86,32 @@ public class TermsOfUseDetailOperation extends BMBCommonOperation {
 
 		String newFileName = request.getContext().getBusinessId() + "_"
 				+ termsOfUseFileName + "_" + versionNo + ".txt";
+		FileReader fileReader = null;
+		BufferedReader br = null;
+		try
+		{
+			if (fileName != null && fileName.contains(newFileName)) {
 
-		if (fileName != null && fileName.contains(newFileName)) {
+				fileReader = new FileReader(fileName);
+				br = new BufferedReader(fileReader);
 
-			FileReader fileReader = new FileReader(fileName);
-			BufferedReader br = new BufferedReader(fileReader);
+				String line = "";
 
-			String line = "";
-
-			while ((line = br.readLine()) != null) {
-				termsDetails.append(line);
+				while ((line = br.readLine()) != null) {
+					termsDetails.append(line);
+				}
 			}
-
-			br.close();
-			fileReader.close();
 		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally{
+			if(null != br)
+				br.close();
+			if(null != fileReader)
+				fileReader.close();
+		}
+
 
 		String tcdtails = "";
 		if (StringUtils.isNotBlank(termsDetails.toString())) {

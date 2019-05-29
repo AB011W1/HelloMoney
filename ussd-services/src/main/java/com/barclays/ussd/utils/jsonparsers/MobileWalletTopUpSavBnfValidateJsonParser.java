@@ -5,33 +5,25 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
-import com.barclays.bmg.constants.BillPaymentConstants;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
-import com.barclays.ussd.auth.bean.UserProfile;
-import com.barclays.ussd.bean.BillerArea;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
-import com.barclays.ussd.exception.USSDBlockingException;
 import com.barclays.ussd.exception.USSDNonBlockingException;
 import com.barclays.ussd.utils.BmgBaseJsonParser;
 import com.barclays.ussd.utils.PaginationEnum;
-import com.barclays.ussd.utils.ScreenSequenceCustomizer;
 import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDExceptions;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
 import com.barclays.ussd.utils.UssdResourceBundle;
-import com.barclays.ussd.utils.jsonparsers.bean.airtime.Biller;
 import com.barclays.ussd.utils.jsonparsers.bean.mobilewallettopup.MobileWalletProvider;
 import com.barclays.ussd.utils.jsonparsers.bean.regbiller.ValidateRegBillerBean;
-import com.barclays.ussd.utils.jsonparsers.bean.regbiller.ValidateRegBillerPayData;
 
 public class MobileWalletTopUpSavBnfValidateJsonParser implements BmgBaseJsonParser {
 
@@ -42,7 +34,6 @@ public class MobileWalletTopUpSavBnfValidateJsonParser implements BmgBaseJsonPar
 
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
 	MenuItemDTO menuDTO = null;
-	ObjectMapper mapper = new ObjectMapper();
 	 menuDTO = renderMenuOnScreen( responseBuilderParamsDTO);
 
 	return menuDTO;
@@ -74,7 +65,6 @@ public class MobileWalletTopUpSavBnfValidateJsonParser implements BmgBaseJsonPar
     	MobileWalletProvider mobileWalletProviderSelected = mobileWalletProvider.get(Integer.parseInt(selectedMobileWalletProvider) - 1);
     	String mnoSelected =mobileWalletProviderSelected.getBillerName();
     	String nickName = userInputMap.get(USSDInputParamsEnum.MOBILE_WALLET_SAVE_BEN_NICK_NAME.getParamName()).trim();
-    	UserProfile userProfile = ussdSessionMgmt.getUserProfile();
     	List<String> params = new ArrayList<String>(1);
     	params.add(mobilenumber);
     	params.add(mnoSelected);

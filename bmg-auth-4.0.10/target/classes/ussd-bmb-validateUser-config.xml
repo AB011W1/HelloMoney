@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="ussdLgnVrfyUsrPnController" class="com.barclays.bmg.mvc.controller.auth.UssdLgnVrfyUsrPnController" parent="bmbAbstractCommandController">
+		<property name="ussdLgnVrfyUsrPnOperation" ref="ussdLgnVrfyUsrPnOperation" />
+		<property name="changePasswordOperation" ref="changePasswordOperation" />
+		<property name="updateDetailstoMCEOperation" ref="updateDetailstoMCEOperation" />
+		<property name="thmLgnVrfyUsrPnOperation" ref="thmLgnVrfyUsrPnOperation" />
+		<property name="retrieveAllCustAcctOperation" ref="retrieveAllCustAcctOperation" />
+		<property name="commandName" value="loginCommand" />
+		<property name="validator" ref="ussdLgnVrfyUsrCommandValidator" />
+		<property name="retrieveAllCustAccLstURL" value="/dataserv?opCde=OP0201" />
+		<property name="commandClass" value="com.barclays.bmg.mvc.command.auth.LoginCommand" />
+		<property name="bmbJsonBuilder" ref="ussdLgnVrfyUsrPnJSONBuilder" />
+		<property name="supportedMethods" value="POST,GET" />
+	</bean>
+
+	<bean id="ussdLgnVrfyUsrCommandValidator" class="com.barclays.bmg.mvc.validator.auth.UssdLoginCommandValidator">
+		<property name="responseId" value="RES0109-" />
+	</bean>
+
+	<bean id="ussdLgnVrfyUsrPnJSONBuilder" class="com.barclays.bmg.json.model.builder.auth.UssdLgnVrfyUsrPnJSONBuilder" />
+
+	<bean id="ussdLgnVrfyUsrPnOperation" class="com.barclays.bmg.operation.UssdLgnVrfyUsrPnOperation" parent="bmbCommonOperation">
+		<property name="ussdLgnVrfyUsrPnService" ref="ussdLgnVrfyUsrPnService" />
+	</bean>
+
+	<bean id="ussdLgnVrfyUsrPnService" class="com.barclays.bmg.service.impl.UssdLgnVrfyUsrPnServiceImpl">
+		<property name="ussdLgnVrfyUsrPnDAO" ref="ussdLgnVrfyUsrPnDAO" />
+	</bean>
+
+	<bean id="ussdLgnVrfyUsrPnDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.UssdLgnVrfyUsrPnDAO" />
+		<property name="daoFrontController" ref="ussdLgnVrfyUsrPnDAOFrontControllerImpl" />
+	</bean>
+
+	<bean id="ussdLgnVrfyUsrPnDAOFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="VERIFYUSERWITHPIN" value-ref="ussdLgnVrfyUsrPnDAOController" />
+			</map>
+		</property>
+	</bean>
+	<bean id="ussdLgnVrfyUsrPnDAOController" class="com.barclays.bmg.dao.processing.accountservices.UssdLgnVrfyUsrPnDAOController">
+		<property name="ussdLgnVrfyUsrPnReqAdaptOperation" ref="ussdLgnVrfyUsrPnReqAdaptOperation" />
+		<property name="ussdLgnVrfyUsrPnTransmissionOperation" ref="ussdLgnVrfyUsrPnTransmissionOperation" />
+		<property name="ussdLgnVrfyUsrPnResAdaptOperation" ref="ussdLgnVrfyUsrPnResAdaptOperation" />
+	</bean>
+	<bean id="ussdLgnVrfyUsrPnReqAdaptOperation" class="com.barclays.bmg.dao.operation.accountservices.UssdLgnVrfyUsrPnReqAdaptOperation">
+		<property name="ussdLgnVrfyUsrPnHeaderAdapter" ref="ussdLgnVrfyUsrPnHeaderAdapter" />
+		<property name="ussdLgnVrfyUsrPnPayloadAdapter" ref="ussdLgnVrfyUsrPnPayloadAdapter" />
+	</bean>
+	<bean id="ussdLgnVrfyUsrPnHeaderAdapter" class="com.barclays.bmg.dao.accountservices.adapter.UssdLgnVrfyUsrPnHeaderAdapter" />
+	<bean id="ussdLgnVrfyUsrPnPayloadAdapter" class="com.barclays.bmg.dao.accountservices.adapter.UssdLgnVrfyUsrPnPayloadAdapter" />
+	<bean id="ussdLgnVrfyUsrPnTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="ussdLgnVrfyUsrPnTransmissionService" />
+	</bean>
+	<bean id="ussdLgnVrfyUsrPnTransmissionService" class="com.barclays.bmg.dao.service.impl.UssdLgnVrfyUsrPnTransmissionService">
+		<property name="remoteService" ref="ussdLgnVrfyUsrPnWebService" />
+	</bean>
+	<bean id="ussdLgnVrfyUsrPnWebService" class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface" value="com.barclays.bem.PinManagement.PinManagement_PortType" />
+		<property name="portName" value="PinManagementSOAP" />
+		<property name="jaxRpcServiceInterface" value="com.barclays.bem.PinManagement.PinManagement_Service" />
+		<property name="endpointAddress" value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+
+		<!--<property name="endpointAddress" value="http://gbrdsr000000307.intranet.barcapint.com:8802/bem/bxx5_gateway" />
+		--><property name="endpointAddressName" value="PinManagement_EndPoint" />
+		<property name="cacheKey" value="ussdLgnVrfyUsrPnUB" />
+	</bean>
+	<bean id="ussdLgnVrfyUsrPnResAdaptOperation" class="com.barclays.bmg.dao.operation.accountservices.UssdLgnVrfyUsrPnResAdaptOperation" />
+</beans>

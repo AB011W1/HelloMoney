@@ -50,11 +50,11 @@ public class MobileWalletTopupMnosJsonParser implements BmgBaseJsonParser,Screen
 	    menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, mnoList, "");
 	} catch (Exception e) {
 	    LOGGER.error("Exception : ", e);
-	    if (e instanceof USSDNonBlockingException) {
+/*	    if (e instanceof USSDNonBlockingException) {
 		throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode());
-	    } else {
+	    } else {*/
 		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
-	    }
+	    //}
 	}
 	return menuDTO;
     }
@@ -67,7 +67,6 @@ public class MobileWalletTopupMnosJsonParser implements BmgBaseJsonParser,Screen
      */
     private MenuItemDTO renderMenuOnScreen(ResponseBuilderParamsDTO responseBuilderParamsDTO, List<MobileWalletProvider> mnoList, String warningMsg) {
 	MenuItemDTO menuItemDTO = new MenuItemDTO();
-	USSDSessionManagement ussdSessionMgmt=null;
 	int index = 1;
 	StringBuilder pageBody = new StringBuilder();
 
@@ -80,7 +79,6 @@ public class MobileWalletTopupMnosJsonParser implements BmgBaseJsonParser,Screen
 	    }
 	}
 	menuItemDTO.setPageBody(pageBody.toString());
-	ussdSessionMgmt=responseBuilderParamsDTO.getUssdSessionMgmt();
 	USSDUtils.appendHomeAndBackOption(menuItemDTO, responseBuilderParamsDTO);
 	menuItemDTO.setPageFooter(menuItemDTO.getPageFooter() + warningMsg);
 	menuItemDTO.setPageHeader(responseBuilderParamsDTO.getHeaderId());

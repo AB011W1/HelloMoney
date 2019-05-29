@@ -47,19 +47,21 @@ public class MobileWalletNewBeneficiarySrcMnosJsonParser implements BmgBaseJsonP
 			}
 	    }
 	    //if(!(billerId.equalsIgnoreCase("MTNMM-4")) && !(billerId.equalsIgnoreCase("MTNZMBANKTOWALLET-2"))){
+	    if(null != mnoList){
 	    for(int i=0;i<mnoList.size();i++){
 	    	if(mnoList.get(i).getBillerId().equalsIgnoreCase("MTNMM-4") || mnoList.get(i).getBillerId().equalsIgnoreCase("MTNZMBANKTOWALLET-2")){
 	    		mnoList.remove(i);
 	    	}
 	    }
+	    }
 	    menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, mnoList, "");
 	} catch (Exception e) {
 	    LOGGER.error("Exception : ", e);
-	    if (e instanceof USSDNonBlockingException) {
+/*	    if (e instanceof USSDNonBlockingException) {
 		throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode());
-	    } else {
+	    } else {*/
 		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
-	    }
+	   // }
 	}
 	return menuDTO;
     }
@@ -104,7 +106,6 @@ public class MobileWalletNewBeneficiarySrcMnosJsonParser implements BmgBaseJsonP
 
     @Override
     public int getCustomNextScreen(String userInput, USSDSessionManagement ussdSessionMgmt) throws USSDBlockingException {
-    String businessId = ussdSessionMgmt.getUserProfile().getBusinessId();
 	int seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_SIXTEEN.getSequenceNo();
 	//CR#47
 	/*if (!branchCodeCountryList.contains(businessId)) {

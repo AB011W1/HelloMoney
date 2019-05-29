@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+	<bean id="diningOfferOperation" class="com.barclays.bmg.operation.offer.DiningOfferOperation" parent="bmbCommonOperation" >
+		<property name="diningOfferService" ref="diningOfferService"/>
+	</bean>
+
+	<bean id="diningOfferDetailsOperation" class="com.barclays.bmg.operation.offer.DiningOfferDetailsOperation" parent="bmbCommonOperation" >
+		<property name="diningOfferService" ref="diningOfferService"/>
+	</bean>
+
+	<bean id="searchDiningOffersOperation" class="com.barclays.bmg.operation.offer.SearchDiningOffersOperation" parent="bmbCommonOperation">
+		<property name="diningOfferService" ref="diningOfferService"/>
+	</bean>
+
+	<bean id="diningOfferService" class="com.barclays.bmg.service.impl.offer.DiningOfferServiceImpl" >
+		<property name="diningOfferDao" ref="diningOfferDao"/>
+	</bean>
+
+	<bean id="diningOfferDao" class="com.barclays.bmg.dao.impl.offer.DiningOfferDaoImpl" >
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+	<bean id="diningSearchDataOperation" class="com.barclays.bmg.operation.offer.DiningSearchDataOperation" parent="bmbCommonOperation"/>
+
+	<!-- EIP offer -->
+
+	<bean id="eipOfferOperation" class="com.barclays.bmg.operation.offer.EIPOfferOperation">
+		<property name="eipOfferService" ref="eipOfferService" />
+	</bean>
+
+	<bean id="eipOfferDetailOperation" 	class="com.barclays.bmg.operation.offer.EIPOfferDetailOperation" parent="bmbCommonOperation">
+		<property name="eipOfferService" ref="eipOfferService" />
+	</bean>
+
+	<bean id="searchEIPOfferOperation" 	class="com.barclays.bmg.operation.offer.SearchEIPOfferOperation">
+		<property name="eipOfferService" ref="eipOfferService" />
+	</bean>
+
+	<bean id="eipOfferService" class="com.barclays.bmg.service.impl.offer.EIPOfferServiceImpl">
+		<property name="eipOfferDao" ref="eipOfferDao" />
+	</bean>
+
+
+	<bean id="eipOfferDao" class="com.barclays.bmg.dao.impl.offer.EIPOfferDaoImpl" >
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+	<!-- Terms and condition  -->
+
+	<bean id="promoOfferTermsAndCondOperation" 	class="com.barclays.bmg.operation.offer.PromoOfferTermsAndCondOperation">
+		<property name="promoOfferTermsAndCondService" ref="promoOfferTermsAndCondService" />
+	</bean>
+
+	<bean id="promoOfferTermsAndCondService" class="com.barclays.bmg.service.impl.offer.PromoOfferTermsAndCondServiceImpl">
+		<property name="promoOfferTermsAndCondDAO" ref="promoOfferTermsAndCondDAO" />
+	</bean>
+
+
+	<bean id="promoOfferTermsAndCondDAO" class="com.barclays.bmg.dao.impl.offer.PromoOfferTermsAndCondDAOImpl" >
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+
+</beans>

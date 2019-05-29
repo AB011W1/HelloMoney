@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.barclays.ussd.auth.USSDresquest.USSDBaseRequestMapper;
 import com.barclays.ussd.auth.bean.USSDRequest;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
-import com.barclays.ussd.auth.bean.UserProfile;
 import com.barclays.ussd.common.configuration.ConfigurationManager;
 import com.barclays.ussd.controller.USSDAbstractController;
 import com.barclays.ussd.exception.USSDBlockingException;
@@ -104,7 +103,6 @@ public class BaseController extends USSDAbstractController {
 	    } else {
 		httpSession = sessionHandler.getSessionRequest(request);
 		USSDSessionManagement ussdSessionMgmt = (USSDSessionManagement) httpSession.getAttribute(msisdn);
-		UserProfile userProfile = ussdSessionMgmt.getUserProfile();
 		String isNotHMCustomer = null;
 		if (ussdSessionMgmt != null) {
 		    isNotHMCustomer = ussdSessionMgmt.getNonHMCustomerFlag();

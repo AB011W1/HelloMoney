@@ -10,10 +10,9 @@ import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.barclays.bmg.context.BMBContextHolder;
+import com.barclays.bmg.context.BMGContextHolder;
+import com.barclays.bmg.context.BMGGlobalContext;
 import com.barclays.bmg.dao.product.impl.ListValueResDAOImpl;
-import com.barclays.bmg.service.product.request.ListValueResServiceRequest;
-import com.barclays.bmg.service.product.response.ListValueResByGroupServiceResponse;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
@@ -76,7 +75,8 @@ public class InternalNonRegFundTransferValidateJsonParser implements BmgBaseJson
 		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
 	    }
 	}
-	setNextScreenSequenceNumber(menuDTO);
+	if(null != menuDTO)
+		setNextScreenSequenceNumber(menuDTO);
 	return menuDTO;
     }
 
@@ -127,8 +127,10 @@ public class InternalNonRegFundTransferValidateJsonParser implements BmgBaseJson
 
 	    // Transaction fee only for CASA - CPB change 25/05/2017
 		// Removing PilotValue check(pilotValue !=null && pilotValue.equalsIgnoreCase("Y")) its not going with Regulatory 6.0.0 changes - 02/11/2017
-	    if(responseBuilderParamsDTO.getUssdSessionMgmt().getBusinessId().equals("KEBRB") && intNRFundTxValidatePayData.getCreditcard() == null &&
-	    		intNRFundTxValidatePayData.getTxnChargeAmt()!=null){
+	    //CBP Change
+	    BMGGlobalContext logContext = BMGContextHolder.getLogContext();
+	    if((intNRFundTxValidatePayData.getCreditcard() == null && ((logContext !=null && logContext.getContextMap().get("isCBPFLAG").equals("Y")) || (logContext !=null && logContext.getBusinessId().equals("KEBRB"))) &&
+	    		intNRFundTxValidatePayData.getTxnChargeAmt()!=null)){
 		    String transactionFeeLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(TRANSACTION_FEE_LABEL,
 				    new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));
 		    if(intNRFundTxValidatePayData.getTxnChargeAmt().getAmt()!=null){
@@ -147,7 +149,7 @@ public class InternalNonRegFundTransferValidateJsonParser implements BmgBaseJson
 	    		append(intNRFundTxValidatePayData.getTxnChargeAmt().getCurr()).append(USSDConstants.SINGLE_WHITE_SPACE).
 	    		append(roundedAccumulatedVal);
 
-				// CPB change fields set for MakeBillPayemntRequest 31/05/2017
+				// CPB change fields set for MakeBillPayemntRequest /fundtransfer 31/05/2017
 				ussdSessionMgmt.getTxSessions().put("CpbMakeDomesticFundFields", "CpbMakeDomesticFundFields");
 				ussdSessionMgmt.getTxSessions().put("CpbChargeAmount", intNRFundTxValidatePayData.getTxnChargeAmt());
 				ussdSessionMgmt.getTxSessions().put("CpbFeeGLAccount", intNRFundTxValidatePayData.getFeeGLAccount());

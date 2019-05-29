@@ -3,7 +3,6 @@ package com.barclays.ussd.utils.jsonparsers;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.log4j.Logger;
 
@@ -11,7 +10,6 @@ import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
 import com.barclays.ussd.dto.UssdBranchLookUpDTO;
-import com.barclays.ussd.exception.USSDBlockingException;
 import com.barclays.ussd.exception.USSDNonBlockingException;
 import com.barclays.ussd.utils.BmgBaseJsonParser;
 import com.barclays.ussd.utils.PaginationEnum;
@@ -36,7 +34,6 @@ public class EditBenfExtEnterBranchCodeJsonParser implements BmgBaseJsonParser {
 	    USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
 	    branchList = (List<UssdBranchLookUpDTO>) ussdSessionMgmt.getTxSessions().get(
 	    			USSDInputParamsEnum.EDIT_BENF_SELECT_BRANCH_NAME.getTranId());
-	    Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
 	    if (branchList !=null  &&  branchList.size() != 0) {
 		menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, branchList);
 		responseBuilderParamsDTO.getUssdSessionMgmt().getTxSessions()
@@ -71,7 +68,6 @@ public class EditBenfExtEnterBranchCodeJsonParser implements BmgBaseJsonParser {
 		USSDUtils.appendHomeAndBackOption(menuItemDTO, responseBuilderParamsDTO);
 		menuItemDTO.setPageHeader(responseBuilderParamsDTO.getHeaderId());
 		int index = 1;
-		String transNodeId=responseBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
 		for (UssdBranchLookUpDTO branchLookUpDTO : branchList) {
 		    pageBody.append(USSDConstants.NEW_LINE);
 		    pageBody.append(index++);

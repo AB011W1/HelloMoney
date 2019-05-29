@@ -1,14 +1,18 @@
 package com.barclays.ussd.utils.jsonparsers;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
+
+import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
 import com.barclays.ussd.exception.USSDBlockingException;
@@ -32,21 +36,20 @@ public class KitsRegisterAccountNumberJsonParser implements BmgBaseJsonParser {
     private static final Logger LOGGER = Logger.getLogger(KitsRegisterAccountNumberJsonParser.class);
 
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
-	MenuItemDTO menuDTO = null;
+	MenuItemDTO menuDTO = new MenuItemDTO();
 	ObjectMapper mapper = new ObjectMapper();
-
 	try{
 
-			SearchIndividualCustInformationResponse searchIndividualCustInformationResponse = mapper.readValue(responseBuilderParamsDTO.getJsonString(),
+		SearchIndividualCustInformationResponse searchIndividualCustInformationResponse = mapper.readValue(responseBuilderParamsDTO.getJsonString(),
 					SearchIndividualCustInformationResponse.class);
+
 			if (searchIndividualCustInformationResponse != null) {
 				if ((searchIndividualCustInformationResponse.getPayHdr() != null
 					&& USSDExceptions.SUCCESS.getBmgCode().equalsIgnoreCase(searchIndividualCustInformationResponse.getPayHdr().getResCde())) ||
-					(searchIndividualCustInformationResponse.getPayHdr() != null && USSDExceptions.BEM001.getBmgCode().equalsIgnoreCase(searchIndividualCustInformationResponse.getPayHdr().getResCde()) )) {
-
+					(searchIndividualCustInformationResponse.getPayHdr() != null &&
+							USSDExceptions.BEM001.getBmgCode().equalsIgnoreCase(searchIndividualCustInformationResponse.getPayHdr().getResCde()) )
+					) {
 //Retrieving account list starts
-
-
 					try {
 						    AuthUserData userAuthObj = (AuthUserData) responseBuilderParamsDTO.getUssdSessionMgmt().getUserAuthObj();
 						    if (userAuthObj != null) {
@@ -56,21 +59,21 @@ public class KitsRegisterAccountNumberJsonParser implements BmgBaseJsonParser {
 							    menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, userAuthObj);
 							} else if (userAuthObj.getPayHdr() != null) {
 							    LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
-							    throw new USSDNonBlockingException(userAuthObj.getPayHdr().getResCde());
+							    throw new USSDNonBlockingException(userAuthObj.getPayHdr().getResCde(),true);
 							} else {
 							    LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
-							    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+							    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 							}
 						    } else {
 							LOGGER.error("Invalid response got from the BMG " + responseBuilderParamsDTO.getBmgOpCode());
-							throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+							throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 						    }
 						} catch (Exception e) {
 						    LOGGER.error("Exception : ", e);
 						    if (e instanceof USSDNonBlockingException) {
-							throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode());
+							throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode(),true);
 						    } else {
-							throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+							throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 						    }
 						}
 
@@ -80,29 +83,33 @@ public class KitsRegisterAccountNumberJsonParser implements BmgBaseJsonParser {
 						&& (StringUtils.equalsIgnoreCase(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(), searchIndividualCustInformationResponse.getPayHdr().getResCde()))) {
 				    throw new USSDBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
 				}
+				else if(searchIndividualCustInformationResponse.getPayHdr().getResCde().equals("REGISTERED"))
+				{
+					throw new USSDNonBlockingException(USSDExceptions.BEMREG.getBmgCode(),"Customer is already registred");
+				}
 				else if(searchIndividualCustInformationResponse.getPayHdr() != null
 						&& USSDExceptions.BEMREG.getBmgCode().equalsIgnoreCase(searchIndividualCustInformationResponse.getPayHdr().getResCde())){
-					throw new USSDNonBlockingException(USSDExceptions.BEMREG.getBmgCode());
+					throw new USSDNonBlockingException(USSDExceptions.BEMREG.getBmgCode(),true);
 				}else if(searchIndividualCustInformationResponse.getPayHdr() != null
 						&& USSDExceptions.BEMDEREG.getBmgCode().equalsIgnoreCase(searchIndividualCustInformationResponse.getPayHdr().getResCde())){
 					throw new USSDBlockingException(USSDExceptions.BEMDEREG.getBmgCode());
 				}
 				else if (searchIndividualCustInformationResponse.getPayHdr() != null) {
 				    LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
-				    throw new USSDNonBlockingException(searchIndividualCustInformationResponse.getPayHdr().getResCde());
+				    throw new USSDNonBlockingException(searchIndividualCustInformationResponse.getPayHdr().getResCde(),true);
 				}
 				}else {
 					LOGGER.error("Invalid response got from the BMG " + responseBuilderParamsDTO.getBmgOpCode());
-					throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+					throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 				    }
 
 	}catch(Exception e)
 	{
 		LOGGER.error("Exception : ", e);
 	    if (e instanceof USSDNonBlockingException) {
-		throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode());
+		throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode(),true);
 	    } else {
-		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 	    }
 	}
 
@@ -114,23 +121,39 @@ public class KitsRegisterAccountNumberJsonParser implements BmgBaseJsonParser {
      * @param userAuthObj
      * @param warningMsg
      * @return MenuItemDTO
+     * @throws USSDNonBlockingException
      */
-    private MenuItemDTO renderMenuOnScreen(ResponseBuilderParamsDTO responseBuilderParamsDTO, AuthUserData userAuthObj) {
+    private MenuItemDTO renderMenuOnScreen(ResponseBuilderParamsDTO responseBuilderParamsDTO, AuthUserData userAuthObj) throws USSDNonBlockingException {
 
 		MenuItemDTO menuItemDTO = null;
 		AuthenticateUserPayData acntPayData = userAuthObj.getPayData();
+		USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
+		AuthUserData authData= ((AuthUserData)ussdSessionMgmt.getUserAuthObj());
+	    List<CustomerMobileRegAcct> acts=authData.getPayData().getCustActs();
+	    List<CustomerMobileRegAcct> custActs = acntPayData.getCustActs();
 		if (acntPayData != null) {
 			if (acntPayData.getCustActs() != null && !acntPayData.getCustActs().isEmpty()) {
 				menuItemDTO = new MenuItemDTO();
 				int index = 1;
 				StringBuilder pageBody = new StringBuilder();
 				Map<String, Object> txSessions = new HashMap<String, Object>(acntPayData.getCustActs().size());
-
 				txSessions.put(USSDInputParamsEnum.KITS_REG_ACCOUNT_NUM.getTranId(), acntPayData.getCustActs());
-
-
 				responseBuilderParamsDTO.getUssdSessionMgmt().setTxSessions(txSessions);
-				for (CustomerMobileRegAcct accountDetail : acntPayData.getCustActs()) {
+				if(acts != null && acts.size() > 0)
+				{
+					List<String> GpAcc=new ArrayList<String>();
+					 for(int i =0;i<acts.size();i++)
+					    	if(acts.get(i).getGroupWalletIndicator()!=null && acts.get(i).getGroupWalletIndicator().equals("Y"))
+					    		GpAcc.add(acts.get(i).getMkdActNo());
+
+						 for(int j=0;j<custActs.size();j++)
+							 if(GpAcc.contains(custActs.get(j).getMkdActNo()))
+								 custActs.remove(j);
+				}
+				if (custActs == null || custActs.isEmpty() || custActs.size() == 0) {
+				    throw new USSDNonBlockingException(USSDExceptions.USSD_NO_ELIGIBLE_ACCTS.getBmgCode());
+				}
+				for (CustomerMobileRegAcct accountDetail : custActs){//acntPayData.getCustActs()) {
 					pageBody.append(USSDConstants.NEW_LINE);
 					pageBody.append(index);
 					pageBody.append(USSDConstants.DOT_SEPERATOR);
@@ -144,7 +167,8 @@ public class KitsRegisterAccountNumberJsonParser implements BmgBaseJsonParser {
 				menuItemDTO.setPaginationType(PaginationEnum.LISTED);
 			}
 		}
-		setNextScreenSequenceNumber(menuItemDTO);
+		if(null != menuItemDTO)
+			setNextScreenSequenceNumber(menuItemDTO);
 		return menuItemDTO;
     }
 
@@ -172,4 +196,3 @@ public class KitsRegisterAccountNumberJsonParser implements BmgBaseJsonParser {
 		}
 
 	}
-

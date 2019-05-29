@@ -29,22 +29,23 @@ import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
 
 /**
  * @author BTCI
- * 
+ *
  */
 public class AccountSummaryJSONParser implements BmgBaseJsonParser {
+
 
     /** The Constant LOGGER. */
     private static final Logger LOGGER = Logger.getLogger(AccountSummaryJSONParser.class);
 
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
-	MenuItemDTO menuDTO = null;
 	try {
 	    AuthUserData userAuthObj = (AuthUserData) responseBuilderParamsDTO.getUssdSessionMgmt().getUserAuthObj();
 	    if (userAuthObj != null) {
 		if (userAuthObj.getPayHdr() != null && USSDExceptions.SUCCESS.getBmgCode().equalsIgnoreCase(userAuthObj.getPayHdr().getResCde())) {
 		    List<CustomerMobileRegAcct> custActs = userAuthObj.getPayData().getCustActs();
 		    Collections.sort(custActs, new AccountSummaryCustomerAccountComparator());
-		    menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, userAuthObj);
+		    MenuItemDTO menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, userAuthObj);
+		    return menuDTO;
 		} else if (userAuthObj.getPayHdr() != null) {
 		    LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
 		    throw new USSDNonBlockingException(userAuthObj.getPayHdr().getResCde());
@@ -64,7 +65,7 @@ public class AccountSummaryJSONParser implements BmgBaseJsonParser {
 		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
 	    }
 	}
-	return menuDTO;
+
     }
 
     /**
@@ -72,19 +73,28 @@ public class AccountSummaryJSONParser implements BmgBaseJsonParser {
      * @param userAuthObj
      * @param warningMsg
      * @return MenuItemDTO
+     * @throws USSDNonBlockingException
      */
-    private MenuItemDTO renderMenuOnScreen(ResponseBuilderParamsDTO responseBuilderParamsDTO, AuthUserData userAuthObj) {
+    private MenuItemDTO renderMenuOnScreen(ResponseBuilderParamsDTO responseBuilderParamsDTO, AuthUserData userAuthObj) throws USSDNonBlockingException {
 	MenuItemDTO menuItemDTO = null;
 	AuthenticateUserPayData acntPayData = userAuthObj.getPayData();
 	if (acntPayData != null) {
 	    if (acntPayData.getCustActs() != null && !acntPayData.getCustActs().isEmpty()) {
+	    	List<CustomerMobileRegAcct> acts=acntPayData.getCustActs();
+			/* for(int i =0;i<acts.size();i++)
+			    	if(acts.get(i).getGroupWalletIndicator()!=null && acts.get(i).getGroupWalletIndicator().equals("Y"))
+			    		acts.remove(i);*/
+	    if(acts == null || acts.isEmpty()){
+	    	throw new USSDNonBlockingException(USSDExceptions.USSD_NO_ELIGIBLE_ACCTS.getBmgCode());
+	    }
+
 		menuItemDTO = new MenuItemDTO();
 		int index = 1;
 		StringBuilder pageBody = new StringBuilder();
 		Map<String, Object> txSessions = new HashMap<String, Object>(acntPayData.getCustActs().size());
 		txSessions.put(USSDInputParamsEnum.BAL_ENQ_SEL_AC.getTranId(), acntPayData.getCustActs());
 		responseBuilderParamsDTO.getUssdSessionMgmt().setTxSessions(txSessions);
-		for (CustomerMobileRegAcct accountDetail : acntPayData.getCustActs()) {
+		for (CustomerMobileRegAcct accountDetail : acts){//acntPayData.getCustActs()) {
 		    pageBody.append(USSDConstants.NEW_LINE);
 		    pageBody.append(index);
 		    pageBody.append(USSDConstants.DOT_SEPERATOR);
@@ -99,7 +109,8 @@ public class AccountSummaryJSONParser implements BmgBaseJsonParser {
 		menuItemDTO.setPaginationType(PaginationEnum.LISTED);
 	    }
 	}
-	setNextScreenSequenceNumber(menuItemDTO);
+	if(null != menuItemDTO)
+		setNextScreenSequenceNumber(menuItemDTO);
 	return menuItemDTO;
     }
 

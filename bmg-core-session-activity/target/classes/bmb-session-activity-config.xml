@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="billPayment"
+		class="com.barclays.bmg.service.sessionactivity.builder.BillPaymentSessionActivityBuilder" parent="bmgFormatUtils"/>
+
+	<bean id="fundTransfer"
+		class="com.barclays.bmg.service.sessionactivity.builder.FundTransferSessionActivityBuilder" parent="bmgFormatUtils"/>
+
+	<bean id="bankDraft"
+		class="com.barclays.bmg.service.sessionactivity.builder.BankDraftSessionActivityBuilder" parent="bmgFormatUtils" />
+
+	<bean id="chequeBook"
+		class="com.barclays.bmg.service.sessionactivity.builder.ChequeBookRequestSessionActivityBuilder" parent="bmgFormatUtils" />
+
+	<bean id="internationFundTransfer"
+		class="com.barclays.bmg.service.sessionactivity.builder.InternationalFundTransferSessionActivityBuilder" parent="bmgFormatUtils" />
+	<bean id="sessionActivityDAO"
+		class="com.barclays.bmg.service.sessionactivity.dao.impl.SessionActivityDAOImpl"
+		parent="baseDao" />
+
+	<bean id="sessionActivityRecorder"
+		class="com.barclays.bmg.service.sessionactivity.SessionActivityRecorder">
+		<property name="sessionActivityDAO" ref="sessionActivityDAO" />
+	</bean>
+
+	<bean id="bmbLogoutJsonBuilder"
+		class="com.barclays.bmg.json.model.builder.auth.BMBLogoutSessionSummaryJSONBldr" >
+			<property name="scriptResourceService" ref="scriptResourceService" />
+	</bean>
+
+	<bean id="bmbInvalidateJSONBuilder"
+		class="com.barclays.bmg.json.model.builder.auth.BMBInvaidateSessJSONBuilder" />
+
+	<bean id="bmbCancelLoginJSONBuilder"
+		class="com.barclays.bmg.json.model.builder.auth.BMBCancelLoginJSONBuilder" />
+
+	<bean id="sessionSummaryRetrievalOperation" class="com.barclays.bmg.operation.SessionActivityOperation">
+		<property name="sessionSummaryService" ref="sessionSummaryService" />
+		<property name="sessionActivityPersistenceService" ref="sessionActivityPersistenceService" />
+	</bean>
+
+	<bean id="sessionSummaryService"
+		class="com.barclays.bmg.service.sessionactivity.impl.SessionSummarySvcImpl">
+		<property name="sessionActivityDAO" ref="sessionActivityDAO" />
+	</bean>
+
+	<bean id="sessionActivityPersistenceService"
+		class="com.barclays.bmg.service.sessionactivity.impl.SessionActivityPersistenceSvcImpl">
+		<property name="sessionActivityDAO" ref="sessionActivityDAO" />
+	</bean>
+</beans>

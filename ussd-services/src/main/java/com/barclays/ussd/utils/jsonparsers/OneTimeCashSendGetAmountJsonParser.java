@@ -120,11 +120,6 @@ public class OneTimeCashSendGetAmountJsonParser implements BmgBaseJsonParser, Sy
 	StringBuilder pageBody = new StringBuilder();
 
 	USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
-	Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
-
-	//multiAmtSndr = getSysParamValue(ussdSessionMgmt.getUserProfile().getBusinessId(), ussdSessionMgmt.getUserProfile().getCountryCode(),
-		//SystemPreferenceConstants.CS_MULTIPLE_AMT);
-
 	multiAmtSndr = getSystemPreferenceData(ussdSessionMgmt.getUserProfile(), SystemPreferenceConstants.SYS_PARAM_CS,
 			SystemPreferenceConstants.CS_MULTIPLE_AMT);
 

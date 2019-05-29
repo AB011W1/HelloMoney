@@ -193,7 +193,7 @@ public class UssdLgnVrfyUsrPnAuditBuilder extends AbstractTransactionAuditBuilde
 		screenData.addField(field10);
 
 	    } catch (Exception ex) {
-
+	    	ex.printStackTrace();
 	    }
 	}
 

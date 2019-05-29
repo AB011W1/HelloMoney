@@ -24,7 +24,7 @@ import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
 
 /**
  * @author BTCI This class builds request for Confirmation screen, bill pay
- * 
+ *
  */
 public class PayBillSubmit implements BmgBaseRequestBuilder {
     @Autowired
@@ -52,6 +52,8 @@ public class PayBillSubmit implements BmgBaseRequestBuilder {
 		String userCreditSelection = userInputMap.get(USSDInputParamsEnum.PAY_BILLS_CARD_LIST.getParamName());
 		CustomerMobileRegAcct creditCard = creditCardList.get(Integer.parseInt(userCreditSelection) - 1);
 		requestParamMap.put(USSDInputParamsEnum.PAY_BILLS_FROM_ACNT.getParamName(), creditCard.getActNo());
+      	//Added card no details to fetch only selected card
+		requestParamMap.put("ccNumber", creditCard.getCrdNo());
 		requestParamMap.put("crditCardFlag",USSDConstants.CREDIT_BILL_PAY);
 		BillerCreditDTO billerCreditDTO = (BillerCreditDTO) ussdSessionMgmt.getTxSessions().get("BillerCreditDTO");
 		requestParamMap.put("actionCode", billerCreditDTO.getActionCode());

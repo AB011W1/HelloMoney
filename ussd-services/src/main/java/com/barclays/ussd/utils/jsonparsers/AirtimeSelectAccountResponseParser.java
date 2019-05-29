@@ -3,6 +3,7 @@
  */
 package com.barclays.ussd.utils.jsonparsers;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -10,11 +11,14 @@ import java.util.Map;
 import org.apache.commons.collections.CollectionUtils;
 
 import com.barclays.bmg.constants.BillPaymentConstants;
+import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
+import com.barclays.ussd.exception.USSDNonBlockingException;
 import com.barclays.ussd.utils.BmgBaseJsonParser;
 import com.barclays.ussd.utils.PaginationEnum;
 import com.barclays.ussd.utils.USSDConstants;
+import com.barclays.ussd.utils.USSDExceptions;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
@@ -23,6 +27,7 @@ import com.barclays.ussd.utils.jsonparsers.bean.billpay.AccountData;
 import com.barclays.ussd.utils.jsonparsers.bean.billpay.FromAcntLst;
 import com.barclays.ussd.utils.jsonparsers.bean.billpay.Payee;
 import com.barclays.ussd.utils.jsonparsers.bean.login.AuthUserData;
+import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
 
 /**
  * @author BTCI
@@ -32,11 +37,11 @@ public class AirtimeSelectAccountResponseParser implements BmgBaseJsonParser {
 	private static final String TRANSACTION_AIRTIME_LABEL = "label.airtime.select.accnum";
 
     @Override
-    public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) {
+    public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
 	return renderMenuOnScreen(responseBuilderParamsDTO);
     }
 
-    private MenuItemDTO renderMenuOnScreen(ResponseBuilderParamsDTO responseBuilderParamsDTO) {
+    private MenuItemDTO renderMenuOnScreen(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
 	MenuItemDTO menuItemDTO = new MenuItemDTO();
 	Map<String, Object> txSessions = responseBuilderParamsDTO.getUssdSessionMgmt().getTxSessions();
 
@@ -57,13 +62,24 @@ public class AirtimeSelectAccountResponseParser implements BmgBaseJsonParser {
 					responseBuilderParamsDTO.getUssdSessionMgmt().getUserProfile().getCountryCode()));
 
 	pageBody.append(airtimeTopupAmountLabel);
-
+	 USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
+	 AuthUserData authData= ((AuthUserData)ussdSessionMgmt.getUserAuthObj());
+	 List<CustomerMobileRegAcct> acts=authData.getPayData().getCustActs();
 	//CR82
 	String mAtWt=userInputMap.get(BillPaymentConstants.AT_MW_SAVED_BENEF)== null?"":(String) userInputMap.get(BillPaymentConstants.AT_MW_SAVED_BENEF);
 	if(!mAtWt.equals(BillPaymentConstants.AT_MW_SAVED_BENEF)){
 
 		List<Account> accounts = (List<Account>) txSessions.get(USSDInputParamsEnum.AIRTIME_ACCT_LIST.getTranId());
-		if (CollectionUtils.isNotEmpty(accounts)) {
+		List<String> GpAcc=new ArrayList<String>();
+		 for(int i =0;i<acts.size();i++)
+		    	if(acts.get(i).getGroupWalletIndicator()!=null && acts.get(i).getGroupWalletIndicator().equals("Y"))
+		    		GpAcc.add(acts.get(i).getMkdActNo());
+		    List<Account> srcAcc=accounts;
+
+			 for(int j=0;j<srcAcc.size();j++)
+				 if(GpAcc.contains(srcAcc.get(j).getMkdActNo()))
+					 srcAcc.remove(j);
+		if (CollectionUtils.isNotEmpty(accounts) && accounts.size() > 0 && accounts != null) {
 			pageBody.append(USSDConstants.NEW_LINE);
 			for (Account account : accounts) {
 				pageBody.append(accountIndex++);
@@ -71,11 +87,24 @@ public class AirtimeSelectAccountResponseParser implements BmgBaseJsonParser {
 				pageBody.append(USSDConstants.NEW_LINE);
 			}
 		}
+		else
+		{
+			throw new USSDNonBlockingException(USSDExceptions.USSD_NO_ELIGIBLE_ACCTS.getBmgCode());
+		}
 	} else {
 		FromAcntLst fromAcntLst = (FromAcntLst) txSessions.get("AccountListSaved");
-		if (fromAcntLst != null && fromAcntLst.getFrActLst() != null && !fromAcntLst.getFrActLst().isEmpty()) {
+		List<String> GpAcc=new ArrayList<String>();
+		 for(int i =0;i<acts.size();i++)
+		    	if(acts.get(i).getGroupWalletIndicator()!=null && acts.get(i).getGroupWalletIndicator().equals("Y"))
+		    		GpAcc.add(acts.get(i).getMkdActNo());
+		    List<AccountData> srcAcc=fromAcntLst.getFrActLst();
+
+			 for(int j=0;j<srcAcc.size();j++)
+				 if(GpAcc.contains(srcAcc.get(j).getMkdActNo()))
+					 srcAcc.remove(j);
+		if (srcAcc != null && srcAcc.size() > 0 && !srcAcc.isEmpty()) {
 			pageBody.append(USSDConstants.NEW_LINE);
-			for (AccountData acctDet : fromAcntLst.getFrActLst()) {
+			for (AccountData acctDet : srcAcc) {
 				pageBody.append(accountIndex++);
 				pageBody.append(USSDConstants.DOT_SEPERATOR);
 				pageBody.append(acctDet.getMkdActNo());
@@ -83,6 +112,10 @@ public class AirtimeSelectAccountResponseParser implements BmgBaseJsonParser {
 
 				menuItemDTO.setPageBody(pageBody.toString());
 			}
+		}
+		else
+		{
+			throw new USSDNonBlockingException(USSDExceptions.USSD_NO_ELIGIBLE_ACCTS.getBmgCode());
 		}
 
 	}

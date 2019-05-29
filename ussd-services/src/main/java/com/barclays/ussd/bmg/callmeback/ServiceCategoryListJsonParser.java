@@ -37,7 +37,6 @@ public class ServiceCategoryListJsonParser implements BmgBaseJsonParser {
 	MenuItemDTO menuDTO = null;
 	try {
 	    Map<String, String> userInputMap = responseBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap();
-	    String businessArea = userInputMap.get(USSDInputParamsEnum.CALL_ME_BACK_AREA_LIST.getParamName());
 
 	    List<BusinessAreaLookUpDTO> businessAreaList = (List<BusinessAreaLookUpDTO>) ussdSessionMgmt.getTxSessions().get(
 		    USSDInputParamsEnum.CALL_ME_BACK_AREA_LIST.getTranId());

@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.barclays.bmg.constants.BillPaymentConstants;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
@@ -19,12 +17,9 @@ import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
-import com.barclays.ussd.utils.UssdMenuBuilder;
 
 public class AirtimeTopupMsisdnTypeJsonParser implements BmgBaseJsonParser,
 		ScreenSequenceCustomizer {
-	@Autowired
-	UssdMenuBuilder ussdMenuBuilder;
 	private static final String AIRTIME_OWN_NUMBER = "label.own.number";
 	private static final String AIRTIME_OTHER_NUMBER = "label.other.number";
 

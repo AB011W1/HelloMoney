@@ -35,8 +35,7 @@ public class IntNonRegConfirmReqBuilder implements BmgBaseRequestBuilder {
 	// Set the fields for MakeDomesticFundTransferRequest - CPB 31/05
 	String cpbflag = (String)txSessions.get("CpbMakeDomesticFundFields");
 	if(cpbflag !=null && cpbflag.equals("CpbMakeDomesticFundFields")){
-		TransactionAmt chargeAmount = new TransactionAmt();
-		chargeAmount = (TransactionAmt)txSessions.get("CpbChargeAmount");
+		 TransactionAmt chargeAmount = (TransactionAmt)txSessions.get("CpbChargeAmount");
 		String cpbChargeAmount = chargeAmount.getAmt();
 		requestParamMap.put("CpbChargeAmount", String.valueOf(cpbChargeAmount));
 		requestParamMap.put("CpbFeeGLAccount", (String)txSessions.get("CpbFeeGLAccount"));

@@ -9,8 +9,6 @@ import com.barclays.bmg.logging.impl.BMBRemoteLogger;
 import com.barclays.bmg.logging.service.LoggingService;
 
 public class BMBLogUtility {
-
-    static String logType;
     static LoggingService loggingService;
     private static ApplicationContext appctx = null;
 

@@ -4,7 +4,7 @@ import com.barclays.bem.HMUpdateCustomer.UpdateHMCustomerResponseType;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.service.response.UpdateLanguagePrefServiceResponse;
 
-public class UpdateLanguagePrefResAdptOperation extends AbstractResAdptOperation {
+public class UpdateLanguagePrefResAdptOperation extends AbstractResAdptOperationAcct {
 
     public UpdateLanguagePrefServiceResponse adaptResponse(WorkContext workContext, Object obj) throws Exception {
 	UpdateLanguagePrefServiceResponse response = new UpdateLanguagePrefServiceResponse();

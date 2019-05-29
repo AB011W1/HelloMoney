@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="MCFE">
+
+	<typeAlias alias="interestedProductDTO" type="com.barclays.ussd.dto.InterestedProductDTO" />
+	<typeAlias alias="interestedSubProductDTO" type="com.barclays.ussd.dto.InterestedSubProductDTO" />
+
+
+	<resultMap id="ussdProductInfo" class="interestedProductDTO">
+		<result property="productName" column="PRODUCT_NAME" />
+	</resultMap>
+	<resultMap id="ussdSubProductInfo" class="interestedSubProductDTO">
+		<result property="subProductName" column="SUB_PRODUCT_NAME" />
+	</resultMap>
+
+
+	<select id="ussdProdcutList" resultMap="ussdProductInfo">
+		SELECT DISTINCT a.PRODUCT_NAME  FROM BANK_PRODUCT_MST a  WHERE  a.BUSINESS_ID= #businessId#
+
+	</select>
+
+	<select id="ussdSubProdcutList" resultMap="ussdSubProductInfo">
+	SELECT  SUB_PRODUCT_NAME  FROM BANK_SUBPRODUCT_MST
+		where PRODUCT_ID in (SELECT PRODUCT_ID FROM BANK_PRODUCT_MST  where PRODUCT_NAME= #productName#) AND BUSINESS_ID= #businessId#
+
+	</select>
+
+</sqlMap>

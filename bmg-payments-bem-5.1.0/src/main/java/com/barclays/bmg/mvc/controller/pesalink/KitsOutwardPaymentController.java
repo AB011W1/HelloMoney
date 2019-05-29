@@ -121,7 +121,7 @@ public class KitsOutwardPaymentController extends BMBAbstractCommandController{
          beneficiaryDTO.setBillerCategoryName(BMGProcessConstants.KITS_BILLER_ORGANIGATIONCODE_CATEGORYID);
          beneficiaryDTO.setBillerId(BMGProcessConstants.KITS_BILLER_ORGANIGATIONCODE_BILLERID);
          //Ended 03/10/2016
-         beneficiaryDTO.setBillRefNo("Biller ref no");
+         beneficiaryDTO.setBillRefNo((String)request.getParameter("receipientAccountNo"));
          beneficiaryDTO.setExternalBillerId("500");
          beneficiaryDTO.setDestinationBankName((String)request.getParameter("selectedBank"));
          beneficiaryDTO.setDestinationBankSortCode((String)request.getParameter("selectedBankSortCode"));

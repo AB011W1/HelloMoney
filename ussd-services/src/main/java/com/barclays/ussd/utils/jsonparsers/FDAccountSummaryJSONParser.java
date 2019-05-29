@@ -1,6 +1,8 @@
 package com.barclays.ussd.utils.jsonparsers;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
@@ -8,6 +10,7 @@ import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
+import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
 import com.barclays.ussd.exception.USSDNonBlockingException;
@@ -20,13 +23,15 @@ import com.barclays.ussd.utils.USSDUtils;
 import com.barclays.ussd.utils.jsonparsers.bean.fdrates.FDAccntPayData;
 import com.barclays.ussd.utils.jsonparsers.bean.fdrates.FDAccountSummary;
 import com.barclays.ussd.utils.jsonparsers.bean.fdrates.FDApplySourceAccount;
+import com.barclays.ussd.utils.jsonparsers.bean.login.AuthUserData;
+import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
 
 public class FDAccountSummaryJSONParser implements BmgBaseJsonParser {
 
     private static final Logger LOGGER = Logger.getLogger(FDAccountSummaryJSONParser.class);
 
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
-	MenuItemDTO menuDTO = null;
+	MenuItemDTO menuDTO = new MenuItemDTO();
 	ObjectMapper mapper = new ObjectMapper();
 
 	try {
@@ -83,16 +88,34 @@ public class FDAccountSummaryJSONParser implements BmgBaseJsonParser {
      * @param acntPayData
      * @param warningMsg
      * @return MenuItemDTO
+     * @throws USSDNonBlockingException
      */
-    private MenuItemDTO renderMenuOnScreen(ResponseBuilderParamsDTO responseBuilderParamsDTO, FDAccntPayData acntPayData) {
+    private MenuItemDTO renderMenuOnScreen(ResponseBuilderParamsDTO responseBuilderParamsDTO, FDAccntPayData acntPayData) throws USSDNonBlockingException {
 	MenuItemDTO menuItemDTO = null;
+	USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
+	AuthUserData authData= ((AuthUserData)ussdSessionMgmt.getUserAuthObj());
+    List<CustomerMobileRegAcct> acts=authData.getPayData().getCustActs();
+    List<FDApplySourceAccount> fdAct = acntPayData.getSrcLst();
 	if (acntPayData != null) {
 	    if (acntPayData.getSrcLst() != null && !acntPayData.getSrcLst().isEmpty()) {
 		menuItemDTO = new MenuItemDTO();
 		int index = 1;
 		StringBuilder pageBody = new StringBuilder();
+		if(acts != null && acts.size() > 0)
+		{
+			List<String> GpAcc=new ArrayList<String>();
+			 for(int i =0;i<acts.size();i++)
+			    	if(acts.get(i).getGroupWalletIndicator()!=null && acts.get(i).getGroupWalletIndicator().equals("Y"))
+			    		GpAcc.add(acts.get(i).getMkdActNo());
 
-		for (FDApplySourceAccount accountDetail : acntPayData.getSrcLst()) {
+				 for(int j=0;j<fdAct.size();j++)
+					 if(GpAcc.contains(fdAct.get(j).getMkdActNo()))
+						 fdAct.remove(j);
+		}
+		if (fdAct == null || fdAct.isEmpty() || fdAct.size() == 0) {
+		    throw new USSDNonBlockingException(USSDExceptions.USSD_NO_ELIGIBLE_ACCTS.getBmgCode());
+		}
+		for (FDApplySourceAccount accountDetail : fdAct) {
 		    pageBody.append(USSDConstants.NEW_LINE);
 		    pageBody.append(index++);
 		    pageBody.append(USSDConstants.DOT_SEPERATOR);

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="MCFE">
+	<typeAlias alias="ussdBranchDTO" type="com.barclays.ussd.dto.UssdBranchLookUpDTO" />
+
+	<resultMap id="bankInfo" class="ussdBranchDTO">
+		<result property="bankCode" column="BANKCODE" />
+		<result property="bankName" column="BANKNAME" />
+	</resultMap>
+
+	<resultMap id="branchInfo" class="ussdBranchDTO">
+		<result property="businessId" column="BUSINESS_ID" />
+		<result property="bankCode" column="BANKCODE" />
+		<result property="branchCode" column="BRANCHCODE" />
+		<result property="bankName" column="BANKNAME" />
+		<result property="branchName" column="BRANCHNAME" />
+		<result property="cityName" column="CITY_NAME" />
+		<result property="clearingCode" column="BANK_ROUTING_CODE" />
+	</resultMap>
+
+
+	<resultMap id="ussdBranchCodeInfo" class="ussdBranchDTO">
+		<result property="branchCode" column="BRANCHCODE" />
+		<result property="branchName" column="BRANCHNAME" />
+		<result property="bankName" column="BANKNAME" />
+	</resultMap>
+
+
+	<select id="ussdRetrieveBranchCodeList" resultMap="ussdBranchCodeInfo">
+		SELECT a.BRANCHNAME, a.BRANCHCODE,a.BANKNAME
+		from C_BANKROUTING_MST a WHERE a.BUSINESS_ID= #businessId# AND a.BRANCHCODE !='GP'
+		<dynamic prepend="">
+			<isNotNull prepend="AND" property="branchName">
+				( UPPER(a.BRANCHNAME) like UPPER(#branchName#)
+				OR
+				 a.BRANCHCODE like #branchName#
+	        	)
+	        </isNotNull>
+	        <isNotNull prepend="AND" property="bankName">
+				UPPER(a.BANKNAME) like UPPER(#bankName#)
+	        </isNotNull>
+		</dynamic>
+	</select>
+
+
+	<select id="ussdRetrieveBankList" resultMap="bankInfo">
+		SELECT DISTINCT a.BANKNAME, a.BANKCODE
+		from C_BANKROUTING_MST a WHERE a.BUSINESS_ID= #businessId# AND a.BRANCHCODE !='GP'
+		<dynamic prepend="">
+			<isNotNull prepend="AND" property="bankName">
+				UPPER(a.BANKNAME) like UPPER(#bankName#)
+	        </isNotNull>
+		</dynamic>
+	</select>
+
+
+	<select id="ussdRetrieveBranchList" resultMap="branchInfo">
+
+		SELECT a.BANKNAME, a.BUSINESS_ID,a.BANKCODE,
+		a.BRANCHCODE,a.BRANCHNAME,a.CITY_NAME,a.BANK_ROUTING_CODE
+		from C_BANKROUTING_MST a WHERE a.BUSINESS_ID= #businessId# AND a.BRANCHCODE !='GP'
+		<!-- and BANKCODE in (select PARAM_VALUE from S_SYSPARAM_MST WHERE
+		BUSINESS_ID= #businessId#
+		and ACTIVITY_ID='COMMON' and PARAM_ID='BUSINESS_BANK_CD')
+
+		--><dynamic prepend="">
+			<isNotNull prepend="AND" property="bankCode">
+				UPPER(a.BANKCODE) like UPPER(#bankCode#)
+	        </isNotNull>
+			<isNotNull prepend="AND" property="branchName">
+				( UPPER(a.BRANCHNAME) like UPPER(#branchName#)
+				OR
+				 a.BRANCHCODE like #branchName#
+	        	)
+	        </isNotNull>
+		</dynamic>
+	</select>
+
+	<select id="ussdRetrieveBankListGHIPS" resultMap="bankInfo">
+		SELECT a.BANKNAME, a.BANKCODE FROM C_BANKROUTING_MST a WHERE a.BUSINESS_ID='GHBRB' AND a.BRANCHCODE='GP' AND a.BRANCHNAME='GHIPPSPAY'
+		<dynamic prepend="">
+			<isNotNull prepend="AND" property="bankName">
+				( LOWER(a.BANKNAME) like (#bankName#)
+				OR
+				 a.BANKCODE like #bankName#
+	        	)
+	        </isNotNull>
+		</dynamic>
+	</select>
+
+	</sqlMap>

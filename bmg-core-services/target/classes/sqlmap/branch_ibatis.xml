@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="MCFE">
+	<typeAlias alias="branchDTO" type="com.barclays.bmg.dto.BranchLookUpDTO" />
+	<typeAlias alias="branch" type="com.barclays.bmg.dto.BranchDTO" />
+	<typeAlias alias="atm" type="com.barclays.bmg.dto.AtmDTO" />
+
+	<resultMap id="atmLocator" class="atm">
+		<result property="businessId" column="BUSINESS_ID" />
+		<result property="name" column="NAME" />
+		<result property="address" column="ADDRESS" />
+		<result property="city" column="CITY" />
+		<result property="state" column="STATE" />
+	</resultMap>
+
+	<resultMap id="branchLocator" class="branch">
+		<result property="businessId" column="BUSINESS_ID" />
+		<result property="name" column="NAME" />
+		<result property="address" column="ADDRESS" />
+		<result property="city" column="CITY" />
+		<result property="state" column="STATE" />
+		<result property="contNum" column="CONTACT_NUMBER" />
+		<result property="businessHours" column="BUSINESS_HOURS" />
+	</resultMap>
+
+	<resultMap id="branchInfo" class="branchDTO">
+		<result property="businessId" column="BUSINESS_ID" />
+		<result property="bankCode" column="BANKCODE" />
+		<result property="branchCode" column="BRANCHCODE" />
+		<result property="bankName" column="BANKNAME" />
+		<result property="branchName" column="BRANCHNAME" />
+		<result property="cityName" column="CITY_NAME" />
+		<result property="clearingCode" column="BANK_ROUTING_CODE" />
+	</resultMap>
+
+	<select id="branchLocatorList" resultMap="branchLocator">
+		SELECT A.BUSINESS_ID,A.NAME,A.ADDRESS,A.CITY,A.STATE,
+		A.CONTACT_NUMBER,A.BUSINESS_HOURS FROM C_BRANCH_MST A WHERE A.BUSINESS_ID=
+		 #businessId#
+		<dynamic prepend="">
+			<isNotNull prepend="AND" property="name">
+				UPPER(A.NAME) = UPPER(#name#)
+	        </isNotNull>
+
+			<isNotNull prepend="AND" property="city">
+				UPPER(A.CITY) = UPPER(#city#)
+	        </isNotNull>
+		</dynamic>
+	</select>
+
+ 	<select id="atmLocatorList" resultMap="atmLocator">
+				SELECT BUSINESS_ID,NAME,ADDRESS,CITY,STATE FROM C_ATM_MST WHERE BUSINESS_ID=
+		 #businessId#
+				<dynamic prepend="">
+					<isNotNull prepend="AND" property="name">
+						UPPER(NAME) = UPPER(#name#)
+			        </isNotNull>
+
+					<isNotNull prepend="AND" property="city">
+						UPPER(CITY) = UPPER(#city#)
+			        </isNotNull>
+				</dynamic>
+			</select>
+
+
+	<select id="retrieveBranchList" resultMap="branchInfo">
+
+		select a.BUSINESS_ID,a.BANKCODE,
+		a.BRANCHCODE,a.BANKNAME,a.BRANCHNAME,a.CITY_NAME,a.BANK_ROUTING_CODE
+		from C_BANKROUTING_MST a WHERE a.BUSINESS_ID= #businessId#
+		and BANKCODE in (select PARAM_VALUE from S_SYSPARAM_MST WHERE
+		BUSINESS_ID= #businessId# AND a.BRANCHCODE !='GP'
+		and ACTIVITY_ID='COMMON' and PARAM_ID='BUSINESS_BANK_CD')
+
+		<dynamic prepend="">
+			<isNotNull prepend="AND" property="bankName">
+				UPPER(a.BANKNAME) like UPPER(#bankName#)
+	        </isNotNull>
+
+			<isNotNull prepend="AND" property="cityName">
+				UPPER(a.CITY_NAME) like UPPER(#cityName#)
+	        </isNotNull>
+
+			<isNotNull prepend="AND" property="branchName">
+				UPPER(a.BRANCHNAME) like UPPER(#branchName#)
+	        </isNotNull>
+
+			<!--
+				<isNotNull prepend="AND" property="businessId"> a.BUSINESS_ID =
+				#businessId# </isNotNull>
+			-->
+		</dynamic>
+	</select>
+
+	<select id="retrieveBranchName" resultMap="branchInfo" >
+		select BUSINESS_ID,BANKCODE,
+		BRANCHCODE,BANKNAME,BRANCHNAME,CITY_NAME,BANK_ROUTING_CODE from C_BANKROUTING_MST  WHERE
+		BUSINESS_ID= #businessId# AND BRANCHCODE !='GP'
+
+		<isNotNull prepend="AND" property="branchCodeList">
+			BRANCHCODE IN
+			<iterate  open="(" close=")" conjunction="," property="branchCodeList">
+				#branchCodeList[]#
+			</iterate>
+         </isNotNull>
+
+		and BANKCODE in (select PARAM_VALUE from S_SYSPARAM_MST WHERE
+		BUSINESS_ID= #businessId#
+		and ACTIVITY_ID='COMMON' and PARAM_ID='BUSINESS_BANK_CD')
+	</select>
+
+	<select id="retrieveAllBranches" resultMap="branchInfo">
+		select a.BUSINESS_ID,a.BANKCODE,
+		a.BRANCHCODE,a.BANKNAME,a.BRANCHNAME,a.CITY_NAME,a.BANK_ROUTING_CODE
+		from C_BANKROUTING_MST a WHERE a.BUSINESS_ID= #businessId# AND a.BRANCHCODE !='GP'
+	</select>
+
+	<select id="retrieveBankSwiftCode" resultMap="branchInfo">
+
+		select a.BUSINESS_ID,a.BANKCODE,
+		a.BRANCHCODE,a.BANKNAME,a.BRANCHNAME,a.CITY_NAME,a.BANK_ROUTING_CODE
+		from C_BANKROUTING_MST a where a.BANKCODE=#bankCode# and a.BRANCHCODE=#branchCode# AND a.BRANCHCODE !='GP'
+	</select>
+</sqlMap>

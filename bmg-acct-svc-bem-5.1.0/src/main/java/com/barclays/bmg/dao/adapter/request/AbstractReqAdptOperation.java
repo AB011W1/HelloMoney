@@ -2,9 +2,7 @@ package com.barclays.bmg.dao.adapter.request;
 
 import java.util.Calendar;
 import java.util.Map;
-
 import org.apache.commons.lang.StringUtils;
-
 import com.barclays.bem.BEMBaseDataTypes.ProductProcessorTypeCode;
 import com.barclays.bem.BEMServiceHeader.BEMReqHeader;
 import com.barclays.bem.BEMServiceHeader.BankUserContextReq;
@@ -19,14 +17,20 @@ import com.barclays.bmg.context.Context;
 import com.barclays.bmg.context.RequestContext;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.dao.core.context.impl.DAOContext;
+import com.barclays.bmg.dto.CreditCardAccountDTO;
+import com.barclays.bmg.dto.CustomerAccountDTO;
+import com.barclays.bmg.service.request.BillerServiceRequest;
+import com.barclays.bmg.service.request.DomesticFundTransferServiceRequest;
+import com.barclays.bmg.service.request.PayBillServiceRequest;
 import com.barclays.bmg.utils.DateTimeUtil;
+//import com.barclays.ussd.bean.BillersListDO;
 
 public class AbstractReqAdptOperation {
 	protected static final String AUTHORIZEDMODE_OTP = "OTP";
 	private final static String NO = "N";
 	//CR#46
 	private final static String STAFF_ID_BIR ="SHM";
-	private final static String KENYA_BIR ="SHM";
+	private String SERVICE_VERSION_CASA_CC;
 
 	protected BEMReqHeader buildRequestHeader(WorkContext workContext, String serviceId) {
 
@@ -38,10 +42,40 @@ public class AbstractReqAdptOperation {
 
 		RequestContext request = (RequestContext) args[0];
 		Context context = request.getContext();
+        //CBP Change
+		Map<String, Object> contextMap = context.getContextMap();
+
 
 		reqHeader.setBankUserContext(createBankUserContext(context));
-		reqHeader.setConsumerContext(createConsumerContextReq(context));
 		reqHeader.setCustomerContext(createCustomerContextReq(context));
+		reqHeader.setConsumerContext(createConsumerContextReq(context));
+
+
+		// Service version no. check for CASA applicable not for CreditCard
+		if(serviceId !=null && serviceId.equals("MakeBillPayment")){
+			RequestContext serviceRequest = (RequestContext) args[0];
+			PayBillServiceRequest payBillServiceRequest = (PayBillServiceRequest)serviceRequest;
+			CustomerAccountDTO fromAccount = payBillServiceRequest.getFromAccount();
+			if(null != payBillServiceRequest.getBeneficiaryDTO() && "GePG".equalsIgnoreCase(payBillServiceRequest.getBeneficiaryDTO().getBillAggregatorId())
+					&& !payBillServiceRequest.getBeneficiaryDTO().getPresentmentFlag()){
+				SERVICE_VERSION_CASA_CC = "GePG";
+			}else if (fromAccount instanceof CreditCardAccountDTO){
+				SERVICE_VERSION_CASA_CC = "CC";
+			} else {
+				SERVICE_VERSION_CASA_CC = "CASA";
+			}
+		}else if(serviceId !=null && serviceId.equals("MakeDomesticFundTransfer")){
+			RequestContext serviceRequest = (RequestContext) args[0];
+			DomesticFundTransferServiceRequest domesticFundServiceRequest = (DomesticFundTransferServiceRequest)serviceRequest;
+			CustomerAccountDTO fromAccount = domesticFundServiceRequest.getSourceAcct();
+			if (fromAccount instanceof CreditCardAccountDTO){
+				SERVICE_VERSION_CASA_CC = "CC";
+			}else{
+				SERVICE_VERSION_CASA_CC = "CASA";
+			}
+		} else if(serviceId !=null && serviceId.equals("MakeDomesticFundTransfer")){
+
+		}
 
 		reqHeader.setServiceContext(createServiceContext(context, serviceId));
 
@@ -91,15 +125,28 @@ public class AbstractReqAdptOperation {
 		// Override list for Retrieve charge details request - CPB 16/05/2017
 		if(opcode!=null && (opcode.equalsIgnoreCase("OP0797") || opcode.equalsIgnoreCase("OP0581") || opcode.equalsIgnoreCase("OP0671") ||
 				opcode.equalsIgnoreCase("OP0602") || opcode.equalsIgnoreCase("OP0651") || opcode.equalsIgnoreCase("OP0511") || opcode.equalsIgnoreCase("OP0569"))
-				&& context.getBusinessId().equalsIgnoreCase("KEBRB")){
+				&& contextMap != null && ("Y").equals(contextMap.get(SystemParameterConstant.isCBPFLAG))){
 			if(daoContext.getMethodName().equals("retreiveChargeDetails") && (context.getActivityId().equals("PMT_FT_PESALINK") ||
 					context.getActivityId().equals("PMT_FT_CS") || context.getActivityId().equals("PMT_BP_MOBILE_WALLET_ONETIME") ||
 					context.getActivityId().equals("PMT_BP_BILLPAY_PAYEE") || context.getActivityId().equals("PMT_BP_BILLPAY_ONETIME") ||
 					context.getActivityId().equals("PMT_FT_INTERNAL_PAYEE") || context.getActivityId().equals("PMT_FT_INTERNAL_ONETIME"))){
 				reqHeader.setOverrideList(createOverrideListCBP(context));
+
 			}
 		}
 
+
+		/*//FundTransfer_To_Own01
+		if(opcode!=null && (opcode.equalsIgnoreCase("OP0501") && contextMap.get(SystemParameterConstant.isCBPFLAG).equals("Y") &&  (context.getBusinessId().equalsIgnoreCase("UGBRB") || context.getBusinessId().equalsIgnoreCase("GHBRB")||
+				context.getBusinessId().equalsIgnoreCase("ZMBRB") || context.getBusinessId().equalsIgnoreCase("BWBRB")))){
+			if(daoContext.getMethodName().equals("retreiveChargeDetails") && context.getActivityId().equals("PMT_FT_OWN")){
+				reqHeader.setOverrideList(createOverrideListCBP(context));
+			}
+		}*/
+
+		if(null != opcode && "OP0603".equalsIgnoreCase(opcode) && "MakeBillPayment".equalsIgnoreCase(serviceId)){
+			createOverrideListGePG((PayBillServiceRequest)args[0], reqHeader);
+		}
 		return reqHeader;
 	}
 
@@ -133,11 +180,14 @@ public class AbstractReqAdptOperation {
 
 		//Lead Generation
 		String creditCardOpcode = context.getOpCde();
+
 		if(creditCardOpcode!= null){
 			//CR#83 Apply Product
 			if(creditCardOpcode.equalsIgnoreCase("OP0959") || creditCardOpcode.equalsIgnoreCase("OP0984")){
 				bankUserContextReq.setStaffID(STAFF_ID_BIR);
 			}
+			if(creditCardOpcode.equalsIgnoreCase("OP0799"))
+				bankUserContextReq.setStaffID(context.getCustomerId());
 		}
 
 		return bankUserContextReq;
@@ -194,32 +244,44 @@ public class AbstractReqAdptOperation {
 
 		serviceContext.setConsumerUniqueRefNo(context.getActivityRefNo());
 		serviceContext.setOriginalConsumerUniqueRefNo(context.getActivityRefNo());
-
 		serviceContext.setServiceDateTime(DateTimeUtil.getCurrentBusinessCalendar(context));
 		serviceContext.setServiceID(serviceId);
 
-		/* Regulatory Requirement Changes - 23/10/2017
-		 *
+		/* Regulatory Requirement Changes - 23/10/2017 - code rollBacked on 08/12/2017
+		 */
 		// Version no for MakeBillPayment and MakeDoesticFundTransfer of CBP 30/08/2017
 		if(opCode!=null && (opCode.equalsIgnoreCase("OP0570") || opCode.equalsIgnoreCase("OP0603") || opCode.equalsIgnoreCase("OP0511") ||
-				opCode.equalsIgnoreCase("OP0502") || opCode.equalsIgnoreCase("OP0980")) && context.getBusinessId().equalsIgnoreCase("KEBRB")){
-			if((serviceId.equals("MakeBillPayment") || serviceId.equals("MakeDomesticFundTransfer")) && (context.getActivityId()!=null && context.getActivityId().equals("KITS_PTA_BILLPAY") ||
-					context.getActivityId().equals("KITS_PTP_BILLPAY") || context.getActivityId().equals("PMT_FT_PESALINK") ||
+				opCode.equalsIgnoreCase("OP0502") || opCode.equalsIgnoreCase("OP0980")) && (contextMap !=null && contextMap.get(SystemParameterConstant.isCBPFLAG).equals("Y"))){
+			if((serviceId.equals("MakeBillPayment") || serviceId.equals("MakeDomesticFundTransfer")) && (context.getActivityId()!=null &&
+					context.getActivityId().equals("KITS_PTA_BILLPAY") || context.getActivityId().equals("KITS_PTP_BILLPAY") ||
+					context.getActivityId().equals("PMT_FT_PESALINK") ||
 					context.getActivityId().equals("PMT_BP_MOBILE_WALLET_ONETIME") ||
 					context.getActivityId().equals("PMT_BP_BILLPAY_PAYEE") || context.getActivityId().equals("PMT_BP_BILLPAY_ONETIME") ||
 					context.getActivityId().equals("PMT_FT_INTERNAL_PAYEE") || context.getActivityId().equals("PMT_FT_INTERNAL_ONETIME"))
 					&& !SERVICE_VERSION_CASA_CC.equals("CC")){
 					serviceContext.setServiceVersionNo(contextMap.get(SystemParameterConstant.SERVICE_HEADER_SERVICE_VER_NO_CBP).toString());
-			}else{
+			}
+			//Added for KITS and flag added for KITS enable/disable
+			//Commented to add CBP in Pesalink
+			/*else if(serviceId.equals("MakeBillPayment") && (context.getActivityId().equals("KITS_PTP_BILLPAY") || context.getActivityId().equals("KITS_PTA_BILLPAY"))
+					&& contextMap.get("isKITSFLAG").toString().equals("Y")){
+				serviceContext.setServiceVersionNo("7.0.0");
+			}*/
+			else{
 				serviceContext.setServiceVersionNo(contextMap.get(SystemParameterConstant.SERVICE_HEADER_SERVICE_VER_NO).toString());
 			}
 		}else{
-			serviceContext.setServiceVersionNo(contextMap.get(SystemParameterConstant.SERVICE_HEADER_SERVICE_VER_NO).toString());
+			if(null != contextMap && "OP0603".equalsIgnoreCase(opCode) && "MakeBillPayment".equalsIgnoreCase(serviceId) && "GePG".equalsIgnoreCase(SERVICE_VERSION_CASA_CC)){
+				serviceContext.setServiceVersionNo(contextMap.get(SystemParameterConstant.SERVICE_HEADER_SERVICE_VERSION_NO_GEPG).toString());
+			} else if(null != contextMap){
+				serviceContext.setServiceVersionNo(contextMap.get(SystemParameterConstant.SERVICE_HEADER_SERVICE_VER_NO).toString());
+			}
 		}
-		*/
-		// Remove once Regulatory Requirement Changes revoked - 23/10/2017
+		SERVICE_VERSION_CASA_CC = "";
+		/*
+		// Remove once Regulatory Requirement Changes revoked - 23/10/2017 - code commented on 08/12/2017
 		serviceContext.setServiceVersionNo(contextMap.get(SystemParameterConstant.SERVICE_HEADER_SERVICE_VER_NO).toString());
-
+		*/
 		return serviceContext;
 	}
 
@@ -260,8 +322,27 @@ public class AbstractReqAdptOperation {
 
 		OverrideDetails[] overrideDetailsArray= new OverrideDetails[1];
 		OverrideDetails overrideDetails = new OverrideDetails();
-		overrideDetails.setCode("KITS");
-		overrideDetails.setDetails("KITS Lookup Call");
+		//Added for KITS registration
+		//Flag added for KITS enable/disable
+		if(context.getValue("isKITSFLAG").toString().equals("Y"))
+		{
+			if(context.getActivityId().equals("KITS_REGISTRATION_LOOKUP"))
+			{
+				overrideDetails.setCode("STA");
+				overrideDetails.setDetails("KITS Status Call");
+			}
+			else
+			{
+				overrideDetails.setCode("KITS");
+				overrideDetails.setDetails("KITS Lookup Call");
+			}
+		}
+		else
+		{
+			overrideDetails.setCode("KITS");
+			overrideDetails.setDetails("KITS Lookup Call");
+		}
+
 		overrideDetails.setSource("KITS");
 		overrideDetailsArray[0]=overrideDetails;
 
@@ -360,5 +441,26 @@ public class AbstractReqAdptOperation {
 
 		return overrideDetailsArray;
 	}
+
+	//For GePG BillPayment request
+	private void createOverrideListGePG(PayBillServiceRequest billServiceRequest, BEMReqHeader reqHeader) {
+		if(null !=  billServiceRequest && null != billServiceRequest.getBeneficiaryDTO()
+				&& "GePG".equalsIgnoreCase(billServiceRequest.getBeneficiaryDTO().getBillAggregatorId())){
+			OverrideDetails[] overrideDetailsArray= new OverrideDetails[1];
+			OverrideDetails overrideDetails = new OverrideDetails();
+			if(billServiceRequest.getBeneficiaryDTO().getPresentmentFlag()){
+				overrideDetails.setCode("PRESENTMENT");
+			} else {
+				overrideDetails.setCode("NON-PRESENTMENT");
+			}
+			overrideDetails.setDetails("For GEPG Payment Service");
+			overrideDetails.setSource("GePG");
+			overrideDetailsArray[0]=overrideDetails;
+
+			reqHeader.setOverrideList(overrideDetailsArray);
+		}
+	}
+
+
 
 }

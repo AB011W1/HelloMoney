@@ -19,8 +19,6 @@ public class OthBnkSubmit implements BmgBaseRequestBuilder {
 			RequestBuilderParamsDTO requestBuilderParamsDTO)
 			throws USSDNonBlockingException, USSDBlockingException {
 		USSDBaseRequest request = new USSDBaseRequest();
-
-		String transNodeId=requestBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
 		Map<String, String> requestParamMap = new HashMap<String, String>();
 	    List<String> txnRefNoLst = (List<String>) requestBuilderParamsDTO.getUssdSessionMgmt().getTxSessions().get(
 	    			USSDInputParamsEnum.EDIT_BENF_BENF_CONFIRM.getTranId());

@@ -33,6 +33,8 @@ public class CasaTransactionActivityController extends BMBAbstractCommandControl
 
 	CasaTransactionActivityOperationRequest casaTranxActvOperationReq = makeRequest(httpRequest, context);
 	casaTranxActvOperationReq.setAccountNo(getAccountNumber(casaTranxActvCommand.getActNo(), httpRequest, BMGProcessConstants.ACCOUNTS_PROCESS));
+	if(casaTranxActvOperationReq.getAccountNo()==null)
+		casaTranxActvOperationReq.setAccountNo(casaTranxActvCommand.getActNo());
 	casaTranxActvOperationReq.setDays(casaTranxActvCommand.getDays());
 	casaTranxActvOperationReq.setBrnCde(casaTranxActvCommand.getBrnCde());
 
@@ -45,7 +47,7 @@ public class CasaTransactionActivityController extends BMBAbstractCommandControl
 
     /**
      * makes CasaTransactionActivityOperationRequest object
-     * 
+     *
      * @param request
      * @param context
      * @return

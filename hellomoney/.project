@@ -31,9 +31,9 @@
 		<project>ussd-domain-objects</project>
 		<project>ussd-menu</project>
 		<project>ussd-services</project>
-		<project>bcag-connect</project>
 		<project>bmg-core-terms-of-use</project>
 		<project>bmg-promotional-offers</project>
+		<project>hsm-connect</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

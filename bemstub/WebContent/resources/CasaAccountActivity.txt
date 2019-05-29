@@ -1,0 +1,322 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <p198:RetrieveCASAAccountTransactionActivityResponse xmlns:p198="http://barclays.com/bem/RetrieveCASAAcctTransactionActivity">
+      <p198:ResponseHeader>
+        <ServiceContext>
+          <ServiceID>RetrieveCASAAcctTransactionActivity</ServiceID>
+          <ConsumerUniqueRefNo>13971122055786</ConsumerUniqueRefNo>
+          <OriginalConsumerUniqueRefNo>13971122055786</OriginalConsumerUniqueRefNo>
+          <ServiceDateTime>2014-04-10T02:43:27.781Z</ServiceDateTime>
+          <ServiceVersionNo>6.0.0</ServiceVersionNo>
+          <OverrideRequestFlag>0</OverrideRequestFlag>
+        </ServiceContext>
+        <BankUserContext>
+          <StaffType>Regular</StaffType>
+          <StaffID>IFE</StaffID>
+          <AuthorizerID>Z00019789</AuthorizerID>
+        </BankUserContext>
+        <ServiceResStatus>
+          <ServiceResCode>00000</ServiceResCode>
+          <ServiceResDesc>Success</ServiceResDesc>
+          <ServiceRespDateTime>2014-04-10T06:43:28.697Z</ServiceRespDateTime>
+          <ServiceUniqueRefNo xsi:nil="true"/>
+        </ServiceResStatus>
+      </p198:ResponseHeader>
+      <p198:CASAAccountTransactionList>
+        <p198:OpeningBalanceAmount>0.0</p198:OpeningBalanceAmount>
+        <p198:ClosingBalanceAmount>0.0</p198:ClosingBalanceAmount>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>1819.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2014-01-10T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1/>
+          <p634:StatementTxnDesc2/>
+          <p634:StatementTxnDesc3>               </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4/>
+          <p634:CreditDebitTypeCode>DR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>22033058</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>5584.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2014-01-10T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1/>
+          <p634:StatementTxnDesc2/>
+          <p634:StatementTxnDesc3>               </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4/>
+          <p634:CreditDebitTypeCode>DR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>22033057</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>20000.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2014-01-08T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1>ATM CASH</p634:StatementTxnDesc1>
+          <p634:StatementTxnDesc2/>
+          <p634:StatementTxnDesc3>1048Phoenix    </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4/>
+          <p634:CreditDebitTypeCode>DR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>0</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>300000.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2014-01-06T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1/>
+          <p634:StatementTxnDesc2/>
+          <p634:StatementTxnDesc3>025 - 1021449  </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4/>
+          <p634:CreditDebitTypeCode>DR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>0</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>300000.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2014-01-06T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1>STANDING ORDER</p634:StatementTxnDesc1>
+          <p634:StatementTxnDesc2>STANDING ORDER</p634:StatementTxnDesc2>
+          <p634:StatementTxnDesc3>VASSI NAIDOO   </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4>NAIDOO V</p634:StatementTxnDesc4>
+          <p634:CreditDebitTypeCode>CR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>244729</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>264261.71</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2013-12-30T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1>STANDING ORDER</p634:StatementTxnDesc1>
+          <p634:StatementTxnDesc2>STANDING ORDER</p634:StatementTxnDesc2>
+          <p634:StatementTxnDesc3>25/1969272     </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4>BUTONKEE T(HL10721)</p634:StatementTxnDesc4>
+          <p634:CreditDebitTypeCode>DR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>224348</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>944445.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2013-12-27T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1/>
+          <p634:StatementTxnDesc2/>
+          <p634:StatementTxnDesc3>DELOITTE       </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4/>
+          <p634:CreditDebitTypeCode>CR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>0</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>60.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2013-12-26T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1/>
+          <p634:StatementTxnDesc2/>
+          <p634:StatementTxnDesc3>LFEE 361969272 </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4/>
+          <p634:CreditDebitTypeCode>DR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>0</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>230816.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2013-12-24T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1>SALARY</p634:StatementTxnDesc1>
+          <p634:StatementTxnDesc2/>
+          <p634:StatementTxnDesc3>SALARY KEMP    </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4/>
+          <p634:CreditDebitTypeCode>CR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>0</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>363185.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2013-12-23T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1/>
+          <p634:StatementTxnDesc2/>
+          <p634:StatementTxnDesc3>DELOITTE       </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4/>
+          <p634:CreditDebitTypeCode>CR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>0</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>234696.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2013-12-17T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1>SALARY</p634:StatementTxnDesc1>
+          <p634:StatementTxnDesc2/>
+          <p634:StatementTxnDesc3>SALARY KEMP    </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4/>
+          <p634:CreditDebitTypeCode>CR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>0</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>2543.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2013-12-16T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1/>
+          <p634:StatementTxnDesc2/>
+          <p634:StatementTxnDesc3>               </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4/>
+          <p634:CreditDebitTypeCode>DR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>22033055</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>10000.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2013-12-13T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1>ATM CASH</p634:StatementTxnDesc1>
+          <p634:StatementTxnDesc2/>
+          <p634:StatementTxnDesc3>1048Phoenix    </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4/>
+          <p634:CreditDebitTypeCode>DR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>0</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>1226.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2013-12-12T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1/>
+          <p634:StatementTxnDesc2/>
+          <p634:StatementTxnDesc3>               </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4/>
+          <p634:CreditDebitTypeCode>DR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>22033052</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>2500.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2013-12-11T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1/>
+          <p634:StatementTxnDesc2/>
+          <p634:StatementTxnDesc3>               </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4/>
+          <p634:CreditDebitTypeCode>DR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>22033053</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>1900.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2013-12-10T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1/>
+          <p634:StatementTxnDesc2/>
+          <p634:StatementTxnDesc3>               </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4/>
+          <p634:CreditDebitTypeCode>DR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>22033051</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>3000.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2013-12-06T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1/>
+          <p634:StatementTxnDesc2/>
+          <p634:StatementTxnDesc3>               </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4/>
+          <p634:CreditDebitTypeCode>DR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>22033049</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>5345.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2013-12-05T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1/>
+          <p634:StatementTxnDesc2/>
+          <p634:StatementTxnDesc3>               </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4/>
+          <p634:CreditDebitTypeCode>DR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>22033050</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>15000.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2013-12-03T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1>ATM CASH</p634:StatementTxnDesc1>
+          <p634:StatementTxnDesc2/>
+          <p634:StatementTxnDesc3>1020Vacoas     </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4/>
+          <p634:CreditDebitTypeCode>DR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>0</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>264261.71</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2013-12-02T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1>STANDING ORDER</p634:StatementTxnDesc1>
+          <p634:StatementTxnDesc2>STANDING ORDER</p634:StatementTxnDesc2>
+          <p634:StatementTxnDesc3>25/1969272     </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4>BUTONKEE T(HL10721)</p634:StatementTxnDesc4>
+          <p634:CreditDebitTypeCode>DR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>224348</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>1550.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2013-12-02T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1/>
+          <p634:StatementTxnDesc2/>
+          <p634:StatementTxnDesc3>               </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4/>
+          <p634:CreditDebitTypeCode>DR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>22033048</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>60.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2013-11-28T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1/>
+          <p634:StatementTxnDesc2/>
+          <p634:StatementTxnDesc3>LFEE 361969272 </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4/>
+          <p634:CreditDebitTypeCode>DR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>0</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>15000.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2013-11-27T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1>ATM CASH</p634:StatementTxnDesc1>
+          <p634:StatementTxnDesc2/>
+          <p634:StatementTxnDesc3>1048Phoenix    </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4/>
+          <p634:CreditDebitTypeCode>DR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>0</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>230815.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2013-11-25T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1>SALARY</p634:StatementTxnDesc1>
+          <p634:StatementTxnDesc2/>
+          <p634:StatementTxnDesc3>SALARY KEMP    </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4/>
+          <p634:CreditDebitTypeCode>CR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>0</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>2203.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2013-11-14T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1/>
+          <p634:StatementTxnDesc2/>
+          <p634:StatementTxnDesc3>               </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4/>
+          <p634:CreditDebitTypeCode>DR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>22033047</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>15000.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2013-11-14T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1>ATM CASH</p634:StatementTxnDesc1>
+          <p634:StatementTxnDesc2/>
+          <p634:StatementTxnDesc3>1048Phoenix    </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4/>
+          <p634:CreditDebitTypeCode>DR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>0</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>2000.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2013-11-12T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1/>
+          <p634:StatementTxnDesc2/>
+          <p634:StatementTxnDesc3>               </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4/>
+          <p634:CreditDebitTypeCode>DR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>22033045</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>3000.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2013-11-12T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1/>
+          <p634:StatementTxnDesc2/>
+          <p634:StatementTxnDesc3>               </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4/>
+          <p634:CreditDebitTypeCode>DR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>22033046</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+        <p198:TransactionActivity xmlns:p634="http://barclays.com/bem/TransactionHistory">
+          <p634:SourceAccountCurrencyAmount>15000.0</p634:SourceAccountCurrencyAmount>
+          <p634:TransactionDateTime>2013-11-05T00:00:00.000Z</p634:TransactionDateTime>
+          <p634:StatementTxnDesc1>ATM CASH</p634:StatementTxnDesc1>
+          <p634:StatementTxnDesc2/>
+          <p634:StatementTxnDesc3>1015SSR St.    </p634:StatementTxnDesc3>
+          <p634:StatementTxnDesc4/>
+          <p634:CreditDebitTypeCode>DR</p634:CreditDebitTypeCode>
+          <p634:TransactionReferenceNumber>0</p634:TransactionReferenceNumber>
+        </p198:TransactionActivity>
+      </p198:CASAAccountTransactionList>
+    </p198:RetrieveCASAAccountTransactionActivityResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

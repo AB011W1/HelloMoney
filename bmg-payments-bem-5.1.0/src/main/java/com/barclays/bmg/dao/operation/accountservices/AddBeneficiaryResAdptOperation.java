@@ -8,7 +8,7 @@ import com.barclays.bmg.service.response.AddBeneficiaryServiceResponse;
  * @author BTCI
  *
  */
-public class AddBeneficiaryResAdptOperation extends AbstractResAdptOperation{
+public class AddBeneficiaryResAdptOperation extends AbstractResAdptOperationAcct{
 
 
 	/**

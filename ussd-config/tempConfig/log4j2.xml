@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration status="WARN">
+ <Properties>
+<Property name="logRootDir">$${sys:helloMoneyLog}</Property>
+</Properties>
+<Appenders>
+
+	<Routing name="AuditTimeLogger">
+	<Routes pattern="$${ctx:ROUTINGKEY}">
+	<!-- This route is chosen if ThreadContext has value 'special' for key ROUTINGKEY. -->
+		<Route>
+			<RollingFile name="Rolling" fileName="${logRootDir}/${ctx:ROUTINGKEY}_hellomoney_audit.csv" filePattern="${logRootDir}/${ctx:ROUTINGKEY}_hellomoney_audit.log.%d{yyyy-MM-dd}%i.log">
+			<Filters>
+				<ThresholdFilter level="DEBUG"/>
+				<ThresholdFilter level="ERROR" onMatch="DENY" onMismatch="NEUTRAL"/>
+			</Filters>
+				<PatternLayout>
+					<pattern>%d{yyyy-MMM-dd HH:mm:ss.SSS},%x,%m %n</pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+					<SizeBasedTriggeringPolicy size="15 MB" />
+				</Policies>
+			</RollingFile>
+		</Route>
+	</Routes>
+	</Routing>
+
+	<Routing name="BEM_TAT_LOGGER_Routing">
+	<Routes pattern="$${ctx:ROUTINGKEY}">
+	<!-- This route is chosen if ThreadContext has value 'special' for key ROUTINGKEY. -->
+		<Route>
+			<RollingFile name="Rolling" fileName="${logRootDir}/${ctx:ROUTINGKEY}_hellomoney_bem_tat.csv" filePattern="${logRootDir}/${ctx:ROUTINGKEY}_hellomoney_bem_tat.log.%d{yyyy-MM-dd}%i.log">
+			<Filters>
+				<ThresholdFilter level="DEBUG"/>
+			</Filters>
+				<PatternLayout>
+					<pattern>%d{yyyy-MMM-dd HH:mm:ss.SSS},%x,%m %n</pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+					<SizeBasedTriggeringPolicy size="15 MB" />
+				</Policies>
+			</RollingFile>
+		</Route>
+	</Routes>
+	</Routing>
+
+	<Routing name="DebugRouting">
+	<Routes pattern="$${ctx:ROUTINGKEY}">
+	<!-- This route is chosen if ThreadContext has value 'special' for key ROUTINGKEY. -->
+		<Route>
+			<RollingFile name="debug" fileName="${logRootDir}/${ctx:ROUTINGKEY}_hellomoney_debug.log" filePattern="${logRootDir}/${ctx:ROUTINGKEY}_hellomoney_debug.log.%d{yyyy-MM-dd}%i.log">
+			<Filters>
+				<ThresholdFilter level="DEBUG"/>
+				<ThresholdFilter level="INFO" onMatch="DENY" onMismatch="NEUTRAL"/>
+			</Filters>
+				<PatternLayout>
+					<pattern>[%d{yyyy-MMM-dd HH:mm:ss.SSS}] [%p] [%t] %x [%c] - %m %n</pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+					<SizeBasedTriggeringPolicy size="15 MB" />
+				</Policies>
+			</RollingFile>
+		</Route>
+	</Routes>
+	</Routing>
+
+	<Routing name="InfoRouting">
+	<Routes pattern="$${ctx:ROUTINGKEY}">
+	<!-- This route is chosen if ThreadContext has value 'special' for key ROUTINGKEY. -->
+		<Route>
+			<RollingFile name="info" fileName="${logRootDir}/${ctx:ROUTINGKEY}_hellomoney_info.log" filePattern="${logRootDir}/${ctx:ROUTINGKEY}_hellomoney_info.log.%d{yyyy-MM-dd}%i.log">
+			<Filters>
+				<ThresholdFilter level="INFO"/>
+				<ThresholdFilter level="WARN" onMatch="DENY" onMismatch="NEUTRAL"/>
+			</Filters>
+				<PatternLayout>
+					<pattern>[%d{yyyy-MMM-dd HH:mm:ss.SSS}] [%p] [%t] %x [%c] - %m %n</pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+					<SizeBasedTriggeringPolicy size="15 MB" />
+				</Policies>
+			</RollingFile>
+		</Route>
+	</Routes>
+	</Routing>
+
+	<Routing name="ErrorRouting">
+	<Routes pattern="$${ctx:ROUTINGKEY}">
+	<!-- This route is chosen if ThreadContext has value 'special' for key ROUTINGKEY. -->
+		<Route>
+			<RollingFile name="error" fileName="${logRootDir}/${ctx:ROUTINGKEY}_hellomoney_error.log" filePattern="${logRootDir}/${ctx:ROUTINGKEY}_hellomoney_error.log.%d{yyyy-MM-dd}%i.log">
+			<Filters>
+				<ThresholdFilter level="WARN"/>
+			</Filters>
+				<PatternLayout>
+					<pattern>[%d{yyyy-MMM-dd HH:mm:ss.SSS}] [%p] [%t] %x [%c] - %m %n</pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+					<SizeBasedTriggeringPolicy size="15 MB" />
+				</Policies>
+			</RollingFile>
+		</Route>
+	</Routes>
+	</Routing>
+
+	<Routing name="GatewayDebugRouting">
+	<Routes pattern="$${ctx:ROUTINGKEY}">
+	<!-- This route is chosen if ThreadContext has value 'special' for key ROUTINGKEY. -->
+		<Route>
+			<RollingFile name="gatewaydebug" fileName="${logRootDir}/${ctx:ROUTINGKEY}_hellomoney_gateway_debug.log" filePattern="${logRootDir}/${ctx:ROUTINGKEY}_hellomoney_gateway_debug.log.%d{yyyy-MM-dd}%i.log">
+			<Filters>
+				<ThresholdFilter level="DEBUG"/>
+				<ThresholdFilter level="INFO" onMatch="DENY" onMismatch="NEUTRAL"/>
+			</Filters>
+				<PatternLayout>
+					<pattern>[%d{yyyy-MMM-dd HH:mm:ss.SSS}] [%p] [%t] %x [%c] - %m %n</pattern>
+				</PatternLayout>
+				<Policies>
+					<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+					<SizeBasedTriggeringPolicy size="15 MB" />
+				</Policies>
+			</RollingFile>
+		</Route>
+	</Routes>
+	</Routing>
+
+	<Routing name="SOAP_FILE">
+	<Routes pattern="$${ctx:ROUTINGKEY}">
+	<!-- This route is chosen if ThreadContext has value 'special' for key ROUTINGKEY. -->
+		<Route>
+			<RollingFile name="soap" fileName="${logRootDir}/${ctx:ROUTINGKEY}_hellomoney_soap.log" filePattern="${logRootDir}/${ctx:ROUTINGKEY}_hellomoney_soap.log.%d{yyyy-MM-dd}%i.log">
+			<Filters>
+				<ThresholdFilter level="DEBUG"/>
+			</Filters>
+			<PatternLayout>
+				<Pattern>[%d{yyyy-MMM-dd HH:mm:ss.SSS}] [%p] [%t] %x [%c] - %m %n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+				<SizeBasedTriggeringPolicy size="15 MB"/>
+			</Policies>
+			</RollingFile>
+		</Route>
+	</Routes>
+	</Routing>
+
+	<Routing name="ECRIME_FILE">
+	<Routes pattern="$${ctx:ROUTINGKEY}">
+	<!-- This route is chosen if ThreadContext has value 'special' for key ROUTINGKEY. -->
+		<Route>
+			<RollingFile name="ecrime" fileName="${logRootDir}/${ctx:ROUTINGKEY}_hellomoney_ecrime.log" filePattern="${logRootDir}/${ctx:ROUTINGKEY}_hellomoney_ecrime.log.%d{yyyy-MM-dd}%i.log">
+			<Filters>
+				<ThresholdFilter level="DEBUG"/>
+			</Filters>
+			<PatternLayout>
+				<Pattern>%-4r [%t] %d %-5p %c %x -%m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+				<SizeBasedTriggeringPolicy size="15 MB"/>
+			</Policies>
+			</RollingFile>
+		</Route>
+	</Routes>
+	</Routing>
+</Appenders>
+
+
+	<Loggers>
+		<logger name="com.barclays.ussd.audit-time" additivity="false">
+			<appender-ref ref="AuditTimeLogger" />
+		</logger>
+
+		<logger name="BEM_TAT_LOGGER" additivity="false">
+			<appender-ref ref="BEM_TAT_LOGGER_Routing" />
+		</logger>
+		<logger name="com.barclays.bmg" additivity="false">
+			<appender-ref ref="GatewayDebugRouting" />
+		</logger>
+
+		<logger name="com.ibm.ws" additivity="false">
+			<appender-ref ref="ErrorRouting" />
+		</logger>
+
+		<logger name="org.apache.commons" additivity="false">
+			<appender-ref ref="ErrorRouting" />
+		</logger>
+		<logger name="SOAP_LOGGER" additivity="false">
+			<appender-ref ref="SOAP_FILE" />
+		</logger>
+
+		<logger name="mcfe-ecrime" additivity="false">
+			<appender-ref ref="ECRIME_FILE" />
+		</logger>
+
+		<Root level="trace">
+			<AppenderRef ref="DebugRouting"/>
+			<AppenderRef ref="InfoRouting"/>
+			<AppenderRef ref="ErrorRouting"/>
+		</Root>
+	</Loggers>
+</Configuration>

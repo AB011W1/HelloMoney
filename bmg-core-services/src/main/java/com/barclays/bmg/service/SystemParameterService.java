@@ -12,4 +12,6 @@ public interface SystemParameterService {
 
     public SystemParameterServiceResponse getStatusParameter(SystemParameterServiceRequest request);
 
+    public SystemParameterListServiceResponse getCountryWiseSysParamsByParamId(SystemParameterServiceRequest request);
+
 }

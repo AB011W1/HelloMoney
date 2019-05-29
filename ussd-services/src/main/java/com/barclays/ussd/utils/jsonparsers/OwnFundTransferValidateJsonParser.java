@@ -9,6 +9,8 @@ import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
+import com.barclays.bmg.context.BMGContextHolder;
+import com.barclays.bmg.context.BMGGlobalContext;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
@@ -29,6 +31,10 @@ public class OwnFundTransferValidateJsonParser implements BmgBaseJsonParser {
     private static final String TOACC_LABEL = "label.toaccount";
     private static final String FROMACC_LABEL = "label.fromaccount";
     private static final String FROM_CRE_LABEL = "label.from.Credit";
+
+    // CBP specific label messages
+    private static final String TRANSACTION_FEE_LABEL = "label.transactionfee.msg";
+    private static final String XCELERATE_OFFLINE_LABEL = "label.xcelerate.offline.acceptance";
 
     /** The Constant LOGGER. */
     private static final Logger LOGGER = Logger.getLogger(OwnFundTransferValidateJsonParser.class);
@@ -119,6 +125,53 @@ public class OwnFundTransferValidateJsonParser implements BmgBaseJsonParser {
 	    pageBody.append(amountLabel);
 	    pageBody.append(USSDConstants.SINGLE_WHITE_SPACE);
 	    pageBody.append(ownFundTxValidatePayData.getTxnAmt().getAmt());
+
+	    // CBP change OwnFundTransfer
+	    //CBP Change
+	    BMGGlobalContext logContext = BMGContextHolder.getLogContext();
+
+	    if((logContext!=null && logContext.getContextMap().get("isCBPFLAG").equals("Y") && (responseBuilderParamsDTO.getUssdSessionMgmt().getBusinessId().equals("BWBRB"))) && ownFundTxValidatePayData.getMkdCrdNo() == null &&
+	    		ownFundTxValidatePayData.getTxnChargeAmt()!=null){
+		    String transactionFeeLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(TRANSACTION_FEE_LABEL,
+				    new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));
+		    if(ownFundTxValidatePayData.getTxnChargeAmt().getAmt()!=null){
+
+		    	Double accumulatedCharge = 0.0;
+		    	Double roundedAccumulatedVal = 0.0;
+	    		Double tranFee = Double.valueOf(ownFundTxValidatePayData.getTxnChargeAmt().getAmt());
+				Double taxAmt = ownFundTxValidatePayData.getTaxAmount();
+				if(tranFee!=null && taxAmt!=null){
+					accumulatedCharge = tranFee + taxAmt;
+					roundedAccumulatedVal =(double) Math.round(accumulatedCharge * 100) / 100;
+				}
+
+				pageBody.append(USSDConstants.NEW_LINE);
+				pageBody.append(transactionFeeLabel).append(USSDConstants.SINGLE_WHITE_SPACE).
+	    		append(ownFundTxValidatePayData.getTxnChargeAmt().getCurr()).append(USSDConstants.SINGLE_WHITE_SPACE).
+	    		append(roundedAccumulatedVal);
+
+				// CPB change fields set for MakeDomesticRequest 31/05/2017
+				ussdSessionMgmt.getTxSessions().put("CpbMakeDomesticFundFields", "CpbMakeDomesticFundFields");
+				ussdSessionMgmt.getTxSessions().put("CpbChargeAmount", ownFundTxValidatePayData.getTxnChargeAmt());
+				ussdSessionMgmt.getTxSessions().put("CpbFeeGLAccount", ownFundTxValidatePayData.getFeeGLAccount());
+				ussdSessionMgmt.getTxSessions().put("CpbTaxAmount", ownFundTxValidatePayData.getTaxAmount());
+				ussdSessionMgmt.getTxSessions().put("CpbTaxGLAccount", ownFundTxValidatePayData.getTaxGLAccount());
+				ussdSessionMgmt.getTxSessions().put("CpbChargeNarration", ownFundTxValidatePayData.getChargeNarration());
+				ussdSessionMgmt.getTxSessions().put("CpbExciseDutyNarration", ownFundTxValidatePayData.getExciseDutyNarration());
+				ussdSessionMgmt.getTxSessions().put("CpbtypeCode", ownFundTxValidatePayData.getTypeCode());
+				ussdSessionMgmt.getTxSessions().put("CpbValue", ownFundTxValidatePayData.getValue());
+		    }else{
+		    	 String xelerateOfflineLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(XCELERATE_OFFLINE_LABEL,
+						    new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));
+		    	pageBody.append(USSDConstants.NEW_LINE);
+				pageBody.append(xelerateOfflineLabel);
+
+				// Xelerate Offline scenario - fields required by BEM
+				ussdSessionMgmt.getTxSessions().put("CpbMakeDomesticFundFields", "xelerateOffline");
+				ussdSessionMgmt.getTxSessions().put("CpbChargeAmount", ownFundTxValidatePayData.getTxnChargeAmt());
+				ussdSessionMgmt.getTxSessions().put("CpbTaxAmount", ownFundTxValidatePayData.getTaxAmount());
+		    }
+	    }
 
 	    if (!responseBuilderParamsDTO.isErrorneousPage()) {
 		pageBody.append(USSDConstants.NEW_LINE);

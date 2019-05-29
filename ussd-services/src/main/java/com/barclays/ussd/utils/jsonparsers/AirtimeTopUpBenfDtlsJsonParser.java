@@ -4,10 +4,8 @@
 package com.barclays.ussd.utils.jsonparsers;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Locale;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
@@ -20,19 +18,14 @@ import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
 import com.barclays.ussd.exception.USSDNonBlockingException;
 import com.barclays.ussd.utils.BmgBaseJsonParser;
-import com.barclays.ussd.utils.PaginationEnum;
 import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDExceptions;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
-import com.barclays.ussd.utils.USSDUtils;
-import com.barclays.ussd.utils.jsonparsers.bean.airtime.Account;
 import com.barclays.ussd.utils.jsonparsers.bean.billpay.AccountData;
 import com.barclays.ussd.utils.jsonparsers.bean.billpay.BillPayFrmAccntLst;
-import com.barclays.ussd.utils.jsonparsers.bean.billpay.FromAcntLst;
 import com.barclays.ussd.utils.jsonparsers.bean.billpay.Payee;
 import com.barclays.ussd.utils.jsonparsers.bean.delbillers.DelBillersValidate;
-import com.barclays.ussd.utils.jsonparsers.bean.delbillers.DelBlrsValData;
 
 /**
  * @author BTCI
@@ -52,7 +45,6 @@ public class AirtimeTopUpBenfDtlsJsonParser implements BmgBaseJsonParser {
      * @see com.barclays.ussd.utils.BmgBaseJsonParser#parseJsonIntoJava(com.barclays .ussd.bmg.dto.ResponseBuilderParamsDTO)
      */
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
-	String jsonString = responseBuilderParamsDTO.getJsonString();
 	MenuItemDTO menuDTO = new MenuItemDTO();
 	ObjectMapper mapper = new ObjectMapper();
 	DelBillersValidate delBillrVal = null;

@@ -3,16 +3,10 @@ package com.barclays.bmg.operation.pesalink;
 
 import com.barclays.bmg.constants.ActivityConstant;
 import com.barclays.bmg.operation.BMBCommonOperation;
-import com.barclays.bmg.operation.request.pesalink.CreateIndividualCustomerOperationRequest;
 import com.barclays.bmg.operation.request.pesalink.KitsOutwardPaymentOperationRequest;
-import com.barclays.bmg.operation.response.pesalink.CreateIndividualCustomerOperationResponse;
 import com.barclays.bmg.operation.response.pesalink.KitsOutwardPaymentOperationResponse;
 import com.barclays.bmg.service.PayBillService;
-import com.barclays.bmg.service.pesalink.CreateIndividualCustomerService;
-import com.barclays.bmg.service.request.pesalink.CreateIndividualCustomerServiceRequest;
 import com.barclays.bmg.service.request.pesalink.KitsOutwardPaymentServiceRequest;
-import com.barclays.bmg.service.response.pesalink.CreateIndividualCustomerServiceResponse;
-import com.barclays.bmg.service.response.pesalink.KitsOutwardPaymentServiceResponse;
 
 
 public class KitsOutwardPaymentOperation extends BMBCommonOperation{
@@ -23,8 +17,6 @@ public class KitsOutwardPaymentOperation extends BMBCommonOperation{
 
 	//@AuditSupport(auditType = AuditConstant.AUDIT_TYPE_TRANSACTION, activityState = AuditConstant.SRC_COM_SSC, serviceDescription = "SD_CCD_LINK", stepId = "1", activityType = "auditCCDLink")
 	public KitsOutwardPaymentOperationResponse kitsBillPayment(KitsOutwardPaymentOperationRequest kitsOutwardPaymentOperationRequest) {
-
-		KitsOutwardPaymentOperationResponse kitsOutwardPaymentOperationResponse = new KitsOutwardPaymentOperationResponse();
 		KitsOutwardPaymentServiceRequest kitsOutwardPaymentServiceRequest = new KitsOutwardPaymentServiceRequest();
 		kitsOutwardPaymentServiceRequest.setDebitAccount(kitsOutwardPaymentOperationRequest.getDebitAccount());
 		kitsOutwardPaymentServiceRequest.setReceipientAccountNo(kitsOutwardPaymentOperationRequest.getReceipientAccountNo());

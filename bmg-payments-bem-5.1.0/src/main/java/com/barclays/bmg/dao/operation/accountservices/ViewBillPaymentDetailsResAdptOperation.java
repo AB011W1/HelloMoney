@@ -16,7 +16,7 @@ import com.barclays.bmg.service.response.ViewTxnHistoryDetailsServiceResponse;
  * 
  *         Response Adapter for View Bill Payment Detail BEM Response
  */
-public class ViewBillPaymentDetailsResAdptOperation extends AbstractResAdptOperation {
+public class ViewBillPaymentDetailsResAdptOperation extends AbstractResAdptOperationAcct {
 
     /**
      * @param workContext

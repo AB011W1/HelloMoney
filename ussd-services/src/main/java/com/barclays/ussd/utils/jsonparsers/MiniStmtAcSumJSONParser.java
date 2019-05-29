@@ -30,7 +30,7 @@ import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
 
 /**
  * @author BTCI
- * 
+ *
  */
 public class MiniStmtAcSumJSONParser implements BmgBaseJsonParser {
 
@@ -39,7 +39,7 @@ public class MiniStmtAcSumJSONParser implements BmgBaseJsonParser {
     private static final Logger LOGGER = Logger.getLogger(MiniStmtAcSumJSONParser.class);
 
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
-	MenuItemDTO menuDTO = null;
+	MenuItemDTO menuDTO = new MenuItemDTO();
 	try {
 	    String localCurrency = BMBContextHolder.getContext().getLocalCurrency();
 
@@ -86,21 +86,34 @@ public class MiniStmtAcSumJSONParser implements BmgBaseJsonParser {
      * @param localCcyCustActsList
      * @param warningMsg
      * @return MenuItemDTO
+     * @throws USSDNonBlockingException
      */
-    private MenuItemDTO renderMenuOnScreen(ResponseBuilderParamsDTO responseBuilderParamsDTO, List<CustomerMobileRegAcct> localCcyCustActsList) {
+    private MenuItemDTO renderMenuOnScreen(ResponseBuilderParamsDTO responseBuilderParamsDTO, List<CustomerMobileRegAcct> localCcyCustActsList) throws USSDNonBlockingException {
 	MenuItemDTO menuItemDTO = null;
 	menuItemDTO = new MenuItemDTO();
 	int index = 1;
 	StringBuilder pageBody = new StringBuilder();
-	Map<String, Object> txSessions = new HashMap<String, Object>(localCcyCustActsList.size());
-	txSessions.put(USSDInputParamsEnum.MINI_STMT_SEL_AC.getTranId(), localCcyCustActsList);
+	Map<String, Object> txSessions = null;
+	if(null != localCcyCustActsList)
+		txSessions = new HashMap<String, Object>(localCcyCustActsList.size());
+	if(null != txSessions)
+		txSessions.put(USSDInputParamsEnum.MINI_STMT_SEL_AC.getTranId(), localCcyCustActsList);
 	responseBuilderParamsDTO.getUssdSessionMgmt().setTxSessions(txSessions);
-	for (CustomerMobileRegAcct accountDetail : localCcyCustActsList) {
-	    pageBody.append(USSDConstants.NEW_LINE);
-	    pageBody.append(index);
-	    pageBody.append(USSDConstants.DOT_SEPERATOR);
-	    pageBody.append(accountDetail.getMkdActNo());
-	    index++;
+	if(localCcyCustActsList != null && !localCcyCustActsList.isEmpty())
+	{
+		for(int i =0;i<localCcyCustActsList.size();i++)
+	    	if(localCcyCustActsList.get(i).getGroupWalletIndicator()!=null && localCcyCustActsList.get(i).getGroupWalletIndicator().equals("Y"))
+	    		localCcyCustActsList.remove(i);
+		if (localCcyCustActsList == null || localCcyCustActsList.isEmpty() || localCcyCustActsList.size() == 0) {
+		    throw new USSDNonBlockingException(USSDExceptions.USSD_NO_ELIGIBLE_ACCTS.getBmgCode());
+		}
+		for (CustomerMobileRegAcct accountDetail : localCcyCustActsList) {
+			pageBody.append(USSDConstants.NEW_LINE);
+			pageBody.append(index);
+			pageBody.append(USSDConstants.DOT_SEPERATOR);
+			pageBody.append(accountDetail.getMkdActNo());
+			index++;
+		}
 	}
 	menuItemDTO.setPageBody(pageBody.toString());
 	USSDUtils.appendHomeAndBackOption(menuItemDTO, responseBuilderParamsDTO);

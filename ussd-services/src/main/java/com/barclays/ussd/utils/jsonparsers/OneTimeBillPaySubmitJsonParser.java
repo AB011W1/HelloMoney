@@ -46,6 +46,7 @@ public class OneTimeBillPaySubmitJsonParser implements BmgBaseJsonParser {
 		}
 	    OTBPSubmitResponse otbpSubmitResponse = mapper.readValue(jsonString, OTBPSubmitResponse.class);
 	    String txnNo = null;
+	    String token = null;
 	    String displayMessage = null;
 	    String saveABenefeciaryLabel = null;
 	    if (otbpSubmitResponse != null) {
@@ -56,11 +57,13 @@ public class OneTimeBillPaySubmitJsonParser implements BmgBaseJsonParser {
 			txSessions.put(USSDInputParamsEnum.ONE_TIME_BILL_PYMNT_SUBMIT.getTranId(),BillPaymentConstants.ONE_TIME_BILL_PAYMENT_SAVE_BILLER);
 			ussdSessionMgmt.setTxSessions(txSessions);
 
-		    if (otbpSubmitResponse.getPayData() != null)
-			txnNo = otbpSubmitResponse.getPayData().getTxnRefNo();
+		    if (otbpSubmitResponse.getPayData() != null) {
+				txnNo = otbpSubmitResponse.getPayData().getTxnRefNo();
+			    token = otbpSubmitResponse.getPayData().getToken();
+		    }
 		    displayMessage = getLabel(responseBuilderParamsDTO, USSDConstants.USSD_OTBP_SUCCESS);
 		    saveABenefeciaryLabel = getLabel(responseBuilderParamsDTO, USSDConstants.USSD_OTBP_SAVE_BENEFECIARY);//CR73
-		    menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, txnNo, displayMessage, saveABenefeciaryLabel);
+		    menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, txnNo, token, displayMessage, saveABenefeciaryLabel);
 
 		} else if (isInProgressErrorCode(otbpSubmitResponse.getPayHdr().getResCde())) {
 
@@ -71,7 +74,7 @@ public class OneTimeBillPaySubmitJsonParser implements BmgBaseJsonParser {
 		    txnNo = otbpSubmitResponse.getPayHdr().getTxnRefNo();
 		    displayMessage = getLabel(responseBuilderParamsDTO, USSDConstants.USSD_OTBP_INPROGRESS);
 		    saveABenefeciaryLabel = getLabel(responseBuilderParamsDTO, USSDConstants.USSD_OTBP_SAVE_BENEFECIARY);//CR73
-		    menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, txnNo, displayMessage, saveABenefeciaryLabel);
+		    menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, txnNo, token, displayMessage, saveABenefeciaryLabel);
 
 		} else if (otbpSubmitResponse.getPayHdr() != null) {
 		    LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
@@ -118,11 +121,14 @@ public class OneTimeBillPaySubmitJsonParser implements BmgBaseJsonParser {
      * @return MenuItemDTO
      */
 
-    private MenuItemDTO renderMenuOnScreen(ResponseBuilderParamsDTO responseBuilderParamsDTO, String txnRefNo, String displayMessage, String saveABillerLabel) {
+    private MenuItemDTO renderMenuOnScreen(ResponseBuilderParamsDTO responseBuilderParamsDTO, String txnRefNo, String token, String displayMessage, String saveABillerLabel) {
 	StringBuilder pageBody = new StringBuilder();
 	MenuItemDTO menuItemDTO = new MenuItemDTO();
 	pageBody.append(displayMessage).append(USSDConstants.NEW_LINE);
 	pageBody.append(txnRefNo).append(USSDConstants.NEW_LINE);
+	if(null != token && !"".equalsIgnoreCase(token)){
+		pageBody.append("Token: ").append(token).append(USSDConstants.NEW_LINE);
+	}
 	if(null != saveABillerLabel){
 		pageBody.append(saveABillerLabel);
 	}

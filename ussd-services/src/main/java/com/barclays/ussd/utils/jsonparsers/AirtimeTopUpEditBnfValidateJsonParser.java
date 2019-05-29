@@ -11,7 +11,6 @@ import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
-import com.barclays.ussd.auth.bean.UserProfile;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
 import com.barclays.ussd.exception.USSDNonBlockingException;
@@ -36,7 +35,6 @@ public class AirtimeTopUpEditBnfValidateJsonParser implements BmgBaseJsonParser 
 
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
 	MenuItemDTO menuDTO = null;
-	ObjectMapper mapper = new ObjectMapper();
 	 menuDTO = renderMenuOnScreen( responseBuilderParamsDTO);
 
 	return menuDTO;
@@ -73,7 +71,6 @@ public class AirtimeTopUpEditBnfValidateJsonParser implements BmgBaseJsonParser 
 				Beneficiery bene = lstBenef.get(Integer.parseInt(beneficiarySelected) - 1);
 				nickName=bene.getDisLbl();
 			    }
-		UserProfile userProfile = ussdSessionMgmt.getUserProfile();
 		List<String> params = new ArrayList<String>(1);
 		params.add(nickName);
 		params.add(mobilenumber);

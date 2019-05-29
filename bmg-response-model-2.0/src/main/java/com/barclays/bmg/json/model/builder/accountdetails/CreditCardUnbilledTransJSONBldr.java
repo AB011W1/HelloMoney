@@ -20,7 +20,9 @@ public class CreditCardUnbilledTransJSONBldr extends BMBCommonJSONBuilder implem
     @Override
     public Object createJSONResponse(ResponseContext responseContext) {
 
-	CreditCardUnbilledTransOperationResponse resp = (CreditCardUnbilledTransOperationResponse) responseContext;
+	CreditCardUnbilledTransOperationResponse resp = new CreditCardUnbilledTransOperationResponse();
+	if(responseContext instanceof CreditCardUnbilledTransOperationResponse)
+		resp = (CreditCardUnbilledTransOperationResponse) responseContext;
 
 	BMBPayload bmbPayload = new BMBPayload(createHeader(resp));
 	populatePayLoad(resp, bmbPayload);

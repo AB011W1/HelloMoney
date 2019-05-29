@@ -82,4 +82,28 @@ public class SystemParameterDAOImpl extends BaseDAOImpl implements SystemParamet
 
     	return response;
     }
+
+    /** Method to fetch all the status flags based on business Id **/
+	@SuppressWarnings("unchecked")
+	@Override
+	public SystemParameterListServiceResponse getCountryWiseSysParamsByParamId(
+			SystemParameterServiceRequest request) {
+		SystemParameterListServiceResponse response = new SystemParameterListServiceResponse();
+
+		SystemParameterDTO spDTO = request.getSystemParameterDTO();
+
+		Map<String, String> params = new HashMap<String, String>();
+
+		params.put("systemId", spDTO.getSystemId());
+		params.put("businessId", spDTO.getBusinessId());
+		params.put("paramId", spDTO.getParameterId());
+		params.put("paramValue", spDTO.getParameterValue());
+
+		List<SystemParameterDTO> spList = this.queryForList(
+				"findCountryWiseStatusFlag", params);
+
+		response.setSystemParameterDTOList(spList);
+
+		return response;
+	}
 }

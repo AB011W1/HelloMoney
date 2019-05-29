@@ -101,6 +101,8 @@ public class AirtimeEnterCreditCardValidateRequest implements BmgBaseRequestBuil
 
     		requestParamMap.put("actionCode", billerCreditDTO.getActionCode());
     		requestParamMap.put("storeNumber",billerCreditDTO.getStoreNumber());
+     		//Added card no details to fetch only selected card
+    		requestParamMap.put("ccNumber", acntDet.getCrdNo());
 
 
 		 USSDBaseRequest request = new USSDBaseRequest();

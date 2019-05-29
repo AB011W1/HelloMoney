@@ -6,6 +6,8 @@ public class GetSelectedAccountOperationRequest extends RequestContext {
 
     private String acctNumber;
 
+    private String creditCardNumber;
+
     public String getAcctNumber() {
 	return acctNumber;
     }
@@ -13,5 +15,13 @@ public class GetSelectedAccountOperationRequest extends RequestContext {
     public void setAcctNumber(String acctNumber) {
 	this.acctNumber = acctNumber;
     }
+
+	public String getCreditCardNumber() {
+		return creditCardNumber;
+	}
+
+	public void setCreditCardNumber(String creditCardNumber) {
+		this.creditCardNumber = creditCardNumber;
+	}
 
 }

@@ -50,21 +50,21 @@ public class AirtimeEnterMobileResponseParser implements BmgBaseJsonParser, Syst
     	Locale locale = new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode());
     	String airtimeMobileNoLabel = ussdResourceBundle.getLabel(TRANSACTION_AIRTIME_LABEL, locale);
     	String ubpBusinessId=componentResDAOImpl.getUBPBusinessId();
-    	/*if(ubpBusinessId.contains(ussdSessionMgmt.getBusinessId())){
-	    	ArrayList<Biller> sBlr=(ArrayList<Biller>) responseBuilderParamsDTO.getUssdSessionMgmt().getTxSessions().get("ATT001");
-	    	int loc=Integer.parseInt(responseBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap().get("billerId"));
-	    	airtimeMobileNoLabel = componentResDAOImpl.getBillerLabelByKey(sBlr.get(loc-1).getBillerId(), ussdSessionMgmt.getBusinessId(),locale.getLanguage());
-    	}*/
-		MenuItemDTO menuItemDTO = new MenuItemDTO();
-		menuItemDTO.setPageBody(airtimeMobileNoLabel);
-		ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().setHomeOptionReq("TRUE");
-		USSDUtils.appendHomeAndBackOption(menuItemDTO, responseBuilderParamsDTO);
-		menuItemDTO.setPageFooter(menuItemDTO.getPageFooter());
-		menuItemDTO.setPageHeader(responseBuilderParamsDTO.getHeaderId());
-		menuItemDTO.setStatus(USSDConstants.STATUS_CONTINUE);
-		menuItemDTO.setPaginationType(PaginationEnum.NOT_REQD);
-		setNextScreenSequenceNumber(menuItemDTO);
-		return menuItemDTO;
+    	if(ubpBusinessId.contains(ussdSessionMgmt.getBusinessId())){
+    	ArrayList<Biller> sBlr=(ArrayList<Biller>) responseBuilderParamsDTO.getUssdSessionMgmt().getTxSessions().get("ATT001");
+    	int loc=Integer.parseInt(responseBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap().get("billerId"));
+    	airtimeMobileNoLabel = componentResDAOImpl.getBillerLabelByKey(sBlr.get(loc-1).getBillerId(), ussdSessionMgmt.getBusinessId(),locale.getLanguage());
+    	}
+	MenuItemDTO menuItemDTO = new MenuItemDTO();
+	menuItemDTO.setPageBody(airtimeMobileNoLabel);
+	ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().setHomeOptionReq("TRUE");
+	USSDUtils.appendHomeAndBackOption(menuItemDTO, responseBuilderParamsDTO);
+	menuItemDTO.setPageFooter(menuItemDTO.getPageFooter());
+	menuItemDTO.setPageHeader(responseBuilderParamsDTO.getHeaderId());
+	menuItemDTO.setStatus(USSDConstants.STATUS_CONTINUE);
+	menuItemDTO.setPaginationType(PaginationEnum.NOT_REQD);
+	setNextScreenSequenceNumber(menuItemDTO);
+	return menuItemDTO;
     }
 
     @Override

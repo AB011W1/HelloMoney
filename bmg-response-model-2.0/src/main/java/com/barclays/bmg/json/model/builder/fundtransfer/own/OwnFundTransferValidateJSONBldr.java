@@ -1,8 +1,10 @@
 package com.barclays.bmg.json.model.builder.fundtransfer.own;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import com.barclays.bmg.constants.ResponseIdConstants;
+import com.barclays.bmg.constants.SystemParameterConstant;
 import com.barclays.bmg.context.BMBContextHolder;
 import com.barclays.bmg.context.Context;
 import com.barclays.bmg.context.ResponseContext;
@@ -10,7 +12,6 @@ import com.barclays.bmg.dto.CreditCardAccountDTO;
 import com.barclays.bmg.dto.CustomerAccountDTO;
 import com.barclays.bmg.dto.FxRateDTO;
 import com.barclays.bmg.json.model.AmountJSONModel;
-import com.barclays.bmg.json.model.billpayment.CCAccountJSONBean;
 import com.barclays.bmg.json.model.builder.BMBMultipleResponseJSONBuilder;
 import com.barclays.bmg.json.model.fundtransfer.OwnFundTransferValidateJSONResponseModel;
 import com.barclays.bmg.json.response.BMBPayload;
@@ -48,7 +49,7 @@ public class OwnFundTransferValidateJSONBldr  extends BMBMultipleResponseJSONBui
 			ResponseContext... responseContexts	) {
 
 		OwnFundTransferValidateJSONResponseModel responseModel = null;
-
+		String casaStrFlag = null;
 		GetSelectedAccountOperationResponse selSourceAcctOpResp = (GetSelectedAccountOperationResponse) responseContexts[0];
 		GetSelectedAccountOperationResponse selDestAcctOpResp = (GetSelectedAccountOperationResponse) responseContexts[1];
 		FormValidateOperationResponse formValidateOperationResponse = (FormValidateOperationResponse) responseContexts[3];
@@ -92,6 +93,10 @@ public class OwnFundTransferValidateJSONBldr  extends BMBMultipleResponseJSONBui
 					responseModel.setMkdCrdNo(getMaskedCreditCardNumber(ccaccount
 							.getPrimary().getCardNumber()));
 				} else {
+
+					// Set CASA identifier for CBP
+					casaStrFlag = "CASA Account";
+
 					responseModel.setFrMskActNo(getMaskedAccountNumber(null,
 							frmAcct.getAccountNumber()));
 				}
@@ -151,6 +156,36 @@ public class OwnFundTransferValidateJSONBldr  extends BMBMultipleResponseJSONBui
 
 			responseModel.setTxnLmt(txnLimit);
 */
+		}
+
+		// FundTransfer ToOwn - Uganda CBP
+		Map <String,Object> contextMap= new HashMap<String, Object>();
+		if(null != formValidateOperationResponse)
+			contextMap = formValidateOperationResponse.getContext().getContextMap();
+		String bzID = null;
+		if(null != formValidateOperationResponse)
+			bzID = formValidateOperationResponse.getContext().getBusinessId();
+		if(casaStrFlag != null && casaStrFlag.equals("CASA Account") && bzID !=null && (contextMap!=null && contextMap.get(SystemParameterConstant.isCBPFLAG).equals("Y")  && (bzID.equals("UGBRB")
+				|| bzID.equals("GHBRB") || bzID.equals("ZMBRB") || bzID.equals("BWBRB")))){
+			FormValidateOperationResponse formValidationOperationResponse = (FormValidateOperationResponse) responseContexts[3];
+			AmountJSONModel jsonModel= new AmountJSONModel();
+			if(formValidationOperationResponse.getTranFee()!=null){
+				jsonModel.setCurr(formValidationOperationResponse.getTranFee().getCurrency());
+				jsonModel.setAmt(formValidationOperationResponse.getTranFee().getAmount().toString());
+			}
+
+			responseModel.setTxnChargeAmt(jsonModel);
+			responseModel.setFeeGLAccount(formValidationOperationResponse.getFeeGLAccount());
+			responseModel.setChargeNarration(formValidationOperationResponse.getChargeNarration());
+			responseModel.setTaxAmount(formValidationOperationResponse.getTaxAmount());
+			responseModel.setTaxGLAccount(formValidationOperationResponse.getTaxGLAccount());
+			responseModel.setExciseDutyNarration(formValidationOperationResponse.getExciseDutyNarration());
+			responseModel.setTypeCode(formValidationOperationResponse.getTypeCode());
+			responseModel.setValue(formValidationOperationResponse.getValue());
+
+			// xelerate offline error codes
+			responseModel.setXelerateOfflineError(formValidateOperationResponse.getXelerateOfflineError());
+			responseModel.setXelerateOfflineDesc(formValidationOperationResponse.getXelerateOfflineDesc());
 		}
 
 		bmbPayload.setPayData(responseModel);

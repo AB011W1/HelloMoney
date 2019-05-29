@@ -22,8 +22,11 @@ import com.barclays.ussd.utils.USSDExceptions;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
+import com.barclays.ussd.utils.jsonparsers.bean.billpay.AccountData;
 import com.barclays.ussd.utils.jsonparsers.bean.fundtransfer.ownfundtransfer.AccountDetails;
 import com.barclays.ussd.utils.jsonparsers.bean.fundtransfer.ownfundtransfer.RetrieveAccList;
+import com.barclays.ussd.utils.jsonparsers.bean.login.AuthUserData;
+import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
 
 public class RetrievePayeeAccountListJsonParser implements BmgBaseJsonParser {
 
@@ -32,7 +35,7 @@ public class RetrievePayeeAccountListJsonParser implements BmgBaseJsonParser {
 
     @SuppressWarnings("unchecked")
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
-	MenuItemDTO menuDTO = null;
+	MenuItemDTO menuDTO = new MenuItemDTO();
 	String jsonString = responseBuilderParamsDTO.getJsonString();
 	ObjectMapper mapper = new ObjectMapper();
 	USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
@@ -94,9 +97,10 @@ public class RetrievePayeeAccountListJsonParser implements BmgBaseJsonParser {
      * @param payData
      * @param responseBuilderParamsDTO
      * @return MenuItemDTO
+     * @throws USSDNonBlockingException
      */
     @SuppressWarnings("unchecked")
-    private MenuItemDTO renderMenuOnScreen(List<AccountDetails> lstpayeeAcnts, ResponseBuilderParamsDTO responseBuilderParamsDTO) {
+    private MenuItemDTO renderMenuOnScreen(List<AccountDetails> lstpayeeAcnts, ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
 	int index = 1;
 	StringBuilder pageBody = new StringBuilder();
 	MenuItemDTO menuItemDTO = new MenuItemDTO();
@@ -105,9 +109,23 @@ public class RetrievePayeeAccountListJsonParser implements BmgBaseJsonParser {
 	String payeeAcNoInput = responseBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap().get(
 		USSDInputParamsEnum.OLAFT_SOURCE_LIST.getParamName());
 	String srcAc = srcActList.get(Integer.parseInt(payeeAcNoInput) - 1).getActNo();
-
+	USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();//CR82 changes
+    AuthUserData authData= ((AuthUserData)ussdSessionMgmt.getUserAuthObj());
+    List<CustomerMobileRegAcct> acts=authData.getPayData().getCustActs();
 	if (lstpayeeAcnts != null && !lstpayeeAcnts.isEmpty()) {
 	    List<AccountDetails> lstPayeeAcntsRevised = new ArrayList<AccountDetails>(lstpayeeAcnts.size() - 1);
+	    List<String> GpAcc=new ArrayList<String>();
+		 for(int i =0;i<acts.size();i++)
+		    	if(acts.get(i).getGroupWalletIndicator()!=null && acts.get(i).getGroupWalletIndicator().equals("Y"))
+		    		GpAcc.add(acts.get(i).getMkdActNo());
+		    List<AccountDetails> srcAcc=lstpayeeAcnts;
+
+			 for(int j=0;j<srcAcc.size();j++)
+				 if(GpAcc.contains(srcAcc.get(j).getMkdActNo()))
+					 srcAcc.remove(j);
+			 if (lstpayeeAcnts == null || lstpayeeAcnts.isEmpty() || lstpayeeAcnts.size() == 0) {
+				    throw new USSDNonBlockingException(USSDExceptions.USSD_NO_ELIGIBLE_ACCTS.getBmgCode());
+				}
 	    for (AccountDetails accountDetail : lstpayeeAcnts) {
 		if (!srcAc.equalsIgnoreCase(accountDetail.getActNo())) {
 		    pageBody.append(USSDConstants.NEW_LINE);

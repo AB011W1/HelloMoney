@@ -43,7 +43,6 @@ public class REGBGetBillersCheckJsonParser implements BmgBaseJsonParser
 	    Map<String, Object> txSessionMap = new HashMap<String, Object>(5);
 	    responseBuilderParamsDTO.getUssdSessionMgmt().setTxSessions(txSessionMap);
 	}
-	Map<String, Object> txSessions = responseBuilderParamsDTO.getUssdSessionMgmt().getTxSessions();
 	responseBuilderParamsDTO.getUssdSessionMgmt().getTxSessions().put(USSDInputParamsEnum.REG_BILLER_GET_BILLERS.getTranId(), blrsLstDO);
 	setNextScreenSequenceNumber(menuDTO);
 	return menuDTO;

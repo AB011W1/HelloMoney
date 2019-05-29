@@ -40,7 +40,6 @@ public class OneTimeWUCBillPayEnterCustomerNumRefParser implements BmgBaseJsonPa
 		USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
 	 	MenuItemDTO menuItemDTO = new MenuItemDTO();
 	 	USSDUtils.appendHomeAndBackOption(menuItemDTO, responseBuilderParamsDTO);
-	 	UssdResourceBundle ussdResourceBundle = responseBuilderParamsDTO.getUssdResourceBundle();
 		Locale locale = new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode());
 
 		menuItemDTO.setPageHeader("LBL9999");

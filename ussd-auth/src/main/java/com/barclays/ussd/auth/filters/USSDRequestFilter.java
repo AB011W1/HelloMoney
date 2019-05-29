@@ -59,7 +59,7 @@ public class USSDRequestFilter implements Filter {
 
     private static final String BEM_RESPONSE_TIME = "BEM_RESPONSE_TIME";
     private static final String BEM_RESPONSE_TIME_BREAKUP = "BEM_RESPONSE_TIME_BREAKUP";
-    private static final Long ZERO = new Long(0);
+    private static final Long ZERO = Long.valueOf(0);
 
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException,
 	    ServletException {

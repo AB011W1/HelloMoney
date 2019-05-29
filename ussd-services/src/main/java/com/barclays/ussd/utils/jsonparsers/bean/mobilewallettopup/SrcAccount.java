@@ -29,6 +29,30 @@ public class SrcAccount {
     /**
      * @return the actHlds
      */
+
+    @JsonProperty
+    private String bankCif;
+
+    @JsonProperty
+	private String groupWalletIndicator;
+
+
+    public String getBankCif() {
+		return bankCif;
+	}
+
+	public void setBankCif(String bankCif) {
+		this.bankCif = bankCif;
+	}
+
+	public String getGroupWalletIndicator() {
+		return groupWalletIndicator;
+	}
+
+	public void setGroupWalletIndicator(String groupWalletIndicator) {
+		this.groupWalletIndicator = groupWalletIndicator;
+	}
+
     public String getActHlds() {
 	return actHlds;
     }

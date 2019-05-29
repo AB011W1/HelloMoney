@@ -65,7 +65,6 @@ public class CallBMGAccordingRequestImpl implements CallBMGAccordingRequestInter
 	    response = commonHttpClientExecuter.invokebmg(useLocalGateway, gatewayBaseURL, queryParamMap);
 	    String rescCode = "";
 	    String responseCode = "";
-	    String responseMsg = "";
 
 	    if (TIMELOGGER.isInfoEnabled()) {
 		if (response != null && response.contains("resCde")) {
@@ -88,8 +87,6 @@ public class CallBMGAccordingRequestImpl implements CallBMGAccordingRequestInter
 		    }
 
 		    rescCode = accList.getPayHdr().getResCde();
-		    responseMsg = accList.getPayHdr().getResMsg();
-
 		    responseCode = getStatus(rescCode);
 		} else {
 		    responseCode = FAILURE;

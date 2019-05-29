@@ -2,9 +2,7 @@ package com.barclays.ussd.utils.jsonparsers;
 
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,21 +15,14 @@ import org.apache.log4j.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.barclays.bmg.constants.ErrorCodeConstant;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
-import com.barclays.ussd.auth.bean.UserProfile;
 import com.barclays.ussd.bean.MenuItemDTO;
-import com.barclays.ussd.bean.MsisdnDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
-import com.barclays.ussd.dto.UssdBranchLookUpDTO;
 import com.barclays.ussd.exception.USSDBlockingException;
 import com.barclays.ussd.exception.USSDNonBlockingException;
 import com.barclays.ussd.services.dao.impl.UssdBranchLookUpDAOImpl;
-import com.barclays.ussd.sysprefs.services.ListValueCacheDTO;
 import com.barclays.ussd.utils.BmgBaseJsonParser;
 import com.barclays.ussd.utils.PaginationEnum;
-import com.barclays.ussd.utils.ScreenSequenceCustomizer;
-import com.barclays.ussd.utils.SystemPreferenceConstants;
 import com.barclays.ussd.utils.SystemPreferenceValidator;
 import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDExceptions;
@@ -40,8 +31,6 @@ import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
 import com.barclays.ussd.utils.jsonparsers.bean.pesalink.BankJsonRes;
 import com.barclays.ussd.utils.jsonparsers.bean.pesalink.SearchIndividualCustInformationResponse;
-import com.barclays.ussd.validation.USSDCompositeValidator;
-import com.barclays.ussd.validation.USSDMobileLengthValidator;
 
 public class KitsSendToPhoneBankListJsonParser implements BmgBaseJsonParser,SystemPreferenceValidator{
 
@@ -80,7 +69,6 @@ public class KitsSendToPhoneBankListJsonParser implements BmgBaseJsonParser,Syst
 	    				    	}
 
 	    				    		Set<String> keySet=bankDetailsMap.keySet();
-	    					    	Collection<String> valueSet=bankDetailsMap.values();
 	    					    	List<String> keyList=new ArrayList<String>(keySet);
 	    					    	Collections.sort(keyList);
 
@@ -110,24 +98,24 @@ public class KitsSendToPhoneBankListJsonParser implements BmgBaseJsonParser,Syst
 	    				//06/10/2016 G01022861
 	    				else if(searchIndividualCustInformationResponse.getPayHdr() != null
 	    						&& USSDExceptions.BEM001.getBmgCode().equalsIgnoreCase(searchIndividualCustInformationResponse.getPayHdr().getResCde())){
-	    					throw new USSDNonBlockingException(USSDExceptions.BEMRECMOB.getBmgCode());
+	    					throw new USSDNonBlockingException(USSDExceptions.BEMRECMOB.getBmgCode(),true);
 	    				}
 	    				else if (searchIndividualCustInformationResponse.getPayHdr() != null) {
 	    				    LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
-	    				    throw new USSDNonBlockingException(searchIndividualCustInformationResponse.getPayHdr().getResCde());
+	    				    throw new USSDNonBlockingException(searchIndividualCustInformationResponse.getPayHdr().getResCde(),true);
 	    				}
 	    				}else {
 	    					LOGGER.error("Invalid response got from the BMG " + responseBuilderParamsDTO.getBmgOpCode());
-	    					throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+	    					throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 	    				    }
 
 	    	}catch(Exception e)
 	    	{
 	    		LOGGER.error("Exception : ", e);
 	    	    if (e instanceof USSDNonBlockingException) {
-	    		throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode());
+	    		throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode(),true);
 	    	    } else {
-	    		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+	    		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 	    	    }
 	    	}
 
@@ -174,6 +162,7 @@ public class KitsSendToPhoneBankListJsonParser implements BmgBaseJsonParser,Syst
 	    		{USSDNonBlockingException e= new USSDNonBlockingException();
 				LOGGER.error(USSDExceptions.USSD_USER_INPUT_INVALID.getUssdErrorCode(), e);
 			    e.setErrorCode(USSDExceptions.USSD_USER_INPUT_INVALID.getUssdErrorCode());
+			    e.setKitsFlow(true);
 			    throw e;
 
 	    		}

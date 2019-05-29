@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:util="http://www.springframework.org/schema/util"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+	 <bean id="internalNonRegisteredOneTimeFundTransferInitController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.nonregistered.internal.InternalNonRegisteredFundTransferInitController" parent="bmbAbstractController">
+		<property name="retrieveAccountListOperation" ref="retrieveAccountListOperation" />
+		<property name="transactionLimitOperation" ref="transactionLimitOperation" />
+		<!-- <property name="validateAccountListOperation" ref="validateAccountListOperation" /> -->
+		<property name="bmbJSONBuilder" ref="internalNonRegisteredFundTransferInitJSONBldr" />
+	</bean>
+
+	<bean id="internalNonRegisteredOneTimeFTFormSubmissionController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.nonregistered.internal.InternalNonRegisteredPaymentFormSubmissionController" parent="bmbAbstractCommandController">
+		<property name="internalNonRegisteredFTFormSubmissionOperation" ref="internalNonRegisteredFTFormSubmissionOperation" />
+		<property name="retrieveAccountListOperation" ref="retrieveAccountListOperation" />
+		<property name="transactionLimitOperation" ref="transactionLimitOperation" />
+		<property name="getSelectedAccountOperation" ref="getSelectedAccountOperation" />
+		<property name="retrieveInternalNonRegisteredPayeeInfoOperation" ref="retrieveInternalNonRegisteredPayeeInfoOperation" />
+		<property name="formValidateOperation" ref="ssaInternalformNonRegisteredValidateOperation" />
+		<property name="commandName" value="internalNonRegisteredFTDetailsCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.fundtransfer.nonregistered.internal.InternalNonRegisteredFTDetailsCommand" />
+		<property name="validator" ref="ssaInternalNonRegisteredFTFormSubmissionCommandValidator" />
+		<property name="bmbJSONBuilder" ref="internalNonRegisteredFundTransferFormSubmissionJSONBldr" />
+		<property name="activityId" value="PMT_FT_INTERNAL_ONETIME" />
+	</bean>
+
+	 <bean id="internalNonRegisteredOneTimeFundTransferExecutionController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.nonregistered.internal.FundTransferExecutionController" parent="bmbAbstractCommandController">
+		<property name="domesticFundTransferExecuteOperation" ref="domesticFundTransferExecuteOperation" />
+		<property name="bmbJSONBuilder" ref="ssaInternalNonRegisteredFundTransferDoneJSONBldr" />
+		<property name="otpAuthenticationOperation" ref="otpAuthenticationOperation" />
+		<property name="txnOTPSecondAuthJSONBldr" ref="txnOTPSecondAuthJSONBldr" />
+		<property name="sqaAuthenticationOperation" ref="sqaAuthenticationOperation" />
+		<property name="txnSQASecondAuthJSONBldr" ref="txnSQASecondAuthJSONBldr" />
+		<property name="commandName" value="paymentExecuteCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.fundtransfer.nonregistered.internal.InternalNonRegisteredFundTransferCommand" />
+		<property name="validator" ref="ssaInternalFundTransferCommandValidator" />
+		<property name="activityId" value="PMT_FT_INTERNAL_ONETIME" />
+	</bean>
+
+	<bean id="ssaInternalFundTransferCommandValidator"
+		class="com.barclays.bmg.mvc.validator.fundtransfer.nonregistered.internal.InternalNonRegisteredFundTransferExecuteCommandValidator">
+	</bean>
+
+	<bean id="ssaInternalNonRegisteredFundTransferDoneJSONBldr"
+		class="com.barclays.bmg.json.model.builder.fundtransfer.nonregistered.internal.lnternalNonRegisteredFundTransferDoneJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<bean id="getSelectedAccountOperation"
+		class="com.barclays.bmg.operation.accountservices.GetSelectedAccountOperation" parent="bmbPaymentsOperation">
+		<property name="casaDetailsOperation" ref="casaDetailsOperation" />
+	</bean>
+
+	<bean id="retrieveInternalNonRegisteredPayeeInfoOperation"
+		class="com.barclays.bmg.operation.fundtransfer.nonregistered.internal.RetrieveInternalNonRegisteredPayeeInfoOperation" parent="bmbPaymentsOperation">
+		<property name="casaDetailsService" ref="casaDetailsServiceImpl" />
+	</bean>
+
+	<bean id="internalNonRegisteredFTFormSubmissionOperation"
+		class="com.barclays.bmg.operation.fundtransfer.nonregistered.internal.InternalNonRegisteredlFTFormSubmissionOperation" parent="bmbPaymentsOperation">
+	</bean>
+
+	<bean id="ssaInternalNonRegisteredFTFormSubmissionCommandValidator"
+		class="com.barclays.bmg.mvc.validator.fundtransfer.nonregistered.internal.InternalFTDetailsCommandValidator">
+		<property  name="branchCodeCountryList" ref="branchCodeCountryList"/>
+	</bean>
+
+	<bean id="ssaInternalformNonRegisteredValidateOperation"
+		class="com.barclays.bmg.operation.formvalidation.InternalNonRegisteredFTFormValidateOperation" parent="bmbPaymentsOperation">
+		<property name="fxRateService" ref="fxRateService" />
+		<property name="retreiveChargeDetailsService" ref="retreiveChargeDetailsService" />
+		<property name="transactionLimitService" ref="transactionLimitService" />
+		<property name="creditCardDetailsService" ref="creditCardDetailsServiceImpl" />
+	</bean>
+
+	<bean id="internalNonRegisteredFundTransferFormSubmissionJSONBldr"
+		class="com.barclays.bmg.json.model.builder.fundtransfer.nonregistered.internal.InternalNonRegisteredFundTransferFormSubmissionJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<bean id="internalNonRegisteredFundTransferInitJSONBldr"
+		class="com.barclays.bmg.json.model.builder.fundtransfer.nonregistered.internal.InternalNonRegisteredFundTransferInitJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+</beans>

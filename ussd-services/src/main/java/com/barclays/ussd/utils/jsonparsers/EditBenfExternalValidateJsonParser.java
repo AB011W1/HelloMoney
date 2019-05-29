@@ -108,7 +108,6 @@ public class EditBenfExternalValidateJsonParser implements BmgBaseJsonParser {
 	 * ussdSessionMgmt.getTxSessions().get(USSDInputParamsEnum.REG_BEN_EXT_BANK_CODE_LIST.getTranId()); BranchLookUpDTO bankCodeLookUpDTO =
 	 * bankList.get(Integer.parseInt(userInputMap.get(USSDInputParamsEnum.REG_BEN_EXT_BANK_CODE_LIST.getParamName()))-1);
 	 */
-	String transNodeId=responseBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
 	UssdBranchLookUpDTO branchCodeLookUpDTO = null;
 	String userBranchSelection = null;
 
@@ -130,15 +129,9 @@ public class EditBenfExternalValidateJsonParser implements BmgBaseJsonParser {
 		    new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));
 	    String accntNoLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(ACCNT_NO_LABEL,
 		    new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));
-	    String bankNameLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(BANK_NAME_LBL,
-		    new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));
-	    String beneNameLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(BENE_NAME_LABEL,
-		    new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));
 	    String bankLbl = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(BANK_LBL,
 			    new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));
 	    String nickNameLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(NICK_NAME_LABEL,
-		    new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));
-	    String branchNameLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(BRANCH_NAME_LBL,
 		    new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));
 	    String headerLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(LABEL_CONFIRM_HEADER_MESSAGE,
 			    new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));

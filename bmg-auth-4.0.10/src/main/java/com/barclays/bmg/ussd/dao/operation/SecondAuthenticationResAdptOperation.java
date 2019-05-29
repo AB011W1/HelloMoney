@@ -19,7 +19,7 @@ import com.barclays.bmg.constants.ResponseCodeConstants;
 import com.barclays.bmg.context.Context;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.dao.core.context.impl.DAOContext;
-import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperation;
+import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperationAcct;
 import com.barclays.bmg.ussd.auth.service.request.SecondAuthenticationServiceRequest;
 import com.barclays.bmg.ussd.auth.service.response.SecondAuthenticationServiceResponse;
 
@@ -31,7 +31,7 @@ import com.barclays.bmg.ussd.auth.service.response.SecondAuthenticationServiceRe
  * @author E20043104
  * 
  */
-public class SecondAuthenticationResAdptOperation extends AbstractResAdptOperation {
+public class SecondAuthenticationResAdptOperation extends AbstractResAdptOperationAcct {
 
     private boolean isCryptoCall(WorkContext workContext) throws Exception {
 

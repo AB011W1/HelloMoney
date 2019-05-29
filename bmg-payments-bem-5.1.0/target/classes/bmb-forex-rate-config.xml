@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+   <!--  Interest Rates Controller Section  -->
+	<bean id="fxRateController"
+		class="com.barclays.bmg.mvc.controller.fxrate.FxRateController"
+		parent="bmbAbstractController">
+		<property name="fxRateOperation" ref="fxRateOperation" />
+		<property name="bmbJSONBuilder" ref="fxRateJSONBldr" />
+		<property name="activityId" value="PMT_FX_RATE" />
+		<property name="commandName" value="fxRateCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.fxrate.mvc.command.FxRateCommand" />
+	</bean>
+
+
+	<bean id="fxRateOperation"
+		class="com.barclays.bmg.operation.fxrate.FxRateOperation"  parent="bmbCommonOperation">
+		<property name="fxBoardRatesService" ref="fxBoardRatesServiceImpl" />
+	</bean>
+
+	<bean id="fxRateJSONBldr"
+		class="com.barclays.bmg.json.model.builder.fxrate.FxRateJSONBldr">
+	</bean>
+
+	<bean id="fxBoardRatesServiceImpl"
+		class="com.barclays.bmg.service.impl.FXBoardRatesServiceImpl">
+		<property name="fxBoardRatesDAO" ref="fxBoardRatesDAO" />
+	</bean>
+
+</beans>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+	<bean id="airTimeTopUpInItController"
+		class="com.barclays.bmg.airtimetopup.mvc.controller.AirTimeTopUpInItController" parent="bmbAbstractController">
+		<property name="retrievePayeeListOperation" ref="retrieveBPPayeeListOperation" />
+		<property name="retrieveAccountListOperation" ref="retrieveAccountListOperation" />
+		<property name="airTimeTopUpOperation" ref="airTimeTopUpOperation" />
+		<property name="bmbJSONBuilder" ref="airTimeTopUpInitJSONBldr" />
+		<property name="activityId" value="PMT_BP_MOBILE_TOPUP_PAYEE" />
+		<property name="payGrp" value="MTP" />
+		<property name="billerType" value="Telephone" />
+
+
+	</bean>
+	<bean id="airTimeTopUpInitJSONBldr"
+		class="com.barclays.bmg.json.model.buiider.airtimetopup.AirTimeTopUpInitJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<bean id="airTimeTopUpValidateController"
+		class="com.barclays.bmg.airtimetopup.mvc.controller.AirTimeTopUpValidateController" parent="bmbAbstractCommandController">
+		<property name="accountSummaryOperation" ref="accountSummaryOperation" />
+		<property name="getSelectedAccountOperation" ref="getSelectedAccountOperation" />
+		<property name="formValidateOperation" ref="formValidateOperation" />
+		<property name="airTimeTopUpValidate" ref="airTimeTopUpValidate" />
+		<property name="ownFundTransferRel1ValidateOperation" ref="ownFundTransferRel1ValidateOperation" />
+		<property name="airTimeTopUpOperation" ref="airTimeTopUpOperation" />
+		<property name="commandName" value="airTimeTopUpValidateCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.airtimetopup.command.AirTimeTopUpValidateCommand" />
+		<property name="validator" ref="airTimeTopUpValidateValidation" />
+		<property name="activityId" value="PMT_BP_MOBILE_TOPUP_PAYEE" />
+		<property name="payGrp" value="MTP" />
+		<property name="billerType" value="Telephone" />
+		<property name="bmbJSONBuilder" ref="airTimeTopUpValidateJSONBldr" />
+
+	</bean>
+
+<bean id="airTimeTopUpValidateJSONBldr"
+		class="com.barclays.bmg.json.model.buiider.airtimetopup.AirTimeTopUpValidateJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<bean id="airTimeTopUpOperation"
+		class="com.barclays.bmg.airtimetopup.operation.AirTimeTopUpOperation" parent="bmbPaymentsOperation">
+		<!--<property name="airTimeTopUpOperationService" ref="airTimeTopUpOperationService" />-->
+	</bean>
+
+	<bean id="airTimeTopUpValidateValidation"
+		class="com.barclays.bmg.airtimetopup.mvc.validation.AirTimeTopUpValidateValidation">
+
+	</bean>
+
+	<bean id="airTimeTopUpOperationService"
+		class="com.barclays.bmg.airtimetopup.operation.AirTimeTopUpOperationService" parent="bmbPaymentsOperation">
+	</bean>
+
+</beans>

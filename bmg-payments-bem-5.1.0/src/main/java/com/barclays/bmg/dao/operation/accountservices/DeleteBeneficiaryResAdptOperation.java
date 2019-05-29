@@ -8,7 +8,7 @@ import com.barclays.bmg.service.response.DeleteBeneficiaryServiceResponse;
  * @author BTCI
  *
  */
-public class DeleteBeneficiaryResAdptOperation extends AbstractResAdptOperation {
+public class DeleteBeneficiaryResAdptOperation extends AbstractResAdptOperationAcct {
 
 	/**
 	 * @param workContext

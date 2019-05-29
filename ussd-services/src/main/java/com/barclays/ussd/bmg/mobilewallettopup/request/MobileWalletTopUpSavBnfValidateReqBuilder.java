@@ -8,9 +8,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.auth.bean.UserProfile;
-import com.barclays.ussd.bean.BillerArea;
 import com.barclays.ussd.bmg.dto.RequestBuilderParamsDTO;
 import com.barclays.ussd.bmg.factory.request.BmgBaseRequestBuilder;
 import com.barclays.ussd.common.services.IBillersLstService;
@@ -25,7 +23,6 @@ import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDExceptions;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.jsonparsers.bean.mobilewallettopup.MobileWalletProvider;
-import com.barclays.ussd.utils.jsonparsers.bean.mobilewallettopup.SrcAccount;
 import com.barclays.ussd.validation.USSDCompositeValidator;
 import com.barclays.ussd.validation.USSDLengthValidator;
 
@@ -69,8 +66,6 @@ public class MobileWalletTopUpSavBnfValidateReqBuilder implements BmgBaseRequest
 	    e.setErrorCode(USSDExceptions.USSD_PAYEE_NICK_NAME_INVALID_LEN.getUssdErrorCode());
 	    throw e;
 	}
-	USSDSessionManagement ussdSessionMgmt = requestBuilderParamsDTO.getUssdSessionMgmt();
-
 
 	requestParamMap.put(USSDInputParamsEnum.MOBILE_WALLET_SAVE_BEN_NICK_NAME.getParamName(),requestBuilderParamsDTO.getUserInput());
 requestParamMap.put(USSDInputParamsEnum.REG_BILLER_GET_REFNO.getParamName(), userInputMap.get(USSDInputParamsEnum.MOBILE_WALLET_ACCOUNT_NUMBER.getParamName()));

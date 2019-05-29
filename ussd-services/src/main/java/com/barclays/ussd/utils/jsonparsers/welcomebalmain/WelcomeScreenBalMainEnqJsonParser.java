@@ -84,11 +84,13 @@ public class WelcomeScreenBalMainEnqJsonParser implements BmgBaseJsonParser {
 	    }
 
 	    // insert the back and home options
+	    if(null != menuItemDTO){
 	    USSDUtils.appendHomeAndBackOption(menuItemDTO, responseBuilderParamsDTO);
 	    menuItemDTO.setPageHeader(responseBuilderParamsDTO.getHeaderId());
 	    menuItemDTO.setPaginationType(PaginationEnum.SPACED);
 	    menuItemDTO.setStatus(USSDConstants.STATUS_CONTINUE);
 	    setNextScreenSequenceNumber(menuItemDTO);
+	    }
 	}
 
 	return menuItemDTO;

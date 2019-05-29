@@ -17,6 +17,7 @@ import com.barclays.bmg.constants.BMGProcessConstants;
 import com.barclays.bmg.constants.CommonConstants;
 import com.barclays.bmg.constants.FundTransferConstants;
 import com.barclays.bmg.constants.SessionConstant;
+import com.barclays.bmg.constants.SystemParameterConstant;
 import com.barclays.bmg.context.Context;
 import com.barclays.bmg.context.ResponseContext;
 import com.barclays.bmg.dto.Amount;
@@ -162,7 +163,16 @@ public class OwnFundtransferValidateController extends BMBAbstractCommandControl
 						selSourceAcctOpResp.getSelectedAcct().getCurrency(),
 						selDestAcctOpResp.getSelectedAcct().getCurrency(),
 						formValidateOperationResponse);
+			}/*
+			fund transfer Own UGBRB,BWBRB,ZMBRB,GHBRB
+			*/
+			//change CBP
+
+			Map<String, Object> contextMap = context.getContextMap();
+			if(contextMap!=null && contextMap.get(SystemParameterConstant.isCBPFLAG).equals("Y")){
+				context.setOpCde(httpRequest.getParameter("opCde"));
 			}
+
 
 			if (formValidateOperationResponse.isSuccess()) {
 			formValidateOperationResponse = formValidateOperation.validateForm(formValidateOperationRequest);

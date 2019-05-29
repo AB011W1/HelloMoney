@@ -2,7 +2,6 @@ package com.barclays.ussd.utils.jsonparsers;
 
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -64,7 +63,6 @@ public class KitsSendToAccountBankListJsonParser implements BmgBaseJsonParser{
 	    	}
 	    	try {
 	    		Set<String> keySet=bankDetailsMap.keySet();
-		    	Collection<String> valueSet=bankDetailsMap.values();
 		    	List<String> keyList=new ArrayList<String>(keySet);
 		    	Collections.sort(keyList);
 
@@ -81,14 +79,14 @@ public class KitsSendToAccountBankListJsonParser implements BmgBaseJsonParser{
 
 	    		} else {
 	    			LOGGER.error("Error while servicing USSDExceptions.USSD_BANK_CODE_LIST_INVALID.getBmgCode()");
-	    			throw new USSDNonBlockingException(USSDExceptions.USSD_BANK_CODE_LIST_INVALID.getBmgCode());
+	    			throw new USSDNonBlockingException(USSDExceptions.USSD_BANK_CODE_LIST_INVALID.getBmgCode(),true);
 	    		}
 	    	} catch (Exception e) {
 	    		    LOGGER.error("Exception : ", e);
 	    		if (e instanceof USSDNonBlockingException) {
-	    			throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode());
+	    			throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode(),true);
 	    		} else {
-	    			throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+	    			throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 	    		}
 	    	}
 
@@ -110,7 +108,6 @@ public class KitsSendToAccountBankListJsonParser implements BmgBaseJsonParser{
 	    	int index = 1;
 
 	    	Set<String> keySet=bankDetailsMap.keySet();
-	    	Collection<String> valueSet=bankDetailsMap.values();
 	    	List<String> keyList=new ArrayList<String>(keySet);
 	    	Collections.sort(keyList);
 
@@ -139,7 +136,7 @@ public class KitsSendToAccountBankListJsonParser implements BmgBaseJsonParser{
 	    	if (listValueCacheDTO == null) {
 	    	    LOGGER.fatal("System preferences not set for" + listValReq.getListValueKey());
 	    	    throw new USSDNonBlockingException(USSDExceptions.USSD_BANK_CODE_LIST_INVALID.getBmgCode(), USSDExceptions.USSD_BANK_CODE_LIST_INVALID
-	    		    .getUssdErrorCode());
+	    		    .getUssdErrorCode(),true);
 	    	}
 	    	return listValueCacheDTO;
 	        }

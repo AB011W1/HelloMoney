@@ -1,0 +1,34 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Header/>
+  <soapenv:Body>
+<NS1:SearchIndividualCustomerInformationResponse xmlns:NS1="http://barclays.com/bem/SearchIndividualCustInformation">
+  <NS1:ResponseHeader>
+    <ServiceContext>
+      <ServiceID>SearchIndividualCustInformation</ServiceID>
+      <ConsumerUniqueRefNo>15217845514455-01</ConsumerUniqueRefNo>
+      <OriginalConsumerUniqueRefNo>15217845848303</OriginalConsumerUniqueRefNo>
+      <ServiceDateTime>2018-03-23T08:56:24.830Z</ServiceDateTime>
+      <ServiceVersionNo>6.0.0</ServiceVersionNo>
+      <OverrideRequestFlag>false</OverrideRequestFlag>
+    </ServiceContext>
+    <BankUserContext>
+      <StaffType>Regular</StaffType>
+      <StaffID>IFE</StaffID>
+      <AuthorizerID>Z00019789</AuthorizerID>
+    </BankUserContext>
+    <ServiceResStatus>
+      <ServiceResCode>00000</ServiceResCode>
+      <ServiceResDesc>Success</ServiceResDesc>
+      <ServiceRespDateTime>2018-03-23T05:56:26.479804</ServiceRespDateTime>
+    </ServiceResStatus>
+  </NS1:ResponseHeader>
+  <NS1:IndividualCustomerBasicDetails>
+    <NS1:IndividualCustomerBasic>
+      <NS2:IndividualName xmlns:NS2="http://barclays.com/bem/Individual">
+        <NS3:FullName xmlns:NS3="http://barclays.com/bem/IndividualName">JointOR3  Yberuew</NS3:FullName>
+      </NS2:IndividualName>
+    </NS1:IndividualCustomerBasic>
+  </NS1:IndividualCustomerBasicDetails>
+</NS1:SearchIndividualCustomerInformationResponse>
+</soapenv:Body>
+</soapenv:Envelope> 

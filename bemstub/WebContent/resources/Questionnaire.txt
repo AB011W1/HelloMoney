@@ -1,0 +1,43 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <p587:RetrieveIndividualCustQuestionnaireResponse xmlns:p587="http://barclays.com/bem/RetrieveIndividualCustQuestionnaire">
+      <p587:ResponseHeader>
+        <ServiceContext>
+          <ServiceID>RetrieveCustomerQuestionnaire</ServiceID>
+          <ConsumerUniqueRefNo>13996297499112</ConsumerUniqueRefNo>
+          <OriginalConsumerUniqueRefNo>13996297499112</OriginalConsumerUniqueRefNo>
+          <ServiceDateTime>2014-05-09T12:02:30.230Z</ServiceDateTime>
+          <ServiceVersionNo>6.0.0</ServiceVersionNo>
+          <OverrideRequestFlag>0</OverrideRequestFlag>
+        </ServiceContext>
+        <BankUserContext>
+          <StaffType>Regular</StaffType>
+          <StaffID>IFE</StaffID>
+          <AuthorizerID>Z00019789</AuthorizerID>
+        </BankUserContext>
+        <ServiceResStatus>
+          <ServiceResCode>00000</ServiceResCode>
+          <ServiceResDesc>Success</ServiceResDesc>
+          <ServiceRespDateTime>2014-05-09T10:02:30.369Z</ServiceRespDateTime>
+          <ServiceUniqueRefNo xsi:nil="true"/>
+        </ServiceResStatus>
+      </p587:ResponseHeader>
+      <p587:RetrieveDataResponse>
+        <p587:Questionnaire>
+          <p587:Questionnaire xmlns:p253="http://barclays.com/bem/Questionnaire">
+            <p253:QuestionDataGroup>
+              <p253:QuestionData>
+                <p253:QuestionId>Q5</p253:QuestionId>
+                <p253:QuestionResponses>
+                  <p253:ResponseId>01274140</p253:ResponseId>
+                  <p253:Text>4,7</p253:Text>
+                </p253:QuestionResponses>
+              </p253:QuestionData>
+            </p253:QuestionDataGroup>
+          </p587:Questionnaire>
+        </p587:Questionnaire>
+      </p587:RetrieveDataResponse>
+    </p587:RetrieveIndividualCustQuestionnaireResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

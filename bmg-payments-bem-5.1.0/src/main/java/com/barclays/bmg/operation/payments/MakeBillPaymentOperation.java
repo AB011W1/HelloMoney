@@ -159,9 +159,9 @@ public class MakeBillPaymentOperation extends BMBPaymentsOperation {
 	payBillServiceRequest.setExternalBillerId(transactionDTO.getBeneficiaryDTO().getExternalBillerId());
 
 	//CPB MakeBillPayment fields DTO - 10/05
-	if(request.getContext().getBusinessId().equals("KEBRB")){
+	if(request.getContext().getBusinessId().equals("KEBRB") || request.getContext().getBusinessId().equals("UGBRB")){
 		payBillServiceRequest.setChargeDTO(transactionDTO.getChargeDTO());
-	}
+    }
 
 	return payBillServiceRequest;
     }

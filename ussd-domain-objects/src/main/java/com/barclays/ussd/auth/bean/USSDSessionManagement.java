@@ -3,6 +3,7 @@ package com.barclays.ussd.auth.bean;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bean.Transaction;
@@ -111,6 +112,29 @@ public class USSDSessionManagement implements Serializable {
 	//Forgot Pin Change
 	private boolean isForgotPinFlow=false;
 
+	private List custaccountList;
+
+	List transactionList;
+	Set<String> finalTransactionList;
+
+	public Set<String> getFinalTransactionList() {
+		return finalTransactionList;
+	}
+	public void setFinalTransactionList(Set<String> finalTransactionList) {
+		this.finalTransactionList = finalTransactionList;
+	}
+	public List getTransactionList() {
+		return transactionList;
+	}
+	public void setTransactionList(List transactionList) {
+		this.transactionList = transactionList;
+	}
+	public List getCustaccountList() {
+		return custaccountList;
+	}
+	public void setCustaccountList(List custaccountList) {
+		this.custaccountList = custaccountList;
+	}
 	//FreeDialUSSD
 	public void setFreeDialUssdFlow(boolean isFreeDialUssdFlow) {
 		this.isFreeDialUssdFlow = isFreeDialUssdFlow;

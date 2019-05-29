@@ -105,6 +105,17 @@ public class FreeDialController extends USSDAbstractController {
 
 		    ussdSessionMgmt.setTxSessions(userInputMap);
 	    }
+	  //added for Zambia (mani)
+	    if(ussdRequest.getExtra().equals("FREEDIALAIRTELZM")){
+		    ussdSessionMgmt.setScreenId("400");
+		    ussdSessionMgmt.setCurrentScreenNodeId("ussd5.00");
+		    Map<String,Object> userInputMap=new HashMap<String,Object>();
+		    userInputMap.put("extra", "FREEDIALAIRTELZM");
+		    userInputMap.put("txnAmt", ussdRequest.getAmount());
+		    userInputMap.put("mblNo", msisdn);
+
+		    ussdSessionMgmt.setTxSessions(userInputMap);
+	    }
 
 	    ussdSessionMgmt.setCustomerType(USSDConstants.CUSTOMER_TYPE_USER_SESSION_RETENTION);
 	    ussdSessionMgmt.setTransactionFlag(false);

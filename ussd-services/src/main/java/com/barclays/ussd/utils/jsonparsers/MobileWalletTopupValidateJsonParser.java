@@ -9,10 +9,9 @@ import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.barclays.bmg.context.BMBContextHolder;
+import com.barclays.bmg.context.BMGContextHolder;
+import com.barclays.bmg.context.BMGGlobalContext;
 import com.barclays.bmg.dao.product.impl.ListValueResDAOImpl;
-import com.barclays.bmg.service.product.request.ListValueResServiceRequest;
-import com.barclays.bmg.service.product.response.ListValueResByGroupServiceResponse;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
@@ -24,7 +23,6 @@ import com.barclays.ussd.utils.USSDExceptions;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
-import com.barclays.ussd.utils.jsonparsers.bean.login.AuthUserData;
 import com.barclays.ussd.utils.jsonparsers.bean.mobilewallettopup.MobileWalletTxValidate;
 import com.barclays.ussd.utils.jsonparsers.bean.mobilewallettopup.MobileWalletTxValidatePayData;
 
@@ -102,12 +100,8 @@ public class MobileWalletTopupValidateJsonParser implements BmgBaseJsonParser {
 	    Locale locale = new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode());
 	    String fromAccLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(DEBIACCNUM_LABEL, locale);
 	    String mobileWalletAccountNumberLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel("label.mobile.number", locale);
-	    String mobileWalletHeader = responseBuilderParamsDTO.getUssdResourceBundle().getLabel("label.transaction.mwallet", locale);
 	    String mobileWalletServiceLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel("label.transaction.service", locale);
-	    String mnoLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(MNOPROVIDER_LABEL, locale);
 	    String creditCard = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(CREDIT_LABEL, locale);
-
-	    String mobileWalletAmountLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(RECHARGE_AMOUNT, locale);
 	    /* Not set in credit card so removed 24/05/2017
 	     * String accountNo=mobileWalletTxValidatePayData.getSrcAcct().getMkdActNo();
 	     */
@@ -146,10 +140,14 @@ public class MobileWalletTopupValidateJsonParser implements BmgBaseJsonParser {
 		pilotValue = listResp.getListValueCahceDTO().get(0).getLabel();*/
 
 		// Removing PilotValue check(pilotValue !=null && pilotValue.equalsIgnoreCase("Y")) its not going with Regulatory 6.0.0 changes - 02/11/2017
-		if(mobileWalletTxValidatePayData.getTxnAmt()!= null && mobileWalletTxValidatePayData.getCreditcardJsonMod() == null
-				&& responseBuilderParamsDTO.getUssdSessionMgmt().getBusinessId().equals("KEBRB")){
+
+     	//CBP Change
+	    BMGGlobalContext logContext = BMGContextHolder.getLogContext();
+
+		if((logContext !=null && logContext.getContextMap().get("isCBPFLAG").equals("Y")|| logContext.getBusinessId().equals("KEBRB")) && mobileWalletTxValidatePayData.getTxnAmt()!= null && mobileWalletTxValidatePayData.getCreditcardJsonMod() == null
+				 /*responseBuilderParamsDTO.getUssdSessionMgmt().getBusinessId().equals("KEBRB")*/){
 			// Transaction fee only for CASA - CBP
-		    if(responseBuilderParamsDTO.getUssdSessionMgmt().getBusinessId().equals("KEBRB") && mobileWalletTxValidatePayData.getCreditcardJsonMod() == null
+		    if((logContext !=null && logContext.getContextMap().get("isCBPFLAG").equals("Y") || logContext.getBusinessId().equals("KEBRB")) && mobileWalletTxValidatePayData.getCreditcardJsonMod() == null
 		    		&& mobileWalletTxValidatePayData.getSrcAcct()!=null && mobileWalletTxValidatePayData.getTxnAmt().getAmt()!=null){
 
 		    	Double accumulatedCharge = 0.0;

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="MCFE">
+	<typeAlias alias="billerCreditDTO" type="com.barclays.bmg.dto.BillerCreditDTO" />
+
+	<resultMap id="BillerCreditInfo" class="billerCreditDTO">
+		<result property="businessId" column="BUSINESS_ID" />
+		<result property="billerId" column="BILLER_ID" />
+		<result property="systemId" column="SYSTEM_ID" />
+		<result property="actionCode" column="ACTION_CODE" />
+		<result property="storeNumber" column="STORE_NUMBER" />
+	</resultMap>
+
+	<select id="getActionCodeForBillerId" resultMap="BillerCreditInfo">
+		select * from C_BILLER_CREDIT_MST
+		where
+		C_BILLER_CREDIT_MST.BUSINESS_ID= #businessId# and
+		C_BILLER_CREDIT_MST.BILLER_ID=#billerId#
+	</select>
+
+</sqlMap>

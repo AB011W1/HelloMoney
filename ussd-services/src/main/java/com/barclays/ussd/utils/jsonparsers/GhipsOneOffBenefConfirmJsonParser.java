@@ -54,8 +54,8 @@ public class GhipsOneOffBenefConfirmJsonParser implements BmgBaseJsonParser {
 										regBenfInt.getPayHdr().getResCde())) {
 					menuDTO = renderMenuOnScreen(regBenfInt.getPayData(),
 							responseBuilderParamsDTO);
-					String txnRefNo = new String ("");
-					txnRefNo=regBenfInt.getPayData().getTxnRefNo();
+
+					String txnRefNo=regBenfInt.getPayData().getTxnRefNo();
 
 					Map<String, Object> txSessions = responseBuilderParamsDTO
 							.getUssdSessionMgmt().getTxSessions();

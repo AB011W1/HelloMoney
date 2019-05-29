@@ -3,7 +3,6 @@ package com.barclays.bmg.json.model.builder.accountdetails;
 import java.util.List;
 
 import com.barclays.bmg.constants.ResponseIdConstants;
-import com.barclays.bmg.context.BMBContextHolder;
 import com.barclays.bmg.context.ResponseContext;
 import com.barclays.bmg.dto.AccountTrnxDTO;
 import com.barclays.bmg.dto.AccountTrnxHistoryDTO;
@@ -57,12 +56,12 @@ public class CasaAccountMiniStetementJSONBldr extends BMBCommonJSONBuilder imple
 	    List<AccountTrnxDTO> trnsactionActivityList = null;
 
 	    if (response.getAccountTrnxHistoryDTO() != null) {
-		if (branchCodeCountryList.contains(BMBContextHolder.getContext().getBusinessId())) {
+		//if (branchCodeCountryList.contains(BMBContextHolder.getContext().getBusinessId())) {
 		    // TODO Check branch code
 		    maskedActNo = getMaskedAccountNumber(null, accountTrnxHistoryDTO.getAccountNumber());
-		} else {
+		/*} else {
 		    maskedActNo = getMaskedAccountNumber(null, accountTrnxHistoryDTO.getAccountNumber());
-		}
+		}*/
 		trnsactionActivityList = response.getAccountTrnxHistoryDTO().getTrnsactionActivityList();
 	    }
 

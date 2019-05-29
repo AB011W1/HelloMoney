@@ -1,7 +1,5 @@
 package com.barclays.ussd.utils.jsonparsers;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -12,10 +10,9 @@ import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.barclays.bmg.context.BMBContextHolder;
+import com.barclays.bmg.context.BMGContextHolder;
+import com.barclays.bmg.context.BMGGlobalContext;
 import com.barclays.bmg.dao.product.impl.ListValueResDAOImpl;
-import com.barclays.bmg.service.product.request.ListValueResServiceRequest;
-import com.barclays.bmg.service.product.response.ListValueResByGroupServiceResponse;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
@@ -28,10 +25,6 @@ import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
 import com.barclays.ussd.utils.UssdResourceBundle;
-import com.barclays.ussd.utils.jsonparsers.bean.airtime.Account;
-import com.barclays.ussd.utils.jsonparsers.bean.airtime.AirtimeValidatePayData;
-import com.barclays.ussd.utils.jsonparsers.bean.airtime.AirtimeValidateResponse;
-import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
 import com.barclays.ussd.utils.jsonparsers.bean.pesalink.CpbPesaLinkValidate;
 import com.barclays.ussd.utils.jsonparsers.bean.pesalink.CpbPesaLinkValidatePayData;
 
@@ -66,27 +59,27 @@ public class KitsSendToPhoneConfirmDetailsJsonParser implements BmgBaseJsonParse
 					menuDTO = renderMenuOnScreen(cpbValidateObj.getPayData(), responseBuilderParamsDTO);
 				}else if (cpbValidateObj.getPayHdr() != null
 						&& TRANSACTION_AMT_LIMIT_ERROR.equalsIgnoreCase(cpbValidateObj.getPayHdr().getResCde())) {
-				    throw new USSDNonBlockingException(USSDExceptions.USSD_BILL_PAY_TRAN_AMT_LIMIT_EXCEEDED.getBmgCode());
+				    throw new USSDNonBlockingException(USSDExceptions.USSD_BILL_PAY_TRAN_AMT_LIMIT_EXCEEDED.getBmgCode(),true);
 				} else if (cpbValidateObj.getPayHdr() != null) {
 				    LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
-				    throw new USSDNonBlockingException(cpbValidateObj.getPayHdr().getResCde());
+				    throw new USSDNonBlockingException(cpbValidateObj.getPayHdr().getResCde(),true);
 				} else {
 				    LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
-				    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+				    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 				}
 			 }
 	   } catch (JsonParseException e) {
 		    LOGGER.error("JsonParseException : ", e);
-		    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+		    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 		} catch (JsonMappingException e) {
 		    LOGGER.error("JsonParseException : ", e);
-		    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+		    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 		} catch (Exception e) {
 		    LOGGER.error("Exception : ", e);
 		    if (e instanceof USSDNonBlockingException) {
-			throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode());
+			throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode(),true);
 		    } else {
-			throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+			throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 		    }
 		}
 
@@ -107,7 +100,6 @@ public class KitsSendToPhoneConfirmDetailsJsonParser implements BmgBaseJsonParse
 	    String language = ussdSessionMgmt.getUserProfile().getLanguage();
 	    String countryCode = ussdSessionMgmt.getUserProfile().getCountryCode();
 	    Locale locale = new Locale(language, countryCode);
-	    String confirmLabel = ussdResourceBundle.getLabel(USSDConstants.LBL_CONFIRM, locale);
 
 	    String NumLabel = ussdResourceBundle.getLabel(USSDConstants.NUMBER, locale);
 	    String bankLabel= ussdResourceBundle.getLabel(USSDConstants.BANK, locale);
@@ -134,9 +126,8 @@ public class KitsSendToPhoneConfirmDetailsJsonParser implements BmgBaseJsonParse
         String namelabel=ussdResourceBundle.getLabel(USSDConstants.NAME, locale);
 
         int bankNameSequence=0;
-        List<String> bankList=new ArrayList<String>();
 
-        bankList=(List<String>)(((List) (ussdSessionMgmt.getTxSessions().get(USSDInputParamsEnum.KITS_STP_BANK_NAME.getTranId()))).get(1));
+        List<String> bankList=(List<String>)(((List) (ussdSessionMgmt.getTxSessions().get(USSDInputParamsEnum.KITS_STP_BANK_NAME.getTranId()))).get(1));
     	individualName=(String)(((List) (ussdSessionMgmt.getTxSessions().get(USSDInputParamsEnum.KITS_STP_BANK_NAME.getTranId()))).get(0));
 
     	pageBody.append(USSDConstants.NEW_LINE);
@@ -187,7 +178,8 @@ public class KitsSendToPhoneConfirmDetailsJsonParser implements BmgBaseJsonParse
 
 		//CPB change
 		// Removing PilotValue check(pilotValue !=null && pilotValue.equalsIgnoreCase("Y")) its not going with Regulatory 6.0.0 changes - 02/11/2017
-	    if(responseBuilderParamsDTO.getUssdSessionMgmt().getBusinessId().equals("KEBRB") && cpbValidatePayData.getTransactionFeeAmount()!=null){
+	    BMGGlobalContext logContext = BMGContextHolder.getLogContext();
+	    if((logContext!=null && (logContext.getContextMap().get("isCBPFLAG").equals("Y") || logContext.getBusinessId().equals("KEBRB"))) && cpbValidatePayData.getTransactionFeeAmount()!=null){
 
 		    String transactionFeeLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(TRANSACTION_FEE_LABEL, locale);
 		    if(cpbValidatePayData.getTransactionFeeAmount().getAmt()!=null){
@@ -200,6 +192,7 @@ public class KitsSendToPhoneConfirmDetailsJsonParser implements BmgBaseJsonParse
 					accumulatedCharge = tranFee + taxAmt;
 					roundedAccumulatedVal =(double) Math.round(accumulatedCharge * 100) / 100;
 				}
+
 
 		    	pageBody.append(USSDConstants.NEW_LINE);
 			    pageBody.append(transactionFeeLabel);

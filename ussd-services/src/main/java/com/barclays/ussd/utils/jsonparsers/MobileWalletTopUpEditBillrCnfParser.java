@@ -22,7 +22,6 @@ import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
 import com.barclays.ussd.utils.jsonparsers.bean.billpay.Beneficiery;
-import com.barclays.ussd.utils.jsonparsers.bean.fundtransfer.ownfundtransfer.DelBenefConfirm;
 import com.barclays.ussd.utils.jsonparsers.bean.regbiller.ValidateRegBillerBean;
 import com.barclays.ussd.utils.jsonparsers.bean.regbiller.ValidateRegBillerPayData;
 
@@ -88,7 +87,9 @@ public class MobileWalletTopUpEditBillrCnfParser implements BmgBaseJsonParser {
 
 			    }
 			}
-		    String nickName = bene.getDisLbl();
+		    String nickName = null;
+		    if(null != bene)
+		    	nickName = bene.getDisLbl();
 		    List<String> params = new ArrayList<String>(1);
 			params.add(nickName);
 			String[] paramArray = params.toArray(new String[params.size()]);

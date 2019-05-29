@@ -1,0 +1,511 @@
+table.parentContainer{
+	height: 100%;
+	width: 100%;
+	border: 2px;
+}
+
+tr.headerRow{
+	height: 10%;
+	width: 100%;
+}
+
+div.barclaysRibbon{
+	background-color: rgb(0,172,234);
+    width: 1175px;
+    height: 50px;
+    padding: 30px;
+    border: 0px;
+    border-radius:10px;
+    margin: 10px;
+}
+
+div.scrollPanel{
+	background-color: rgb(0,172,234);
+	height: 25px;
+    padding: 2px;
+    border: 0px;
+    border-radius:6px;
+    width: 1220px;
+    color: white;
+    font-family: fieldLabelFont;
+    font-size:large;
+    text-align: center;
+    margin: 10px;
+    margin-top:0px;
+}
+
+div.scrollContent1, div.scrollContent2, div.scrollContent3{
+	font-family: fieldLabelFont;
+	color: white;
+	background-color: rgb(0,204,0);
+	height: 250px;
+	padding: 2px;
+	padding-left: 4px;
+    border: 0px;
+    border-radius:6px;
+    width: 223px;
+    margin: 10px;
+    margin-left: 300px;
+    margin-bottom: 0px;
+    display: none;
+    position: fixed;
+}
+
+div.scrollContent2{
+	margin-left: 865px;
+}
+
+div.scrollContent3{
+	background-color: white;
+	padding:0px;
+	width: 350px;
+	height:25px;
+	margin:0px;
+	margin-left:3px;
+}
+
+div.footer4{
+	display: inline-block;
+	margin-left: 15px;
+	width: 350px;
+	height:25px;
+	margin-bottom:12px;
+}
+
+
+
+textarea.request, textarea.response, textarea.url {
+	width: 218px;
+	height: 210px;
+    border-radius:8px;
+    border: 0px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+	overflow: auto;
+	display: inline-block;
+	-webkit-position: center;
+	-o-position: center;
+	position: center;
+	font-family: fieldLabelFont;
+	-webkit-resize:none;
+	-o-resize:none;
+	resize:none;
+	color: graytext;
+}
+
+textarea.url {
+	border:2px;
+	border-style:solid;
+	border-color: rgb(0,204,0);
+	width: 330px;
+	height:15px;
+	font-size: small;
+}
+
+@font-face {
+   font-family: fieldLabelFont;
+   src: url(../fonts/CALIBRI.TTF);
+}
+
+div.filterSideBar{
+	background-color: rgb(0,172,234);
+    width: 265px;
+    height: 450px;
+    padding: 10px;
+    border: 0px;
+    border-radius:5px;
+    margin: 10px;
+    color: white;
+    font-family: fieldLabelFont;
+
+}
+
+img.barclaysLogo{
+	height: 40px;
+	width: 200px;
+}
+
+select.dropDown{
+	border: 0 !important;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-color: Transparent;
+  	background: white url("../images/dropdown.png") no-repeat 100%;
+	width: 150px;
+	height: 20px;
+	text-indent: 0.01px;
+	text-overflow: "";
+	color: graytext;
+	border-radius: 2px;
+	padding-right: 10px;
+	margin:2px;
+	margin-right:5px;
+	margin-top:3px;
+	float: right;
+	display: inline;
+}
+
+input.filterInput{
+	border: 0 !important;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	width: 140px;
+	height: 18px;
+	text-indent: 0.01px;
+	text-overflow: "";
+	color: graytext;
+	border-radius: 2px;
+	padding-right: 10px;
+	margin:2px;
+	margin-right:5px;
+	margin-top:3px;
+	float: right;
+	display: inline;
+}
+
+label.fieldLabel{
+	padding: 2px;
+	padding-top: 2px;
+	margin: 2px;
+	height: 18px;
+	display: inline-block;
+	float: none;
+}
+
+label.simulatorTitle{
+	padding: 2px;
+	padding-top: 35px;
+	margin: 2px;
+	height: 18px;
+	display: inline-block;
+	float: right;
+	color: white;
+	font-family: fieldLabelFont;
+	font-size: x-large;
+}
+
+li.logNavigation{
+	display: block;
+}
+
+a.loglink:link, a.loglink:visited {
+    display: block;
+    font-weight: normal;
+    color: #ffffff;
+    background-color: #002EB8;
+    width: 80px;
+    line-height: 80px;
+    padding-top: 20px;
+    text-align: center;
+    margin-top: 5px;
+    padding: 4px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: fieldLabelFont;
+}
+
+a.linkHeader{
+	display: block;
+    font-weight: normal;
+    color: #ffffff;
+    background-color: #3366FF;
+    width: 80px;
+    line-height: 25px;
+    padding-top: 20px;
+    text-align: center;
+    margin-top: 5px;
+    padding: 4px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: fieldLabelFont;
+}
+
+
+div.handsetContainer{
+	background:url("../images/phone_black.png");
+	background-size: 300px 550px;
+	background-repeat: no-repeat;
+	padding-top: 70px;
+	padding-left: 19px;
+	margin-left:250px;
+	width: 300px;
+	height: 500px;
+}
+
+textarea.phoneScreen {
+	background-color: #85C247;
+    width: 248px;
+    height: 220px;
+    border-radius:8px;
+    border: 0px;
+    padding: 5px;
+    padding-top: 5px;
+    margin-top: 40px;
+    margin-left: 2px;
+	overflow: hidden;
+	display: inline-block;
+	-webkit-position: center;
+	-o-position: center;
+	position: center;
+	font-family: fieldLabelFont;
+	font-size: large;
+	color:black;
+	-webkit-resize:none;
+	-o-resize:none;
+	resize:none;
+}
+
+a.callKey:link, a.callKey:visited {
+    display: block;
+    font-weight: normal;
+    background-color: Transparent;
+  	background: black url("../images/call_key.png") no-repeat center;
+  	background-size:25px 25px;
+    width: 45px;
+    line-height: 25px;
+    padding-top: 10px;
+    padding-left: 20px;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #7A7A7A;
+    border-width: 2px;
+    font-family: fieldLabelFont;
+    display: inline-block;
+}
+
+
+
+a.disconnectKey:link, a.disconnectKey:visited {
+	display: block;
+    font-weight: normal;
+    background-color: Transparent;
+  	background: black url("../images/diconnect_key.png") no-repeat center;
+  	background-size:25px 25px;
+    width: 45px;
+    line-height: 25px;
+    padding-top: 10px;
+    padding-left: 20px;
+    text-align: center;
+    margin-top: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #7A7A7A;
+    border-width: 2px;
+    font-family: fieldLabelFont;
+    display: inline-block;
+}
+
+
+a.clearKey:link, a.clearKey:visited{
+	display: block;
+    font-weight: normal;
+    color: #ffffff;
+    background-color: black;
+    width: 60px;
+    line-height: 25px;
+    padding-top: 8px;
+    padding-bottom: 10px;
+    text-align: center;
+    margin-top: 2px;
+    padding: 4px;
+    text-decoration: none;
+    border-radius: 50px;
+    border-style: solid;
+    border-color: #7A7A7A;
+    border-width: 2px;
+    font-family: fieldLabelFont;
+    font-size: x-large;
+    display: inline-block;
+}
+
+a.numKey:link, a.numKey:visited{
+	display: block;
+    font-weight: normal;
+    color: #ffffff;
+    background-color: black;
+    width: 55px;
+    line-height: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    margin-top: 2px;
+    padding: 4px;
+    text-decoration: none;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #7A7A7A;
+    border-width: 2px;
+    font-family: fieldLabelFont;
+    font-size: large;
+    display: inline-block;
+}
+
+div.numKeys{
+	margin-left: 14px;
+}
+
+a.callKey:hover, a.disconnectKey:hover,a.clearKey:hover, a.numKey:hover{
+    background-color: #7A7A7A;
+}
+
+
+div.keypadContainer{
+	width: 250px;
+	padding-left: 13px;
+}
+
+a.alternateCallKey:link, a.alternateCallKey:visited {
+    display: block;
+    font-weight: normal;
+    background-color: Transparent;
+  	background: #002EB8 url("../images/call_key.png") no-repeat center;
+  	background-size:20px 20px;
+    width: 20px;
+    line-height: 15px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right:10px;
+    text-align: center;
+    margin-right:5px;
+    margin-top: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: fieldLabelFont;
+    float: right;
+    display: inline;
+}
+
+a.loglink:hover,a.alternateCallKey:hover{
+    /*background-color: #3366FF;*/
+    background-color: #FF6600;
+}
+
+a.callKey:active, a.disconnectKey:active, a.clearKey:active, a.numKey:active, a.loglink.active, a.alternateCallKey:active{
+    background-color: #00F500;
+}
+
+@font-face {
+   font-family: timeFont;
+   src: url(../fonts/digital_italic.ttf);
+}
+
+textarea.time{
+    font-weight: normal;
+    color: #00A300;
+    background-color: black;
+    width: 200px;
+    line-height: 40px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    margin-top: 2px;
+    padding: 4px;
+    overflow: hidden;
+    text-decoration: none;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #7A7A7A;
+    border-width: 2px;
+    font-family: timeFont;
+    font-size: 50px;
+    display: inline;
+    -webkit-resize:none;
+	-o-resize:none;
+	resize:none;
+}
+
+input.time, input.response{
+    font-weight: normal;
+    color: #00A300;
+    background-color: black;
+    width: 200px;
+    line-height: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    margin-top: 2px;
+    padding: 0px;
+    text-decoration: none;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #7A7A7A;
+    border-width: 2px;
+    font-family: timeFont;
+    font-size: x-large;
+    display: inline;
+}
+
+span.timer{
+	width: 130px;
+	font-family: fieldLabelFont;
+	background-color: white;
+	border-style: solid;
+	border-color: white;
+}
+
+input.response{
+	width: 200px;
+}
+
+input.timeUnits{
+    font-weight: normal;
+    color: #00A300;
+    background-color: black;
+    width: 150px;
+    line-height: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    margin-top: 2px;
+    padding: 0px;
+    text-decoration: none;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #7A7A7A;
+    border-width: 2px;
+    font-family: timeFont;
+    font-size: medium;
+    display: block;
+}
+
+div.timeContainer{
+	display: block;
+	padding-top: 20px;
+	width: 300px;
+	height: 200px;
+}
+
+
+div.navigationContainer{
+	width: 100px;
+	margin-left: 35px;
+	padding-right: 50px;
+	padding-left: 200px;
+}
+
+div.footer2, div.footer3{
+	display: inline-block;
+	margin-left: 300px;
+}
+
+div.footer3{
+	margin-left: 10px;
+}
+
+div.footer1{
+	background:url("../images/Barclays_Bird.png");
+	background-size: 160px 160px;
+	background-repeat: no-repeat;
+	height: 110px;
+	width: 130px;
+	margin-left: 70px;
+	marging-right: 	50px;
+	background-color: Transparent;
+}
+

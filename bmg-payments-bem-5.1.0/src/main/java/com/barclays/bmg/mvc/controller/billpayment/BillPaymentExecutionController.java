@@ -1,7 +1,5 @@
 package com.barclays.bmg.mvc.controller.billpayment;
 
-import java.util.HashMap;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -28,6 +26,7 @@ import com.barclays.bmg.mvc.controller.auth.BMBAbstractCommandController;
 import com.barclays.bmg.operation.OTPAuthenticationOperation;
 import com.barclays.bmg.operation.SQAAuthenticationOperation;
 import com.barclays.bmg.operation.payments.MakeBillPaymentOperation;
+import com.barclays.bmg.operation.payments.ManageFundtransferStatusOperation;
 import com.barclays.bmg.operation.request.OTPGenerateAuthenticationOperationRequest;
 import com.barclays.bmg.operation.request.SQAGenerateAuthenticationOperationRequest;
 import com.barclays.bmg.operation.request.billpayment.MakeBillPaymentOperationRequest;
@@ -45,6 +44,7 @@ public class BillPaymentExecutionController extends BMBAbstractCommandController
     private SQAAuthenticationOperation sqaAuthenticationOperation;
     private BMBJSONBuilder txnSQASecondAuthJSONBldr;
     private BMBMultipleResponseJSONBuilder bmbJSONBuilder;
+    private ManageFundtransferStatusOperation manageFundtransferStatusOperation;
 
     @Override
     protected String getActivityId(Object command) {
@@ -65,15 +65,19 @@ public class BillPaymentExecutionController extends BMBAbstractCommandController
 	}
 
 	Context context = createContext(httpRequest);
+
+
 	TransactionDTO transactionDTO = (TransactionDTO) getFromProcessMap(httpRequest, BMGProcessConstants.BILL_PAYMENT,
 		BillPaymentConstants.TRANSACTION_DTO);
 
+
 	String isGHMWFreeDialUssdFlow= String.valueOf(httpRequest.getParameter("isGHMWFreeDialUssdFlow"));
-	if(context.getBusinessId().equals("GHBRB") && isGHMWFreeDialUssdFlow!=null && isGHMWFreeDialUssdFlow.equals("TRUE")){
+	if(null != context && context.getBusinessId().equals("GHBRB") && isGHMWFreeDialUssdFlow!=null && isGHMWFreeDialUssdFlow.equals("TRUE")){
 		if(transactionDTO!=null){
 			transactionDTO.setAction(isGHMWFreeDialUssdFlow);
 		}
 	}
+
 	MakeBillPaymentOperationResponse makeBillPaymentOperationResponse = null;
 
 	String txnType = null;
@@ -82,14 +86,18 @@ public class BillPaymentExecutionController extends BMBAbstractCommandController
 	if (verified && transactionDTO != null) {
 
 	    txnType = transactionDTO.getTxnType();
-	    context.setActivityId(getActivityId(txnType));
+	    if(null != txnType)
+	    	context.setActivityId(getActivityId(txnType));
 	    if (BillPaymentConstants.TRUE.equals(getFromProcessMap(httpRequest, BMGProcessConstants.TXN_SECOND_LEVEL_AUTHENTICATION,
 		    BillPaymentConstants.SECOND_AUTH_DONE))) {
 		transactionDTO.setScndLvlauthReq(false);
 	    }
 
 	    //Set the fields for MakeBillPaymentRequest - CPB 15/05
-	    if(context.getBusinessId().equals("KEBRB")){
+	    // Check for UGBRB
+	    //CBP changes
+	    if((null != context && context.getBusinessId().equals("GHBRB")|| context.getBusinessId().equals("KEBRB")|| context.getBusinessId().equals("UGBRB")
+	    		|| context.getBusinessId().equals("ZMBRB") || context.getBusinessId().equals("BWBRB"))){
 		    context.setOpCde(httpRequest.getParameter("opCde"));
 			Charge chargeDTO = null;
 			// need to add opcode for the respective CPB make bill payment requests 26/05/2017
@@ -118,6 +126,12 @@ public class BillPaymentExecutionController extends BMBAbstractCommandController
 			//set charge DTO
 			transactionDTO.setChargeDTO(chargeDTO);
 	    }
+
+	    //For GePG
+	    if(null != context && "PMT_BP_BILLPAY_ONETIME".equalsIgnoreCase(context.getActivityId())){
+	    	context.setOpCde(httpRequest.getParameter("opCde"));
+	    }
+
 	    MakeBillPaymentOperationRequest makeBillPaymentOperationRequest = new MakeBillPaymentOperationRequest();
 	    makeBillPaymentOperationRequest.setContext(context);
 
@@ -312,5 +326,12 @@ public class BillPaymentExecutionController extends BMBAbstractCommandController
     public void setBmbJSONBuilder(BMBMultipleResponseJSONBuilder bmbJSONBuilder) {
 	this.bmbJSONBuilder = bmbJSONBuilder;
     }
+    public ManageFundtransferStatusOperation getManageFundtransferStatusOperation() {
+		return manageFundtransferStatusOperation;
+	}
 
+	public void setManageFundtransferStatusOperation(
+			ManageFundtransferStatusOperation manageFundtransferStatusOperation) {
+		this.manageFundtransferStatusOperation = manageFundtransferStatusOperation;
+	}
 }

@@ -11,6 +11,11 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.barclays.bmg.context.BMBContextHolder;
+import com.barclays.bmg.dto.SystemParameterDTO;
+import com.barclays.bmg.service.MessageResourceService;
+import com.barclays.bmg.service.request.MessageResourceServiceRequest;
+import com.barclays.bmg.service.response.MessageResourceServiceResponse;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.auth.bean.UserProfile;
 import com.barclays.ussd.bean.CurrentRunningTransaction;
@@ -73,6 +78,10 @@ public class UssdDecisionParser {
 
     @Autowired
     UssdServiceEnabler ussdServiceEnabler;
+
+    //Added for Kits error code fetching from DB
+    @Autowired
+    MessageResourceService messageResourceService;
 
     /** The Constant LOGGER. */
     private static final Logger LOGGER = Logger.getLogger(UssdDecisionParser.class);
@@ -175,6 +184,29 @@ public class UssdDecisionParser {
 			    menuItemDTO = callTheNonXMLParser(paramDTO, ussdSessionMgmt, errorCodes, navigationOptions);
 			}
 		    } else {
+
+		    	/** Code for generic method to fetch country-wise status flag list and check the current input selected based on screenId & optionId **/
+				UserProfile userProfile = ussdSessionMgmt.getUserProfile();
+				List<SystemParameterDTO> sysParamList = ussdServiceEnabler.getCountryWiseStatusFlagList(userProfile.getBusinessId());
+				String screenId="";
+				String optionId="";
+				String serviceName="";
+				for(SystemParameterDTO param : sysParamList){
+				String componentKey = param.getParamComponentKey()!=null ? param.getParamComponentKey() : "";
+				if(componentKey!=null && !componentKey.isEmpty()){
+					String[] keys = componentKey.split(",");
+					if(keys!=null && keys.length>1){
+						screenId = keys[0];
+						optionId = keys[1];
+						serviceName=keys[2];
+					}
+
+					if(screenId.equals(paramDTO.getCurrentScreenId()) && (optionId.equals(paramDTO.getUserInput()) || serviceName.equals(paramDTO.getServiceName()))){
+						throw  new USSDNonBlockingException(USSDExceptions.USSD_SERVICE_DISABLED_MAIN_MENU.getBmgCode());
+					}
+				  }
+				}
+
 			menuItemDTO.setStatus(USSDConstants.STATUS_CONTINUE);
 			ussdSessionMgmt.setScreenId(menuItemDTO.getNextScreenId());
 		    }
@@ -198,6 +230,59 @@ public class UssdDecisionParser {
 		LOGGER.debug("Throwing USSDBlockingException");
 	    }
 	    throw blockingExp;
+	} catch (USSDNonBlockingException ussdnbe){
+		LOGGER.error("Non-Blocking exception has occured.", ussdnbe);
+
+	    UssdDecisionParserParamDTO newParamDTO = null;
+
+	    AuthUserData userAuthObj = (AuthUserData) ussdSessionMgmt.getUserAuthObj();
+	    Transaction userTransaction = createTransaction(menuItemDTO);
+
+	    ussdSessionMgmt.setUserTransactionDetails(userTransaction);
+		//CurrentRunningTransaction previousTransaction = ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction();
+		//CurrentRunningTransaction currentRunningTransaction = getNextTransaction(ussdSessionMgmt, paramDTO);
+	    boolean pinChangeReq = false;
+	    if (userAuthObj != null) {
+		pinChangeReq = StringUtils.equalsIgnoreCase(userAuthObj.getPayData().getCustProf().getPinSta(), USSDConstants.PIN_CHANGE_REQ);
+	    }
+
+	    if (ussdSessionMgmt.isFirstRequest()
+		    && !StringUtils.equalsIgnoreCase(ussdSessionMgmt.getCustomerType(), USSDConstants.CUSTOMER_TYPE_NON_HM)) {
+		newParamDTO = ussdParser.performBackOperationForByePassTx(paramDTO, ussdSessionMgmt);
+		newParamDTO.setErrorneousPage(true);
+		menuItemDTO = getMenuList(newParamDTO, ussdSessionMgmt);
+		menuItemDTO.setTranId(null);
+		String errorCode = USSDExceptions.getUssdErrorCodeforBMG(ussdnbe.getErrorCode());
+		menuItemDTO.setPageError(errorCode);
+		menuItemDTO.setErrorParams(ussdnbe.getErrorParams());
+	    } else if (paramDTO.isByPassRequest() || pinChangeReq) {
+		ussdSessionMgmt.setErrorScreenParamDTO(paramDTO);
+		menuItemDTO = createErrorScreenForByePass(ussdnbe, ussdSessionMgmt);
+
+	    } else {
+		//CR-86 Back Flow changes
+		if(ussdnbe.isBackFlow()){
+			//ussdSessionMgmt.getUserTransactionDetails().setCurrentRunningTransaction(previousTransaction);
+			ussdSessionMgmt.setErrorScreenParamDTO(paramDTO);
+			//CR-86
+			ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().setHomeOptionReq("true");
+
+			menuItemDTO = createErrorScreen(ussdnbe, ussdSessionMgmt);
+			ussdSessionMgmt.setBackFlowErrorScreen(true);
+			ussdSessionMgmt.setTransactionFlag(true);
+			menuItemDTO.setStatus(USSDConstants.STATUS_CONTINUE);
+			ussdnbe.setBackFlow(false);
+			menuItemDTO.setErrorCode(ussdnbe.getErrorCode());
+			return menuItemDTO;
+		}
+		ussdSessionMgmt.setErrorScreenParamDTO(paramDTO);
+		menuItemDTO = createErrorScreen(ussdnbe, ussdSessionMgmt);
+
+	    }
+	    menuItemDTO.setErrorCode(ussdnbe.getErrorCode());
+	    //ussdSessionMgmt.getUserTransactionDetails().setCurrentRunningTransaction(currentRunningTransaction);
+	    ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().setTranDataId("");
+	    ussdSessionMgmt.setPreviousRenderedScreen(menuItemDTO);
 	}
 
 	return menuItemDTO;
@@ -560,8 +645,37 @@ public class UssdDecisionParser {
 			ussdServiceEnabler.blockServiceIfDisabled(ussdSessionMgmt.getUserTransactionDetails().isServiceEnabled());
 		}
 
+		/** Code for generic method to fetch country-wise status flag list and check the current input selected based on screenId & optionId **/
+		UserProfile userProfile = ussdSessionMgmt.getUserProfile();
+		List<SystemParameterDTO> sysParamList = ussdServiceEnabler.getCountryWiseStatusFlagList(userProfile.getBusinessId());
+		String screenId="";
+		String optionId="";
+		String serviceName="";
+		for(SystemParameterDTO param : sysParamList){
+		String componentKey = param.getParamComponentKey();
+		if(componentKey!=null && !componentKey.isEmpty()){
+		String[] keys = componentKey.split(",");
+		if(keys!=null && keys.length>1){
+			screenId = keys[0];
+			optionId = keys[1];
+			serviceName= keys[2];
+		}
+
+		if(screenId.equals(ussdSessionMgmt.getScreenId()) && (optionId.equals(paramDTO.getUserInput()) || serviceName.equals(paramDTO.getServiceName()))
+				&& (paramDTO.getUserTransactionDetails()!=null && "NA".equals(paramDTO.getUserTransactionDetails().getCurrentRunningTransaction().getType()))){
+			throw new USSDNonBlockingException(USSDExceptions.USSD_SERVICE_DISABLED_MAIN_MENU.getBmgCode());
+			}
+		}
+		}
+
 	    // set the transaction into the session
 	    ussdSessionMgmt.getUserTransactionDetails().setCurrentRunningTransaction(currentRunningTransaction);
+	    /* //masterpass QR
+	    String business_id=ussdSessionMgmt.getBusinessId();
+	    String tranid=ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranId();
+	    if((business_id!=null && "TZBRB".equals(business_id))  &&  (tranid!=null && "TZ_MASTERPASS_QR_BILLER".equals(tranid))){
+	    	ussdSessionMgmt.getUserTransactionDetails().setPreviousRunningTransaction(previousTransaction);
+	    }*/
 	    performSystemPreferenceValidation(ussdSessionMgmt, paramDTO, previousTransaction);
 	    persistUserInputIntoSession(paramDTO, ussdSessionMgmt, previousTransaction);
 	    ussdBaseRequest = getUSSDRequest(paramDTO, ussdSessionMgmt, currentRunningTransaction, previousTransaction);
@@ -709,11 +823,38 @@ public class UssdDecisionParser {
 	}
 
 
+
 	String errorMessage = ussdResourceBundle.getLabel(errorCode, errors, new Locale(userProfile.getLanguage(), userProfile.getCountryCode()));
+
 	if (errorMessage == null || StringUtils.isEmpty(errorMessage) || StringUtils.equalsIgnoreCase(errorMessage, USSDConstants.UNKNOWN_LABEL)) {
 	    errorMessage = ussdResourceBundle.getLabel(USSDConstants.GENERIC_ERROR_CODE, errors, new Locale(userProfile.getLanguage(), userProfile
 		    .getCountryCode()));
 	}
+
+	//Added for KITS enable/disable
+	String isKITS = null;
+
+	if(BMBContextHolder.getContext().getContextMap().get("isKITSFLAG") != null)
+		isKITS = BMBContextHolder.getContext().getContextMap().get("isKITSFLAG").toString();
+
+	//Added for Kits error code fetching from DB
+	String errorMessageKits = null;
+
+		if(ussdnbe.isKitsFlow() )
+		{
+			MessageResourceServiceRequest messageRequest = new MessageResourceServiceRequest();
+			messageRequest.setContext(BMBContextHolder.getContext());
+			messageRequest.setMessageKey(ussdnbe.getErrorCode());
+
+			MessageResourceServiceResponse messageResponse = messageResourceService.getMessageDescByKey(messageRequest);
+			errorMessageKits = messageResponse.getMessageDesc();
+			if(errorMessageKits != null && (!errorMessageKits.contains("Temporarily out of")))
+				errorMessage = errorMessageKits;
+		}
+
+
+	//End of Kits error code
+
 	errorPageDTO.setPageHeader(USSDConstants.LBL_BLANK_PAGE_HEADER);
 
 	errorPageDTO.setPaginationType(PaginationEnum.SPACED);
@@ -728,16 +869,22 @@ public class UssdDecisionParser {
 		pageFooter.append(USSDConstants.BACK_LBL);
 	}
 	else if(!"BMB90012BMB90013".contains(ussdnbe.getErrorCode())){
-	pageFooter.append(USSDConstants.GO_BACK_N_HOME_LABEL_ID);
-	pageFooter.append(USSDConstants.PIPE);
-	pageFooter.append(navigationOptions.getHomeOption());
+		if("USSD_SERVICE_DISABLED_MAIN_MENU".contains(ussdnbe.getErrorCode())){
+			pageFooter.append(USSDConstants.GO_TO_HOME_PAGE_LABEL_ID);
+		}else{
+			pageFooter.append(USSDConstants.GO_BACK_N_HOME_LABEL_ID);
+		}
+		pageFooter.append(USSDConstants.PIPE);
+		pageFooter.append(navigationOptions.getHomeOption());
 	}
 
 	errorPageDTO.setPageBody(errorMessage + USSDConstants.NEW_LINE);
 	if(!"BMB90012BMB90013".contains(ussdnbe.getErrorCode())){
-	pageFooter.append(USSDConstants.PIPE);
-	pageFooter.append(navigationOptions.getBackOption());
-	errorPageDTO.setPageFooter(pageFooter.toString());
+		if(!"USSD_SERVICE_DISABLED_MAIN_MENU".contains(ussdnbe.getErrorCode())){
+			pageFooter.append(USSDConstants.PIPE);
+			pageFooter.append(navigationOptions.getBackOption());
+		}
+			errorPageDTO.setPageFooter(pageFooter.toString());
 	}
 
 	errorPageDTO.setErrorPage(true);
@@ -883,6 +1030,7 @@ public class UssdDecisionParser {
      */
     private ResponseBuilderParamsDTO populateResponseBuilderParams(USSDSessionManagement ussdSessionMgmt,
 	    CurrentRunningTransaction currentRunningTransaction, String responseJSONString, boolean errorneousPage) {
+	LOGGER.debug("Populating Response Params");
 	NavigationOptionsDTO backHomeOptions = ussdParser.getNavigationOptions(ussdSessionMgmt.getBusinessId(), ussdSessionMgmt.getCountryCode());
 
 	ResponseBuilderParamsDTO responseBuilderParamsDTO = new ResponseBuilderParamsDTO();
@@ -895,7 +1043,7 @@ public class UssdDecisionParser {
 	responseBuilderParamsDTO.setUssdResourceBundle(this.ussdResourceBundle);
 	responseBuilderParamsDTO.setErrorneousPage(errorneousPage);
 	responseBuilderParamsDTO.setBackHomeOptions(backHomeOptions);
-
+	LOGGER.debug("Populated Response Params");
 	return responseBuilderParamsDTO;
     }
 

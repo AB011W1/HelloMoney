@@ -4,14 +4,13 @@ package com.barclays.bmg.dao.adapter.pesalink;
 import java.util.Map;
 
 import com.barclays.bem.CreateIndividualCustomer.CreateCustomerInfo;
-import com.barclays.bem.CreateIndividualCustomer.CreateIndividualCustomerRequest;
-import com.barclays.bem.CreateIndividualCustomer.CustomerIdentificationDocInfo;
 import com.barclays.bem.CreateIndividualCustomer.CustomerInfo;
 import com.barclays.bem.CreateIndividualCustomer.IndividualName;
 import com.barclays.bem.IndividualCustomer.IndividualCustomer;
 import com.barclays.bem.IndividualCustomerBasic.IndividualCustAdditionalInfo;
+import com.barclays.bem.IndividualCustomerCommunicationPreference.IndividualCustomerCommunicationPreference;
+import com.barclays.bem.IndividualCustomerLanguagePreference.IndividualCustomerLanguagePreference;
 import com.barclays.bem.IndividualIDDoc.IndividualIDDoc;
-import com.barclays.bem.RetrieveIndividualCustBySCVID.CustomerIdentificationType;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.dao.core.context.impl.DAOContext;
 import com.barclays.bmg.service.request.pesalink.CreateIndividualCustomerServiceRequest;
@@ -27,8 +26,6 @@ public class CreateIndividualCustomerPayloadAdapter {
 
 			CreateIndividualCustomerServiceRequest request=
 				(CreateIndividualCustomerServiceRequest)args[0];
-
-			CreateIndividualCustomerRequest requestBody = new CreateIndividualCustomerRequest();
 			CustomerInfo customerInfo=new CustomerInfo();
 			String mobileNumber=request.getMobileNumber();
 
@@ -54,7 +51,7 @@ public class CreateIndividualCustomerPayloadAdapter {
 
 		}
 
-		public CreateCustomerInfo CustomerDetailsAdaptPayload(WorkContext workContext){
+		public CreateCustomerInfo customerDetailsAdaptPayload(WorkContext workContext){
 
 			DAOContext daoContext = (DAOContext)workContext;
 			Object[] args = daoContext.getArguments();
@@ -82,7 +79,14 @@ public class CreateIndividualCustomerPayloadAdapter {
 			IndividualIDDoc individualIDDoc[]=new IndividualIDDoc[]{docTypeAndNumber};
 
 			individualCustomer.setIdentificationDocument(individualIDDoc);
-			//
+
+			//Added for KITS registration call
+			IndividualCustomerCommunicationPreference individualCustomerCommunicationPreference = new IndividualCustomerCommunicationPreference();
+			IndividualCustomerLanguagePreference individualCustomerLanguagePreference = new IndividualCustomerLanguagePreference();
+			individualCustomerLanguagePreference.setWrittenLanguageName(request.getContext().getLanguageId().toUpperCase());
+			individualCustomerCommunicationPreference.setLanguagePreference(individualCustomerLanguagePreference);
+			individualCustomer.setCommunicationPreference(individualCustomerCommunicationPreference);
+			//End Language preferences
 
 			createCustomerInfo.setCustomer(individualCustomer);
 

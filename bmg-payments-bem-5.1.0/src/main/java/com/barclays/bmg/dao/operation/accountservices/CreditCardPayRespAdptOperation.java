@@ -46,7 +46,7 @@ public class CreditCardPayRespAdptOperation extends BMBRetailTxnRespAdptOperatio
 	    payBillServiceResponse.setSuccess(false);
 	}
 
-	String resCdeStatus = bemResponse.getResponseHeader().getServiceResStatus().getServiceResCode().toString();
+	String resCdeStatus = bemResponse.getResponseHeader().getServiceResStatus().getServiceResCode();
 
 	if (StringUtils.isNotEmpty(resCdeStatus) && resCdeStatus.equals(ResponseCodeConstants.SUCCESS_RES_CODE)) {
 	    payBillServiceResponse.setTxnMsg(ResponseCodeConstants.SUCCESS_TXN_RESPONSE_MESSAGE);

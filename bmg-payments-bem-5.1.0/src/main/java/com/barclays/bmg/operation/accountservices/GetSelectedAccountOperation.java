@@ -3,6 +3,7 @@ package com.barclays.bmg.operation.accountservices;
 import java.util.List;
 
 import com.barclays.bmg.constants.FundTransferResponseCodeConstants;
+import com.barclays.bmg.dto.CreditCardAccountDTO;
 import com.barclays.bmg.dto.CustomerAccountDTO;
 import com.barclays.bmg.operation.accountdetails.CASADetailsOperation;
 import com.barclays.bmg.operation.request.fundtransfer.external.GetSelectedAccountOperationRequest;
@@ -85,7 +86,7 @@ public GetSelectedAccountOperationResponse getSelectedCreditCardAccount(GetSelec
 
 		if(allAcctResponse.isSuccess()){
 			List<? extends CustomerAccountDTO> CreditCardList = allAcctResponse.getAcctList();
-			CustomerAccountDTO selectedAcct = getSelectedCustAccount(CreditCardList, request.getAcctNumber());
+			CustomerAccountDTO selectedAcct = getSelectedCreditCardAccount(CreditCardList, request.getAcctNumber(),request.getCreditCardNumber());
 			if(selectedAcct!=null){
 				response.setSelectedAcct(selectedAcct);
 			}else{
@@ -158,5 +159,33 @@ public GetSelectedAccountOperationResponse getSelectedCreditCardAccount(GetSelec
     		}
     	}
     	return selectedAccount;
+	}
+
+	/**
+	 * Get credit card account from account list using account number & credit card number.
+	 *
+	 * @param allAccounts
+	 * @param allAccounts, acctNo, creditCardNo
+	 * @return CustomerAccountDTO
+	 */
+	private CustomerAccountDTO getSelectedCreditCardAccount(
+			List<? extends CustomerAccountDTO> allAccounts, String acctNo,
+			String creditCardNo) {
+		CustomerAccountDTO selectedAccount = null;
+		CreditCardAccountDTO creditCardAccountDTO = null;
+		if (allAccounts != null && acctNo != null && !allAccounts.isEmpty()) {
+			for (CustomerAccountDTO account : allAccounts) {
+				if (account instanceof CreditCardAccountDTO) {
+					creditCardAccountDTO = (CreditCardAccountDTO) account;
+					if (acctNo != null && creditCardNo!=null) {
+						if (acctNo.equals(account.getAccountNumber()) && creditCardNo.equals(creditCardAccountDTO.getPrimary().getCardNumber())) {
+							selectedAccount = account;
+							break;
+						}
+					}
+				}
+			}
+		}
+		return selectedAccount;
 	}
 }

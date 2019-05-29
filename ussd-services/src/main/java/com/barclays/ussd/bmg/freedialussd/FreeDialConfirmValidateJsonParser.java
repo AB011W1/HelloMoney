@@ -28,7 +28,6 @@ import com.barclays.ussd.sysprefs.services.ListValueResServiceRequest;
 import com.barclays.ussd.utils.BmgBaseJsonParser;
 import com.barclays.ussd.utils.PaginationEnum;
 import com.barclays.ussd.utils.SystemPreferenceConstants;
-import com.barclays.ussd.utils.SystemPreferenceValidator;
 import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDExceptions;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
@@ -49,8 +48,8 @@ public class FreeDialConfirmValidateJsonParser implements BmgBaseJsonParser {
 	private static final String TRANSACTION_AIRTIME_ERROR_LABEL = "label.airtime.error";
 	private static final String DEBIACCNUM_LABEL = "label.debit.accnum";
 
-    @Autowired
-    private ListValueResServiceImpl listValueResService;
+	@Autowired
+	private ListValueResServiceImpl listValueResService;
 
 
 	@Override
@@ -72,7 +71,7 @@ public class FreeDialConfirmValidateJsonParser implements BmgBaseJsonParser {
 				}  else if (airtimeValidateResponse.getPayHdr() != null) {
 					USSDSessionManagement session = responseBuilderParamsDTO.getUssdSessionMgmt();
 					Map<String, Object> userInputMapAirtel = session.getTxSessions();
-					if(userInputMapAirtel!=null && userInputMapAirtel.get("extra")!=null && userInputMapAirtel.get("extra").toString().equals("FREEDIALAIRTEL")){
+					if(userInputMapAirtel!=null && userInputMapAirtel.get("extra")!=null && (userInputMapAirtel.get("extra").toString().equals("FREEDIALAIRTEL") || userInputMapAirtel.get("extra").toString().equals("FREEDIALAIRTELZM"))){
 						LOGGER.fatal("unable to service: " + airtimeValidateResponse.getPayHdr().getResMsg());
 						if(airtimeValidateResponse.getPayHdr().getResCde().equals("FTR00507"))
 							throw new USSDBlockingException("FTR00530");
@@ -93,7 +92,7 @@ public class FreeDialConfirmValidateJsonParser implements BmgBaseJsonParser {
 							String mininimumAmtSndr = getSystemPreferenceData(responseBuilderParamsDTO.getUssdSessionMgmt().getUserProfile(), SystemPreferenceConstants.SYS_PARAM_MWALLET,
 									SystemPreferenceConstants.MWALLET_MIN_AMT_SNDR);
 
-								String maximumAmtSndr = getSystemPreferenceData(responseBuilderParamsDTO.getUssdSessionMgmt().getUserProfile(), SystemPreferenceConstants.SYS_PARAM_MWALLET,
+							String maximumAmtSndr = getSystemPreferenceData(responseBuilderParamsDTO.getUssdSessionMgmt().getUserProfile(), SystemPreferenceConstants.SYS_PARAM_MWALLET,
 									SystemPreferenceConstants.MWALLET_MAX_AMT_SNDR);
 
 							List<String> errorParams=new ArrayList<String>();
@@ -107,8 +106,8 @@ public class FreeDialConfirmValidateJsonParser implements BmgBaseJsonParser {
 							throw nbk;
 						}
 					}else{
-					LOGGER.fatal("unable to service: " + airtimeValidateResponse.getPayHdr().getResMsg());
-					throw new USSDNonBlockingException(airtimeValidateResponse.getPayHdr().getResCde());
+						LOGGER.fatal("unable to service: " + airtimeValidateResponse.getPayHdr().getResMsg());
+						throw new USSDNonBlockingException(airtimeValidateResponse.getPayHdr().getResCde());
 					}
 				}else if (airtimeValidateResponse.getPayHdr() != null
 						&& TRANSACTION_AMT_LIMIT_ERROR.equalsIgnoreCase(airtimeValidateResponse.getPayHdr().getResCde())) {
@@ -168,7 +167,7 @@ public class FreeDialConfirmValidateJsonParser implements BmgBaseJsonParser {
 			StringBuilder pageBody = new StringBuilder();
 			UssdResourceBundle ussdResourceBundle = responseBuilderParamsDTO.getUssdResourceBundle();
 			String paramArray[]=new String[1];
-			if(userInputFreedialMap!=null && userInputFreedialMap.get("extra")!=null && userInputFreedialMap.get("extra").toString().equals("FREEDIALAIRTEL"))
+			if(userInputFreedialMap!=null && userInputFreedialMap.get("extra")!=null && (userInputFreedialMap.get("extra").toString().equals("FREEDIALAIRTEL") || userInputFreedialMap.get("extra").toString().equals("FREEDIALAIRTELZM")))
 				paramArray[0]=userInputFreedialMap.get("txnAmt").toString();
 			else
 				paramArray[0]=userInputMap.get("txnAmt");
@@ -181,7 +180,6 @@ public class FreeDialConfirmValidateJsonParser implements BmgBaseJsonParser {
 			Locale locale = new Locale(language, countryCode);
 			String confirmLabel = ussdResourceBundle.getLabel(USSDConstants.LABEL_AIRTIME_CONFIRM, locale);
 			String fromAccLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(DEBIACCNUM_LABEL, locale);
-			String amountLabel = ussdResourceBundle.getLabel(USSDConstants.USSD_TRANSACTION_MWALLETE_AMOUNT, locale);
 			String mobileNumLabel = ussdResourceBundle.getLabel(USSDConstants.USSD_TRANSACTION_MWALLETE_MOBILE, locale);
 			String airtimeServiceLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel("label.transaction.service", locale);
 			Account account = airtimeValidatePayData.getSrcAcct();
@@ -189,10 +187,29 @@ public class FreeDialConfirmValidateJsonParser implements BmgBaseJsonParser {
 			pageBody.append(USSDConstants.NEW_LINE);
 			pageBody.append(mobileNumLabel);
 			String mbNum = null;
-			if(userInputFreedialMap!=null && userInputFreedialMap.get("extra")!=null && userInputFreedialMap.get("extra").toString().equals("FREEDIALAIRTEL"))
+			if(userInputFreedialMap!=null && userInputFreedialMap.get("extra")!=null && (userInputFreedialMap.get("extra").toString().equals("FREEDIALAIRTEL") || userInputFreedialMap.get("extra").toString().equals("FREEDIALAIRTELZM")))
 				mbNum = userInputFreedialMap.get(USSDInputParamsEnum.FREE_DIAL_MOB_NUM.getParamName()).toString();
 			else
 				mbNum = userInputMap.get(USSDInputParamsEnum.FREE_DIAL_MOB_NUM.getParamName());
+
+//			if(userInputMap == null) {
+//				userInputMap = new HashMap<String,String>();
+//				userInputMap.put("BillerName", airtimeValidatePayData.getPrvder().getBillerName());
+//				userInputMap.put("mblNo", mbNum);
+				//if(userInputMap.get("bizId").toString().equals("GHBRB"))
+//				if(userInputMap.get(USSDConstants.BMG_BUSINESS_ID_PARAM_NAME).equalsIgnoreCase("GHBRB"))
+//				{
+//					userInputMap.put("extra", "FREEDIALAIRTEL");
+//				} //else if(userInputMap.get("bizId").toString().equals("ZMBRB"))
+//				else if(userInputMap.get(USSDConstants.BMG_BUSINESS_ID_PARAM_NAME).equalsIgnoreCase("ZMBRB"))
+//				{
+//					userInputMap.put("extra", "FREEDIALAIRTELZM");
+//				}
+//				ussdSessionMgmt.getUserTransactionDetails().setUserInputMap(userInputMap);
+//			} else {
+//				userInputMap.put("BillerName", airtimeValidatePayData.getPrvder().getBillerName());
+//			}
+
 			if(userInputMap!=null)
 				userInputMap.put("BillerName", airtimeValidatePayData.getPrvder().getBillerName());
 			else{
@@ -201,7 +218,8 @@ public class FreeDialConfirmValidateJsonParser implements BmgBaseJsonParser {
 				userInputMap.put("mblNo", mbNum);
 				userInputMap.put("extra", "FREEDIALAIRTEL");
 				ussdSessionMgmt.getUserTransactionDetails().setUserInputMap(userInputMap);
-			}
+				}
+
 			pageBody.append(mbNum);
 			pageBody.append(USSDConstants.NEW_LINE);
 			pageBody.append(airtimeServiceLabel);
@@ -234,14 +252,14 @@ public class FreeDialConfirmValidateJsonParser implements BmgBaseJsonParser {
 
 	private String getSystemPreferenceData(UserProfile userProfile, String groupId, String listValueKey) throws USSDNonBlockingException {
 		ListValueResServiceRequest listValReq = new ListValueResServiceRequest(userProfile.getCountryCode(), groupId, userProfile.getLanguage(),
-			listValueKey);
+				listValueKey);
 		ListValueResByGroupServiceResponse listValueByGroup = listValueResService.findListValueResByGroupKey(listValReq);
 		ListValueCacheDTO listValueCacheDTO = listValueByGroup.getListValueCacheDTOOneRow();
 		if (listValueCacheDTO == null) {
-		    LOGGER.fatal("System preferences not set for" + listValReq.getListValueKey());
-		    throw new USSDNonBlockingException(USSDExceptions.USSD_SYS_PREF_MISSING.getBmgCode(), USSDExceptions.USSD_SYS_PREF_MISSING
-			    .getUssdErrorCode());
+			LOGGER.fatal("System preferences not set for" + listValReq.getListValueKey());
+			throw new USSDNonBlockingException(USSDExceptions.USSD_SYS_PREF_MISSING.getBmgCode(), USSDExceptions.USSD_SYS_PREF_MISSING
+					.getUssdErrorCode());
 		}
 		return listValueCacheDTO.getLabel();
-	    }
+	}
 }

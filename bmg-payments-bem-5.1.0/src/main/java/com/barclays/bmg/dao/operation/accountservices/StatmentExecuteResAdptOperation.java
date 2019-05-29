@@ -11,7 +11,7 @@ import com.barclays.bmg.dao.core.context.impl.DAOContext;
 import com.barclays.bmg.service.request.StatmentExecuteServiceRequest;
 import com.barclays.bmg.service.response.StatmentExecuteServiceResponse;
 
-public class StatmentExecuteResAdptOperation extends AbstractResAdptOperation {
+public class StatmentExecuteResAdptOperation extends AbstractResAdptOperationAcct {
 
 	public StatmentExecuteServiceResponse adaptResponse(
 			WorkContext workContext, Object obj) {

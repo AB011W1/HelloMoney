@@ -1,0 +1,30 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Body>
+    <p707:SendCashResponse xmlns:p707="http://barclays.com/bem/SendCash">
+      <p707:ResponseHeader>
+        <ServiceContext>
+          <ServiceID>SendCashService</ServiceID>
+          <ConsumerUniqueRefNo>1147194092</ConsumerUniqueRefNo>
+          <OriginalConsumerUniqueRefNo>1147194092</OriginalConsumerUniqueRefNo>
+          <ServiceDateTime>2016-08-23T09:29:54.302Z</ServiceDateTime>
+          <ServiceVersionNo>6.0.0</ServiceVersionNo>
+          <OverrideRequestFlag>0</OverrideRequestFlag>
+        </ServiceContext>
+        <BankUserContext>
+          <StaffType>Regular</StaffType>
+          <StaffID>IFE</StaffID>
+          <AuthorizerID>Z00019789</AuthorizerID>
+        </BankUserContext>
+        <ServiceResStatus>
+          <ServiceResCode>00000</ServiceResCode>
+          <ServiceResDesc>SUCCESS</ServiceResDesc>
+          <ServiceRespDateTime>2016-08-23T08:29:58.960Z</ServiceRespDateTime>
+          <ServiceUniqueRefNo xsi:nil="true"/>
+        </ServiceResStatus>
+      </p707:ResponseHeader>
+      <p707:SendCashResInfo>
+        <p707:VoucherId>88708709</p707:VoucherId>
+      </p707:SendCashResInfo>
+    </p707:SendCashResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

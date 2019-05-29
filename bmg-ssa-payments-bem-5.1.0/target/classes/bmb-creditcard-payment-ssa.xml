@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:util="http://www.springframework.org/schema/util"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+     <!-- Credit Card PAyment -->
+
+  <bean id="creditCardPaymentDAOController"
+    class="com.barclays.bmg.dao.processing.accountservices.ssa.CreditCardPaymentDAOController">
+    <property name="creditCardPayReqAdptOperation" ref="creditCardPayReqAdptOperation" />
+    <property name="transmissionOperation" ref="creditCardPayTransmissionOperation" />
+    <property name="creditCardPayRespAdptOperation" ref="creditCardPayRespAdptOperation" />
+  </bean>
+
+  <bean id="creditCardPayReqAdptOperation"
+    class="com.barclays.bmg.dao.operation.accountservices.ssa.CreditCardPayReqAdptOperation">
+    <property name="creditCardPayHeaderAdapter" ref="creditCardPayHeaderAdapter" />
+    <property name="creditCardPayPayloadAdapter" ref="creditCardPayPayloadAdapter" />
+  </bean>
+
+  <bean id="creditCardPayHeaderAdapter"
+    class="com.barclays.bmg.dao.accountservices.adapter.ssa.CreditCardPayHeaderAdapter">
+  </bean>
+  <bean id="creditCardPayPayloadAdapter"
+    class="com.barclays.bmg.dao.accountservices.adapter.ssa.CreditCardPayPayloadAdapter">
+  </bean>
+
+  <bean id="creditCardPayRespAdptOperation"
+    class="com.barclays.bmg.dao.operation.accountservices.ssa.CreditCardPayRespAdptOperation">
+  </bean>
+</beans>

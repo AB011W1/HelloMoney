@@ -18,6 +18,7 @@ public interface SystemParameterConstant {
     String SERVICE_HEADER_RESP_POPULATE_FLAG = "SERVICE_HEADER_RESP_POPULATE_FLAG";
     String SERVICE_HEADER_MASTER_CIF_ID = "SERVICE_HEADER_MASTER_CIF_ID";
     String SERVICE_HEADER_SERVICE_VER_NO = "SERVICE_HEADER_SERVICE_VERSION_NO";
+    String SERVICE_HEADER_SERVICE_VERSION_NO_GEPG  = "SERVICE_HEADER_SERVICE_VERSION_NO_GEPG";
     // System constants for Add problem
     String ADD_PRO_STAFF_ID = "ADD_PRO_STAFF_ID";
     String ADD_PRO_PRIORITY = "ADD_PRO_PRIORITY";
@@ -183,4 +184,9 @@ public interface SystemParameterConstant {
 
     // Service Version No. for MakeBillPayment and FundTransfer of CBP 30/08/2017
     String SERVICE_HEADER_SERVICE_VER_NO_CBP = "SERVICE_HEADER_SERVICE_VERSION_NO_CBP";
+    String isCBPFLAG="isCBPFLAG";
+
+	String isLoanRepayment = "isLoanRepayment";
+
 }
+

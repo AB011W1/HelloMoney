@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- Cheque book init  -->
+	<bean id="KEBRBchequeBookRequestInitController"
+		class="com.barclays.bmg.chequebook.mvc.controller.ChequeBookRequestInitController">
+		<property name="retrieveSourceAccountListOperation" ref="retrieveAccountListOperation" />
+		<property name="chequeBookRequestInitOperation" ref="chequeBookRequestInitOperation" />
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="featureBlackoutService" ref="featureBlackoutServiceImpl" />
+		<property name="bmbJSONBuilder" ref="KEBRBchequeBookInitJsonBldr" />
+	</bean>
+
+	<bean id="KEBRBchequeBookRequestInitOperation"
+		class="com.barclays.bmg.chequebook.operation.ChequeBookRequestInitOperation" parent="bmbCommonOperation">
+		<property name="chequeBookTypeCountryList" ref="KEBRBchequeBookTypeCountryList" />
+
+
+	</bean>
+
+	<bean id="KEBRBchequeBookInitJsonBldr"
+		class="com.barclays.bmg.json.model.builder.chequebook.ChequeBookRequestInitBldr" parent="bmbCommonJSONBuilder">
+		<property name="chequeBookTypeCountryList" ref="KEBRBchequeBookTypeCountryList" />
+	</bean>
+
+
+	<!-- Cheque book Validation  -->
+
+
+	<bean name="chequeBookValidationCommandValidator"
+		class="com.barclays.bmg.chequebook.mvc.validator.ChequeBookRequestValidationCommandValidator" >
+		<property name="chequeBookTypeCountryList" ref="KEBRBchequeBookTypeCountryList" />
+	</bean>
+
+	<bean id="KEBRBchequeBookRequestValidationController"
+		class="com.barclays.bmg.chequebook.mvc.controller.ChequeBookRequestValidationController">
+		<property name="getSelectedAccountOperation" ref="getSelectedAccountOperation" />
+		<property name="chequeBookRequestValidationOperation" ref="chequeBookRequestValidationOperation" />
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="featureBlackoutService" ref="featureBlackoutServiceImpl" />
+		<property name="bmbJSONBuilder" ref="KEBRBchequeBookValidationJsonBldr" />
+		<property name="commandName" value="chequeBookValidationCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.chequebook.mvc.command.ChequeBookRequestValidationCommand" />
+		<property name="validator" ref="chequeBookValidationCommandValidator" />
+	</bean>
+
+	<bean id="KEBRBchequeBookRequestValidationOperation"
+		class="com.barclays.bmg.chequebook.operation.ChequeBookRequestValidationOperation" parent="bmbCommonOperation">
+		<property name="chequeBookTypeCountryList" ref="KEBRBchequeBookTypeCountryList" />
+	</bean>
+
+	<bean id="KEBRBchequeBookValidationJsonBldr"
+		class="com.barclays.bmg.json.model.builder.chequebook.ChequeBookRequestValidationBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<!-- Cheque book Execute  -->
+
+
+	<bean name="chequeBookExecuteCommandValidator"
+		class="com.barclays.bmg.chequebook.mvc.validator.ChequeBookRequestExecuteCommandValidator" />
+
+	<bean id="KEBRBchequeBookRequestExecuteController"
+		class="com.barclays.bmg.chequebook.mvc.controller.ChequeBookRequestExecuteController">
+		<property name="chequeBookRequestExecuteOperation" ref="chequeBookRequestExecuteOperation" />
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="featureBlackoutService" ref="featureBlackoutServiceImpl" />
+		<property name="bmbJSONBuilder" ref="KEBRBchequeBookExecuteJsonBldr" />
+		<property name="commandName" value="chequeBookValidationCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.chequebook.mvc.command.ChequeBookRequestExecuteCommand" />
+		<property name="validator" ref="chequeBookExecuteCommandValidator" />
+	</bean>
+
+	<bean id="KEBRBchequeBookRequestExecuteOperation"
+		class="com.barclays.bmg.chequebook.operation.ChequeBookRequestExecuteOperation" parent="bmbCommonOperation">
+		<property name="chequeBookRequestExecuteService" ref="KEBRBchequeBookRequestExecuteService" />
+
+	</bean>
+
+
+
+	<bean id="KEBRBchequeBookExecuteJsonBldr"
+		class="com.barclays.bmg.json.model.builder.chequebook.ChequeBookRequestExecuteBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<bean id="KEBRBchequeBookRequestExecuteService"
+		class="com.barclays.bmg.chequebook.service.impl.ChequeBookRequestExecuteServiceImpl">
+		<property name="chequeBookRequestExecuteDAO" ref="KEBRBchequeBookRequestExecuteDAO" />
+
+	</bean>
+
+	<bean id="KEBRBchequeBookRequestExecuteDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.chequebook.dao.ChequeBookRequestExecuteDAO" />
+		<property name="daoFrontController" ref="KEBRBchequeBookDAOFrontControllerImpl" />
+	</bean>
+
+	<bean id="KEBRBchequeBookDAOFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="EXECUTECHEQUEBOOKREQUEST" value-ref="KEBRBchequeBookExecuteDAOController" />
+
+			</map>
+		</property>
+	</bean>
+
+	<bean id="KEBRBchequeBookExecuteDAOController"
+		class="com.barclays.bmg.chequebook.dao.controller.ChequeBookExecuteDAOController">
+		<property name="chequeBookExecuteReqAdptOperation" ref="KEBRBchequeBookExecuteReqAdptOperation" />
+		<property name="transmissionOperation" ref="KEBRBchequeBookExecuteTransmissionOperation" />
+		<property name="chequeBookExecuteResAdptOperation" ref="KEBRBchequeBookExecuteResAdptOperation" />
+	</bean>
+
+	<bean id="KEBRBchequeBookExecuteReqAdptOperation"
+		class="com.barclays.bmg.chequebook.dao.operation.ChequeBookExecuteReqAdptOperation">
+		<property name="chequeBookRequestHeaderAdapter" ref="KEBRBchequeBookRequestHeaderAdapter" />
+		<property name="chequeBookExecutePayloadAdapter" ref="KEBRBchequeBookExecutePayloadAdapter" />
+	</bean>
+
+
+	<bean id="KEBRBchequeBookExecutePayloadAdapter"
+		class="com.barclays.bmg.chequebook.dao.adapter.ChequeBookExecutePayloadAdapter">
+	</bean>
+
+	<bean id="KEBRBchequeBookExecuteTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="KEBRBchequeBookExecuteTransmissionService" />
+	</bean>
+	<bean id="KEBRBchequeBookExecuteTransmissionService"
+		class="com.barclays.bmg.chequebook.dao.service.ChequeBookExecuteTransmissionService">
+		<property name="remoteService" ref="KEBRBchequeBookExecuteWebServiceImpl" />
+	</bean>
+
+	<bean id="KEBRBchequeBookRequestHeaderAdapter"
+		class="com.barclays.bmg.chequebook.dao.adapter.ChequeBookRequestHeaderAdapter">
+	</bean>
+
+	<bean id="KEBRBchequeBookExecuteResAdptOperation"
+		class="com.barclays.bmg.chequebook.dao.operation.ChequeBookExecuteResAdptOperation">
+
+	</bean>
+
+	<bean id="KEBRBchequeBookExecuteWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.CheckBookManagement.CheckBookManagement_PortType" />
+		<property name="portName" value="CheckBookManagementSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.CheckBookManagement.CheckBookManagement_Service" />
+		<property name="endpointAddress"
+			value="http://mb4t.wload.global:7080/bem/bxx5_gateway" />
+		<property name="endpointAddressName" value="CheckBookManagement_EndPoint" />
+		<property name="cacheKey" value="chequeBookRequest" />
+	</bean>
+
+	<bean id="KEBRBchequeBookTypeCountryList" class="java.util.ArrayList">
+	<constructor-arg>
+	<list>
+		<value>AEBRB</value>
+	</list>
+	</constructor-arg>
+
+	</bean>
+
+</beans>

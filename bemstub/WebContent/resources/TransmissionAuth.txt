@@ -1,0 +1,65 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <p851:AuthenticationVerifyResponse xmlns:p851="http://grcb.barclays.com/mcfe/ssc/authentication/AuthenticationVerify">
+      <p851:responseHeader>
+        <ServiceResStatus>
+          <ServiceResCode>00000</ServiceResCode>
+          <ServiceResDesc xsi:nil="true"/>
+          <ServiceRespDateTime>2014-02-21T14:11:39.033Z</ServiceRespDateTime>
+        </ServiceResStatus>
+      </p851:responseHeader>
+      <p851:result>
+        <resultCode>success</resultCode>
+        <needChangePwd>0</needChangePwd>
+        <needChangeTxnPwd>0</needChangeTxnPwd>
+        <needWarningChangePwd>0</needWarningChangePwd>
+        <needWarningChangeTxnPwd>0</needWarningChangeTxnPwd>
+        <failures>0</failures>
+        <maxRetryTimes>0</maxRetryTimes>
+        <hoursOfLocked>0</hoursOfLocked>
+        <loginPwdWarningDays>0</loginPwdWarningDays>
+        <txnPwdWarningDays>0</txnPwdWarningDays>
+        <userStatus xsi:nil="true"/>
+        <customerInfo>
+          <CustomerID xsi:nil="true"/>
+          <IDDocType xsi:nil="true"/>
+          <IDDocNo xsi:nil="true"/>
+          <FirstName xsi:nil="true"/>
+          <LastName xsi:nil="true"/>
+          <MobilePhone xsi:nil="true"/>
+          <CardType xsi:nil="true"/>
+          <BranchCode xsi:nil="true"/>
+          <CardNo xsi:nil="true"/>
+          <UserId>1600005</UserId>
+          <UserName>*******0005</UserName>
+          <DateofBirth xsi:nil="true"/>
+          <CustomerSegment xsi:nil="true"/>
+          <Salutation xsi:nil="true"/>
+          <OrganizationCode xsi:nil="true"/>
+          <MiddleName xsi:nil="true"/>
+          <FullName xsi:nil="true"/>
+          <cardExpireDate xsi:nil="true"/>
+          <cardTPin xsi:nil="true"/>
+          <email xsi:nil="true"/>
+          <encryptKey xsi:nil="true"/>
+          <embossedName xsi:nil="true"/>
+          <accountNo xsi:nil="true"/>
+          <lastEmailChangeDate xsi:nil="true"/>
+          <ssnFlag xsi:nil="true"/>
+          <ssnNo xsi:nil="true"/>
+          <edniFlag xsi:nil="true"/>
+        </customerInfo>
+        <status>0</status>
+        <code xsi:nil="true"/>
+        <desc xsi:nil="true"/>
+        <msgKey xsi:nil="true"/>
+        <leftDays>0</leftDays>
+        <minBlockDays>0</minBlockDays>
+        <migrateSMSSent>0</migrateSMSSent>
+        <preferedLanguage xsi:nil="true"/>
+        <pwdMigrated>Y</pwdMigrated>
+      </p851:result>
+    </p851:AuthenticationVerifyResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

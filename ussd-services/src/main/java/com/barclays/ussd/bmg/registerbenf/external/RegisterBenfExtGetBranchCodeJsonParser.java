@@ -52,7 +52,6 @@ public class RegisterBenfExtGetBranchCodeJsonParser implements BmgBaseJsonParser
     }
 
     public int getCustomNextScreen(String userInput, USSDSessionManagement ussdSessionMgmt) throws USSDBlockingException {
-	StringBuffer bankCodeLetter = new StringBuffer();
 	int seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FOUR.getSequenceNo();
 	Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
 	String branchName = userInput;
@@ -70,11 +69,15 @@ public class RegisterBenfExtGetBranchCodeJsonParser implements BmgBaseJsonParser
 	else{
 	tempBranchList = (List<UssdBranchLookUpDTO>) ussdSessionMgmt.getTxSessions().get(
 		USSDInputParamsEnum.REG_BEN_EXT_BANK_CODE_LIST.getTranId());
-	bankCodeLookUpDTO = tempBranchList.get(Integer.parseInt(userInputMap.get(USSDInputParamsEnum.REG_BEN_EXT_BANK_CODE_LIST
+	if(null != userInputMap)
+		bankCodeLookUpDTO = tempBranchList.get(Integer.parseInt(userInputMap.get(USSDInputParamsEnum.REG_BEN_EXT_BANK_CODE_LIST
 		.getParamName())) - 1);
 	}
-	String bankCode = bankCodeLookUpDTO.getBankCode();
-	String bankName = bankCodeLookUpDTO.getBankName();
+	String bankCode = null,bankName=null;
+	if(null != bankCodeLookUpDTO){
+		bankCode = bankCodeLookUpDTO.getBankCode();
+		bankName = bankCodeLookUpDTO.getBankName();
+	}
 
 	List<UssdBranchLookUpDTO> branchList = branchLookUpDAOImpl.getBranchList(businessId, bankCode, bankName, branchName);
 

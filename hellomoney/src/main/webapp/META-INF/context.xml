@@ -71,9 +71,18 @@
 
 
 
---><Resource name="jdbc/SHMDS" auth="Container"
+<Resource name="jdbc/SHMDS" auth="Container"
+	type="javax.sql.DataSource"
+	username="SSASHM" password="MASPC78#_L"
+	driverClassName="oracle.jdbc.OracleDriver"
+	url="jdbc:oracle:thin:@wiid.wload.global:35610:SGDCRTD1" />
+-->
+
+<Resource name="jdbc/SHMDS" auth="Container"
       type="javax.sql.DataSource"
       username="SSASHM" password="Welcome123#"
       driverClassName="oracle.jdbc.OracleDriver"
       url="jdbc:oracle:thin:@cs4t.wload.barclays.co.uk:3333:PSSABIRU" />
+
+
 </Context>

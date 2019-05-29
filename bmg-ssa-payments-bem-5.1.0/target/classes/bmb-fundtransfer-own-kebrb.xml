@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+	<!-- Own Fund transfer Starts here -->
+
+	<bean id="KEBRBfundTransferExecutionController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.own.OwnFundTransferExecuteController"
+		parent="bmbAbstractCommandController">
+		<property name="domesticFundTransferExecuteOperation" ref="KEBRBdomesticFundTransferExecuteOperation" />
+		<property name="bmbJSONBuilder" ref="KEBRBdomesticFundTransferJSONBldr" />
+		<property name="otpAuthenticationOperation" ref="otpAuthenticationOperation" />
+		<property name="txnOTPSecondAuthJSONBldr" ref="KEBRBtxnOTPSecondAuthJSONBldr" />
+		<property name="sqaAuthenticationOperation" ref="sqaAuthenticationOperation" />
+		<property name="txnSQASecondAuthJSONBldr" ref="KEBRBtxnSQASecondAuthJSONBldr" />
+		<property name="commandName" value="fundTransferExecuteCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.fundtransfer.own.FundTransferExecuteCommand" />
+		<property name="validator" ref="KEBRBfundTransferExecuteCommandValidator" />
+	</bean>
+
+	<!-- Own Fund transfer Ends here	-->
+
+	<bean id="KEBRBdomesticFundTransferJSONBldr"
+		class="com.barclays.bmg.json.model.builder.fundtransfer.own.DomesticFundTransferJSONBldr"
+		parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<bean id="KEBRBdomesticFundTransferExecuteOperation"
+		class="com.barclays.bmg.operation.payments.DomesticFundTransferExecuteOperation"
+		parent="bmbPaymentsOperation">
+		<property name="domesticFundTransferService" ref="KEBRBdomesticFundTransferService" />
+	</bean><!--
+
+
+	 Domestic Fund Transfer Service
+	-->
+
+	<bean id="KEBRBdomesticFundTransferService"
+		class="com.barclays.bmg.service.impl.fundtransfer.DomesticFundTransferServiceImpl">
+		<property name="domesticFundTransferDAO" ref="KEBRBdomesticFundTransferDAO" />
+	</bean>
+
+	<bean id="KEBRBdomesticFundTransferDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface"
+			value="com.barclays.bmg.dao.fundtransfer.DomesticFundTransferDAO" />
+		<property name="daoFrontController" ref="KEBRBdomesticFundTransferDAOControllerImpl" />
+	</bean>
+
+	<bean id="KEBRBdomesticFundTransferDAOControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="MAKEDOMESTICFUNDTRANSFER" value-ref="KEBRBdomesticFundTransferDAOController" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="KEBRBdomesticFundTransferDAOController"
+		class="com.barclays.bmg.dao.processing.fundtransfer.domestic.DomesticFundTransferDAOController">
+		<property name="domesticFundTransferReqAdptOperation" ref="KEBRBdomesticFundTransferReqAdptOperation" />
+		<property name="transmissionOperation"
+			ref="KEBRBdomesticFundTransferTransmissionOperation" />
+		<property name="domesticFundTransferRespAdptOperation" ref="KEBRBdomesticFundTransferRespAdptOperation" />
+	</bean>
+
+	<bean id="KEBRBdomesticFundTransferReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.fundtransfer.domestic.DomesticFundTransferReqAdptOperation">
+		<property name="domesticFundTransferPayloadAdapter" ref="KEBRBdomesticFundTransferPayloadAdapter" />
+	</bean>
+
+	<bean id="KEBRBdomesticFundTransferTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="KEBRBdomesticFundTransferTransmissionService" />
+	</bean>
+
+	<bean id="KEBRBdomesticFundTransferTransmissionService"
+		class="com.barclays.bmg.dao.service.impl.fundtransfer.domestic.DomesticFundTransferTransmissionService">
+		<property name="remoteService" ref="KEBRBfundTransferWebServiceImpl" />
+	</bean>
+
+	<bean id="KEBRBfundTransferWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.FinancialTransactionProcessing.FinancialTransactionProcessing_PortType" />
+		<property name="portName" value="FinancialTransactionProcessingSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.FinancialTransactionProcessing.FinancialTransactionProcessing_Service" />
+		<property name="endpointAddress" value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="FinancialTransactionProcessing_EndPoint" />
+		<property name="cacheKey" value="financialService" />
+	</bean>
+
+	<bean id="KEBRBdomesticFundTransferPayloadAdapter"
+		class="com.barclays.bmg.dao.adapter.fundtransfer.domestic.DomesticFundTransferPayloadAdapter">
+	</bean>
+
+	<bean id="KEBRBdomesticFundTransferRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.fundtransfer.domestic.DomesticFundTransferRespAdptOperation">
+	</bean>
+
+	<bean id="KEBRBfundTransferExecuteCommandValidator"
+		class="com.barclays.bmg.mvc.validator.fundtransfer.FundTransferExecuteCommandValidator" />
+
+		<!--
+
+	  Second level authentication
+
+	-->
+
+	<bean id="KEBRBtxnOTPSecondAuthJSONBldr"
+		class="com.barclays.bmg.json.model.builder.secondauth.TxnOTPSecondAuthJSONBldr"
+		parent="otpAuthenticationJSONBldr">
+	</bean>
+
+
+	<bean id="KEBRBtxnSQASecondAuthJSONBldr"
+		class="com.barclays.bmg.json.model.builder.secondauth.TxnSQASecondAuthJSONBldr"
+		parent="sqaAuthenticationJSONBldr">
+	</bean><!--
+
+	 Second level authentication Command Validator.
+	--><bean id="KEBRBtxnOTPCommandValidator"
+		class="com.barclays.bmg.mvc.validator.secondauth.TxnOTPCommandValidator">
+	</bean>
+
+	<bean id="KEBRBtxnSQACommandValidator"
+		class="com.barclays.bmg.mvc.validator.secondauth.TxnSQACommandValidator">
+	</bean>
+</beans>

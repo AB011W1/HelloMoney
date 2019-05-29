@@ -15,9 +15,9 @@ public class CashSendOneTimeExecuteJSONBulider extends BMBMultipleResponseJSONBu
     @Override
     /*
      * Overrides super class method to provide its own implementation.
-     * 
+     *
      * @param ResponseContext
-     * 
+     *
      * @return Object
      */
     public Object createMultipleJSONResponse(ResponseContext... responseContexts) {
@@ -42,7 +42,7 @@ public class CashSendOneTimeExecuteJSONBulider extends BMBMultipleResponseJSONBu
 
     /**
      * This method createHeader has the purpose to create header for JSON response.
-     * 
+     *
      * @param SelfRegistrationExecutionOperationResponse
      * @return BMBPayloadHeader
      */
@@ -58,13 +58,14 @@ public class CashSendOneTimeExecuteJSONBulider extends BMBMultipleResponseJSONBu
 	    header.setResMsg(response.getResMsg());
 	}
 	header.setSerVer(ResponseIdConstants.RESPONSE_SERVICE_VERSION);
-	header.setResId(getResponseId(response.getTxnTyp()));
+	if(null != response)
+		header.setResId(getResponseId(response.getTxnTyp()));
 	return header;
     }
 
     /**
      * This method populatePayLoad has the purpose to create data for JSON response.
-     * 
+     *
      * @param SelfRegistrationExecutionOperationResponse
      * @param BMBPayload
      * @return void
@@ -86,7 +87,7 @@ public class CashSendOneTimeExecuteJSONBulider extends BMBMultipleResponseJSONBu
 
     /**
      * This method getResponseId has the purpose to get response Id for JSON response.
-     * 
+     *
      * @param String
      *            txnType
      * @return String respId

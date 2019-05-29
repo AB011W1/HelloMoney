@@ -15,6 +15,8 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.barclays.bmg.context.BMBContextHolder;
+import com.barclays.bmg.context.BMGContextHolder;
+import com.barclays.bmg.context.BMGGlobalContext;
 import com.barclays.bmg.dao.product.impl.ComponentResDAOImpl;
 import com.barclays.bmg.dao.product.impl.ListValueResDAOImpl;
 import com.barclays.bmg.service.product.request.ListValueResServiceRequest;
@@ -237,8 +239,11 @@ public class BillPaySubmitJsonParser implements BmgBaseJsonParser {
 
 	    // Transaction fee only for CASA - CPB change 25/05/2017
 		// Removing PilotValue check(pilotValue !=null && pilotValue.equalsIgnoreCase("Y")) its not going with Regulatory 6.0.0 changes - 02/11/2017
-	    if(payData.getFrActNo().getMkdActNo() != null && responseBuilderParamsDTO.getUssdSessionMgmt().getBusinessId().equals("KEBRB")){
-				if(responseBuilderParamsDTO.getUssdSessionMgmt().getBusinessId().equals("KEBRB") && payData.getTxnChargeAmt().getAmt()!=null){
+	   // CBP change : Kenya & Uganda country
+	     //CBP Change
+	    BMGGlobalContext logContext = BMGContextHolder.getLogContext();
+	    if(payData.getFrActNo().getMkdActNo() != null && ((logContext !=null && logContext.getContextMap().get("isCBPFLAG").equals("Y"))|| logContext.getBusinessId().equals("KEBRB"))){
+				if(((logContext !=null && logContext.getContextMap().get("isCBPFLAG").equals("Y")) || (logContext!=null && logContext.getBusinessId().equals("KEBRB"))) && payData.getTxnChargeAmt().getAmt()!=null){
 
 					Double accumulatedCharge = 0.0;
 					Double roundedAccumulatedVal = 0.0;

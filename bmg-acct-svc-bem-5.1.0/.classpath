@@ -18,7 +18,7 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/bmg-core-view"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/bmg-core-utils"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/bmg-core-session-activity"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/bmg-auth-4.0.10"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/bmg-payments-bem-5.1.0"/>
+	<classpathentry kind="src" path="/bmg-payments-bem-5.1.0"/>
+	<classpathentry kind="src" path="/bmg-auth-4.0.10"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

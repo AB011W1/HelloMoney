@@ -1,0 +1,9 @@
+div.capgeminiRibbon{
+	background:url("../images/capgemini.png");
+	background-size: 200px 100px;
+	background-repeat: no-repeat;
+	height: 110px;
+	width: 130px;
+	background-color: Transparent;
+}
+

@@ -13,6 +13,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/ussd-core-cache"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/bmg-core-domain"/>
 	<classpathentry kind="src" path="/bmg-core-services"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/bmg-payments-bem-5.1.0"/>
+	<classpathentry kind="src" path="/bmg-payments-bem-5.1.0"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

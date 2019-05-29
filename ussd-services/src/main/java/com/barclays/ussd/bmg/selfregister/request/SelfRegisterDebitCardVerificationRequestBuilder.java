@@ -23,7 +23,6 @@ public class SelfRegisterDebitCardVerificationRequestBuilder implements BmgBaseR
     	USSDSessionManagement ussdSessionMgmt = requestBuilderParamsDTO.getUssdSessionMgmt();
     	Map<String, String> requestParamMap = new HashMap<String, String>();
 
-    	Map<String, String> userInputMap = requestBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap();
 
     	String userEntereddebitCardNumbers=ussdSessionMgmt.getUserTransactionDetails().getUserInputMap().get("debitCardNo");
     	List<Integer>  positionsList = (List<Integer>) ussdSessionMgmt.getTxSessions().get(
@@ -37,7 +36,6 @@ public class SelfRegisterDebitCardVerificationRequestBuilder implements BmgBaseR
     	requestParamMap.put(USSDConstants.DATA_TYPE_DEBIT_CARD_NO, userEntereddebitCardNumbers);
     	requestParamMap.put(USSDConstants.DATA_TYPE_DEBIT_CARD_EXPIRY_DATE, userEnteredDebitCardExpiryDate);
 
-    	HashMap<String, Object> txSessionMap = (HashMap<String, Object>) requestBuilderParamsDTO.getUssdSessionMgmt().getTxSessions();
     	requestParamMap.put(USSDConstants.BMG_LOCAL_KE_OPCODE_PARAM_NAME, requestBuilderParamsDTO.getBmgOpCode());
     	requestParamMap.put(USSDConstants.BMG_LOCAL_KE_SERVICE_VER_NAME, USSDConstants.BMG_SERVICE_VERSION_VALUE);
 

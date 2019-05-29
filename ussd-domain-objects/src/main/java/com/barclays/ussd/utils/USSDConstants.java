@@ -793,6 +793,10 @@ public final class USSDConstants {
 
 	public static final String USSD_TRANSACTION_MWALLETE_AMOUNT = "label.amount";
 
+	public static final String LABEL_GROUPWALLET_PAYREQUEST_ACCEPTED= "label.groupwallet.payrequest.accepted";
+	public static final String LABEL_TRANSACTION_SUCCESS= "label.tran.success";
+	public static final String LABEL_TRANSACTION_FAILED= "label.tran.failure";
+
 	public static final String USSD_TRANSACTION_MWALLETE_MOBILE = "label.mobile.number";
 
 	public static final String USSD_TRANSACTION_MWALLETE_SERVICE = "label.transaction.service";
@@ -881,4 +885,20 @@ public final class USSDConstants {
     public static final String DATA_TYPE_MZ_REF_NO = "mzrefno";
 
     public static final String GH_FREE_DIAL_USSD_TRAN_ID="GH_FREE_DIAL_USSD";
+
+    //GePG
+    public static final String GEPG_BMG_CONTROL_NUMBER_PARAM_NAME = "controlNumber";
+    public static final String GEPG_BMG_BILLER_NM_PARAM_NAME = "billerName";
+    public static final String GEPG_BMG_BILLER_ID_PARAM_NAME = "billerID";
+    public static final String GEPG_BILLER_INFO = "gePGBiller";
+    public static final String GePG_BILL_DETAIL = "gePGBillDetail";
+
+    public static final String GePG_BILL_PAYMENT_TYPE = "EXACT";
+    public static final String GePG_FULL_BILL_PAYMENT_TYPE = "FULL";
+    public static final String GePG_PARTIAL_BILL_PAYMENT_TYPE = "PART";
+
+    //MasterPassQR
+    public static final String MPQR_BILLER_INFO = "mpqrBiller";
+
 }
+

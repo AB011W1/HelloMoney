@@ -1,6 +1,5 @@
 package com.barclays.ussd.bmg.kits;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,7 +14,6 @@ import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.jsonparsers.bean.fundtransfer.ownfundtransfer.AccountDetails;
 import com.barclays.ussd.utils.jsonparsers.bean.fundtransfer.ownfundtransfer.TransactionAmt;
-import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
 
 public class KitsSendToPhoneSubmitRequestBuilder implements BmgBaseRequestBuilder {
 	@SuppressWarnings("unchecked")
@@ -42,8 +40,7 @@ public class KitsSendToPhoneSubmitRequestBuilder implements BmgBaseRequestBuilde
 		//reason entered
 		requestParamMap.put("txnReason", userInputMap.get(USSDInputParamsEnum.KITS_STP_REASON.getParamName()));
 		//debitAccount
-		List<AccountDetails> accList=new ArrayList<AccountDetails>();
-		accList= (List<AccountDetails>) txSessions.get(USSDInputParamsEnum.KITS_STP_ACCOUNT_NUM.getTranId());
+		 List<AccountDetails> accList= (List<AccountDetails>) txSessions.get(USSDInputParamsEnum.KITS_STP_ACCOUNT_NUM.getTranId());
         int selectedAccSeq=Integer.parseInt(userInputMap.get(USSDInputParamsEnum.KITS_STP_ACCOUNT_NUM.getParamName()))-1;
         AccountDetails acc=accList.get(selectedAccSeq);
         requestParamMap.put("debitAccount", acc.getActNo());
@@ -53,8 +50,7 @@ public class KitsSendToPhoneSubmitRequestBuilder implements BmgBaseRequestBuilde
 		//Set the fields for MakeBillPaymentRequest - CPB 09/05
 		String cpbflag = (String)txSessions.get("CpbMakeBillPaymentFields");
 		if(cpbflag !=null && cpbflag.equals("CpbMakeBillPaymentFields")){
-			TransactionAmt chargeAmount = new TransactionAmt();
-			chargeAmount = (TransactionAmt)txSessions.get("CpbChargeAmount");
+			TransactionAmt chargeAmount = (TransactionAmt)txSessions.get("CpbChargeAmount");
 			String cpbChargeAmount = chargeAmount.getAmt();
 			requestParamMap.put("CpbChargeAmount", String.valueOf(cpbChargeAmount));
 			requestParamMap.put("CpbFeeGLAccount", (String)txSessions.get("CpbFeeGLAccount"));

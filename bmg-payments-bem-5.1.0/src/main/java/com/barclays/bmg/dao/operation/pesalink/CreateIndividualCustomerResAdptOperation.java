@@ -8,11 +8,11 @@ import com.barclays.bem.CreateIndividualCustomer.CreateIndividualCustomerRespons
 import com.barclays.bmg.constants.ErrorCodeConstant;
 import com.barclays.bmg.context.ResponseContext;
 import com.barclays.bmg.dao.core.context.WorkContext;
-import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperation;
+import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperationAcct;
 import com.barclays.bmg.service.response.pesalink.CreateIndividualCustomerServiceResponse;
 
 
-public class CreateIndividualCustomerResAdptOperation extends AbstractResAdptOperation{
+public class CreateIndividualCustomerResAdptOperation extends AbstractResAdptOperationAcct{
 
 	    private static final Logger LOGGER = Logger.getLogger(CreateIndividualCustomerResAdptOperation.class);
 		public CreateIndividualCustomerServiceResponse adaptResponse(WorkContext workContext, Object obj){

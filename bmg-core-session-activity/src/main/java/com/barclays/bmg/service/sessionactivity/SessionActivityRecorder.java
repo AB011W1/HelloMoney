@@ -81,7 +81,7 @@ public class SessionActivityRecorder implements ApplicationContextAware {
 				sessionActivityDAO.insert(sessionActivityDTO);
 
 			} catch (Exception e) {
-				
+				e.printStackTrace();
 			}
 		}
 

@@ -49,12 +49,6 @@ public class CreditCardLinkSubmitJsonParser implements BmgBaseJsonParser
 
 						String caseNumber = CreditCardLinkDataObj.getPayData().getCaseNumber();
 						USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
-						UssdResourceBundle ussdResourceBundle = responseBuilderParamsDTO.getUssdResourceBundle();
-						UserProfile userProfile = ussdSessionMgmt.getUserProfile();
-
-
-						Locale locale = new Locale(userProfile.getLanguage(), userProfile.getCountryCode());
-						String caseNumberLabel =ussdResourceBundle.getLabel(LABEL_CREDIT_CARD_LINK_CASE_NUMBER, locale);
 
 						List<String> params = new ArrayList<String>(1);
 						params.add(caseNumber);

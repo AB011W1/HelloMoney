@@ -61,7 +61,7 @@ public class SQAValidationController extends BMBAbstractCommandController {
 
     /**
      * make request for sqa verification
-     * 
+     *
      * @param request
      * @return
      */
@@ -93,11 +93,10 @@ public class SQAValidationController extends BMBAbstractCommandController {
     }
 
     private void setAuthorisationInSession(HttpServletRequest request) {
-	Map<String, Object> userMap = getUserMapFromSession(request);
 
 	/*
 	 * GrantedAuthority[] authorities = new GrantedAuthorityImpl[1]; authorities[0] = new GrantedAuthorityImpl(ROLE_USER);
-	 * 
+	 *
 	 * Authentication authentication = new PreAuthenticatedAuthenticationToken( userMap.get(SessionConstant.SESSION_USER_ID), "", authorities);
 	 * HttpSession session = request.getSession(false); if (session != null) { session.setAttribute(AUTH_RESULT, authentication); }
 	 */

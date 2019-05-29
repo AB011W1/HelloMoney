@@ -1,10 +1,13 @@
 package com.barclays.ussd.bmg.fundtransfer.internal.nonregistered.request;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+
 import org.apache.log4j.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
+
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
@@ -31,7 +34,6 @@ public class IntNonRegFTCCListJsonParser implements BmgBaseJsonParser {
 
     @Override
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
-    	MenuItemDTO menuDTO = null;
     	ObjectMapper mapper = new ObjectMapper();
 
     	try{
@@ -39,8 +41,8 @@ public class IntNonRegFTCCListJsonParser implements BmgBaseJsonParser {
     		 if (creditCardListObj != null) {
     				if (creditCardListObj.getPayHdr() != null
     					&& USSDExceptions.SUCCESS.getBmgCode().equalsIgnoreCase(creditCardListObj.getPayHdr().getResCde())) {
-    				    List<CustomerMobileRegAcct> custActs = creditCardListObj.getPayData().getCustActs();
-    				    menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, creditCardListObj);
+    					MenuItemDTO menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, creditCardListObj);
+    					return  menuDTO ;
     				} else if (creditCardListObj.getPayHdr() != null) {
     				    LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
     				    throw new USSDNonBlockingException(creditCardListObj.getPayHdr().getResCde());
@@ -61,13 +63,14 @@ public class IntNonRegFTCCListJsonParser implements BmgBaseJsonParser {
     		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
     	    }
     	}
-    	return  menuDTO ;
+
     }
 
     private MenuItemDTO renderMenuOnScreen(ResponseBuilderParamsDTO responseBuilderParamsDTO,AuthUserData userAuthObj) throws USSDNonBlockingException {
 
     	MenuItemDTO menuItemDTO = null;
     	AuthenticateUserPayData acntPayData = userAuthObj.getPayData();
+
     	if(acntPayData!= null)
     	{
 		 if (acntPayData.getCustActs() != null && !acntPayData.getCustActs().isEmpty()) {
@@ -79,6 +82,8 @@ public class IntNonRegFTCCListJsonParser implements BmgBaseJsonParser {
 				responseBuilderParamsDTO.getUssdSessionMgmt().setTxSessions(txSessions);
 
 				USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
+				AuthUserData authData= ((AuthUserData)ussdSessionMgmt.getUserAuthObj());
+		    	List<CustomerMobileRegAcct> acts=authData.getPayData().getCustActs();
 				String language = ussdSessionMgmt.getUserProfile().getLanguage();
 				String countryCode = ussdSessionMgmt.getUserProfile().getCountryCode();
 				Locale locale = new Locale(language, countryCode);
@@ -86,7 +91,19 @@ public class IntNonRegFTCCListJsonParser implements BmgBaseJsonParser {
 						.getLabel("label.fundtr.fundCredit.from", locale);
 				pageBody.append(TRANSACTION_AIRTIME_CREDITCARD_LABEL);
 				//pageBody.append(USSDConstants.NEW_LINE);
-				for (CustomerMobileRegAcct accountDetail : acntPayData.getCustActs()) {
+				List<String> GpAcc=new ArrayList<String>();
+				 for(int i =0;i<acts.size();i++)
+				    	if(acts.get(i).getGroupWalletIndicator()!=null && acts.get(i).getGroupWalletIndicator().equals("Y"))
+				    		GpAcc.add(acts.get(i).getMkdActNo());
+				    List<CustomerMobileRegAcct> srcAcc=acntPayData.getCustActs();
+
+					 for(int j=0;j<srcAcc.size();j++)
+						 if(GpAcc.contains(srcAcc.get(j).getMkdActNo()))
+							 srcAcc.remove(j);
+					 if (srcAcc == null || srcAcc.isEmpty() || srcAcc.size() == 0) {
+						    throw new USSDNonBlockingException(USSDExceptions.USSD_NO_ELIGIBLE_ACCTS.getBmgCode());
+						}
+				for (CustomerMobileRegAcct accountDetail : srcAcc) {
 				    pageBody.append(USSDConstants.NEW_LINE);
 				    pageBody.append(index);
 				    pageBody.append(USSDConstants.DOT_SEPERATOR);
@@ -103,7 +120,8 @@ public class IntNonRegFTCCListJsonParser implements BmgBaseJsonParser {
 				throw new USSDNonBlockingException(USSDExceptions.USSD_NO_CREDIT_CARD_FOUND.getBmgCode());
 			    }
 		 }
-	setNextScreenSequenceNumber(menuItemDTO);
+    	if(null != menuItemDTO)
+    		setNextScreenSequenceNumber(menuItemDTO);
 	return menuItemDTO;
 	}
 

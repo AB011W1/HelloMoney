@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="statmentInitRequestController"
+		class="com.barclays.bmg.mvc.controller.statement.StatmentInitRequestController">
+		<property name="retrieveSourceAccountListOperation" ref="retrieveAccountListOperation" />
+		<!-- <property name="stmtRequestOperation" ref="stmtRequestOperation" /> -->
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="featureBlackoutService" ref="featureBlackoutServiceImpl" />
+		<property name="bmbJSONBuilder" ref="statmentRequestInitBldr" />
+		<property name="branchLookUpOperation" ref="branchLookUpOperation" />
+	</bean>
+
+
+
+	<bean id="statmentRequestInitBldr"
+		class="com.barclays.bmg.json.model.builder.statement.StatmentRequestInitBldr"
+		parent="bmbCommonJSONBuilder">
+	</bean>
+
+
+	<!-- ********************** Statement Validation Mapping	**********************-->
+
+	<!-- Command Bean -->
+	<!-- 	<bean name="statementRequestValidateCommand"
+				class="com.barclays.ussd.stmt.StatementRequestValidationCommand" /> 	-->
+
+	<bean id="statmentRequestController"
+		class="com.barclays.bmg.mvc.controller.statement.StatementRequestValidationController">
+		<property name="statementRequestValidationOperation" ref="statementRequestValidationOperation" />
+		<property name="getSelectedAccountOperation" ref="getSelectedAccountOperation" />
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="featureBlackoutService" ref="featureBlackoutServiceImpl" />
+		<property name="bmbJSONBuilder" ref="statementRequestValidationBldr" />
+		<property name="commandName" value="statmentRequestValidateCommand" />
+		<property name="commandClass" value="com.barclays.bmg.mvc.command.statement.StatmentRequestValidateCommand" />
+		<property name="validator" ref="statementRequestValidateCommandValidator" />
+		<property name="statementRequestValidationValidate" ref="statementRequestValidationValidate" />
+	</bean>
+
+
+
+	<bean id="statementRequestValidationValidate"
+		class="com.barclays.bmg.operation.statement.StatementRequestValidationValidate" parent="bmbPaymentsOperation">
+	</bean>
+
+	<bean id="statementRequestValidationBldr"
+		class="com.barclays.bmg.json.model.builder.statement.StatementRequestValidationBldr" parent="bmbCommonJSONBuilder">
+
+	</bean>
+
+
+	<!-- Command Validation -->
+	<bean id="statementRequestValidateCommandValidator"
+		class="com.barclays.bmg.mvc.validator.statement.StatmentRequestValidatationCommandValidator" />
+
+	<!--<bean id="statmentTestController" class="com.barclays.ussd.stmt.StatmentTestController">
+		<property name="commandName" value="statmentTestCommand" />
+		<property name="commandClass" value="com.barclays.ussd.stmt.StatmentTestCommand" />
+		<property name="validator" ref="statmentRequestExecuteCommandValidator" />
+	</bean>
+
+
+	--><bean id="statementRequestValidationOperation"
+		class="com.barclays.bmg.operation.statement.StatementRequestValidationOperation"
+		parent="bmbCommonOperation">
+	</bean>
+
+
+
+	<!--
+		<bean id="statmentRequestValidationService"
+		class="com.barclays.ussd.stmt.StatmentRequestValidationServiceImpl">
+		<property name="statmentRequestExecuteDAO"
+		ref="statmentRequestExecuteDAO" /> </bean>
+	-->
+
+
+
+	<!-- Statement Exceute -->
+
+	<bean id="statmentExcecuteRequestController"
+		class="com.barclays.bmg.mvc.controller.statement.StatementRequestExecuteController">
+		<property name="statementRequestExcecuteOperation" ref="statementRequestExcecuteOperation" />
+		<property name="getSelectedAccountOperation" ref="getSelectedAccountOperation" />
+		<property name="messageResourceService" ref="messageResourceService" />
+		<property name="systemParameterService" ref="systemParameterService" />
+		<property name="featureBlackoutService" ref="featureBlackoutServiceImpl" />
+		<property name="bmbJSONBuilder" ref="statementExecuteJsonBldr" />
+		<property name="commandName" value="statementRequestExecuteCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.statement.StatementRequestExecuteCommand" />
+	</bean>
+
+	<bean id="statementExecuteJsonBldr"
+		class="com.barclays.bmg.json.model.builder.statement.StatementRequestExecuteBldr"
+		parent="bmbCommonJSONBuilder">
+	</bean>
+
+
+	<bean id="statementRequestExcecuteOperation" class="com.barclays.bmg.operation.statement.StatementRequestExcecuteOperation"
+		parent="bmbCommonOperation">
+		<property name="statementRequestExecuteService" ref="statementRequestExecuteService" />
+	</bean>
+
+	<bean id="statementRequestExecuteService" class="com.barclays.bmg.service.impl.StatementRequestExecuteServiceImpl">
+		<property name="statmentRequestExecuteDAO" ref="statmentRequestExecuteDAO" />
+	</bean>
+
+	<bean id="statmentRequestExecuteDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.StatmentRequestExecuteDAO" />
+		<property name="daoFrontController" ref="statmentDAOFrontControllerImpl" />
+	</bean>
+
+	<bean id="statmentDAOFrontControllerImpl" class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="EXECUTESTATEMENTREQUEST" value-ref="statmentExecuteDAOController" />
+
+			</map>
+		</property>
+	</bean>
+
+	<bean id="statmentExecuteDAOController" class="com.barclays.bmg.dao.processing.accountservices.StatmentExecuteDAOController">
+		<property name="statmentReqAdptOperation" ref="statmentReqAdptOperation" />
+		<property name="transmissionOperation" ref="statmentExecuteTransmissionOperation" />
+		<property name="statmentExecuteResAdptOperation" ref="statmentExecuteResAdptOperation" />
+	</bean>
+
+	<bean id="statmentExecuteTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="statmentExecuteTransmissionService" />
+	</bean>
+	<bean id="statmentExecuteTransmissionService"
+			class="com.barclays.bmg.dao.service.impl.StatmentExecuteTransmissionService">
+		<property name="remortService" ref="statmentExecuteWebServiceImpl" />
+	</bean>
+
+
+
+
+	<bean id="statmentExecuteWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface" value="com.barclays.bem.AccountManagement.AccountManagement_PortType" />
+		<property name="portName" value="AccountManagementSOAP" />
+		<property name="jaxRpcServiceInterface" value="com.barclays.bem.AccountManagement.AccountManagement_Service" />
+		<property name="endpointAddress" value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="AccountManagement_EndPoint" />
+		<property name="cacheKey" value="orderStatementReq" />
+	</bean>
+
+	<bean id="statmentReqAdptOperation" class="com.barclays.bmg.dao.operation.accountservices.StatmentReqAdptOperation">
+		<property name="statmentRequestHeaderAdapter" ref="statmentRequestHeaderAdapter" />
+		<property name="statmentPayloadAdapter" ref="statmentPayloadAdapter" />
+	</bean>
+
+	<bean id="statmentRequestHeaderAdapter" class="com.barclays.bmg.dao.accountservices.adapter.StatmentRequestHeaderAdapter">
+	</bean>
+
+	<bean id="statmentExecuteResAdptOperation" class="com.barclays.bmg.dao.operation.accountservices.StatmentExecuteResAdptOperation">
+	</bean>
+
+	<bean id="statmentPayloadAdapter" class="com.barclays.bmg.dao.accountservices.adapter.StatmentPayloadAdapter">
+	</bean>
+</beans>

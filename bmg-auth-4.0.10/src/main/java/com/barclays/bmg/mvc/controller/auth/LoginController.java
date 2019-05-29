@@ -35,9 +35,9 @@ import com.barclays.bmg.utils.BMGFormatUtility;
 
 /**
  * Login Controller
- * 
+ *
  * @author e20026338
- * 
+ *
  */
 public class LoginController extends BMBAbstractCommandController {
 
@@ -145,7 +145,7 @@ public class LoginController extends BMBAbstractCommandController {
 
     /**
      * Add parameters to context
-     * 
+     *
      * @param request
      */
     private void addContext(SPAuthenticationOperationRequest request, HttpServletRequest httpRequest) {
@@ -159,7 +159,7 @@ public class LoginController extends BMBAbstractCommandController {
 
     /**
      * generate OTP
-     * 
+     *
      * @param spAuthenticationOperationResponse
      * @return
      */
@@ -201,7 +201,7 @@ public class LoginController extends BMBAbstractCommandController {
 
     /**
      * get SQA Challenge
-     * 
+     *
      * @param spAuthenticationOperationResponse
      * @return
      */
@@ -282,20 +282,20 @@ public class LoginController extends BMBAbstractCommandController {
 
 	    isNeedWarningChangePassword = true;
 
-	    setProcessMapIntoSession(httpRequest, SessionConstant.LEFT_WARNING_DAYS, new Integer(leftWarningDays).toString());
+	    setProcessMapIntoSession(httpRequest, SessionConstant.LEFT_WARNING_DAYS,Integer.valueOf(leftWarningDays).toString());
 	}
 
 	// --- set for PASSWORD EXPIRY
-	setProcessMapIntoSession(httpRequest, SessionConstant.IS_NEED_CHANGE_PWD, new Boolean(spAuthenticationOperationResponse
+	setProcessMapIntoSession(httpRequest, SessionConstant.IS_NEED_CHANGE_PWD, Boolean.valueOf(spAuthenticationOperationResponse
 		.getAuthenticationDTO().isNeedChangePWD()).toString());
 
 	// --- set for PASSWORD WARNING
-	setProcessMapIntoSession(httpRequest, SessionConstant.IS_NEED_WARNING_CHAHGE_PWD, new Boolean(isNeedWarningChangePassword).toString());
+	setProcessMapIntoSession(httpRequest, SessionConstant.IS_NEED_WARNING_CHAHGE_PWD,Boolean.valueOf(isNeedWarningChangePassword).toString());
     }
 
     /**
      * create failure model
-     * 
+     *
      * @return
      */
     private BMBPayloadData createFailureModel() {

@@ -1,5 +1,7 @@
 package com.barclays.bmg.mvc.controller.fundtransfer.nonregistered.internal;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -12,6 +14,9 @@ import com.barclays.bmg.constants.FundTransferConstants;
 import com.barclays.bmg.constants.FundTransferResponseCodeConstants;
 import com.barclays.bmg.constants.MessageCodeConstant;
 import com.barclays.bmg.constants.SessionConstant;
+import com.barclays.bmg.constants.SystemParameterConstant;
+import com.barclays.bmg.context.BMGContextHolder;
+import com.barclays.bmg.context.BMGGlobalContext;
 import com.barclays.bmg.context.Context;
 import com.barclays.bmg.context.RequestContext;
 import com.barclays.bmg.dto.Charge;
@@ -101,11 +106,12 @@ public class FundTransferExecutionController extends
 			fundTransferExecuteOperationRequest.setContext(context);
 
 			// Set the fields for MakeDomesticFundTransferRequest - CPB 30/05
+			//check for CBP
 			context.setOpCde(httpRequest.getParameter("opCde"));
 			Charge chargeDTO = null;
 			if(httpRequest.getParameter("CpbOtherBarcDomesticFundTransfer") != null){
 				chargeDTO = new Charge();
-				if(httpRequest.getParameter("CpbOtherBarcDomesticFundTransfer").equals("setCpbDomesticInfoFields") && context.getBusinessId().equals("KEBRB")){
+				if(httpRequest.getParameter("CpbOtherBarcDomesticFundTransfer").equals("setCpbDomesticInfoFields")){
 					Double cpbChargeAmount = Double.parseDouble(httpRequest.getParameter("CpbChargeAmount"));
 					chargeDTO.setCpbChargeAmount(cpbChargeAmount);
 					chargeDTO.setFeeGLAccount((String)httpRequest.getParameter("CpbFeeGLAccount"));
@@ -118,7 +124,7 @@ public class FundTransferExecutionController extends
 					chargeDTO.setValue((String)httpRequest.getParameter("CpbValue"));
 					chargeDTO.setCpbMakeBillPaymentFlag("setDomesticFundOthBarclaysFields");
 
-				}else if(httpRequest.getParameter("CpbOtherBarcDomesticFundTransfer").equals("xelerateOffline") && context.getBusinessId().equals("KEBRB")){
+				}else if(httpRequest.getParameter("CpbOtherBarcDomesticFundTransfer").equals("xelerateOffline")){
 					Double cpbChargeAmount = Double.parseDouble(httpRequest.getParameter("CpbChargeAmount"));
 					chargeDTO.setCpbChargeAmount(cpbChargeAmount);
 					Double cpbTaxAmount = Double.parseDouble(httpRequest.getParameter("CpbTaxAmount"));

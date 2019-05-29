@@ -1,0 +1,138 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Header/>
+  <soapenv:Body>
+<NS1:RetrieveCASAAccountDetailsResponse xmlns:NS1="http://barclays.com/bem/RetrieveCASAAcctDetails">
+  <NS1:ResponseHeader>
+    <ServiceContext>
+      <ServiceID>RetrieveCASAAcctDetails</ServiceID>
+      <ConsumerUniqueRefNo>81524135989031</ConsumerUniqueRefNo>
+      <OriginalConsumerUniqueRefNo>81524135989031</OriginalConsumerUniqueRefNo>
+      <ServiceDateTime>2018-04-19T14:36:36.838+05:30</ServiceDateTime>
+      <ServiceVersionNo>6.0.0</ServiceVersionNo>
+      <OverrideRequestFlag>false</OverrideRequestFlag> 
+    </ServiceContext>
+    <BankUserContext>
+      <StaffType>Regular</StaffType>
+      <StaffID>IFE</StaffID>
+      <AuthorizerID>Z00019789</AuthorizerID>
+    </BankUserContext>
+    <ServiceResStatus>
+      <ServiceResCode>00000</ServiceResCode>
+      <ServiceResDesc>Successful</ServiceResDesc>
+      <ServiceRespDateTime>2018-04-19T12:07:00.849930</ServiceRespDateTime>
+    </ServiceResStatus>
+  </NS1:ResponseHeader>
+  <NS1:CASAAccountDetails>
+    <NS1:CustomerNumber xmlns:ns24="http://account.entity.fcr.iflex.com">140114505</NS1:CustomerNumber>
+    <NS1:CASAAccountSummary>
+      <NS2:AccountNumber xmlns:NS2="http://barclays.com/bem/Account" xmlns:ns17="http://account.entity.fcr.iflex.com">0705196745      </NS2:AccountNumber>
+      <NS3:AccountCurrencyCode xmlns:NS3="http://barclays.com/bem/Account" xmlns:ns23="http://account.entity.fcr.iflex.com">KES</NS3:AccountCurrencyCode>
+      <NS4:AccountTitle xmlns:NS4="http://barclays.com/bem/Account" xmlns:ns197="http://dto.savings.deposit.app.fcr.iflex.com">XXXXX</NS4:AccountTitle>
+      <NS5:Product xmlns:NS5="http://barclays.com/bem/Account">
+        <NS6:ProductCode xmlns:NS6="http://barclays.com/bem/Product" xmlns:ns38="http://account.entity.fcr.iflex.com">633</NS6:ProductCode>
+        <NS7:ProductName xmlns:NS7="http://barclays.com/bem/Product" xmlns:ns39="http://account.entity.fcr.iflex.com">JUNIOR EAGLE CLUB ACCOUNT</NS7:ProductName>
+      </NS5:Product>
+      <NS8:AccountLifecycleStatusCode xmlns:NS8="http://barclays.com/bem/Account">CH-8</NS8:AccountLifecycleStatusCode>
+      <NS9:AccountAvailableBalance xmlns:NS9="http://barclays.com/bem/Account">
+        <NS10:AccountCCYBalance xmlns:NS10="http://barclays.com/bem/Balance" xmlns:ns107="http://dto.casa.account.entity.fcr.iflex.com">186618.75</NS10:AccountCCYBalance>
+      </NS9:AccountAvailableBalance>
+      <NS11:AccountCurrentBalance xmlns:NS11="http://barclays.com/bem/Account">
+        <NS12:AccountCCYBalance xmlns:NS12="http://barclays.com/bem/Balance" xmlns:ns111="http://dto.casa.account.entity.fcr.iflex.com">186618.75</NS12:AccountCCYBalance>
+      </NS11:AccountCurrentBalance>
+      <NS13:DomicileBranch xmlns:NS13="http://barclays.com/bem/Account">
+        <NS14:BranchCode xmlns:NS14="http://barclays.com/bem/Branch" xmlns:ns19="http://account.entity.fcr.iflex.com">70</NS14:BranchCode>
+        <NS15:BranchName xmlns:NS15="http://barclays.com/bem/Branch" xmlns:ns20="http://account.entity.fcr.iflex.com">ENTERPRISE ROAD BRANCH</NS15:BranchName>
+        <NS16:BranchShortName xmlns:NS16="http://barclays.com/bem/Branch" xmlns:ns21="http://account.entity.fcr.iflex.com">070-ENT RD </NS16:BranchShortName>
+      </NS13:DomicileBranch>
+      <NS17:AccountOpeningDate xmlns:NS17="http://barclays.com/bem/Account">2006-05-22</NS17:AccountOpeningDate>
+      <NS18:LanguageCode xmlns:NS18="http://barclays.com/bem/Account">EN</NS18:LanguageCode>
+      <NS19:Nomineename xmlns:NS19="http://barclays.com/bem/Account">
+        <NS20:FullName xmlns:NS20="http://barclays.com/bem/IndividualName" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+      </NS19:Nomineename>
+      <NS21:AccountAttributes xmlns:NS21="http://barclays.com/bem/Account">
+        <NS21:RestrictedAccountFlag xmlns:ns27="http://account.entity.fcr.iflex.com">false</NS21:RestrictedAccountFlag>
+        <NS21:StaffFlag xmlns:ns26="http://account.entity.fcr.iflex.com">false</NS21:StaffFlag>
+        <NS21:HoldMailFlag>false</NS21:HoldMailFlag>
+        <NS21:JointAccountFlag xmlns:ns93="http://casa.account.entity.fcr.iflex.com">false</NS21:JointAccountFlag>
+      </NS21:AccountAttributes>
+      <NS22:TDSFlag xmlns:NS22="http://barclays.com/bem/CASAAccountSummary">true</NS22:TDSFlag>
+      <NS23:Tax xmlns:NS23="http://barclays.com/bem/CASAAccountSummary">
+        <NS24:TaxCode1 xmlns:NS24="http://barclays.com/bem/Tax">1</NS24:TaxCode1>
+        <NS25:TaxCode2 xmlns:NS25="http://barclays.com/bem/Tax">999</NS25:TaxCode2>
+        <NS26:TDSExemptionLimitAmount2 xmlns:NS26="http://barclays.com/bem/Tax">0.0</NS26:TDSExemptionLimitAmount2>
+        <NS27:TDSExemptionLimitAmount1 xmlns:NS27="http://barclays.com/bem/Tax">0.0</NS27:TDSExemptionLimitAmount1>
+      </NS23:Tax>
+      <NS28:AccountAccrualStatusCode xmlns:NS28="http://barclays.com/bem/CASAAccountSummary"/>
+      <NS29:MailAddressControlFlag xmlns:NS29="http://barclays.com/bem/CASAAccountSummary">1</NS29:MailAddressControlFlag>
+      <NS30:NumberOfStatementCopies xmlns:NS30="http://barclays.com/bem/CASAAccountSummary">1</NS30:NumberOfStatementCopies>
+      <NS31:MinorAccountStatusCode xmlns:NS31="http://barclays.com/bem/CASAAccountSummary"/>
+      <NS32:GenerateRateChangeIntimationFlag xmlns:NS32="http://barclays.com/bem/CASAAccountSummary">false</NS32:GenerateRateChangeIntimationFlag>
+      <NS33:LeadDaysIntimation xmlns:NS33="http://barclays.com/bem/CASAAccountSummary">0</NS33:LeadDaysIntimation>
+      <NS34:IBANAccountNumber xmlns:NS34="http://barclays.com/bem/CASAAccountSummary" xmlns:ns62="http://dto.deposit.app.fcr.iflex.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+      <NS35:LineNumber xmlns:NS35="http://barclays.com/bem/CASAAccountSummary">0</NS35:LineNumber>
+      <NS36:NumberOfPastDueChecks xmlns:NS36="http://barclays.com/bem/CASAAccountSummary">0</NS36:NumberOfPastDueChecks>
+      <NS37:NumberOfCheckWithdrawals xmlns:NS37="http://barclays.com/bem/CASAAccountSummary">0</NS37:NumberOfCheckWithdrawals>
+      <NS38:PassbookLifecycleStatusCode xmlns:NS38="http://barclays.com/bem/CASAAccountSummary"/>
+      <NS39:CheckReorderThresholdNumber xmlns:NS39="http://barclays.com/bem/CASAAccountSummary">0</NS39:CheckReorderThresholdNumber>
+      <NS40:DeferredStmtGenerationDayOfMonth xmlns:NS40="http://barclays.com/bem/CASAAccountSummary">8</NS40:DeferredStmtGenerationDayOfMonth>
+      <NS41:StatementPeriod xmlns:NS41="http://barclays.com/bem/CASAAccountSummary">
+        <NS41:StartDate>2021-01-09</NS41:StartDate>
+        <NS41:EndDate>2021-08-27</NS41:EndDate>
+      </NS41:StatementPeriod>
+    </NS1:CASAAccountSummary>
+    <NS1:CASAAccountBalance>
+      <NS42:TotalUnclearFundAmount xmlns:NS42="http://barclays.com/bem/CASAAccountBalance" xmlns:ns122="http://dto.casa.account.entity.fcr.iflex.com">0</NS42:TotalUnclearFundAmount>
+      <NS43:AdvanceAgainstUnclearedFunds xmlns:NS43="http://barclays.com/bem/CASAAccountBalance">0.0</NS43:AdvanceAgainstUnclearedFunds>
+      <NS44:TotalCASAHoldAmount xmlns:NS44="http://barclays.com/bem/CASAAccountBalance">0.0</NS44:TotalCASAHoldAmount>
+      <NS46:MinimumRequiredBalanceAmount xmlns:NS46="http://barclays.com/bem/CASAAccountBalance" xmlns:ns114="http://dto.casa.account.entity.fcr.iflex.com">2000</NS46:MinimumRequiredBalanceAmount>
+      <NS47:MinimumRequiredTradingBalanceAmount xmlns:NS47="http://barclays.com/bem/CASAAccountBalance">0.0</NS47:MinimumRequiredTradingBalanceAmount>
+      <NS48:NetBalanceAmount xmlns:NS48="http://barclays.com/bem/CASAAccountBalance" xmlns:ns115="http://dto.casa.account.entity.fcr.iflex.com">186618.75</NS48:NetBalanceAmount>
+      <NS49:NetAvailableBalanceForWithdrawal xmlns:NS49="http://barclays.com/bem/CASAAccountBalance" xmlns:ns115="http://dto.casa.account.entity.fcr.iflex.com">186618.75</NS49:NetAvailableBalanceForWithdrawal>
+      <NS51:CurrentBookBalanceAmount xmlns:NS51="http://barclays.com/bem/CASAAccountBalance" xmlns:ns111="http://dto.casa.account.entity.fcr.iflex.com">186618.75</NS51:CurrentBookBalanceAmount>
+      <NS52:PreviousDayClosingBookBalance xmlns:NS52="http://barclays.com/bem/CASAAccountBalance" xmlns:ns117="http://dto.casa.account.entity.fcr.iflex.com">186618.75</NS52:PreviousDayClosingBookBalance>
+      <NS53:SweepinAmountOnLien xmlns:NS53="http://barclays.com/bem/CASAAccountBalance" xmlns:ns121="http://dto.casa.account.entity.fcr.iflex.com">0</NS53:SweepinAmountOnLien>
+      <NS54:PeriodicAverageBalanceAmount xmlns:NS54="http://barclays.com/bem/CASAAccountBalance" xmlns:ns116="http://dto.casa.account.entity.fcr.iflex.com">145096.41002216204651631414890289306640625</NS54:PeriodicAverageBalanceAmount>
+    </NS1:CASAAccountBalance>
+    <NS1:CASAAccountControlInfo>
+      <NS55:AdditionalAddressFlag xmlns:NS55="http://barclays.com/bem/CASAAccountControlInfo">true</NS55:AdditionalAddressFlag>
+      <NS56:AdHocStatementFlag xmlns:NS56="http://barclays.com/bem/CASAAccountControlInfo" xmlns:ns84="http://casa.account.entity.fcr.iflex.com">true</NS56:AdHocStatementFlag>
+      <NS57:ATMFacilityFlag xmlns:NS57="http://barclays.com/bem/CASAAccountControlInfo">true</NS57:ATMFacilityFlag>
+      <NS58:GroupBonusInteresFlag xmlns:NS58="http://barclays.com/bem/CASAAccountControlInfo">false</NS58:GroupBonusInteresFlag>
+      <NS59:InternetBankingAccessFlag xmlns:NS59="http://barclays.com/bem/CASAAccountControlInfo">true</NS59:InternetBankingAccessFlag>
+      <NS60:InwardDirectDebitAuthorizationFlag xmlns:NS60="http://barclays.com/bem/CASAAccountControlInfo" xmlns:ns86="http://casa.account.entity.fcr.iflex.com">false</NS60:InwardDirectDebitAuthorizationFlag>
+      <NS61:MobileFacilityFlag xmlns:NS61="http://barclays.com/bem/CASAAccountControlInfo">true</NS61:MobileFacilityFlag>
+      <NS62:PointOfSaleFacilityFlag xmlns:NS62="http://barclays.com/bem/CASAAccountControlInfo">false</NS62:PointOfSaleFacilityFlag>
+      <NS63:StandingInstructionFlag xmlns:NS63="http://barclays.com/bem/CASAAccountControlInfo" xmlns:ns83="http://casa.account.entity.fcr.iflex.com">false</NS63:StandingInstructionFlag>
+      <NS64:SweepoutInstructionFlag xmlns:NS64="http://barclays.com/bem/CASAAccountControlInfo" xmlns:ns102="http://casa.account.entity.fcr.iflex.com">false</NS64:SweepoutInstructionFlag>
+    </NS1:CASAAccountControlInfo>
+    <NS1:CASAAccountInterest>
+      <NS65:CreditInterestAccruedAmount xmlns:NS65="http://barclays.com/bem/CASAAccountInterest">0.0</NS65:CreditInterestAccruedAmount>
+      <NS66:DebitInterestAccruedAmount xmlns:NS66="http://barclays.com/bem/CASAAccountInterest">0.0</NS66:DebitInterestAccruedAmount>
+      <NS67:AdjustedCreditInterestAccrued xmlns:NS67="http://barclays.com/bem/CASAAccountInterest">0.0</NS67:AdjustedCreditInterestAccrued>
+      <NS68:AdjustedDebitInterestAccrued xmlns:NS68="http://barclays.com/bem/CASAAccountInterest">0.0</NS68:AdjustedDebitInterestAccrued>
+      <NS69:ProjectedTaxOnAccruedInterestAmount xmlns:NS69="http://barclays.com/bem/CASAAccountInterest">0.0</NS69:ProjectedTaxOnAccruedInterestAmount>
+      <NS70:AverageDailyBalanceInfo xmlns:NS70="http://barclays.com/bem/CASAAccountInterest">
+        <NS70:OverdraftLimitAmount>0.0</NS70:OverdraftLimitAmount>
+      </NS70:AverageDailyBalanceInfo>
+      <NS71:InterestWaiverFlag xmlns:NS71="http://barclays.com/bem/CASAAccountInterest" xmlns:ns92="http://casa.account.entity.fcr.iflex.com">false</NS71:InterestWaiverFlag>
+      <NS72:DebitInterestCapitalisationFrequencyCode xmlns:NS72="http://barclays.com/bem/CASAAccountInterest"/>
+      <NS73:InterestAccruedInCurrentFinancialYear xmlns:NS73="http://barclays.com/bem/CASAAccountInterest">0.0</NS73:InterestAccruedInCurrentFinancialYear>
+    </NS1:CASAAccountInterest>
+    <NS1:CASAAccountOverDraft>
+      <NS74:LastIssuedCheckNumber xmlns:NS74="http://barclays.com/bem/CASAAccountOverDraft">0</NS74:LastIssuedCheckNumber>
+      <NS75:DebitsMonthTillDateAmount xmlns:NS75="http://barclays.com/bem/CASAAccountOverDraft">0.0</NS75:DebitsMonthTillDateAmount>
+      <NS76:DebitsLastDate xmlns:NS76="http://barclays.com/bem/CASAAccountOverDraft">2021-07-05</NS76:DebitsLastDate>
+      <NS77:DebitsYearTillDateAmount xmlns:NS77="http://barclays.com/bem/CASAAccountOverDraft">1347.0</NS77:DebitsYearTillDateAmount>
+      <NS78:MTDDebitsCount xmlns:NS78="http://barclays.com/bem/CASAAccountOverDraft">0</NS78:MTDDebitsCount>
+      <NS79:YTDDebitsCount xmlns:NS79="http://barclays.com/bem/CASAAccountOverDraft">0</NS79:YTDDebitsCount>
+      <NS80:YTDDebitsLastAmount xmlns:NS80="http://barclays.com/bem/CASAAccountOverDraft">20.0</NS80:YTDDebitsLastAmount>
+      <NS81:CreditsMonthTillDateAmount xmlns:NS81="http://barclays.com/bem/CASAAccountOverDraft">1000.0</NS81:CreditsMonthTillDateAmount>
+      <NS82:MTDCreditsCount xmlns:NS82="http://barclays.com/bem/CASAAccountOverDraft">1</NS82:MTDCreditsCount>
+      <NS83:YTDCreditsCount xmlns:NS83="http://barclays.com/bem/CASAAccountOverDraft">0</NS83:YTDCreditsCount>
+      <NS84:CreditLastDate xmlns:NS84="http://barclays.com/bem/CASAAccountOverDraft">2021-08-27</NS84:CreditLastDate>
+      <NS85:YTDCreditLastAmount xmlns:NS85="http://barclays.com/bem/CASAAccountOverDraft">9000.0</NS85:YTDCreditLastAmount>
+    </NS1:CASAAccountOverDraft>
+  </NS1:CASAAccountDetails>
+</NS1:RetrieveCASAAccountDetailsResponse>
+ </soapenv:Body>
+</soapenv:Envelope> 

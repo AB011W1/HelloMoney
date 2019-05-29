@@ -1,0 +1,95 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+
+
+	<bean id="baseDao" class="com.barclays.bmg.dao.BaseDAOImpl" abstract="true">
+    	<property name="sqlMapClient" ref="sqlMapClient" />
+  	</bean>
+
+	<bean id="systemParameterDAO" class="com.barclays.bmg.dao.impl.SystemParameterDAOImpl" parent="baseDao">
+	</bean>
+
+
+	<bean id="scriptResourceDAO" class="com.barclays.bmg.dao.impl.ScriptResourceDAOImpl" parent="baseDao">
+	</bean>
+
+	<bean id="urlBusinessMapDAO" class="com.barclays.bmg.dao.impl.UrlBusinessMapDAOImpl" parent="baseDao">
+	</bean>
+
+	<bean id="entitlementDAO" class="com.barclays.bmg.dao.impl.EntitlementDAOImpl" parent="baseDao"/>
+
+	<bean id="featureBlackoutDAOImpl" class="com.barclays.bmg.dao.impl.FeatureBlackoutDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+
+
+	<bean id="messageResourceDAO"
+		class="com.barclays.bmg.dao.impl.MessageResourceDAOImpl" parent="baseDao"/>
+
+
+	<bean id="reportProblemDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.ReportProblemDAO" />
+		<property name="daoFrontController" ref="commonDaoFrontControllerImpl" />
+	</bean>
+
+	<bean id="commonDaoFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="ADDPROBLEM" value-ref="reportProblemDAOController" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="problemManagementWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.ProblemManagement.ProblemManagement_PortType" />
+		<property name="portName" value="ProblemManagementSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.ProblemManagement.ProblemManagement_Service" />
+		<property name="endpointAddress"
+			value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="ProblemManagement_EndPoint" />
+		<property name="cacheKey" value="reportProblemService" />
+	</bean>
+
+<!--  Report Problem -->
+	<bean id="reportProblemDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.ReportProblemDAOController">
+		<property name="reqAdptOperation" ref="reportProblemReqAdptOperation" />
+		<property name="transmissionOperation" ref="reportProblemTransmissionOperation" />
+		<property name="resAdptOperation" ref="reportProblemRespAdptOperation" />
+	</bean>
+
+	<bean id="reportProblemReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.ReportProblemReqAdptOperation">
+		<property name="reportProblemHeaderAdapter" ref="reportProblemHeaderAdapter" />
+		<property name="reportProblemPayloadAdapter" ref="reportProblemPayloadAdapter" />
+	</bean>
+
+	<bean id="reportProblemTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="reportProblemTransmissionService" />
+	</bean>
+
+	<bean id="reportProblemTransmissionService"
+		class="com.barclays.bmg.dao.service.impl.ReportProblemTransmissionService">
+		<property name="remoteService" ref="problemManagementWebServiceImpl" />
+	</bean>
+	<bean id="reportProblemHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.ReportProblemHeaderAdapter">
+	</bean>
+	<bean id="reportProblemPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.ReportProblemPayloadAdapter">
+	</bean>
+
+	<bean id="reportProblemRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.ReportProblemRespAdptOperation">
+	</bean>
+
+
+</beans>

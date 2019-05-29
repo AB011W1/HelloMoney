@@ -42,27 +42,27 @@ public class KitsRegisterSubmitJsonParser implements BmgBaseJsonParser{
 	    		    menuDTO = renderMenuOnScreen(responseBuilderParamsDTO);
 	    		}else if(createIndividualCustomerSubmitObj.getPayHdr() != null
 						&& ErrorCodeConstant.BUSINESS_ERROR.equals(createIndividualCustomerSubmitObj.getPayHdr().getResCde())){
-					throw new USSDNonBlockingException(USSDExceptions.BUSINESS06000REG.getBmgCode());
+					throw new USSDNonBlockingException(USSDExceptions.BUSINESS06000REG.getBmgCode(),true);
 	    		}else if (createIndividualCustomerSubmitObj.getPayHdr() != null) {
 	    		    LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
-	    		    throw new USSDNonBlockingException(createIndividualCustomerSubmitObj.getPayHdr().getResCde());
+	    		    throw new USSDNonBlockingException(createIndividualCustomerSubmitObj.getPayHdr().getResCde(),true);
 	    		} else {
 	    		    LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
-	    		    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+	    		    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 	    		}
 	    	    }
 	    	} catch (JsonParseException e) {
 	    	    LOGGER.error("JsonParseException : ", e);
-	    	    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+	    	    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 	    	} catch (JsonMappingException e) {
 	    	    LOGGER.error("JsonParseException : ", e);
-	    	    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+	    	    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 	    	} catch (Exception e) {
 	    	    LOGGER.error("Exception : ", e);
 	    	    if (e instanceof USSDNonBlockingException) {
-	    		throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode());
+	    		throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode(),true);
 	    	    } else {
-	    		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+	    		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 	    	    }
 	    	}
 

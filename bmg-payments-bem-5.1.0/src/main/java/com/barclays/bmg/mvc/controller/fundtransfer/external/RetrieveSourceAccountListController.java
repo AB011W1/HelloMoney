@@ -3,14 +3,12 @@ package com.barclays.bmg.mvc.controller.fundtransfer.external;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.lang.StringUtils;
 import org.springframework.validation.BindException;
 
 import com.barclays.bmg.constants.BMGProcessConstants;
 import com.barclays.bmg.context.Context;
 import com.barclays.bmg.json.model.builder.BMBMultipleResponseJSONBuilder;
 import com.barclays.bmg.json.response.model.BMBBaseResponseModel;
-import com.barclays.bmg.mvc.command.billpayment.RetrievePayeeListCommand;
 import com.barclays.bmg.mvc.controller.auth.BMBAbstractCommandController;
 import com.barclays.bmg.operation.accountservices.RetrieveAccountListOperation;
 import com.barclays.bmg.operation.beneficiary.FilterUrgentPayeeListOperation;
@@ -35,12 +33,6 @@ public class RetrieveSourceAccountListController extends BMBAbstractCommandContr
 	@Override
 	protected BMBBaseResponseModel handle1(HttpServletRequest httpRequest, HttpServletResponse response, Object command, BindException errors)
 	throws Exception {
-
-		RetrievePayeeListCommand retrievePayeeListCommand = (RetrievePayeeListCommand) command;
-		String serviceName = null;
-		if (!StringUtils.isEmpty(retrievePayeeListCommand.getServiceName())) {
-			serviceName = retrievePayeeListCommand.getServiceName();
-		}
 		// Get the payee List.
 		setFirstStep(httpRequest);
 		Context context = createContext(httpRequest);

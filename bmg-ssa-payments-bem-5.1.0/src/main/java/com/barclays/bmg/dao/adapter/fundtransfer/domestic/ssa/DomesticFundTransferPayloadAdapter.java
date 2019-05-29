@@ -21,6 +21,8 @@ import com.barclays.bmg.constants.ActivityIdConstantBean;
 import com.barclays.bmg.constants.CommonConstants;
 import com.barclays.bmg.constants.FundTransferConstants;
 import com.barclays.bmg.constants.SystemParameterConstant;
+import com.barclays.bmg.context.BMGContextHolder;
+import com.barclays.bmg.context.BMGGlobalContext;
 import com.barclays.bmg.context.Context;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.dao.core.context.impl.DAOContext;
@@ -231,10 +233,14 @@ public class DomesticFundTransferPayloadAdapter {
 	//Kadikope - END
 
 		/* Regulatory Requirement Changes - 23/10/2017
-		 *
+		 */
 		// MakeDomesticFundTransfer for Other Barclays change - CPB 30/05
 		ChargeDetails chargeDetails = null;
-    	if(domesticFTRequest.getChargeDTO() !=null && domesticFTRequest.getChargeDTO().getCpbMakeBillPaymentFlag().equals("setDomesticFundOthBarclaysFields")){
+		BMGGlobalContext logContext1 = BMGContextHolder.getLogContext();
+
+    	if((domesticFTRequest.getChargeDTO() !=null && (logContext1 !=null && logContext1.getContextMap().get("isCBPFLAG").equals("Y")))
+
+    			&& domesticFTRequest.getChargeDTO().getCpbMakeBillPaymentFlag().equals("setDomesticFundOthBarclaysFields")){
     		chargeDetails = new ChargeDetails();
     		chargeDetails.setChargeAmount(domesticFTRequest.getChargeDTO().getCpbChargeAmount());
     		chargeDetails.setFeeGLAccount(domesticFTRequest.getChargeDTO().getFeeGLAccount());
@@ -248,21 +254,24 @@ public class DomesticFundTransferPayloadAdapter {
     		chargeDetails.setTaxAmount(domesticFTRequest.getChargeDTO().getTaxAmount());
     		dest.setChargeInfo(new ChargeDetails[] {chargeDetails });
     	}
-		*/
 
 
     	/* Regulatory Requirement Changes - 23/10/2017
-		 *
-
+		 */
     	// MakeDomesticFundTransfer for other barclay A/C - BillTransactionReferenceDetails 20/09/2017
+    	// Uganda CBP change
+
     	String activityId = domesticFTRequest.getContext().getActivityId();
     	String opCode = domesticFTRequest.getContext().getOpCde();
     	Charge cbpCharge = domesticFTRequest.getChargeDTO();
-    	if(opCode!= null && (opCode.equalsIgnoreCase("OP0502") || opCode.equalsIgnoreCase("OP0570"))
-    			&& domesticFTRequest.getContext().getBusinessId().equalsIgnoreCase("KEBRB")
-    			&& (activityId.equals("PMT_FT_INTERNAL_PAYEE") || activityId.equals("PMT_FT_INTERNAL_ONETIME"))){
+    	//CBP change
+    	BMGGlobalContext logContext = BMGContextHolder.getLogContext();
 
-    		if(cbpCharge!=null){
+    	if(opCode!= null && (opCode.equalsIgnoreCase("OP0502") || opCode.equalsIgnoreCase("OP0570"))
+    			&& (((logContext !=null && logContext.getContextMap().get("isCBPFLAG").equals("Y")) || businessId.equals("KEBRB"))
+    			&& (activityId.equals("PMT_FT_INTERNAL_PAYEE") || activityId.equals("PMT_FT_INTERNAL_ONETIME")))){
+
+    		if((cbpCharge!=null && (logContext !=null && logContext.getContextMap().get("isCBPFLAG").equals("Y"))) && domesticFTRequest.getChargeDTO().getCpbChargeAmount().toString() != "0.0" ){
     			if(domesticFTRequest.getChargeDTO().getCpbMakeBillPaymentFlag()!= null &&
     					domesticFTRequest.getChargeDTO().getCpbMakeBillPaymentFlag().equals("setDomesticFundOthBarclaysFields")){
     				BillTransactionReferenceDetails[] fundTransferReferenceDetailsArray=new BillTransactionReferenceDetails[1];
@@ -278,7 +287,6 @@ public class DomesticFundTransferPayloadAdapter {
     		}
 
     	}
-    	*/
 
 		return dest;
 	}

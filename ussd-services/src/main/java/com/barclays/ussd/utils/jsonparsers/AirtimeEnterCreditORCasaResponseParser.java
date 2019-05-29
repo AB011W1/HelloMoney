@@ -1,44 +1,19 @@
 package com.barclays.ussd.utils.jsonparsers;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
-import org.apache.commons.collections.CollectionUtils;
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import com.barclays.bem.Account.Account;
-import com.barclays.bmg.constants.BillPaymentConstants;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
-import com.barclays.ussd.auth.bean.UserProfile;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
 import com.barclays.ussd.exception.USSDBlockingException;
-import com.barclays.ussd.exception.USSDNonBlockingException;
-import com.barclays.ussd.sysprefs.services.ListValueCacheDTO;
-import com.barclays.ussd.sysprefs.services.ListValueResByGroupServiceResponse;
-import com.barclays.ussd.sysprefs.services.ListValueResServiceImpl;
-import com.barclays.ussd.sysprefs.services.ListValueResServiceRequest;
 import com.barclays.ussd.utils.BmgBaseJsonParser;
 import com.barclays.ussd.utils.PaginationEnum;
 import com.barclays.ussd.utils.ScreenSequenceCustomizer;
-import com.barclays.ussd.utils.SystemPreferenceConstants;
-import com.barclays.ussd.utils.SystemPreferenceValidator;
 import com.barclays.ussd.utils.USSDConstants;
-import com.barclays.ussd.utils.USSDExceptions;
-import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
-import com.barclays.ussd.utils.jsonparsers.bean.airtime.Biller;
-import com.barclays.ussd.utils.jsonparsers.bean.billpay.AccountData;
-import com.barclays.ussd.utils.jsonparsers.bean.billpay.FromAcntLst;
-import com.barclays.ussd.utils.jsonparsers.bean.billpay.Payee;
-import com.barclays.ussd.utils.jsonparsers.bean.login.AuthUserData;
-import com.barclays.ussd.validation.USSDCompositeValidator;
-import com.barclays.ussd.validation.USSDMinMaxRangeValidator;
 
 public class AirtimeEnterCreditORCasaResponseParser implements BmgBaseJsonParser,ScreenSequenceCustomizer{
 	 private static final Logger LOGGER = Logger.getLogger(AirtimeEnterAmountResponseParser.class);
@@ -49,7 +24,6 @@ public class AirtimeEnterCreditORCasaResponseParser implements BmgBaseJsonParser
 
 	    private MenuItemDTO renderMenuOnScreen(ResponseBuilderParamsDTO responseBuilderParamsDTO) {
 		MenuItemDTO menuItemDTO = new MenuItemDTO();
-		Map<String, Object> txSessions = responseBuilderParamsDTO.getUssdSessionMgmt().getTxSessions();
 		 USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
 		 String language = ussdSessionMgmt.getUserProfile().getLanguage();
 		    String countryCode = ussdSessionMgmt.getUserProfile().getCountryCode();

@@ -1,6 +1,7 @@
 package com.barclays.bmg.mvc.controller.fundtransfer.nonregistered.internal;
 
 import java.math.BigDecimal;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,6 +12,7 @@ import com.barclays.bmg.constants.ActivityIdConstantBean;
 import com.barclays.bmg.constants.BMGProcessConstants;
 import com.barclays.bmg.constants.CommonConstants;
 import com.barclays.bmg.constants.FundTransferConstants;
+import com.barclays.bmg.constants.SystemParameterConstant;
 import com.barclays.bmg.context.Context;
 import com.barclays.bmg.context.ResponseContext;
 import com.barclays.bmg.dto.Amount;
@@ -71,12 +73,17 @@ public class InternalNonRegisteredPaymentFormSubmissionController extends BMBAbs
 	if (httpRequest.getParameterMap().containsKey("CREDIT_CARD_TRAN")) {
 		getSelectedAccountOperationRequest.setAcctNumber(getAccountNumber(internalFTCommand.getFrActNo(),
 				httpRequest,BMGProcessConstants.CREDIT_PAYMENT));
+      	//Change to filter blocked card on selection
+		String ccNumber = httpRequest.getParameterMap().get("ccNumber")!= null ? httpRequest.getParameterMap().get("ccNumber").toString() : "";
+		getSelectedAccountOperationRequest.setCreditCardNumber(ccNumber);
 		getSelectedAccountOperationResponse = getSelectedAccountOperation
 				.getSelectedCreditCardAccount(getSelectedAccountOperationRequest);
 	} else {
 
 	getSelectedAccountOperationRequest.setAcctNumber(getAccountNumber(internalFTCommand.getFrActNo(), httpRequest,
 		BMGProcessConstants.INTERNAL_NONREGISTERED_FUND_TRANSFER));
+	if(getSelectedAccountOperationRequest.getAcctNumber()==null)
+		getSelectedAccountOperationRequest.setAcctNumber(internalFTCommand.getFrActNo().trim());
 	// getSelectedAccountOperationRequest.setAcctNumber(internalFTCommand.getFrActNo());
 	 getSelectedAccountOperationResponse = getSelectedAccountOperation.getSelectedSourceAccount(getSelectedAccountOperationRequest);
 
@@ -100,7 +107,12 @@ public class InternalNonRegisteredPaymentFormSubmissionController extends BMBAbs
 	if (getSelectedAccountOperationResponse.isSuccess() && retrieveInternalNonRegisteredPayeeInfoOperationResponse.isSuccess()) {
 
 		// Set OpCode for OtherBarclays FundTransfer - CPB 31/05/2017
-		if(context.getActivityId().equals("PMT_FT_INTERNAL_ONETIME") && context.getBusinessId().equals("KEBRB")){
+		//check for Uganda
+		//check for CBP
+
+		 Map<String, Object> contextMap = context.getContextMap();
+
+		if(context.getActivityId().equals("PMT_FT_INTERNAL_ONETIME") && (contextMap!=null && contextMap.get(SystemParameterConstant.isCBPFLAG).equals("Y") || context.getBusinessId().equalsIgnoreCase("KEBRB"))){
 			context.setOpCde(httpRequest.getParameter("opCde"));
 		}
 

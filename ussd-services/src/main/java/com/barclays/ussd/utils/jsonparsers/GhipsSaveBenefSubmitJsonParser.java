@@ -132,7 +132,8 @@ public class GhipsSaveBenefSubmitJsonParser implements BmgBaseJsonParser {
 			menuItemDTO.setPaginationType(PaginationEnum.LISTED);
 			menuItemDTO.setStatus(USSDConstants.STATUS_END);
 		}
-		setNextScreenSequenceNumber(menuItemDTO);
+		if(null != menuItemDTO)
+			setNextScreenSequenceNumber(menuItemDTO);
 		return menuItemDTO;
 	}
 

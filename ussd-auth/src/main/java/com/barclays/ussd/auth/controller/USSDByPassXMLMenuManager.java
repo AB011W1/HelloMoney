@@ -45,9 +45,6 @@ public class USSDByPassXMLMenuManager {
     @Autowired
     UssdResourceBundle ussdResourceBundle;
 
-    @Autowired
-    ResponseMessage responseMessage;
-
     public MenuItemDTO handleByePassRequest(UssdDecisionParserParamDTO paramDTO, USSDSessionManagement ussdSessionManagement, List<String> errorCodes)
 	    throws USSDBlockingException, USSDNonBlockingException, Exception {
 	MenuItemDTO menuItemDTO = null;

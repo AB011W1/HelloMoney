@@ -1,0 +1,236 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <p921:RetrieveIndividualCustomerAccountListResponse xmlns:p921="http://barclays.com/bem/RetrieveIndividualCustAcctList">
+      <p921:ResponseHeader>
+        <ServiceContext>
+          <ServiceID>RetrieveIndividualCustAcctList</ServiceID>
+          <ConsumerUniqueRefNo>13933225073929</ConsumerUniqueRefNo>
+          <OriginalConsumerUniqueRefNo>13933225073929</OriginalConsumerUniqueRefNo>
+          <ServiceDateTime>2014-02-25T13:01:47.474Z</ServiceDateTime>
+          <ServiceVersionNo>6.0.0</ServiceVersionNo>
+          <OverrideRequestFlag>0</OverrideRequestFlag>
+        </ServiceContext>
+        <BankUserContext>
+          <StaffType>Regular</StaffType>
+          <StaffID>IFE</StaffID>
+          <AuthorizerID>Z00019789</AuthorizerID>
+        </BankUserContext>
+        <ServiceResStatus>
+          <ServiceResCode>00000</ServiceResCode>
+          <ServiceResDesc>Success</ServiceResDesc>
+          <ServiceRespDateTime>2014-02-25T10:01:50.762Z</ServiceRespDateTime>
+          <ServiceUniqueRefNo>d89eccd0-9e03-11e3-bbf7-167313a80000</ServiceUniqueRefNo>
+        </ServiceResStatus>
+      </p921:ResponseHeader>
+      <p921:AccountList>
+        <p921:CASAAccountList>
+          <p921:CASAAccount xmlns:p973="http://barclays.com/bem/Account" xmlns:p235="http://barclays.com/bem/CASAAccountSummary">
+            <p973:AccountNumber>2010120597</p973:AccountNumber>
+            <p973:AccountCurrencyCode>KES</p973:AccountCurrencyCode>
+            <p973:AccountTitle>ABCD Ltd</p973:AccountTitle>
+            <p973:Product xmlns:p521="http://barclays.com/bem/Product">
+              <p521:ProductCode>800</p521:ProductCode>
+              <p521:ProductName> Commercial CA Transaction Pkg-KES</p521:ProductName>
+            </p973:Product>
+            <p973:AccountLifecycleStatusCode>CH-8</p973:AccountLifecycleStatusCode>
+            <p973:ReasonForBlock>UNBLOCKED </p973:ReasonForBlock>
+            <p973:AccountAvailableBalance xmlns:p412="http://barclays.com/bem/Balance">
+              <p412:AccountCCYBalance>411787.0</p412:AccountCCYBalance>
+            </p973:AccountAvailableBalance>
+            <p973:AccountCurrentBalance xmlns:p412="http://barclays.com/bem/Balance">
+              <p412:AccountCCYBalance>411787.0</p412:AccountCCYBalance>
+            </p973:AccountCurrentBalance>
+            <p973:DomicileBranch xmlns:p466="http://barclays.com/bem/Branch">
+              <p466:BranchCode>100</p466:BranchCode>
+              <p466:BranchName>DIANI BRANCH</p466:BranchName>
+            </p973:DomicileBranch>
+            <p973:JointAccountRelationship xmlns:p468="http://barclays.com/bem/JointAccountHoldersRelationship">
+              <p468:RelationshipTypeCode>SOW</p468:RelationshipTypeCode>
+            </p973:JointAccountRelationship>
+            <p973:AccountAttributes>
+              <p973:IsChequeSupportedFlag>1</p973:IsChequeSupportedFlag>
+            </p973:AccountAttributes>
+            <p973:Description>REGULAR</p973:Description>
+            <p235:InternetBankingAccessFlag>1</p235:InternetBankingAccessFlag>
+          </p921:CASAAccount>
+        </p921:CASAAccountList>
+        <p921:LoanAccountList/>
+        <p921:TimeDepositAccountList/>
+        <p921:CreditCardAccountList>
+          <p921:CreditCardAccount xmlns:p973="http://barclays.com/bem/Account" xmlns:p60="http://barclays.com/bem/CreditCardAccount">
+            <p973:AccountNumber>123456122578</p973:AccountNumber>
+            <p973:AccountCurrencyCode>KES</p973:AccountCurrencyCode>
+            <p973:Product xmlns:p521="http://barclays.com/bem/Product">
+              <p521:ProductName>KEN VISA CLASSIC</p521:ProductName>
+            </p973:Product>
+            <p973:AccountLifecycleStatusCode>A</p973:AccountLifecycleStatusCode>
+            <p973:AccountCurrentBalance xmlns:p412="http://barclays.com/bem/Balance">
+              <p412:AccountCCYBalance>32190.05</p412:AccountCCYBalance>
+            </p973:AccountCurrentBalance>
+            <p973:Nomineename xmlns:p940="http://barclays.com/bem/IndividualName">
+              <p940:FirstName>BOAZ</p940:FirstName>
+              <p940:LastName>NYWA</p940:LastName>
+              <p940:SalutationTypeCode>Mr</p940:SalutationTypeCode>
+            </p973:Nomineename>
+            <p60:AvailableCreditLimitAmount>-3190.05</p60:AvailableCreditLimitAmount>
+            <p60:TotalCreditLimitAmount>29000.0</p60:TotalCreditLimitAmount>
+            <p60:CreditCardAccountOrgCode>230</p60:CreditCardAccountOrgCode>
+            <p60:CreditCardAccountLogoCode>302</p60:CreditCardAccountLogoCode>
+            <p60:OutstandingBalanceAmount>-1740.05</p60:OutstandingBalanceAmount>
+            <p60:MinimumDueAmount>4641.0</p60:MinimumDueAmount>
+            <p60:PaymentDueDate>2014-02-24</p60:PaymentDueDate>
+            <p60:ContractualDelinquency>1</p60:ContractualDelinquency>
+            <p60:StatementTypeCode>1</p60:StatementTypeCode>
+            <p60:AccountBlockCode1>H</p60:AccountBlockCode1>
+            <p60:AccountBlockCode1MaintDate>2014-01-27</p60:AccountBlockCode1MaintDate>
+            <p60:AmountOverDue>1.0</p60:AmountOverDue>
+            <p60:TotalPayamentDueAmount>4641.0</p60:TotalPayamentDueAmount>
+            <p60:CurrentPaymentDueAmount>4641.0</p60:CurrentPaymentDueAmount>
+            <p60:LastPaymentAmountDate>2014-01-28</p60:LastPaymentAmountDate>
+            <p60:LastPaymentAmount>133.75</p60:LastPaymentAmount>
+            <p60:LastStatementAmount>32190.05</p60:LastStatementAmount>
+            <p60:LastStatementDate>2014-02-03</p60:LastStatementDate>
+            <p60:BillingAddressTypeCode>H</p60:BillingAddressTypeCode>
+            <p60:NIB/>
+            <p60:DDBankAccountNumber>0703003230</p60:DDBankAccountNumber>
+            <p60:PaymentACHFlag>2</p60:PaymentACHFlag>
+            <p60:CurrentUsageFlag>N</p60:CurrentUsageFlag>
+            <p60:CreditCardInfo xmlns:p867="http://barclays.com/bem/CreditCardBasic">
+              <p867:CustomerNumber>0002300000001025603</p867:CustomerNumber>
+              <p867:CreditCardNumber>4263991234568442</p867:CreditCardNumber>
+              <p867:CreditCardOrgCode>230</p867:CreditCardOrgCode>
+              <p867:CreditCardSequenceNumber>1</p867:CreditCardSequenceNumber>
+              <p867:EmbossedNameOnCard>BOAZ O KINYWA</p867:EmbossedNameOnCard>
+              <p867:CreditCardLifeCycleStatusCode>0</p867:CreditCardLifeCycleStatusCode>
+              <p867:CreditCardOwnershipTypeCode>P</p867:CreditCardOwnershipTypeCode>
+              <p867:CreditCardBlockCode>H</p867:CreditCardBlockCode>
+              <p867:CardBlockCodeMaintDate>2014-01-27</p867:CardBlockCodeMaintDate>
+            </p60:CreditCardInfo>
+            <p60:StartCardOrg>000</p60:StartCardOrg>
+            <p60:StartCardNumber/>
+            <p60:StartCardSeq>0</p60:StartCardSeq>
+            <p60:More>N</p60:More>
+            <p60:AvaliableCashLimit>0.0</p60:AvaliableCashLimit>
+            <p60:TotalCashLimit>23200.0</p60:TotalCashLimit>
+            <p60:CustAvailableCashLimit>0.0</p60:CustAvailableCashLimit>
+          </p921:CreditCardAccount>
+          <p921:CreditCardAccount xmlns:p973="http://barclays.com/bem/Account" xmlns:p60="http://barclays.com/bem/CreditCardAccount">
+            <p973:AccountNumber>123456122579</p973:AccountNumber>
+            <p973:AccountCurrencyCode>KES</p973:AccountCurrencyCode>
+            <p973:Product xmlns:p521="http://barclays.com/bem/Product">
+              <p521:ProductName>KEN VISA CLASSIC</p521:ProductName>
+            </p973:Product>
+            <p973:AccountLifecycleStatusCode>A</p973:AccountLifecycleStatusCode>
+            <p973:AccountCurrentBalance xmlns:p412="http://barclays.com/bem/Balance">
+              <p412:AccountCCYBalance>32190.05</p412:AccountCCYBalance>
+            </p973:AccountCurrentBalance>
+            <p973:Nomineename xmlns:p940="http://barclays.com/bem/IndividualName">
+              <p940:FirstName>BOAZ</p940:FirstName>
+              <p940:LastName>NYWA</p940:LastName>
+              <p940:SalutationTypeCode>Mr</p940:SalutationTypeCode>
+            </p973:Nomineename>
+            <p60:AvailableCreditLimitAmount>-3190.05</p60:AvailableCreditLimitAmount>
+            <p60:TotalCreditLimitAmount>29000.0</p60:TotalCreditLimitAmount>
+            <p60:CreditCardAccountOrgCode>230</p60:CreditCardAccountOrgCode>
+            <p60:CreditCardAccountLogoCode>302</p60:CreditCardAccountLogoCode>
+            <p60:OutstandingBalanceAmount>-1740.05</p60:OutstandingBalanceAmount>
+            <p60:MinimumDueAmount>4641.0</p60:MinimumDueAmount>
+            <p60:PaymentDueDate>2014-02-24</p60:PaymentDueDate>
+            <p60:ContractualDelinquency>1</p60:ContractualDelinquency>
+            <p60:StatementTypeCode>1</p60:StatementTypeCode>
+            <p60:AccountBlockCode1>H</p60:AccountBlockCode1>
+            <p60:AccountBlockCode1MaintDate>2014-01-27</p60:AccountBlockCode1MaintDate>
+            <p60:AmountOverDue>1.0</p60:AmountOverDue>
+            <p60:TotalPayamentDueAmount>4641.0</p60:TotalPayamentDueAmount>
+            <p60:CurrentPaymentDueAmount>4641.0</p60:CurrentPaymentDueAmount>
+            <p60:LastPaymentAmountDate>2014-01-28</p60:LastPaymentAmountDate>
+            <p60:LastPaymentAmount>133.75</p60:LastPaymentAmount>
+            <p60:LastStatementAmount>32190.05</p60:LastStatementAmount>
+            <p60:LastStatementDate>2014-02-03</p60:LastStatementDate>
+            <p60:BillingAddressTypeCode>H</p60:BillingAddressTypeCode>
+            <p60:NIB/>
+            <p60:DDBankAccountNumber>0703003230</p60:DDBankAccountNumber>
+            <p60:PaymentACHFlag>2</p60:PaymentACHFlag>
+            <p60:CurrentUsageFlag>N</p60:CurrentUsageFlag>
+            <p60:CreditCardInfo xmlns:p867="http://barclays.com/bem/CreditCardBasic">
+              <p867:CustomerNumber>0002300000001025603</p867:CustomerNumber>
+              <p867:CreditCardNumber>4263991234562316</p867:CreditCardNumber>
+              <p867:CreditCardOrgCode>230</p867:CreditCardOrgCode>
+              <p867:CreditCardSequenceNumber>1</p867:CreditCardSequenceNumber>
+              <p867:EmbossedNameOnCard>BOAZ O KINYWA</p867:EmbossedNameOnCard>
+              <p867:CreditCardLifeCycleStatusCode>F</p867:CreditCardLifeCycleStatusCode>
+              <p867:CreditCardOwnershipTypeCode>S</p867:CreditCardOwnershipTypeCode>
+              <p867:CreditCardBlockCode>L</p867:CreditCardBlockCode>
+              <p867:CardBlockCodeMaintDate>2009-02-06</p867:CardBlockCodeMaintDate>
+            </p60:CreditCardInfo>
+            <p60:StartCardOrg>000</p60:StartCardOrg>
+            <p60:StartCardNumber/>
+            <p60:StartCardSeq>0</p60:StartCardSeq>
+            <p60:More>N</p60:More>
+            <p60:AvaliableCashLimit>0.0</p60:AvaliableCashLimit>
+            <p60:TotalCashLimit>23200.0</p60:TotalCashLimit>
+            <p60:CustAvailableCashLimit>0.0</p60:CustAvailableCashLimit>
+          </p921:CreditCardAccount>
+          <p921:CreditCardAccount xmlns:p973="http://barclays.com/bem/Account" xmlns:p60="http://barclays.com/bem/CreditCardAccount">
+            <p973:AccountNumber>123456122580</p973:AccountNumber>
+            <p973:AccountCurrencyCode>KES</p973:AccountCurrencyCode>
+            <p973:Product xmlns:p521="http://barclays.com/bem/Product">
+              <p521:ProductName>KEN VISA CLASSIC</p521:ProductName>
+            </p973:Product>
+            <p973:AccountLifecycleStatusCode>A</p973:AccountLifecycleStatusCode>
+            <p973:AccountCurrentBalance xmlns:p412="http://barclays.com/bem/Balance">
+              <p412:AccountCCYBalance>32190.05</p412:AccountCCYBalance>
+            </p973:AccountCurrentBalance>
+            <p973:Nomineename xmlns:p940="http://barclays.com/bem/IndividualName">
+              <p940:FirstName>BOAZ</p940:FirstName>
+              <p940:LastName>NYWA</p940:LastName>
+              <p940:SalutationTypeCode>Mr</p940:SalutationTypeCode>
+            </p973:Nomineename>
+            <p60:AvailableCreditLimitAmount>-3190.05</p60:AvailableCreditLimitAmount>
+            <p60:TotalCreditLimitAmount>29000.0</p60:TotalCreditLimitAmount>
+            <p60:CreditCardAccountOrgCode>230</p60:CreditCardAccountOrgCode>
+            <p60:CreditCardAccountLogoCode>302</p60:CreditCardAccountLogoCode>
+            <p60:OutstandingBalanceAmount>-1740.05</p60:OutstandingBalanceAmount>
+            <p60:MinimumDueAmount>4641.0</p60:MinimumDueAmount>
+            <p60:PaymentDueDate>2014-02-24</p60:PaymentDueDate>
+            <p60:ContractualDelinquency>1</p60:ContractualDelinquency>
+            <p60:StatementTypeCode>1</p60:StatementTypeCode>
+            <p60:AccountBlockCode1>H</p60:AccountBlockCode1>
+            <p60:AccountBlockCode1MaintDate>2014-01-27</p60:AccountBlockCode1MaintDate>
+            <p60:AmountOverDue>1.0</p60:AmountOverDue>
+            <p60:TotalPayamentDueAmount>4641.0</p60:TotalPayamentDueAmount>
+            <p60:CurrentPaymentDueAmount>4641.0</p60:CurrentPaymentDueAmount>
+            <p60:LastPaymentAmountDate>2014-01-28</p60:LastPaymentAmountDate>
+            <p60:LastPaymentAmount>133.75</p60:LastPaymentAmount>
+            <p60:LastStatementAmount>32190.05</p60:LastStatementAmount>
+            <p60:LastStatementDate>2014-02-03</p60:LastStatementDate>
+            <p60:BillingAddressTypeCode>H</p60:BillingAddressTypeCode>
+            <p60:NIB/>
+            <p60:DDBankAccountNumber>0703003230</p60:DDBankAccountNumber>
+            <p60:PaymentACHFlag>2</p60:PaymentACHFlag>
+            <p60:CurrentUsageFlag>N</p60:CurrentUsageFlag>
+            <p60:CreditCardInfo xmlns:p867="http://barclays.com/bem/CreditCardBasic">
+              <p867:CustomerNumber>0002300000001025603</p867:CustomerNumber>
+              <p867:CreditCardNumber>4263991234560002</p867:CreditCardNumber>
+              <p867:CreditCardOrgCode>230</p867:CreditCardOrgCode>
+              <p867:CreditCardSequenceNumber>1</p867:CreditCardSequenceNumber>
+              <p867:EmbossedNameOnCard>BOAZ O KINYWA</p867:EmbossedNameOnCard>
+              <p867:CreditCardLifeCycleStatusCode>F</p867:CreditCardLifeCycleStatusCode>
+              <p867:CreditCardOwnershipTypeCode>S</p867:CreditCardOwnershipTypeCode>
+              <p867:CreditCardBlockCode>A</p867:CreditCardBlockCode>
+              <p867:CardBlockCodeMaintDate>2009-02-06</p867:CardBlockCodeMaintDate>
+            </p60:CreditCardInfo>
+            <p60:StartCardOrg>000</p60:StartCardOrg>
+            <p60:StartCardNumber/>
+            <p60:StartCardSeq>0</p60:StartCardSeq>
+            <p60:More>N</p60:More>
+            <p60:AvaliableCashLimit>0.0</p60:AvaliableCashLimit>
+            <p60:TotalCashLimit>23200.0</p60:TotalCashLimit>
+            <p60:CustAvailableCashLimit>0.0</p60:CustAvailableCashLimit>
+          </p921:CreditCardAccount>
+        </p921:CreditCardAccountList>
+      </p921:AccountList>
+    </p921:RetrieveIndividualCustomerAccountListResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

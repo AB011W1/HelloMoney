@@ -50,8 +50,8 @@ public class CreateIndividualCustomerController extends BMBAbstractCommandContro
     	//Getting account number from correlation Id
     	String actNoCorr = request.getParameter("accountNo");
     	String accountNumber=getAccountNumber(actNoCorr, request, BMGProcessConstants.ACCOUNTS_PROCESS);
-
-
+    	if(accountNumber == null)
+    		accountNumber = actNoCorr;
     	Context context = createContext(request);
     	context.setActivityId(request.getParameter("activityId"));
     	context.setActivityRefNo(BMBCommonUtility.generateRefNo());

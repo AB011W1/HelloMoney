@@ -78,7 +78,7 @@ public class OwnFundTransferInitJSONBldr extends BMBMultipleResponseJSONBuilder 
 			}
 			responseModel.setTxnLmt(txnLmt);
 
-		} else {
+		} else if(null != destActLstOperationResponse){
 			responseModel = new OwnFundTransferInitJSONResponseModel();
 			responseModel.setPayLst(getCASAAccountList(destActLstOperationResponse.getAcctList(),destActLstOperationResponse));
 		}

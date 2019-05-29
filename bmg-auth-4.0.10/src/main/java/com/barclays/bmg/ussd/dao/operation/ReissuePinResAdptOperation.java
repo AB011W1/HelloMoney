@@ -15,7 +15,7 @@ package com.barclays.bmg.ussd.dao.operation;
 import com.barclays.bem.CreatePIN.CreatePINResponse;
 import com.barclays.bmg.constants.ResponseCodeConstants;
 import com.barclays.bmg.dao.core.context.WorkContext;
-import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperation;
+import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperationAcct;
 import com.barclays.bmg.ussd.auth.service.response.ReissuePinServiceResponse;
 
 /**
@@ -26,7 +26,7 @@ import com.barclays.bmg.ussd.auth.service.response.ReissuePinServiceResponse;
  * @author E20043104
  * 
  */
-public class ReissuePinResAdptOperation extends AbstractResAdptOperation {
+public class ReissuePinResAdptOperation extends AbstractResAdptOperationAcct {
     /**
      * This method adaptResponseForReissuePin has the purpose to adapt response for creation of pin.
      * 

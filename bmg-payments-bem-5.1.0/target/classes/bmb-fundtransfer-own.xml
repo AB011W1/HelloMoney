@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:util="http://www.springframework.org/schema/util"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+<!-- Own Fund transfer Starts here -->
+	<bean id="fundTransferInitController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.own.OwnFundTransferInitController" parent="bmbAbstractController">
+		<property name="retrieveAccountListOperation" ref="retrieveAccountListOperation" />
+		<property name="transactionLimitOperation" ref="transactionLimitOperation" />
+		<property name="validateAccountListOperation" ref="validateAccountListOperation" />
+		<property name="bmbJSONBuilder" ref="ownFundTransferInitJSONBldr" />
+		<!--<property name="commandName" value="fundTransferInitCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.fundtransfer.own.FundTransferInitCommand" />
+			-->
+	</bean>
+
+	<bean id="fTValidationController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.own.OwnFundtransferValidateController" parent="bmbAbstractCommandController">
+		<property name="accountSummaryOperation" ref="accountSummaryOperation" />
+		<property name="getSelectedAccountOperation" ref="getSelectedAccountOperation" />
+		<property name="ownFundTransferRel1ValidateOperation" ref="ownFundTransferRel1ValidateOperation" />
+		<property name="formValidateOperation" ref="formValidateOperation" />
+		<property name="bmbJSONBuilder" ref="ownFundTransferValidateJSONBldr" />
+		<property name="commandName" value="fundTransferValidateCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.fundtransfer.own.FundTransferValidateCommand" />
+		<property name="validator" ref="fundTransferCommandValidator" />
+	</bean>
+
+	<bean id="fundTransferExecutionController"
+		class="com.barclays.bmg.mvc.controller.fundtransfer.own.OwnFundTransferExecuteController" parent="bmbAbstractCommandController">
+		<property name="domesticFundTransferExecuteOperation" ref="domesticFundTransferExecuteOperation" />
+		<property name="bmbJSONBuilder" ref="domesticFundTransferJSONBldr" />
+		<property name="otpAuthenticationOperation" ref="otpAuthenticationOperation" />
+		<property name="txnOTPSecondAuthJSONBldr" ref="txnOTPSecondAuthJSONBldr" />
+		<property name="sqaAuthenticationOperation" ref="sqaAuthenticationOperation" />
+		<property name="txnSQASecondAuthJSONBldr" ref="txnSQASecondAuthJSONBldr" />
+		<property name="commandName" value="fundTransferExecuteCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.fundtransfer.own.FundTransferExecuteCommand" />
+		<property name="validator" ref="fundTransferExecuteCommandValidator" />
+	</bean>
+<!-- Own Fund transfer Ends here -->
+      <bean id="validateAccountListOperation"
+		class="com.barclays.bmg.operation.validation.fundtransfer.own.ValidateAccountListOperation" parent ="bmbCommonOperation">
+	</bean>
+
+      <bean id="ownFundTransferRel1ValidateOperation"
+		class="com.barclays.bmg.operation.formvalidation.OwnFundTransferRel1ValidateOperation" parent ="bmbCommonOperation">
+	</bean>
+
+	<bean id="ownFundTransferInitJSONBldr"
+		class="com.barclays.bmg.json.model.builder.fundtransfer.own.OwnFundTransferInitJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<bean id="ownFundTransferValidateJSONBldr"
+		class="com.barclays.bmg.json.model.builder.fundtransfer.own.OwnFundTransferValidateJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<bean id="domesticFundTransferJSONBldr"
+		class="com.barclays.bmg.json.model.builder.fundtransfer.own.DomesticFundTransferJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+	 <bean id="domesticFundTransferExecuteOperation"
+		class="com.barclays.bmg.operation.payments.DomesticFundTransferExecuteOperation" parent ="bmbPaymentsOperation">
+		<property name="domesticFundTransferService" ref="domesticFundTransferService" />
+		<property name="retrieveIndCustBySCVIDService" ref="retrieveIndCustBySCVIDService" />
+		<property name="smsDetailsService" ref="smsDetailsService" />
+	</bean>
+
+	<bean id="smsDetailsService"
+		class="com.barclays.bmg.ussd.service.impl.SMSDetailsServiceImpl">
+		<property name="smsDetailsDAO" ref="smsDetailsDAO" />
+	</bean>
+
+	<!-- Domestic Fund Transfer Service -->
+	<bean id="domesticFundTransferService"
+		class="com.barclays.bmg.service.impl.fundtransfer.DomesticFundTransferServiceImpl">
+		<property name="domesticFundTransferDAO" ref="domesticFundTransferDAO" />
+	</bean>
+
+	<bean id="domesticFundTransferDAO"
+		class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.fundtransfer.DomesticFundTransferDAO" />
+		<property name="daoFrontController" ref="domesticFundTransferDAOControllerImpl" />
+	</bean>
+
+	<bean id="domesticFundTransferDAOControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="MAKEDOMESTICFUNDTRANSFER" value-ref="domesticFundTransferDAOController" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="domesticFundTransferDAOController"
+		class="com.barclays.bmg.dao.processing.fundtransfer.domestic.DomesticFundTransferDAOController">
+		<property name="domesticFundTransferReqAdptOperation" ref="domesticFundTransferReqAdptOperation" />
+		<property name="transmissionOperation" ref="domesticFundTransferTransmissionOperation" />
+		<property name="domesticFundTransferRespAdptOperation" ref="domesticFundTransferRespAdptOperation" />
+	</bean>
+
+	<bean id="domesticFundTransferReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.fundtransfer.domestic.DomesticFundTransferReqAdptOperation">
+		<property name="domesticFundTransferPayloadAdapter" ref="domesticFundTransferPayloadAdapter" />
+	</bean>
+
+	<bean id="domesticFundTransferTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="domesticFundTransferTransmissionService" />
+	</bean>
+
+	<bean id="domesticFundTransferTransmissionService"
+		class="com.barclays.bmg.dao.service.impl.fundtransfer.domestic.DomesticFundTransferTransmissionService">
+		<property name="remoteService" ref="fundTransferWebServiceImpl" />
+	</bean>
+
+	<bean id="fundTransferWebServiceImpl"
+		class="com.barclays.bmg.dao.core.proxy.remoting.BMGJaxRpcPortProxyFactoryBean">
+		<property name="portInterface"
+			value="com.barclays.bem.FinancialTransactionProcessing.FinancialTransactionProcessing_PortType" />
+		<property name="portName" value="FinancialTransactionProcessingSOAP" />
+		<property name="jaxRpcServiceInterface"
+			value="com.barclays.bem.FinancialTransactionProcessing.FinancialTransactionProcessing_Service" />
+		<property name="endpointAddress"
+			value="http://mb4t.wload.global:7080/bem/apollo_ws" />
+		<property name="endpointAddressName" value="FinancialTransactionProcessing_EndPoint" /> <!-- value="CIT_CBPRetrieveChargeDetails"  -->
+		<property name="cacheKey" value="financialService" />
+	</bean>
+
+	<bean id="domesticFundTransferPayloadAdapter"
+		class="com.barclays.bmg.dao.adapter.fundtransfer.domestic.DomesticFundTransferPayloadAdapter">
+	</bean>
+
+	<bean id="domesticFundTransferRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.fundtransfer.domestic.DomesticFundTransferRespAdptOperation">
+	</bean>
+
+		<bean id="fundTransferCommandValidator"
+		class="com.barclays.bmg.mvc.validator.fundtransfer.FundTransferCommandValidator" />
+
+<bean id="fundTransferExecuteCommandValidator"
+		class="com.barclays.bmg.mvc.validator.fundtransfer.FundTransferExecuteCommandValidator" />
+
+		<!--  Second level authentication -->
+
+		<bean id="txnOTPSecondAuthJSONBldr"
+		class="com.barclays.bmg.json.model.builder.secondauth.TxnOTPSecondAuthJSONBldr" parent="otpAuthenticationJSONBldr">
+	</bean>
+
+
+	<bean id="txnSQASecondAuthJSONBldr"
+		class="com.barclays.bmg.json.model.builder.secondauth.TxnSQASecondAuthJSONBldr" parent="sqaAuthenticationJSONBldr">
+	</bean>
+
+	<!-- Second level authentication Command Validator. -->
+	<bean id="txnOTPCommandValidator"
+		class="com.barclays.bmg.mvc.validator.secondauth.TxnOTPCommandValidator">
+	</bean>
+
+	<bean id="txnSQACommandValidator"
+		class="com.barclays.bmg.mvc.validator.secondauth.TxnSQACommandValidator">
+	</bean>
+</beans>

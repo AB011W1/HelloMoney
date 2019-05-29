@@ -1,0 +1,18 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <p167:AuthenticationChallengeResponse xmlns:p167="http://grcb.barclays.com/mcfe/ssc/authentication/AuthenticationChallenge">
+      <p167:responseHeader>
+        <ServiceResStatus>
+          <ServiceResCode>00000</ServiceResCode>
+          <ServiceResDesc xsi:nil="true"/>
+          <ServiceRespDateTime xsi:nil="true"/>
+        </ServiceResStatus>
+      </p167:responseHeader>
+      <p167:SecretQuestion>
+        <QuestionID>3</QuestionID>
+        <QuestionText>Your First School</QuestionText>
+      </p167:SecretQuestion>
+    </p167:AuthenticationChallengeResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

@@ -1,5 +1,6 @@
 package com.barclays.ussd.utils.jsonparsers;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -16,6 +17,8 @@ import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
 import com.barclays.ussd.utils.jsonparsers.bean.fundtransfer.ownfundtransfer.AccountDetails;
+import com.barclays.ussd.utils.jsonparsers.bean.login.AuthUserData;
+import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
 
 public class KEEBFTSelFrmAcntJsonParser implements BmgBaseJsonParser {
 	private static final String TRANSACTION_FROM_ACCOUNT_LABEL = "label.select.account";
@@ -26,7 +29,8 @@ public class KEEBFTSelFrmAcntJsonParser implements BmgBaseJsonParser {
 	USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
 	List<AccountDetails> lstFrmAcnt = (List<AccountDetails>) ussdSessionMgmt.getTxSessions().get(
 		USSDInputParamsEnum.KE_EXT_BANK_FT_SEL_FRM_AC.getTranId());
-
+	AuthUserData authData= ((AuthUserData)ussdSessionMgmt.getUserAuthObj());
+    List<CustomerMobileRegAcct> acts=authData.getPayData().getCustActs();
 	if (lstFrmAcnt == null || lstFrmAcnt.isEmpty()) {
 	    throw new USSDNonBlockingException(USSDExceptions.USSD_NO_ELIGIBLE_ACCTS.getBmgCode());
 	}
@@ -42,7 +46,20 @@ public class KEEBFTSelFrmAcntJsonParser implements BmgBaseJsonParser {
     					responseBuilderParamsDTO.getUssdSessionMgmt().getUserProfile().getCountryCode()));
 		pageBody.append(fundTxAccountLabel);
 	    }
+	    if(acts != null && acts.size() > 0)
+		{
+			List<String> GpAcc=new ArrayList<String>();
+			 for(int i =0;i<acts.size();i++)
+			    	if(acts.get(i).getGroupWalletIndicator()!=null && acts.get(i).getGroupWalletIndicator().equals("Y"))
+			    		GpAcc.add(acts.get(i).getMkdActNo());
 
+				 for(int j=0;j<lstFrmAcnt.size();j++)
+					 if(GpAcc.contains(lstFrmAcnt.get(j).getMkdActNo()))
+						 lstFrmAcnt.remove(j);
+		}
+	    if (lstFrmAcnt == null || lstFrmAcnt.isEmpty() || lstFrmAcnt.size() == 0) {
+		    throw new USSDNonBlockingException(USSDExceptions.USSD_NO_ELIGIBLE_ACCTS.getBmgCode());
+		}
 	    for (AccountDetails ele : lstFrmAcnt) {
 		pageBody.append(USSDConstants.NEW_LINE);
 		pageBody.append(index);

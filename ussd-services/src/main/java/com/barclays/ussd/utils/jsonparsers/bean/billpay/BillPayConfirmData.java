@@ -38,6 +38,9 @@ public class BillPayConfirmData {
 	@JsonProperty
 	private String curr;
 
+	@JsonProperty
+	private String rcptNo;
+
 	/**
 	 * @param txnRefNo the txnRefNo to set
 	 */
@@ -108,5 +111,18 @@ public class BillPayConfirmData {
 		return curr;
 	}
 
+	/**
+	 * @return the rcptNo
+	 */
+	public String getRcptNo() {
+		return rcptNo;
+	}
+
+	/**
+	 * @param rcptNo the rcptNo to set
+	 */
+	public void setRcptNo(String rcptNo) {
+		this.rcptNo = rcptNo;
+	}
 
 }

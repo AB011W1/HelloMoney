@@ -11,7 +11,6 @@ import org.codehaus.jackson.map.ObjectMapper;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
-import com.barclays.ussd.exception.USSDBlockingException;
 import com.barclays.ussd.exception.USSDNonBlockingException;
 import com.barclays.ussd.utils.BmgBaseJsonParser;
 import com.barclays.ussd.utils.PaginationEnum;
@@ -163,7 +162,8 @@ public class KEEBFTFormValJsonParser implements BmgBaseJsonParser {
 	    menuItemDTO.setStatus(USSDConstants.STATUS_CONTINUE);
 	    menuItemDTO.setPaginationType(PaginationEnum.LISTED);
 	}
-	setNextScreenSequenceNumber(menuItemDTO);
+	if(null != menuItemDTO)
+		setNextScreenSequenceNumber(menuItemDTO);
 	return menuItemDTO;
     }
 

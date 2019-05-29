@@ -95,6 +95,7 @@ public class KitsSendToAccountAmountJsonParser implements BmgBaseJsonParser, Sys
 	    e.addErrorParam(sysPrefKitsMinAmt);
 	    e.addErrorParam(sysPrefKitsMaxAmt);
 	    e.setErrorCode(USSDExceptions.USSD_INVALID_AMOUNT_LIMIT.getUssdErrorCode());
+	    e.setKitsFlow(true);
 	    throw e;
 	}
 
@@ -117,6 +118,7 @@ public class KitsSendToAccountAmountJsonParser implements BmgBaseJsonParser, Sys
 		    e.addErrorParam(sysPrefKitsMinAmt);
 		    e.addErrorParam(sysPrefKitsMaxAmt);
 		    e.setErrorCode(USSDExceptions.BPY00614.getUssdErrorCode());
+		    e.setKitsFlow(true);
 		    throw e;
 		}
 
@@ -147,7 +149,7 @@ public class KitsSendToAccountAmountJsonParser implements BmgBaseJsonParser, Sys
 	if (listValueCacheDTO == null) {
 	    LOGGER.fatal("System preferences not set for" + listValReq.getListValueKey());
 	    throw new USSDNonBlockingException(USSDExceptions.USSD_SYS_PREF_MISSING.getBmgCode(), USSDExceptions.USSD_SYS_PREF_MISSING
-		    .getUssdErrorCode());
+		    .getUssdErrorCode(),true);
 	}
 	return listValueCacheDTO.getLabel();
     }

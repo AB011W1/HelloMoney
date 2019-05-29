@@ -8,23 +8,25 @@ import com.barclays.bem.FundsTransferSummary.FundsTransferSummary;
 import com.barclays.bem.SearchFundsTransferHistory.SearchFundsTransferHistoryResponse;
 import com.barclays.bmg.constants.TransactionHistoryConstants;
 import com.barclays.bmg.dao.core.context.WorkContext;
+import com.barclays.bmg.dao.core.context.impl.DAOContext;
 import com.barclays.bmg.dto.Amount;
 import com.barclays.bmg.dto.BillPaymentHistory;
 import com.barclays.bmg.dto.CustomerAccountDTO;
 import com.barclays.bmg.dto.TransactionHistoryDTO;
+import com.barclays.bmg.service.request.SearchTransactionHistoryServiceRequest;
 import com.barclays.bmg.service.response.SearchTransactionHistoryServiceResponse;
 
 /**
  * @author BTCI
- * 
+ *
  *         Response adapter class for Search Transaction History BEM response (SearchFundsTransferHistoryResponse)
- * 
+ *
  */
-public class SearchTransactionHistoryResAdptOperation extends AbstractResAdptOperation {
+public class SearchTransactionHistoryResAdptOperation extends AbstractResAdptOperationAcct {
 
     /**
      * Adapt response.
-     * 
+     *
      * @param workContext
      *            the work context
      * @param obj
@@ -46,13 +48,18 @@ public class SearchTransactionHistoryResAdptOperation extends AbstractResAdptOpe
 
 	if (null != bemResponse.getFundTransferHistoryList()) {
 	    FundsTransferSummary[] result = bemResponse.getFundTransferHistoryList().getFundsTransferSummary();
+		DAOContext daoContext = (DAOContext) workContext;
 
+		Object[] args = daoContext.getArguments();
+
+		SearchTransactionHistoryServiceRequest searchTransactionHistoryServiceRequest = (SearchTransactionHistoryServiceRequest) args[0];
+		String groupwalletFlow=searchTransactionHistoryServiceRequest.isGroupWalletFlow();
 	    if (result != null && result.length > 0) {
 		for (FundsTransferSummary fundsTransferSummary : result) {
 
 		    String transactionType = fundsTransferSummary.getFundsTransferType();
 
-		    if (TransactionHistoryConstants.BILL_PAYMENT.equals(transactionType)) {
+		    if (TransactionHistoryConstants.BILL_PAYMENT.equals(transactionType)||(groupwalletFlow!=null && groupwalletFlow.equals("true"))) {
 			BillPaymentHistory history = new BillPaymentHistory();
 			// populate DTO for Bill payment when txn history is of
 			// BP type

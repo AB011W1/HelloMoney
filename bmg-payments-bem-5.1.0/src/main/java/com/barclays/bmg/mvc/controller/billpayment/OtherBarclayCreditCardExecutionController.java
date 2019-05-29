@@ -63,8 +63,8 @@ public class OtherBarclayCreditCardExecutionController extends BMBAbstractComman
 	Context context = createContext(httpRequest);
 	TransactionDTO transactionDTO = (TransactionDTO) getFromProcessMap(httpRequest, BMGProcessConstants.CREDIT_CARD_PAYMENT,
 		BillPaymentConstants.TRANSACTION_DTO);
-
-	transactionDTO.setBeneficiaryDTO(new BeneficiaryDTO());
+	if(null != transactionDTO)
+		transactionDTO.setBeneficiaryDTO(new BeneficiaryDTO());
 	MakeBillPaymentOperationResponse makeBillPaymentOperationResponse = null;
 
 	if (verified && transactionDTO != null) {

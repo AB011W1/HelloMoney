@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+	<bean id="transactionLimitDAO" class="com.barclays.bmg.dao.impl.TransactionLimitDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+	<bean id="transactionCutOffDAO" class="com.barclays.bmg.dao.impl.TransactionCutOffDAOImpl">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+
+	<bean id="addOrganizationBeneficiaryDetailsDAOController"
+		class="com.barclays.bmg.dao.AddOrganizationBeneficiaryDetailsDAOController">
+		<property name="addOrgBeneficiaryDetailsReqAdptOperation"
+			ref="addOrgBeneficiaryDetailsReqAdptOperation" />
+		<property name="transmissionOperation" ref="addOrgBenDtlsTransmissionOperation" />
+		<property name="addOrgBeneficiaryRespAdptOperation" ref="addOrgBeneficiaryRespAdptOperation" />
+	</bean>
+	<bean id="addOrgBeneficiaryDAO" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface"
+			value="com.barclays.bmg.dao.AddOrganizationBeneficiaryDAO" />
+		<property name="daoFrontController" ref="addOrgBeneficiaryDaoFrontControllerImpl" />
+	</bean>
+
+   <bean id="addOrgBeneficiaryDetailsReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.AddOrgBeneficiaryReqAdptOperation">
+		<property name="addOrgBeneficiaryDtlsHeaderAdapter" ref="addOrgBeneficiaryDtlsHeaderAdapter" />
+		<property name="addOrgBeneficiaryDtlsPayloadAdapter" ref="addOrgBeneficiaryDtlsPayloadAdapter" />
+	</bean>
+	<bean id="addOrgBeneficiaryRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.AddOrgBeneficiaryRespAdptOperation">
+	</bean>
+	<bean id="addOrgBeneficiaryDtlsHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.AddOrgBeneficiaryDtlsHeaderAdapter">
+	</bean>
+	<bean id="addOrgBeneficiaryDtlsPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.AddOrgBeneficiaryDtlsPayloadAdapter">
+	</bean>
+
+	<bean id="addOrgBeneficiaryDaoFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="ADDORGANIZATIONBENEFICIARY" value-ref="addOrganizationBeneficiaryDetailsDAOController" />
+			</map>
+		</property>
+
+	</bean>
+	<bean id="addOrgBenDtlsTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="addOrgBenDtlsTransmissionService" />
+	</bean>
+	<bean id="addOrgBenDtlsTransmissionService"
+		class="com.barclays.bmg.dao.service.impl.AddOrgBenDtlsTransmissionService">
+		<property name="remoteService" ref="retreivePayeeListWebServiceImpl" />
+	</bean>
+</beans>

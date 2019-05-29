@@ -14,7 +14,6 @@ public class RetrieveAccountSummaryHeaderAdapter extends AbstractReqAdptOperatio
 
 	BEMReqHeader reqHeader = super.buildRequestHeader(workContext, SERVICE_RETRIEVE_INDIVIDUAL_CUST_ACCT_LIST);
 
-	String businessID = getBusinessId(workContext);
 	//Commented because issue with Credit Card Link for  Vision Plus R3 release
 	//if (businessID.equalsIgnoreCase("KEBRB")) {
 	    RoutingIndicator routInd = new RoutingIndicator();

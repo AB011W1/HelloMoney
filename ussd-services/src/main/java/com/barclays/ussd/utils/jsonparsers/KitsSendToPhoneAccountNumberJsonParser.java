@@ -1,6 +1,7 @@
 package com.barclays.ussd.utils.jsonparsers;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -11,6 +12,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
 
+import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
 import com.barclays.ussd.exception.USSDNonBlockingException;
@@ -24,7 +26,7 @@ import com.barclays.ussd.utils.USSDUtils;
 import com.barclays.ussd.utils.jsonparsers.bean.fundtransfer.ownfundtransfer.AccListPayData;
 import com.barclays.ussd.utils.jsonparsers.bean.fundtransfer.ownfundtransfer.AccountDetails;
 import com.barclays.ussd.utils.jsonparsers.bean.fundtransfer.ownfundtransfer.RetrieveAccList;
-import com.barclays.ussd.utils.jsonparsers.bean.login.AuthenticateUserPayData;
+import com.barclays.ussd.utils.jsonparsers.bean.login.AuthUserData;
 import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
 
 public class KitsSendToPhoneAccountNumberJsonParser implements BmgBaseJsonParser {
@@ -33,7 +35,6 @@ public class KitsSendToPhoneAccountNumberJsonParser implements BmgBaseJsonParser
     private static final Logger LOGGER = Logger.getLogger(KitsSendToPhoneAccountNumberJsonParser.class);
 
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
-	MenuItemDTO menuDTO = null;
 	String jsonString = responseBuilderParamsDTO.getJsonString();
 	ObjectMapper mapper = new ObjectMapper();
 
@@ -45,27 +46,28 @@ public class KitsSendToPhoneAccountNumberJsonParser implements BmgBaseJsonParser
 		if (accList.getPayHdr() != null && USSDExceptions.SUCCESS.getBmgCode().equalsIgnoreCase(accList.getPayHdr().getResCde())) {
 		    List<AccountDetails> custActs = accList.getPayData().getSrcLst();
 		    Collections.sort(custActs, new KITSAccountSummaryCustomerAccountComparator());
-		    menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, accList.getPayData());
+		    MenuItemDTO menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, accList.getPayData());
+		    return menuDTO;
 		} else if (accList.getPayHdr() != null) {
 		    LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
-		    throw new USSDNonBlockingException(accList.getPayHdr().getResCde());
+		    throw new USSDNonBlockingException(accList.getPayHdr().getResCde(),true);
 		} else {
 		    LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
-		    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+		    throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 		}
 	    } else {
 		LOGGER.error("Invalid response got from the BMG " + responseBuilderParamsDTO.getBmgOpCode());
-		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 	    }
 	} catch (Exception e) {
 	    LOGGER.error("Exception : ", e);
 	    if (e instanceof USSDNonBlockingException) {
-		throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode());
+		throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode(),true);
 	    } else {
-		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
+		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode(),true);
 	    }
 	}
-	return menuDTO;
+
     }
 
     /**
@@ -73,23 +75,39 @@ public class KitsSendToPhoneAccountNumberJsonParser implements BmgBaseJsonParser
      * @param userAuthObj
      * @param warningMsg
      * @return MenuItemDTO
+     * @throws USSDNonBlockingException
      */
-    private MenuItemDTO renderMenuOnScreen(ResponseBuilderParamsDTO responseBuilderParamsDTO, AccListPayData acntPayData) {
+    private MenuItemDTO renderMenuOnScreen(ResponseBuilderParamsDTO responseBuilderParamsDTO, AccListPayData acntPayData) throws USSDNonBlockingException {
 
 		MenuItemDTO menuItemDTO = null;
 		//AuthenticateUserPayData acntPayData = userAuthObj.getPayData();
+		USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
+		AuthUserData authData= ((AuthUserData)ussdSessionMgmt.getUserAuthObj());
+	    List<CustomerMobileRegAcct> acts=authData.getPayData().getCustActs();
+	    List<AccountDetails> custActs = acntPayData.getSrcLst();
 		if (acntPayData != null) {
 			if (acntPayData.getSrcLst() != null && !acntPayData.getSrcLst().isEmpty()) {
 				menuItemDTO = new MenuItemDTO();
 				int index = 1;
 				StringBuilder pageBody = new StringBuilder();
 				Map<String, Object> txSessions = new HashMap<String, Object>(acntPayData.getSrcLst().size());
-
 				txSessions.put(USSDInputParamsEnum.KITS_STP_ACCOUNT_NUM.getTranId(), acntPayData.getSrcLst());
-
-
 				responseBuilderParamsDTO.getUssdSessionMgmt().setTxSessions(txSessions);
-				for (AccountDetails accountDetail : acntPayData.getSrcLst()) {
+				if(acts != null && acts.size() > 0)
+				{
+					List<String> GpAcc=new ArrayList<String>();
+					 for(int i =0;i<acts.size();i++)
+					    	if(acts.get(i).getGroupWalletIndicator()!=null && acts.get(i).getGroupWalletIndicator().equals("Y"))
+					    		GpAcc.add(acts.get(i).getMkdActNo());
+
+						 for(int j=0;j<custActs.size();j++)
+							 if(GpAcc.contains(custActs.get(j).getMkdActNo()))
+								 custActs.remove(j);
+				}
+				if (custActs == null || custActs.isEmpty() || custActs.size() == 0) {
+				    throw new USSDNonBlockingException(USSDExceptions.USSD_NO_ELIGIBLE_ACCTS.getBmgCode());
+				}
+				for (AccountDetails accountDetail : custActs){//acntPayData.getSrcLst()) {
 					pageBody.append(USSDConstants.NEW_LINE);
 					pageBody.append(index);
 					pageBody.append(USSDConstants.DOT_SEPERATOR);
@@ -103,7 +121,8 @@ public class KitsSendToPhoneAccountNumberJsonParser implements BmgBaseJsonParser
 				menuItemDTO.setPaginationType(PaginationEnum.LISTED);
 			}
 		}
-		setNextScreenSequenceNumber(menuItemDTO);
+		if(null != menuItemDTO)
+			setNextScreenSequenceNumber(menuItemDTO);
 		return menuItemDTO;
     }
 
@@ -131,4 +150,3 @@ public class KitsSendToPhoneAccountNumberJsonParser implements BmgBaseJsonParser
 		}
 
 	}
-

@@ -1,0 +1,38 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <p551:MakeBillPaymentResponse xmlns:p551="http://barclays.com/bem/MakeBillPayment">
+      <p551:ResponseHeader>
+        <ServiceContext>
+          <ServiceID>MakeBillPayment</ServiceID>
+          <ConsumerUniqueRefNo>13878011001385</ConsumerUniqueRefNo>
+          <OriginalConsumerUniqueRefNo>13878011001385</OriginalConsumerUniqueRefNo>
+          <ServiceDateTime>2013-12-23T15:19:29.367Z</ServiceDateTime>
+          <ServiceVersionNo>6.0.0</ServiceVersionNo>
+          <OverrideRequestFlag>0</OverrideRequestFlag>
+        </ServiceContext>
+        <BankUserContext>
+          <StaffType>Regular</StaffType>
+          <StaffID>IFE</StaffID>
+          <AuthorizerID>Z00019789</AuthorizerID>
+        </BankUserContext>
+         <ServiceResStatus>
+          <ServiceResCode>00001</ServiceResCode>
+          <ServiceResDesc>Submitted</ServiceResDesc>
+          <ServiceRespDateTime>2014-02-27T08:04:58.295Z</ServiceRespDateTime>
+          <ServiceUniqueRefNo xsi:nil="true"/>
+        </ServiceResStatus>
+      </p551:ResponseHeader>
+      <p551:BillPaymentResponseStatus xmlns:p331="http://barclays.com/bem/FundTransferResponseStatus">
+        <p331:TransactionResponseStatus xmlns:p455="http://barclays.com/bem/TransactionResponseStatus">
+          <p455:TransactionReferenceNumber>13934882420846</p455:TransactionReferenceNumber>
+        </p331:TransactionResponseStatus>
+         <p331:BillPaymentDetails>
+          <p331:ReceiptNumber>3416</p331:ReceiptNumber>
+          <p331:TokenNumber>AAAA</p331:TokenNumber>
+          <p331:NumberOfUnits>1111</p331:NumberOfUnits>
+        </p331:BillPaymentDetails>
+        </p551:BillPaymentResponseStatus>
+    </p551:MakeBillPaymentResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

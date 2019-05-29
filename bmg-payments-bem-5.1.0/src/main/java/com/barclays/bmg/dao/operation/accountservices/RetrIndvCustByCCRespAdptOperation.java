@@ -14,7 +14,7 @@ import com.barclays.bmg.dto.CustomerDTO;
 import com.barclays.bmg.exception.BMBDataAccessException;
 import com.barclays.bmg.service.response.RetreiveIndvCustInfoServiceResponse;
 
-public class RetrIndvCustByCCRespAdptOperation extends AbstractResAdptOperation {
+public class RetrIndvCustByCCRespAdptOperation extends AbstractResAdptOperationAcct {
 
     public RetreiveIndvCustInfoServiceResponse adaptResponse(WorkContext workContext, Object obj) {
 

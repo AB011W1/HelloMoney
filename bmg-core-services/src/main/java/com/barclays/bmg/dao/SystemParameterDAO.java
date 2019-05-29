@@ -12,4 +12,6 @@ public interface SystemParameterDAO {
 
     public SystemParameterServiceResponse getStatusParameter(SystemParameterServiceRequest request);
 
+    public SystemParameterListServiceResponse getCountryWiseSysParamsByParamId(SystemParameterServiceRequest request);
+
 }

@@ -9,7 +9,7 @@ import com.barclays.bmg.constants.ResponseCodeConstants;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.service.response.PayBillServiceResponse;
 
-public class UAEPayBillRespAdptOperation extends AbstractResAdptOperation {
+public class UAEPayBillRespAdptOperation extends AbstractResAdptOperationAcct {
 
 	public PayBillServiceResponse adaptResponse(WorkContext workContext,
 			Object obj) {

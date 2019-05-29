@@ -142,4 +142,16 @@ public interface SMSConstants {
     public static final String SMS_WT_PAYEE_EDT_FIELD_SUCCESS = "SMS_WT_PAYEE_EDT_FIELD_SUCCESS";
     public static final String SMS_WT_EDT_PRIORITY = "SMS_WT_EDT_PRIORITY";
 
+    //Group Wallet
+    public static final String SMS_TRAN_INITIATE_SUCCESS="SMS_TRAN_INITIATE_SUCCESS";
+    public static final String SMS_TRAN_REJECTED="SMS_TRAN_REJECTED";
+    public static final String SMS_TRAN_APPROVED="SMS_TRAN_APPROVED";
+
+    public static final String SMS_TRAN_INITIATE_SUCCESS_PRIORITY = "SMS_TRAN_INITIATE_PRIORITY";
+    public static final String SMS_TRAN_APPROVED_PRIORITY = "SMS_TRAN_APPROVED_PRIORITY";
+    public static final String SMS_TRAN_REJECTED_PRIORITY = "SMS_TRAN_REJECTED_PRIORITY";
+
+    public static final String SMS_TRAN_INITIATE_SUCCESS_FIELDS = "SMS_TRAN_INITIATE_FIELDS";
+    public static final String SMS_TRAN_APPROVED_FIELDS = "SMS_TRAN_APPROVED_FIELDS";
+    public static final String SMS_TRAN_REJECTED_FIELDS = "SMS_TRAN_REJECTED_FIELDS";
 }

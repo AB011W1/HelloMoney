@@ -25,9 +25,7 @@ public class OthBnkConfirm implements BmgBaseRequestBuilder {
 			throws USSDNonBlockingException, USSDBlockingException {
 		USSDBaseRequest request = new USSDBaseRequest();
 		Map<String, String> userInputMap = requestBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap();
-
 		USSDSessionManagement ussdSessionMgmt = requestBuilderParamsDTO.getUssdSessionMgmt();
-		String transNodeId=ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
 		Map<String, String> requestParamMap = new HashMap<String, String>();
 		request.setMsisdnNo(requestBuilderParamsDTO.getMsisdnNo());
 		request.setOpCde(requestBuilderParamsDTO.getBmgOpCode());

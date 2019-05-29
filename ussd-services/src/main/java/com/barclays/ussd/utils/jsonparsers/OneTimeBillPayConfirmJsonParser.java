@@ -12,6 +12,8 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.barclays.bmg.context.BMBContextHolder;
+import com.barclays.bmg.context.BMGContextHolder;
+import com.barclays.bmg.context.BMGGlobalContext;
 import com.barclays.bmg.dao.product.impl.ListValueResDAOImpl;
 import com.barclays.bmg.service.product.request.ListValueResServiceRequest;
 import com.barclays.bmg.service.product.response.ListValueResByGroupServiceResponse;
@@ -49,6 +51,7 @@ public class OneTimeBillPayConfirmJsonParser implements BmgBaseJsonParser {
     private static final String TRANSACTION_FEE_LABEL = "label.transactionfee.msg";
     private static final String XCELERATE_OFFLINE_LABEL = "label.xcelerate.offline.acceptance";
     private String pilotValue = null;
+
 
     @Autowired
     ListValueResDAOImpl listValueResDAOImpl;
@@ -168,10 +171,10 @@ public class OneTimeBillPayConfirmJsonParser implements BmgBaseJsonParser {
 
 	    // Transaction fee only for CASA - CPB change 25/05/2017
 		// Removing PilotValue check(pilotValue !=null && pilotValue.equalsIgnoreCase("Y")) its not going with Regulatory 6.0.0 changes - 02/11/2017
-		if(responseBuilderParamsDTO.getUssdSessionMgmt().getBusinessId().equals("KEBRB")
-				&& payData.getTxnChargeAmt()!=null){
-		    if(responseBuilderParamsDTO.getUssdSessionMgmt().getBusinessId().equals("KEBRB") && payData.getCreditcardJsonModel() == null &&
-		    		payData.getTxnChargeAmt().getAmt()!=null){
+	    //CBP Change
+	    BMGGlobalContext logContext = BMGContextHolder.getLogContext();
+	    if(((logContext!=null && logContext.getContextMap().get("isCBPFLAG").equals("Y")) || (logContext!=null && logContext.getBusinessId().equals("KEBRB"))) && payData.getCreditcardJsonModel() == null){
+	    	if(payData.getTxnChargeAmt().getAmt()!=null){
 
 		    	Double accumulatedCharge = 0.0;
 		    	Double roundedAccumulatedVal = 0.0;

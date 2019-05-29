@@ -1,0 +1,60 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <soapenv:Body>
+    <NS1:RetrieveIndividualCustAcctBasicResponse xmlns:NS1="http://barclays.com/bem/RetrieveIndividualCustAcctBasic">
+  <NS1:ResponseHeader>
+    <ServiceContext>
+      <ServiceID>RetrieveIndividualCustAndAcctBasicDetails</ServiceID>
+      <ConsumerUniqueRefNo>11550037905015</ConsumerUniqueRefNo>
+      <OriginalConsumerUniqueRefNo>11550037905015</OriginalConsumerUniqueRefNo>
+      <ServiceDateTime>2019-02-13T04:05:05.016Z</ServiceDateTime>
+      <ServiceVersionNo>6.0.0</ServiceVersionNo>
+      <OverrideRequestFlag>false</OverrideRequestFlag>
+    </ServiceContext>
+    <BankUserContext>
+      <StaffType>Regular</StaffType>
+      <StaffID>IFE</StaffID>
+      <AuthorizerID>Z00019789</AuthorizerID>
+    </BankUserContext>
+    <ServiceResStatus>
+      <ServiceResCode>00000</ServiceResCode>
+      <ServiceResDesc>Success</ServiceResDesc>
+      <ServiceRespDateTime>2019-02-13T08:05:05.112503+02:00</ServiceRespDateTime>
+    </ServiceResStatus>
+  </NS1:ResponseHeader>
+  <NS1:CustomerAccountBasic>
+    <NS1:CustomerBasic>
+      <NS1:CustomerName>
+        <NS2:FullName xmlns:NS2="http://barclays.com/bem/IndividualName">FIRST NAME                120091750</NS2:FullName>
+      </NS1:CustomerName>
+      <NS1:MobileNumber>120091750</NS1:MobileNumber>
+      <NS1:SCVID>100001471546</NS1:SCVID>
+      <NS1:MobileNumberStatus>ACTIVE</NS1:MobileNumberStatus>
+      <NS1:Language>EN</NS1:Language>
+      <NS1:Remarks>-</NS1:Remarks>
+      <NS1:UserRegistrationDetails>
+        <NS1:CreatedBy>IFE</NS1:CreatedBy>
+        <NS1:CreatedOn>2019-02-12T06:50:32.848+02:00</NS1:CreatedOn>
+        <NS1:ModifiedBy>G01208108</NS1:ModifiedBy>
+        <NS1:ModifiedOn>2019-02-13T07:27:59.431+02:00</NS1:ModifiedOn>
+        <NS1:AuthorizedBy>G01231248</NS1:AuthorizedBy>
+        <NS1:AuthorizedOn>2019-02-13T07:27:59.431+02:00</NS1:AuthorizedOn>
+      </NS1:UserRegistrationDetails>
+      <NS1:CustomerAccessStatusCode>N</NS1:CustomerAccessStatusCode>
+    </NS1:CustomerBasic>
+    <NS1:AccountInfo>
+      <NS1:AccountNumber>3530367</NS1:AccountNumber>
+      <NS1:BranchCode>11</NS1:BranchCode>
+      <NS1:PrimaryIndicator>Y</NS1:PrimaryIndicator>
+      <NS1:AccountIndicators>
+        <NS3:Name xmlns:NS3="http://barclays.com/bem/RetrieveCustomerAndProductMarkers">GroupWallet</NS3:Name>
+        <NS4:Value xmlns:NS4="http://barclays.com/bem/RetrieveCustomerAndProductMarkers">N</NS4:Value>
+      </NS1:AccountIndicators>
+    </NS1:AccountInfo>
+    <NS1:PinInfo>
+      <NS1:Status>Not Migrated</NS1:Status>
+    </NS1:PinInfo>
+  </NS1:CustomerAccountBasic>
+</NS1:RetrieveIndividualCustAcctBasicResponse>
+
+  </soapenv:Body>
+</soapenv:Envelope>

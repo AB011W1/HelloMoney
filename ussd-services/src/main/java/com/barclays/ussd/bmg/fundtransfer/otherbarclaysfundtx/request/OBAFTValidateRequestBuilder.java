@@ -70,6 +70,8 @@ public class OBAFTValidateRequestBuilder implements BmgBaseRequestBuilder {
 		.get(USSDInputParamsEnum.INT_FT_CARD_LIST.getTranId());
 		CustomerMobileRegAcct creditCard = creditCardList.get(Integer.parseInt(userInputMap.get(USSDInputParamsEnum.INT_FT_CARD_LIST.getParamName())) - 1);
 		requestParamMap.put(USSDInputParamsEnum.INT_FT_SOURCE_LIST.getParamName(), creditCard.getActNo());
+        //Added card no details to fetch only selected card
+		requestParamMap.put("ccNumber", creditCard.getCrdNo());
 		requestParamMap.put(CREDIT_CARD_FLAG,CREDIT_CARD_FLAG_VALUE);
 	    requestParamMap.put(USSDInputParamsEnum.RETRIVE_ACCOUNT_TYPE.getParamName(), CREDIT_CARD_ACCOUNT_TYPE);
      	requestParamMap.put(USSDInputParamsEnum.ACTIVITY_ID.getParamName(), CREDIT_ACTIVITY_ID);
