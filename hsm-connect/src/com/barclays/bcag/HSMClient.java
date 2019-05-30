@@ -29,10 +29,10 @@ public class HSMClient {
 	public static SealedObject so = null;
 	private static final Logger LOGGER = Logger.getLogger(HSMClient.class);
 	private static final String ALGORITHM = "DESede";
-	private static LunaSlotManager slotManager;
+
 	//TODO
 
-	private static final String partitionLabel = "SHM3DES1";//prod-SHM3DES1,o.Env - SHM-3DES
+	private static String partitionLabel = null; //= "SHM3DES1";//prod-SHM3DES1,o.Env - SHM-3DES
 
 	public static void setProperties(Properties properties) {
 		try {
@@ -42,7 +42,7 @@ public class HSMClient {
 			keystoreProvider = properties.getProperty("CASHKEYSTPROVIDER");
 			alias = properties.getProperty("CASHSENDALIAS");
 			encryptionMethod = properties.getProperty("ENCRYPTIONMETHOD");
-			slot = Integer.parseInt(properties.getProperty("SLOT"));
+			partitionLabel = properties.getProperty("CASHSENDPARTITIONLABEL");
 		} catch (Exception e) {
 			LOGGER.error("Exception: " + e.getStackTrace());
 		}
@@ -58,7 +58,7 @@ public class HSMClient {
 		AlgorithmParameters lunaParams = null;
 		String encryptedValue = null;
 		KeyStore myStore = null;
-
+		LunaSlotManager slotManager = null;;
 		try {
 			LOGGER.debug("LunaSlotManager.getInstance() call");
 			slotManager = LunaSlotManager.getInstance();
@@ -125,6 +125,11 @@ public class HSMClient {
 		}
 		catch (Exception e) {
 			LOGGER.error(e.getMessage());
+		}
+		finally{
+			slotManager = null;
+			desEncCipher = null;
+			myStore = null;
 		}
 
 		return encryptedValue;

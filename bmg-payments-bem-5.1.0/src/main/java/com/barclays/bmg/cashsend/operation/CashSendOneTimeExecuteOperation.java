@@ -125,8 +125,8 @@ public class CashSendOneTimeExecuteOperation extends BMBPaymentsOperation {
     	hsmProperties.put(EncryptionConstants.ENCRYPTIONMETHOD, DBParamFetchHelper.getSysParamValue(EncryptionConstants.ENCRYPTIONMETHOD));
     	LOGGER.debug("ENCRYPTIONMETHOD: " + DBParamFetchHelper.getSysParamValue(EncryptionConstants.ENCRYPTIONMETHOD));
 
-    	hsmProperties.put(EncryptionConstants.SLOT, DBParamFetchHelper.getSysParamValue(EncryptionConstants.SLOT));
-    	LOGGER.debug("SLOT: " + DBParamFetchHelper.getSysParamValue(EncryptionConstants.SLOT));
+    	hsmProperties.put(EncryptionConstants.CASHSENDPARTITIONLABEL, DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDPARTITIONLABEL));
+    	LOGGER.debug("PARTITIONLABEL: " + DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDPARTITIONLABEL));
     	// Read Encrypted UserName and Password from DB
     	//String hexEncryptedUserName = DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDUSERNAME);
     	String hexEncryptedUserKey = DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDPASS);
