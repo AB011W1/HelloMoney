@@ -599,4 +599,12 @@
 		<!-- MasterPassQR -->
 		<bean id="masterPassQRRefRequest" class="com.barclays.ussd.bmg.otbp.request.MasterPassQRRefRequest"/>
 		<!-- MasterPassQR End-->
+
+		<!-- GHIPS2 -->
+		<bean id="mobileWalletConfirmBeneficiaryRequestBuilder" class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletConfirmBeneficiaryRequestBuilder"/>
+		<bean id="mobileWalletConfirmEditBeneficiaryRequestBuilder" class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletConfirmEditBeneficiaryRequestBuilder"/>
+		<bean id="mobileWalletConfirmSavedBeneficiaryRequestBuilder" class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletConfirmSavedBeneficiaryRequestBuilder"/>
+		<bean id="mobileWalletConfirmNewBeneficiaryRequestBuilder" class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletConfirmNewBeneficiaryRequestBuilder" />
+		<bean id="mobileWalletOneOffRequestBuilder" class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletOneOffRequestBuilder" />
+
  </beans>

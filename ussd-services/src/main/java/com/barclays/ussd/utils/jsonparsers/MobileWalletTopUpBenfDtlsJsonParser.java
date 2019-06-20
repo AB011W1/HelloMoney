@@ -6,18 +6,27 @@ package com.barclays.ussd.utils.jsonparsers;
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import com.barclays.bmg.context.BMBContextHolder;
+import com.barclays.bmg.dto.SystemParameterDTO;
+import com.barclays.bmg.service.SystemParameterService;
+import com.barclays.bmg.service.request.SystemParameterServiceRequest;
+import com.barclays.bmg.service.response.SystemParameterServiceResponse;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
+import com.barclays.ussd.exception.USSDBlockingException;
 import com.barclays.ussd.exception.USSDNonBlockingException;
 import com.barclays.ussd.utils.BmgBaseJsonParser;
+import com.barclays.ussd.utils.ScreenSequenceCustomizer;
 import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDExceptions;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
@@ -31,7 +40,7 @@ import com.barclays.ussd.utils.jsonparsers.bean.delbillers.DelBillersValidate;
  * @author BTCI
  *
  */
-public class MobileWalletTopUpBenfDtlsJsonParser implements BmgBaseJsonParser {
+public class MobileWalletTopUpBenfDtlsJsonParser implements BmgBaseJsonParser, ScreenSequenceCustomizer {
 
     private static final Logger LOGGER = Logger.getLogger(MobileWalletTopUpBenfDtlsJsonParser.class);
 
@@ -40,7 +49,11 @@ public class MobileWalletTopUpBenfDtlsJsonParser implements BmgBaseJsonParser {
      *
      * @see com.barclays.ussd.utils.BmgBaseJsonParser#parseJsonIntoJava(com.barclays .ussd.bmg.dto.ResponseBuilderParamsDTO)
      */
+    @Autowired
+    SystemParameterService systemParameterService;
+
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
+	String jsonString = responseBuilderParamsDTO.getJsonString();
 	MenuItemDTO menuDTO = new MenuItemDTO();
 	ObjectMapper mapper = new ObjectMapper();
 	DelBillersValidate delBillrVal = null;
@@ -88,7 +101,36 @@ public class MobileWalletTopUpBenfDtlsJsonParser implements BmgBaseJsonParser {
 	menuItemDTO.setNextScreenSequenceNumber(USSDSequenceNumberEnum.SEQUENCE_NUMBER_FIVE.getSequenceNo());
 
     }
+    @Override
+	public int getCustomNextScreen(String userInput,
+			USSDSessionManagement ussdSessionMgmt) throws USSDBlockingException {
+		int seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FIVE.getSequenceNo();
+
+
+		SystemParameterDTO systemParameterDTO = new SystemParameterDTO();
+    	SystemParameterServiceRequest systemParameterServiceRequest = new SystemParameterServiceRequest();
+    	systemParameterServiceRequest.setSystemParameterDTO(systemParameterDTO);
+    	systemParameterDTO.setBusinessId(BMBContextHolder.getContext().getBusinessId().toString());
+    	systemParameterDTO.setSystemId("UB");
+    	systemParameterDTO.setParameterId("isGHIPS2Flag");
+    	String isGHIPS2Flag="";
+		SystemParameterServiceResponse response = systemParameterService.getStatusParameter(systemParameterServiceRequest);
+		if(response!=null && response.getSystemParameterDTO()!=null && response.getSystemParameterDTO().getParameterValue()!=null)
+			isGHIPS2Flag = response.getSystemParameterDTO().getParameterValue();
+
+		Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
+		String paymentTypeInput=userInputMap.get(USSDInputParamsEnum.MOBILE_WALLET_PAYMENT_TYPE.getParamName());
+
+
+		if (USSDConstants.BUSINESS_ID_GHBRB.equalsIgnoreCase(ussdSessionMgmt.getBusinessId()) && paymentTypeInput.equals("2") && isGHIPS2Flag.equals("Y") ) {
+			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FOURTYONE.getSequenceNo();
+		}
+		return seqNo;
+	}
+
 }
+
+
 
 class MobileWalletCustomerAccountComparator implements Comparator<AccountData>, Serializable {
     /**

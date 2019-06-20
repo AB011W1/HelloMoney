@@ -132,6 +132,18 @@ public class BillPaymentExecutionController extends BMBAbstractCommandController
 	    	context.setOpCde(httpRequest.getParameter("opCde"));
 	    }
 
+	  //GHIPS2- to exclude freeDial Flow
+	    String isFreeDialUssdFlow=String.valueOf(httpRequest.getParameter("isFreeDialUssdFlow"));
+	    if(null!= context && "GHBRB".equalsIgnoreCase(context.getBusinessId()) && ((ActivityConstant.MOBILE_WALLET_PAYEE_ACTIVITY_ID).equalsIgnoreCase(context.getActivityId()))) {
+	    	context.setOpCde(httpRequest.getParameter("opCde"));
+    		context.setIsFreeDialUssdFlow(isFreeDialUssdFlow);
+	    }
+	    //GHIPS2- to set the beneficiary name
+	    if(null!= context && "GHBRB".equalsIgnoreCase(context.getBusinessId()) && ((ActivityConstant.MOBILE_WALLET_PAYEE_ACTIVITY_ID).equalsIgnoreCase(context.getActivityId()))
+	    		&& null!=httpRequest.getParameter("customerName") && null!=isFreeDialUssdFlow && !isFreeDialUssdFlow.equalsIgnoreCase("TRUE"))  {
+	    	transactionDTO.getBeneficiaryDTO().setBeneficiaryNickName(httpRequest.getParameter("customerName"));
+	    }
+
 	    MakeBillPaymentOperationRequest makeBillPaymentOperationRequest = new MakeBillPaymentOperationRequest();
 	    makeBillPaymentOperationRequest.setContext(context);
 

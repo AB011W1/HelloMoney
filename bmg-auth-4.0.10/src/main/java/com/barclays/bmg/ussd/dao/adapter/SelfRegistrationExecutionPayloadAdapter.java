@@ -12,6 +12,8 @@
  */
 package com.barclays.bmg.ussd.dao.adapter;
 
+import java.util.Map;
+
 import com.barclays.bem.SearchIndividualCustByAcct.IndividuaCustomerSearchInfo;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.dao.core.context.impl.DAOContext;
@@ -60,8 +62,15 @@ public class SelfRegistrationExecutionPayloadAdapter {
     	SelfRegistrationExecutionServiceRequest request = (SelfRegistrationExecutionServiceRequest) args[0];
     	TransactionAccount transactionAccount = new TransactionAccount();
     	transactionAccount.setAccountName(request.getContext().getFullName());
-    	transactionAccount.setBankClearingCode("03");
-
+    	//transactionAccount.setBankClearingCode("03");
+    	if(request.getContext().getContextMap()!=null){
+    		Map<String, Object> sysparam=request.getContext().getContextMap();
+    		String bankClearingCode="";
+    		if(sysparam.containsKey("BarclaysBank")){
+			bankClearingCode = (String) sysparam.get("BarclaysBank");
+			transactionAccount.setBankClearingCode(bankClearingCode);
+    		}
+    	}
     	return transactionAccount;
         }
 }

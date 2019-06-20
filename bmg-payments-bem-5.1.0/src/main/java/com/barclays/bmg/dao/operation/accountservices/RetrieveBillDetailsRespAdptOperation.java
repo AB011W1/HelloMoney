@@ -24,7 +24,10 @@ public class RetrieveBillDetailsRespAdptOperation {
         RetrieveBillDetailsServiceResponse response = new RetrieveBillDetailsServiceResponse();
 
         RetrieveBillDetailsResponse bemResponse = (RetrieveBillDetailsResponse) obj;
+        if(null!= bemResponse.getBillDetails())
+        {
         bemResponse.getBillDetails(0);
+        }
 
        response.setSuccess(checkResHeader(bemResponse.getResponseHeader()));
 

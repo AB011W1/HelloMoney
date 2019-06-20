@@ -517,4 +517,12 @@
 	<!-- GePG Bllers End-->
     <!-- MasterPassQR -->
     <bean id="masterPassQRRefJsonParser" class="com.barclays.ussd.utils.jsonparsers.MasterPassQRRefJsonParser"/>
+
+    <!-- GHIPS2 -->
+   	<bean id="mobileWalletConfirmBeneficiaryResponseParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletConfirmBeneficiaryResponseParser" />
+	<bean id="mobileWalletConfirmEditBeneficiaryResponseParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletConfirmEditBeneficiaryResponseParser" />
+	<bean id="mobileWalletConfirmSavedBeneficiaryResponseParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletConfirmSavedBeneficiaryResponseParser" />
+	<bean id="mobileWalletConfirmNewBeneficiaryResponseParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletConfirmNewBeneficiaryResponseParser" />
+	<bean id="mobileWalletOneOffResponseParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletOneOffResponseParser" />
+
 </beans>

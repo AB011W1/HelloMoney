@@ -370,7 +370,15 @@ public class DomesticFundTransferPayloadAdapter {
 		fromAccount.setAccountNumber(branchCode+sourceAcct.getAccountNumber());
 		fromAccount.setAccountTypeCode("");
 		fromAccount.setAccountCurrencyCode(sourceAcct.getCurrency());
-		fromAccount.setBankClearingCode("03");
+		//fromAccount.setBankClearingCode("03");
+		if(domesticFTRequest.getContext().getContextMap()!=null){
+    		Map<String, Object> sysparam=domesticFTRequest.getContext().getContextMap();
+    		String bankClearingCode="";
+    		if(sysparam.containsKey("BarclaysBank")){
+			bankClearingCode = (String) sysparam.get("BarclaysBank");
+			fromAccount.setBankClearingCode(bankClearingCode);
+    		}
+    	}
 		dest.setDebitAccount(fromAccount);
 		dest.setDebitAccountTypeCode(sourceAcct.getProductCode());
 		if(beneficiaryDTO==null){

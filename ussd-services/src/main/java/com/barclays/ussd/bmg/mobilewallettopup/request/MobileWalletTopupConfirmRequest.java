@@ -3,6 +3,7 @@ package com.barclays.ussd.bmg.mobilewallettopup.request;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bmg.dto.RequestBuilderParamsDTO;
 import com.barclays.ussd.bmg.factory.request.BmgBaseRequestBuilder;
 import com.barclays.ussd.svc.context.USSDBaseRequest;
@@ -14,6 +15,7 @@ public class MobileWalletTopupConfirmRequest implements BmgBaseRequestBuilder {
     public USSDBaseRequest getRequestObject(RequestBuilderParamsDTO requestBuilderParamsDTO) {
 	USSDBaseRequest request = new USSDBaseRequest();
 	Map<String, String> requestParamMap = new HashMap<String, String>();
+	USSDSessionManagement ussdSessionMgmt = requestBuilderParamsDTO.getUssdSessionMgmt();
 
 	request.setMsisdnNo(requestBuilderParamsDTO.getMsisdnNo());
 	requestParamMap.put(USSDConstants.BMG_TANX_REF_NO, (String) requestBuilderParamsDTO.getUssdSessionMgmt().getTxSessions().get(
@@ -47,7 +49,11 @@ public class MobileWalletTopupConfirmRequest implements BmgBaseRequestBuilder {
 		requestParamMap.put("CpbMakeBillPaymentFields", "xelerateOffline");
 	}
 	requestParamMap.put("isFreeDialUssdFlow", ""+requestBuilderParamsDTO.getUssdSessionMgmt().isFreeDialUssdFlow());
-
+	//GHIPS2 - add customer name field in request
+	if(null!=ussdSessionMgmt.getTxSessions() && ""!=ussdSessionMgmt.getTxSessions().get(USSDConstants.GHIPPS_CUSTOMER_NAME) && null!=ussdSessionMgmt.getTxSessions().get(USSDConstants.GHIPPS_CUSTOMER_NAME)){
+		requestParamMap.put("customerName", String.valueOf(ussdSessionMgmt
+			.getTxSessions().get(USSDConstants.GHIPPS_CUSTOMER_NAME)));
+	}
 	request.setRequestParamMap(requestParamMap);
 
 	return request;
