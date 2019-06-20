@@ -551,5 +551,13 @@
         <!-- MasterPassQR -->
         <entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MASTER_QR_BILLER_DETAILS.getTranId()}"  value-ref="masterPassQRRefRequest"/>
 		<!-- MasterPassQR End-->
+
+		<!-- GHIPS2 -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_BENEFICIARY_CONFIRM.getTranId()}" value-ref="mobileWalletConfirmBeneficiaryRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_EDIT_BENEFICIARY_CONFIRM.getTranId()}" value-ref="mobileWalletConfirmEditBeneficiaryRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_SAVED_BENEFICIARY_CONFIRM.getTranId()}" value-ref="mobileWalletConfirmSavedBeneficiaryRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_NEW_BENEFICIARY_CONFIRM.getTranId()}" value-ref="mobileWalletConfirmNewBeneficiaryRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_OWN_NUMBER.getTranId()}" value-ref="mobileWalletOneOffRequestBuilder"/>
+
 </util:map>
 </beans>

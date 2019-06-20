@@ -10,6 +10,7 @@ import com.barclays.bem.BEMServiceHeader.ConsumerContextReq;
 import com.barclays.bem.BEMServiceHeader.CustomerContextReq;
 import com.barclays.bem.BEMServiceHeader.OverrideDetails;
 import com.barclays.bem.BEMServiceHeader.ServiceContext;
+import com.barclays.bmg.constants.ActivityConstant;
 import com.barclays.bmg.constants.ActivityIdConstantBean;
 import com.barclays.bmg.constants.ServiceIdConstants;
 import com.barclays.bmg.constants.SystemParameterConstant;
@@ -147,6 +148,13 @@ public class AbstractReqAdptOperation {
 		if(null != opcode && "OP0603".equalsIgnoreCase(opcode) && "MakeBillPayment".equalsIgnoreCase(serviceId)){
 			createOverrideListGePG((PayBillServiceRequest)args[0], reqHeader);
 		}
+
+		//GHIPS2- to set override list for SSAMakeBillPayment
+		if(null != opcode && "OP0603".equalsIgnoreCase(opcode) && context!=null && context.getBusinessId().equals("GHBRB") &&
+				serviceId.equals("SSAMakeBillPayment") && context.getActivityId()!=null && context.getActivityId().equals(ActivityConstant.MOBILE_WALLET_PAYEE_ACTIVITY_ID) &&
+				("Y").equals(contextMap.get(SystemParameterConstant.isGHIPS2Flag)) && !("TRUE".equalsIgnoreCase(context.getIsFreeDialUssdFlow()))) {
+			reqHeader.setOverrideList(createOverrideListGHIPPS2(context));
+		}
 		return reqHeader;
 	}
 
@@ -273,7 +281,14 @@ public class AbstractReqAdptOperation {
 		}else{
 			if(null != contextMap && "OP0603".equalsIgnoreCase(opCode) && "MakeBillPayment".equalsIgnoreCase(serviceId) && "GePG".equalsIgnoreCase(SERVICE_VERSION_CASA_CC)){
 				serviceContext.setServiceVersionNo(contextMap.get(SystemParameterConstant.SERVICE_HEADER_SERVICE_VERSION_NO_GEPG).toString());
-			} else if(null != contextMap){
+
+			//GHIPS2- to set Service version number for SSAMakeBillPAyment
+			} else if("OP0603".equalsIgnoreCase(opCode) && context!=null && context.getBusinessId().equals("GHBRB") &&
+				serviceId.equals("SSAMakeBillPayment") && context.getActivityId()!=null && context.getActivityId().equals(ActivityConstant.MOBILE_WALLET_PAYEE_ACTIVITY_ID) &&
+				("Y").equals(contextMap.get(SystemParameterConstant.isGHIPS2Flag)) && !("TRUE".equalsIgnoreCase(context.getIsFreeDialUssdFlow()))) {
+				serviceContext.setServiceVersionNo(contextMap.get(SystemParameterConstant.SERVICE_HEADER_SERVICE_VER_NO_GHIPPS2).toString());
+
+			}else if(null != contextMap){
 				serviceContext.setServiceVersionNo(contextMap.get(SystemParameterConstant.SERVICE_HEADER_SERVICE_VER_NO).toString());
 			}
 		}
@@ -460,7 +475,16 @@ public class AbstractReqAdptOperation {
 			reqHeader.setOverrideList(overrideDetailsArray);
 		}
 	}
+	//GHIPPS2 SSAMakeBillPayment overrideList
+	private OverrideDetails[] createOverrideListGHIPPS2(Context context) {
+		OverrideDetails[] overrideDetailsArray= new OverrideDetails[1];
+		OverrideDetails overrideDetails = new OverrideDetails();
+		overrideDetails.setCode("A2W");
+		overrideDetails.setDetails("Ghipps2 Account to Wallet");
+		overrideDetails.setSource("Account2Phone");
+		overrideDetailsArray[0]=overrideDetails;
 
-
+		return overrideDetailsArray;
+	}
 
 }

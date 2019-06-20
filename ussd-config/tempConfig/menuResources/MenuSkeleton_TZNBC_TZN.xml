@@ -60,7 +60,7 @@
      </node>
 
 	 <node id="ussd0.9" screenId="0" level="0" optionId="6" labelId="menu.pb.GePG" tranId="TZN_GEPG_BILLERS" backOptionReq="true" />
-	 <node id="ussd4.00" screenId="0" level="0" optionId="6" labelId="menu.lead.generation" tranId="TZN_LEAD_GENERATION" />
+	 <node id="ussd4.00" screenId="0" level="0" optionId="7" labelId="menu.lead.generation" tranId="TZN_LEAD_GENERATION" />
      <node id="ussd0.4" screenId="0" level="0" optionId="8" labelId="menu.others" headerId="label.select" backOptionReq="true">
          <node id="ussd0.4.1" screenId="13" level="1" optionId="1" labelId="menu.change.pin" tranId="TZN_CHNG_PIN" />
          <node id="ussd0.4.2" screenId="13" level="1" optionId="2" labelId="menu.contactus" tranId="TZN_CONTACT_US" />

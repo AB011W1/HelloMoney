@@ -8,6 +8,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.barclays.bmg.constants.BillPaymentConstants;
+import com.barclays.bmg.context.BMBContextHolder;
 import com.barclays.bmg.dto.SystemParameterDTO;
 import com.barclays.bmg.service.SystemParameterService;
 import com.barclays.bmg.service.request.SystemParameterServiceRequest;
@@ -134,8 +135,26 @@ public class MobileWalletMsisdnTypeJsonParser implements BmgBaseJsonParser,Scree
 
     public int getCustomNextScreen(String userInput, USSDSessionManagement ussdSessionMgmt) throws USSDBlockingException {
     	int seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_NINE.getSequenceNo();
+    	SystemParameterDTO systemParameterDTO = new SystemParameterDTO();
+    	SystemParameterServiceRequest systemParameterServiceRequest = new SystemParameterServiceRequest();
+    	systemParameterServiceRequest.setSystemParameterDTO(systemParameterDTO);
+    	systemParameterDTO.setBusinessId(BMBContextHolder.getContext().getBusinessId().toString());
+    	systemParameterDTO.setSystemId("UB");
+    	systemParameterDTO.setParameterId("isGHIPS2Flag");
+    	String isGHIPS2Flag="";
+		SystemParameterServiceResponse response = systemParameterService.getStatusParameter(systemParameterServiceRequest);
+		if(response!=null && response.getSystemParameterDTO()!=null && response.getSystemParameterDTO().getParameterValue()!=null)
+			isGHIPS2Flag = response.getSystemParameterDTO().getParameterValue();
+    	if ((USSDConstants.BUSINESS_ID_GHBRB.equalsIgnoreCase(ussdSessionMgmt.getBusinessId())) && userInput.equals("1") && ("Y").equals(isGHIPS2Flag))
+    			{
+    		Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
+       		userInputMap.put(USSDInputParamsEnum.MOBILE_WALLET_ACCOUNT_NUMBER.getParamName(),ussdSessionMgmt.getMsisdnNumber());
+       		userInputMap.put(BillPaymentConstants.MWALLET_WON_NUMBER,BillPaymentConstants.MWALLET_WON_NUMBER);//CR82
+       		ussdSessionMgmt.getUserTransactionDetails().setUserInputMap(userInputMap);
+       		seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FOURTYTHREE.getSequenceNo();
 
-       	if (userInput.equals("1")) {
+    			}
+    	else if (userInput.equals("1")) {
        		Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
        		userInputMap.put(USSDInputParamsEnum.MOBILE_WALLET_ACCOUNT_NUMBER.getParamName(),ussdSessionMgmt.getMsisdnNumber());
        		userInputMap.put(BillPaymentConstants.MWALLET_WON_NUMBER,BillPaymentConstants.MWALLET_WON_NUMBER);//CR82

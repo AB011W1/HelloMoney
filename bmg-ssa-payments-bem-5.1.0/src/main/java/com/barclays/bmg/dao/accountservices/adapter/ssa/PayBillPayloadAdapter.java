@@ -1,8 +1,11 @@
 package com.barclays.bmg.dao.accountservices.adapter.ssa;
 
 
+import java.util.Map;
+
 import com.barclays.bem.Bank.Bank;
 import com.barclays.bem.BillPayment.BillPayment;
+import com.barclays.bem.BillPayment.BillTransactionReferenceDetails;
 import com.barclays.bem.Branch.Branch;
 import com.barclays.bem.ChargeDetails.ChargeDetails;
 import com.barclays.bem.OrganizationBeneficiary.OrganizationBeneficiary;
@@ -13,6 +16,7 @@ import com.barclays.bem.TransactionAccount.TransactionAccount;
 import com.barclays.bem.TransactionFxRate.TransactionFxRate;
 import com.barclays.bmg.constants.ActivityConstant;
 import com.barclays.bmg.constants.ActivityIdConstantBean;
+import com.barclays.bmg.constants.SystemParameterConstant;
 import com.barclays.bmg.context.Context;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.dao.core.context.impl.DAOContext;
@@ -54,7 +58,17 @@ public class PayBillPayloadAdapter {
 	CustomerAccountDTO fromAcct = payBillServiceRequest.getFromAccount();
 
 	Branch bb = new Branch();
-	bb.setBranchCode(fromAcct.getBranchCode());
+	String branchCode=fromAcct.getBranchCode();
+
+	//GHIPS2- to append 0 if branchcode < 3 digits
+	if (null!=payBillServiceRequest &&  ("GHBRB").equalsIgnoreCase(payBillServiceRequest.getContext().getBusinessId())&& ("Y").equals(payBillServiceRequest.getContext().getContextMap().get(SystemParameterConstant.isGHIPS2Flag))
+			&& payBillServiceRequest.getContext().getActivityId().equals(ActivityConstant.MOBILE_WALLET_PAYEE_ACTIVITY_ID) && !payBillServiceRequest.getContext().getIsFreeDialUssdFlow().equalsIgnoreCase("TRUE"))
+	{
+		for(int i=branchCode.length();i<3;i++){
+			branchCode="0"+branchCode;
+			}
+	}
+	bb.setBranchCode(branchCode);
 	billPayment.setDebitAccountBranch(bb);
 
 	// debit account(number and currency)
@@ -170,8 +184,19 @@ public class PayBillPayloadAdapter {
 	if (billPayment.getBillerDetails().getOrganizationBank() == null) {
 	    billPayment.getBillerDetails().setOrganizationBank(new Bank());
 	}
-	billPayment.getBillerDetails().getOrganizationBank().setBankClearingCode(beenBeneficiaryDTO.getDestinationBankCode());
-
+	// GHIPS2- to set bankClearingCode
+	if (null!=payBillServiceRequest  && ("GHBRB").equalsIgnoreCase(payBillServiceRequest.getContext().getBusinessId())&& ("Y").equals(payBillServiceRequest.getContext().getContextMap().get(SystemParameterConstant.isGHIPS2Flag))
+			&& payBillServiceRequest.getContext().getActivityId().equals(ActivityConstant.MOBILE_WALLET_PAYEE_ACTIVITY_ID) && !payBillServiceRequest.getContext().getIsFreeDialUssdFlow().equalsIgnoreCase("TRUE")) {
+		Map<String, Object> sysparam=payBillServiceRequest.getContext().getContextMap();
+    	String bankClearingCode="";
+		if(sysparam.containsKey("BarclaysBank")){
+			bankClearingCode = (String) sysparam.get("BarclaysBank");
+			billPayment.getBillerDetails().getOrganizationBank().setBankClearingCode(bankClearingCode);
+		}
+	}
+	else {
+		billPayment.getBillerDetails().getOrganizationBank().setBankClearingCode(beenBeneficiaryDTO.getDestinationBankCode());
+	}
 	// Add By Tony, for Bill Holder Name & Address
 	// Set Bill Holder Name
 	String beneficiaryName = beenBeneficiaryDTO.getBeneficiaryName();
@@ -213,6 +238,35 @@ public class PayBillPayloadAdapter {
 	}
 	// eBox Charges Changes End
 
+	//GHIPS2- to set creditorName and mnoId
+	if(null!=payBillServiceRequest && null!=payBillServiceRequest.getContext() && ("GHBRB").equalsIgnoreCase(payBillServiceRequest.getContext().getBusinessId()) && ("Y").equals(payBillServiceRequest.getContext().getContextMap().get(SystemParameterConstant.isGHIPS2Flag)) &&
+			ActivityConstant.MOBILE_WALLET_PAYEE_ACTIVITY_ID.equals(payBillServiceRequest.getContext().getActivityId()) && !payBillServiceRequest.getContext().getIsFreeDialUssdFlow().equalsIgnoreCase("TRUE"))
+	{
+		BillTransactionReferenceDetails[] billTransactionReferenceDetailsArray = new BillTransactionReferenceDetails[2];
+		BillTransactionReferenceDetails billTransactionReferenceDetails1 = new BillTransactionReferenceDetails();
+		BillTransactionReferenceDetails billTransactionReferenceDetails2 = new BillTransactionReferenceDetails();
+		Map<String, Object> sysparam=payBillServiceRequest.getContext().getContextMap();
+
+		String billerId= beenBeneficiaryDTO.getBillerId();
+		String creditorName=beenBeneficiaryDTO.getBeneficiaryNickName();
+    	String mnoId="";
+    	if(sysparam.containsKey(billerId)){
+    		mnoId = (String) sysparam.get(billerId);
+    	}
+    	if(null!=creditorName && null!=mnoId){
+    		billTransactionReferenceDetails1.setTypeCode("CreditorName");
+    		billTransactionReferenceDetails1.setValue(creditorName);
+
+    		billTransactionReferenceDetails2.setTypeCode("RecipientMNOId");
+    		billTransactionReferenceDetails2.setValue(mnoId);
+
+    		billTransactionReferenceDetailsArray[0]=billTransactionReferenceDetails1;
+    		billTransactionReferenceDetailsArray[1]=billTransactionReferenceDetails2;
+    		billPayment.setBillTransactionReferenceDetails(billTransactionReferenceDetailsArray);
+
+    		billPayment.setTransactionTypeCode("RT");
+    	}
+	}
 	return billPayment;
     }
 }

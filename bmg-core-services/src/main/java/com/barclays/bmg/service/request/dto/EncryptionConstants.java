@@ -24,5 +24,5 @@ public class EncryptionConstants {
     public static final String ENCRYPTIONMETHOD = "ENCRYPTIONMETHOD";
     public static final String PINLENGTH = "PINLENGTH";
     public static final String PINPADDING = "PINPADDING";
-    public static final String SLOT = "SLOT";
+    public static final String CASHSENDPARTITIONLABEL = "CASHSENDPARTITIONLABEL";
 }

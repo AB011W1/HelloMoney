@@ -188,5 +188,9 @@ public interface SystemParameterConstant {
 
 	String isLoanRepayment = "isLoanRepayment";
 
+	//Service Version No. for SSAMakeBillPayment GHIPS2
+	String SERVICE_HEADER_SERVICE_VER_NO_GHIPPS2 = "SERVICE_HEADER_SERVICE_VERSION_NO_GHIPPS2";
+	String isGHIPS2Flag="isGHIPS2Flag";
+
 }
 

@@ -1,11 +1,14 @@
 package com.barclays.ussd.utils.jsonparsers;
 
-import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.barclays.bmg.context.BMBContextHolder;
+import com.barclays.bmg.dto.SystemParameterDTO;
+import com.barclays.bmg.service.SystemParameterService;
+import com.barclays.bmg.service.request.SystemParameterServiceRequest;
+import com.barclays.bmg.service.response.SystemParameterServiceResponse;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bean.MsisdnDTO;
@@ -14,21 +17,22 @@ import com.barclays.ussd.exception.USSDBlockingException;
 import com.barclays.ussd.exception.USSDNonBlockingException;
 import com.barclays.ussd.utils.BmgBaseJsonParser;
 import com.barclays.ussd.utils.PaginationEnum;
+import com.barclays.ussd.utils.ScreenSequenceCustomizer;
 import com.barclays.ussd.utils.SystemPreferenceValidator;
 import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDExceptions;
-import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
 import com.barclays.ussd.utils.UssdMenuBuilder;
 import com.barclays.ussd.utils.UssdResourceBundle;
-import com.barclays.ussd.utils.jsonparsers.bean.mobilewallettopup.MobileWalletProvider;
 import com.barclays.ussd.validation.USSDCompositeValidator;
 import com.barclays.ussd.validation.USSDMobileLengthValidator;
 
-public class MobileWalletTopupAccountNumberJsonParser implements BmgBaseJsonParser, SystemPreferenceValidator {
+public class MobileWalletTopupAccountNumberJsonParser implements BmgBaseJsonParser, SystemPreferenceValidator, ScreenSequenceCustomizer {
     @Autowired
     UssdMenuBuilder ussdMenuBuilder;
+    @Autowired
+    SystemParameterService systemParameterService;
     private static final String TRANSACTION_MWALLETE_LABEL = "label.enter.mwallet.mobnum";
     @Override
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException{
@@ -75,5 +79,27 @@ public class MobileWalletTopupAccountNumberJsonParser implements BmgBaseJsonPars
 		throw e;
 	}
 
+    }
+    @Override
+	public int getCustomNextScreen(String userInput,
+			USSDSessionManagement ussdSessionMgmt) throws USSDBlockingException {
+
+		int seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FIVE.getSequenceNo();
+
+		SystemParameterDTO systemParameterDTO = new SystemParameterDTO();
+    	SystemParameterServiceRequest systemParameterServiceRequest = new SystemParameterServiceRequest();
+    	systemParameterServiceRequest.setSystemParameterDTO(systemParameterDTO);
+    	systemParameterDTO.setBusinessId(BMBContextHolder.getContext().getBusinessId().toString());
+    	systemParameterDTO.setSystemId("UB");
+    	systemParameterDTO.setParameterId("isGHIPS2Flag");
+    	String isGHIPS2Flag="";
+		SystemParameterServiceResponse response = systemParameterService.getStatusParameter(systemParameterServiceRequest);
+		if(response!=null && response.getSystemParameterDTO()!=null && response.getSystemParameterDTO().getParameterValue()!=null)
+			isGHIPS2Flag = response.getSystemParameterDTO().getParameterValue();
+		if(USSDConstants.BUSINESS_ID_GHBRB.equalsIgnoreCase(ussdSessionMgmt.getBusinessId()) && isGHIPS2Flag.equals("Y"))
+		{
+			seqNo=(USSDSequenceNumberEnum.SEQUENCE_NUMBER_THIRTYNINE.getSequenceNo());
+		}
+		return seqNo;
     }
 }

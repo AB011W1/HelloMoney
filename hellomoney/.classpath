@@ -33,10 +33,5 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/ussd-common"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/ussd-bmg-adapter"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/softtag/SHMDocs/BCAG/ROA_Luna_files/LunaProvider.jar">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

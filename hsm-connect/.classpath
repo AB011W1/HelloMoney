@@ -3,8 +3,8 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/softtag/SHM Softwares/lib/sharedLib/log4j-1.2.15.jar"/>
-	<classpathentry kind="lib" path="C:/softtag/SHMDocs/BCAG/ROA_Luna_files/LunaProvider.jar"/>
-	<classpathentry kind="lib" path="C:/softtag/SHM Softwares/lib/sharedLib/chp-communication.jar"/>
+	<classpathentry kind="lib" path="C:/softtag/ussdhsmupdated/hsm-connect/lib/chp-communication.jar"/>
+	<classpathentry kind="lib" path="C:/softtag/ussdhsmupdated/hsm-connect/lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="C:/softtag/ussdhsmupdated/hsm-connect/lib/LunaProvider.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

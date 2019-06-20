@@ -48,6 +48,16 @@ public class Context {
     private String usrSta;
     private String mobileUserId;// Added by Umesh
 
+  //GHIPS2
+    private String isFreeDialUssdFlow;
+
+    public String getIsFreeDialUssdFlow() {
+		return isFreeDialUssdFlow;
+	}
+	public void setIsFreeDialUssdFlow(String isFreeDialUssdFlow) {
+		this.isFreeDialUssdFlow = isFreeDialUssdFlow;
+	}
+
   //Changes for caching of account list & reduce one call to enhance performance
     private List<? extends CustomerAccountDTO> accountList;
     @Override
