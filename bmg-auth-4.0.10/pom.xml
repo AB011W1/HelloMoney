@@ -3,6 +3,7 @@
     <artifactId>bmg-parent-2.0</artifactId>
     <groupId>com.barclays.bmg</groupId>
     <version>2.0</version>
+    <relativePath>../bmg-parent-2.0/pom.xml</relativePath>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.barclays.bmg</groupId>
@@ -11,6 +12,8 @@
   <version>1.0</version>
 
     <dependencies>
+    
+    
   <dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-dao-framework</artifactId>
@@ -63,8 +66,12 @@
     <dependency>
       <groupId>com.barclays.bmg</groupId>
       <artifactId>bmg-bem-stub</artifactId>
-      <version>1.0.8</version>
+      <version>1.0.22</version>
     </dependency>
-
+	<dependency>
+      <groupId>com.barclays.bir.stub</groupId>
+      <artifactId>bir-security-auth-stub</artifactId>
+      <version>4.0.10</version>
+    </dependency>
 	</dependencies>
 </project>
