@@ -37,6 +37,7 @@ public class GePGBillPaySubmitJsonParser implements BmgBaseJsonParser {
     private static final Logger LOGGER = Logger.getLogger(GePGBillPaySubmitJsonParser.class);
     @Resource(name = "inprogressErrorCodeList")
     private List<String> inprogressErrorCodeList;
+    private static final String BILL_CONFIRM_LABEL ="label.payrequest.accepted.gepg";
 
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
 		MenuItemDTO menuDTO = null;
@@ -54,11 +55,11 @@ public class GePGBillPaySubmitJsonParser implements BmgBaseJsonParser {
 						txnRefNo = billPayConfirm.getPayData().getTxnRefNo();
 					    rcptNumber = billPayConfirm.getPayData().getRcptNo();
 				    }
-				    displayMessage = getLabel(responseBuilderParamsDTO, USSDConstants.PAY_BILL_CONFIRM_LBL);
+				    displayMessage = getLabel(responseBuilderParamsDTO, BILL_CONFIRM_LABEL);
 				    menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, txnRefNo, displayMessage, rcptNumber);
 				} else if (isInProgressErrorCode(billPayConfirm.getPayHdr().getResCde())) {
 				    txnRefNo = billPayConfirm.getPayHdr().getTxnRefNo();
-				    displayMessage = getLabel(responseBuilderParamsDTO, USSDConstants.PAY_BILL_INPROCESS_LBL);
+				    displayMessage = getLabel(responseBuilderParamsDTO, BILL_CONFIRM_LABEL);
 				    menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, txnRefNo, displayMessage, rcptNumber);
 
 				} else if (null != billPayConfirm.getPayHdr()) {
@@ -105,6 +106,7 @@ public class GePGBillPaySubmitJsonParser implements BmgBaseJsonParser {
 		pageBody.append(displayMessage);
 		pageBody.append(USSDConstants.SINGLE_WHITE_SPACE);
 		pageBody.append(txnRefNo);
+		pageBody.append(USSDConstants.NEW_LINE);
 		if(null != rcptNumber || "".equalsIgnoreCase(rcptNumber)){
 			pageBody.append("Reciept No: ").append(rcptNumber);
 		}
