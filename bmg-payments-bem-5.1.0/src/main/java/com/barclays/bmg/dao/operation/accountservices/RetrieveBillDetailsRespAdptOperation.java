@@ -2,6 +2,7 @@ package com.barclays.bmg.dao.operation.accountservices;
 
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
+import java.util.LinkedHashMap;
 
 import com.barclays.bem.BEMServiceHeader.BEMResHeader;
 import com.barclays.bem.Bill.Bill;
@@ -14,6 +15,7 @@ import com.barclays.bmg.constants.ServiceErrorCodeConstant;
 import com.barclays.bmg.constants.ServiceIdConstants;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.dto.Amount;
+import com.barclays.bmg.dto.InvoiceDetails;
 import com.barclays.bmg.exception.BMBDataAccessException;
 import com.barclays.bmg.service.response.RetrieveBillDetailsServiceResponse;
 
@@ -49,6 +51,19 @@ public class RetrieveBillDetailsRespAdptOperation {
 				if (null != billDetail.getBillDueDate()) {
 					SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 					response.setBillDueDate(sdf.format(billDetail.getBillDueDate().getTime()));
+				}
+
+				//Probase
+				if (null!= billDetail.getBillInvoiceDetails()) {
+					InvoiceDetails invoiceDetails = new InvoiceDetails();
+					int refSize = billDetail.getBillInvoiceDetails(0).getInvoiceReferenceDetails().length;
+					LinkedHashMap<String, String> temp = new LinkedHashMap<String, String>();
+					for(int i=0;i<refSize;i++){
+						temp.put(billDetail.getBillInvoiceDetails(0).getInvoiceReferenceDetails(i).getReferenceTypeCode(),
+								billDetail.getBillInvoiceDetails(0).getInvoiceReferenceDetails(i).getReferenceValue());
+					}
+					invoiceDetails.setProbaseDetails(temp);
+					response.setBillInvoiceDetails(invoiceDetails);
 				}
 
 				BillInvoiceDetails[] invDetail = billDetail.getBillInvoiceDetails();

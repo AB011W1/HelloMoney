@@ -525,4 +525,10 @@
 	<bean id="mobileWalletConfirmNewBeneficiaryResponseParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletConfirmNewBeneficiaryResponseParser" />
 	<bean id="mobileWalletOneOffResponseParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletOneOffResponseParser" />
 
+	<!-- probase -->
+	<bean id="probaseOneTimeBillPayAmtJsonParser" class="com.barclays.ussd.utils.jsonparsers.ProbaseOneTimeBillPayAmtJsonParser" />
+<!-- 	<bean id="probaseOneTimeBillPayETollAmtJsonParser" class="com.barclays.ussd.utils.jsonparsers.ProbaseOneTimeBillPayETollAmtJsonParser" /> -->
+	<bean id="probaseAccountJsonParser" class="com.barclays.ussd.utils.jsonparsers.ProbaseAccountJsonParser" />
+	<bean id="probaseSubmitJsonParser" class="com.barclays.ussd.utils.jsonparsers.ProbaseSubmitJsonParser" />
+	<!-- Probase ends -->
 </beans>

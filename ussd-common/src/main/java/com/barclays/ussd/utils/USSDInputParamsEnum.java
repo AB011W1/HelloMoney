@@ -1051,7 +1051,13 @@ GET_FUND_TRAN_DETAILS("FTGP0035","tranNoSelectedDetails"),
 	//GePG Ends
 
 	//MasterPassQR Biller
-	MASTER_QR_BILLER_DETAILS("MPQR000","details")
+	MASTER_QR_BILLER_DETAILS("MPQR000","details"),
+
+	//Probase
+	PROBASE_AMOUNT("OTBP017","amt"),
+	//PROBASE_ETOLL_AMOUNT("OTBP018","amt"),
+	PROBASE_ACCOUNT("OTBP019","fromActNumber"),
+	PROBASE_SUBMIT("OTBP020","txnRefNo")
 
 ;
 /** tranId. */

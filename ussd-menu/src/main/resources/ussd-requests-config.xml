@@ -607,4 +607,10 @@
 		<bean id="mobileWalletConfirmNewBeneficiaryRequestBuilder" class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletConfirmNewBeneficiaryRequestBuilder" />
 		<bean id="mobileWalletOneOffRequestBuilder" class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletOneOffRequestBuilder" />
 
+		<!-- Probase -->
+		<bean id="probaseOneTimeBillPayAmtRequestBuilder" class="com.barclays.ussd.bmg.probase.ProbaseOneTimeBillPayAmtRequestBuilder" />
+		<!--  <bean id="probaseOneTimeBillPayETollAmtRequestBuilder" class="com.barclays.ussd.bmg.probase.ProbaseOneTimeBillPayETollAmtRequestBuilder" />-->
+		<bean id="probaseAccountRequestBuilder" class="com.barclays.ussd.bmg.probase.ProbaseAccountRequestBuilder" />
+		<bean id="probaseSubmitRequestBuilder" class="com.barclays.ussd.bmg.otbp.request.OneTimeBillPayBillDetailsRequest" />
+		<!-- Probase ends -->
  </beans>

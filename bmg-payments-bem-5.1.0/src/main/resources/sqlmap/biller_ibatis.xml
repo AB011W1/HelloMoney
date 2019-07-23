@@ -178,5 +178,10 @@
 		WHERE C_BILLER_MST.BUSINESS_ID = #businessId#   AND  C_BILLER_MST.BILLER_CATEGORY_ID = #billerCategoryId#
 		AND C_BILLER_MST.PAYEE_SUPPORT = 'Y'
 	</select>
+	<!-- Probase -->
+	<select id="probaseGetBillerAsPerBillerId" resultMap="fullBillerInfo">
+		select * from C_BILLER_MST where C_BILLER_MST.BUSINESS_ID= #businessId# and
+		C_BILLER_MST.BILLER_ID=#billerId# AND C_BILLER_MST.PAYEE_SUPPORT = 'N'
+	</select>
 <!-- Other Countries End -->
 </sqlMap>

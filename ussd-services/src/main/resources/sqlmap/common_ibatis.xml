@@ -78,12 +78,14 @@
 
 	  <select id="getBillersNotTZ" resultMap="billers" cacheModel="getBillrsLstCacheModel">
 			SELECT billers.business_id, billers.biller_id, billers.biller_nm, billers.BILLER_CATEGORY_ID,
-			billers.BILLER_CATEGORY_NM, billers.ONLINE_BILLER_FLG, billers.BILLER_ATTRIBUTES, billers.REF_NO_VALIDATION_1, billers.BILL_AGGREGATOR_ID from C_BILLER_MST billers, c_business_mst biz
+			billers.BILLER_CATEGORY_NM, billers.ONLINE_BILLER_FLG, billers.BILLER_ATTRIBUTES, billers.REF_NO_VALIDATION_1, billers.BILL_AGGREGATOR_ID,billers.PRESENTMENT_FLG from C_BILLER_MST billers, c_business_mst biz
 			where billers.business_id = biz.BUSINESS_ID and biz.ISO_COUNTRY_CD = #countryCd#
 			and billers.BILLER_CATEGORY_ID !='MobileWallet'
 			and billers.BILLER_CATEGORY_ID != 'Telephone'
 			AND billers.BILLER_CATEGORY_ID !='MobileMoney'
-			AND billers.PRESENTMENT_FLG = 'N'
+			AND (billers.PRESENTMENT_FLG='N'
+			OR (billers.PRESENTMENT_FLG = 'Y' AND billers.business_id ='ZMBRB'
+			AND (billers.BILLER_CATEGORY_ID in ('NAPSA','ZRA'))))
 			AND (billers.PILOT_MODE = 'N' OR billers.PILOT_MODE is NULL)
 			AND billers.STATUS= #status#
 			AND billers.SHM_FLG='Y'

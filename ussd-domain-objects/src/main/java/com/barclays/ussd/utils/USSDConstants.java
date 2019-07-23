@@ -900,5 +900,13 @@ public final class USSDConstants {
     //MasterPassQR
     public static final String MPQR_BILLER_INFO = "mpqrBiller";
 
+  //probase
+    public static final String PROBASE_PIN_NUMBER_PARAM_NAME = "controlNumber";
+    public static final String PROBASE_BILLER_INFO = "probaseBillInfo";
+    public static final String PROBASE_BILL_DETAILS = "probaseBillDetail";
+    public static final String PROBASE_BMG_BILLER_NM_PARAM_NAME = "billerName";
+    public static final String PROBASE_BMG_BILLER_ID_PARAM_NAME = "billerID";
+    public static final String PROBASE_INVOICE_BILL_DETAILS= "probaseBillDetail";
+    public static final String PROBASE_INVOICE_DETAILS = "probaseInvoiceDetail";
 }
 

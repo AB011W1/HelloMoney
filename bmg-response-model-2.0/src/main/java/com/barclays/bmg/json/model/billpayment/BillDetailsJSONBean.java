@@ -3,6 +3,7 @@ package com.barclays.bmg.json.model.billpayment;
 import java.io.Serializable;
 
 import com.barclays.bmg.dto.Amount;
+import com.barclays.bmg.dto.InvoiceDetails;
 import com.barclays.bmg.json.response.BMBPayloadData;
 
 public class BillDetailsJSONBean extends BMBPayloadData implements
@@ -20,6 +21,7 @@ public class BillDetailsJSONBean extends BMBPayloadData implements
     private String BillDueDate;
     private String secondaryReferenceNumber;
 //    private BillInvoiceDetails billInvoiceDetails;
+    private InvoiceDetails billInvoiceDetails;
 
 	/**
 	 * @return the feeAmount
@@ -89,5 +91,13 @@ public class BillDetailsJSONBean extends BMBPayloadData implements
 	 */
 	public void setSecondaryReferenceNumber(String secondaryReferenceNumber) {
 		this.secondaryReferenceNumber = secondaryReferenceNumber;
+	}
+
+	public void setBillInvoiceDetails(InvoiceDetails billInvoiceDetails) {
+		this.billInvoiceDetails = billInvoiceDetails;
+	}
+
+	public InvoiceDetails getBillInvoiceDetails() {
+		return billInvoiceDetails;
 	}
 }

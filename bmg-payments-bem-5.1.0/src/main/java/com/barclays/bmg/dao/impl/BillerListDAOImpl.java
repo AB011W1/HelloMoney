@@ -7,6 +7,7 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 
 import com.barclays.bmg.constants.CommonConstants;
+import com.barclays.bmg.constants.SystemParameterConstant;
 import com.barclays.bmg.dao.BillerListDAO;
 import com.barclays.bmg.dto.BillerCreditDTO;
 import com.barclays.bmg.dto.BillerDTO;
@@ -46,6 +47,7 @@ public class BillerListDAOImpl extends BaseDAOImpl implements BillerListDAO {
 	private static final String OTHER_COUNTRIES_GET_BILLER_ASPER_BILLERID="otherCountriesGetBillerAsPerBillerId";
 	private static final String OTHER_COUNTRIES_GET_BILER_LISTAS_PER_CATEGID="otherCountriesGetBilerListAsPerCategId";
 	private static final String OTHER_COUNTRIES_GET_BILER_LISTAS_PER_CATEGID_FOR_GHANAANDZAMBIA="otherCountriesGetBilerListAsPerCategIdForGhanaandZambia";
+	private static final String PROBASE_GET_BILLER_ASPER_BILLERID="probaseGetBillerAsPerBillerId";
 	//Other Countries Biller End
 
 	private static final Logger LOGGER = Logger.getLogger(BillerListDAOImpl.class);
@@ -233,6 +235,9 @@ public class BillerListDAOImpl extends BaseDAOImpl implements BillerListDAO {
 			// End
 			biller = (BillerDTO) this.queryForObject(BILLER_FOR_BILLER_ID,
 					parameterMap);
+			}else if(null!=request && request.getBusinessId().equalsIgnoreCase("ZMBRB") && request.getBillerId().endsWith("-9")){
+				biller = (BillerDTO) this.queryForObject(PROBASE_GET_BILLER_ASPER_BILLERID,
+						parameterMap);
 			}else
 				biller = (BillerDTO) this.queryForObject(OTHER_COUNTRIES_GET_BILLER_ASPER_BILLERID,
 						parameterMap);

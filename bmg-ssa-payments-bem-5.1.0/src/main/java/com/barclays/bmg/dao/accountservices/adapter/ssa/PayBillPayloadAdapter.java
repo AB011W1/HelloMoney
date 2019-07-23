@@ -1,6 +1,8 @@
 package com.barclays.bmg.dao.accountservices.adapter.ssa;
 
 
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import com.barclays.bem.Bank.Bank;
@@ -48,7 +50,8 @@ public class PayBillPayloadAdapter {
 	return requestBody;
     }
 
-    private BillPayment mapDataInRequest(PayBillServiceRequest payBillServiceRequest) {
+    @SuppressWarnings("unchecked")
+	private BillPayment mapDataInRequest(PayBillServiceRequest payBillServiceRequest) {
 	BillPayment billPayment = new BillPayment();
 
 	billPayment.setActionCode(payBillServiceRequest.getBeneficiaryDTO().getActionCode());
@@ -61,8 +64,10 @@ public class PayBillPayloadAdapter {
 	String branchCode=fromAcct.getBranchCode();
 
 	//GHIPS2- to append 0 if branchcode < 3 digits
-	if (null!=payBillServiceRequest &&  ("GHBRB").equalsIgnoreCase(payBillServiceRequest.getContext().getBusinessId())&& ("Y").equals(payBillServiceRequest.getContext().getContextMap().get(SystemParameterConstant.isGHIPS2Flag))
-			&& payBillServiceRequest.getContext().getActivityId().equals(ActivityConstant.MOBILE_WALLET_PAYEE_ACTIVITY_ID) && !payBillServiceRequest.getContext().getIsFreeDialUssdFlow().equalsIgnoreCase("TRUE"))
+	if (null!=payBillServiceRequest &&  (("GHBRB").equalsIgnoreCase(payBillServiceRequest.getContext().getBusinessId())&& ("Y").equals(payBillServiceRequest.getContext().getContextMap().get(SystemParameterConstant.isGHIPS2Flag))
+			&& payBillServiceRequest.getContext().getActivityId().equals(ActivityConstant.MOBILE_WALLET_PAYEE_ACTIVITY_ID) && !payBillServiceRequest.getContext().getIsFreeDialUssdFlow().equalsIgnoreCase("TRUE")) ||
+			(("ZMBRB").equalsIgnoreCase(payBillServiceRequest.getContext().getBusinessId())&& ("Y").equals(payBillServiceRequest.getContext().getContextMap().get(SystemParameterConstant.isProbaseFlag))
+					&& payBillServiceRequest.getBeneficiaryDTO().getBillerCategoryId().equalsIgnoreCase("NAPSA") || payBillServiceRequest.getBeneficiaryDTO().getBillerCategoryId().equalsIgnoreCase("ZRA")))
 	{
 		for(int i=branchCode.length();i<3;i++){
 			branchCode="0"+branchCode;
@@ -266,6 +271,25 @@ public class PayBillPayloadAdapter {
 
     		billPayment.setTransactionTypeCode("RT");
     	}
+
+	}
+	if(null!=payBillServiceRequest && null!=payBillServiceRequest.getContext() && ("ZMBRB").equalsIgnoreCase(payBillServiceRequest.getContext().getBusinessId()) && ("Y").equals(payBillServiceRequest.getContext().getContextMap().get(SystemParameterConstant.isProbaseFlag)) &&
+			(payBillServiceRequest.getBeneficiaryDTO().getBillerCategoryId().equalsIgnoreCase("NAPSA") || payBillServiceRequest.getBeneficiaryDTO().getBillerCategoryId().equalsIgnoreCase("ZRA")))
+
+	{
+		BillTransactionReferenceDetails[] billTransactionReferenceDetailsArray = new BillTransactionReferenceDetails[11];
+		LinkedHashMap<String, String> probaseDetails = beenBeneficiaryDTO.getInvoiceDetails().getProbaseDetails();
+		Iterator it = probaseDetails.entrySet().iterator();
+		int count = 0;
+		while (it.hasNext()) {
+	        Map.Entry pair = (Map.Entry)it.next();
+	        BillTransactionReferenceDetails billTransactionReferenceDetails = new BillTransactionReferenceDetails();
+	        billTransactionReferenceDetails.setTypeCode(pair.getKey().toString());
+	        billTransactionReferenceDetails.setValue(pair.getValue().toString());
+	        billTransactionReferenceDetailsArray[count] = billTransactionReferenceDetails;
+	        count++;
+	    }
+		billPayment.setBillTransactionReferenceDetails(billTransactionReferenceDetailsArray);
 	}
 	return billPayment;
     }

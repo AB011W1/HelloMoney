@@ -7,6 +7,7 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 import com.barclays.bmg.dto.Amount;
+import com.barclays.bmg.dto.InvoiceDetails;
 
 /**
  * @author BTCI
@@ -31,6 +32,9 @@ public class BillDetails {
 
 	@JsonProperty
     private String BillDueDate;
+
+	@JsonProperty
+	private InvoiceDetails billInvoiceDetails;
 
 	/**
 	 * @return the feeAmount
@@ -100,6 +104,14 @@ public class BillDetails {
 	 */
 	public void setSecondaryReferenceNumber(String secondaryReferenceNumber) {
 		this.secondaryReferenceNumber = secondaryReferenceNumber;
+	}
+
+	public void setBillInvoiceDetails(InvoiceDetails billInvoiceDetails) {
+		this.billInvoiceDetails = billInvoiceDetails;
+	}
+
+	public InvoiceDetails getBillInvoiceDetails() {
+		return billInvoiceDetails;
 	}
 
 }

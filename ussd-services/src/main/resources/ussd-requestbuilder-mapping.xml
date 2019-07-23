@@ -559,5 +559,11 @@
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_NEW_BENEFICIARY_CONFIRM.getTranId()}" value-ref="mobileWalletConfirmNewBeneficiaryRequestBuilder"/>
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_OWN_NUMBER.getTranId()}" value-ref="mobileWalletOneOffRequestBuilder"/>
 
+		<!-- Probase -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).PROBASE_AMOUNT.getTranId()}"  value-ref="probaseOneTimeBillPayAmtRequestBuilder" />
+		<!-- <entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).PROBASE_ETOLL_AMOUNT.getTranId()}"  value-ref="probaseOneTimeBillPayETollAmtRequestBuilder" /> -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).PROBASE_ACCOUNT.getTranId()}"  value-ref="probaseAccountRequestBuilder" />
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).PROBASE_SUBMIT.getTranId()}"  value-ref="probaseSubmitRequestBuilder" />
+		<!-- Probase ends -->
 </util:map>
 </beans>

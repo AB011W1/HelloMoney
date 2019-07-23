@@ -197,6 +197,9 @@ public class BeneficiaryDTO extends BaseDomainDTO {
 
     private String nib;
 
+  //Probase
+    private InvoiceDetails invoiceDetails;
+
     public String getNib() {
 		return nib;
 	}
@@ -1639,7 +1642,14 @@ public class BeneficiaryDTO extends BaseDomainDTO {
 	public void setStoreNumber(String storeNumber) {
 		this.storeNumber = storeNumber;
 	}
+	//Probase
+	public void setInvoiceDetails(InvoiceDetails invoiceDetails) {
+		this.invoiceDetails = invoiceDetails;
+	}
 
+	public InvoiceDetails getInvoiceDetails() {
+		return invoiceDetails;
+	}
 
 
 

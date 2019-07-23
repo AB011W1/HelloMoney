@@ -76,6 +76,12 @@ public class AbstractReqAdptOperation {
 			}
 		} else if(serviceId !=null && serviceId.equals("MakeDomesticFundTransfer")){
 
+		} else if(serviceId !=null && serviceId.equals("SSAMakeBillPayment")) {
+		     RequestContext serviceRequest = (RequestContext) args[0];
+		     PayBillServiceRequest payBillServiceRequest = (PayBillServiceRequest)serviceRequest;
+		     if(null != payBillServiceRequest.getBeneficiaryDTO() && "Probase".equalsIgnoreCase(payBillServiceRequest.getBeneficiaryDTO().getBillAggregatorId())){
+		    	 SERVICE_VERSION_CASA_CC = "Probase";
+		     }
 		}
 
 		reqHeader.setServiceContext(createServiceContext(context, serviceId));
@@ -282,8 +288,12 @@ public class AbstractReqAdptOperation {
 			if(null != contextMap && "OP0603".equalsIgnoreCase(opCode) && "MakeBillPayment".equalsIgnoreCase(serviceId) && "GePG".equalsIgnoreCase(SERVICE_VERSION_CASA_CC)){
 				serviceContext.setServiceVersionNo(contextMap.get(SystemParameterConstant.SERVICE_HEADER_SERVICE_VERSION_NO_GEPG).toString());
 
-			//GHIPS2- to set Service version number for SSAMakeBillPAyment
-			} else if("OP0603".equalsIgnoreCase(opCode) && context!=null && context.getBusinessId().equals("GHBRB") &&
+				//Probase
+			} else if(null != contextMap && "OP0603".equalsIgnoreCase(opCode) && "SSAMakeBillPayment".equalsIgnoreCase(serviceId) && "Probase".equalsIgnoreCase(SERVICE_VERSION_CASA_CC) && contextMap.get(SystemParameterConstant.isProbaseFlag).equals("Y")){
+				serviceContext.setServiceVersionNo(contextMap.get(SystemParameterConstant.SERVICE_HEADER_SERVICE_VER_NO_PROBASE).toString());
+
+				//GHIPS2- to set Service version number for SSAMakeBillPAyment
+			} else if(null != contextMap && "OP0603".equalsIgnoreCase(opCode) && context!=null && context.getBusinessId().equals("GHBRB") &&
 				serviceId.equals("SSAMakeBillPayment") && context.getActivityId()!=null && context.getActivityId().equals(ActivityConstant.MOBILE_WALLET_PAYEE_ACTIVITY_ID) &&
 				("Y").equals(contextMap.get(SystemParameterConstant.isGHIPS2Flag)) && !("TRUE".equalsIgnoreCase(context.getIsFreeDialUssdFlow()))) {
 				serviceContext.setServiceVersionNo(contextMap.get(SystemParameterConstant.SERVICE_HEADER_SERVICE_VER_NO_GHIPPS2).toString());
