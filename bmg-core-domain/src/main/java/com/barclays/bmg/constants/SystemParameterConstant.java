@@ -197,4 +197,3 @@ public interface SystemParameterConstant {
 	String isProbaseFlag="isProbaseFlag";
 
 }
-

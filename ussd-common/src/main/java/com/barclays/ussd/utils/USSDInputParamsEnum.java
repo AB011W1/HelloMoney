@@ -823,6 +823,8 @@ public enum USSDInputParamsEnum {
 	LEAD_GENERATION_PROD_SUB_LST("LG001", "prodNameList"),
 	LEAD_GENERATION_CONFIRM("LG002", "txnRefNo"),
 	LEAD_GENERATION_SUBMIT("LG003", "blank"),
+	//Timiza Apply for Products
+	LEAD_GENERATION_TIMIZA("LG004", "blank"),
 
 
 	/*KITS Changes Starts*/

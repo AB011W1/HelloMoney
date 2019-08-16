@@ -330,6 +330,7 @@
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_PROD_SUB_LST.getTranId()}" value-ref="leadGenerationProductSubListJsonParser"/>
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_CONFIRM.getTranId()}" value-ref="leadGenerationConfirmJsonParser"/>
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_SUBMIT.getTranId()}" value-ref="leadGenerationSubmitJsonParser"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_TIMIZA.getTranId()}" value-ref="leadGenerationTimizaJsonParser"/>
 		<!--Lead Genereation-->
 <!-- KITS Changes Starts -->
 		<!--Registration-->

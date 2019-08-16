@@ -329,6 +329,7 @@
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_PROD_SUB_LST.getTranId()}" value-ref="leadGenerationProdSubListRequestBuilder"/>
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_CONFIRM.getTranId()}" value-ref="leadGenerationConfirmRequestBuilder"/>
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_SUBMIT.getTranId()}" value-ref="leadGenerationSubmitRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_TIMIZA.getTranId()}" value-ref="leadGenerationTimizaRequestBuilder"/>
 <!-- KITS Changes Starts -->
 		<!--Registration-->
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KITS_REG_ACCOUNT_NUM.getTranId()}" value-ref="kitsRegisterAccountNumberRequestBuilder"/>

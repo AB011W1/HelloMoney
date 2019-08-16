@@ -12,6 +12,7 @@ import com.barclays.bmg.constants.ServiceIdConstants;
 import com.barclays.bmg.exception.BMBDataAccessException;
 import com.barclays.grcb.mcfe.ssc.authentication.AuthenticationHeader.AuthResHeader;
 
+
 /**
  * Abstract response adapter operation
  * 

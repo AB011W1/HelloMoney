@@ -29,4 +29,3 @@ public class InvoiceDetails implements Serializable {
 
 
 }
-

@@ -306,6 +306,7 @@
 	<bean id="leadGenerationProductSubListJsonParser" class="com.barclays.ussd.utils.jsonparsers.LeadGenerationProductSubListJsonParser"/>
 	<bean id="leadGenerationConfirmJsonParser" class="com.barclays.ussd.utils.jsonparsers.LeadGenerationConfirmJsonParser"/>
 	<bean id="leadGenerationSubmitJsonParser" class="com.barclays.ussd.utils.jsonparsers.LeadGenerationSubmitJsonParser"/>
+	<bean id="leadGenerationTimizaJsonParser" class="com.barclays.ussd.utils.jsonparsers.LeadGenerationTimizaJsonParser"/>
 <!-- KITS Changes Starts -->
 	<!--Registration-->
 	<bean id="kitsRegisterAccountNumberJsonParser" class="com.barclays.ussd.utils.jsonparsers.KitsRegisterAccountNumberJsonParser"/>
@@ -525,4 +526,10 @@
 	<bean id="mobileWalletConfirmNewBeneficiaryResponseParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletConfirmNewBeneficiaryResponseParser" />
 	<bean id="mobileWalletOneOffResponseParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletOneOffResponseParser" />
 
+	<!-- probase -->
+	<bean id="probaseOneTimeBillPayAmtJsonParser" class="com.barclays.ussd.utils.jsonparsers.ProbaseOneTimeBillPayAmtJsonParser" />
+<!-- 	<bean id="probaseOneTimeBillPayETollAmtJsonParser" class="com.barclays.ussd.utils.jsonparsers.ProbaseOneTimeBillPayETollAmtJsonParser" /> -->
+	<bean id="probaseAccountJsonParser" class="com.barclays.ussd.utils.jsonparsers.ProbaseAccountJsonParser" />
+	<bean id="probaseSubmitJsonParser" class="com.barclays.ussd.utils.jsonparsers.ProbaseSubmitJsonParser" />
+	<!-- Probase ends -->
 </beans>

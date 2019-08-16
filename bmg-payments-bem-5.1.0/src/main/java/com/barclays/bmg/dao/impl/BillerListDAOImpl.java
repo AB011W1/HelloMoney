@@ -235,7 +235,7 @@ public class BillerListDAOImpl extends BaseDAOImpl implements BillerListDAO {
 			// End
 			biller = (BillerDTO) this.queryForObject(BILLER_FOR_BILLER_ID,
 					parameterMap);
-			}else if(null!=request && request.getBusinessId().equalsIgnoreCase("ZMBRB") && request.getBillerId().endsWith("-9")){
+			}else if(null!=request && request.getBusinessId().equalsIgnoreCase("ZMBRB") && (request.getBillerId().endsWith("-9"))){
 				biller = (BillerDTO) this.queryForObject(PROBASE_GET_BILLER_ASPER_BILLERID,
 						parameterMap);
 			}else

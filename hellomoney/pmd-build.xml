@@ -10,7 +10,7 @@
 	<property name="pmd.outputFile" value="pmd-report.xml" />
 
 	<path id="app.classpath">
-		<fileset dir="${basedir}/target/hellomoney-war/WEB-INF/lib" includes="**/*.jar" />
+		<fileset dir="${basedir}/target/hellomoney/WEB-INF/lib" includes="**/*.jar" />
 		<fileset dir="${basedir}/../serverLib" includes="**/*.jar" />
 		<fileset dir="${basedir}/../sharedLib" includes="**/*.jar" />
 		<fileset dir="${pmd.home.dir}/lib" includes="**/*.jar" />

@@ -306,6 +306,7 @@
 	<bean id="leadGenerationProductSubListJsonParser" class="com.barclays.ussd.utils.jsonparsers.LeadGenerationProductSubListJsonParser"/>
 	<bean id="leadGenerationConfirmJsonParser" class="com.barclays.ussd.utils.jsonparsers.LeadGenerationConfirmJsonParser"/>
 	<bean id="leadGenerationSubmitJsonParser" class="com.barclays.ussd.utils.jsonparsers.LeadGenerationSubmitJsonParser"/>
+	<bean id="leadGenerationTimizaJsonParser" class="com.barclays.ussd.utils.jsonparsers.LeadGenerationTimizaJsonParser"/>
 <!-- KITS Changes Starts -->
 	<!--Registration-->
 	<bean id="kitsRegisterAccountNumberJsonParser" class="com.barclays.ussd.utils.jsonparsers.KitsRegisterAccountNumberJsonParser"/>

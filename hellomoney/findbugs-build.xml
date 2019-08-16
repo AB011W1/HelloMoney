@@ -10,7 +10,7 @@
   <property name="findbugs.outputFile" value="findbugs-report.xml" />
 
 	<path id="app.classpath">
-		<fileset dir="${basedir}/target/hellomoney-war/WEB-INF/lib" includes="**/*.jar" />
+		<fileset dir="${basedir}/target/hellomoney/WEB-INF/lib" includes="**/*.jar" />
 		<fileset dir="${basedir}/../serverLib" includes="**/*.jar" />
 		<fileset dir="${basedir}/../sharedLib" includes="**/*.jar" />
 		<fileset dir="${findbugs.home}/lib" includes="**/*-ant.jar" />
@@ -28,7 +28,7 @@
 			  jvmargs="-Xms512M -Xmx512M "
 			  workHard="max" >
 		<auxClasspath refid="app.classpath" />
-		<fileset dir="${basedir}/target/hellomoney-war/WEB-INF/lib" >
+		<fileset dir="${basedir}/target/hellomoney/WEB-INF/lib" >
 			<include name="**/bmg*.jar"/>
 			<include name="**/ussd*.jar"/>
 		</fileset>

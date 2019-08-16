@@ -4,7 +4,9 @@ import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-import com.ibm.xml.crypto.util.Base64;
+import com.ibm.ws.util.Base64;
+
+//import com.ibm.xml.crypto.util.Base64;
 
 public class EncDecUtil {
 	private static final String key = "aesEncryptionKey";

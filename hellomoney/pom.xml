@@ -4,16 +4,17 @@
         <artifactId>bmg-parent-2.0</artifactId>
         <groupId>com.barclays.bmg</groupId>
         <version>2.0</version>
+        <relativePath>../bmg-parent-2.0/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.barclays.bmg</groupId>
-    <artifactId>hellomoney-war</artifactId>
+    <artifactId>hellomoney</artifactId>
     <packaging>war</packaging>
-    <name>hellomoney-war</name>
+    <name>hellomoney</name>
     <version>2.0</version>
 
     <build>
-        <finalName>hellomoney-war</finalName>
+        <finalName>hellomoney</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -70,13 +71,13 @@
                             <tasks>
                                 <echo>Create mobile gateway ear - bmg ear for SIT </echo>
                                 <property name="bmg.ant.path" value="../bmg-parent/project/ant" />
-                                <property name="bmg.ssa.war.project.base" value="../hellomoney-war" />
-                                <property name="bmg.ssa.ear.project.base" value="../hellomoney-ear" />
-                                <property name="bmg.ssa.war.project.name" value="hellomoney-war" />
+                                <property name="bmg.ssa.war.project.base" value="../hellomoney" />
+                                <property name="bmg.ssa.ear.project.base" value="../hellomoney" />
+                                <property name="bmg.ssa.war.project.name" value="hellomoney" />
                                 <!--
                                     <property name="bmg.ussd.war.project.name" value="ussd-war" />
                                 -->
-                                <property name="bmg.ssa.ear.project.name" value="hellomoney-ear" />
+                                <property name="bmg.ssa.ear.project.name" value="hellomoney" />
                                 <echo>dir: ${bmg.ssa.war.project.base}/target</echo>
                                 <echo>file: ${bmg.ssa.ear.project.name}.war</echo>
                                 <!--
@@ -119,7 +120,7 @@
             </properties>
             <build>
                 <filters>
-                    <filter>../hellomoney-war/src/main/filters/filter-${env}.properties</filter>
+                    <filter>../hellomoney/src/main/filters/filter-${env}.properties</filter>
                 </filters>
                 <resources>
                     <resource>
@@ -158,7 +159,7 @@
             </properties>
             <build>
                 <filters>
-                    <filter>../hellomoney-war/src/main/filters/filter-${env}.properties</filter>
+                    <filter>../hellomoney/src/main/filters/filter-${env}.properties</filter>
                 </filters>
                 <resources>
                     <resource>
@@ -203,17 +204,7 @@
             <groupId>com.barclays.bmg</groupId>
             <artifactId>bmg-payments-bem-5.1.0</artifactId>
             <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.barclays.bmg</groupId>
-            <artifactId>bmg-acct-svc-bem-5.1.0</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.barclays.bmg</groupId>
-            <artifactId>bmg-auth-4.0.10</artifactId>
-            <version>1.0</version>
-        </dependency>
+        </dependency>               
         <dependency>
             <groupId>com.barclays.bmg</groupId>
             <artifactId>bmg-core-auditing</artifactId>
@@ -318,6 +309,16 @@
         <dependency>
             <groupId>com.barclays.ussd</groupId>
             <artifactId>ussd-bmg-adapter</artifactId>
+            <version>1.0</version>
+        </dependency>
+         <dependency>
+            <groupId>com.barclays.bmg</groupId>
+            <artifactId>bmg-uae-interest-rates</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.barclays.bmg</groupId>
+            <artifactId>bmg-promotional-offers</artifactId>
             <version>1.0</version>
         </dependency>
     </dependencies>

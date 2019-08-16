@@ -107,7 +107,7 @@
 	<import resource="classpath:ussd-thm-validateUser-config.xml" />
 
 	<import resource="classpath:bmg-stmt-config.xml" />
-	 <import resource="classpath:bmb-intrates-config.xml" />
+	<import resource="classpath:bmb-intrates-config.xml" />
 
 	<!-- xml for transfaction second auth  -->
 	<import resource="classpath:bmb-auth-config-ussd.xml"/>

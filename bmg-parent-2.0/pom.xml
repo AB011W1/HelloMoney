@@ -1,0 +1,675 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.barclays.bmg</groupId>
+  <artifactId>bmg-parent-2.0</artifactId>
+  <version>2.0</version>
+  <packaging>pom</packaging>
+  <name>bmg-parent</name>
+  
+  <properties>
+		<spring.version>3.0.5.RELEASE</spring.version>
+		<bir-security-auth-stub.version>4.0.500</bir-security-auth-stub.version>
+		<mcfe-logger-client.version>1.1.5.8</mcfe-logger-client.version>
+		<mcfe-audit-client.version>1.1.5.8</mcfe-audit-client.version>
+		<bank-secure.version>1.0</bank-secure.version>
+	</properties>
+
+	<modules>
+		<module>../bmg-core-services</module>
+		 <module>../bmg-core-session-activity</module>
+		<module>../bmg-core-terms-of-use</module>
+		<module>../bmg-core-utils</module>
+		<module>../bmg-core-view</module>
+		<module>../bmg-dao-framework</module>
+		<module>../bmg-payments-bem-5.1.0</module>
+		<module>../bmg-promotional-offers</module>
+		<module>../bmg-response-model-2.0</module>
+		<module>../bmg-ssa-acct-svc-bem-5.1.0</module>
+		<module>../bmg-ssa-payments-bem-5.1.0</module>
+		<module>../bmg-uae-interest-rates</module>
+		<module>../hellomoney</module>
+		<module>../ussd-auth</module>
+		<module>../ussd-bmg-adapter</module>
+		<module>../ussd-common</module>
+		<module>../ussd-config</module>
+		<module>../ussd-core-cache</module>
+		<module>../ussd-domain-objects</module>
+		<module>../ussd-menu</module>
+		<module>../ussd-services</module>
+		<module>../hsm-connect</module>
+		<!-- <module>../bmg-acct-svc-bem-5.1.0</module>
+		<module>../bmg-auth-4.0.10</module> -->
+		<module>../bmg-core-auditing</module>
+		<module>../bmg-core-cache</module>
+		<module>../bmg-core-channel-controller-resolver</module>
+		<module>../bmg-core-channel-controllers</module>
+		<module>../bmg-core-channel-filters</module>
+		<module>../bmg-core-channel-security</module>
+		<module>../bmg-core-domain</module>
+		<module>../bmg-core-ecrime</module>
+		<module>../bmg-core-logging</module> 
+	</modules>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax.faces</groupId>
+			<artifactId>com.springsource.javax.faces</artifactId>
+			<version>1.2.0.09</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-impl</artifactId>
+			<version>1.2.11</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- Spring Framework -->
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-support</artifactId>
+			<version>2.0.8</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core-tiger</artifactId>
+			<version>2.0.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-dao</artifactId>
+			<version>2.0.8</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-expression</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-asm</artifactId>
+			<version>${spring.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+<!-- 		<dependency> -->
+<!-- 			<groupId>aopalliance</groupId> -->
+<!-- 			<artifactId>aopalliance</artifactId> -->
+<!-- 			<version>1.0</version> -->
+<!-- 		</dependency> -->
+
+		<!-- AspectJ -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>1.8.13</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.8.13</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- iBatis Framework -->
+		<!-- <dependency> <groupId>org.apache.ibatis</groupId> <artifactId>ibatis</artifactId> 
+			<version>2.3.4.726</version> </dependency> -->
+		<dependency>
+			<groupId>org.apache.ibatis</groupId>
+			<artifactId>ibatis-sqlmap</artifactId>
+			<version>2.3.4.726</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- JUnit and EasyMock -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+			<version>3.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Servlet API -->
+		<!-- <dependency> <groupId>javax.servlet</groupId> <artifactId>servlet-api</artifactId> 
+			<version>2.5</version> <scope>provided</scope> </dependency> -->
+		<!-- <dependency> <groupId>javax.servlet</groupId> <artifactId>jsp-api</artifactId> 
+			<version>2.0</version> <scope>provided</scope> </dependency> -->
+		<!-- <dependency> <groupId>javax.annotation</groupId> <artifactId>jsr250-api</artifactId> 
+			<version>1.0</version> <scope>test</scope> </dependency> -->
+
+		<!-- Jackson mapper for json -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-asl</artifactId>
+			<version>1.9.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.7</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- BEM Middleware stub -->
+
+		<!-- Authentication Stub -->
+		<dependency>
+			<groupId>com.barclays.bir.stub</groupId>
+			<artifactId>bir-security-auth-stub</artifactId>
+			<version>${bir-security-auth-stub.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.8.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils-core</artifactId>
+			<version>1.8.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>ognl</groupId>
+			<artifactId>ognl</artifactId>
+			<version>2.6.9</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.4</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- <dependency>
+			<groupId>net.java.dev.weblets</groupId>
+			<artifactId>weblets-api</artifactId>
+			<version>1.0</version>
+			<scope>provided</scope>
+		</dependency> -->
+		<dependency>
+			<groupId>net.java.dev.weblets</groupId>
+			<artifactId>weblets-impl</artifactId>
+			<version>1.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency> 
+			<groupId>org.jboss.el</groupId> 
+			<artifactId>jboss-el</artifactId> 
+			<version>2.0.1.GA</version> 
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-validator</groupId>
+			<artifactId>commons-validator</artifactId>
+			<version>1.3.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-digester</groupId>
+			<artifactId>commons-digester</artifactId>
+			<version>1.8</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-discovery</groupId>
+			<artifactId>commons-discovery</artifactId>
+			<version>0.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.2.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-pool</groupId>
+			<artifactId>commons-pool</artifactId>
+			<version>1.3</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>oro</groupId>
+			<artifactId>oro</artifactId>
+			<version>2.0.8</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.2.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpcore</artifactId>
+			<version>4.2.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.2.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ibm.ws</groupId>
+			<artifactId>webservices-thinclient</artifactId>
+			<version>7.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+		<groupId>com.ibm.ws</groupId>
+			<!-- <groupId>com.ibm.wsspi</groupId> -->
+			<artifactId>runtime</artifactId>
+			<version>7.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-configuration</groupId>
+			<artifactId>commons-configuration</artifactId>
+			<version>1.4</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- log4j -->
+		<!-- <dependency> <groupId>log4j</groupId> <artifactId>log4j</artifactId> 
+			<version>1.2.15</version> </dependency> -->
+		<!-- log4j 2 -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-1.2-api</artifactId>
+			<version>2.0.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.0.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.0.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j-impl</artifactId>
+			<version>2.0.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- JMS logger client -->
+		<dependency>
+			<groupId>com.barclays.mcfe</groupId>
+			<artifactId>mcfe-logger-client</artifactId>
+			<version>${mcfe-logger-client.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- JMS Audit client -->
+		<dependency>
+			<groupId>com.barclays.mcfe</groupId>
+			<artifactId>mcfe-audit-client</artifactId>
+			<version>${mcfe-audit-client.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.barclays.mcfe</groupId>
+			<artifactId>mcfe-baseexception</artifactId>
+			<version>1.1.5</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.barclays.mcfe</groupId>
+			<artifactId>mcfe-commonutil</artifactId>
+			<version>1.1.5.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.barclays.mcfe</groupId>
+			<artifactId>mcfe-context</artifactId>
+			<version>1.1.6.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- CGLIB for proxy creation -->
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib-nodep</artifactId>
+			<version>2.2.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<!-- Bank security -->
+
+		<!-- <dependency> <groupId>com.barclays.mcfe.secure</groupId> <artifactId>bank-secure</artifactId> 
+			<version>${bank-secure.version}</version> </dependency> -->
+		<dependency>
+			<groupId>org.owasp</groupId>
+			<artifactId>esapi</artifactId>
+			<version>2.0.MODIFIED</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!--CommonJ for Ecrime Work Manager -->
+		<dependency>
+			<groupId>de.myfoo</groupId>
+			<artifactId>commonj</artifactId>
+			<version>1.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!--BCAG Jars -->
+		<dependency>
+			<groupId>com.cryptomathic.hsmportal</groupId>
+			<artifactId>chp-client-common-api</artifactId>
+			<version>1.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.cryptomathic.hsmportal</groupId>
+			<artifactId>chp-client-cql-api</artifactId>
+			<version>1.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.cryptomathic.hsmportal</groupId>
+			<artifactId>chp-client-java-api</artifactId>
+			<version>1.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.cryptomathic.hsmportal</groupId>
+			<artifactId>chp-communication</artifactId>
+			<version>1.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.cryptomathic.hsmportal</groupId>
+			<artifactId>fasc-protocol</artifactId>
+			<version>1.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- BEM Stub Jar -->
+		<dependency>
+			<groupId>com.barclays.bemstub</groupId>
+			<artifactId>bmg-bem-stub</artifactId>
+			<version>1.0.22</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons.io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>1.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>jaxen</groupId>
+			<artifactId>jaxen</artifactId>
+			<version>1.1.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.jms</groupId>
+			<artifactId>jms</artifactId>
+			<version>1.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jmx</groupId>
+			<artifactId>jmxri</artifactId>
+			<version>1.2.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jdmk</groupId>
+			<artifactId>jmxtools</artifactId>
+			<version>1.2.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>0.9.9</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>0.9.9</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- <dependency> -->
+		<!-- <groupId>com.oracle</groupId> -->
+		<!-- <artifactId>ojdbc6</artifactId> -->
+		<!-- <version>11.1.0.7.0</version> -->
+		<!-- </dependency> -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.5.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.0.6</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- <dependency> -->
+		<!-- <groupId>xerces</groupId> -->
+		<!-- <artifactId>xercesImpl</artifactId> -->
+		<!-- <version>2.8.1</version> -->
+		<!-- </dependency> -->
+		<dependency>
+			<groupId>xpp3</groupId>
+			<artifactId>xpp3_min</artifactId>
+			<version>1.1.4c</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>1.3.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>2.0.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis</artifactId>
+			<version>1.0.b2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- <exclusions> <exclusion> <groupId>org.springframework.security</groupId> 
+			<artifactId>spring-security-core</artifactId> <version>2.0.4</version> </exclusion> 
+			<exclusion> <groupId>org.springframework.security</groupId> <artifactId>spring-security-core-tiger</artifactId> 
+			<version>2.0.4</version> </exclusion> <exclusion> <groupId>javax.servlet</groupId> 
+			<artifactId>servlet-api</artifactId> </exclusion> <exclusion> <groupId>xerces</groupId> 
+			<artifactId>xerces</artifactId> </exclusion> <exclusion> <groupId>xml-apis</groupId> 
+			<artifactId>xml-apis</artifactId> </exclusion> </exclusions> -->
+	</dependencies>
+
+	<build>
+		<finalName>bmg-app-2.0</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-site-plugin</artifactId> 
+				<version>2.0-beta-6</version> <configuration> <locales>en</locales> </configuration> 
+				</plugin> -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.4.2</version>
+				<configuration>
+					<skipTests>true</skipTests>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

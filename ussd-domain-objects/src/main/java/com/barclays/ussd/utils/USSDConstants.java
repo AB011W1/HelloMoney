@@ -908,5 +908,7 @@ public final class USSDConstants {
     public static final String PROBASE_BMG_BILLER_ID_PARAM_NAME = "billerID";
     public static final String PROBASE_INVOICE_BILL_DETAILS= "probaseBillDetail";
     public static final String PROBASE_INVOICE_DETAILS = "probaseInvoiceDetail";
+	
+	public static final String LEAD_GEN_SUB_PRODUCT_NAME_TIMIZA = "Timiza";
+	
 }
-
