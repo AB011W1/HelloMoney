@@ -192,5 +192,8 @@ public interface SystemParameterConstant {
 	String SERVICE_HEADER_SERVICE_VER_NO_GHIPPS2 = "SERVICE_HEADER_SERVICE_VERSION_NO_GHIPPS2";
 	String isGHIPS2Flag="isGHIPS2Flag";
 
-}
+	//Service Version No. for SSAMakeBillPayment Probase
+	String SERVICE_HEADER_SERVICE_VER_NO_PROBASE = "SERVICE_HEADER_SERVICE_VER_NO_PROBASE";
+	String isProbaseFlag="isProbaseFlag";
 
+}

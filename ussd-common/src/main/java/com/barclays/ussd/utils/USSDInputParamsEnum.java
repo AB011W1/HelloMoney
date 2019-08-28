@@ -823,6 +823,8 @@ public enum USSDInputParamsEnum {
 	LEAD_GENERATION_PROD_SUB_LST("LG001", "prodNameList"),
 	LEAD_GENERATION_CONFIRM("LG002", "txnRefNo"),
 	LEAD_GENERATION_SUBMIT("LG003", "blank"),
+	//Timiza Apply for Products
+	LEAD_GENERATION_TIMIZA("LG004", "blank"),
 
 
 	/*KITS Changes Starts*/
@@ -1051,7 +1053,13 @@ GET_FUND_TRAN_DETAILS("FTGP0035","tranNoSelectedDetails"),
 	//GePG Ends
 
 	//MasterPassQR Biller
-	MASTER_QR_BILLER_DETAILS("MPQR000","details")
+	MASTER_QR_BILLER_DETAILS("MPQR000","details"),
+
+	//Probase
+	PROBASE_AMOUNT("OTBP017","amt"),
+	//PROBASE_ETOLL_AMOUNT("OTBP018","amt"),
+	PROBASE_ACCOUNT("OTBP019","fromActNumber"),
+	PROBASE_SUBMIT("OTBP020","txnRefNo")
 
 ;
 /** tranId. */

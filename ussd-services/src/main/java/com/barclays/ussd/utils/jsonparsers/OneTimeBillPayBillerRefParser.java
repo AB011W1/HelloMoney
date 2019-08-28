@@ -3,15 +3,22 @@
  */
 package com.barclays.ussd.utils.jsonparsers;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.barclays.bmg.context.BMBContextHolder;
 import com.barclays.bmg.dao.product.impl.ComponentResDAOImpl;
+import com.barclays.bmg.dto.SystemParameterDTO;
+import com.barclays.bmg.service.SystemParameterService;
+import com.barclays.bmg.service.request.SystemParameterServiceRequest;
+import com.barclays.bmg.service.response.SystemParameterServiceResponse;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.BillersListDO;
 import com.barclays.ussd.bean.MenuItemDTO;
@@ -20,6 +27,7 @@ import com.barclays.ussd.exception.USSDBlockingException;
 import com.barclays.ussd.exception.USSDNonBlockingException;
 import com.barclays.ussd.utils.BmgBaseJsonParser;
 import com.barclays.ussd.utils.PaginationEnum;
+import com.barclays.ussd.utils.ScreenSequenceCustomizer;
 import com.barclays.ussd.utils.SystemPreferenceValidator;
 import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDExceptions;
@@ -32,12 +40,14 @@ import com.barclays.ussd.utils.UssdResourceBundle;
  * @author BTCI
  *
  */
-public class OneTimeBillPayBillerRefParser implements BmgBaseJsonParser, SystemPreferenceValidator {
+public class OneTimeBillPayBillerRefParser implements BmgBaseJsonParser, SystemPreferenceValidator, ScreenSequenceCustomizer {
 
 	private static final Logger LOGGER = Logger.getLogger(OneTimeBillPayBillerRefParser.class);
 
 	@Autowired
 	ComponentResDAOImpl componentResDAOImpl;
+	@Autowired
+    SystemParameterService systemParameterService;
 	private String strWUCFieldChk;
 
     @Override
@@ -157,6 +167,52 @@ public class OneTimeBillPayBillerRefParser implements BmgBaseJsonParser, SystemP
 				}
 			}
 		}
+	}
+
+	@Override
+	public int getCustomNextScreen(String userInput,
+			USSDSessionManagement ussdSessionMgmt) throws USSDBlockingException {
+		int seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_SIX.getSequenceNo();
+
+		SystemParameterDTO systemParameterDTO = new SystemParameterDTO();
+    	SystemParameterServiceRequest systemParameterServiceRequest = new SystemParameterServiceRequest();
+    	systemParameterServiceRequest.setSystemParameterDTO(systemParameterDTO);
+    	systemParameterDTO.setBusinessId(BMBContextHolder.getContext().getBusinessId().toString());
+    	systemParameterDTO.setSystemId("UB");
+    	systemParameterDTO.setParameterId("isProbaseFlag");
+    	String isProbaseFlag="";
+		SystemParameterServiceResponse response = systemParameterService.getStatusParameter(systemParameterServiceRequest);
+		if(response!=null && response.getSystemParameterDTO()!=null && response.getSystemParameterDTO().getParameterValue()!=null)
+			isProbaseFlag = response.getSystemParameterDTO().getParameterValue();
+		List<BillersListDO> billers = (List<BillersListDO>) ussdSessionMgmt.getTxSessions().get(USSDInputParamsEnum.ONE_TIME_BILL_PYMNT_BLRS_LST.getTranId());
+		String selectedBillerId = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap().get(USSDInputParamsEnum.ONE_TIME_BILL_PYMNT_BLRS_LST.getParamName());
+		BillersListDO biller = new BillersListDO();
+		if(null != selectedBillerId && null != billers){
+			int pos = Integer.parseInt(selectedBillerId);
+			biller = billers.get(pos-1);
+		}
+		if ("ZMBRB".equalsIgnoreCase(ussdSessionMgmt.getBusinessId()) && "Y".equals(isProbaseFlag) && ("NAPSA".equalsIgnoreCase(biller.getBillerCategoryId()) || "ZRA".equalsIgnoreCase(biller.getBillerCategoryId())))  {
+			if(null != ussdSessionMgmt.getTxSessions()){
+				ussdSessionMgmt.getTxSessions().put(USSDConstants.PROBASE_BILLER_INFO, biller);
+			}else {
+				Map<String, Object> txSessions = new HashMap<String, Object>(5);
+				txSessions.put(USSDConstants.PROBASE_BILLER_INFO, biller);
+				ussdSessionMgmt.setTxSessions(txSessions);
+			}
+			seqNo=USSDSequenceNumberEnum.SEQUENCE_NUMBER_NINETEEN.getSequenceNo();
+			LOGGER.debug("Getting the next screen for Probase" + seqNo);
+		}
+		else {
+			if(strWUCFieldChk != null && strWUCFieldChk != ""){
+		    	if(strWUCFieldChk.equalsIgnoreCase("WUCScreenSeqNo")){
+		    		// WUC specific screen sequence number
+		    		seqNo=USSDSequenceNumberEnum.SEQUENCE_NUMBER_SEVENTEEN.getSequenceNo();
+		    	}else if(strWUCFieldChk.equalsIgnoreCase("notWUCScreenSeqNo")){
+		    		seqNo=USSDSequenceNumberEnum.SEQUENCE_NUMBER_SIX.getSequenceNo();
+		    	}
+	    	}
+		}
+		return seqNo;
 	}
 
 }

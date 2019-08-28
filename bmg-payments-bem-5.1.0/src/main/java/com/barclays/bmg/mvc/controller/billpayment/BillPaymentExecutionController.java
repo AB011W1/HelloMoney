@@ -1,5 +1,9 @@
 package com.barclays.bmg.mvc.controller.billpayment;
 
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -16,6 +20,7 @@ import com.barclays.bmg.context.Context;
 import com.barclays.bmg.context.RequestContext;
 import com.barclays.bmg.context.ResponseContext;
 import com.barclays.bmg.dto.Charge;
+import com.barclays.bmg.dto.InvoiceDetails;
 import com.barclays.bmg.dto.TransactionDTO;
 import com.barclays.bmg.json.model.builder.BMBJSONBuilder;
 import com.barclays.bmg.json.model.builder.BMBMultipleResponseJSONBuilder;
@@ -52,7 +57,8 @@ public class BillPaymentExecutionController extends BMBAbstractCommandController
 	return null;
     }
 
-    @Override
+    @SuppressWarnings("unchecked")
+	@Override
     protected BMBBaseResponseModel handle1(HttpServletRequest httpRequest, HttpServletResponse httpResponse, Object command, BindException errors)
 	    throws Exception {
 	setLastStep(httpRequest);
@@ -143,6 +149,26 @@ public class BillPaymentExecutionController extends BMBAbstractCommandController
 	    		&& null!=httpRequest.getParameter("customerName") && null!=isFreeDialUssdFlow && !isFreeDialUssdFlow.equalsIgnoreCase("TRUE"))  {
 	    	transactionDTO.getBeneficiaryDTO().setBeneficiaryNickName(httpRequest.getParameter("customerName"));
 	    }
+
+	  //Probase
+	    InvoiceDetails invoiceDetails= new InvoiceDetails();
+    	LinkedHashMap<String, String> probaseDetails = new LinkedHashMap<String, String>();
+	    if(null!= context && "ZMBRB".equalsIgnoreCase(context.getBusinessId()) && "PMT_BP_BILLPAY_ONETIME".equalsIgnoreCase(context.getActivityId()) )
+	    {
+	    	Iterator it = httpRequest.getParameterMap().entrySet().iterator();
+			while (it.hasNext()) {
+				Map.Entry pair = (Map.Entry)it.next();
+				if(pair.getKey().toString().contains("Probase"))
+				{
+					probaseDetails.put(pair.getKey().toString().replace("Probase", "") , pair.getValue().toString());
+				}
+		}
+			if(probaseDetails.size()>0){
+	    	invoiceDetails.setProbaseDetails(probaseDetails);
+	    	transactionDTO.getBeneficiaryDTO().setInvoiceDetails(invoiceDetails);
+			}
+	    }
+
 
 	    MakeBillPaymentOperationRequest makeBillPaymentOperationRequest = new MakeBillPaymentOperationRequest();
 	    makeBillPaymentOperationRequest.setContext(context);

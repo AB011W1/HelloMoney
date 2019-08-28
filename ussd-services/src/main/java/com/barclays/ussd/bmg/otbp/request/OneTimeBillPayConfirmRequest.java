@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.barclays.bmg.dto.BillerCreditDTO;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.BillerArea;
+import com.barclays.ussd.bean.BillersListDO;
 import com.barclays.ussd.bmg.dto.RequestBuilderParamsDTO;
 import com.barclays.ussd.bmg.factory.request.BmgBaseRequestBuilder;
 import com.barclays.ussd.exception.USSDBlockingException;
@@ -21,6 +22,7 @@ import com.barclays.ussd.sysprefs.services.ListValueResServiceImpl;
 import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.UssdResourceBundle;
+import com.barclays.ussd.utils.jsonparsers.bean.billpay.BillDetails;
 import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
 import com.barclays.ussd.utils.jsonparsers.bean.otbp.OTBPInitAccount;
 
@@ -115,8 +117,19 @@ public class OneTimeBillPayConfirmRequest implements BmgBaseRequestBuilder {
 		}
 
 	// amount
-	requestParamMap.put(USSDInputParamsEnum.ONE_TIME_BILL_PYMNT_ENTER_AMT.getParamName(), ussdSessionMgmt.getUserTransactionDetails()
+	//added for probase
+	BillDetails billDetails = new BillDetails();
+	if(null != ussdSessionMgmt && null != ussdSessionMgmt.getTxSessions() && null!=ussdSessionMgmt.getTxSessions().get(USSDConstants.PROBASE_BILL_DETAILS)){
+		billDetails = (BillDetails) ussdSessionMgmt.getTxSessions().get(USSDConstants.PROBASE_BILL_DETAILS);
+	}
+	BillersListDO billersListDO = (BillersListDO) ussdSessionMgmt.getTxSessions().get(USSDConstants.PROBASE_BILLER_INFO);
+	if("ZMBRB".equalsIgnoreCase( businessId) && null!= billDetails && null != billersListDO && ("NAPSA".equalsIgnoreCase(billersListDO.getBillerCategoryId())  || "ZRA".equalsIgnoreCase(billersListDO.getBillerCategoryId())) ){
+		requestParamMap.put(USSDInputParamsEnum.ONE_TIME_BILL_PYMNT_ENTER_AMT.getParamName(), String.valueOf(billDetails.getFeeAmount().getAmount().doubleValue()));
+	}
+	else {
+		requestParamMap.put(USSDInputParamsEnum.ONE_TIME_BILL_PYMNT_ENTER_AMT.getParamName(), ussdSessionMgmt.getUserTransactionDetails()
 		.getUserInputMap().get(USSDInputParamsEnum.ONE_TIME_BILL_PYMNT_ENTER_AMT.getParamName()));
+	}
 	requestParamMap.put(USSDConstants.BMG_LOCAL_KE_OPCODE_PARAM_NAME, requestBuilderParamsDTO.getBmgOpCode());
 	requestParamMap.put(USSDConstants.BMG_LOCAL_KE_SERVICE_VER_NAME, USSDConstants.BMG_SERVICE_VERSION_VALUE);
 	String transactionRemarks = ussdResourceBundle.getLabel(USSDConstants.TRANSACTION_REMARKS_BILL_PAYMENT, new Locale(ussdSessionMgmt

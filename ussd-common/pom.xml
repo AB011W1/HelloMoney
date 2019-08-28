@@ -4,6 +4,7 @@
         <artifactId>bmg-parent-2.0</artifactId>
         <groupId>com.barclays.bmg</groupId>
         <version>2.0</version>
+        <relativePath>../bmg-parent-2.0/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.barclays.ussd</groupId>

@@ -242,8 +242,8 @@ public class BillPaySubmitJsonParser implements BmgBaseJsonParser {
 	   // CBP change : Kenya & Uganda country
 	     //CBP Change
 	    BMGGlobalContext logContext = BMGContextHolder.getLogContext();
-	    if(payData.getFrActNo().getMkdActNo() != null && ((logContext !=null && logContext.getContextMap().get("isCBPFLAG").equals("Y"))|| logContext.getBusinessId().equals("KEBRB"))){
-				if(((logContext !=null && logContext.getContextMap().get("isCBPFLAG").equals("Y")) || (logContext!=null && logContext.getBusinessId().equals("KEBRB"))) && payData.getTxnChargeAmt().getAmt()!=null){
+	   if(payData.getFrActNo().getMkdActNo() != null && ((null!=logContext  && logContext.getContextMap().get("isCBPFLAG").equals("Y"))|| ((null!=logContext && logContext.getBusinessId().equals("KEBRB"))))){
+				if(((null!=logContext && logContext.getContextMap().get("isCBPFLAG").equals("Y")) || (null!=logContext && logContext.getBusinessId().equals("KEBRB"))) && payData.getTxnChargeAmt().getAmt()!=null){
 
 					Double accumulatedCharge = 0.0;
 					Double roundedAccumulatedVal = 0.0;

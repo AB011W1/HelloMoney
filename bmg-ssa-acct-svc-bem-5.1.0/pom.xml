@@ -3,6 +3,7 @@
     <artifactId>bmg-parent-2.0</artifactId>
     <groupId>com.barclays.bmg</groupId>
     <version>2.0</version>
+    <relativePath>../bmg-parent-2.0/pom.xml</relativePath>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.barclays.bmg</groupId>
@@ -15,18 +16,4 @@
   	<MCFE_MW_Stub.version>4.0.56</MCFE_MW_Stub.version>
   </properties>
 
-<dependencies>
-		<dependency>
-			<groupId>com.barclays.bmg</groupId>
-			<artifactId>bmg-acct-svc-bem-5.1.0</artifactId>
-			<version>1.0</version>
-		</dependency><!--
-
-		<dependency>
-        <groupId>com.barclays.bir.stub</groupId>
-        <artifactId>MCFE_MW_Stub</artifactId>
-        <version>${MCFE_MW_Stub.version}</version>
-      </dependency>
-
-	--></dependencies>
 </project>

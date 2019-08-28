@@ -144,7 +144,7 @@ public class MobileWalletTopupValidateJsonParser implements BmgBaseJsonParser {
      	//CBP Change
 	    BMGGlobalContext logContext = BMGContextHolder.getLogContext();
 
-		if((logContext !=null && logContext.getContextMap().get("isCBPFLAG").equals("Y")|| logContext.getBusinessId().equals("KEBRB")) && mobileWalletTxValidatePayData.getTxnAmt()!= null && mobileWalletTxValidatePayData.getCreditcardJsonMod() == null
+		if((null!=logContext && logContext.getContextMap().get("isCBPFLAG").equals("Y")|| null!=logContext && logContext.getBusinessId().equals("KEBRB")) && mobileWalletTxValidatePayData.getTxnAmt()!= null && mobileWalletTxValidatePayData.getCreditcardJsonMod() == null
 				 /*responseBuilderParamsDTO.getUssdSessionMgmt().getBusinessId().equals("KEBRB")*/){
 			// Transaction fee only for CASA - CBP
 		    if((logContext !=null && logContext.getContextMap().get("isCBPFLAG").equals("Y") || logContext.getBusinessId().equals("KEBRB")) && mobileWalletTxValidatePayData.getCreditcardJsonMod() == null

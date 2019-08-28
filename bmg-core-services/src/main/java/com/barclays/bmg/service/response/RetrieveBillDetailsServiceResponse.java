@@ -4,6 +4,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
 
 import com.barclays.bmg.context.ResponseContext;
 import com.barclays.bmg.dto.Amount;
+import com.barclays.bmg.dto.InvoiceDetails;
 
 public class RetrieveBillDetailsServiceResponse extends ResponseContext {
 
@@ -27,6 +28,8 @@ public class RetrieveBillDetailsServiceResponse extends ResponseContext {
 	@JsonProperty
     private String BillDueDate = "";
 
+	@JsonProperty
+	private InvoiceDetails billInvoiceDetails = new InvoiceDetails();
 	/**
 	 * @return the feeAmount
 	 */
@@ -95,6 +98,14 @@ public class RetrieveBillDetailsServiceResponse extends ResponseContext {
 	 */
 	public void setSecondaryReferenceNumber(String secondaryReferenceNumber) {
 		this.secondaryReferenceNumber = secondaryReferenceNumber;
+	}
+
+	public void setBillInvoiceDetails(InvoiceDetails billInvoiceDetails) {
+		this.billInvoiceDetails = billInvoiceDetails;
+	}
+
+	public InvoiceDetails getBillInvoiceDetails() {
+		return billInvoiceDetails;
 	}
 
 }

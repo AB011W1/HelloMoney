@@ -24,6 +24,7 @@ public class RetrieveBillDetailsFormSubmitJSONBldr extends
 			billDetailsJSONBean.setBillDueDate(response.getBillDueDate());
 			billDetailsJSONBean.setPrimaryReferenceNumber(response.getPrimaryReferenceNumber());
 			billDetailsJSONBean.setSecondaryReferenceNumber(response.getSecondaryReferenceNumber());
+			billDetailsJSONBean.setBillInvoiceDetails(response.getBillInvoiceDetails());
 		}
 		bmbPayload.setPayData(billDetailsJSONBean);
 	}

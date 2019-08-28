@@ -1,0 +1,148 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+<display-name>Strategic HelloMoney</display-name>
+	
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/config/bmb-application-config.xml
+			classpath:bmb-security-config.xml
+			classpath:webecrime-config.xml
+			</param-value>			
+	</context-param>
+
+<filter>
+    <filter-name>USSDRequestFilter</filter-name>
+    <filter-class>com.barclays.ussd.auth.filters.USSDRequestFilter</filter-class>
+  </filter>
+
+
+  <filter-mapping>
+    <filter-name>USSDRequestFilter</filter-name>
+    <url-pattern>/cellulant/*</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+       <filter-name>USSDRequestFilter</filter-name>
+		<url-pattern>/selcom</url-pattern>
+  </filter-mapping>
+   <filter-mapping>
+        <filter-name>USSDRequestFilter</filter-name>
+		<url-pattern>/trueafrican/*</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+        <filter-name>USSDRequestFilter</filter-name>
+		<url-pattern>/etransact/*</url-pattern>
+  </filter-mapping>
+
+   <filter-mapping>
+     <filter-name>USSDRequestFilter</filter-name>
+		<url-pattern>/selfregistration/*</url-pattern>
+  </filter-mapping>
+
+   <filter-mapping>
+    <filter-name>USSDRequestFilter</filter-name>
+		<url-pattern>/selfreg/cellulant/*</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+   <filter-name>USSDRequestFilter</filter-name>
+ 		<url-pattern>/selfreg/selcom/*</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>USSDRequestFilter</filter-name>
+		<url-pattern>/selfreg/trueafrican/*</url-pattern>
+  </filter-mapping>
+
+
+
+	<filter>
+		<filter-name>BMBSessionValidationFilter</filter-name>
+		<display-name>BMBSessionValidationFilter</display-name>
+		<description></description>
+		<filter-class>com.barclays.bmg.mvc.filter.BMBSessionValidationFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>BMBSessionValidationFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	
+	<listener>
+		<listener-class>com.barclays.bmg.mvc.listener.BMGSessionListener</listener-class>
+	</listener>
+
+
+	
+ 	<servlet>
+		<servlet-name>spring</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+    <servlet-name>spring</servlet-name>
+    <url-pattern>/hellomoney/*</url-pattern>
+  </servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>spring</servlet-name>
+		<url-pattern>/cellulant/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>spring</servlet-name>
+		<url-pattern>/etransact/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>spring</servlet-name>
+		<url-pattern>/selcom/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>spring</servlet-name>
+		<url-pattern>/trueafrican/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>spring</servlet-name>
+		<url-pattern>/selfregistration/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>spring</servlet-name>
+		<url-pattern>/selfreg/cellulant/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>spring</servlet-name>
+		<url-pattern>/selfreg/selcom/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>spring</servlet-name>
+		<url-pattern>/selfreg/trueafrican/*</url-pattern>
+	</servlet-mapping>
+
+
+
+
+
+
+	<resource-ref id="ResourceRef_1245894293439">
+		<res-ref-name>jdbc/SHMDS</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+		<res-sharing-scope>Shareable</res-sharing-scope>
+	</resource-ref>
+
+
+</web-app>

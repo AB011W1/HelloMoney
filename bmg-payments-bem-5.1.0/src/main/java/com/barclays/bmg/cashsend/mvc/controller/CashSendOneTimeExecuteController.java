@@ -5,6 +5,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang.RandomStringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.validation.BindException;
 
@@ -22,12 +23,14 @@ import com.barclays.bmg.json.model.builder.BMBJSONBuilder;
 import com.barclays.bmg.json.model.builder.BMBMultipleResponseJSONBuilder;
 import com.barclays.bmg.json.response.model.BMBBaseResponseModel;
 import com.barclays.bmg.mvc.controller.auth.BMBAbstractCommandController;
+import com.barclays.ussd.utils.USSDConstants;
 
 public class CashSendOneTimeExecuteController extends BMBAbstractCommandController {
 
     private BMBJSONBuilder bmbJSONBuilder;
 
     private static final Logger LOGGER = Logger.getLogger(CashSendOneTimeExecuteController.class);
+    
 
     private CashSendOneTimeExecuteOperation cashSendOneTimeExecuteOperation;
 
@@ -133,7 +136,7 @@ public class CashSendOneTimeExecuteController extends BMBAbstractCommandControll
 	return context;
 
     }
-
+    
     private String trimRefNumber(String OrgRefNumber) {
 	if (OrgRefNumber != null && OrgRefNumber.length() > 10) {
 	    return OrgRefNumber.substring(0, 10);

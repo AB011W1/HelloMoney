@@ -149,7 +149,7 @@ public class OBAFTValidateJsonParser implements BmgBaseJsonParser {
 		//CBP Change
 
 		BMGGlobalContext logContext = BMGContextHolder.getLogContext();
-	    if((logContext !=null && logContext.getContextMap().get("isCBPFLAG").equals("Y") || logContext.getBusinessId().equals("KEBRB")) && ownFundTxValidatePayData.getTxnChargeAmt()!=null  && strCreditCardChk == null){
+	     if((null!=logContext && logContext.getContextMap().get("isCBPFLAG").equals("Y") || null!=logContext && logContext.getBusinessId().equals("KEBRB")) && ownFundTxValidatePayData.getTxnChargeAmt()!=null  && strCreditCardChk == null){
 		    String transactionFeeLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(TRANSACTION_FEE_LABEL,
 				    new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));
 		    String xelerateOfflineLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(XCELERATE_OFFLINE_LABEL,

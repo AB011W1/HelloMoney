@@ -149,7 +149,7 @@ public class OneTimeCashSendValidateJsonParser implements BmgBaseJsonParser {
 		//CBP Change
 
 		BMGGlobalContext logContext = BMGContextHolder.getLogContext();
-        if(null != logContext && null !=  logContext.getContextMap() && logContext.getContextMap().get("isCBPFLAG").equals("Y") || logContext.getBusinessId().equals("KEBRB")){
+       if(null!=logContext && null !=  logContext.getContextMap() && logContext.getContextMap().get("isCBPFLAG").equals("Y") || null != logContext && logContext.getBusinessId().equals("KEBRB")){
 			if((logContext!=null && logContext.getContextMap().get("isCBPFLAG").equals("Y") || logContext.getBusinessId().equals("KEBRB"))  && oneTimeCashSendValidatePayData.getTransactionFeeAmount()!= null && oneTimeCashSendValidatePayData.getTransactionFeeAmount().getAmt()!=null){
 
 				Double accumulatedCharge = 0.0;

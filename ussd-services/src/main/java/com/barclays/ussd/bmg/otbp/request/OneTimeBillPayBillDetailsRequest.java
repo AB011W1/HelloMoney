@@ -1,6 +1,8 @@
 package com.barclays.ussd.bmg.otbp.request;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
@@ -15,6 +17,7 @@ import com.barclays.ussd.utils.jsonparsers.bean.mobilewallettopup.TransactionAmt
 
 public class OneTimeBillPayBillDetailsRequest implements BmgBaseRequestBuilder {
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public USSDBaseRequest getRequestObject(RequestBuilderParamsDTO requestBuilderParamsDTO)
 			throws USSDNonBlockingException, USSDBlockingException {
@@ -62,7 +65,16 @@ public class OneTimeBillPayBillDetailsRequest implements BmgBaseRequestBuilder {
 				requestParamMap.put("contractBillerRef2", ussdSessionMgmt.getUserTransactionDetails().getUserInputMap().get("customerRefNumber"));
 			}
 		}
-
+		if(null!=ussdSessionMgmt.getTxSessions() && null!= ussdSessionMgmt.getTxSessions().get(USSDConstants.PROBASE_INVOICE_DETAILS)
+				&& "" != ussdSessionMgmt.getTxSessions().get(USSDConstants.PROBASE_INVOICE_DETAILS)){
+			LinkedHashMap<String, String> billDetails = new LinkedHashMap<String, String>();
+			billDetails =  (LinkedHashMap<String, String>) ussdSessionMgmt.getTxSessions().get(USSDConstants.PROBASE_INVOICE_DETAILS);
+			Iterator it =  billDetails.entrySet().iterator();
+			while (it.hasNext()) {
+				Map.Entry pair = (Map.Entry)it.next();
+				requestParamMap.put(pair.getKey().toString() + "Probase", pair.getValue().toString());
+			}
+		}
 		ussdBaseRequest.setRequestParamMap(requestParamMap);
 		return ussdBaseRequest;
 	}

@@ -329,6 +329,7 @@
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_PROD_SUB_LST.getTranId()}" value-ref="leadGenerationProdSubListRequestBuilder"/>
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_CONFIRM.getTranId()}" value-ref="leadGenerationConfirmRequestBuilder"/>
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_SUBMIT.getTranId()}" value-ref="leadGenerationSubmitRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_TIMIZA.getTranId()}" value-ref="leadGenerationTimizaRequestBuilder"/>
 <!-- KITS Changes Starts -->
 		<!--Registration-->
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KITS_REG_ACCOUNT_NUM.getTranId()}" value-ref="kitsRegisterAccountNumberRequestBuilder"/>
@@ -559,5 +560,11 @@
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_NEW_BENEFICIARY_CONFIRM.getTranId()}" value-ref="mobileWalletConfirmNewBeneficiaryRequestBuilder"/>
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_OWN_NUMBER.getTranId()}" value-ref="mobileWalletOneOffRequestBuilder"/>
 
+		<!-- Probase -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).PROBASE_AMOUNT.getTranId()}"  value-ref="probaseOneTimeBillPayAmtRequestBuilder" />
+		<!-- <entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).PROBASE_ETOLL_AMOUNT.getTranId()}"  value-ref="probaseOneTimeBillPayETollAmtRequestBuilder" /> -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).PROBASE_ACCOUNT.getTranId()}"  value-ref="probaseAccountRequestBuilder" />
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).PROBASE_SUBMIT.getTranId()}"  value-ref="probaseSubmitRequestBuilder" />
+		<!-- Probase ends -->
 </util:map>
 </beans>

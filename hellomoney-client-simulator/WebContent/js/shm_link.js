@@ -906,18 +906,18 @@
                   document.getElementById('topUpAmount').style.visibility = 'visible';
                   document.getElementById('amount').style.visibility = 'visible';
                   if(envId == 'NFT')
-                	  document.getElementById('domain').value = 'ubhm-ghnft.barclays.intranet';
+                	  document.getElementById('domain').value = 'zapsdcrweb1019.corp.dsarena.com';//'ubhm-ghnft.barclays.intranet';
             }else if(operatorSelected=="FREEDIALMTN"){
             	document.getElementById('topUpAmount').style.visibility = 'hidden';
                 document.getElementById('amount').style.visibility = 'hidden';
                 if(envId == 'NFT')
-                	document.getElementById('domain').value = 'ubhm-ghetnft.barclays.intranet';
+                	document.getElementById('domain').value = 'zapsdcrweb1019.corp.dsarena.com';//'ubhm-ghetnft.barclays.intranet';
             }else{
                   document.getElementById('topUpAmount').style.visibility = 'hidden';
                   document.getElementById('amount').style.visibility = 'hidden';
                   var busId=document.getElementById('bsnssId').value;
                   if(busId == 'GHBRB' && envId == 'NFT')
-                   	  document.getElementById('domain').value = 'ubhm-ghnft.barclays.intranet';
+                   	  document.getElementById('domain').value = 'zapsdcrweb1019.corp.dsarena.com';//'ubhm-ghnft.barclays.intranet';
             }
 
       }

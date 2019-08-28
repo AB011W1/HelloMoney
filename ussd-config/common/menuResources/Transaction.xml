@@ -185,6 +185,13 @@
 		<transaction tranDataId="OTBPSB011" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OTBPSB011"  headerId="label.enter.customer.nickname"  homeOptionReq="true" />
 		<transaction tranDataId="OTBPSB012" type="confirm" bmgOpCode="OP0612" tranDataOpCode="OTBPSB012"  headerId="LBL9999"  backOptionReq="true" />
 		<transaction tranDataId="OTBPSB013" type="endTran" bmgOpCode="OP0613" tranDataOpCode="OTBPSB013"  headerId="LBL9999" homeOptionReq="true" />
+
+		<!--Probase-->
+		<transaction tranDataId="OTBP017" type="amount" bmgOpCode="OP0850" tranDataOpCode="OTBP017"  headerId="LBL9999" backOptionReq="true" />
+<!--		<transaction tranDataId="OTBP018" type="amount" bmgOpCode="OP0850" tranDataOpCode="OTBP018"  headerId="LBL9999" backOptionReq="true" />-->
+		<transaction tranDataId="OTBP019" type="NA" bmgOpCode="OP0650" tranDataOpCode="NEGUIRENDER" headerId="LBL9999" />
+		<transaction tranDataId="OTBP020" type="endTran" bmgOpCode="OP0603" tranDataOpCode="OTBP020" headerId="LBL9999" homeOptionReq="true"/>
+		<!--Probase ends-->
 	</tx>
 	<tx id="tx2.0" tranId="ViewFd">
 		<transaction tranDataId="FDR001" type="amount" bmgOpCode="OP0701" tranDataOpCode="FDR001" headerId="LBL9999"  backOptionReq="true" />
@@ -517,6 +524,8 @@
 		<transaction tranDataId="LG001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="LG001"  headerId="menu.lead.generation.sub.product" backOptionReq="true"/>
 		<transaction tranDataId="LG002" type="confirm" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="LG002"  headerId="LBL9999"  backOptionReq="true" />
 		<transaction tranDataId="LG003" type="endTran" bmgOpCode="OP0984" tranDataOpCode="LG003"  headerId="LBL9999" homeOptionReq="true" />
+		<!-- Timiza apply for products -->
+		<transaction tranDataId="LG004" type="endTran" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="LG004"  headerId="LBL9999" homeOptionReq="true" />
 	</tx>
 
 	<!-- CR85 Start -->

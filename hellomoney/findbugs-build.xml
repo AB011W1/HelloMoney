@@ -1,0 +1,39 @@
+<project name="AntDefault" default="findbugs" basedir=".">
+    <description>
+        Ant build for running Findbugs
+    </description>
+
+  <!-- the find bugs home path -->
+  <property name="findbugs.home" value="C:/Programs/findbugs-2.0.2" />
+  <property name="tomacat.home" value="C:/Programs/apache-tomcat-7.0.37" />
+
+  <property name="findbugs.outputFile" value="findbugs-report.xml" />
+
+	<path id="app.classpath">
+		<fileset dir="${basedir}/target/hellomoney/WEB-INF/lib" includes="**/*.jar" />
+		<fileset dir="${basedir}/../serverLib" includes="**/*.jar" />
+		<fileset dir="${basedir}/../sharedLib" includes="**/*.jar" />
+		<fileset dir="${findbugs.home}/lib" includes="**/*-ant.jar" />
+		<fileset dir="${tomacat.home}/lib" includes="**/*.jar" />
+	</path>
+
+  <taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask">
+	<classpath path="${findbugs.home}/lib/findbugs-ant.jar" />
+  </taskdef>
+
+  <target name="findbugs">
+    <findbugs home="${findbugs.home}"
+              output="xml:withMessages"
+              outputFile="${findbugs.outputFile}"
+			  jvmargs="-Xms512M -Xmx512M "
+			  workHard="max" >
+		<auxClasspath refid="app.classpath" />
+		<fileset dir="${basedir}/target/hellomoney/WEB-INF/lib" >
+			<include name="**/bmg*.jar"/>
+			<include name="**/ussd*.jar"/>
+		</fileset>
+    </findbugs>
+  	<xslt in="${findbugs.outputFile}" style="findbugs-fancy-hist.xsl" out="findbugs-report.html" />
+  </target>
+
+</project>
