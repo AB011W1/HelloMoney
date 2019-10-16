@@ -16,7 +16,7 @@
 
 	<modules>
 		<module>../bmg-core-services</module>
-		 <module>../bmg-core-session-activity</module>
+		<module>../bmg-core-session-activity</module>
 		<module>../bmg-core-terms-of-use</module>
 		<module>../bmg-core-utils</module>
 		<module>../bmg-core-view</module>
@@ -646,7 +646,7 @@
 			<artifactId>xerces</artifactId> </exclusion> <exclusion> <groupId>xml-apis</groupId> 
 			<artifactId>xml-apis</artifactId> </exclusion> </exclusions> -->
 	</dependencies>
-
+	
 	<build>
 		<finalName>bmg-app-2.0</finalName>
 		<plugins>

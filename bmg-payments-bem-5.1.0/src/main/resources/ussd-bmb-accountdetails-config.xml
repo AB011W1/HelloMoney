@@ -61,7 +61,7 @@
 		<property name="portName" value="IndividualCustomerManagementSOAP" />
 		<property name="jaxRpcServiceInterface" value="com.barclays.bem.IndividualCustomerManagement.IndividualCustomerManagement_Service" />
 		<property name="endpointAddress" value="http://mb4t.wload.global:7080/bem/apollo_ws" />
-		<property name="endpointAddressName" value="IndividualCustomerManagement_EndPoint" />
+		<property name="endpointAddressName" value="Test_IndividualCustomerManagement_EndPoint" />
 		<property name="cacheKey" value="retrieveAllCustAcctCacheKey" />
 	</bean>
 

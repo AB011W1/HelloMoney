@@ -51,7 +51,7 @@ public class CashSendEncryptionDAOImpl implements CashSendEncryptionDAO {
 		}
 		System.out.println("CashSendOneTimeExecuteServiceResponse encryptPin() after HSMClient getKeystore() method call");
 		LOGGER.debug("PIN_LENGTH: " + PIN_LENGTH + "pin: " + pin + "PIN_PADDING: " + PIN_PADDING);
-		LOGGER.debug("HSMCliet encrypt method call");
+		LOGGER.debug("HSMClient encrypt method call");
 	    cipherText = HSMClient.encrypt(PIN_LENGTH + pin + PIN_PADDING);//client.encrypt(PIN_LENGTH + pin + PIN_PADDING);
 	    LOGGER.info("CashSendOneTimeExecuteServiceResponse encryptPin() cipherText encryption done");
 		if (LOGGER.isDebugEnabled()) {

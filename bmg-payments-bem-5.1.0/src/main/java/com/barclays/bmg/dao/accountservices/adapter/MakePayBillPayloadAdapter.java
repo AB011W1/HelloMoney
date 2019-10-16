@@ -121,9 +121,6 @@ public class MakePayBillPayloadAdapter {
 	//}
 
 
-
-
-
 		Merchant merchant = new Merchant();
 
 		if (payBillServiceRequest.getExternalBillerId() != null) {
@@ -197,7 +194,12 @@ public class MakePayBillPayloadAdapter {
 		if (beneficiaryName == null || beneficiaryName.length() == 0) {
 		    billPayment.setInitiatingCustomerFullName(payBillServiceRequest.getContext().getFullName());
 		}
-
+		
+		//Added for KITS debtor name INC INC1009890417
+		if(payBillServiceRequest.getContext().getActivityId().equalsIgnoreCase("KITS_PTA_BILLPAY") || payBillServiceRequest.getContext().getActivityId().equalsIgnoreCase("KITS_PTP_BILLPAY"))
+		{
+			billPayment.setInitiatingCustomerFullName(payBillServiceRequest.getContext().getKitsFullName());
+		}
 		// Set Bill Holder Address
 		PostalAddress customerAddress = billPayment.getCustomerAddress();
 		if (customerAddress == null) {

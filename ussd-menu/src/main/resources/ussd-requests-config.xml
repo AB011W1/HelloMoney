@@ -376,8 +376,7 @@
 		<bean id="leadGenerationProdSubListRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.link.LeadGenerationProdSubListRequestBuilder"/>
 		<bean id="leadGenerationConfirmRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.link.LeadGenerationConfirmRequestBuilder"/>
 		<bean id="leadGenerationSubmitRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.link.LeadGenerationSubmitRequestBuilder"/>
-		<bean id="leadGenerationTimizaRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.link.LeadGenerationTimizaRequestBuilder"/>
-
+		<bean id="leadGenerationTimizaRequestBuilder" class="com.barclays.ussd.bmg.creditcard.link.LeadGenerationTimizaRequestBuilder"/>
 <!-- KITS Changes Starts -->
         <!--Registration-->
         <bean id="kitsRegisterAccountNumberRequestBuilder"   class="com.barclays.ussd.bmg.kits.KitsRegisterAccountNumberRequestBuilder"/>

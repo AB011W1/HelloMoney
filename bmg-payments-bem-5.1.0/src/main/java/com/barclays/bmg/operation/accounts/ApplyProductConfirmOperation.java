@@ -15,7 +15,6 @@ import com.barclays.bmg.service.request.ReportProblemServiceRequest;
 import com.barclays.bmg.service.response.ReportProblemServiceResponse;
 import com.barclays.bmg.ussd.auth.service.request.SMSDetailsServiceRequest;
 import com.barclays.bmg.ussd.service.SMSDetailsService;
-import com.barclays.ussd.utils.USSDConstants;
 
 public class ApplyProductConfirmOperation extends BMBCommonOperation {
 
@@ -46,7 +45,6 @@ public class ApplyProductConfirmOperation extends BMBCommonOperation {
 			applyProductResp.setResCde(reportProblemServiceResponse.getResCde());
 			applyProductResp.setResMsg(reportProblemServiceResponse.getResMsg());
 		}
-		
 		return applyProductResp;
 
 

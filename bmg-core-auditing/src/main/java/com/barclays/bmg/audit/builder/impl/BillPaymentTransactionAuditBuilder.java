@@ -130,7 +130,8 @@ public class BillPaymentTransactionAuditBuilder extends AbstractTransactionAudit
 	}
 
 	FieldDataDTO field18 = new FieldDataDTO();
-	temp = beneficiary.getBillRefNo();
+	if(null != beneficiary)
+		temp = beneficiary.getBillRefNo();
 	field18.setFieldId(AuditConstant.BILLNO);
 	field18.setValue("");
 	screenData.addField(field18);
@@ -139,20 +140,22 @@ public class BillPaymentTransactionAuditBuilder extends AbstractTransactionAudit
 	field6.setFieldId(AuditConstant.ATTRIBUTE_NAME1);
 	field6.setValue(AuditConstant.BILLER_ID);
 	screenData.addField(field6);
-
-	temp = beneficiary.getBillerId();
+	if(null != beneficiary)
+		temp = beneficiary.getBillerId();
 	// FieldDataDTO field13 = new FieldDataDTO();
 	FieldDataDTO field13 = new FieldDataDTO(AuditConstant.ATTRIBUTE_VALUE1, temp == null ? AuditConstant.WHITESPACE : temp);
 	screenData.addField(field13);
 
 	FieldDataDTO field19 = new FieldDataDTO();
 	field19.setFieldId(AuditConstant.BILLER_ID);
-	field19.setValue(beneficiary.getBillerId());
+	if(null != beneficiary)
+		field19.setValue(beneficiary.getBillerId());
 	screenData.addField(field19);
 
 	FieldDataDTO field7 = new FieldDataDTO();
 	field7.setFieldId(AuditConstant.BILLERNAM);
-	field7.setValue(beneficiary.getBillerName());
+	if(null != beneficiary)
+		field7.setValue(beneficiary.getBillerName());
 	screenData.addField(field7);
 
 	field11.setFieldId(AuditConstant.SERTYP);
@@ -162,12 +165,14 @@ public class BillPaymentTransactionAuditBuilder extends AbstractTransactionAudit
 
 	FieldDataDTO billHolderName = new FieldDataDTO();
 	billHolderName.setFieldId(AuditConstant.BILLHOLDNAM);
-	billHolderName.setValue(beneficiary.getBeneficiaryName());
+	if(null != beneficiary)
+		billHolderName.setValue(beneficiary.getBeneficiaryName());
 	screenData.addField(billHolderName);
 
 	FieldDataDTO billHolderAddr = new FieldDataDTO();
 	billHolderAddr.setFieldId(AuditConstant.BILLHOLDADDR);
-	billHolderAddr.setValue((beneficiary.getDestinationAddressLine1() == null ? AuditConstant.WHITESPACE : beneficiary
+	if(null != beneficiary)
+		billHolderAddr.setValue((beneficiary.getDestinationAddressLine1() == null ? AuditConstant.WHITESPACE : beneficiary
 		.getDestinationAddressLine1())
 		+ (beneficiary.getDestinationAddressLine2() == null ? AuditConstant.WHITESPACE : AuditConstant.WHITESPACE
 			+ beneficiary.getDestinationAddressLine2())
@@ -179,8 +184,8 @@ public class BillPaymentTransactionAuditBuilder extends AbstractTransactionAudit
 
 	FieldDataDTO field1 = new FieldDataDTO(AuditConstant.MKDFRMACCTNO, new BMGFormatUtils().maskAccount(fromAcctNo));
 	screenData.addField(field1);
-
-	temp = beneficiary.getDestinationAccountNumber();
+	if(null != beneficiary)
+		temp = beneficiary.getDestinationAccountNumber();
 	FieldDataDTO field2 = new FieldDataDTO();
 	field2.setFieldId(AuditConstant.MKDTOACCTNO);
 	field2.setValue(new BMGFormatUtils().maskAccount(temp == null ? AuditConstant.WHITESPACE : temp));
@@ -314,18 +319,21 @@ public class BillPaymentTransactionAuditBuilder extends AbstractTransactionAudit
 
 	FieldDataDTO field7 = new FieldDataDTO();
 	field7.setFieldId(AuditConstant.BILLERNAM);
-	field7.setValue(beneficiary.getBillerName());
+	if(null != beneficiary)
+		field7.setValue(beneficiary.getBillerName());
 	screenData.addField(field7);
 
 	FieldDataDTO field18 = new FieldDataDTO();
-	temp = beneficiary.getBillRefNo();
+	if(null != beneficiary)
+		temp = beneficiary.getBillRefNo();
 	field18.setFieldId(AuditConstant.BILLNO);
 	field18.setValue("");
 	screenData.addField(field18);
 
 	FieldDataDTO field19 = new FieldDataDTO();
 	field19.setFieldId(AuditConstant.BILLER_ID);
-	field19.setValue(beneficiary.getBillerId());
+	if(null != beneficiary)
+		field19.setValue(beneficiary.getBillerId());
 	screenData.addField(field19);
 
 	FieldDataDTO field6 = new FieldDataDTO();
@@ -333,7 +341,8 @@ public class BillPaymentTransactionAuditBuilder extends AbstractTransactionAudit
 	field6.setValue(AuditConstant.BILLER_ID);
 	screenData.addField(field6);
 
-	temp = beneficiary.getBillerId();
+	if(null != beneficiary)
+		temp = beneficiary.getBillerId();
 	// FieldDataDTO field13 = new FieldDataDTO();
 	FieldDataDTO field13 = new FieldDataDTO(AuditConstant.ATTRIBUTE_VALUE1, temp == null ? AuditConstant.WHITESPACE : temp);
 	screenData.addField(field13);
@@ -345,12 +354,14 @@ public class BillPaymentTransactionAuditBuilder extends AbstractTransactionAudit
 
 	FieldDataDTO billHolderName = new FieldDataDTO();
 	billHolderName.setFieldId(AuditConstant.BILLHOLDNAM);
-	billHolderName.setValue(beneficiary.getBeneficiaryName());
+	if(null != beneficiary)
+		billHolderName.setValue(beneficiary.getBeneficiaryName());
 	screenData.addField(billHolderName);
 
 	FieldDataDTO billHolderAddr = new FieldDataDTO();
 	billHolderAddr.setFieldId(AuditConstant.BILLHOLDADDR);
-	billHolderAddr.setValue((beneficiary.getDestinationAddressLine1() == null ? AuditConstant.WHITESPACE : beneficiary
+	if(null != beneficiary)
+		billHolderAddr.setValue((beneficiary.getDestinationAddressLine1() == null ? AuditConstant.WHITESPACE : beneficiary
 		.getDestinationAddressLine1())
 		+ (beneficiary.getDestinationAddressLine2() == null ? AuditConstant.WHITESPACE : AuditConstant.WHITESPACE
 			+ beneficiary.getDestinationAddressLine2())
@@ -382,8 +393,8 @@ public class BillPaymentTransactionAuditBuilder extends AbstractTransactionAudit
 	    screenData.setScreenId(SCRNNAME_MTP);
 	}
 	transactionAuditDTO.setFromAccount(transDto.getSourceAcct().getAccountNumber());
-
-	temp = beneficiary.getDestinationAccountNumber();
+	if(null != beneficiary)
+		temp = beneficiary.getDestinationAccountNumber();
 	FieldDataDTO field2 = new FieldDataDTO();
 	field2.setFieldId(AuditConstant.MKDTOACCTNO);
 	field2.setValue(new BMGFormatUtils().maskAccount(temp == null ? AuditConstant.WHITESPACE : temp));

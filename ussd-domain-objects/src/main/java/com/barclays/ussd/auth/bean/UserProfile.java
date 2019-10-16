@@ -65,6 +65,27 @@ public class UserProfile implements Serializable {
 
     private String businessId;
     private String countryCode;
+    
+    //Change of welcome message for Botswana. INC INC0063990
+    private String bocBannerFlag;
+	private String bannerMessage;
+    public String getBocBannerFlag() {
+		return bocBannerFlag;
+	}
+
+	public void setBocBannerFlag(String bocBannerFlag) {
+		this.bocBannerFlag = bocBannerFlag;
+	}
+
+	public String getBannerMessage() {
+		return bannerMessage;
+	}
+
+	public void setBannerMessage(String bannerMessage) {
+		this.bannerMessage = bannerMessage;
+	}
+
+
 
     /**
      * get the primary account from the list.

@@ -37,8 +37,28 @@ public class VerifyUSSDUserJSONResponseModel extends BMBPayloadData {
     private String customerAccessStatusCode;
     //CR-77
     private String customerFirstName;
+    
+    //Set welcome banner in customerDTO for INC INC0063990
+    private String bocBannerFlag;
+    private String bannerMessage;
 
-    public String getCryptoStatusCode() {
+    public String getBocBannerFlag() {
+		return bocBannerFlag;
+	}
+
+	public void setBocBannerFlag(String bocBannerFlag) {
+		this.bocBannerFlag = bocBannerFlag;
+	}
+
+	public String getBannerMessage() {
+		return bannerMessage;
+	}
+
+	public void setBannerMessage(String bannerMessage) {
+		this.bannerMessage = bannerMessage;
+	}
+
+	public String getCryptoStatusCode() {
 	return cryptoStatusCode;
     }
 

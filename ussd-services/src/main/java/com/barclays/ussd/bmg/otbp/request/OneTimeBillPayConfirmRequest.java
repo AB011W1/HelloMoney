@@ -52,7 +52,9 @@ public class OneTimeBillPayConfirmRequest implements BmgBaseRequestBuilder {
     public USSDBaseRequest getRequestObject(RequestBuilderParamsDTO requestBuilderParamsDTO) throws USSDNonBlockingException, USSDBlockingException {
 
 	USSDSessionManagement ussdSessionMgmt = requestBuilderParamsDTO.getUssdSessionMgmt();
-	Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
+	Map<String, String> userInputMap = new HashMap<String, String>();
+	if(null != ussdSessionMgmt)
+		userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
 	USSDBaseRequest ussdBaseRequest = new USSDBaseRequest();
 	Map<String, String> requestParamMap = new HashMap<String, String>();
 	/*String userInput = userInputMap.get(USSDInputParamsEnum.ONE_TIME_BILL_PYMNT_ACNT_NOS.getParamName());
@@ -122,7 +124,9 @@ public class OneTimeBillPayConfirmRequest implements BmgBaseRequestBuilder {
 	if(null != ussdSessionMgmt && null != ussdSessionMgmt.getTxSessions() && null!=ussdSessionMgmt.getTxSessions().get(USSDConstants.PROBASE_BILL_DETAILS)){
 		billDetails = (BillDetails) ussdSessionMgmt.getTxSessions().get(USSDConstants.PROBASE_BILL_DETAILS);
 	}
-	BillersListDO billersListDO = (BillersListDO) ussdSessionMgmt.getTxSessions().get(USSDConstants.PROBASE_BILLER_INFO);
+	BillersListDO billersListDO = null;
+	if(null != ussdSessionMgmt)
+		billersListDO = (BillersListDO) ussdSessionMgmt.getTxSessions().get(USSDConstants.PROBASE_BILLER_INFO);
 	if("ZMBRB".equalsIgnoreCase( businessId) && null!= billDetails && null != billersListDO && ("NAPSA".equalsIgnoreCase(billersListDO.getBillerCategoryId())  || "ZRA".equalsIgnoreCase(billersListDO.getBillerCategoryId())) ){
 		requestParamMap.put(USSDInputParamsEnum.ONE_TIME_BILL_PYMNT_ENTER_AMT.getParamName(), String.valueOf(billDetails.getFeeAmount().getAmount().doubleValue()));
 	}

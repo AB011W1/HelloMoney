@@ -158,7 +158,10 @@ public interface SystemParameterConstant {
 
     // to allow RAND currency
     String CURRENCY_CODE_RAND = "CURRENCY_CODE_RAND";
-
+    
+    //Set welcome banner in customerDTO for INC INC0063990
+    String LOGIN_ANNOUNCE_FLAG = "LOGIN_ANNOUNCE_FLAG";
+    String LOGIN_ANNOUNCE_L1 = "LOGIN_ANNOUNCE_L1";
     /** credit card statmentlist. */
     public static final String CC_STATEMENT_LIST = "CC_STATEMENT_LIST";
     /** The sys param CC. */

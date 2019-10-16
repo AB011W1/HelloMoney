@@ -46,6 +46,7 @@
 			<version>1.0.22</version>
 			<scope>provided</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>hsm-connect</artifactId>

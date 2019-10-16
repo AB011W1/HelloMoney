@@ -42,8 +42,12 @@ public class GePGPayBillConfirm implements BmgBaseRequestBuilder {
     	Map<String, Object> txSessions = ussdSessionMgmt.getTxSessions();
     	String businessId = ussdSessionMgmt.getBusinessId();
     	BillDetails billDetails = (BillDetails) txSessions.get(USSDConstants.GePG_BILL_DETAIL);
-    	String primaryRefNum = userInputMap.get(USSDInputParamsEnum.GePG_CONTROL_NUMBER.getParamName());
-    	String selectedFrmDstvType = userInputMap.get((USSDConstants.SELECTED_DSTV_BILLER_TYPE));
+    	String primaryRefNum = null;
+    	if(null != userInputMap)
+    		primaryRefNum = userInputMap.get(USSDInputParamsEnum.GePG_CONTROL_NUMBER.getParamName());
+    	String selectedFrmDstvType = null;
+    	if(null != userInputMap)
+    		selectedFrmDstvType = userInputMap.get((USSDConstants.SELECTED_DSTV_BILLER_TYPE));
 
     	if(selectedFrmDstvType != null && USSDConstants.BUSINESS_ID_ZWBRB.equalsIgnoreCase(businessId)
     			&& (null != userInputMap && "DSTVZIM-2".equalsIgnoreCase(userInputMap.get(USSDConstants.SELECTED_BILLER_OTBP)))
@@ -59,13 +63,14 @@ public class GePGPayBillConfirm implements BmgBaseRequestBuilder {
 
 		// fromActNumber
 		List<OTBPInitAccount> accounts = (List<OTBPInitAccount>) txSessions.get(USSDInputParamsEnum.GePG_PAY_BILLS_FROM_ACNT.getTranId());
-		requestParamMap.put(USSDInputParamsEnum.ONE_TIME_BILL_PYMNT_ACNT_NOS.getParamName(), accounts.get(Integer.parseInt(userInputMap.get(USSDInputParamsEnum.GePG_PAY_BILLS_FROM_ACNT.getParamName())) - 1).getActNo());
+		if(null != userInputMap)
+			requestParamMap.put(USSDInputParamsEnum.ONE_TIME_BILL_PYMNT_ACNT_NOS.getParamName(), accounts.get(Integer.parseInt(userInputMap.get(USSDInputParamsEnum.GePG_PAY_BILLS_FROM_ACNT.getParamName())) - 1).getActNo());
 
     	// amount
 		if(null != billDetails && ( USSDConstants.GePG_PARTIAL_BILL_PAYMENT_TYPE.equalsIgnoreCase(billDetails.getPaymentType()) ||
 				USSDConstants.GePG_FULL_BILL_PAYMENT_TYPE.equalsIgnoreCase(billDetails.getPaymentType()))){
 			requestParamMap.put(USSDInputParamsEnum.ONE_TIME_BILL_PYMNT_ENTER_AMT.getParamName(), userInputMap.get(USSDInputParamsEnum.GePG_FULL_PARTIAL_AMOUNT.getParamName()));
-		} else {
+		} else if(null != billDetails){
 			requestParamMap.put(USSDInputParamsEnum.ONE_TIME_BILL_PYMNT_ENTER_AMT.getParamName(), billDetails.getFeeAmount().getAmount().toString());
 		}
     	requestParamMap.put(USSDConstants.BMG_LOCAL_KE_OPCODE_PARAM_NAME, requestBuilderParamsDTO.getBmgOpCode());

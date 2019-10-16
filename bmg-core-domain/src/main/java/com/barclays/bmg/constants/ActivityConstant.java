@@ -64,5 +64,8 @@ public interface ActivityConstant {
     //LoanRepayment
     String LOAN_RE_PMT_ENQ_ACTIVITY_ID = "LOAN_RE_PMT_ENQ";
     String LOAN_RE_PMT_ACTIVITY_ID = "LOAN_RE_PMT_MKLPMT";
+    
+    //Botswana welcome banner INC INC0063990 
+    String BANNER_GROUP_ID = "LOGIN_ANNOUNCEMENT";
 
 }

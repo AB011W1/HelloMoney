@@ -57,4 +57,7 @@ public interface SessionConstant {
 
     //Changes for caching of account list & reduce one call to enhance performance
     String SESSION_ACCOUNT_LIST = "SESSION_ACCOUNT_LIST";
+    
+    //Added for KITS debtor name INC INC1009890417
+    String SESSION_KITS_FULL_NAME = "SESSION_KITS_FULL_NAME";
 }

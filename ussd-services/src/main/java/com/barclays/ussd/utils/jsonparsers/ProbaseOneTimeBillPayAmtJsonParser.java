@@ -118,7 +118,9 @@ public class ProbaseOneTimeBillPayAmtJsonParser implements BmgBaseJsonParser {
 		StringBuilder pageBody = new StringBuilder();
 		USSDSessionManagement ussdSessionMgmt=responseBuilderParamsDTO.getUssdSessionMgmt();
 		UssdResourceBundle ussdResourceBundle = responseBuilderParamsDTO.getUssdResourceBundle();
-		Locale locale = new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode());
+		Locale locale = null;
+		if(null != ussdSessionMgmt )
+			locale = new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode());
 
 		String npinNumber = ussdResourceBundle.getLabel(NPIN_NUMBER_LABEL, locale);
 		String prnNumber =  ussdResourceBundle.getLabel(PRN_NUMBER_LABEL, locale);
@@ -135,7 +137,9 @@ public class ProbaseOneTimeBillPayAmtJsonParser implements BmgBaseJsonParser {
 		if(null != ussdSessionMgmt && null != ussdSessionMgmt.getTxSessions()){
 			billDetails = (BillDetails) ussdSessionMgmt.getTxSessions().get(USSDConstants.PROBASE_BILL_DETAILS);
 		}
-		BillersListDO billersListDO = (BillersListDO) ussdSessionMgmt.getTxSessions().get(USSDConstants.PROBASE_BILLER_INFO);
+		BillersListDO billersListDO = null;
+		if(null != ussdSessionMgmt)
+			billersListDO = (BillersListDO) ussdSessionMgmt.getTxSessions().get(USSDConstants.PROBASE_BILLER_INFO);
 		pageBody.append(billDetailsLabel);
 		pageBody.append(USSDConstants.NEW_LINE);
 		if(null != billDetails && null != billersListDO)

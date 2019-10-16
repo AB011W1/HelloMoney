@@ -67,6 +67,8 @@ public class AuthController extends USSDAbstractController implements ServletCon
     private static final String WELCOME_MSG = "WELCOME_MSG";
 
     private static final String WELCOME_MSG_MIGRATED = "WELCOME_MSG_MIGRATED";
+    
+    private static final String BANNER_WELCOME_MSG = "BANNER_WELCOME_MSG";
 
     private static final String MIGRATED = "MIGRATED";
 
@@ -683,6 +685,10 @@ public class AuthController extends USSDAbstractController implements ServletCon
     private void initSession(final UserProfile profile, final USSDSessionManagement ussdSessionMgmt) throws USSDBlockingException {
 	String welcomeMessage = null;
 	String languageCode = null;
+	
+	//Change of welcome message for Botswana. INC INC0063990
+	String bocBannerFlag = null;
+	String bannerMessage = null;
 	try {
 	    if (LOGGER.isDebugEnabled()) {
 		LOGGER.debug("Initializing the session for the User::  ");
@@ -704,31 +710,52 @@ public class AuthController extends USSDAbstractController implements ServletCon
 		} else if(null != ussdSessionMgmt){
 		    welcomeMessage = ussdResourceBundle.getLabel(WELCOME_MSG, new Locale(languageCode, ussdSessionMgmt.getCountryCode()));
 
-		 // CR-77
-			if(!profile.getCustomerFirstName().equalsIgnoreCase(" ") ) {
-				String customerFirstName = profile.getCustomerFirstName();
-				List<String> params = new ArrayList<String>(1);
-				params.add(customerFirstName);
-				String[] paramArray = params.toArray(new String[params.size()]);
-				welcomeMessage =  ussdResourceBundle.getLabel(WELCOME_MSG_CUSTOMERNAME, paramArray,
-						new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));
-			}
-			 if(ussdSessionMgmt.getBusinessId().equals("TZNBC") && languageCode!=null && languageCode.equalsIgnoreCase("sw")){
-				 welcomeMessage=welcomeMessage.concat(" ");
-			 }else{
-				 welcomeMessage = welcomeMessage.concat(USSDConstants.NEW_LINE);
-			 }
-			 if(null != ussdSessionMgmt)
-				 welcomeMessage = welcomeMessage.concat(ussdResourceBundle.getLabel(LBL_PASS, new Locale(languageCode, ussdSessionMgmt
-			    .getCountryCode())));
-		    //Forgot Pin Change
-		    if(null != ussdSessionMgmt && !ussdSessionMgmt.getBusinessId().equals("MZBRB"))
-		    welcomeMessage = welcomeMessage.concat(" "+ussdResourceBundle.getLabel(LABEL_FORGOT_PIN_PRESS, new Locale(languageCode, ussdSessionMgmt
+		//Change of welcome message for Botswana. INC INC0063990
+		 if(null != profile.getBocBannerFlag())
+			 bocBannerFlag = profile.getBocBannerFlag();
+		 
+		 if(null != profile.getBannerMessage())
+		     bannerMessage = profile.getBannerMessage();
+		 
+		 if(null != bocBannerFlag && null != bannerMessage && bocBannerFlag.equals("Y"))
+		 {
+			 welcomeMessage = ussdResourceBundle.getLabel(BANNER_WELCOME_MSG, new Locale(languageCode, ussdSessionMgmt.getCountryCode()));
+			 welcomeMessage = welcomeMessage.concat(USSDConstants.NEW_LINE);
+			 welcomeMessage = welcomeMessage.concat(bannerMessage);
+					 
+		 }
+		 else
+		 {
+			// CR-77
+				if(null != profile.getCustomerFirstName() && !profile.getCustomerFirstName().equalsIgnoreCase(" ") ) {
+					String customerFirstName = profile.getCustomerFirstName();
+					List<String> params = new ArrayList<String>(1);
+					params.add(customerFirstName);
+					String[] paramArray = params.toArray(new String[params.size()]);
+					welcomeMessage =  ussdResourceBundle.getLabel(WELCOME_MSG_CUSTOMERNAME, paramArray,
+							new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));
+				}
+				 if(ussdSessionMgmt.getBusinessId().equals("TZNBC") && languageCode!=null && languageCode.equalsIgnoreCase("sw")){
+					 welcomeMessage=welcomeMessage.concat(" ");
+				 }else{
+					 welcomeMessage = welcomeMessage.concat(USSDConstants.NEW_LINE);
+				 }
+				 if(null != ussdSessionMgmt)
+					 welcomeMessage = welcomeMessage.concat(ussdResourceBundle.getLabel(LBL_PASS, new Locale(languageCode, ussdSessionMgmt
 				    .getCountryCode())));
+			    //Forgot Pin Change
+			    if(null != ussdSessionMgmt && !ussdSessionMgmt.getBusinessId().equals("MZBRB"))
+			    welcomeMessage = welcomeMessage.concat(" "+ussdResourceBundle.getLabel(LABEL_FORGOT_PIN_PRESS, new Locale(languageCode, ussdSessionMgmt
+					    .getCountryCode())));
+		 }
+		    
+		 
 		}
 	    }
 	    if(null != ussdSessionMgmt)
 	    	ussdSessionMgmt.setScreenId(USSDConstants.HOME_PAGE_SCREEN_ID);
+	    //welcomeMessage = "Please enter your pin to continue. Forgot Pin ? Press 1" + USSDConstants.NEW_LINE + USSDConstants.NEW_LINE +"ENJOY DISCOUNTS" + USSDConstants.NEW_LINE + 
+	    		//"Swipe at Monsieur and enjoy more Cashback rewards next month.";
 	    profile.setMsg(welcomeMessage);
 	    profile.setLanguage(languageCode);
 	    if(null != ussdSessionMgmt)

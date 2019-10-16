@@ -60,7 +60,9 @@ public class OneTimeBillPayBillerRefParser implements BmgBaseJsonParser, SystemP
 	 	MenuItemDTO menuItemDTO = new MenuItemDTO();
 	 	USSDUtils.appendHomeAndBackOption(menuItemDTO, responseBuilderParamsDTO);
 	 	UssdResourceBundle ussdResourceBundle = responseBuilderParamsDTO.getUssdResourceBundle();
-		Locale locale = new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode());
+		Locale locale = null;
+		if(null != ussdSessionMgmt)
+			locale = new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode());
 
 		// WUC Change - Water Biller 19/06/2017
 		String wucBillerCategory = null;

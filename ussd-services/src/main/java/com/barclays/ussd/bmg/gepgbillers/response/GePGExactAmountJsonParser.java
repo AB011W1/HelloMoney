@@ -47,11 +47,11 @@ public class GePGExactAmountJsonParser implements BmgBaseJsonParser {
 		    menuDTO = renderMenuOnScreen(responseBuilderParamsDTO);
 		} catch (Exception e) {
 		    LOGGER.error("Exception : ", e);
-		    if (e instanceof USSDNonBlockingException) {
-		    	throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode());
-		    } else {
+		    //if (e instanceof USSDNonBlockingException) {
+		    	//throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode());
+		   // } else {
 		    	throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
-		    }
+		   // }
 		}
 		return menuDTO;
     }
@@ -66,13 +66,17 @@ public class GePGExactAmountJsonParser implements BmgBaseJsonParser {
 		StringBuilder pageBody = new StringBuilder();
 		USSDSessionManagement ussdSessionMgmt=responseBuilderParamsDTO.getUssdSessionMgmt();
 		UssdResourceBundle ussdResourceBundle = responseBuilderParamsDTO.getUssdResourceBundle();
-		Locale locale = new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode());
+		Locale locale = null;
+		if(null != ussdSessionMgmt)
+			locale = new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode());
 
 		BillDetails billDetails = new BillDetails();
 		if(null != ussdSessionMgmt && null != ussdSessionMgmt.getTxSessions()){
 			billDetails = (BillDetails) ussdSessionMgmt.getTxSessions().get(USSDConstants.GePG_BILL_DETAIL);
 		}
-		BillersListDO billersListDO = (BillersListDO) ussdSessionMgmt.getTxSessions().get(USSDConstants.GEPG_BILLER_INFO);
+		BillersListDO billersListDO = null;
+		if(null != ussdSessionMgmt)
+			billersListDO = (BillersListDO) ussdSessionMgmt.getTxSessions().get(USSDConstants.GEPG_BILLER_INFO);
 
 		if(null != billDetails) {
 			pageBody.append(ussdResourceBundle.getLabel(BILL_DETAILS_LABEL,locale));

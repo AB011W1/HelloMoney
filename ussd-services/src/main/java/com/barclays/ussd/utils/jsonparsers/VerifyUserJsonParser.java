@@ -4,6 +4,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
 
+import com.barclays.bem.RetrieveCustomerAndProductMarkers.UserFieldType;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.auth.bean.UserProfile;
 import com.barclays.ussd.bean.MenuItemDTO;
@@ -61,6 +62,13 @@ public class VerifyUserJsonParser implements BmgBaseJsonParser {
 
 		    //CR-77
 		    userProfile.setCustomerFirstName(payData.getCustomerFirstName());
+		    
+		    //Change for welcome message for Botswana. INC INC0063990
+		    if(null != payData.getBocBannerFlag())
+		    	userProfile.setBocBannerFlag(payData.getBocBannerFlag());
+		    
+		    if(null != payData.getBannerMessage())
+		    	userProfile.setBannerMessage(payData.getBannerMessage());
 
 		    // userProfile.setUsrSta(USSDConstants.USER_STATUS_MIGRATED);
 		    if (StringUtils.equalsIgnoreCase(USSDConstants.USER_STATUS_MIGRATED, userProfile.getUsrSta())) {

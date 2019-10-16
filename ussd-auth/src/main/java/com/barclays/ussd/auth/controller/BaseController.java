@@ -151,11 +151,11 @@ public class BaseController extends USSDAbstractController {
 	    return FORWARD_SESSION_INVALID;
 	} catch (final Exception e) {
 	    LOGGER.error("Exception occured" + msisdn, e);
-	    if (e instanceof USSDBlockingException) {
-		throw new USSDBlockingException(((USSDBlockingException) e).getErrCode());
-	    } else {
+	    //if (e instanceof USSDBlockingException) {
+		//throw new USSDBlockingException(((USSDBlockingException) e).getErrCode());
+	    //} else {
 		throw new USSDBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
-	    }
+	    //}
 
 	}
 

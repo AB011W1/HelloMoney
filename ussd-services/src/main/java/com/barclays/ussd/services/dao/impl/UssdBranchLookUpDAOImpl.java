@@ -1,5 +1,6 @@
 package com.barclays.ussd.services.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
@@ -57,8 +58,17 @@ public class UssdBranchLookUpDAOImpl extends SqlMapClientDaoSupport implements U
 	}
 	branchDTO.setBankName(formatInput(bank));
 
-	List<UssdBranchLookUpDTO> branchList = this.getSqlMapClientTemplate().queryForList(BRANCH_CODE_LIST_LOOKUP_QUERY, branchDTO);
-	return branchList;
+	List<UssdBranchLookUpDTO> branchList = new ArrayList<UssdBranchLookUpDTO>();
+	branchList=this.getSqlMapClientTemplate().queryForList(BRANCH_CODE_LIST_LOOKUP_QUERY, branchDTO);
+	if(branchList.size()>0){
+		return branchList;
+	}
+	else {
+		String absaBank="Absa";
+		branchDTO.setBankName(formatInput(absaBank));
+		branchList=this.getSqlMapClientTemplate().queryForList(BRANCH_CODE_LIST_LOOKUP_QUERY, branchDTO);
+		return branchList;
+    	}
     }
 
     private String formatInput(String value) {

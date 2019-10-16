@@ -50,8 +50,17 @@ public class Context {
 
   //GHIPS2
     private String isFreeDialUssdFlow;
+    
+    //Kits Fullname. Added for KITS debtor name INC INC1009890417 
+    private String kitsFullName;
 
-    public String getIsFreeDialUssdFlow() {
+    public String getKitsFullName() {
+		return kitsFullName;
+	}
+	public void setKitsFullName(String kitsFullName) {
+		this.kitsFullName = kitsFullName;
+	}
+	public String getIsFreeDialUssdFlow() {
 		return isFreeDialUssdFlow;
 	}
 	public void setIsFreeDialUssdFlow(String isFreeDialUssdFlow) {

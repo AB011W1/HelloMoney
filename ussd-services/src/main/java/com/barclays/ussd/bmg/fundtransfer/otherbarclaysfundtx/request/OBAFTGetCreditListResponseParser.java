@@ -95,10 +95,12 @@ public class OBAFTGetCreditListResponseParser implements BmgBaseJsonParser {
 				 String TRANSACTION_CREDITCARD_LABEL = responseBuilderParamsDTO.getUssdResourceBundle()
 				 	.getLabel("label.fundtr.fundCredit.from", locale);
 				pageBody.append(TRANSACTION_CREDITCARD_LABEL);
-
-				 for(int i =0;i<acts.size();i++)
-				    	if(acts.get(i).getGroupWalletIndicator()!=null && acts.get(i).getGroupWalletIndicator().equals("Y"))
-				    		acts.remove(i);
+				if(null != acts && acts.size() > 0) {
+					 for(int i =0;i<acts.size();i++)
+					    	if(acts.get(i).getGroupWalletIndicator()!=null && acts.get(i).getGroupWalletIndicator().equals("Y"))
+					    		acts.remove(i);
+				}
+				
 				 if (acts == null || acts.isEmpty() || acts.size() == 0) {
 					    throw new USSDNonBlockingException(USSDExceptions.USSD_NO_ELIGIBLE_ACCTS.getBmgCode());
 					}

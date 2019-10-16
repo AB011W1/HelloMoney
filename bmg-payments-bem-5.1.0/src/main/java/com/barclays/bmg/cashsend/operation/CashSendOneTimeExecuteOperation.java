@@ -112,32 +112,39 @@ public class CashSendOneTimeExecuteOperation extends BMBPaymentsOperation {
 	return cashSendExecuteOperationResponse;
     }
 
-    private Properties fetchHSMProperties(Context context) throws Exception {
+    private Properties fetchHSMProperties(Context ckontext) throws Exception {
     	Properties hsmProperties = new Properties();
-    	EncDecUtil encDecUtil = new EncDecUtil();
-    	hsmProperties.put(EncryptionConstants.CASHSENDPROVIDER, DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDPROVIDER));
-    	//TODO remove debug log after testing
-    	LOGGER.debug("CASHSENDPROVIDER: " + DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDPROVIDER));
-    	hsmProperties.put(EncryptionConstants.CASHKEYSTPROVIDER, DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHKEYSTPROVIDER));
-    	LOGGER.debug("CASHKEYSTPROVIDER: " + DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHKEYSTPROVIDER));
-    	hsmProperties.put(EncryptionConstants.CASHSENDALIAS, DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDALIAS));
-    	LOGGER.debug("CASHSENDALIAS: " + DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDALIAS));
-    	hsmProperties.put(EncryptionConstants.ENCRYPTIONMETHOD, DBParamFetchHelper.getSysParamValue(EncryptionConstants.ENCRYPTIONMETHOD));
-    	LOGGER.debug("ENCRYPTIONMETHOD: " + DBParamFetchHelper.getSysParamValue(EncryptionConstants.ENCRYPTIONMETHOD));
-
-    	hsmProperties.put(EncryptionConstants.CASHSENDPARTITIONLABEL, DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDPARTITIONLABEL));
-    	LOGGER.debug("PARTITIONLABEL: " + DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDPARTITIONLABEL));
-    	// Read Encrypted UserName and Password from DB
-    	//String hexEncryptedUserName = DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDUSERNAME);
-    	String hexEncryptedUserKey = DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDPASS);
-    	// Decrypt Password using utility.
-    	LOGGER.debug("decrypt method call of EncDecUtil");
-    	//EncDecrUtility call
-    	LOGGER.debug("CASHSENDPASS: " + DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDPASS));
-    	String decPass = encDecUtil.decrypt(hexEncryptedUserKey);
-    	hsmProperties.put(EncryptionConstants.CASHSENDPASS, decPass);
-    	LOGGER.debug("CASHSENDPASS: " + decPass);
-    	LOGGER.debug("End of decrypt method");
+    	
+    	//Check condition for DR
+    	if(DisasterRecoveryHelper.HSM_DR_FLAG) {
+    		hsmProperties.put(EncryptionConstants.CASHSENDKEYSTORE, DBParamFetchHelper.getSysParamValue(DR + EncryptionConstants.CASHSENDKEYSTORE));
+        	hsmProperties.put(EncryptionConstants.CASHSENDKEYSTOREKEY, DBParamFetchHelper.getSysParamValue(DR + EncryptionConstants.CASHSENDKEYSTOREKEY));
+        	
+        	hsmProperties.put(EncryptionConstants.CASHSENDTRUSTSTORE, DBParamFetchHelper.getSysParamValue(DR + EncryptionConstants.CASHSENDTRUSTSTORE));
+        	hsmProperties.put(EncryptionConstants.CASHSENDTRUSTSTOREKEY, DBParamFetchHelper.getSysParamValue(DR + EncryptionConstants.CASHSENDTRUSTSTOREKEY));
+        	
+        	hsmProperties.put(EncryptionConstants.HSMCASHSENDBOCURL, DBParamFetchHelper.getSysParamValue(DR + EncryptionConstants.HSMCASHSENDBOCURL));
+        	LOGGER.debug("HSMCASHSENDBOCURL: " + DBParamFetchHelper.getSysParamValue(DR + EncryptionConstants.HSMCASHSENDBOCURL));
+    	}
+    	else
+    	{
+    		hsmProperties.put(EncryptionConstants.CASHSENDKEYSTORE, DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDKEYSTORE));
+        	hsmProperties.put(EncryptionConstants.CASHSENDKEYSTOREKEY, DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDKEYSTOREKEY));
+        	
+        	hsmProperties.put(EncryptionConstants.CASHSENDTRUSTSTORE, DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDTRUSTSTORE));
+        	hsmProperties.put(EncryptionConstants.CASHSENDTRUSTSTOREKEY, DBParamFetchHelper.getSysParamValue(EncryptionConstants.CASHSENDTRUSTSTOREKEY));
+        	
+        	hsmProperties.put(EncryptionConstants.HSMCASHSENDBOCURL, DBParamFetchHelper.getSysParamValue(EncryptionConstants.HSMCASHSENDBOCURL));
+        	LOGGER.debug("HSMCASHSENDBOCURL: " + DBParamFetchHelper.getSysParamValue(EncryptionConstants.HSMCASHSENDBOCURL));
+    	}
+    	
+    	    	
+    	hsmProperties.put(EncryptionConstants.BUSINESSID, ckontext.getBusinessId());
+    	LOGGER.debug("BUSINESSID: " + ckontext.getBusinessId());
+    	
+    	hsmProperties.put(EncryptionConstants.LOGINID, ckontext.getLoginId());
+    	LOGGER.debug("LOGINID: " + ckontext.getLoginId());
+    	  	    	  	
 
     	//Add Pin length and pin padding with hsm properties
     	hsmProperties.put(EncryptionConstants.PINLENGTH, DBParamFetchHelper.getSysParamValue(EncryptionConstants.PINLENGTH));

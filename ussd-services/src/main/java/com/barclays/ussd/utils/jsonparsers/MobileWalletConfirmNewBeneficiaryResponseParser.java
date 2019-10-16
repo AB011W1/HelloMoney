@@ -72,7 +72,7 @@ public class MobileWalletConfirmNewBeneficiaryResponseParser  implements BmgBase
 				name = customerName;
 			}
 			UserProfile userProfile = responseBuilderParamsDTO.getUssdSessionMgmt().getUserProfile();
-			Locale locale = new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode());
+			//Locale locale = new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode());
 
 			try {
 				String payNickNameMaxLength = getSystemPreferenceData(userProfile, SystemPreferenceConstants.SYS_PARAM_BNF,

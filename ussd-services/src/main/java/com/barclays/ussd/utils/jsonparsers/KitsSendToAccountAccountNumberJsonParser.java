@@ -83,7 +83,9 @@ public class KitsSendToAccountAccountNumberJsonParser implements BmgBaseJsonPars
 		USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
 		AuthUserData authData= ((AuthUserData)ussdSessionMgmt.getUserAuthObj());
 	    List<CustomerMobileRegAcct> acts=authData.getPayData().getCustActs();
-	    List<AccountDetails> custActs = acntPayData.getSrcLst();
+	    List<AccountDetails> custActs = new ArrayList<AccountDetails>();
+	    if(null != acntPayData)
+	    	custActs = acntPayData.getSrcLst();
 		if (acntPayData != null) {
 			if (acntPayData.getSrcLst() != null && !acntPayData.getSrcLst().isEmpty()) {
 				menuItemDTO = new MenuItemDTO();
