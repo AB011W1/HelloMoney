@@ -910,5 +910,47 @@ public final class USSDConstants {
     public static final String PROBASE_INVOICE_DETAILS = "probaseInvoiceDetail";
 	
 	public static final String LEAD_GEN_SUB_PRODUCT_NAME_TIMIZA = "Timiza";
+	public static final int REFERENCE_NUMBER_LENGTH = 10;
+	public static final boolean USE_LETTER = false;
+	public static final boolean USE_NUMBER = true;
+	
+	//USSD Auth request
+	public static final String USSD_AUTH_ACCOUNT_NUMBER = "Beneficiary Account Number";
+	public static final String USSD_AUTH_AMOUNT_IN_FIGURES = "Amount In Figures";
+	public static final String USSD_AUTH_FREQUENCY = "Frequency";
+	public static final String USSD_AUTH_DEPOSIT_AMOUNT = "Fixed Deposit Amount";
+	public static final String USSD_AUTH_TERM_IN_DAYS = "Term_in_ Days";
+	public static final String USSD_AUTH_TERM_IN_MONTHS = "Term_in_Months";
+	public static final String USSD_AUTH_INTEREST_RATE = "Interest Rate";
+	public static final String CREDIT_CARD_NUMBER = "Card Number";
+	public static final String TERM_DEPOSIT_UPON_MATURITY = "Upon Maturity";
+	public static final String DORMANT_ACCOUNT_NUMBER = "Account Number";
+	public static final String MOBILE_NO = "mobileNo";
+	public static final String USSD_ACCOUNT_NUMBER = "accountNumber";
+	public static final String OPTIMISTIC_LOCK_ID = "OptimisticLockID";
+	public static final String USSD_STATUS = "USSDStatus";
+	public static final String FIELD_NAME = "Field";
+	public static final String OLD_VALUE = "OldValue";
+	public static final String NEW_VALUE = "NewValue";
+	public static final String CASE_TYPE = "CaseType";
+	public static final String DOCUMENTS = "Documents";
+	public static final String UPDATE_RECORD_LIST = "documentDetails";
+	public static final String AUTHREQUEST_APPROVE_LABEL = "label.auth.approve";
+	public static final String AUTHREQUEST_REJECT_LABEL = "label.auth.reject";
+	public static final String NON_FINANCIAL_AMEND_LABEL = "label.nonFinancial.amend";
+	public static final String STANDING_ORDER_NEW_LABEL = "label.standingOrder.new";
+	public static final String STANDING_ORDER_CANCEL_LABEL = "label.standingOrder.cancel";
+	public static final String TERM_DEPOSIT_NEW_LABEL = "label.termDeposit.new";
+	public static final String TERM_DEPOSIT_CANCEL_LABEL = "label.termDeposit.cancel";
+	public static final String CREDIT_CARD_CANCEL_LABEL = "label.creditCard.cancel";
+	public static final String DORMANT_ACCOUNT_REACTIVATION_LABEL = "label.dormantAccount.reactivation";
+	public static final String STANDING_ORDER_NEW_USECASE = "Standing Order: NEW";
+	public static final String STANDING_ORDER_CANCEL_USECASE = "Standing Order: CANCEL";
+	public static final String TERM_DEPOSIT_NEW_USECASE = "Term Deposit: NEW";
+	public static final String TERM_DEPOSIT_CANCEL_USECASE = "Term Deposit: CANCEL";
+	public static final String CREDIT_CARD_CANCEL_USECASE = "Card Maintenance: CANCEL";
+	public static final String DORMANT_ACCOUNT_REACTIVATION_USECASE = "Dormant Account Activation";
+	public static final String APPROVE_REQUEST_INPUT = "1";
+	public static final String REJECT_REQUEST_INPUT = "2";
 	
 }

@@ -39,8 +39,15 @@ public class MobileWalletConfirmSavedBeneficiaryRequestBuilder implements BmgBas
 		if(beneList!=null && beneList.size() != 0){
 
 			billerId = beneList.get(Integer.parseInt(userInputMap.get(USSDInputParamsEnum.MOBILE_WALLET_PAYEE_LIST.getParamName())) - 1).getBillerId();
-			mobileNo = ("233")+refNo.getPhNo();
-
+			mobileNo = refNo.getPhNo();
+			if(mobileNo.startsWith("0") && mobileNo.length()>9)
+			{
+				mobileNo=("233")+mobileNo.substring(1, mobileNo.length());
+			}
+			else
+			{
+				mobileNo=("233")+mobileNo;
+			}
 			SystemParameterDTO systemParameterDTO = new SystemParameterDTO();
 			systemParameterDTO.setBusinessId(BMBContextHolder.getContext().getBusinessId());
 			systemParameterDTO.setSystemId("UB");
@@ -66,4 +73,3 @@ public class MobileWalletConfirmSavedBeneficiaryRequestBuilder implements BmgBas
 	}
 
 }
-

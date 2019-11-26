@@ -84,6 +84,8 @@
 	<srv tranId="KE_SEND_TO_ACCOUNT"  importTran="SendToAccount" firstScreenSequencerId="1"/>
 
     <!--  KITS Changes Ends -->
+    
+    <srv tranId="KE_AUTH_REQUEST" importTran="AuthRequest" firstScreenSequencerId="1"/>
 
 
 	<!--Skip Nodes Syntax Starts-->
@@ -285,4 +287,14 @@
 		<transaction tranDataId="CSOTP007" type="endTran" bmgOpCode="OP0582" tranDataOpCode="CSOTP007" headerId="label.cashsend.result" homeOptionReq="true"/>
 	</tx>
 
+	<!-- USSD Sybrin Changes Start -->
+	<tx id="tx4.0" tranId="AuthRequest">
+		<transaction tranDataId="OTBP014" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OTBP014"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="BE001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="BE001"  headerId="label.select.accnum"  backOptionReq="true" />
+		<transaction tranDataId="OTBP015" type="list" bmgOpCode="OP0950" tranDataOpCode="OTBP015"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="ATR000" type="list" bmgOpCode="OP0994" tranDataOpCode="ATR000"  headerId="label.ussdauth.confirm" backOptionReq="true" />
+		<transaction tranDataId="ATR001" type="endTran" bmgOpCode="OP0995" tranDataOpCode="ATR001"  headerId="LBL9999" homeOptionReq="true" />
+		<transaction tranDataId="ATR002" type="list" bmgOpCode="OP0994" tranDataOpCode="ATR002"  headerId="label.ussdauth.confirm" backOptionReq="true" />
+	</tx>
+	<!-- USSD Sybrin Changes End -->
 </serviceMappings>

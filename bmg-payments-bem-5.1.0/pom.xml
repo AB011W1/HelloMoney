@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<parent>
-		<artifactId>bmg-parent-2.0</artifactId>
-		<groupId>com.barclays.bmg</groupId>
-		<version>2.0</version>
-		<relativePath>../bmg-parent-2.0/pom.xml</relativePath>
-	</parent>
+<parent>
+	<artifactId>bmg-parent-2.0</artifactId>
+	<groupId>com.barclays.bmg</groupId>
+	<version>2.0</version>
+	<relativePath>../bmg-parent-2.0/pom.xml</relativePath>
+</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.barclays.bmg</groupId>
 	<artifactId>bmg-payments-bem-5.1.0</artifactId>
@@ -46,6 +46,13 @@
 			<version>1.0.22</version>
 			<scope>provided</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.ussd-auth</groupId>
+			<artifactId>Sybrin</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>hsm-connect</artifactId>
@@ -57,6 +64,4 @@
 			<version>1.0</version>
 		</dependency>
 	</dependencies>
-
-
 </project>

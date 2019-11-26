@@ -15,6 +15,7 @@ import javax.xml.rpc.handler.HandlerInfo;
 import javax.xml.rpc.soap.SOAPFaultException;
 
 import org.aopalliance.intercept.MethodInvocation;
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.aop.support.AopUtils;
 import org.springframework.beans.BeansException;
@@ -45,6 +46,8 @@ public class BMGJaxRpcPortProxyFactoryBean extends JaxRpcPortProxyFactoryBean im
     private String endpointAddressName;
     private String cacheKey;
     private SystemParameterDAO systemParameterDAO;
+    public static final String DR_KEY_PREFIX = "DR_";
+    public static final String SIT_KEY_PREFIX = "SIT_";
     private static final Logger LOGGER = Logger.getLogger(BMGJaxRpcPortProxyFactoryBean.class);
 
     public SystemParameterDAO getSystemParameterDAO() {
@@ -147,7 +150,8 @@ public class BMGJaxRpcPortProxyFactoryBean extends JaxRpcPortProxyFactoryBean im
 	return doInvoke(invocation);
     }
 
-    public Object doInvoke(MethodInvocation invocation) throws Throwable {
+    @SuppressWarnings("deprecation")
+	public Object doInvoke(MethodInvocation invocation) throws Throwable {
 	Remote stub = getStub(invocation);
 	try {
 	    return doInvoke(invocation, stub);
@@ -168,9 +172,34 @@ public class BMGJaxRpcPortProxyFactoryBean extends JaxRpcPortProxyFactoryBean im
 	LOGGER.debug("endpointKey before is null: " + endpointKey);
 
 	if (endpointKey == null) {
-
+		String paramId = this.endpointAddressName;
+		
+		
+		if(DisasterRecoveryHelper.BEM_DR_FLAG) {
+			if (paramId.startsWith(DisasterRecoveryHelper.DR_KEY_PREFIX)
+					|| paramId.startsWith(DisasterRecoveryHelper.SIT_KEY_PREFIX)) {
+				this.endpointAddressName = paramId;
+			}
+			else
+			{
+				this.endpointAddressName = DR_KEY_PREFIX + paramId;
+			}
+		}
+		
+		else if(DisasterRecoveryHelper.BEM_SIT_FLAG)
+		{
+			if (paramId.startsWith(DisasterRecoveryHelper.DR_KEY_PREFIX)
+					|| paramId.startsWith(DisasterRecoveryHelper.SIT_KEY_PREFIX)) {
+				this.endpointAddressName = paramId;
+			}
+			else
+			{
+				this.endpointAddressName = SIT_KEY_PREFIX + paramId;
+			}
+		}
+		
 	    /* ------------- Disaster Recovery Implementation START ---------------- */
-	    String paramId = this.endpointAddressName;
+	   /* String paramId = this.endpointAddressName;
 	    String tempStr = paramId;
 	    LOGGER.debug("paramId before handleDRParameter: " + paramId);
 	    paramId = DisasterRecoveryHelper.handleDrParmeter(paramId);
@@ -182,7 +211,7 @@ public class BMGJaxRpcPortProxyFactoryBean extends JaxRpcPortProxyFactoryBean im
 	    } else {
 		LOGGER.debug("null != tempStr && !tempStr.equals(paramId) is false");
 		this.endpointAddressName = tempStr;
-	    }
+	    }*/
 
 	    /* ------------- Disaster Recovery Implementation END ---------------- */
 

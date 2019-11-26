@@ -28,5 +28,15 @@ public interface RequestConstants {
 
     // Bmg call added to minimize response time for last step
     String BANK_CIF = "bankcif";
+    
+    //USSD Authentication
+    public static final String AUTH_REQUEST_APPROVE = "APPROVE";
+    public static final String AUTH_REQUEST_REJECT = "REJECT";
+    public static final String AUTH_REQUEST_OPTIMISTIC_LOCK_ID = "OptimisticLockID";
+    public static final String AUTH_REQUEST_USSD_STATUS = "USSDStatus";
+    public static final String AUTH_REQUEST_DOCUMENT_STATE = "Modified";
+    public static final String AUTH_REQUEST_ACTIVITY_ID = "AUTHENTICATE_CUSTOMER_REQUEST";
+    public static final String AUTH_CARD_CHANGE_REQUEST_ACTIVITY_ID = "AUTHENTICATE_CARD_CHANGE_REQUEST";
+    public static final String UPDATE_CUSTOMER_REQUEST_ACTIVITY_ID = "UPDATE_CUSTOMER_REQUEST";
 
 }

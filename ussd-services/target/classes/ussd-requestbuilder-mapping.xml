@@ -329,7 +329,6 @@
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_PROD_SUB_LST.getTranId()}" value-ref="leadGenerationProdSubListRequestBuilder"/>
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_CONFIRM.getTranId()}" value-ref="leadGenerationConfirmRequestBuilder"/>
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_SUBMIT.getTranId()}" value-ref="leadGenerationSubmitRequestBuilder"/>
-		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_TIMIZA.getTranId()}" value-ref="leadGenerationTimizaRequestBuilder"/>
 <!-- KITS Changes Starts -->
 		<!--Registration-->
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).KITS_REG_ACCOUNT_NUM.getTranId()}" value-ref="kitsRegisterAccountNumberRequestBuilder"/>
@@ -566,5 +565,10 @@
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).PROBASE_ACCOUNT.getTranId()}"  value-ref="probaseAccountRequestBuilder" />
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).PROBASE_SUBMIT.getTranId()}"  value-ref="probaseSubmitRequestBuilder" />
 		<!-- Probase ends -->
+		
+		<!--  AUTH REQUEST -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CHANGE_REQUEST_DETAILS.getTranId()}" value-ref="authenticateCustomerRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AUTHORIZE_CHANGE_REQUEST.getTranId()}" value-ref="ussdAuthenticationChangeRequestBuilder"/>
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CARD_CHANGE_REQUEST_DETAILS.getTranId()}" value-ref="authenticateCardChangeRequestBuilder"/>
 </util:map>
 </beans>

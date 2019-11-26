@@ -80,9 +80,9 @@
 
 <Resource name="jdbc/SHMDS" auth="Container"
       type="javax.sql.DataSource"
-      username="SSASHM" password="Welcome123#"
+      username="SSASHMA" password="Readonlycit@123"
       driverClassName="oracle.jdbc.OracleDriver"
-      url="jdbc:oracle:thin:@cs4t.wload.barclays.co.uk:3333:PSSABIRU" />
+      url="jdbc:oracle:thin:@oracon-scan.corp.dsarena.com:1621/ddcdevs1.corp.dsarena.com" />
 
 
 </Context>

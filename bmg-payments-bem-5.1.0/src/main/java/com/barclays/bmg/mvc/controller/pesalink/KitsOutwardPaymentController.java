@@ -3,6 +3,7 @@ package com.barclays.bmg.mvc.controller.pesalink;
 
 
 import java.math.BigDecimal;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,6 +12,7 @@ import org.apache.log4j.Logger;
 import org.springframework.validation.BindException;
 
 import com.barclays.bmg.constants.BMGProcessConstants;
+import com.barclays.bmg.constants.SessionConstant;
 import com.barclays.bmg.context.Context;
 import com.barclays.bmg.dto.Amount;
 import com.barclays.bmg.dto.BeneficiaryDTO;
@@ -68,6 +70,10 @@ public class KitsOutwardPaymentController extends BMBAbstractCommandController{
     	context.setActivityId(request.getParameter("activityId"));
     	context.setActivityRefNo(BMBCommonUtility.generateRefNo());
 		context.setOpCde(request.getParameter("opCde"));
+		
+		//Set CustomerFullName for KITS INC INC1009890417
+		Map<String, Object> userMap = getUserMapFromSession(request);
+		context.setKitsFullName((String) userMap.get(SessionConstant.SESSION_KITS_FULL_NAME));
 
 		//Set the fields for MakeBillPaymentRequest - CPB 09/05
 		Charge chargeDTO = null;

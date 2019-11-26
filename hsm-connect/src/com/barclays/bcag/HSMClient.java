@@ -1,7 +1,7 @@
 package com.barclays.bcag;
 
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.security.AlgorithmParameters;
 import java.security.Key;
 import java.security.KeyStore;
@@ -14,125 +14,153 @@ import javax.crypto.Cipher;
 import javax.crypto.SealedObject;
 import javax.crypto.spec.IvParameterSpec;
 
+import org.apache.commons.lang.RandomStringUtils;
 import org.apache.log4j.Logger;
 
+import com.agl.cryptocommon.dom.CryptoGatewayRequest;
+import com.agl.cryptocommon.dom.CryptoGatewayResponse;
+import com.agl.cryptogateway.client.CryptoClientApi;
+import com.agl.cryptogateway.client.ICryptoClient;
 import com.cryptomathic.hsmportal.util.Hex;
-import com.safenetinc.luna.LunaSlotManager;
 
 public class HSMClient {
-	private static int slot = 0;
 	private static String passwd = null;
 	private static String provider = null;
-	private static String keystoreProvider = null;
 	private static String alias = null;
 	private static String encryptionMethod = null;
 	public static SealedObject so = null;
 	private static final Logger LOGGER = Logger.getLogger(HSMClient.class);
 	private static final String ALGORITHM = "DESede";
-
-	//TODO
-
-	private static String partitionLabel = null; //= "SHM3DES1";//prod-SHM3DES1,o.Env - SHM-3DES
+	private static String cashHsmBocUrl = null;
+	private static String businessID = null;
+	private static String loginID = null;	
+	private static KeyStore keyStore = null;
+	private static KeyStore trustStore = null;
+	private static char[] keystorePwdCharArray = null;
+	private static char[] truststorePwdCharArray = null;
+	private static String filename_keystore;
+	private static String filename_truststore;
 
 	public static void setProperties(Properties properties) {
 		try {
 			LOGGER.debug("Set HSM properties");
-			passwd = properties.getProperty("CASHSENDPASS");
-			provider = properties.getProperty("CASHSENDPROVIDER");
-			keystoreProvider = properties.getProperty("CASHKEYSTPROVIDER");
-			alias = properties.getProperty("CASHSENDALIAS");
-			encryptionMethod = properties.getProperty("ENCRYPTIONMETHOD");
-			partitionLabel = properties.getProperty("CASHSENDPARTITIONLABEL");
+			cashHsmBocUrl = properties.getProperty("HSMCASHSENDBOCURL");
+			businessID = properties.getProperty("BUSINESSID");
+			loginID = properties.getProperty("LOGINID");
+			filename_keystore = properties.getProperty("CASHSENDKEYSTORE");
+			filename_truststore = properties.getProperty("CASHSENDTRUSTSTORE");
+			keystorePwdCharArray = properties.getProperty("CASHSENDKEYSTOREKEY").toCharArray();
+			truststorePwdCharArray = properties.getProperty("CASHSENDTRUSTSTOREKEY").toCharArray();
+			if (LOGGER.isDebugEnabled()) {
+			    LOGGER.debug("HSMClient(properties) fetching the keystore from classpath");
+			}
+			System.out.println("HSMClient --> Keystore filename:: "+filename_keystore);
+			System.out.println("HSMClient --> Truststore filename:: "+filename_truststore);
+			LOGGER.info("HSMClient(properties) fetching the keystore and truststore from classpath");
+			System.out.println("HSMClient(properties) fetching the keystore from classpath");
+			if(null == keyStore) {
+				LOGGER.debug("Get Keystore object");
+			    keyStore = getKeyStore(filename_keystore, keystorePwdCharArray);
+			}
+			if(null == trustStore) {
+				LOGGER.debug("Get Truststore object");
+			    trustStore = getKeyStore(filename_truststore, truststorePwdCharArray);
+			}
+		    
 		} catch (Exception e) {
-			LOGGER.error("Exception: " + e.getStackTrace());
+			LOGGER.error("Exception: " + e.getStackTrace().toString());
 		}
 		LOGGER.debug("Exit from HSM properties");
 	}
 
 	public static String encrypt(String pin) {
 		LOGGER.debug("In HSMClient encrypt method pin is : " + pin);
-		Key desKey = null;
-		Cipher desEncCipher = null;
-		byte[] iv = null;
-		boolean needParms = true;
-		AlgorithmParameters lunaParams = null;
 		String encryptedValue = null;
-		KeyStore myStore = null;
-		LunaSlotManager slotManager = null;;
+
 		try {
-			LOGGER.debug("LunaSlotManager.getInstance() call");
-			slotManager = LunaSlotManager.getInstance();
-			LOGGER.debug("slotmanager = " + slotManager);
-	    	int slotNumber = 0;
-	    	if(null != slotManager)
-	    		slotNumber = slotManager.findSlotFromLabel(partitionLabel);
-	    	if (slotNumber < 0) {
-	            throw new KeyStoreException("Unable to find slot by label.");
-	        }
-			LOGGER.debug("Get byte array input stream");
-			ByteArrayInputStream is1 = new ByteArrayInputStream(("slot:" + slotNumber).getBytes());
 
-			LOGGER.debug("Slot" + slotNumber + "found.Get instance of keystoreprovider");
-			myStore = KeyStore.getInstance(keystoreProvider);
-			LOGGER.debug("Load store");
-			myStore.load(is1, passwd.toCharArray());
-			desKey = myStore.getKey(alias, passwd.toCharArray());
-			if (LOGGER.isDebugEnabled()) {
-				LOGGER.debug("DESKey is " + desKey);
-			}
+			LOGGER.debug("Call getInstance method of CryptoClientApi");
+			// TODO Generate Keystore and Truststore for higher environment
+			ICryptoClient instance = CryptoClientApi.getInstance(keyStore, trustStore, cashHsmBocUrl,keystorePwdCharArray,truststorePwdCharArray);
 
-			desEncCipher = Cipher.getInstance(encryptionMethod, provider);
-			LOGGER.debug("Getting cipher instance");
-			needParms = false;
-			iv = desEncCipher.getIV();
-			if (iv == null && needParms) {
-				lunaParams = AlgorithmParameters
-						.getInstance(ALGORITHM, provider);
-				IvParameterSpec IV8 = new IvParameterSpec(new byte[8]);
-				lunaParams.init(IV8);
-			}
-			LOGGER.debug("Call init method of Cipher with ENCRYPT_MODE "
-					+ Cipher.ENCRYPT_MODE);
-			desEncCipher.init(Cipher.ENCRYPT_MODE, desKey, lunaParams);
-			if (LOGGER.isDebugEnabled()) {
-				LOGGER.debug("Plaintext bytes");
-			}
-			byte[] encryptedbytes = null;
-			encryptedbytes = desEncCipher.doFinal(Hex.decode(pin));
-			LOGGER.debug("encrypted bytes : " + encryptedbytes);
-			encryptedValue = Hex.encode(encryptedbytes);
+			LOGGER.debug("Create object of CryptoGatewayRequest");
+			CryptoGatewayRequest objCryptoGatewayRequest = new CryptoGatewayRequest();
+			LOGGER.debug("BusinessID : " + businessID);
+			objCryptoGatewayRequest.setBusinessId(businessID);
+			LOGGER.debug("PIN" + pin);
+			objCryptoGatewayRequest.setSubject(pin);
+			objCryptoGatewayRequest.setSystemId("SHM");
+			
+			//Generate Unique reference number
+			String urn = generateReferenceNumber();
+			LOGGER.debug("URN : " + urn);
+			objCryptoGatewayRequest.setUrn(urn);
+			LOGGER.debug("Login ID : " + loginID);
+			objCryptoGatewayRequest.setUserId(loginID);
+
+			LOGGER.debug("Call encrypt method of CryptoGatewayRequest");
+			CryptoGatewayResponse objCryptoGatewayResponse = instance.encrypt(objCryptoGatewayRequest);
+			LOGGER.debug("Response from CryptoGateway : " + objCryptoGatewayResponse.getStatus());
+			encryptedValue = objCryptoGatewayResponse.getSubject();
+
 			LOGGER.debug("encrypted pin: " + encryptedValue);
-		} catch (KeyStoreException kse) {
-			LOGGER.error("Unable to create keystore object");
-			System.out.println("Unable to create keystore object");
-
-		} catch (NoSuchAlgorithmException nsae) {
-			LOGGER.error("Unexpected NoSuchAlgorithmException while loading keystore");
-			System.out
-					.println("Unexpected NoSuchAlgorithmException while loading keystore");
-
-		} catch (CertificateException e) {
-			LOGGER.error("Unexpected CertificateException while loading keystore");
-			System.out
-					.println("Unexpected CertificateException while loading keystore");
-
-		} catch (IOException e) {
-			// this should never happen
-			LOGGER.error("Unexpected IOException while loading keystore");
-			System.out
-					.println("Unexpected IOException while loading keystore");
-
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			LOGGER.error(e.getMessage());
-		}
-		finally{
-			slotManager = null;
-			desEncCipher = null;
-			myStore = null;
 		}
 
 		return encryptedValue;
+	}
+	
+	private static String generateReferenceNumber() {
+			// Set<String> numbers = new HashSet<String>();
+			String generatedString = RandomStringUtils.random(6,
+					false, true);
+			if (generatedString.length() != 6 || generatedString.startsWith("-")) {
+				// System.out.println("failure at " + count);
+				generateReferenceNumber();
+			}
+			return generatedString;
+		}
+
+	@SuppressWarnings("unused")
+	private static KeyStore getKeyStore(String filenm, char[] keystorePwdCharArray)
+			throws KeyStoreException, NoSuchAlgorithmException, CertificateException, IOException {
+		if (LOGGER.isDebugEnabled()) {
+			LOGGER.debug("Entry HSMClient getKeyStore()fetching the keystore from classpath");
+		}
+		LOGGER.info("Entry HSMClient getKeyStore() fetching the keystore from classpath");
+		System.out.println("Entry HSMClient getKeyStore() fetching the keystore from classpath");
+		KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+		InputStream resourceAsStream = null;
+		System.out.println("getKeyStore --> filenm:: " + filenm);
+		try {
+
+			resourceAsStream = HSMClient.class.getResourceAsStream(filenm);
+			if (LOGGER.isDebugEnabled()) {
+				LOGGER.debug("HSMClient getKeyStore() after getResourceAsStream");
+			}
+			LOGGER.info("HSMClient getKeyStore() after getResourceAsStream");
+			System.out.println("HSMClient getKeyStore() after getResourceAsStream");
+			ks.load(resourceAsStream, keystorePwdCharArray);
+			if (LOGGER.isDebugEnabled()) {
+				LOGGER.debug("HSMClient getKeyStore() kestore loaded successfully");
+			}
+			LOGGER.info("HSMClient getKeyStore() kestore loaded successfully");
+			System.out.println("HSMClient getKeyStore() kestore loaded successfully");
+		} catch (Exception e) {
+			LOGGER.error(e.getMessage());
+
+		} finally {
+			if (resourceAsStream != null) {
+				resourceAsStream.close();
+			}
+		}
+		if (LOGGER.isDebugEnabled()) {
+			LOGGER.debug("Exit HSMClient getKeyStore()");
+		}
+		LOGGER.info("Exit HSMClient getKeyStore()");
+		System.out.println("Exit HSMClient getKeyStore()");
+		return ks;
 	}
 
 	public static String decrypt(KeyStore myStore, String encryptedString) {
@@ -151,10 +179,9 @@ public class HSMClient {
 			iv = desDecCipher.getIV();
 			if (iv == null && needParms) {
 				// is AES ok for any secret key?
-				lunaParams = AlgorithmParameters
-						.getInstance(ALGORITHM, provider);
-				IvParameterSpec IV8 = new IvParameterSpec(new byte[] { 0x00,
-						0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 });
+				lunaParams = AlgorithmParameters.getInstance(ALGORITHM, provider);
+				IvParameterSpec IV8 = new IvParameterSpec(
+						new byte[] { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 });
 				lunaParams.init(IV8);
 			}
 			desDecCipher.init(Cipher.DECRYPT_MODE, desKey, lunaParams);

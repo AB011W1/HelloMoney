@@ -7,6 +7,8 @@ import com.barclays.bem.RetrieveIndividualCustBySCVID.CustomerIdentificationType
 import com.barclays.bem.RetrieveIndividualCustBySCVID.IndividualCustomerDetailsResponse;
 import com.barclays.bem.RetrieveIndividualCustBySCVID.ProductProcessorDetails;
 import com.barclays.bem.RetrieveIndividualCustBySCVID.RetrieveIndividualCustomerBySCVIDResponse;
+import com.barclays.bmg.constants.ActivityConstant;
+import com.barclays.bmg.constants.SystemParameterConstant;
 import com.barclays.bmg.context.Context;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.dao.core.context.impl.DAOContext;
@@ -38,8 +40,13 @@ public class RetrieveIndCustBySCVIDResAdptOperation {
 	    lastName = lastName == null ? "" : lastName;
 	    Context context = retrieveIndCustBySCVIDServiceRequest.getContext();
 	    // change made according to audit report data
-	    context.setFullName(lastName);
-
+	    if (null!=context  && ("GHBRB").equalsIgnoreCase(context.getBusinessId())&& ("Y").equals(context.getContextMap().get(SystemParameterConstant.isGHIPS2Flag))
+				&& context.getActivityId().equals(ActivityConstant.MOBILE_WALLET_PAYEE_ACTIVITY_ID) && !context.getIsFreeDialUssdFlow().equalsIgnoreCase("TRUE")) {
+	    	context.setFullName(firstName+" "+lastName);
+	    }
+	    else {
+	    	context.setFullName(lastName);
+	    }
 	    retrieveIndCustBySCVIDServiceResponse.setFirstName(firstName);
 	    retrieveIndCustBySCVIDServiceResponse.setLastName(lastName);
 

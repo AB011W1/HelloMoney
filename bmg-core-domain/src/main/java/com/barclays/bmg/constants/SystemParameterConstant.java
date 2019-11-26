@@ -195,5 +195,16 @@ public interface SystemParameterConstant {
 	//Service Version No. for SSAMakeBillPayment Probase
 	String SERVICE_HEADER_SERVICE_VER_NO_PROBASE = "SERVICE_HEADER_SERVICE_VER_NO_PROBASE";
 	String isProbaseFlag="isProbaseFlag";
+	
+	 //Set welcome banner in customerDTO for INC INC0063990
+    String LOGIN_ANNOUNCE_FLAG = "LOGIN_ANNOUNCE_FLAG";
+    String LOGIN_ANNOUNCE_L1 = "LOGIN_ANNOUNCE_L1";
 
+    //Parameters for USSD Sybrin Auth Request
+    public static final String AUTH_REQUEST_LOGIN_USERNAME = "USSDAUTHENTICATIONUSERNAME";
+    public static final String AUTH_REQUEST_LOGIN_PASSWORD = "USSDAUTHENTICATIONPASSWORD";
+    public static final String AUTH_REQUEST_ENTITY_ID = "USSDAUTHENTICATIONENTITYID";
+    public static final String AUTH_REQUEST_PROCESS_ID = "USSDAUTHENTICATIONPROCESSID";
+    public static final String AUTH_REQUEST_LOCK_RECORDS = "USSDAUTHENTICATIONLOCKRECORDS";
+    public static final String AUTH_REQUEST_SERVICE_ENDPOINT = "USSDAUTHENTICATION_SERVICE_ENDPOINT";
 }

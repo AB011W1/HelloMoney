@@ -6,8 +6,6 @@ import java.util.Map;
 
 import com.barclays.bmg.dto.BaseDomainDTO;
 
-;
-
 public class CustomerDTO extends BaseDomainDTO {
     /**
 	 *
@@ -33,8 +31,37 @@ public class CustomerDTO extends BaseDomainDTO {
     private String email;
     private String oldScvId;
     private String userStatusInMCE;
+    
+   //Botswana welcome banner INC INC0063990  
+    private String welcomeBanner;
+    private String bocBannerFlag;
+    private String isBannerFlag;
+    
+    public String getIsBannerFlag() {
+		return isBannerFlag;
+	}
 
-    public String getFirstName() {
+	public void setIsBannerFlag(String isBannerFlag) {
+		this.isBannerFlag = isBannerFlag;
+	}
+
+	public String getBocBannerFlag() {
+		return bocBannerFlag;
+	}
+
+	public void setBocBannerFlag(String bocBannerFlag) {
+		this.bocBannerFlag = bocBannerFlag;
+	}
+
+	public String getWelcomeBanner() {
+		return welcomeBanner;
+	}
+
+	public void setWelcomeBanner(String welcomeBanner) {
+		this.welcomeBanner = welcomeBanner;
+	}
+
+	public String getFirstName() {
 		return firstName;
 	}
 

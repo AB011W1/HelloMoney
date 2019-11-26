@@ -649,7 +649,7 @@ public final class USSDInputValidator {
 
 		if(tranId.equalsIgnoreCase("ATT007")|| tranId.equalsIgnoreCase("OTBP014")
 				|| tranId.equalsIgnoreCase("BP007")|| tranId.equalsIgnoreCase("MWTU007")
-				|| tranId.equalsIgnoreCase("OBAFTNRC00") || tranId.equalsIgnoreCase("OBAFT018")
+				|| tranId.equalsIgnoreCase("OBAFTNRC00") || tranId.equalsIgnoreCase("OBAFT018") || tranId.equalsIgnoreCase("ATR000") || tranId.equalsIgnoreCase("ATR002")
 				){
 			if (!StringUtils.isEmpty(userInput) && StringUtils.isNumeric(userInput)) {
 				blnResult = LongValidator.getInstance().isInRange(Long.parseLong(userInput), 1, 2);

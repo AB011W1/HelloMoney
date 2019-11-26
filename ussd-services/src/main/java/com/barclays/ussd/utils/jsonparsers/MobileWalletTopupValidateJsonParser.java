@@ -36,6 +36,7 @@ public class MobileWalletTopupValidateJsonParser implements BmgBaseJsonParser {
     private static final String TRANSACTION_SERVICE_LABEL = "label.transaction.service";
     private static final String CREDIT_LABEL = "label.mwallet.creditCard";
     private static final String TRANSACTION_FEE_LABEL = "label.transactionfee.msg";
+    private static final String GHIPS2_CHARGE_NOTE_LABEL = "label.ghipschargenote.msg";
     private String pilotValue = null;
     // private static final String TRANSACTION_AMT_LIMIT_ERROR = "BMB90011";
     private static final String XCELERATE_OFFLINE_LABEL = "label.xcelerate.offline.acceptance";
@@ -109,7 +110,8 @@ public class MobileWalletTopupValidateJsonParser implements BmgBaseJsonParser {
 	    String transactionFeeLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(TRANSACTION_FEE_LABEL, locale);
 	    String xelerateOfflineLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(XCELERATE_OFFLINE_LABEL,
 			    new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));
-
+	    //added for GHIPS2 charge note
+	    String ghipsChargeNote=responseBuilderParamsDTO.getUssdResourceBundle().getLabel(GHIPS2_CHARGE_NOTE_LABEL, locale);
 	    String confirmLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(CONFIRM_LABEL, locale);
 	    // CR39 Change for KE confirm screen commented as a part of CR47
 	  /*  if (ussdSessionMgmt.getBusinessId().equalsIgnoreCase(USSDConstants.BUSINESS_ID_KEBRB)) {
@@ -191,6 +193,9 @@ public class MobileWalletTopupValidateJsonParser implements BmgBaseJsonParser {
 		pageBody.append(USSDConstants.SINGLE_WHITE_SPACE).append(mobileWalletTxValidatePayData.getTxnAmt().getCurr());*/
 	 //   }
 	    //&& Condition added as part of CR50
+		if(logContext.getBusinessId().equals("GHBRB") ) {
+		pageBody.append(USSDConstants.NEW_LINE).append(ghipsChargeNote);
+		}
 	    if (!responseBuilderParamsDTO.isErrorneousPage()) {
 		pageBody.append(USSDConstants.NEW_LINE).append(confirmLabel);
 	    }
@@ -201,7 +206,8 @@ public class MobileWalletTopupValidateJsonParser implements BmgBaseJsonParser {
 	menuItemDTO.setStatus(USSDConstants.STATUS_CONTINUE);
 	menuItemDTO.setPageHeader(responseBuilderParamsDTO.getHeaderId());
 	menuItemDTO.setPaginationType(PaginationEnum.LISTED);
-	ussdSessionMgmt.getUserTransactionDetails().getUserInputMap().put("BillerName", mobileWalletTxValidatePayData.getPrvder().getBillerName());
+	if(null != mobileWalletTxValidatePayData)
+		ussdSessionMgmt.getUserTransactionDetails().getUserInputMap().put("BillerName", mobileWalletTxValidatePayData.getPrvder().getBillerName());
 	setNextScreenSequenceNumber(menuItemDTO);
 	return menuItemDTO;
     }

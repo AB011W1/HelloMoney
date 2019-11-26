@@ -1109,6 +1109,108 @@
 		<property name="endpointAddressName" value="RegisterCustomerToProductOneWay_EndPoint" />
 		<property name="cacheKey" value="registerCustomerToProductOneWayService" />
 	</bean>
+	
+	<!-- USSD Sybrin Authentication of Change Request-->
+	<bean id="authChangeRequestController" class="com.barclays.bmg.mvc.controller.USSDAuthentication.AuthChangeRequestController"
+		parent="bmbAbstractCommandController">
+		<property name="authChangeRequestOperation" ref="authChangeRequestOperation" />
+		<property name="bmbJSONBuilder" ref="authChangeRequestJSONBldr" />
+		<property name="commandName" value="authChangeRequestCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.USSDAuthentication.AuthChangeRequestCommand" />
+		<property name="validator" ref="authChangeRequestCommandValidator" />
+	</bean>
+
+	<bean id="authChangeRequestCommandValidator"
+		class="com.barclays.bmg.mvc.validator.USSDAuthentication.AuthChangeRequestCommandValidator">
+	</bean>
+
+	<bean id="authChangeRequestJSONBldr"
+		class="com.barclays.bmg.json.model.builder.USSDAuthentication.AuthChangeRequestJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<bean id="ussdUpdateRecordsRequestController" class="com.barclays.bmg.mvc.controller.USSDAuthentication.UssdUpdateRecordsRequestController"
+		parent="bmbAbstractCommandController">
+		<property name="authChangeRequestOperation" ref="authChangeRequestOperation" />
+		<property name="bmbJSONBuilder" ref="ussdUpdateRecordsJSONBldr" />
+		<property name="commandName" value="authChangeRequestCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.USSDAuthentication.AuthChangeRequestCommand" />
+		<property name="validator" ref="authChangeRequestCommandValidator" />
+	</bean>
+
+	<bean id="ussdUpdateRecordsJSONBldr"
+		class="com.barclays.bmg.json.model.builder.USSDAuthentication.UssdUpdateRecordsJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+
+	<bean id="authChangeRequestOperation"
+		class="com.barclays.bmg.operation.USSDAuthentication.AuthChangeRequestOperation" parent="bmbCommonOperation" >
+		<property name="authenticateChangeRequestService" ref="authenticateChangeRequestService" />
+		<property name="ussdUpdateRecordsService" ref="ussdUpdateRecordsService" />
+	</bean>
+
+	<bean id="authenticateChangeRequestService"
+		class="com.barclays.bmg.service.impl.USSDAuthentication.AuthenticateChangeRequestServiceImpl" >
+		<property name="authenticateChangeRequestDao" ref="authenticateChangeRequestDao" />
+	</bean>
+
+	<bean id="authenticateChangeRequestDao" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface"
+			value="com.barclays.bmg.dao.USSDAuthentication.AuthenticateChangeRequestDao" />
+		<property name="daoFrontController" ref="authenticateChangeRequestDaoFrontControllerImpl" />
+	</bean>
+
+	<bean id="authenticateChangeRequestDaoFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="RETRIEVECHANGERECORDS" value-ref="authenticateChangeRequestDaoController" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="authenticateChangeRequestDaoController"
+		class="com.barclays.bmg.dao.processing.USSDAuthentication.AuthenticateChangeRequestDaoController">
+		<property name="authenticateChangeReqAdptOperation" ref="authenticateChangeReqAdptOperation" />
+		<property name="authenticateChangetransmissionService"	ref="authenticateChangetransmissionService" />
+		<property name="authenticateChangeResAdptOperation" ref="authenticateChangeResAdptOperation" />
+	</bean>
+
+	<!-- Update Records Service -->
+	<bean id="ussdUpdateRecordsService"
+		class="com.barclays.bmg.service.impl.USSDAuthentication.UssdUpdateRecordsServiceImpl" >
+		<property name="ussdUpdateRecordsDao" ref="ussdUpdateRecordsDao" />
+	</bean>
+
+	<bean id="ussdUpdateRecordsDao" class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface"
+			value="com.barclays.bmg.dao.USSDAuthentication.UssdUpdateRecordsDao" />
+		<property name="daoFrontController" ref="ussdUpdateRecordsDaoFrontControllerImpl" />
+	</bean>
+
+	<bean id="ussdUpdateRecordsDaoFrontControllerImpl"
+		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
+		<property name="controllers">
+			<map>
+				<entry key="UPDATERECORDS" value-ref="ussdUpdateRecordsDaoController" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="ussdUpdateRecordsDaoController"
+		class="com.barclays.bmg.dao.processing.USSDAuthentication.UssdUpdateRecordsDaoController">
+		<property name="authenticateChangeReqAdptOperation" ref="authenticateChangeReqAdptOperation" />
+		<property name="authenticateChangetransmissionService"	ref="authenticateChangetransmissionService" />
+		<property name="authenticateChangeResAdptOperation" ref="authenticateChangeResAdptOperation" />
+	</bean>
+
+	<bean id="authenticateChangeReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.USSDAuthentication.AuthenticateChangeReqAdptOperation" />
+
+	<bean id="authenticateChangeResAdptOperation"
+		class="com.barclays.bmg.dao.operation.USSDAuthentication.AuthenticateChangeResAdptOperation" />
+
+	<bean id="authenticateChangetransmissionService" class="com.barclays.bmg.dao.service.impl.USSDAuthentication.AuthenticateChangetransmissionService" />
 
 
 </beans>

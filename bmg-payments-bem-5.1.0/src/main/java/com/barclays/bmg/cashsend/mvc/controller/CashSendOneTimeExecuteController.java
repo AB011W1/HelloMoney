@@ -131,12 +131,28 @@ public class CashSendOneTimeExecuteController extends BMBAbstractCommandControll
 	context.setPpMap((Map<String, String>) userMap.get(SessionConstant.SESSION_PP_MAP));
 	// context.setActivityId("PMT_FT_CASHSEND_ONETIME");
 	context.setActivityId("PMT_FT_CS");
-	context.setActivityRefNo(trimRefNumber(context.getActivityRefNo()));
-	context.setOrgRefNo(trimRefNumber(context.getOrgRefNo()));
+	//context.setActivityRefNo(trimRefNumber(context.getActivityRefNo()));
+	//context.setOrgRefNo(trimRefNumber(context.getOrgRefNo()));
+	String referenceNumber = generateReferenceNumber();
+	context.setActivityRefNo(referenceNumber);
+	context.setOrgRefNo(referenceNumber);
 	return context;
 
     }
     
+	private String generateReferenceNumber() {
+		// Set<String> numbers = new HashSet<String>();
+		String generatedString = RandomStringUtils.random(USSDConstants.REFERENCE_NUMBER_LENGTH,
+				USSDConstants.USE_LETTER, USSDConstants.USE_NUMBER);
+		if (generatedString.length() != 10 || generatedString.startsWith("-")) {
+			// System.out.println("failure at " + count);
+			generateReferenceNumber();
+		}
+		return generatedString;
+	}
+    
+    
+
     private String trimRefNumber(String OrgRefNumber) {
 	if (OrgRefNumber != null && OrgRefNumber.length() > 10) {
 	    return OrgRefNumber.substring(0, 10);

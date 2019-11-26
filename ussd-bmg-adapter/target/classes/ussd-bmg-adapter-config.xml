@@ -229,6 +229,10 @@
 				<entry key="OP0799" value-ref="manageFundTransferStatusController" />
 				<entry key="OP0800" value-ref="retrieveCASAAccountTransactionActivityController" />
 				<!-- Groupwallet ends -->
+				
+				<!--  Auth Request -->
+				<entry key="OP0994" value-ref="authChangeRequestController" />
+				<entry key="OP0995" value-ref="ussdUpdateRecordsRequestController" />
 			</map>
 		</property>
 	</bean>

@@ -51,7 +51,15 @@ public class MobileWalletConfirmEditBeneficiaryRequestBuilder  implements BmgBas
 		requestParamMap.put(USSDInputParamsEnum.SELFREG_BRANCH.getParamName(), mnoId);
 		}
 
-		String mobNo=("233")+userInputMap.get(USSDInputParamsEnum.MOBILE_WALLET_NEW_BENE_MOB_NUM.getParamName());
+		String mobNo=userInputMap.get(USSDInputParamsEnum.MOBILE_WALLET_NEW_BENE_MOB_NUM.getParamName());
+		if(mobNo.startsWith("0") && mobNo.length()>9)
+		{
+			mobNo=("233")+mobNo.substring(1, mobNo.length());
+		}
+		else
+		{
+			mobNo=("233")+mobNo;
+		}
 		requestParamMap.put(USSDConstants.BMG_LOCAL_KE_OPCODE_PARAM_NAME, requestBuilderParamsDTO.getBmgOpCode());
 		requestParamMap.put(USSDConstants.BMG_LOCAL_KE_SERVICE_VER_NAME, USSDConstants.BMG_SERVICE_VERSION_VALUE);
 		requestParamMap.put(USSDInputParamsEnum.SELFREG_ACCOUNT.getParamName(), mobNo);
@@ -61,6 +69,3 @@ public class MobileWalletConfirmEditBeneficiaryRequestBuilder  implements BmgBas
 		return request;
 	}
 }
-
-
-

@@ -150,8 +150,20 @@ public class VerifyUSSDUserController extends BMBAbstractCommandController {
 			verifyUSSDUserOperationResponse.setScvId(custDto.getCustomerID());
 			//CR-35: Self Registration Change
 			verifyUSSDUserOperationResponse.setCustomerAccessStatusCode(custDto.getCustomerAccessStatusCode());
+			
 			//CR-77:Customer Name Shown on Welcome page
-			verifyUSSDUserOperationResponse.setCustomerFirstName(custDto.getFullName());
+			//verifyUSSDUserOperationResponse.setCustomerFirstName(custDto.getFullName());
+			//Changed after BEM/MCE change for customer full name for KITS INC INC1009890417 
+			verifyUSSDUserOperationResponse.setCustomerFirstName(custDto.getGivenName());
+			
+			//Setting Fullname for KITS INC INC1009890417 
+			setUserMapIntoSession(request, SessionConstant.SESSION_KITS_FULL_NAME, custDto.getFullName());
+			
+			//Set welcome banner in customerDTO for INC INC0063990
+			if(null != custDto.getWelcomeBanner())
+				verifyUSSDUserOperationResponse.setBannerMessage(custDto.getWelcomeBanner());
+			if(null != custDto.getBocBannerFlag())
+				verifyUSSDUserOperationResponse.setBocBannerFlag(custDto.getBocBannerFlag());
 		    }
 		}
 		 //Commented as to remove extra CAS call-Prod issue

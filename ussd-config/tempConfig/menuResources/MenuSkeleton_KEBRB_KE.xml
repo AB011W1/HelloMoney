@@ -69,6 +69,9 @@
             --></node>
             <!-- CR85 End -->
          </node>
+          <!-- USSD Sybrin Menu -->
+          <!-- Currently Sybrin is disabled in production. Just uncomment this to make the menu visible -->
+         <!-- <node id="ussd0.4.4" screenId="1" level="1" optionId="4" labelId="menu.auth.request" headerId="label.select" tranId="KE_AUTH_REQUEST" backOptionReq="true"/> -->
       </node>
       <node id="ussd0.5" screenId="0" level="0" optionId="6" labelId="menu.credit.card.services" headerId="label.select" backOptionReq="true">
          <node id="ussd0.5.1" screenId="11" level="1" optionId="1" labelId="menu.at.glance" tranId="KE_AT_GLANCE" />

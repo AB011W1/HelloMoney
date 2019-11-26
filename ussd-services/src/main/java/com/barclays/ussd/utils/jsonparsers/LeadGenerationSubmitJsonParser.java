@@ -37,7 +37,7 @@ public class LeadGenerationSubmitJsonParser implements BmgBaseJsonParser {
 	/** The Constant LOGGER. */
 	private static final Logger LOGGER = Logger.getLogger(LeadGenerationSubmitJsonParser.class);
 	private static final String LABEL_LEAD_GEN_LINK_SUBMIT = "label.lead.generation.submit";
-	private static final String LABEL_LEAD_GEN_TIMIZA = "label.lead.generation.timiza";
+	private static final String LEAD_GEN_TIMIZA_LABEL = "label.lead.generation.timiza";
 
 	public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
 
@@ -52,7 +52,7 @@ public class LeadGenerationSubmitJsonParser implements BmgBaseJsonParser {
 
 						USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
 						UserProfile userProfile = ussdSessionMgmt.getUserProfile();
-						//UssdResourceBundle ussdResourceBundle = responseBuilderParamsDTO.getUssdResourceBundle();
+						UssdResourceBundle ussdResourceBundle = responseBuilderParamsDTO.getUssdResourceBundle();
 						Locale locale = new Locale(userProfile.getLanguage(), userProfile.getCountryCode());
 
 						String caseNumber = applyProductDataObj.getPayData().getCaseNumber();
@@ -68,7 +68,7 @@ public class LeadGenerationSubmitJsonParser implements BmgBaseJsonParser {
 							//menuItemDTO.setPageBody(pageBody.toString());
 
 
-							menuItemDTO.setPageBody(responseBuilderParamsDTO.getUssdResourceBundle().getLabel(LABEL_LEAD_GEN_TIMIZA,locale).toString());
+							menuItemDTO.setPageBody(ussdResourceBundle.getLabel(LEAD_GEN_TIMIZA_LABEL,locale).toString());
 						}else{
 						String successMessage = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(LABEL_LEAD_GEN_LINK_SUBMIT, paramArray,
 									new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode()));

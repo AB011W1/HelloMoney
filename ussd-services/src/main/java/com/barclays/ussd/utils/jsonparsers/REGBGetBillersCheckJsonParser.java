@@ -1,6 +1,7 @@
 package com.barclays.ussd.utils.jsonparsers;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -32,6 +33,7 @@ public class REGBGetBillersCheckJsonParser implements BmgBaseJsonParser
 
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
 	MenuItemDTO menuDTO = new MenuItemDTO();
+	int index = 0;
 	String mobileNo=responseBuilderParamsDTO.getUssdSessionMgmt().getUserProfile().getMsisdn();
 	List<BillersListDO> blrsLstDO = billersLstService.getBillersList(responseBuilderParamsDTO.getUssdSessionMgmt().getUserProfile()
 		.getCountryCode(),mobileNo,responseBuilderParamsDTO.getUssdSessionMgmt().getBusinessId());
@@ -43,6 +45,18 @@ public class REGBGetBillersCheckJsonParser implements BmgBaseJsonParser
 	    Map<String, Object> txSessionMap = new HashMap<String, Object>(5);
 	    responseBuilderParamsDTO.getUssdSessionMgmt().setTxSessions(txSessionMap);
 	}
+    
+	LOGGER.debug(blrsLstDO.size());
+	Iterator<BillersListDO> itr = blrsLstDO.iterator();
+    while (itr.hasNext()) {
+    	BillersListDO BillerValue = itr.next();
+    	if(null!=BillerValue && (BillerValue.getBillerCategoryId().equalsIgnoreCase("NAPSA") || BillerValue.getBillerCategoryId().equalsIgnoreCase("ZRA"))) 
+    	{
+            itr.remove();
+        }
+    }
+    LOGGER.debug(blrsLstDO.size());
+    
 	responseBuilderParamsDTO.getUssdSessionMgmt().getTxSessions().put(USSDInputParamsEnum.REG_BILLER_GET_BILLERS.getTranId(), blrsLstDO);
 	setNextScreenSequenceNumber(menuDTO);
 	return menuDTO;

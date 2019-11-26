@@ -524,8 +524,6 @@
 		<transaction tranDataId="LG001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="LG001"  headerId="menu.lead.generation.sub.product" backOptionReq="true"/>
 		<transaction tranDataId="LG002" type="confirm" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="LG002"  headerId="LBL9999"  backOptionReq="true" />
 		<transaction tranDataId="LG003" type="endTran" bmgOpCode="OP0984" tranDataOpCode="LG003"  headerId="LBL9999" homeOptionReq="true" />
-		<!-- Timiza apply for products -->
-		<transaction tranDataId="LG004" type="endTran" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="LG004"  headerId="LBL9999" homeOptionReq="true" />
 	</tx>
 
 	<!-- CR85 Start -->

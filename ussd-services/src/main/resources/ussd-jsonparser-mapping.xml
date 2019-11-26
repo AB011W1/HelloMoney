@@ -330,7 +330,6 @@
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_PROD_SUB_LST.getTranId()}" value-ref="leadGenerationProductSubListJsonParser"/>
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_CONFIRM.getTranId()}" value-ref="leadGenerationConfirmJsonParser"/>
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_SUBMIT.getTranId()}" value-ref="leadGenerationSubmitJsonParser"/>
-		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_TIMIZA.getTranId()}" value-ref="leadGenerationTimizaJsonParser"/>
 		<!--Lead Genereation-->
 <!-- KITS Changes Starts -->
 		<!--Registration-->
@@ -568,7 +567,11 @@
 		<!-- <entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).PROBASE_ETOLL_AMOUNT.getTranId()}"  value-ref="probaseOneTimeBillPayETollAmtJsonParser" /> -->
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).PROBASE_ACCOUNT.getTranId()}"  value-ref="probaseAccountJsonParser" />
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).PROBASE_SUBMIT.getTranId()}"  value-ref="probaseSubmitJsonParser" />
-
+		
+		<!--  AUTH REQUEST -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CHANGE_REQUEST_DETAILS.getTranId()}"  value-ref="authenticateCustomerJsonParser" />
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AUTHORIZE_CHANGE_REQUEST.getTranId()}"  value-ref="ussdChangeAuthenticationJsonParser" />
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CARD_CHANGE_REQUEST_DETAILS.getTranId()}"  value-ref="authenticateCustomerJsonParser" />
 	    </util:map>
 
 </beans>

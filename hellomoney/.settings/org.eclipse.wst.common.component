@@ -88,8 +88,8 @@
         <dependent-module archiveName="bmg-promotional-offers-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/bmg-promotional-offers/bmg-promotional-offers">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <property name="java-output-path"/>
-        <property name="component.exclusion.patterns" value="META-INF/context.xml,WEB-INF/lib/runtime-7.0.jar,WEB-INF/lib/webservices-thinclient-7.0.jar,WEB-INF/classes/mcfe.properties,WEB-INF/classes/runtime.properties,WEB-INF/classes/dynamicCache.properties,WEB-INF/classes/filter-dev.properties,WEB-INF/classes/filter-prod.properties"/>
         <property name="context-root" value="hellomoney"/>
+        <property name="java-output-path" value="/hellomoney/target/classes"/>
+        <property name="component.exclusion.patterns" value="META-INF/context.xml,WEB-INF/lib/runtime-7.0.jar,WEB-INF/lib/webservices-thinclient-7.0.jar,WEB-INF/classes/mcfe.properties,WEB-INF/classes/runtime.properties,WEB-INF/classes/dynamicCache.properties,WEB-INF/classes/filter-dev.properties,WEB-INF/classes/filter-prod.properties"/>
     </wb-module>
 </project-modules>

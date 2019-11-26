@@ -32,7 +32,15 @@ public class MobileWalletOneOffRequestBuilder implements BmgBaseRequestBuilder {
 		.get(USSDInputParamsEnum.MOBILE_WALLET_MNOS_LST.getTranId());
 
 		String mnoId="",billerId = "", msisdn="";
-		msisdn=("233")+requestBuilderParamsDTO.getMsisdnNo();
+		msisdn=requestBuilderParamsDTO.getMsisdnNo();
+		if(msisdn.startsWith("0") && msisdn.length()>9)
+		{
+			msisdn=("233")+msisdn.substring(1, msisdn.length());
+		}
+		else
+		{
+			msisdn=("233")+msisdn;
+		}
 		if(mnoList!=null && mnoList.size() != 0){
 			billerId = mnoList.get(Integer.parseInt(userInputMap.get(USSDInputParamsEnum.MOBILE_WALLET_MNOS_LST.getParamName())) - 1).getBillerId();
 

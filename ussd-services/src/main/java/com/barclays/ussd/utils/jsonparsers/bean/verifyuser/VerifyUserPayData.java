@@ -30,8 +30,32 @@ public class VerifyUserPayData {
     //CR-77
     @JsonProperty
     private String customerFirstName;
+    
+    //Change of welcome message for Botswana. INC INC0063990
+    
+    @JsonProperty
+    private String bocBannerFlag;
+    
+    @JsonProperty
+    private String bannerMessage;
 
-    public String getLangPref() {
+    public String getBocBannerFlag() {
+		return bocBannerFlag;
+	}
+
+	public void setBocBannerFlag(String bocBannerFlag) {
+		this.bocBannerFlag = bocBannerFlag;
+	}
+
+	public String getBannerMessage() {
+		return bannerMessage;
+	}
+
+	public void setBannerMessage(String bannerMessage) {
+		this.bannerMessage = bannerMessage;
+	}
+
+	public String getLangPref() {
 	return langPref;
     }
 

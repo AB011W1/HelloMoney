@@ -95,6 +95,12 @@ public class VerifyUSSDUserJSONBldr implements BMBJSONBuilder {
 		responseModel.setCustomerAccessStatusCode(response.getCustomerAccessStatusCode());
 		//CR-77 changes
 		responseModel.setCustomerFirstName(response.getCustomerFirstName());
+		
+		// Change of welcome message for Botswana. INC INC0063990
+		if(null != response.getBocBannerFlag())
+			responseModel.setBocBannerFlag(response.getBocBannerFlag());
+		if(null != response.getBannerMessage())
+			responseModel.setBannerMessage(response.getBannerMessage());
 
 	    }
 	}

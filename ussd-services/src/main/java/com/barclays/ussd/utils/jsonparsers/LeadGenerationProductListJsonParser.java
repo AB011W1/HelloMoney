@@ -121,7 +121,7 @@ public class LeadGenerationProductListJsonParser implements BmgBaseJsonParser,Sc
 			String prodName=String.valueOf(prodNameArr[Integer.parseInt(userInput)- 1]);
 			String SubProdName=(String) prodSubProdNameMap.get(prodName);
 			if(prodName.equals(USSDConstants.LEAD_GEN_SUB_PRODUCT_NAME_TIMIZA)){
-				seqNo =USSDSequenceNumberEnum.SEQUENCE_NUMBER_FIVE.getSequenceNo();
+				seqNo =USSDSequenceNumberEnum.SEQUENCE_NUMBER_FOUR.getSequenceNo();
 			}
 			else if (SubProdName== null || SubProdName.trim().equals("")) {
 				seqNo =USSDSequenceNumberEnum.SEQUENCE_NUMBER_THREE.getSequenceNo();
