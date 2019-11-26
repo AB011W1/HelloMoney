@@ -16,7 +16,11 @@
 
 	<modules>
 		<module>../bmg-core-services</module>
+<<<<<<< HEAD
 		 <module>../bmg-core-session-activity</module>
+=======
+		<module>../bmg-core-session-activity</module>
+>>>>>>> ef608883eb015adad2219ef6b09065b5c5ad1488
 		<module>../bmg-core-terms-of-use</module>
 		<module>../bmg-core-utils</module>
 		<module>../bmg-core-view</module>
@@ -529,6 +533,10 @@
 			<version>1.0.22</version>
 			<scope>provided</scope>
 		</dependency>
+<<<<<<< HEAD
+=======
+
+>>>>>>> ef608883eb015adad2219ef6b09065b5c5ad1488
 		<dependency>
 			<groupId>org.apache.commons.io</groupId>
 			<artifactId>commons-io</artifactId>
@@ -645,7 +653,11 @@
 			<artifactId>xerces</artifactId> </exclusion> <exclusion> <groupId>xml-apis</groupId> 
 			<artifactId>xml-apis</artifactId> </exclusion> </exclusions> -->
 	</dependencies>
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> ef608883eb015adad2219ef6b09065b5c5ad1488
 	<build>
 		<finalName>bmg-app-2.0</finalName>
 		<plugins>

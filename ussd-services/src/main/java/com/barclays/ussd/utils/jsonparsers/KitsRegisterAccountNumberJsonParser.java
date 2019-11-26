@@ -130,7 +130,9 @@ public class KitsRegisterAccountNumberJsonParser implements BmgBaseJsonParser {
 		USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
 		AuthUserData authData= ((AuthUserData)ussdSessionMgmt.getUserAuthObj());
 	    List<CustomerMobileRegAcct> acts=authData.getPayData().getCustActs();
-	    List<CustomerMobileRegAcct> custActs = acntPayData.getCustActs();
+	    List<CustomerMobileRegAcct> custActs = new ArrayList<CustomerMobileRegAcct>();
+	    if(null != acntPayData)
+	    	custActs = acntPayData.getCustActs();
 		if (acntPayData != null) {
 			if (acntPayData.getCustActs() != null && !acntPayData.getCustActs().isEmpty()) {
 				menuItemDTO = new MenuItemDTO();

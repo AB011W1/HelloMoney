@@ -1,6 +1,7 @@
 package com.barclays.bmg.dao.adapter.request;
 
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.Map;
 import org.apache.commons.lang.StringUtils;
 import com.barclays.bem.BEMBaseDataTypes.ProductProcessorTypeCode;
@@ -44,7 +45,9 @@ public class AbstractReqAdptOperation {
 		RequestContext request = (RequestContext) args[0];
 		Context context = request.getContext();
         //CBP Change
-		Map<String, Object> contextMap = context.getContextMap();
+		Map<String, Object> contextMap = new HashMap<String, Object>();
+		if(null != context)
+			contextMap = context.getContextMap();
 
 
 		reqHeader.setBankUserContext(createBankUserContext(context));
@@ -252,7 +255,7 @@ public class AbstractReqAdptOperation {
 
 	private ServiceContext createServiceContext(Context context, String serviceId) {
 
-		String opCode = context.getOpCde();
+		String opCode = null != context.getOpCde() ? context.getOpCde() : null;
 		ServiceContext serviceContext = new ServiceContext();
 		Map<String, Object> contextMap = context.getContextMap();
 
@@ -293,7 +296,11 @@ public class AbstractReqAdptOperation {
 				serviceContext.setServiceVersionNo(contextMap.get(SystemParameterConstant.SERVICE_HEADER_SERVICE_VER_NO_PROBASE).toString());
 
 				//GHIPS2- to set Service version number for SSAMakeBillPAyment
+<<<<<<< HEAD:bmg-payments-bem-5.1.0/src/main/java/com/barclays/bmg/dao/adapter/request/AbstractReqAdptOperation.java
 			} else if(null != contextMap && "OP0603".equalsIgnoreCase(opCode) && context!=null && context.getBusinessId().equals("GHBRB") &&
+=======
+			} else if(null != contextMap && null != opCode && "OP0603".equalsIgnoreCase(opCode) && context!=null && context.getBusinessId().equals("GHBRB") &&
+>>>>>>> ef608883eb015adad2219ef6b09065b5c5ad1488:bmg-payments-bem-5.1.0/src/main/java/com/barclays/bmg/dao/adapter/request/AbstractReqAdptOperation.java
 				serviceId.equals("SSAMakeBillPayment") && context.getActivityId()!=null && context.getActivityId().equals(ActivityConstant.MOBILE_WALLET_PAYEE_ACTIVITY_ID) &&
 				("Y").equals(contextMap.get(SystemParameterConstant.isGHIPS2Flag)) && !("TRUE".equalsIgnoreCase(context.getIsFreeDialUssdFlow()))) {
 				serviceContext.setServiceVersionNo(contextMap.get(SystemParameterConstant.SERVICE_HEADER_SERVICE_VER_NO_GHIPPS2).toString());

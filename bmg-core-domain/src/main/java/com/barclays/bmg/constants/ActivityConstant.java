@@ -67,6 +67,9 @@ public interface ActivityConstant {
     
     //Botswana welcome banner INC INC0063990 
     String BANNER_GROUP_ID = "LOGIN_ANNOUNCEMENT";
+<<<<<<< HEAD
 
+=======
+>>>>>>> ef608883eb015adad2219ef6b09065b5c5ad1488
 
 }

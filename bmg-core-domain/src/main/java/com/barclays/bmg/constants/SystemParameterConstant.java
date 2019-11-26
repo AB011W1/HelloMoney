@@ -158,7 +158,10 @@ public interface SystemParameterConstant {
 
     // to allow RAND currency
     String CURRENCY_CODE_RAND = "CURRENCY_CODE_RAND";
-
+    
+    //Set welcome banner in customerDTO for INC INC0063990
+    String LOGIN_ANNOUNCE_FLAG = "LOGIN_ANNOUNCE_FLAG";
+    String LOGIN_ANNOUNCE_L1 = "LOGIN_ANNOUNCE_L1";
     /** credit card statmentlist. */
     public static final String CC_STATEMENT_LIST = "CC_STATEMENT_LIST";
     /** The sys param CC. */
@@ -195,6 +198,7 @@ public interface SystemParameterConstant {
 	//Service Version No. for SSAMakeBillPayment Probase
 	String SERVICE_HEADER_SERVICE_VER_NO_PROBASE = "SERVICE_HEADER_SERVICE_VER_NO_PROBASE";
 	String isProbaseFlag="isProbaseFlag";
+<<<<<<< HEAD
 	
 	 //Set welcome banner in customerDTO for INC INC0063990
     String LOGIN_ANNOUNCE_FLAG = "LOGIN_ANNOUNCE_FLAG";
@@ -207,4 +211,7 @@ public interface SystemParameterConstant {
     public static final String AUTH_REQUEST_PROCESS_ID = "USSDAUTHENTICATIONPROCESSID";
     public static final String AUTH_REQUEST_LOCK_RECORDS = "USSDAUTHENTICATIONLOCKRECORDS";
     public static final String AUTH_REQUEST_SERVICE_ENDPOINT = "USSDAUTHENTICATION_SERVICE_ENDPOINT";
+=======
+
+>>>>>>> ef608883eb015adad2219ef6b09065b5c5ad1488
 }

@@ -121,9 +121,6 @@ public class MakePayBillPayloadAdapter {
 	//}
 
 
-
-
-
 		Merchant merchant = new Merchant();
 
 		if (payBillServiceRequest.getExternalBillerId() != null) {

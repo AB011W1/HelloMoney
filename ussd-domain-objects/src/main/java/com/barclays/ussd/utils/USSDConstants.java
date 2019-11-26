@@ -910,6 +910,7 @@ public final class USSDConstants {
     public static final String PROBASE_INVOICE_DETAILS = "probaseInvoiceDetail";
 	
 	public static final String LEAD_GEN_SUB_PRODUCT_NAME_TIMIZA = "Timiza";
+<<<<<<< HEAD
 	public static final int REFERENCE_NUMBER_LENGTH = 10;
 	public static final boolean USE_LETTER = false;
 	public static final boolean USE_NUMBER = true;
@@ -953,4 +954,11 @@ public final class USSDConstants {
 	public static final String APPROVE_REQUEST_INPUT = "1";
 	public static final String REJECT_REQUEST_INPUT = "2";
 	
+=======
+	
+	public static final int REFERENCE_NUMBER_LENGTH = 10;
+	public static final int REFERENCE_METHOD_RECURSIVE_LIMIT = 0;
+	public static final boolean USE_LETTER = false;
+	public static final boolean USE_NUMBER = true;
+>>>>>>> ef608883eb015adad2219ef6b09065b5c5ad1488
 }

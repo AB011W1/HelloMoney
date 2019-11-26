@@ -72,4 +72,8 @@ public class MobileWalletConfirmSavedBeneficiaryRequestBuilder implements BmgBas
 
 	}
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> ef608883eb015adad2219ef6b09065b5c5ad1488

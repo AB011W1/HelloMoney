@@ -75,11 +75,13 @@ public class AirtimeSelectAccountResponseParser implements BmgBaseJsonParser {
 		    	if(acts.get(i).getGroupWalletIndicator()!=null && acts.get(i).getGroupWalletIndicator().equals("Y"))
 		    		GpAcc.add(acts.get(i).getMkdActNo());
 		    List<Account> srcAcc=accounts;
-
-			 for(int j=0;j<srcAcc.size();j++)
-				 if(GpAcc.contains(srcAcc.get(j).getMkdActNo()))
-					 srcAcc.remove(j);
-		if (CollectionUtils.isNotEmpty(accounts) && accounts.size() > 0 && accounts != null) {
+		    if(null !=srcAcc && srcAcc.size() > 0) {
+		    	for(int j=0;j<srcAcc.size();j++)
+					 if(GpAcc.contains(srcAcc.get(j).getMkdActNo()))
+						 srcAcc.remove(j);
+		    }
+			 
+		if (accounts != null && CollectionUtils.isNotEmpty(accounts) && accounts.size() > 0) {
 			pageBody.append(USSDConstants.NEW_LINE);
 			for (Account account : accounts) {
 				pageBody.append(accountIndex++);
@@ -98,10 +100,12 @@ public class AirtimeSelectAccountResponseParser implements BmgBaseJsonParser {
 		    	if(acts.get(i).getGroupWalletIndicator()!=null && acts.get(i).getGroupWalletIndicator().equals("Y"))
 		    		GpAcc.add(acts.get(i).getMkdActNo());
 		    List<AccountData> srcAcc=fromAcntLst.getFrActLst();
-
-			 for(int j=0;j<srcAcc.size();j++)
-				 if(GpAcc.contains(srcAcc.get(j).getMkdActNo()))
-					 srcAcc.remove(j);
+		    if(null != srcAcc && srcAcc.size() > 0) {
+		    	for(int j=0;j<srcAcc.size();j++)
+					 if(GpAcc.contains(srcAcc.get(j).getMkdActNo()))
+						 srcAcc.remove(j);
+		    }
+			 
 		if (srcAcc != null && srcAcc.size() > 0 && !srcAcc.isEmpty()) {
 			pageBody.append(USSDConstants.NEW_LINE);
 			for (AccountData acctDet : srcAcc) {

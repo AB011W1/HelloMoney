@@ -81,7 +81,11 @@ public class MobileWalletConfirmBeneficiaryResponseParser implements BmgBaseJson
 		menuItemDTO.setPageHeader("LBL9999");
 		String customerName=getCustomerName(responseBuilderParamsDTO,menuItemDTO);
 		String name = "";
+<<<<<<< HEAD
 		Locale locale = new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode());
+=======
+		//Locale locale = new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode());
+>>>>>>> ef608883eb015adad2219ef6b09065b5c5ad1488
 		if(customerName!=null && !customerName.equals("")){
 
 			if(customerName.length()>50)

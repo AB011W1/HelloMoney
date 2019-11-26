@@ -95,9 +95,15 @@
 									</fileset>
 									<manifest>																			
 										<attribute name="Implementation-Title" value="SHM Deployment" />
+<<<<<<< HEAD
 										<attribute name="Implementation-Version" value="01.00-944" />										
 										<attribute name="Weblogic-Application-Version"
 											value="01.00-944" />										
+=======
+										<attribute name="Implementation-Version" value="01.00-738" />										
+										<attribute name="Weblogic-Application-Version"
+											value="01.00-738" />										
+>>>>>>> ef608883eb015adad2219ef6b09065b5c5ad1488
 									</manifest>
 								</ear>
 

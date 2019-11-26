@@ -77,7 +77,9 @@ public final class USSDInputValidator {
 			final List<String> errorCodes, String backOption, String homeOption) {
 		boolean blnResult = false;
 		String type = currentTransaction.getType();
-		String transNodeId=ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
+		String transNodeId=null;
+		if(null != ussdSessionMgmt)
+			transNodeId = ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
 		if (userInput == null) {
 			blnResult = true;
 		} else {
@@ -88,7 +90,7 @@ public final class USSDInputValidator {
 				errorCodes.add(USSDExceptions.USSD_USER_INPUT_INVALID.getUssdErrorCode());
 				blnResult = false;
 			}
-			if(USSDConstants.DATA_TYPE_NIB.equalsIgnoreCase(type)){
+			//if(USSDConstants.DATA_TYPE_NIB.equalsIgnoreCase(type)){
 
 				/*	if (homeOption.equalsIgnoreCase(userInputTrimmed) || backOption.equalsIgnoreCase(userInputTrimmed)) {
 	    	 	blnResult = validateHomeBackOptions(userInput, currentTransaction, errorCodes, backOption, homeOption);
@@ -104,10 +106,10 @@ public final class USSDInputValidator {
 			    LOGGER.error("Invalid user input : " + userInputTrimmed);
 	    		return false;
 	    	}*/
-			}
+			//}
 			// CODE ADDED TO INCLUDE "-" IN BILLER REF NO. FOR KEBRB START
 			// CHECK IF THE USER HAS INPUT THE VALUES AS ALLOWED BY THE APPLICATION.
-			if (USSDConstants.BUSINESS_ID_KEBRB.equalsIgnoreCase(ussdSessionMgmt.getUserProfile().getBusinessId())) {
+			if (null != ussdSessionMgmt && USSDConstants.BUSINESS_ID_KEBRB.equalsIgnoreCase(ussdSessionMgmt.getUserProfile().getBusinessId())) {
 
 				if(currentTransaction.getTranDataId().equalsIgnoreCase("SP005") || currentTransaction.getTranDataId().equalsIgnoreCase("SA005"))
 				{
@@ -337,7 +339,9 @@ public final class USSDInputValidator {
 	private static boolean validateZwRefNo(String userInput, List<String> errorCodes, USSDSessionManagement ussdSessionMgmt) {
 		boolean returnVal = true;
 		Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
-		String dstvBoSelected = userInputMap.get(USSDConstants.SELECTED_DSTV_BO);
+		String dstvBoSelected = null;
+		if(null != userInputMap)
+			dstvBoSelected = userInputMap.get(USSDConstants.SELECTED_DSTV_BO);
 		if( ussdSessionMgmt.getBusinessId()!=null && ussdSessionMgmt.getBusinessId().equalsIgnoreCase("ZWBRB")&& userInputMap!=null && userInputMap.get(USSDConstants.SELECTED_BILLER_REGB).equalsIgnoreCase("DSTVZIM-2")
 				&& dstvBoSelected != null && dstvBoSelected.equalsIgnoreCase("DSTV BO")){
 			return true;
@@ -481,7 +485,7 @@ public final class USSDInputValidator {
 
 	private static boolean validateloginPwd(final String userInput, final List<String> errorCodes) {
 		boolean validate = true;
-		if(userInput.length() == 1 ){
+		if(null != userInput && userInput.length() == 1 ){
 			return validate;
 		}
 		if (userInput == null || userInput.equals("") || userInput.length() != 4 || isNotDigits(userInput.toCharArray())) {
