@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
     <wb-module deploy-name="bmg-core-session-activity">
         <wb-resource deploy-path="/" source-path="/src/main/resources"/>
-<<<<<<< HEAD
         <wb-resource deploy-path="/" source-path="/src/main/java"/>
-=======
->>>>>>> ef608883eb015adad2219ef6b09065b5c5ad1488
     </wb-module>
 </project-modules>

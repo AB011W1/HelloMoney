@@ -306,7 +306,6 @@
 	<bean id="leadGenerationProductSubListJsonParser" class="com.barclays.ussd.utils.jsonparsers.LeadGenerationProductSubListJsonParser"/>
 	<bean id="leadGenerationConfirmJsonParser" class="com.barclays.ussd.utils.jsonparsers.LeadGenerationConfirmJsonParser"/>
 	<bean id="leadGenerationSubmitJsonParser" class="com.barclays.ussd.utils.jsonparsers.LeadGenerationSubmitJsonParser"/>
-	<bean id="leadGenerationTimizaJsonParser" class="com.barclays.ussd.utils.jsonparsers.LeadGenerationTimizaJsonParser"/>
 <!-- KITS Changes Starts -->
 	<!--Registration-->
 	<bean id="kitsRegisterAccountNumberJsonParser" class="com.barclays.ussd.utils.jsonparsers.KitsRegisterAccountNumberJsonParser"/>
@@ -532,11 +531,8 @@
 	<bean id="probaseAccountJsonParser" class="com.barclays.ussd.utils.jsonparsers.ProbaseAccountJsonParser" />
 	<bean id="probaseSubmitJsonParser" class="com.barclays.ussd.utils.jsonparsers.ProbaseSubmitJsonParser" />
 	<!-- Probase ends -->
-<<<<<<< HEAD
 	
 	<!-- Auth Request-->
 	<bean id="authenticateCustomerJsonParser" class="com.barclays.ussd.bmg.auth.request.AuthenticateCustomerJsonParser" />
 	<bean id="ussdChangeAuthenticationJsonParser" class="com.barclays.ussd.bmg.auth.request.UssdChangeAuthenticationJsonParser" />
-=======
->>>>>>> ef608883eb015adad2219ef6b09065b5c5ad1488
 </beans>

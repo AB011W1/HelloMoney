@@ -95,9 +95,7 @@ public class FDAccountSummaryJSONParser implements BmgBaseJsonParser {
 	USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
 	AuthUserData authData= ((AuthUserData)ussdSessionMgmt.getUserAuthObj());
     List<CustomerMobileRegAcct> acts=authData.getPayData().getCustActs();
-    List<FDApplySourceAccount> fdAct = new ArrayList<FDApplySourceAccount>();
-    if(null != acntPayData)
-    	fdAct = acntPayData.getSrcLst();
+    List<FDApplySourceAccount> fdAct = acntPayData.getSrcLst();
 	if (acntPayData != null) {
 	    if (acntPayData.getSrcLst() != null && !acntPayData.getSrcLst().isEmpty()) {
 		menuItemDTO = new MenuItemDTO();

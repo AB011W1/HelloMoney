@@ -80,12 +80,9 @@ public class KitsDeregisterAccountNumberJsonParser implements BmgBaseJsonParser 
 			//	txSessions.put(USSDInputParamsEnum.KITS_DEREG_ACCOUNT_NUM.getTranId(), acntPayData.getCustActs());
 				responseBuilderParamsDTO.getUssdSessionMgmt().setTxSessions(txSessions);
 				List<CustomerMobileRegAcct> acts=acntPayData.getCustActs();
-				if(null != acts && acts.size() > 0) {
-					for(int i =0;i<acts.size();i++)
+				 for(int i =0;i<acts.size();i++)
 				    	if(acts.get(i).getGroupWalletIndicator()!=null && acts.get(i).getGroupWalletIndicator().equals("Y"))
 				    		acts.remove(i);
-				}
-				 
 				 if (acts == null || acts.isEmpty() || acts.size() == 0) {
 					    throw new USSDNonBlockingException(USSDExceptions.USSD_NO_ELIGIBLE_ACCTS.getBmgCode());
 					}

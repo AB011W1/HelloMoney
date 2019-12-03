@@ -823,8 +823,6 @@ public enum USSDInputParamsEnum {
 	LEAD_GENERATION_PROD_SUB_LST("LG001", "prodNameList"),
 	LEAD_GENERATION_CONFIRM("LG002", "txnRefNo"),
 	LEAD_GENERATION_SUBMIT("LG003", "blank"),
-	//Timiza Apply for Products
-	LEAD_GENERATION_TIMIZA("LG004", "blank"),
 
 
 	/*KITS Changes Starts*/
@@ -1059,16 +1057,12 @@ GET_FUND_TRAN_DETAILS("FTGP0035","tranNoSelectedDetails"),
 	PROBASE_AMOUNT("OTBP017","amt"),
 	//PROBASE_ETOLL_AMOUNT("OTBP018","amt"),
 	PROBASE_ACCOUNT("OTBP019","fromActNumber"),
-<<<<<<< HEAD
 	PROBASE_SUBMIT("OTBP020","txnRefNo"),
 	
 	//USSD Sybrin Auth Request
 	CHANGE_REQUEST_DETAILS("ATR000", "authRequestConfirm"),
 	AUTHORIZE_CHANGE_REQUEST("ATR001", "changeRequestOption"),
 	CARD_CHANGE_REQUEST_DETAILS("ATR002", "cardAuthRequestConfirm")
-=======
-	PROBASE_SUBMIT("OTBP020","txnRefNo")
->>>>>>> ef608883eb015adad2219ef6b09065b5c5ad1488
 
 ;
 /** tranId. */

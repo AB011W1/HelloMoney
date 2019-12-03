@@ -74,12 +74,11 @@ private String errorCode;
     	    throw new USSDNonBlockingException();
     	}else if(data.length()==21)
     		return true;
-    	else {
-    		//if(data.length()!=21){
+    	else if(data.length()!=21){
     		errorCode=USSDExceptions.USSD_NIB_ERROR.getUssdErrorCode();
     		throw new USSDNonBlockingException();
     	}
-		//return true;
+		return true;
 	}
 
 	private static boolean isNotDigits(char[] sequence) {

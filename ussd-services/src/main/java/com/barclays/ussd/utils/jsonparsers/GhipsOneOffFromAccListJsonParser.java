@@ -86,12 +86,10 @@ public class GhipsOneOffFromAccListJsonParser implements BmgBaseJsonParser {
 				    	if(acts.get(i).getGroupWalletIndicator()!=null && acts.get(i).getGroupWalletIndicator().equals("Y"))
 				    		GpAcc.add(acts.get(i).getMkdActNo());
 				    List<AccountDetails> srcAcc=payeeLstData.getSrcLst();
-				    if(null != srcAcc && srcAcc.size()>0) {
-				    	for(int j=0;j<srcAcc.size();j++)
-							 if(GpAcc.contains(srcAcc.get(j).getMkdActNo()))
-								 srcAcc.remove(j);
-				    }
-					 
+
+					 for(int j=0;j<srcAcc.size();j++)
+						 if(GpAcc.contains(srcAcc.get(j).getMkdActNo()))
+							 srcAcc.remove(j);
 					 if (srcAcc == null || srcAcc.isEmpty() || srcAcc.size() == 0) {
 						    throw new USSDNonBlockingException(USSDExceptions.USSD_NO_ELIGIBLE_ACCTS.getBmgCode());
 						}

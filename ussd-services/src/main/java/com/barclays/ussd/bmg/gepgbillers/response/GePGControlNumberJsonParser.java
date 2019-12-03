@@ -54,11 +54,11 @@ public class GePGControlNumberJsonParser implements BmgBaseJsonParser, SystemPre
 		    menuDTO = renderMenuOnScreen(responseBuilderParamsDTO);
 		} catch (Exception e) {
 		    LOGGER.error("Exception : ", e);
-		    //if (e instanceof USSDNonBlockingException) {
-		    	//throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode());
-		    //} else {
+		    if (e instanceof USSDNonBlockingException) {
+		    	throw new USSDNonBlockingException(((USSDNonBlockingException) e).getErrorCode());
+		    } else {
 		    	throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
-		    //}
+		    }
 		}
 		return menuDTO;
     }

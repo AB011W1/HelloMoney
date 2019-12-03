@@ -102,7 +102,7 @@ public class BillPaymentExecutionController extends BMBAbstractCommandController
 	    //Set the fields for MakeBillPaymentRequest - CPB 15/05
 	    // Check for UGBRB
 	    //CBP changes
-	    if((null != context && null != context.getBusinessId() && context.getBusinessId().equals("GHBRB")|| context.getBusinessId().equals("KEBRB")|| context.getBusinessId().equals("UGBRB")
+	    if((null != context && context.getBusinessId().equals("GHBRB")|| context.getBusinessId().equals("KEBRB")|| context.getBusinessId().equals("UGBRB")
 	    		|| context.getBusinessId().equals("ZMBRB") || context.getBusinessId().equals("BWBRB"))){
 		    context.setOpCde(httpRequest.getParameter("opCde"));
 			Charge chargeDTO = null;

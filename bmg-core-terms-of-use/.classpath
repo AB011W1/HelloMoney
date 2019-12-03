@@ -35,10 +35,6 @@
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
-<<<<<<< HEAD
-=======
-			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
->>>>>>> ef608883eb015adad2219ef6b09065b5c5ad1488
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>

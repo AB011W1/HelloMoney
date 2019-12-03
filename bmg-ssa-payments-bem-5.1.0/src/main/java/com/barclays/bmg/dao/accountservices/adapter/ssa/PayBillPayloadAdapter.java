@@ -53,12 +53,10 @@ public class PayBillPayloadAdapter {
     @SuppressWarnings("unchecked")
 	private BillPayment mapDataInRequest(PayBillServiceRequest payBillServiceRequest) {
 	BillPayment billPayment = new BillPayment();
-	if(null != payBillServiceRequest && null != payBillServiceRequest.getBeneficiaryDTO() && null != payBillServiceRequest.getBeneficiaryDTO().getActionCode())
-		billPayment.setActionCode(payBillServiceRequest.getBeneficiaryDTO().getActionCode());
 
-	BeneficiaryDTO beenBeneficiaryDTO = new BeneficiaryDTO();
-	if(null != payBillServiceRequest)
-		beenBeneficiaryDTO = payBillServiceRequest.getBeneficiaryDTO();
+	billPayment.setActionCode(payBillServiceRequest.getBeneficiaryDTO().getActionCode());
+
+	BeneficiaryDTO beenBeneficiaryDTO = payBillServiceRequest.getBeneficiaryDTO();
 
 	CustomerAccountDTO fromAcct = payBillServiceRequest.getFromAccount();
 

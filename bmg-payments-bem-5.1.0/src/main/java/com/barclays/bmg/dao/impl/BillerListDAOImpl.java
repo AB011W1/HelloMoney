@@ -199,9 +199,7 @@ public class BillerListDAOImpl extends BaseDAOImpl implements BillerListDAO {
 		// TODO Auto-generated method stub
 		BillerServiceResponse response = new BillerServiceResponse();
 		Map<String, String> parameterMap = new HashMap<String, String>();
-		String businessId=null;
-		if(null != request)
-			businessId = request.getBusinessId();
+		String businessId=request.getBusinessId();
 		parameterMap.put(BILLER_ID, request.getBillerId());
 		parameterMap.put(BUSINESS_ID, request.getBusinessId());
 

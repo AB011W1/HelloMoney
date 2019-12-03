@@ -195,16 +195,10 @@ public class SMSDetailsPayloadAdapter {
 		    dynamicValues[1] = sourceAcct;
 		    dynamicValues[2] = txnAmt.toString();
 		    dynamicValues[3] = curr;
-		    if(null != domesticFundTransferExecuteOperationRequest && null != domesticFundTransferExecuteOperationRequest.getContext()
-		    		&& null != domesticFundTransferExecuteOperationRequest.getContext().getActivityRefNo())
-		    	dynamicValues[4] = domesticFundTransferExecuteOperationRequest.getContext().getActivityRefNo();
-		    Calendar cal = null;
-		    if(null != domesticFundTransferExecuteOperationRequest && null != domesticFundTransferExecuteOperationRequest.getContext())
-		    	cal = DateTimeUtil.getCurrentBusinessCalendar(domesticFundTransferExecuteOperationRequest.getContext());
+		    dynamicValues[4] = domesticFundTransferExecuteOperationRequest.getContext().getActivityRefNo();
+		    Calendar cal = DateTimeUtil.getCurrentBusinessCalendar(domesticFundTransferExecuteOperationRequest.getContext());
 		    SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
-		    String date = null;
-		    if(null != cal)
-		    	date = sdf.format(cal.getTime());
+		    String date = sdf.format(cal.getTime());
 		    dynamicValues[5] = date;
 		    //SHM_Sms sent for transactions CR
 		    dynamicValues[6] = getCustomerCareLabel(businessId);
@@ -296,16 +290,10 @@ public class SMSDetailsPayloadAdapter {
 		    dynamicValues[1] = sourceAcct;
 		    dynamicValues[2] = txnAmt.toString();
 		    dynamicValues[3] = curr;
-		    if(null != domesticFundTransferExecuteOperationRequest && null != domesticFundTransferExecuteOperationRequest.getContext()
-		    		&& null != domesticFundTransferExecuteOperationRequest.getContext().getActivityRefNo())
-		    	dynamicValues[4] = domesticFundTransferExecuteOperationRequest.getContext().getActivityRefNo();
-		    Calendar cal = null;
-		    if(null != domesticFundTransferExecuteOperationRequest && null != domesticFundTransferExecuteOperationRequest.getContext())
-		    	cal = DateTimeUtil.getCurrentBusinessCalendar(domesticFundTransferExecuteOperationRequest.getContext());
+		    dynamicValues[4] = domesticFundTransferExecuteOperationRequest.getContext().getActivityRefNo();
+		    Calendar cal = DateTimeUtil.getCurrentBusinessCalendar(domesticFundTransferExecuteOperationRequest.getContext());
 		    SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
-		    String date = null;
-		    if(null != cal)
-		    	date = sdf.format(cal.getTime());
+		    String date = sdf.format(cal.getTime());
 		    dynamicValues[5] = date;
 		  //SHM_Sms sent for transactions CR
 		    dynamicValues[6] = getCustomerCareLabel(businessId);
@@ -393,16 +381,10 @@ public class SMSDetailsPayloadAdapter {
 		    dynamicValues[1] = sourceAcct;
 		    dynamicValues[2] = txnAmt.toString();
 		    dynamicValues[3] = curr;
-		    if(null != domesticFundTransferExecuteOperationRequest && null != domesticFundTransferExecuteOperationRequest.getContext()
-		    		&& null != domesticFundTransferExecuteOperationRequest.getContext().getActivityRefNo())
-		    	dynamicValues[4] = domesticFundTransferExecuteOperationRequest.getContext().getActivityRefNo();
-		    Calendar cal = null;
-		    if(null != domesticFundTransferExecuteOperationRequest && null != domesticFundTransferExecuteOperationRequest.getContext())
-		    	cal = DateTimeUtil.getCurrentBusinessCalendar(domesticFundTransferExecuteOperationRequest.getContext());
+		    dynamicValues[4] = domesticFundTransferExecuteOperationRequest.getContext().getActivityRefNo();
+		    Calendar cal = DateTimeUtil.getCurrentBusinessCalendar(domesticFundTransferExecuteOperationRequest.getContext());
 		    SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
-		    String date = null;
-		    if(null != cal)
-		    	date = sdf.format(cal.getTime());
+		    String date = sdf.format(cal.getTime());
 		    dynamicValues[5] = date;
 		    //SHM_Sms sent for transactions CR
 		    dynamicValues[6] = getCustomerCareLabel(businessId);
@@ -435,7 +417,7 @@ public class SMSDetailsPayloadAdapter {
 
 	    	} else {
 	    		String benefName = "";
-	    		if (null != addBenOpResponse && addBenOpResponse.getBeneficiaryDTO() != null) {
+	    		if (addBenOpResponse.getBeneficiaryDTO() != null) {
 	    			benefName = addBenOpReq.getBillerNickName();
 	    		}
 	    		// String customerCare = "(+255) 774 700 708";
@@ -464,7 +446,7 @@ public class SMSDetailsPayloadAdapter {
 
 			} else {
 			    String benefName = "";
-			    if (null != addBenOpResponse && addBenOpResponse.getBeneficiaryDTO() != null) {
+			    if (addBenOpResponse.getBeneficiaryDTO() != null) {
 			    	benefName = addBenOpReq.getBillerNickName();
 			    }
 			    // String customerCare = "(+255) 774 700 708";
@@ -490,7 +472,7 @@ public class SMSDetailsPayloadAdapter {
 
 		} else {
 		    String billerName = "";
-		    if (null != addBenOpResponse && addBenOpResponse.getBeneficiaryDTO() != null) {
+		    if (addBenOpResponse.getBeneficiaryDTO() != null) {
 			billerName = addBenOpResponse.getBeneficiaryDTO().getBillerName();
 		    }
 		    // String customerCare = "(+255) 774 700 708";

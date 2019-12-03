@@ -59,11 +59,7 @@ public class REGBGetBillersJsonParser implements BmgBaseJsonParser, ScreenSequen
 	MenuItemDTO menuItemDTO = new MenuItemDTO();
 
 	for (BillersListDO ele : blrsLstDO) {
-<<<<<<< HEAD
 		//if(null!=ele && !ele.getBillerCategoryId().equalsIgnoreCase("NAPSA") && !ele.getBillerCategoryId().equalsIgnoreCase("ZRA"))
-=======
-		if(null!=ele && !ele.getBillerCategoryId().equalsIgnoreCase("NAPSA") && !ele.getBillerCategoryId().equalsIgnoreCase("ZRA"))
->>>>>>> ef608883eb015adad2219ef6b09065b5c5ad1488
 		{
 	    pageBody.append(USSDConstants.NEW_LINE);
 	    pageBody.append(index);

@@ -61,9 +61,7 @@ public class CashSendOneTimeExecuteController extends BMBAbstractCommandControll
 	Context context = buildContext(request);
 	String txnRefNo = cashOneTimeExecuteCommand.getTxnRefNo();
 	CashSendRequestDTO cashSendRequestDTO = (CashSendRequestDTO) getSessionAttribute(request, "CASH_SEND_DTLS");
-	boolean result = false;
-	if(null != txnRefNo && null != cashSendRequestDTO)
-		result	= varifyTxnRefNo(txnRefNo, cashSendRequestDTO);
+	boolean result = varifyTxnRefNo(txnRefNo, cashSendRequestDTO);
 
 	CashSendOneTimeExecuteOperationResponse cashSendOneTimeExecuteOperationResponse = null;
 	boolean isCashSendErrorResponse = true;
@@ -142,11 +140,7 @@ public class CashSendOneTimeExecuteController extends BMBAbstractCommandControll
 
     }
     
-<<<<<<< HEAD
 	private String generateReferenceNumber() {
-=======
-    private String generateReferenceNumber() {
->>>>>>> ef608883eb015adad2219ef6b09065b5c5ad1488
 		// Set<String> numbers = new HashSet<String>();
 		String generatedString = RandomStringUtils.random(USSDConstants.REFERENCE_NUMBER_LENGTH,
 				USSDConstants.USE_LETTER, USSDConstants.USE_NUMBER);
@@ -156,11 +150,8 @@ public class CashSendOneTimeExecuteController extends BMBAbstractCommandControll
 		}
 		return generatedString;
 	}
-<<<<<<< HEAD
     
     
-=======
->>>>>>> ef608883eb015adad2219ef6b09065b5c5ad1488
 
     private String trimRefNumber(String OrgRefNumber) {
 	if (OrgRefNumber != null && OrgRefNumber.length() > 10) {

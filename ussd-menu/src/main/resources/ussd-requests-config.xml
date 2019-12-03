@@ -376,7 +376,7 @@
 		<bean id="leadGenerationProdSubListRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.link.LeadGenerationProdSubListRequestBuilder"/>
 		<bean id="leadGenerationConfirmRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.link.LeadGenerationConfirmRequestBuilder"/>
 		<bean id="leadGenerationSubmitRequestBuilder"   class="com.barclays.ussd.bmg.creditcard.link.LeadGenerationSubmitRequestBuilder"/>
-		<bean id="leadGenerationTimizaRequestBuilder" class="com.barclays.ussd.bmg.creditcard.link.LeadGenerationTimizaRequestBuilder"/>
+
 <!-- KITS Changes Starts -->
         <!--Registration-->
         <bean id="kitsRegisterAccountNumberRequestBuilder"   class="com.barclays.ussd.bmg.kits.KitsRegisterAccountNumberRequestBuilder"/>
@@ -613,12 +613,9 @@
 		<bean id="probaseAccountRequestBuilder" class="com.barclays.ussd.bmg.probase.ProbaseAccountRequestBuilder" />
 		<bean id="probaseSubmitRequestBuilder" class="com.barclays.ussd.bmg.otbp.request.OneTimeBillPayBillDetailsRequest" />
 		<!-- Probase ends -->
-<<<<<<< HEAD
 		
 		<!-- Auth Request -->
 		<bean id="authenticateCustomerRequestBuilder" class="com.barclays.ussd.bmg.auth.request.AuthenticateCustomerRequestBuilder" />
 		<bean id="ussdAuthenticationChangeRequestBuilder" class="com.barclays.ussd.bmg.auth.request.UssdAuthenticationChangeRequestBuilder" />
 		<bean id="authenticateCardChangeRequestBuilder" class="com.barclays.ussd.bmg.auth.request.AuthenticateCardChangeRequestBuilder" />
-=======
->>>>>>> ef608883eb015adad2219ef6b09065b5c5ad1488
  </beans>
