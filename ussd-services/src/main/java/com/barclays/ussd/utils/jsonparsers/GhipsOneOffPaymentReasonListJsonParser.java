@@ -25,12 +25,13 @@ public class GhipsOneOffPaymentReasonListJsonParser implements BmgBaseJsonParser
 	private static final Logger LOGGER = Logger.getLogger(GhipsOneOffBnkListJsonParser.class);
 
 	private static final String LABEL_GHIPS_MENUS_PYMT_REASON = "label.ghips.menus.payment.reason";
-
+	String business_id = null;
 	@Override
 	public MenuItemDTO parseJsonIntoJava(
 			ResponseBuilderParamsDTO responseBuilderParamsDTO)
 	throws USSDBlockingException, USSDNonBlockingException {
 		MenuItemDTO menuDTO = null;
+		business_id = responseBuilderParamsDTO.getUssdSessionMgmt().getBusinessId();
 		try {
 			Map<String, Object> txSessions = responseBuilderParamsDTO.getUssdSessionMgmt().getTxSessions();
 			if (txSessions == null) {
@@ -73,7 +74,10 @@ public class GhipsOneOffPaymentReasonListJsonParser implements BmgBaseJsonParser
 
 	@Override
 	public void setNextScreenSequenceNumber(MenuItemDTO menuItemDTO) {
-		menuItemDTO.setNextScreenSequenceNumber(USSDSequenceNumberEnum.SEQUENCE_NUMBER_EIGHT.getSequenceNo());
+		if(business_id.equals("MZBRB"))
+			menuItemDTO.setNextScreenSequenceNumber(USSDSequenceNumberEnum.SEQUENCE_NUMBER_TEN.getSequenceNo());
+		else
+			menuItemDTO.setNextScreenSequenceNumber(USSDSequenceNumberEnum.SEQUENCE_NUMBER_EIGHT.getSequenceNo());
 	}
 
 }

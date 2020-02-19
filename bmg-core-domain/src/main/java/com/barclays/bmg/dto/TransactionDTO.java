@@ -24,8 +24,19 @@ public class TransactionDTO extends BaseDomainDTO {
     private String mtpService;
     private String orgCode;
     private String action;
+    
+    //MZBRB one off
+    private String nib;
 
-    // CPB change MakeBillPayment 10/05/2017
+    public String getNib() {
+		return nib;
+	}
+
+	public void setNib(String nib) {
+		this.nib = nib;
+	}
+
+	// CPB change MakeBillPayment 10/05/2017
     private Charge chargeDTO;
 
     public CustomerAccountDTO getSourceAcct() {

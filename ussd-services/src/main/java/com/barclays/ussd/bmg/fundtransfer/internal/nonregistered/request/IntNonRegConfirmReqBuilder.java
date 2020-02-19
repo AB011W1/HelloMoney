@@ -26,6 +26,15 @@ public class IntNonRegConfirmReqBuilder implements BmgBaseRequestBuilder {
 	    txnRefNo = txnRefNoList.get(0);
 	}
 
+	//MZBRB Oneoff
+	String nibNo = null;
+	if(null != requestBuilderParamsDTO.getUssdSessionMgmt().getTxSessions().get(
+			USSDInputParamsEnum.REG_BENF_GET_NIB_NO.getParamName())){
+		nibNo = requestBuilderParamsDTO.getUssdSessionMgmt().getTxSessions().get(
+				USSDInputParamsEnum.REG_BENF_GET_NIB_NO.getParamName()).toString();
+		requestParamMap.put("NIB", nibNo);
+	}		
+	
 	requestParamMap.put(USSDInputParamsEnum.INT_NR_FT_CONFIRM.getParamName(), txnRefNo);
 	request.setMsisdnNo(requestBuilderParamsDTO.getMsisdnNo());
 

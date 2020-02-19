@@ -63,8 +63,16 @@ public class RegisterBenfInternalValidateReqBuilder implements BmgBaseRequestBui
 
 	    //Changes due to CR 73
 	    String benefAccNo = StringUtils.EMPTY.equals(isFromSaveBeneficiary)?userInputMap.get(USSDInputParamsEnum.REG_BEN_INT_ACC_NO.getParamName()):userInputMap.get(USSDInputParamsEnum.INT_NR_FT_TO_AC.getParamName());
+	    
+	    //Added for MZBRB other Bank One-off
+	    if(null == benefAccNo)
+	    	benefAccNo = userInputMap.get(USSDInputParamsEnum.REG_BENF_GET_NIB_NO.getParamName());
+	        
 	    String nickName = StringUtils.EMPTY.equals(isFromSaveBeneficiary)?userInputMap.get(USSDInputParamsEnum.REG_BEN_INT_NICK_NAME.getParamName()):userInputMap.get(USSDInputParamsEnum.FUND_TRANSFER_OTHER_BARCLAYS_SAVE_BEN_INT_NICK_NAME.getParamName());
 	    String payeeType = StringUtils.EMPTY.equals(isFromSaveBeneficiary)?userInputMap.get(USSDInputParamsEnum.REG_BEN_INT_PAYEE_TYPE.getParamName()):USSDConstants.INTERNAL_PAYEE_TYPE;
+	    
+	    if(null != userInputMap.get(USSDInputParamsEnum.REG_BENF_GET_NIB_NO.getParamName()))
+	    	payeeType = "DAC";
 
 	    requestParamMap.put(USSDInputParamsEnum.REG_BEN_INT_ACC_NO.getParamName(), benefAccNo);
 	    requestParamMap.put(USSDInputParamsEnum.REG_BEN_INT_NICK_NAME.getParamName(), nickName);

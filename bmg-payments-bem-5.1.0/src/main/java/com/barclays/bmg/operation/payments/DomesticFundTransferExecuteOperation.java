@@ -127,6 +127,8 @@ public class DomesticFundTransferExecuteOperation extends BMBPaymentsOperation {
 	    domesticFundTransferServiceRequest.setSourceAcct(transactionDTO.getSourceAcct());
 	    domesticFundTransferServiceRequest.setTxnNot(transactionDTO.getTxnNot());
 	    domesticFundTransferServiceRequest.setTxnTyp(transactionDTO.getTxnType());
+	    if(null != transactionDTO.getNib())
+	    	domesticFundTransferServiceRequest.getBeneficiaryDTO().setNib(transactionDTO.getNib());
 	}
 	return domesticFundTransferServiceRequest;
     }

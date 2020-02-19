@@ -572,6 +572,10 @@
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CHANGE_REQUEST_DETAILS.getTranId()}"  value-ref="authenticateCustomerJsonParser" />
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AUTHORIZE_CHANGE_REQUEST.getTranId()}"  value-ref="ussdChangeAuthenticationJsonParser" />
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CARD_CHANGE_REQUEST_DETAILS.getTranId()}"  value-ref="authenticateCustomerJsonParser" />
+		
+		<!--  Unregistred Beneficiary save  -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).UNREG_BENF_BENF_CONFIRM.getTranId()}" value-ref="otherBankOneoffFormValJsonParser" />		
+		
 	    </util:map>
 
 </beans>

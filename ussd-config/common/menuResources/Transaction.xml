@@ -614,5 +614,18 @@
 			<transaction tranDataId="FTGP0033" type="endTran" bmgOpCode="OP0643" tranDataOpCode="FTGP0033"  headerId="LBL9999" homeOptionReq="true"  />
 		</tx>>
 	<!-- Group Wallet Ends -->
+	
+	<tx id="tx6.2" tranId="OneOffFundTxOtherBankAC">
+		<transaction tranDataId="RBOBA011" type="nib" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="RBOBA011"  headerId="label.nib.no"  backOptionReq="true" />
+        <transaction tranDataId="OBAFTNR014" type="amount" bmgOpCode="OP0568" tranDataOpCode="OBAFTNR014" headerId="label.enter.amount" backOptionReq="true"/>
+        <transaction tranDataId="OBAFTNR015" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OBAFTNR015"  headerId="label.select.from.accnum"  backOptionReq="true"/>       
+        <transaction tranDataId="GHOOOBA06" type="ghipssResonOfPayment" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="GHOOOBA06"  headerId="label.ghips.select.payment.reason"  backOptionReq="true" />
+		<transaction tranDataId="OBAFTNR016" type="confirm" bmgOpCode="OP0569" tranDataOpCode="OBAFT016" headerId="label.transaction"  backOptionReq="true"/>
+		<transaction tranDataId="OBAFTNR017" type="confirm" bmgOpCode="OP0570" tranDataOpCode="OBAFT017" headerId="label.transaction.success"  homeOptionReq="true"/>		
+		<transaction tranDataId="RBOBA08" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="RBOBA08"  headerId="label.enter.benef.nick.name"  backOptionReq="true" />
+		<transaction tranDataId="UBOBA01" type="confirm" bmgOpCode="OP0641" tranDataOpCode="UBOBA01"  headerId="label.added.payee"  backOptionReq="true" />
+		<transaction tranDataId="RBOBA10" type="endTran" bmgOpCode="OP0642" tranDataOpCode="RBOBA10"  headerId="LBL9999" homeOptionReq="true" />
+	</tx>
+	<!-- MZBRB one off Ends -->
 
 </transactionItems>

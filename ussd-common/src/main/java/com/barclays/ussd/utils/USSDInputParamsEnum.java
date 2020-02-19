@@ -1062,7 +1062,10 @@ GET_FUND_TRAN_DETAILS("FTGP0035","tranNoSelectedDetails"),
 	//USSD Sybrin Auth Request
 	CHANGE_REQUEST_DETAILS("ATR000", "authRequestConfirm"),
 	AUTHORIZE_CHANGE_REQUEST("ATR001", "changeRequestOption"),
-	CARD_CHANGE_REQUEST_DETAILS("ATR002", "cardAuthRequestConfirm")
+	CARD_CHANGE_REQUEST_DETAILS("ATR002", "cardAuthRequestConfirm"),
+	
+	//MZBRB Oneoff UNReg Bene
+	UNREG_BENF_BENF_CONFIRM("UBOBA01","validate")
 
 ;
 /** tranId. */

@@ -138,9 +138,18 @@ public class InternalNonRegisteredPaymentFormSubmissionController extends BMBAbs
 	    	|| CommonConstants.ZMBRB_BUSINESS_ID.equals(context.getBusinessId())
 	    	|| CommonConstants.GHBRB_BUSINESS_ID.equals(context.getBusinessId())){*/
         //Defect #2156 Removing country validation since it is applicable for all the countries, as discussed with mandeep Bhatia
-		formValidateOperation.currencyValidation(context, internalFTCommand.getCurr(), FundTransferConstants.LIST_VAL_CURR_SUPPORT_INT_ACC,
-			getSelectedAccountOperationResponse.getSelectedAcct().getCurrency(), retrieveInternalNonRegisteredPayeeInfoOperationResponse
-				.getCasaAccountDTO().getCurrencyCode().getCurrency(), formValidateOperationResponse);
+	    
+	    if(getSelectedAccountOperationResponse.getSelectedAcct().toString().length() < 21){
+	    	formValidateOperation.currencyValidation(context, internalFTCommand.getCurr(), FundTransferConstants.LIST_VAL_CURR_SUPPORT_INT_ACC,
+	    			getSelectedAccountOperationResponse.getSelectedAcct().getCurrency(), retrieveInternalNonRegisteredPayeeInfoOperationResponse
+	    				.getCasaAccountDTO().getCurrencyCode().getCurrency(), formValidateOperationResponse);
+	    }
+	    else if(getSelectedAccountOperationResponse.getSelectedAcct().toString().length() == 21) {
+	    	formValidateOperation.currencyValidation(context, internalFTCommand.getCurr(), FundTransferConstants.LIST_VAL_CURR_SUPPORT_INT_ACC,
+	    			getSelectedAccountOperationResponse.getSelectedAcct().getCurrency(), "MZN", formValidateOperationResponse);
+	    }
+	    
+		
 	   // }
 
 		if(httpRequest.getParameterMap().containsKey("CREDIT_CARD_TRAN")){

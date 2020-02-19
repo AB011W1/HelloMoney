@@ -77,7 +77,15 @@ public class IntNonRegValidateReqBuilder implements BmgBaseRequestBuilder {
 	}
 	// String benBranchCode = (String) userInputMap.get(USSDInputParamsEnum.INT_NR_FT_BRANCH_CODE.getParamName());
 
-	String benAcctNo = userInputMap.get(USSDInputParamsEnum.INT_NR_FT_TO_AC.getParamName());
+	String benAcctNo = null;
+	if(null != userInputMap.get(USSDInputParamsEnum.INT_NR_FT_TO_AC.getParamName()))
+		benAcctNo= userInputMap.get(USSDInputParamsEnum.INT_NR_FT_TO_AC.getParamName());
+	else
+	{
+		benAcctNo = userInputMap.get(USSDInputParamsEnum.REG_BENF_GET_NIB_NO.getParamName());
+		ussdSessionMgmt.getTxSessions().put(USSDInputParamsEnum.REG_BENF_GET_NIB_NO.getParamName(), benAcctNo);
+	}
+	
 	String benName = userInputMap.get(USSDInputParamsEnum.INT_NR_FT_NICK_NAME.getParamName());
 
 	Calendar cal = Calendar.getInstance();
@@ -98,7 +106,14 @@ public class IntNonRegValidateReqBuilder implements BmgBaseRequestBuilder {
 
 	requestParamMap.put("opCde", requestBuilderParamsDTO.getBmgOpCode());
 	requestParamMap.put("serVer", "2.0");
-
+	
+	if(benAcctNo.length() == 21) {
+		String payReason[]={"Business","Loan Payment","Others","Rentals","Transfer","School Fees"};
+		requestParamMap.put(USSDConstants.EXT_BNK_TXNNOT_PARAM, payReason[Integer.parseInt(userInputMap.get(USSDInputParamsEnum.KE_EXT_BANK_FT_RSO_PAYMENT.getParamName()))-1]);
+		transactionRemarks = payReason[Integer.parseInt(userInputMap.get(USSDInputParamsEnum.KE_EXT_BANK_FT_RSO_PAYMENT.getParamName()))-1];
+		requestParamMap.put("payDesc", transactionRemarks);
+	}
+	
 	request.setRequestParamMap(requestParamMap);
 	return request;
     }

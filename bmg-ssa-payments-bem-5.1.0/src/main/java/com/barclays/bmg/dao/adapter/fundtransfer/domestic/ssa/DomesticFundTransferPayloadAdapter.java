@@ -141,6 +141,13 @@ public class DomesticFundTransferPayloadAdapter {
 			setTxnSubCategory(domesticFTRequest, dest, PAYMENT_SUB_CATEGORY_UR);
 		}
 		// eBox Charges Changes End
+		
+		//MZBRB one-off
+		if(null != beneficiaryDTO.getNib()) {
+			setTxnSubCategory(domesticFTRequest, dest, PAYMENT_SUB_CATEGORY_EX);
+			dest.setTransactionCategoryCode("LOCAL");
+		}
+			
 
 		// SSA Changes end
 
@@ -177,6 +184,11 @@ public class DomesticFundTransferPayloadAdapter {
 			String fullLenth = (String) sysMap.get(SystemParameterConstant.SYSPARAM_FULLLENGTH_DOMESTIC_ACCOUNTNUMBER);
 			newAccountNumber = BMBCommonUtility.paddingZeros(originalAccountNumber, fullLenth);
 		}
+		
+		//MZBRB one-off
+		if(null != beneficiaryDTO.getNib()) 
+			newAccountNumber = beneficiaryDTO.getNib();
+		
 		// Add by Li, Can end; IBAN Change; Feb 22 2012;
 		beneficiaryAccount.setAccountNumber(newAccountNumber);
 		// Add end by Li, Can to padding zero before the account number. 28Feb, 2011
@@ -206,6 +218,10 @@ public class DomesticFundTransferPayloadAdapter {
 		} else {
 			dest.setTransactionTypeCode(FundTransferConstants.TXN_TYPE_FUND_TRANSFER_INTERNAL);
 		}
+		
+		//MZBRB one-off
+		if(null != beneficiaryDTO.getNib()) 
+			dest.setTransactionTypeCode(FundTransferConstants.TXN_TYPE_FUND_TRANSFER_EXTERNAL);
 
 		// payment remark
 		dest.setNarrationText(domesticFTRequest.getTxnNot());

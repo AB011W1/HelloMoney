@@ -135,6 +135,16 @@ public class FundTransferExecutionController extends
 				fundTransferDTO.setChargeDTO(chargeDTO);
 			}
 
+			//MZBRB one off
+			String nibNo = null;
+			if(null != httpRequest.getParameter("NIB"))
+			{
+				nibNo = httpRequest.getParameter("NIB");
+				fundTransferDTO.setNib(nibNo);
+			}
+					
+			
+			
 			fundTransferExecuteOperationRequest.setTransactionDTO(fundTransferDTO);
 			 fundTransferExecuteOperationResponse =
 						domesticFundTransferExecuteOperation.makeDomesticFundTransfer(fundTransferExecuteOperationRequest);

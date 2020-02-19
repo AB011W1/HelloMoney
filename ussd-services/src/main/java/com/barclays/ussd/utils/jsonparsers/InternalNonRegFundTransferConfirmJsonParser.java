@@ -21,8 +21,10 @@ import com.barclays.bmg.constants.FundTransferConstants;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
+import com.barclays.ussd.exception.USSDBlockingException;
 import com.barclays.ussd.exception.USSDNonBlockingException;
 import com.barclays.ussd.utils.BmgBaseJsonParser;
+import com.barclays.ussd.utils.ScreenSequenceCustomizer;
 import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDExceptions;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
@@ -32,7 +34,7 @@ import com.barclays.ussd.utils.UssdResourceBundle;
 import com.barclays.ussd.utils.jsonparsers.bean.fundtransfer.internal.nonregistered.IntNRFundTxConfirm;
 import com.barclays.ussd.utils.jsonparsers.bean.fundtransfer.internal.nonregistered.IntNRFundTxConfirmPayData;
 
-public class InternalNonRegFundTransferConfirmJsonParser implements BmgBaseJsonParser {
+public class InternalNonRegFundTransferConfirmJsonParser implements BmgBaseJsonParser,ScreenSequenceCustomizer {
     private static final String TRUE = "true";
     private static final String NAVIGATE_MAIN = "label.navigate.main";
     private static final String NAVIGATEBACK_LABEL = "label.navigate.main.back";
@@ -123,4 +125,18 @@ public class InternalNonRegFundTransferConfirmJsonParser implements BmgBaseJsonP
 	menuItemDTO.setNextScreenSequenceNumber(USSDSequenceNumberEnum.SEQUENCE_NUMBER_NINE.getSequenceNo());
 
     }
+
+	@Override
+	public int getCustomNextScreen(String userInput, USSDSessionManagement ussdSessionMgmt)
+			throws USSDBlockingException {
+		int seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_NINE.getSequenceNo();
+		String nibNo = null;
+		if(null != ussdSessionMgmt.getTxSessions().get(
+				USSDInputParamsEnum.REG_BENF_GET_NIB_NO.getParamName()))
+			nibNo = ussdSessionMgmt.getTxSessions().get(
+				USSDInputParamsEnum.REG_BENF_GET_NIB_NO.getParamName()).toString();
+		if(nibNo != null)
+			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_THIRTEEN.getSequenceNo();
+		return seqNo;
+	}
 }

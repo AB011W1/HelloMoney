@@ -535,4 +535,7 @@
 	<!-- Auth Request-->
 	<bean id="authenticateCustomerJsonParser" class="com.barclays.ussd.bmg.auth.request.AuthenticateCustomerJsonParser" />
 	<bean id="ussdChangeAuthenticationJsonParser" class="com.barclays.ussd.bmg.auth.request.UssdChangeAuthenticationJsonParser" />
+	
+	<!-- Unregistred Beneficiary save-->
+	<bean id="otherBankOneoffFormValJsonParser" class="com.barclays.ussd.utils.jsonparsers.OtherBankOneoffFormValJsonParser" />	
 </beans>

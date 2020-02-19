@@ -30,21 +30,30 @@ public class RetrieveInternalNonRegisteredPayeeInfoOperation extends BMBPayments
 		BeneficiaryDTO beneficiaryDTO = new BeneficiaryDTO();
 		response.setBeneficiaryDTO(beneficiaryDTO);
 
-		CASAAccountDTO casaAcct = getBeneficiaryInfo(request);
-		if(casaAcct !=null && (casaAcct.getAccountNumber()!= null && !casaAcct.getAccountNumber().isEmpty())){
-			response.getBeneficiaryDTO().setBeneficiaryName(request.getBeneficiaryName());
-			response.getBeneficiaryDTO().setDestinationBranchCode(request.getBranchCode());
-			response.getBeneficiaryDTO().setDestinationAccountNumber(request.getAccountNumber());
-			response.getBeneficiaryDTO().setCurrency(casaAcct.getCurrency());
-			response.setCasaAccountDTO(casaAcct);
-		}else{
-			response.setSuccess(false);
-			response.setResCde(BillPaymentResponseCodeConstants.PAYMENT_INVALID_BENEFICIARY);
-		}
+		if(request.getAccountNumber().toString().length() < 21) {
+			CASAAccountDTO casaAcct = getBeneficiaryInfo(request);
+			if(casaAcct !=null && (casaAcct.getAccountNumber()!= null && !casaAcct.getAccountNumber().isEmpty())){
+				response.getBeneficiaryDTO().setBeneficiaryName(request.getBeneficiaryName());
+				response.getBeneficiaryDTO().setDestinationBranchCode(request.getBranchCode());
+				response.getBeneficiaryDTO().setDestinationAccountNumber(request.getAccountNumber());
+				response.getBeneficiaryDTO().setCurrency(casaAcct.getCurrency());
+				response.setCasaAccountDTO(casaAcct);
+			}
+			else{
+				response.setSuccess(false);
+				response.setResCde(BillPaymentResponseCodeConstants.PAYMENT_INVALID_BENEFICIARY);
+			}
 
-		if(!response.isSuccess()){
-			getMessage(response);
+			if(!response.isSuccess()){
+				getMessage(response);
+			}
 		}
+		else
+		{
+				response.setSuccess(true);
+				response.setResCde("00000");
+		}
+		
 		return response;
 	}
 
