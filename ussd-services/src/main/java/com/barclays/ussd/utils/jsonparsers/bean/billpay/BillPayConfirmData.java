@@ -40,6 +40,12 @@ public class BillPayConfirmData {
 
 	@JsonProperty
 	private String rcptNo;
+	/**
+	 * tokenNo
+	 */
+	@JsonProperty
+	private String tokenNo;
+
 
 	/**
 	 * @param txnRefNo the txnRefNo to set
@@ -123,6 +129,19 @@ public class BillPayConfirmData {
 	 */
 	public void setRcptNo(String rcptNo) {
 		this.rcptNo = rcptNo;
+	}
+	
+	/**
+	 * @return the tokenNo
+	 */
+	public String getTokenNo() {
+		return tokenNo;
+	}
+	/**
+	 * @param tokenNo the tokenNo to set
+	 */
+	public void setTokenNo(String tokenNo) {
+		this.tokenNo = tokenNo;
 	}
 
 }

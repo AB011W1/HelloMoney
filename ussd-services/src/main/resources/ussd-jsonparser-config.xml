@@ -538,4 +538,11 @@
 	
 	<!-- Unregistred Beneficiary save-->
 	<bean id="otherBankOneoffFormValJsonParser" class="com.barclays.ussd.utils.jsonparsers.OtherBankOneoffFormValJsonParser" />	
+	
+	<!-- TZNBC Menu Optimization -->
+	<bean id="airtimeTopUpBeneMngmtJsonParser" class="com.barclays.ussd.utils.jsonparsers.AirtimeTopUpBeneMngmtJsonParser" />
+	<bean id="onetimeBillpayCatListJsonParser" class="com.barclays.ussd.utils.jsonparsers.OnetimeBillpayCatListJsonParser" />
+	<bean id="mobileWalletTopUpBeneMngmtJsonParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletTopUpBeneMngmtJsonParser" />
+	<bean id="leadGenerationLoansJsonParser" class="com.barclays.ussd.utils.jsonparsers.LeadGenerationLoansJsonParser" />
+	
 </beans>

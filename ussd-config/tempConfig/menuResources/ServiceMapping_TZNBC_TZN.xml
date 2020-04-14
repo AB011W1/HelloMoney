@@ -30,7 +30,7 @@
 	<srv tranId="TZN_CHNG_PIN" importTran="ChangePin"  firstScreenSequencerId="1"/>
 	<srv tranId="TZN_REG_BILLERS" importTran="RegisterBillers"  firstScreenSequencerId="1"/>
 	<srv tranId="TZN_DEL_BILLERS" importTran="DeleteBillers"  firstScreenSequencerId="1"/>
-	<srv tranId="TZN_ONE_TIME_PAYMNTS" importTran="OneTimePayments"  firstScreenSequencerId="1"/>
+	<srv tranId="TZN_ONE_TIME_PAYMNTS" importTran="OneTimePayments"  firstScreenSequencerId="23"/>
 	<srv tranId="TZN_GEPG_BILLERS" importTran="GePGBillers"  firstScreenSequencerId="1"/>
 	<srv tranId="TZN_VIEW_FD" importTran="ViewFd"  firstScreenSequencerId="1"/>
 	<srv tranId="TZN_APPLY_FD" importTran="ApplyFd"  firstScreenSequencerId="1"/>
@@ -58,6 +58,10 @@
 	<!-- Lead Generation -->
 	<srv tranId="TZN_LEAD_GENERATION"  importTran="LeadGeneration" firstScreenSequencerId="1"/>
 	<srv tranId="TZN_FT_GWALLET" importTran="GWFTransfer"  firstScreenSequencerId="1"/>
+	<!-- TZNBC Menu Optimization -->
+	<srv tranId="TZN_LEAD_SUB_GENERATION" importTran="LeadSubGeneration" firstScreenSequencerId="1" />
+	<srv tranId="TZN_MOBILE_WALLET_TOP_UP_BENE" importTran="MobileWalletTopUp"  firstScreenSequencerId="1"/>
+	<srv tranId="TZN_AIRTIME_TOPUP_BENE" importTran="AirtimeTopup"  firstScreenSequencerId="1" />
 
 
 	<!--Skip Nodes Syntax Starts-->
@@ -140,7 +144,10 @@
 			<!-- CR82 Edit BenF -->
 		<transaction tranDataId="MWTU1026" type="confirm" bmgOpCode="OP0612" tranDataOpCode="MWTU1026"  headerId="LBL9999"  backOptionReq="true" />
 		<transaction tranDataId="MWTU1027" type="endTran" bmgOpCode="OP0613" tranDataOpCode="MWTU1027"  headerId="LBL9999" homeOptionReq="true"  />
-
+	
+		<!-- TZNBC Menu Optimization to include Bene Management-->
+		<transaction tranDataId="MWTU1000" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU1000"  headerId="label.select.payment.option" backOptionReq="true"  />
+			
 		<!-- CR82 End -->
 		<!-- Group Wallet Starts -->
 		<!-- One-Off -->
@@ -193,6 +200,13 @@
 	</tx>
 	<!-- GePG Ends -->
 
+	<!-- TZNBC Menu Optimization  -->
+	<!-- Loan Product in main menu -->
+	<tx id="tx3.4" tranId="LeadSubGeneration">
+		<transaction tranDataId="LG004" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="LG004"  headerId="menu.lead.generation.sub.product" backOptionReq="true"/>
+		<transaction tranDataId="LG002" type="confirm" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="LG002"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="LG003" type="endTran" bmgOpCode="OP0984" tranDataOpCode="LG003"  headerId="LBL9999" homeOptionReq="true" />
+	</tx>
 	</customizedServices>
 
 </serviceMappings>

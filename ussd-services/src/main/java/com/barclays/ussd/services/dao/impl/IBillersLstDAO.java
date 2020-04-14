@@ -16,5 +16,9 @@ public interface IBillersLstDAO {
     public List<BillersListDO> getBillersList(String countryCd, String mobileNumber,String businessId) throws USSDNonBlockingException;
 
     public BillersListDO getBillerInfo(String countryCd, String billerId, String mobileNumber,String businessId) throws USSDNonBlockingException;
-
+    
+    public List<BillersListDO> getCategoryList(String countryCd, String mobileNumber,String businessId) throws USSDNonBlockingException;
+    
+    public List<BillersListDO> getBillerPerCategory(String mobileNumber, String businessId,String category) throws USSDNonBlockingException;
+    	
 }

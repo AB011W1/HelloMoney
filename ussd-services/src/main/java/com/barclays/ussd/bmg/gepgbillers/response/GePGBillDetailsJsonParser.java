@@ -92,7 +92,7 @@ public class GePGBillDetailsJsonParser implements BmgBaseJsonParser, ScreenSeque
      */
     @Override
     public void setNextScreenSequenceNumber(MenuItemDTO menuItemDTO) {
-    	menuItemDTO.setNextScreenSequenceNumber(USSDSequenceNumberEnum.SEQUENCE_NUMBER_THREE.getSequenceNo());
+    	menuItemDTO.setNextScreenSequenceNumber(USSDSequenceNumberEnum.SEQUENCE_NUMBER_TWENTYSIX.getSequenceNo());
     }
 
     /**
@@ -108,9 +108,9 @@ public class GePGBillDetailsJsonParser implements BmgBaseJsonParser, ScreenSeque
 		if(null != ussdSessionMgmt.getTxSessions()){
 			BillDetails billDetails = (BillDetails) ussdSessionMgmt.getTxSessions().get(USSDConstants.GePG_BILL_DETAIL);
 			if(USSDConstants.GePG_BILL_PAYMENT_TYPE.equalsIgnoreCase(billDetails.getPaymentType())){
-				screenNumber = USSDSequenceNumberEnum.SEQUENCE_NUMBER_THREE.getSequenceNo();
+				screenNumber = USSDSequenceNumberEnum.SEQUENCE_NUMBER_TWENTYSIX.getSequenceNo();
 			} else {
-				screenNumber = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FOUR.getSequenceNo();
+				screenNumber = USSDSequenceNumberEnum.SEQUENCE_NUMBER_TWENTYSEVEN.getSequenceNo();
 			}
 		}
 

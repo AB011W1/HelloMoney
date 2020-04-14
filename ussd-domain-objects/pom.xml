@@ -9,7 +9,11 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.barclays.ussd</groupId>
   <artifactId>ussd-domain-objects</artifactId>
-  <version>1.0</version>
+  <name>ussd-domain-objects-${revision}</name>
+  <version>${revision}</version>
+  <properties>
+    <revision>1.0.0</revision>
+  </properties>
   <dependencies>
   </dependencies>
 </project>

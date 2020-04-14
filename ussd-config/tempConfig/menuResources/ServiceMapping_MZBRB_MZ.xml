@@ -64,6 +64,10 @@
 	<srv tranId="MZ_MOBILE_WALLET_TOP_UP" importTran="MobileWalletTopUp"  firstScreenSequencerId="1"/>
 
 	<!-- DFT End -->
+	
+	<!-- One off MZBRB Start-->
+	<srv tranId="MZ_OTHER_BANK_FND_TX_UNREG" importTran="OneOffFundTxOtherBankAC" firstScreenSequencerId="1"/>
+	<!-- One off MZBRB End -->
 
 	<!--Skip Nodes Syntax Starts-->
 	<!--

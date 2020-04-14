@@ -251,10 +251,16 @@ public class RegisterBenfExternalValidateJsonParser implements BmgBaseJsonParser
 	public int getCustomNextScreen(String userInput,
 			USSDSessionManagement ussdSessionMgmt) throws USSDBlockingException {
 		// TODO Auto-generated method stub
+		String businessId = ussdSessionMgmt.getBusinessId();
 		int seqNo=USSDSequenceNumberEnum.SEQUENCE_NUMBER_NINE.getSequenceNo();
 		String transNodeId=ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
 		if(transNodeId.equals("ussd0.4.3.4.2")||ussdSessionMgmt.getBusinessId().equals("MZBRB"))
 			seqNo=USSDSequenceNumberEnum.SEQUENCE_NUMBER_TEN.getSequenceNo();
+		if(businessId.equalsIgnoreCase("ZMBRB") && transNodeId.equals("ussd4.3.3.2") || 
+				businessId.equalsIgnoreCase("BWBRB") && transNodeId.equals("ussd0.3.3.2") || 
+				businessId.equalsIgnoreCase("TZBRB") && transNodeId.equals("ussd0.3.3.2")) {
+			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_ELEVEN.getSequenceNo();
+		}
 		return seqNo;
 	}
 }

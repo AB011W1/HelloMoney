@@ -717,7 +717,7 @@ public class AuthController extends USSDAbstractController implements ServletCon
 		 if(null != profile.getBannerMessage())
 		     bannerMessage = profile.getBannerMessage();
 		 
-		 if(null != bocBannerFlag && null != bannerMessage && bocBannerFlag.equals("Y"))
+		 if(null != bocBannerFlag && null != bannerMessage && bocBannerFlag.equalsIgnoreCase("Y"))
 		 {
 			 welcomeMessage = ussdResourceBundle.getLabel(BANNER_WELCOME_MSG, new Locale(languageCode, ussdSessionMgmt.getCountryCode()));
 			 welcomeMessage = welcomeMessage.concat(USSDConstants.NEW_LINE);

@@ -106,7 +106,15 @@ public class InternalNonRegFundTransferValidateJsonParser implements BmgBaseJson
 				pageBody.append(intNRFundTxValidatePayData.getFrActNo().getMkdActNo());
 			}
 
-	    if(null != intNRFundTxValidatePayData.getToMskActNo()) {
+	    //Condition added for ZM,BW,TZ once off
+	    String businessId = ussdSessionMgmt.getBusinessId();
+	    String transNodeId=ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
+		
+	    
+	    if(null != intNRFundTxValidatePayData.getToMskActNo() && 
+	    		!(businessId.equalsIgnoreCase("ZMBRB") && transNodeId.equals("ussd4.3.3.2") || 
+	    				businessId.equalsIgnoreCase("BWBRB") && transNodeId.equals("ussd0.3.3.2") || 
+	    				businessId.equalsIgnoreCase("TZBRB") && transNodeId.equals("ussd0.3.3.2"))) {
 	    	pageBody.append(USSDConstants.NEW_LINE);
 		    pageBody.append(toAccLabel);
 		    pageBody.append(USSDConstants.SINGLE_WHITE_SPACE);

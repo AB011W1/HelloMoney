@@ -3,8 +3,9 @@
 
 	var ussd_hosts = [
 	             ["local","localhost"                       , "http" , "8080" , "hellomoney" , "ALL"],
-	            /* ["DEV"  ,"jhbdsr000000862.intranet.barcapint.com"               , "https", "45032", "hellomoney" , "ALL"],*/
-	            /* ["SIT"  ,"zadsdcrapp1196.ocorp.dsarena.com"       , "https", "45032", "hellomoney", "ALL"],*/
+////	         /* ["DEV"  ,"jhbdsr000000862.intranet.barcapint.com"               , "https", "45032", "hellomoney" , "ALL"],*/
+	             ["SIT"  ,"zadsdcrapp1196.ocorp.dsarena.com"       , "https", "45032", "hellomoney", "ALL"],
+	             ["SITBAU"  ,"zadsdcrapp1196.ocorp.dsarena.com"       , "https", "15032", "hellomoney", "ALL"],
 	             ["UAT"  ,"zadsdcrweb1027.corp.dsarena.com"       , "https", "45032", "hellomoney", "ALL"],
 	             ["UATBAU"  ,"zadsdcrweb1027.corp.dsarena.com"       , "https", "15032", "hellomoney", "ALL"],
 	             ["NFT"  ,"zapsdcrweb1019.corp.dsarena.com"       , "https", "45032", "hellomoney", "ALL"],
@@ -165,7 +166,8 @@
 			//enableKeyPad();
 			clearStyle();
 			clearTransform();
-			msisdnChange();
+			//msisdnChange();
+			listChange();
 		}
 
 		function trim(obj){
@@ -194,8 +196,8 @@
 			var port = document.getElementById('port').value;
 			var context = document.getElementById('context').value;
 			//var path = document.getElementById('path').value;
-			var e = document.getElementById("mobNo");
-			var msisdn = e.options[e.selectedIndex].value;
+//			var e = document.getElementById("mobNo");
+//			var msisdn = e.options[e.selectedIndex].value;
 			if(document.getElementById('msisdn').value!=""){
 				msisdn = document.getElementById('msisdn').value;
 			}
@@ -679,6 +681,13 @@
 			document.getElementById('tempInputURL').value = msisdnPIN.split(": ")[1];
 
 		}
+		function listChange()
+		{
+			document.getElementById('phoneInput').value="*150*20*1#";
+			var mn =document.getElementById("bsnssId");
+			var msisdnPIN = mn.options[mn.selectedIndex].title;
+			document.getElementById('tempInputURL').value = msisdnPIN.split(": ")[1];
+		}
 
 
 		function clearPhIn(){
@@ -906,18 +915,18 @@
                   document.getElementById('topUpAmount').style.visibility = 'visible';
                   document.getElementById('amount').style.visibility = 'visible';
                   if(envId == 'NFT')
-                	  document.getElementById('domain').value = 'zapsdcrweb1019.corp.dsarena.com';//'ubhm-ghnft.barclays.intranet';
+                	  document.getElementById('domain').value = 'ubhm-ghnft.barclays.intranet';
             }else if(operatorSelected=="FREEDIALMTN"){
             	document.getElementById('topUpAmount').style.visibility = 'hidden';
                 document.getElementById('amount').style.visibility = 'hidden';
                 if(envId == 'NFT')
-                	document.getElementById('domain').value = 'zapsdcrweb1019.corp.dsarena.com';//'ubhm-ghetnft.barclays.intranet';
+                	document.getElementById('domain').value = 'ubhm-ghetnft.barclays.intranet';
             }else{
                   document.getElementById('topUpAmount').style.visibility = 'hidden';
                   document.getElementById('amount').style.visibility = 'hidden';
                   var busId=document.getElementById('bsnssId').value;
                   if(busId == 'GHBRB' && envId == 'NFT')
-                   	  document.getElementById('domain').value = 'zapsdcrweb1019.corp.dsarena.com';//'ubhm-ghnft.barclays.intranet';
+                   	  document.getElementById('domain').value = 'ubhm-ghnft.barclays.intranet';
             }
 
       }

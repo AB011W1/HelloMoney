@@ -109,7 +109,7 @@ public class AirtimeTopupDelBillrValParser implements BmgBaseJsonParser {
 			String paymentTypeInput = userInputMap
 					.get(USSDInputParamsEnum.AIRTIME_TOPUP_PAYMENT_TYPE
 							.getParamName());
-			if (paymentTypeInput.equals("4")) {
+			if (null!=paymentTypeInput && paymentTypeInput.equals("4")) {
 				List<String> params = new ArrayList<String>(1);
 				params.add(pay.getPayNckNam());
 				params.add((String) userInputMap.get(USSDInputParamsEnum.AIRTIME_TOPUP_NEW_BENE_MOB_NUM.getParamName()));

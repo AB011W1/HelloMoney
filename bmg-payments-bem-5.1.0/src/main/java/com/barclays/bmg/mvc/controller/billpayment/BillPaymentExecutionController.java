@@ -134,7 +134,7 @@ public class BillPaymentExecutionController extends BMBAbstractCommandController
 	    }
 
 	    //For GePG
-	    if(null != context && "PMT_BP_BILLPAY_ONETIME".equalsIgnoreCase(context.getActivityId())){
+	    if(null != context && ("PMT_BP_BILLPAY_ONETIME".equalsIgnoreCase(context.getActivityId()) || "PMT_BP_BILLPAY_PAYEE".equalsIgnoreCase(context.getActivityId()))){
 	    	context.setOpCde(httpRequest.getParameter("opCde"));
 	    }
 

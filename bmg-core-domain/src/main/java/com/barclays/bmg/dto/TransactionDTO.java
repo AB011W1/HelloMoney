@@ -35,6 +35,27 @@ public class TransactionDTO extends BaseDomainDTO {
 	public void setNib(String nib) {
 		this.nib = nib;
 	}
+	
+	//ZMBRB One off
+	private String bankLetter;
+	private String bankCode;
+
+	public String getBankCode() {
+		return bankCode;
+	}
+
+	public void setBankCode(String bankCode) {
+		this.bankCode = bankCode;
+	}
+
+	public String getBankLetter() {
+		return bankLetter;
+	}
+
+	public void setBankLetter(String bankLetter) {
+		this.bankLetter = bankLetter;
+		
+	}
 
 	// CPB change MakeBillPayment 10/05/2017
     private Charge chargeDTO;

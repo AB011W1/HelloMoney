@@ -99,10 +99,16 @@ public class RegisterBenfExtGetBenfNickNameJsonParser implements BmgBaseJsonPars
 			USSDSessionManagement ussdSessionMgmt) throws USSDBlockingException {
 		// TODO Auto-generated method stub
 		int seqNo=USSDSequenceNumberEnum.SEQUENCE_NUMBER_EIGHT.getSequenceNo();
+		String transNodeId=ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
 		if(ussdSessionMgmt.getBusinessId().equals("MZBRB"))
 			seqNo=USSDSequenceNumberEnum.SEQUENCE_NUMBER_ELEVEN.getSequenceNo();
+		else if(ussdSessionMgmt.getBusinessId().equalsIgnoreCase("ZMBRB") && transNodeId.equals("ussd4.3.3.2") || 
+				ussdSessionMgmt.getBusinessId().equalsIgnoreCase("BWBRB") && transNodeId.equals("ussd0.3.3.2") || 
+				ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZBRB") && transNodeId.equals("ussd0.3.3.2")) {
+			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_TEN.getSequenceNo();
+		}
 		else{
-		String transNodeId=ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
+		
 		if(transNodeId.equals("ussd0.4.3.4.2"))
 			seqNo=USSDSequenceNumberEnum.SEQUENCE_NUMBER_NINE.getSequenceNo();
 		}

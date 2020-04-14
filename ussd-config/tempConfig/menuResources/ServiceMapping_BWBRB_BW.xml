@@ -76,7 +76,8 @@
   	-->
   	<!--Skip Nodes Syntax Endss-->
 
-
+	<!--  Other Bank one-off -->
+	<srv tranId="BW_OTHER_BANK_FND_TX_UNREG" importTran="OtherBankAcctFundTxUnReg" firstScreenSequencerId="1"/>
 
 	<!-- Supported Languages -->
 	<languages displayLabelId="LANG01">

@@ -62,7 +62,8 @@ public class LeadGenerationSubmitJsonParser implements BmgBaseJsonParser {
 
 						Map<String, String> userInputMap = responseBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap();
 						String productName = userInputMap.get(USSDConstants.LEAD_GEN_PRODUCT_NAME);
-						if (productName.equals(USSDConstants.LEAD_GEN_SUB_PRODUCT_NAME_TIMIZA)) {
+						//TZNBC Menu Optimization - Product name null check
+						if (null!=productName && productName.equals(USSDConstants.LEAD_GEN_SUB_PRODUCT_NAME_TIMIZA)) {
 
 							//pageBody.append(ussdResourceBundle.getLabel(LEAD_GEN_TIMIZA_LABEL,locale));
 							//menuItemDTO.setPageBody(pageBody.toString());

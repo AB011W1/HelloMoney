@@ -45,18 +45,21 @@ public class BillPayConfirmJsonParser implements BmgBaseJsonParser {
 
 	    BillPayConfirm billPayConfirm = mapper.readValue(responseBuilderParamsDTO.getJsonString(), BillPayConfirm.class);
 	    String txnRefNo = null;
+	    String token = null;
 	    String displayMessage = null;
 	    if (billPayConfirm != null) {
 		if (billPayConfirm.getPayHdr() != null
 			&& USSDExceptions.SUCCESS.getBmgCode().equalsIgnoreCase(billPayConfirm.getPayHdr().getResCde())) {
-		    if (billPayConfirm.getPayData() != null)
+		    if (billPayConfirm.getPayData() != null) {
 			txnRefNo = billPayConfirm.getPayData().getTxnRefNo();
+		    token = billPayConfirm.getPayData().getTokenNo(); 
+		    }
 		    displayMessage = getLabel(responseBuilderParamsDTO, USSDConstants.PAY_BILL_CONFIRM_LBL);
-		    menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, txnRefNo, displayMessage);
+		    menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, txnRefNo, token, displayMessage);
 		} else if (isInProgressErrorCode(billPayConfirm.getPayHdr().getResCde())) {
 		    txnRefNo = billPayConfirm.getPayHdr().getTxnRefNo();
 		    displayMessage = getLabel(responseBuilderParamsDTO, USSDConstants.PAY_BILL_INPROCESS_LBL);
-		    menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, txnRefNo, displayMessage);
+		    menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, txnRefNo, token, displayMessage);
 
 		} else if (billPayConfirm.getPayHdr() != null) {
 		    LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
@@ -96,13 +99,14 @@ public class BillPayConfirmJsonParser implements BmgBaseJsonParser {
 	return result;
     }
 
-    private MenuItemDTO renderMenuOnScreen(ResponseBuilderParamsDTO responseBuilderParamsDTO, String txnRefNo, String displayMessage) {
+    private MenuItemDTO renderMenuOnScreen(ResponseBuilderParamsDTO responseBuilderParamsDTO, String txnRefNo, String token, String displayMessage) {
 	MenuItemDTO menuItemDTO = new MenuItemDTO();
 	StringBuilder pageBody = new StringBuilder();
-	pageBody.append(displayMessage);
-	pageBody.append(USSDConstants.SINGLE_WHITE_SPACE);
-	pageBody.append(txnRefNo);
-
+	pageBody.append(displayMessage).append(USSDConstants.NEW_LINE);
+	pageBody.append(txnRefNo).append(USSDConstants.NEW_LINE);
+	if(null != token && !"".equalsIgnoreCase(token)){
+		pageBody.append("Token: ").append(token).append(USSDConstants.NEW_LINE);
+	}
 	//CPB demo changes
 	menuItemDTO.setPageBody(pageBody.toString());
 	menuItemDTO.setPageHeader(responseBuilderParamsDTO.getHeaderId());

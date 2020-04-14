@@ -576,6 +576,12 @@
 		<!--  Unregistred Beneficiary save  -->
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).UNREG_BENF_BENF_CONFIRM.getTranId()}" value-ref="otherBankOneoffFormValJsonParser" />		
 		
+		<!-- TZNBC Menu Optimization -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AIRTIME_TOPUP_BENE_MANAGEMENT.getTranId()}"  value-ref="airtimeTopUpBeneMngmtJsonParser" />
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ONE_TIME_BILL_PYMNT_CATLIST.getTranId()}" value-ref="onetimeBillpayCatListJsonParser" />
+	    <entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_BENE_MANAGEMENT.getTranId()}" value-ref="mobileWalletTopUpBeneMngmtJsonParser" />
+	   	<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_LOANS.getTranId()}" value-ref="leadGenerationLoansJsonParser" />
+		
 	    </util:map>
 
 </beans>

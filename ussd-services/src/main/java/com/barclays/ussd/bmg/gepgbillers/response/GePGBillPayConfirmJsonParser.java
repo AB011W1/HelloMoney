@@ -134,6 +134,6 @@ public class GePGBillPayConfirmJsonParser implements BmgBaseJsonParser {
 
     @Override
     public void setNextScreenSequenceNumber(MenuItemDTO menuItemDTO) {
-    	menuItemDTO.setNextScreenSequenceNumber(USSDSequenceNumberEnum.SEQUENCE_NUMBER_SEVEN.getSequenceNo());
+    	menuItemDTO.setNextScreenSequenceNumber(USSDSequenceNumberEnum.SEQUENCE_NUMBER_THIRTY.getSequenceNo());
     }
 }

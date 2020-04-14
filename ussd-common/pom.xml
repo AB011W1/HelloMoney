@@ -9,20 +9,23 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.barclays.ussd</groupId>
     <artifactId>ussd-common</artifactId>
-    <name>ussd-common</name>
-    <version>1.0</version>
+    <name>ussd-common-${revision}</name>
+    <version>${revision}</version>
+  <properties>
+    <revision>1.0.0</revision>
+  </properties>
     <description>Common Utilities</description>
     <dependencies>
 
         <dependency>
             <groupId>com.barclays.ussd</groupId>
             <artifactId>ussd-bmg-adapter</artifactId>
-            <version>1.0</version>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.barclays.ussd</groupId>
             <artifactId>ussd-domain-objects</artifactId>
-            <version>1.0</version>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 

@@ -93,11 +93,15 @@ public class MobileWalletEnterMobileNewBeneficiaryResponseParser implements BmgB
 			USSDSessionManagement ussdSessionMgmt) throws USSDBlockingException {
 		int seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_TEN
 				.getSequenceNo();
-		Map<String, String> userInputMap = ussdSessionMgmt
-		.getUserTransactionDetails().getUserInputMap();
-		String paymentTypeInput=	userInputMap.get(
-		USSDInputParamsEnum.MOBILE_WALLET_PAYMENT_TYPE.getParamName());
-
+		Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
+		
+		//TZNBC Menu Optimization
+		String paymentTypeInput=null;
+		if(ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC")) 
+			paymentTypeInput=userInputMap.get(USSDInputParamsEnum.MOBILE_WALLET_BENE_MANAGEMENT.getParamName());
+		else 		
+			paymentTypeInput=userInputMap.get(USSDInputParamsEnum.MOBILE_WALLET_PAYMENT_TYPE.getParamName());
+		
 		SystemParameterDTO systemParameterDTO = new SystemParameterDTO();
     	SystemParameterServiceRequest systemParameterServiceRequest = new SystemParameterServiceRequest();
     	systemParameterServiceRequest.setSystemParameterDTO(systemParameterDTO);
@@ -112,7 +116,7 @@ public class MobileWalletEnterMobileNewBeneficiaryResponseParser implements BmgB
 		if (USSDConstants.BUSINESS_ID_GHBRB.equalsIgnoreCase(ussdSessionMgmt.getBusinessId()) && paymentTypeInput.equals("4") && isGHIPS2Flag.equals("Y"))  {
 			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FOURTY.getSequenceNo();
 		}
-		else if(paymentTypeInput.equals("4") )
+		else if(null!=paymentTypeInput && ((ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("2")) || paymentTypeInput.equals("4")) )
 		{
 			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_TWENTY.getSequenceNo();
 		}

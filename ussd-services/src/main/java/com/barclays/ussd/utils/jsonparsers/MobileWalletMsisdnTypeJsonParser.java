@@ -145,6 +145,11 @@ public class MobileWalletMsisdnTypeJsonParser implements BmgBaseJsonParser,Scree
 		SystemParameterServiceResponse response = systemParameterService.getStatusParameter(systemParameterServiceRequest);
 		if(response!=null && response.getSystemParameterDTO()!=null && response.getSystemParameterDTO().getParameterValue()!=null)
 			isGHIPS2Flag = response.getSystemParameterDTO().getParameterValue();
+		
+		//TZNBC Menu Optimization
+		if (ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && userInput.equals("2"))
+			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FOUR.getSequenceNo();
+				
     	if ((USSDConstants.BUSINESS_ID_GHBRB.equalsIgnoreCase(ussdSessionMgmt.getBusinessId())) && userInput.equals("1") && ("Y").equals(isGHIPS2Flag))
     			{
     		Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();

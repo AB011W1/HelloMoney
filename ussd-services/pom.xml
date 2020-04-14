@@ -9,31 +9,35 @@
    <modelVersion>4.0.0</modelVersion>
   <groupId>com.barclays.ussd</groupId>
   <artifactId>ussd-services</artifactId>
-  <version>1.0</version>
+  <name>ussd-services-${revision}</name>
+  <version>${revision}</version>
+  <properties>
+    <revision>1.0.0</revision>
+  </properties>
 
   <dependencies>
       <dependency>
           <groupId>com.barclays.ussd</groupId>
           <artifactId>ussd-domain-objects</artifactId>
-          <version>1.0</version>
+          <version>1.0.0</version>
       </dependency>
 
     <dependency>
           <groupId>com.barclays.ussd</groupId>
           <artifactId>ussd-common</artifactId>
-          <version>1.0</version>
+          <version>1.0.0</version>
       </dependency>
 
       <dependency>
           <groupId>com.barclays.ussd</groupId>
           <artifactId>ussd-core-cache</artifactId>
-          <version>1.0</version>
+          <version>1.0.0</version>
       </dependency>
       
       <dependency>
           <groupId>com.barclays.bmg</groupId>
           <artifactId>bmg-payments-bem-5.1.0</artifactId>
-          <version>1.0</version>
+          <version>1.0.0</version>
       </dependency>
 
   </dependencies>

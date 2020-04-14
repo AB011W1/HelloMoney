@@ -143,7 +143,20 @@ public class FundTransferExecutionController extends
 				fundTransferDTO.setNib(nibNo);
 			}
 					
+			//ZMBRB,BWBRB,TZBRB One Off
+			String bankLetter = null;
+			if(null != httpRequest.getParameter("BANKLETTER"))
+			{
+				bankLetter = httpRequest.getParameter("BANKLETTER");
+				fundTransferDTO.setBankLetter(bankLetter);
+			}
 			
+			String bankCode = null;
+			if(null != httpRequest.getParameter("BANKCODE"))
+			{
+				bankCode = httpRequest.getParameter("BANKCODE");
+				fundTransferDTO.setBankCode(bankCode);
+			}
 			
 			fundTransferExecuteOperationRequest.setTransactionDTO(fundTransferDTO);
 			 fundTransferExecuteOperationResponse =

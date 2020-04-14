@@ -113,6 +113,7 @@ public class RegisterBenfExtSelectBranchCodeJsonParser implements BmgBaseJsonPar
 	if (!branchCodeCountryList.contains(businessId)&&!transNodeId.equals("ussd0.4.3.4.2")) {
 	    seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FOUR.getSequenceNo();
 	}
+	
 	return seqNo;
     }
 }

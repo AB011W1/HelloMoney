@@ -70,5 +70,14 @@ public class BillersLstServiceImpl implements IBillersLstService {
     public BillersListDO getBillerInfo(String countryCd, String billerId, String mobileNumber,String businessId) throws USSDNonBlockingException {
     	return billersLstDAOImpl.getBillerInfo(countryCd, billerId,mobileNumber, businessId);
     }
+    
+    @Override
+	public List<BillersListDO> getCategoryList(String countryCd, String mobileNumber, String businessId) throws USSDNonBlockingException {
+		return billersLstDAOImpl.getCategoryList(countryCd,mobileNumber, businessId);
+	}
+	@Override
+	public List<BillersListDO> getBillerPerCategory(String mobileNumber, String businessId, String category) throws USSDNonBlockingException {
+		return billersLstDAOImpl.getBillerPerCategory(mobileNumber, businessId, category);
+	}
 
 }

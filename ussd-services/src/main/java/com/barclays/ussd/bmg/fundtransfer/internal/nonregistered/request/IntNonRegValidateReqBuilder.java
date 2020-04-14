@@ -18,6 +18,7 @@ import com.barclays.ussd.dto.UssdBranchLookUpDTO;
 import com.barclays.ussd.svc.context.USSDBaseRequest;
 import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
+import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.UssdResourceBundle;
 import com.barclays.ussd.utils.jsonparsers.bean.fundtransfer.ownfundtransfer.AccountDetails;
 import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
@@ -64,6 +65,21 @@ public class IntNonRegValidateReqBuilder implements BmgBaseRequestBuilder {
 
 	    requestParamMap.put("beneficiaryBranchCode", branchCodeLookUpDTO.getBranchCode());
 	}
+	
+	//ZMBRB,BWBRB,TZBRB one-off
+	if(null == userBranchSelection && (ussdSessionMgmt.getBusinessId().equalsIgnoreCase("ZMBRB") || 
+			ussdSessionMgmt.getBusinessId().equalsIgnoreCase("BWBRB") ||
+			ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZBRB")))
+	{
+		userBranchSelection = userInputMap.get(USSDInputParamsEnum.REG_BEN_EXT_BRANCH_CODE_LIST.getParamName());
+		if (userBranchSelection != null && StringUtils.isNotEmpty(userBranchSelection)) {
+		    List<UssdBranchLookUpDTO> branchList = (List<UssdBranchLookUpDTO>) ussdSessionMgmt.getTxSessions().get(
+			    USSDInputParamsEnum.REG_BEN_EXT_BRANCH_CODE_LIST.getTranId());
+		    UssdBranchLookUpDTO branchCodeLookUpDTO = branchList.get(Integer.parseInt(userBranchSelection) - 1);
+
+		    requestParamMap.put("beneficiaryBranchCode", branchCodeLookUpDTO.getBranchCode());
+		}
+	}
 
 	request.setMsisdnNo(requestBuilderParamsDTO.getMsisdnNo());
 	request.setOpCde(requestBuilderParamsDTO.getBmgOpCode());
@@ -86,6 +102,25 @@ public class IntNonRegValidateReqBuilder implements BmgBaseRequestBuilder {
 		ussdSessionMgmt.getTxSessions().put(USSDInputParamsEnum.REG_BENF_GET_NIB_NO.getParamName(), benAcctNo);
 	}
 	
+	//ZMBRB,BWBRB,TZBRB One-off
+	if(null != userInputMap.get(USSDInputParamsEnum.REG_BEN_EXT_BANK_CODE.getParamName()))
+	{
+		ussdSessionMgmt.getTxSessions().put(USSDInputParamsEnum.REG_BEN_EXT_BANK_CODE.getParamName(), userInputMap.get(USSDInputParamsEnum.REG_BEN_EXT_BANK_CODE.getParamName()));
+		requestParamMap.put("BANKLETTER", userInputMap.get(USSDInputParamsEnum.REG_BEN_EXT_BANK_CODE.getParamName().toString()));
+		
+		//Bank code
+		List<UssdBranchLookUpDTO> tempBranchList = (List<UssdBranchLookUpDTO>) ussdSessionMgmt.getTxSessions().get(
+    			USSDInputParamsEnum.REG_BEN_EXT_BANK_CODE_LIST.getTranId());
+		UssdBranchLookUpDTO bankCodeLookUpDTO = tempBranchList.get(Integer.parseInt(userInputMap.get(USSDInputParamsEnum.REG_BEN_EXT_BANK_CODE_LIST
+				.getParamName())) - 1);
+		
+		requestParamMap.put("BANKCODE", bankCodeLookUpDTO.getBankCode());
+		
+	}
+	
+	
+	
+	
 	String benName = userInputMap.get(USSDInputParamsEnum.INT_NR_FT_NICK_NAME.getParamName());
 
 	Calendar cal = Calendar.getInstance();
@@ -102,6 +137,18 @@ public class IntNonRegValidateReqBuilder implements BmgBaseRequestBuilder {
 	requestParamMap.put("payDesc", transactionRemarks);
 	requestParamMap.put("txnAmt", txtAmt);
 	requestParamMap.put("beneficiaryAccountNumber", benAcctNo);
+	
+	//Added condition for REG_BEN_EXT_BENF_NAME
+	String businessId = ussdSessionMgmt.getBusinessId();	
+	String transNodeId=ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
+	if(businessId.equalsIgnoreCase("ZMBRB") && transNodeId.equals("ussd4.3.3.2") || 
+			businessId.equalsIgnoreCase("BWBRB") && transNodeId.equals("ussd0.3.3.2") || 
+			businessId.equalsIgnoreCase("TZBRB") && transNodeId.equals("ussd0.3.3.2")) {
+		if(null == benName)
+			benName = userInputMap.get(USSDInputParamsEnum.REG_BEN_EXT_BENF_NAME.getParamName());
+	}
+	
+	
 	requestParamMap.put("beneficiaryName", benName);
 
 	requestParamMap.put("opCde", requestBuilderParamsDTO.getBmgOpCode());

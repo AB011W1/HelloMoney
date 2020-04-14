@@ -72,24 +72,29 @@ public class AirtimeTopUpBillerListJsonParser implements BmgBaseJsonParser,Scree
 	USSDSessionManagement ussdSessionMgmt= responseBuilderParamsDTO.getUssdSessionMgmt();
 	Map<String, String> userInputMap = responseBuilderParamsDTO.getUssdSessionMgmt()
 	.getUserTransactionDetails().getUserInputMap();
-	String paymentTypeInput=	userInputMap.get(
-	USSDInputParamsEnum.AIRTIME_TOPUP_PAYMENT_TYPE.getParamName()
-	);
-	if (paymentTypeInput.equals("5")) {
+	
+	//TZNBC Menu Optimization - to fetch user input from Bene Management 
+	String paymentTypeInput=null;	
+	if(ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC"))
+		paymentTypeInput=userInputMap.get(USSDInputParamsEnum.AIRTIME_TOPUP_BENE_MANAGEMENT.getParamName());
+	else
+		paymentTypeInput=userInputMap.get(USSDInputParamsEnum.AIRTIME_TOPUP_PAYMENT_TYPE.getParamName());
+	
+	if (null!=paymentTypeInput && ((ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("3")) || paymentTypeInput.equals("5"))) {
 		pageBody.append(responseBuilderParamsDTO.getUssdResourceBundle()
 				.getLabel(
 						DELETE_LABEL,
 						new Locale(ussdSessionMgmt.getUserProfile()
 								.getLanguage(), ussdSessionMgmt
 								.getUserProfile().getCountryCode())));
-	}else if(paymentTypeInput.equals("2")){
+	}else if((paymentTypeInput==null && ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC")) || (!ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("2"))){
 		pageBody.append(responseBuilderParamsDTO.getUssdResourceBundle()
 				.getLabel(
 						SAVE_LABEL,
 						new Locale(ussdSessionMgmt.getUserProfile()
 								.getLanguage(), ussdSessionMgmt
 								.getUserProfile().getCountryCode())));
-	}else if(paymentTypeInput.equals("4")){
+	}else if(null!=paymentTypeInput && ((ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("2")) || paymentTypeInput.equals("4"))){
 		pageBody.append(responseBuilderParamsDTO.getUssdResourceBundle()
 				.getLabel(
 						EDIT_LABEL,
@@ -139,16 +144,21 @@ public class AirtimeTopUpBillerListJsonParser implements BmgBaseJsonParser,Scree
 				.getSequenceNo();
 		Map<String, String> userInputMap = ussdSessionMgmt
 		.getUserTransactionDetails().getUserInputMap();
-		String paymentTypeInput=	userInputMap.get(
-		USSDInputParamsEnum.AIRTIME_TOPUP_PAYMENT_TYPE.getParamName()
-		);
-		if (paymentTypeInput.equals("5")) {
+		
+		//TZNBC Menu Optimization
+		String paymentTypeInput=null;
+		if(ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC"))
+			paymentTypeInput=userInputMap.get(USSDInputParamsEnum.AIRTIME_TOPUP_PAYMENT_TYPE.getParamName());
+		else 
+			paymentTypeInput=userInputMap.get(USSDInputParamsEnum.AIRTIME_TOPUP_BENE_MANAGEMENT.getParamName());
+
+		if (null!=paymentTypeInput && ((ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("3")) || paymentTypeInput.equals("5"))) {
 			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_SEVENTEEN.getSequenceNo();
 		}
-		if (paymentTypeInput.equals("2")) {
+		if ((paymentTypeInput==null && ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC")) || (!ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("2"))) {
 			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_NINETEEN.getSequenceNo();
 		}		
-		if (paymentTypeInput.equals("4")) {
+		if (null!=paymentTypeInput && ((ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("2")) || paymentTypeInput.equals("4"))) {
 			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FIFTEEN.getSequenceNo();
 		}
 

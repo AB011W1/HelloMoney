@@ -18,8 +18,20 @@ public class DomesticFundTransferServiceRequest extends RequestContext {
     private String txnNot;
     private String txnTyp;
     private BigDecimal tranFee;
+    
+    //ZMBRB,BWBRB,TZBRB One-off
+    private String bankLetter;
+     
 
-    // MakeDomesticFundTransfer for Other barclays change - CPB 30/05
+    public String getBankLetter() {
+		return bankLetter;
+	}
+
+	public void setBankLetter(String bankLetter) {
+		this.bankLetter = bankLetter;
+	}
+
+	// MakeDomesticFundTransfer for Other barclays change - CPB 30/05
     private Charge chargeDTO;
 
     public CustomerAccountDTO getSourceAcct() {

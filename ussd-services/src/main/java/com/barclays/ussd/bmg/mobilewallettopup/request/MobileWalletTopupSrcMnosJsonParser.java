@@ -85,13 +85,64 @@ public class MobileWalletTopupSrcMnosJsonParser implements BmgBaseJsonParser, Sc
 			if(ussdSessionMgmt.getBusinessId().equals("GHBRB") && ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranId().equals(USSDConstants.GH_FREE_DIAL_USSD_TRAN_ID)){
 				mnoList=getMNOMobileMoneyList(mnoList);
 			}
+			//TZNBC Menu Optimization
 			Map<String, Object> txSessions = new HashMap<String, Object>(5);
+			if(responseBuilderParamsDTO.getUssdSessionMgmt().getBusinessId().equals("TZNBC")){
+				mnoList=getSortedTznbcMNOList(mnoList);
+			}
 			txSessions.put(USSDInputParamsEnum.MOBILE_WALLET_MNOS_LST.getTranId(), mnoList);
 			txSessions.put(USSDInputParamsEnum.MOBILE_WALLET_FROM_ACCOUNT.getTranId(), mobileWalletPayData.getSrcLst());
 			ussdSessionMgmt.setTxSessions(txSessions);
 		}
 	}
 
+	private List<MobileWalletProvider> getSortedTznbcMNOList(List<MobileWalletProvider> mnoList) {
+		List<MobileWalletProvider> mwalletBillerList = new ArrayList<MobileWalletProvider>(mnoList);
+		List<MobileWalletProvider> sortedBillerList=new ArrayList<MobileWalletProvider>();
+
+		for (MobileWalletProvider mobileWalletProvider : mwalletBillerList) {
+		    if(mobileWalletProvider.getBillerId().startsWith("AMCASHIN")){
+			sortedBillerList.add(mobileWalletProvider);
+			break;
+		    }
+		}
+
+		for (MobileWalletProvider mobileWalletProvider : mwalletBillerList) {
+		    if(mobileWalletProvider.getBillerId().startsWith("VMCASHIN")){
+			sortedBillerList.add(mobileWalletProvider);
+			break;
+		    }
+		}
+		for (MobileWalletProvider mobileWalletProvider : mwalletBillerList) {
+		    if(mobileWalletProvider.getBillerId().startsWith("TPCASHIN")){
+			sortedBillerList.add(mobileWalletProvider);
+			break;
+		    }
+		}
+		for (MobileWalletProvider mobileWalletProvider : mwalletBillerList) {
+		    if(mobileWalletProvider.getBillerId().startsWith("EZCASHIN")){
+			sortedBillerList.add(mobileWalletProvider);
+			break;
+		    }
+		}
+
+		mwalletBillerList = removeAll(mwalletBillerList,sortedBillerList);
+		sortedBillerList.addAll(mwalletBillerList);
+		return sortedBillerList;
+
+	    }
+	private List<MobileWalletProvider> removeAll(List<MobileWalletProvider> collection, List<MobileWalletProvider> remove)
+    {
+    	List<MobileWalletProvider> list = new ArrayList<MobileWalletProvider>();
+    	for (MobileWalletProvider mobileWalletProvider : collection) {
+    		if (!remove.contains(mobileWalletProvider)) {
+    	          list.add(mobileWalletProvider);
+    	        }
+		}
+      return list;
+    }
+
+  
 	@Override
 	public void setNextScreenSequenceNumber(MenuItemDTO menuItemDTO) {
 		menuItemDTO.setNextScreenSequenceNumber(USSDSequenceNumberEnum.SEQUENCE_NUMBER_TWO.getSequenceNo());
@@ -102,12 +153,19 @@ public class MobileWalletTopupSrcMnosJsonParser implements BmgBaseJsonParser, Sc
 		Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
 		List<MobileWalletProvider> mnoList = (List<MobileWalletProvider>) ussdSessionMgmt.getTxSessions().get(
 				USSDInputParamsEnum.MOBILE_WALLET_MNOS_LST.getTranId());
-		if (mnoList != null && mnoList.size() == 1 && ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranId().equals(USSDConstants.GH_FREE_DIAL_USSD_TRAN_ID)){
+		
+		//TZNBC Menu Optimization-redirected to Bene Management
+		String tranDataId=ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
+		if(null!=tranDataId && tranDataId.equalsIgnoreCase("ussd0.8.2.1") && ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC"))
+			seqNo = USSDSequenceNumberEnum.SEQUNCE_NUMBER_FOURTYFOUR.getSequenceNo();
+				
+		else if (mnoList != null && mnoList.size() == 1 && ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranId().equals(USSDConstants.GH_FREE_DIAL_USSD_TRAN_ID)){
 			userInputMap = userInputMap == null ? new HashMap<String, String>() : userInputMap;
 			userInputMap.put(USSDInputParamsEnum.MOBILE_WALLET_MNOS_LST.getParamName(), USSDConstants.DEFAULT_OPTION_SELECTION);
 			ussdSessionMgmt.getUserTransactionDetails().setUserInputMap(userInputMap);
 			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FIVE.getSequenceNo();
 		}
+		
 		return seqNo;
 	}
 
@@ -144,5 +202,7 @@ class MobileWalletCustomerAccountComparator implements Comparator<SrcAccount>, S
 		}
 		return retVal;
 	}
+	
 
-}
+  }
+

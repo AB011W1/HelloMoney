@@ -8,12 +8,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.barclays.bmg</groupId>
   <artifactId>bmg-ssa-acct-svc-bem-5.1.0</artifactId>
-  <name>bmg-ssa-acct-svc-bem-5.1.0</name>
-  <version>1.0</version>
+  <name>bmg-ssa-acct-svc-bem-${revision}</name>
+  <version>${revision}</version>
   <description>bmg-ssa-acct-svc-bem-5.1.0</description>
 
   <properties>
   	<MCFE_MW_Stub.version>4.0.56</MCFE_MW_Stub.version>
+  	<revision>1.0.0</revision>
   </properties>
 
 </project>

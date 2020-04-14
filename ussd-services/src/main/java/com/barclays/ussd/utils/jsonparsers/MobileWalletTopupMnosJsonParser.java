@@ -1,12 +1,15 @@
+
 package com.barclays.ussd.utils.jsonparsers;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
 import org.apache.log4j.Logger;
 
+import com.barclays.bmg.constants.BillPaymentConstants;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
@@ -103,8 +106,15 @@ public class MobileWalletTopupMnosJsonParser implements BmgBaseJsonParser,Screen
 	if(ussdSessionMgmt.getBusinessId().equals("GHBRB") && ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranId().equals(USSDConstants.GH_FREE_DIAL_USSD_TRAN_ID)){
 		seqNo=USSDSequenceNumberEnum.SEQUENCE_NUMBER_FIVE.getSequenceNo();
 	}
+	//TZNBC Menu Optimization - saved bene flow
+	String tranDataId=ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
+	if(null!=tranDataId && tranDataId.equalsIgnoreCase("ussd0.1.5") && ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC")) {	
+		seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_THIRTEEN.getSequenceNo();
+		Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
+		userInputMap.put(BillPaymentConstants.AT_MW_SAVED_BENEF,BillPaymentConstants.AT_MW_SAVED_BENEF);
+	}
 	//CR#47
-	/*if (!branchCodeCountryList.contains(businessId)) {
+	/*if (!branchCodeCuntryList.contains(businessId)) {
 	    seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_THREE.getSequenceNo();
 	}*/
 	return seqNo;

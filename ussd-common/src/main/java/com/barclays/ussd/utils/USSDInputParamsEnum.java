@@ -1065,7 +1065,13 @@ GET_FUND_TRAN_DETAILS("FTGP0035","tranNoSelectedDetails"),
 	CARD_CHANGE_REQUEST_DETAILS("ATR002", "cardAuthRequestConfirm"),
 	
 	//MZBRB Oneoff UNReg Bene
-	UNREG_BENF_BENF_CONFIRM("UBOBA01","validate")
+	UNREG_BENF_BENF_CONFIRM("UBOBA01","validate"),
+	
+	//TZNBC Menu Optimization
+	ONE_TIME_BILL_PYMNT_CATLIST("OTBP021","list"),
+	AIRTIME_TOPUP_BENE_MANAGEMENT("ATT100","newbenelist1"),
+	MOBILE_WALLET_BENE_MANAGEMENT("MWTU1000","benelist"),	
+	LEAD_GENERATION_LOANS("LG004","prodNameList")
 
 ;
 /** tranId. */

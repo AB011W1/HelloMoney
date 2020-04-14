@@ -94,10 +94,18 @@ public class InternalNonRegisteredPaymentFormSubmissionController extends BMBAbs
 
 	// TODO: complete the code below to validate the account details-
 	RetrieveInternalNonRegisteredPayeeInfoOperationRequest retrieveInternalNonRegisteredPayeeInfoOperationRequest = new RetrieveInternalNonRegisteredPayeeInfoOperationRequest();
+	//Added for ZMBRB,BWBRB,TZBRB one-off
+		String bankLetter = null;
+		if(null != httpRequest.getParameter("BANKLETTER"))
+		{
+			bankLetter = httpRequest.getParameter("BANKLETTER");
+			context.setBankLetter(bankLetter);
+		}
 	retrieveInternalNonRegisteredPayeeInfoOperationRequest.setContext(context);
 
 	buildAddBeneficiaryOperationRequest(internalFTCommand, retrieveInternalNonRegisteredPayeeInfoOperationRequest);
 
+	
 	RetrieveInternalNonRegisteredPayeeInfoOperationResponse retrieveInternalNonRegisteredPayeeInfoOperationResponse = retrieveInternalNonRegisteredPayeeInfoOperation
 		.retrievePayeeInfo(retrieveInternalNonRegisteredPayeeInfoOperationRequest);
 

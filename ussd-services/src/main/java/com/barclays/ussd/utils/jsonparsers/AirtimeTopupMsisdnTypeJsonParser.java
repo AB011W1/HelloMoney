@@ -99,6 +99,10 @@ public class AirtimeTopupMsisdnTypeJsonParser implements BmgBaseJsonParser,
 					userInputMap);
 			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FOUR.getSequenceNo();
 		}
+		//TZNBC Menu Optimization
+		if(ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && userInput.equals("2"))
+			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_THREE.getSequenceNo();
+				
 		return seqNo;
 	}
 

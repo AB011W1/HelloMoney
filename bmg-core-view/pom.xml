@@ -8,19 +8,22 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.barclays.bmg</groupId>
   <artifactId>bmg-core-view</artifactId>
-  <name>bmg-core-view</name>
-  <version>1.0</version>
+  <name>bmg-core-view-${revision}</name>
+  <version>${revision}</version>
+  <properties>
+    <revision>1.0.0</revision>
+  </properties>
 
   <dependencies>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-domain</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-services</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
   </dependencies>
 </project>

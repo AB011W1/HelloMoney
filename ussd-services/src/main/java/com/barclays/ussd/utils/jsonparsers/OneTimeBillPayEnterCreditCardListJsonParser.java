@@ -92,7 +92,14 @@ return  menuDTO ;
 				Locale locale = new Locale(language, countryCode);
 				String TRANSACTION_AIRTIME_CREDITCARD_LABEL = responseBuilderParamsDTO.getUssdResourceBundle()
 				.getLabel("label.paybill.select.creditcard", locale);
-				pageBody.append(TRANSACTION_AIRTIME_CREDITCARD_LABEL);
+				//Added for Sybrin Credit card label
+				String serviceName=ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getServiceName();
+				String AUTH_CREDITCARD_LABEL=responseBuilderParamsDTO.getUssdResourceBundle()
+						.getLabel("label.paybill.select.creditcard.auth", locale);
+				if (null!=serviceName && serviceName.equalsIgnoreCase("AuthRequest") && "KEBRB".equalsIgnoreCase(ussdSessionMgmt.getBusinessId()))
+					pageBody.append(AUTH_CREDITCARD_LABEL);
+				else
+					pageBody.append(TRANSACTION_AIRTIME_CREDITCARD_LABEL);
 				for (CustomerMobileRegAcct accountDetail : acntPayData.getCustActs()) {
 				    pageBody.append(USSDConstants.NEW_LINE);
 				    pageBody.append(index);

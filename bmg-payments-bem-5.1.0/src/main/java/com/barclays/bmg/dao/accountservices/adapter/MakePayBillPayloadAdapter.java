@@ -405,7 +405,7 @@ public class MakePayBillPayloadAdapter {
 
 		// GePG Based Payment
 		if(("TZNBC").equalsIgnoreCase(payBillServiceRequest.getContext().getBusinessId()) &&
-				"GePG".equalsIgnoreCase(payBillServiceRequest.getBeneficiaryDTO().getBillAggregatorId())) {
+				payBillServiceRequest.getBeneficiaryDTO().getBillerId().endsWith("-8")) {
 
 			BillTransactionReferenceDetails billTransactionReferenceDetails1 = new BillTransactionReferenceDetails();
 			billTransactionReferenceDetails1.setTypeCode("CreditAccountNumber");

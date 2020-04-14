@@ -57,7 +57,8 @@ public class AbstractReqAdptOperation {
 			RequestContext serviceRequest = (RequestContext) args[0];
 			PayBillServiceRequest payBillServiceRequest = (PayBillServiceRequest)serviceRequest;
 			CustomerAccountDTO fromAccount = payBillServiceRequest.getFromAccount();
-			if(null != payBillServiceRequest.getBeneficiaryDTO() && "GePG".equalsIgnoreCase(payBillServiceRequest.getBeneficiaryDTO().getBillAggregatorId())
+			if(null != payBillServiceRequest.getBeneficiaryDTO() && null != payBillServiceRequest.getBeneficiaryDTO().getBillerId() 
+					&& payBillServiceRequest.getBeneficiaryDTO().getBillerId().endsWith("-8") 
 					&& !payBillServiceRequest.getBeneficiaryDTO().getPresentmentFlag()){
 				SERVICE_VERSION_CASA_CC = "GePG";
 			}else if (fromAccount instanceof CreditCardAccountDTO){
@@ -469,8 +470,7 @@ public class AbstractReqAdptOperation {
 
 	//For GePG BillPayment request
 	private void createOverrideListGePG(PayBillServiceRequest billServiceRequest, BEMReqHeader reqHeader) {
-		if(null !=  billServiceRequest && null != billServiceRequest.getBeneficiaryDTO()
-				&& "GePG".equalsIgnoreCase(billServiceRequest.getBeneficiaryDTO().getBillAggregatorId())){
+		if(null !=  billServiceRequest && null != billServiceRequest.getBeneficiaryDTO()&& billServiceRequest.getBeneficiaryDTO().getBillerId().endsWith("-8")){
 			OverrideDetails[] overrideDetailsArray= new OverrideDetails[1];
 			OverrideDetails overrideDetails = new OverrideDetails();
 			if(billServiceRequest.getBeneficiaryDTO().getPresentmentFlag()){

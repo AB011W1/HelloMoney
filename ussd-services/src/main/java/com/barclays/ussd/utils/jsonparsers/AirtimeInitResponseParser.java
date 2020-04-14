@@ -5,15 +5,19 @@ package com.barclays.ussd.utils.jsonparsers;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.log4j.Logger;
 
+import com.barclays.bmg.constants.BillPaymentConstants;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
+import com.barclays.ussd.exception.USSDBlockingException;
 import com.barclays.ussd.exception.USSDNonBlockingException;
 import com.barclays.ussd.utils.BmgBaseJsonParser;
 import com.barclays.ussd.utils.PaginationEnum;
+import com.barclays.ussd.utils.ScreenSequenceCustomizer;
 import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDExceptions;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
@@ -25,7 +29,7 @@ import com.barclays.ussd.utils.jsonparsers.bean.airtime.Biller;
  * @author BTCI
  *
  */
-public class AirtimeInitResponseParser implements BmgBaseJsonParser {
+public class AirtimeInitResponseParser implements BmgBaseJsonParser, ScreenSequenceCustomizer {
     private static final Logger LOGGER = Logger.getLogger(AirtimeInitResponseParser.class);
 
     @Override
@@ -170,6 +174,20 @@ public class AirtimeInitResponseParser implements BmgBaseJsonParser {
     	        }
 		}
       return list;
+    }
+
+  //TZNBC Menu Optimization
+    @Override
+    public int getCustomNextScreen(String userInput, USSDSessionManagement ussdSessionMgmt) throws USSDBlockingException {
+    	
+    	int seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_EIGHT.getSequenceNo();
+    	String tranDataId=ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
+    	if(null!=tranDataId && tranDataId.equalsIgnoreCase("ussd0.3.2") && ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC")) {
+    		Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
+			userInputMap.put(BillPaymentConstants.AT_MW_SAVED_BENEF,BillPaymentConstants.AT_MW_SAVED_BENEF);
+    		seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_THIRTEEN.getSequenceNo();
+    	}
+		return seqNo;
     }
 
 }

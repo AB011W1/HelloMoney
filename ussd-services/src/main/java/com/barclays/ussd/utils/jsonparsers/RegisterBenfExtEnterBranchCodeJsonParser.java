@@ -10,16 +10,18 @@ import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.MenuItemDTO;
 import com.barclays.ussd.bmg.dto.ResponseBuilderParamsDTO;
 import com.barclays.ussd.dto.UssdBranchLookUpDTO;
+import com.barclays.ussd.exception.USSDBlockingException;
 import com.barclays.ussd.exception.USSDNonBlockingException;
 import com.barclays.ussd.utils.BmgBaseJsonParser;
 import com.barclays.ussd.utils.PaginationEnum;
+import com.barclays.ussd.utils.ScreenSequenceCustomizer;
 import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDExceptions;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
 import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
 
-public class RegisterBenfExtEnterBranchCodeJsonParser implements BmgBaseJsonParser {
+public class RegisterBenfExtEnterBranchCodeJsonParser implements BmgBaseJsonParser,ScreenSequenceCustomizer {
 
     /** The Constant LOGGER. */
     private static final Logger LOGGER = Logger.getLogger(RegisterBenfExtEnterBranchCodeJsonParser.class);
@@ -102,4 +104,19 @@ public class RegisterBenfExtEnterBranchCodeJsonParser implements BmgBaseJsonPars
 	menuItemDTO.setNextScreenSequenceNumber(USSDSequenceNumberEnum.SEQUENCE_NUMBER_FIVE.getSequenceNo());
 
     }
+
+	@Override
+	public int getCustomNextScreen(String userInput, USSDSessionManagement ussdSessionMgmt)
+			throws USSDBlockingException {
+		//ZMBRB,BWBRB,TZBRB one-off
+		String businessId = ussdSessionMgmt.getBusinessId();
+		int seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FIVE.getSequenceNo();
+		if(businessId.equalsIgnoreCase("ZMBRB") && transNodeId.equals("ussd4.3.3.2") || 
+				(businessId.equalsIgnoreCase("BWBRB") && transNodeId.equals("ussd0.3.3.2")) ||
+				(businessId.equalsIgnoreCase("TZBRB") && transNodeId.equals("ussd0.3.3.2")) ) {
+			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_TWENTYONE.getSequenceNo();
+		}
+		
+		return seqNo;
+	}
 }

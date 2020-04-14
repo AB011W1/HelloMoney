@@ -192,6 +192,19 @@
 		<transaction tranDataId="OTBP019" type="NA" bmgOpCode="OP0650" tranDataOpCode="NEGUIRENDER" headerId="LBL9999" />
 		<transaction tranDataId="OTBP020" type="endTran" bmgOpCode="OP0603" tranDataOpCode="OTBP020" headerId="LBL9999" homeOptionReq="true"/>
 		<!--Probase ends-->
+		
+		<!-- TZNBC Menu Optimization -->
+		<!-- Category list added for billers -->
+		<transaction tranDataId="OTBP021" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OTBP021" headerId="label.select.category" backOptionReq="true"/>
+		<!-- GePG included under OTBBP -->
+		<transaction tranDataId="GEPGB001" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="GEPGB001"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="GEPGB002" type="NA" bmgOpCode="OP0850" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"/>
+		<transaction tranDataId="GEPGB003" type="confirm" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="GEPGB003"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="GEPGB004" type="amount" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="GEPGB004"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="GEPGB005" type="list" bmgOpCode="OP0650" tranDataOpCode="GEPGB005"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="GEPGB006" type="confirm" bmgOpCode="OP0651" tranDataOpCode="GEPGB006"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="GEPGB007" type="endTran" bmgOpCode="OP0603" tranDataOpCode="GEPGB007"  headerId="LBL9999" homeOptionReq="true" />
+	
 	</tx>
 	<tx id="tx2.0" tranId="ViewFd">
 		<transaction tranDataId="FDR001" type="amount" bmgOpCode="OP0701" tranDataOpCode="FDR001" headerId="LBL9999"  backOptionReq="true" />
@@ -270,6 +283,9 @@
 		<!-- CR82 Edit BenF -->
 		<transaction tranDataId="ATT1026" type="confirm" bmgOpCode="OP0612" tranDataOpCode="ATT1026"  headerId="LBL9999"  backOptionReq="true" />
 		<transaction tranDataId="ATT1027" type="endTran" bmgOpCode="OP0613" tranDataOpCode="ATT1027"  headerId="LBL9999" homeOptionReq="true"  />
+		<!-- TZNBC Menu Optimization -->
+		<transaction tranDataId="ATT100" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT100"  headerId="label.select.payment.option"  backOptionReq="true" />
+
 		</tx>
 
 	<tx id="tx2.7" tranId="TwoFactorVerify">
@@ -615,6 +631,7 @@
 		</tx>>
 	<!-- Group Wallet Ends -->
 	
+	<!-- MZBRB one off start -->
 	<tx id="tx6.2" tranId="OneOffFundTxOtherBankAC">
 		<transaction tranDataId="RBOBA011" type="nib" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="RBOBA011"  headerId="label.nib.no"  backOptionReq="true" />
         <transaction tranDataId="OBAFTNR014" type="amount" bmgOpCode="OP0568" tranDataOpCode="OBAFTNR014" headerId="label.enter.amount" backOptionReq="true"/>
@@ -627,5 +644,37 @@
 		<transaction tranDataId="RBOBA10" type="endTran" bmgOpCode="OP0642" tranDataOpCode="RBOBA10"  headerId="LBL9999" homeOptionReq="true" />
 	</tx>
 	<!-- MZBRB one off Ends -->
-
+	
+	<!-- ZM,BW,TZBRB Other Bank one off start -->
+	<tx id="tx6.3" tranId="OtherBankAcctFundTxUnReg">
+		<transaction tranDataId="ROTHBB001" type="searcherAlphaNum" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ROTHBB001"  headerId="label.olaft.enter.bank.name"  backOptionReq="true" />
+		<transaction tranDataId="ROTHBB002" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ROTHBB002"  headerId="label.select.bank.name"  backOptionReq="true" />
+		<transaction tranDataId="ROTHBB003" type="searcher" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ROTHBB003"  headerId="label.enter.branch.name"  backOptionReq="true" />
+		<transaction tranDataId="ROTHBB004" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ROTHBB004"  headerId="label.select.branch.name"  backOptionReq="true" />		
+        <transaction tranDataId="OBAFTNR018" type="accountNo" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OBAFTNR018" headerId="label.eneter.benef.account.number"  backOptionReq="true"/>
+        <transaction tranDataId="OBAFTNR014" type="amount" bmgOpCode="OP0568" tranDataOpCode="OBAFTNR014" headerId="label.enter.amount" backOptionReq="true"/>
+        <transaction tranDataId="OBAFTNR015" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="OBAFTNR015"  headerId="label.select.from.accnum"  backOptionReq="true"/>
+        <transaction tranDataId="ROTHBB006" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ROTHBB006"  headerId="label.enter.benef.name"  backOptionReq="true" />
+		<transaction tranDataId="OBAFTNR016" type="confirm" bmgOpCode="OP0569" tranDataOpCode="OBAFT016" headerId="label.transaction"  backOptionReq="true"/>
+		<transaction tranDataId="OBAFTNR017" type="confirm" bmgOpCode="OP0570" tranDataOpCode="OBAFT017" headerId="label.transaction.success"  homeOptionReq="true"/>
+		<!-- <transaction tranDataId="ROTHBB006" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ROTHBB006"  headerId="label.enter.benef.name"  backOptionReq="true" /> -->		
+		<transaction tranDataId="ROTHBB007" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ROTHBB007"  headerId="label.enter.benef.nick.name"  backOptionReq="true" />
+		<transaction tranDataId="ROTHBB008" type="confirm" bmgOpCode="OP0641" tranDataOpCode="ROTHBB008"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="ROTHBB009" type="endTran" bmgOpCode="OP0642" tranDataOpCode="ROTHBB009"  headerId="LBL9999" homeOptionReq="true" />		
+	</tx>
+	<!-- ZM Other Bank one off start -->
+	
+	<!-- Ghana Data Bundle Change -->
+	<!-- <tx id="tx6.3" tranId="DataBundle">
+		<transaction tranDataId="ATT000" type="NA" bmgOpCode="OP0660" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true"  />
+		<transaction tranDataId="ATT0021" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT0021"  headerId="label.select.aritime.db.won.oth.option"  backOptionReq="true" />
+		<transaction tranDataId="ATT0022" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT0022"  headerId="label.select.payment.option"  backOptionReq="true" />		
+		<transaction tranDataId="ATT000" type="NA" bmgOpCode="OP0660" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true"  />
+		<transaction tranDataId="ATT001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT001"  headerId="label.select.airtime.youroperator"  backOptionReq="true" />
+		<transaction tranDataId="ATT002" type="msisdn" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT002"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="GHDBAT001" type="amount" bmgOpCode="OP0850" tranDataOpCode="GHDBAT001"  headerId="LBL9999" backOptionReq="true"/>
+		<transaction tranDataId="ATT004" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT004"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="ATT005" type="confirm" bmgOpCode="OP0661" tranDataOpCode="ATT005"  headerId="LBL9999" backOptionReq="true" />
+	</tx> -->
+	<!-- Ghana Data Bundle Change -->
 </transactionItems>

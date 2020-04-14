@@ -54,7 +54,15 @@ public class UssdBranchLocatorLookUpDAOImpl extends SqlMapClientDaoSupport imple
 	    branchDTO.setBankName(formatInput("Barclays"));
 	    branchList = this.getSqlMapClientTemplate().queryForList(CHEQUE_BOOK_BRANCH_LIST_LOOKUP_QUERY, branchDTO);
 	}
-	return branchList;
+	if(branchList.size()>0){
+		return branchList;
+	}
+	else {
+		String absaBank="Absa";
+		branchDTO.setBankName(formatInput(absaBank));
+	    branchList = this.getSqlMapClientTemplate().queryForList(CHEQUE_BOOK_BRANCH_LIST_LOOKUP_QUERY, branchDTO);
+		return branchList;
+    	}
     }
 
     private String formatInput(String value) {

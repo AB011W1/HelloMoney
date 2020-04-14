@@ -3,7 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.barclays.bmg</groupId>
 	<artifactId>hsm-connect</artifactId>
-	<version>1.0</version>
+	<name>hsm-connect-${revision}</name>
+	<version>${revision}</version>
+  <properties>
+    <revision>1.0.0</revision>
+  </properties>
 	<dependencies>		
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>

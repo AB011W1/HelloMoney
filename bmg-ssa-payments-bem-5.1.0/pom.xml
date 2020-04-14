@@ -9,8 +9,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.barclays.bmg</groupId>
 	<artifactId>bmg-ssa-payments-bem-5.1.0</artifactId>
-	<name>bmg-ssa-payments-bem-5.1.0</name>
-	<version>1.0</version>
+	<name>bmg-ssa-payments-bem-${revision}</name>
+	<version>${revision}</version>
+  <properties>
+    <revision>1.0.0</revision>
+  </properties>
 	<description>Payments jar for SSA</description>
 
 
@@ -18,18 +21,18 @@
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-domain</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-dao-framework</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-payments-bem-5.1.0</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bir.stub</groupId>

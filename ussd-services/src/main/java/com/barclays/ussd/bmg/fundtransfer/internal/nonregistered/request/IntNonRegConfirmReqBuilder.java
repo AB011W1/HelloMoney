@@ -6,6 +6,7 @@ import java.util.Map;
 
 import com.barclays.ussd.bmg.dto.RequestBuilderParamsDTO;
 import com.barclays.ussd.bmg.factory.request.BmgBaseRequestBuilder;
+import com.barclays.ussd.dto.UssdBranchLookUpDTO;
 import com.barclays.ussd.svc.context.USSDBaseRequest;
 import com.barclays.ussd.utils.USSDConstants;
 import com.barclays.ussd.utils.USSDInputParamsEnum;
@@ -33,7 +34,26 @@ public class IntNonRegConfirmReqBuilder implements BmgBaseRequestBuilder {
 		nibNo = requestBuilderParamsDTO.getUssdSessionMgmt().getTxSessions().get(
 				USSDInputParamsEnum.REG_BENF_GET_NIB_NO.getParamName()).toString();
 		requestParamMap.put("NIB", nibNo);
-	}		
+	}	
+	
+	//ZMBRB,BWBRB,TZBRB Oneoff
+	String bankLetter = null;
+	if(null != requestBuilderParamsDTO.getUssdSessionMgmt().getTxSessions().get(USSDInputParamsEnum.REG_BEN_EXT_BANK_CODE.getParamName()) 
+			&& (requestBuilderParamsDTO.getUssdSessionMgmt().getBusinessId().equalsIgnoreCase("ZMBRB") || 
+					requestBuilderParamsDTO.getUssdSessionMgmt().getBusinessId().equalsIgnoreCase("BWBRB") || 
+					requestBuilderParamsDTO.getUssdSessionMgmt().getBusinessId().equalsIgnoreCase("TZBRB"))) {
+		bankLetter = requestBuilderParamsDTO.getUssdSessionMgmt().getTxSessions().get(
+				USSDInputParamsEnum.REG_BEN_EXT_BANK_CODE.getParamName()).toString();
+		requestParamMap.put("BANKLETTER", bankLetter);
+		
+		//Bank code
+		List<UssdBranchLookUpDTO> tempBranchList = (List<UssdBranchLookUpDTO>) requestBuilderParamsDTO.getUssdSessionMgmt().getTxSessions().get(
+    			USSDInputParamsEnum.REG_BEN_EXT_BANK_CODE_LIST.getTranId());
+		UssdBranchLookUpDTO bankCodeLookUpDTO = tempBranchList.get(Integer.parseInt(requestBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap().get(USSDInputParamsEnum.REG_BEN_EXT_BANK_CODE_LIST
+				.getParamName())) - 1);
+		
+		requestParamMap.put("BANKCODE", bankCodeLookUpDTO.getBankCode());
+	}
 	
 	requestParamMap.put(USSDInputParamsEnum.INT_NR_FT_CONFIRM.getParamName(), txnRefNo);
 	request.setMsisdnNo(requestBuilderParamsDTO.getMsisdnNo());

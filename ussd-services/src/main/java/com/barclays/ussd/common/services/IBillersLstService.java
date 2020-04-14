@@ -35,4 +35,9 @@ public interface IBillersLstService {
 
     public BillersListDO getBillerInfo(String countryCd, String billerId, String mobileNumber,String businessId) throws USSDNonBlockingException;
 
+    //TZNBC Menu optimization - to fetch biller category list and billers per category 
+    public List<BillersListDO> getCategoryList(String countryCd, String mobileNumber,String businessId) throws USSDNonBlockingException;
+
+    public List<BillersListDO> getBillerPerCategory(String mobileNumber,String businessId, String category) throws USSDNonBlockingException;
+    
 }

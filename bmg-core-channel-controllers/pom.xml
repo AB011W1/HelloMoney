@@ -8,28 +8,31 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.barclays.bmg</groupId>
   <artifactId>bmg-core-channel-controllers</artifactId>
-  <name>bmg-core-channel-controllers</name>
-  <version>1.0</version>
+  <name>bmg-core-channel-controllers-${revision}</name>
+  <version>${revision}</version>
+  <properties>
+    <revision>1.0.0</revision>
+  </properties>
    <dependencies>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-services</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-view</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-channel-controller-resolver</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 			<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-response-model-2.0</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
 

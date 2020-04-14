@@ -41,6 +41,20 @@ public class LeadGenerationSubmitRequestBuilder implements BmgBaseRequestBuilder
 		}
 		prodName=userInputMap.get(USSDConstants.LEAD_GEN_PRODUCT_NAME);
 		subProdName=userInputMap.get(USSDConstants.LEAD_GEN_SUB_PRODUCT_NAME);
+
+		//TZNBC Menu Optimization - to fetch product and sub product for Loans
+		String loanSubProduct="";
+		String language= requestBuilderParamsDTO.getUssdSessionMgmt().getUserProfile().getLanguage();
+		List<String> loansList= (List<String>) ussdSessionMgmt.getTxSessions().get(USSDInputParamsEnum.LEAD_GENERATION_LOANS.getTranId());
+		if(null!=loansList) {
+			loanSubProduct = loansList.get(Integer.parseInt(userInputMap.get(USSDInputParamsEnum.LEAD_GENERATION_LOANS.getParamName())) - 1);		
+			if (null!= loanSubProduct)
+				if(null!=language && language.equalsIgnoreCase("EN"))
+					prodName="Loans";
+				else
+					prodName="Mikopo";
+				subProdName=loanSubProduct;
+		}
 		if(subProdName==null){
 			subProdName="";
 		}

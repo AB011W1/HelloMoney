@@ -952,5 +952,8 @@ public final class USSDConstants {
 	public static final String DORMANT_ACCOUNT_REACTIVATION_USECASE = "Dormant Account Activation";
 	public static final String APPROVE_REQUEST_INPUT = "1";
 	public static final String REJECT_REQUEST_INPUT = "2";
-	
+	//TZNBC menu optimization
+	public static final String GET_CATEGORY_LST = "getCategoryList";
+	public static final String GET_BILLER_PER_CATEGORY= "getBillerPerCategory";
+			
 }

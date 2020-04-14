@@ -69,14 +69,25 @@ public class RegisterBenfExtValidateReqBuilder implements BmgBaseRequestBuilder 
 	    requestParamMap.put(USSDInputParamsEnum.REG_BEN_EXT_BENF_NAME.getParamName(), userInputMap.get(USSDInputParamsEnum.REG_BEN_EXT_BENF_NAME
 		    .getParamName()));
 
-	    if(transNodeId.equals("ussd0.4.3.4.2"))
+	    //Added for ZMBRB,BWBRB
+	    /*if(transNodeId.equals("ussd0.4.3.4.2") ||  (transNodeId.equals("ussd4.3.3.2") && ussdSessionMgmt.getBusinessId().equalsIgnoreCase("ZMBRB"))
+	    		|| (transNodeId.equals("ussd0.3.3.2") && ussdSessionMgmt.getBusinessId().equalsIgnoreCase("BWBRB")) ||
+	    				(transNodeId.equals("ussd0.3.3.2") && ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZBRB")))
 	    	requestParamMap.put(USSDInputParamsEnum.REG_BEN_EXT_BENF_NAME.getParamName(), userInputMap.get(USSDInputParamsEnum.REG_BEN_EXT_NICK_NAME
-	    		    .getParamName()));
+	    		    .getParamName()));*/
 
 	    requestParamMap.put(USSDInputParamsEnum.REG_BEN_EXT_NICK_NAME.getParamName(), userInputMap.get(USSDInputParamsEnum.REG_BEN_EXT_NICK_NAME
 		    .getParamName()));
-	    requestParamMap.put(USSDInputParamsEnum.REG_BEN_EXT_ACC_NO.getParamName(), userInputMap.get(USSDInputParamsEnum.REG_BEN_EXT_ACC_NO
+	    if(null != userInputMap.get(USSDInputParamsEnum.REG_BEN_EXT_ACC_NO.getParamName()))
+	    	requestParamMap.put(USSDInputParamsEnum.REG_BEN_EXT_ACC_NO.getParamName(), userInputMap.get(USSDInputParamsEnum.REG_BEN_EXT_ACC_NO
 		    .getParamName()));
+	    
+	    //ZMBRB,TZBRB,BWBRB one-off
+	    else if(null != userInputMap.get(USSDInputParamsEnum.INT_NR_FT_TO_AC_NO.getParamName()) && 
+	    		(ussdSessionMgmt.getBusinessId().equalsIgnoreCase("ZMBRB") || ussdSessionMgmt.getBusinessId().equalsIgnoreCase("BWBRB") ||
+	    				ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZBRB")))
+	    	requestParamMap.put(USSDInputParamsEnum.REG_BEN_EXT_ACC_NO.getParamName(), userInputMap.get(USSDInputParamsEnum.INT_NR_FT_TO_AC_NO
+	    		    .getParamName()));
 	    /*requestParamMap.put(USSDInputParamsEnum.REG_BEN_EXT_PAYEE_TYPE.getParamName(), userInputMap
 		    .get(USSDInputParamsEnum.REG_BEN_EXT_PAYEE_TYPE.getParamName()));*/
 	    requestParamMap.put(USSDInputParamsEnum.REG_BENF_BENF_ADDRESS.getParamName(),userInputMap

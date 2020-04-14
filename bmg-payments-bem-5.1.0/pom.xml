@@ -9,30 +9,33 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.barclays.bmg</groupId>
 	<artifactId>bmg-payments-bem-5.1.0</artifactId>
-	<name>bmg-payments-bem-5.1.0</name>
-	<version>1.0</version>
+	<name>bmg-payments-bem-${revision}</name>
+	<version>${revision}</version>
+  <properties>
+    <revision>1.0.0</revision>
+  </properties>
 	<description>bmg-payments-bem-5.1.0</description>
 
 	<dependencies>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-services</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>		
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-dao-framework</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-session-activity</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>		
 		<dependency>
 			<groupId>com.barclays.ussd</groupId>
 			<artifactId>ussd-common</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bir.stub</groupId>
@@ -56,12 +59,12 @@
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>hsm-connect</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-channel-controllers</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
 </project>

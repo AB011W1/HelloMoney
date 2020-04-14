@@ -570,5 +570,15 @@
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CHANGE_REQUEST_DETAILS.getTranId()}" value-ref="authenticateCustomerRequestBuilder"/>
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AUTHORIZE_CHANGE_REQUEST.getTranId()}" value-ref="ussdAuthenticationChangeRequestBuilder"/>
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).CARD_CHANGE_REQUEST_DETAILS.getTranId()}" value-ref="authenticateCardChangeRequestBuilder"/>
+		
+		<!--  Unregistred Beneficiary save -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).UNREG_BENF_BENF_CONFIRM.getTranId()}" value-ref="registerBenfExtValidateReqBuilder"/>		
+		
+		<!-- TZNBC Menu Optimization -->	
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).AIRTIME_TOPUP_BENE_MANAGEMENT.getTranId()}" value-ref="AirtimeTopUpPaymentTypeRequest"/>		
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).ONE_TIME_BILL_PYMNT_CATLIST.getTranId()}" value-ref="onetimeBillpayCatListReqBuilder"/>		
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_BENE_MANAGEMENT.getTranId()}" value-ref="mobileWalletTopUpPaymentTypeRequest" />
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_LOANS.getTranId()}" value-ref="leadGenerationProdListRequestBuilder" />
+				
 </util:map>
 </beans>

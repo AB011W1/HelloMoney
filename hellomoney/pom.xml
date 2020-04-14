@@ -10,8 +10,10 @@
 	<groupId>com.barclays.bmg</groupId>
 	<artifactId>hellomoney</artifactId>
 	<packaging>war</packaging>
-	<name>hellomoney</name>
-	<version>2.0</version>
+	<name>hellomoney-${revision}</name>
+	<properties>
+		<revision>1.0.0</revision>
+	</properties>
 
 	<build>
 		<finalName>hellomoney</finalName>
@@ -95,9 +97,9 @@
 									</fileset>
 									<manifest>																			
 										<attribute name="Implementation-Title" value="SHM Deployment" />
-										<attribute name="Implementation-Version" value="01.00-944" />										
+										<attribute name="Implementation-Version" value="01.00-977" />										
 										<attribute name="Weblogic-Application-Version"
-											value="01.00-944" />										
+											value="01.00-977" />										
 									</manifest>
 								</ear>
 
@@ -196,133 +198,133 @@
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-ssa-payments-bem-5.1.0</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-ssa-acct-svc-bem-5.1.0</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-payments-bem-5.1.0</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-auditing</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-channel-controllers</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-channel-filters</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-channel-security</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-domain</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-logging</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-services</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-session-activity</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-utils</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-view</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-cache</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-dao-framework</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-response-model-2.0</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-ecrime</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.ussd</groupId>
 			<artifactId>ussd-menu</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.ussd</groupId>
 			<artifactId>ussd-auth</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.ussd</groupId>
 			<artifactId>ussd-core-cache</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.ussd</groupId>
 			<artifactId>ussd-domain-objects</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.ussd</groupId>
 			<artifactId>ussd-services</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.ussd</groupId>
 			<artifactId>ussd-common</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 			<type>jar</type>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.ussd</groupId>
 			<artifactId>ussd-bmg-adapter</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-uae-interest-rates</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-promotional-offers</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
 

@@ -8,19 +8,22 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.barclays.bmg</groupId>
   <artifactId>bmg-core-session-activity</artifactId>
-  <name>bmg-core-session-activity</name>
-  <version>1.0</version>
+  <name>bmg-core-session-activity-${revision}</name>
+  <version>${revision}</version>
+  <properties>
+    <revision>1.0.0</revision>
+  </properties>
   <dependencies>
   <dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-services</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-auditing</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 	</dependency>
 
  </dependencies>

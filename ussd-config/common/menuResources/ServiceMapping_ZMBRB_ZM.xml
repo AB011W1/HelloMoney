@@ -76,6 +76,9 @@
 
 	<!--  Free Dial USSD Airtel changes  (mani)-->
 	<srv tranId="ZM_FREE_DIAL_USSD_AIRTEL" importTran="FreeDialUssdAirTupUP"  firstScreenSequencerId="5"/>
+	
+	<!--  Other Bank one-off -->
+	<srv tranId="ZM_OTHER_BANK_FND_TX_UNREG" importTran="OtherBankAcctFundTxUnReg" firstScreenSequencerId="1"/>
 
 	<!-- Supported Languages -->
 	<languages displayLabelId="LANG01">

@@ -147,7 +147,13 @@ public class DomesticFundTransferPayloadAdapter {
 			setTxnSubCategory(domesticFTRequest, dest, PAYMENT_SUB_CATEGORY_EX);
 			dest.setTransactionCategoryCode("LOCAL");
 		}
-			
+		
+		//ZMBRB,BWBRB,TZBRB one-off
+		if(null != domesticFTRequest.getBankLetter())
+		{
+			setTxnSubCategory(domesticFTRequest, dest, PAYMENT_SUB_CATEGORY_EX);
+			dest.setTransactionCategoryCode("LOCAL");
+		}
 
 		// SSA Changes end
 
@@ -221,6 +227,10 @@ public class DomesticFundTransferPayloadAdapter {
 		
 		//MZBRB one-off
 		if(null != beneficiaryDTO.getNib()) 
+			dest.setTransactionTypeCode(FundTransferConstants.TXN_TYPE_FUND_TRANSFER_EXTERNAL);
+		
+		//ZMBRB,BWBRB,TZBRB one-off
+		if(null != domesticFTRequest.getBankLetter())
 			dest.setTransactionTypeCode(FundTransferConstants.TXN_TYPE_FUND_TRANSFER_EXTERNAL);
 
 		// payment remark

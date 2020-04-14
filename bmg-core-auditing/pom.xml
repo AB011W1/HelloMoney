@@ -8,15 +8,18 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.barclays.bmg</groupId>
   <artifactId>bmg-core-auditing</artifactId>
-  <name>bmg-core-auditing</name>
-  <version>1.0</version>
+  <name>bmg-core-auditing-${revision}</name>
+  <version>${revision}</version>
+  <properties>
+    <revision>1.0.0</revision>
+  </properties>
 
   <dependencies>
 
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-services</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 
 	</dependencies>

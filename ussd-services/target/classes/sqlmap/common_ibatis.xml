@@ -33,6 +33,13 @@
 		<result property="refNoValidation_1" column="REF_NO_VALIDATION_1" />
 		<result property="billAggregatorId" column="BILL_AGGREGATOR_ID" />
 	</resultMap>
+	
+	<!-- TZNBC Menu Optimization -->
+	<resultMap class="billers" id="category">
+		<result property="businessId" column="BUSINESS_ID" />
+		<result property="billerCategoryId" column="BILLER_CATEGORY_ID" />
+		<result property="billerCategoryNm" column="BILLER_CATEGORY_NM" />
+	</resultMap>
 
 <!--Kenya UBP Optimisation Start -->
 	<typeAlias alias="pilotBillerDTO" type="com.barclays.bmg.dto.PilotUserDTO" />
@@ -267,6 +274,34 @@
        AND a.LIST_VALUE_KEY = c.SUPPORTED_LANG_KEY
   ORDER BY b.LIST_VALUE_ORDER ASC,b.VALUE ASC
     </select>
+    <!-- TZNBC Menu Optimization - added to fetch distinct biller categories and billers per category -->
+    <select id="getCategoryList" resultMap="category" cacheModel="getBillrsLstCacheModel">
+			SELECT DISTINCT billers.business_id, billers.BILLER_CATEGORY_ID,
+			billers.BILLER_CATEGORY_NM from C_BILLER_MST billers, c_business_mst biz
+			where billers.business_id = biz.BUSINESS_ID and biz.ISO_COUNTRY_CD = #countryCd# and billers.business_id ='TZNBC'
+			and billers.BILLER_CATEGORY_ID !='MobileWallet'
+			and billers.BILLER_CATEGORY_ID != 'Telephone'
+			AND billers.BILLER_CATEGORY_ID !='MobileMoney'
+			AND( billers.PILOT_MODE = 'N' OR billers.PILOT_MODE is NULL)
+			AND billers.STATUS= #status#
+			AND billers.SHM_FLG='Y'
+			order by billers.BILLER_CATEGORY_ID
+	  </select>
+	  
+	  <select id="getBillerPerCategory" resultMap="billers" cacheModel="getBillrsLstCacheModel">
+	  		SELECT billers.business_id, billers.biller_id, billers.biller_nm, billers.BILLER_CATEGORY_ID,
+			billers.BILLER_CATEGORY_NM, billers.ONLINE_BILLER_FLG, billers.BILLER_ATTRIBUTES, billers.REF_NO_VALIDATION_1, billers.BILL_AGGREGATOR_ID from C_BILLER_MST billers, c_business_mst biz
+			where billers.business_id = biz.BUSINESS_ID and biz.ISO_COUNTRY_CD = #countryCd# and billers.business_id ='TZNBC'
+			and billers.BILLER_CATEGORY_ID !='MobileWallet'
+			and billers.BILLER_CATEGORY_ID != 'Telephone'
+			AND billers.BILLER_CATEGORY_ID !='MobileMoney'
+			AND billers.PRESENTMENT_FLG = 'N'
+			AND( billers.PILOT_MODE = 'N' OR billers.PILOT_MODE is NULL)
+			AND billers.STATUS= #status#
+			AND billers.SHM_FLG='Y'
+			AND billers.BILLER_CATEGORY_ID=#billerCategoryId#
+			order by billers.biller_nm
+		</select>
 
     <!-- UBP Optimisation Start
     <select id="getPilotUser" resultMap="pilotBillerInfo">

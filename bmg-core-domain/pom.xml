@@ -8,6 +8,9 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.barclays.bmg</groupId>
   <artifactId>bmg-core-domain</artifactId>
-  <name>bmg-core-domain</name>
-  <version>1.0</version>
+  <name>bmg-core-domain-${revision}</name>
+  <version>${revision}</version>
+  <properties>
+    <revision>1.0.0</revision>
+  </properties>
 </project>

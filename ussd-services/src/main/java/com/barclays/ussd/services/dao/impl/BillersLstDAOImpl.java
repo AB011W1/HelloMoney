@@ -35,6 +35,7 @@ public class BillersLstDAOImpl extends SqlMapClientDaoSupport implements IBiller
 	private static final String MOBILE_NUMBER = "mobilenumber";
 	private static final String GET_BILLERS = "otherCountriesGetBillers";
 	private static final String UBP_BUSINESS_IDS_LIST = "getUBPBusinessIds";
+	private static final String BILLER_CATEGORY_ID ="billerCategoryId";
 	private String UBP_BUSINESS_IDS=null;
 	private static final Logger LOGGER = Logger.getLogger(BillersLstDAOImpl.class);
     /*
@@ -175,4 +176,44 @@ public class BillersLstDAOImpl extends SqlMapClientDaoSupport implements IBiller
 		return (billersList == null || billersList.isEmpty()) ? null : billersList.get(0);
     }
 
+  //TZNBC Menu Optimization - to fetch category and billers based on category
+  	@SuppressWarnings("unchecked")
+  	@Override
+  	public List<BillersListDO> getCategoryList(String countryCd, String mobileNumber, String businessId)
+  			throws USSDNonBlockingException {
+  		Map<String, String> params = new HashMap<String, String>(1);
+
+  		List<BillersListDO> categoryList;
+  		params.put(COUNTRY_CD, "TZ");
+  		params.put(BUSINESS_ID, businessId);
+  		params.put(STATUS, "ACTIVE");
+  		String statementName = USSDConstants.GET_CATEGORY_LST;
+  		try {
+  			categoryList=this.getSqlMapClientTemplate().queryForList(statementName, params);
+
+  		}catch (Exception e) {
+  			throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getUssdErrorCode());
+  		}
+  		return categoryList;
+  	}
+  	@SuppressWarnings("unchecked")
+  	@Override
+  	public List<BillersListDO> getBillerPerCategory(String mobileNumber, String businessId,
+  			String category) throws USSDNonBlockingException {
+  		Map<String, String> params = new HashMap<String, String>(1);
+  		List<BillersListDO> billerPerCategoryList;
+  		params.put(COUNTRY_CD, "TZ");
+  		params.put(BUSINESS_ID, businessId);
+  		params.put(STATUS, "ACTIVE");
+  		params.put(BILLER_CATEGORY_ID, category);
+  		String statementName = USSDConstants.GET_BILLER_PER_CATEGORY;
+
+  		try {
+  			billerPerCategoryList=this.getSqlMapClientTemplate().queryForList(statementName, params);
+
+  		}catch (Exception e) {
+  			throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getUssdErrorCode());
+  		}
+  		return billerPerCategoryList;
+  	}
 }

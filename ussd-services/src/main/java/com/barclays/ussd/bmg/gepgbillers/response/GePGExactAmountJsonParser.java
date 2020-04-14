@@ -107,6 +107,6 @@ public class GePGExactAmountJsonParser implements BmgBaseJsonParser {
      */
     @Override
     public void setNextScreenSequenceNumber(MenuItemDTO menuItemDTO) {
-    	menuItemDTO.setNextScreenSequenceNumber(USSDSequenceNumberEnum.SEQUENCE_NUMBER_FIVE.getSequenceNo());
+    	menuItemDTO.setNextScreenSequenceNumber(USSDSequenceNumberEnum.SEQUENCE_NUMBER_TWENTYEIGHT.getSequenceNo());
     }
 }

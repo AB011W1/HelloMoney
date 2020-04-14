@@ -91,7 +91,7 @@ public class GePGControlNumberJsonParser implements BmgBaseJsonParser, SystemPre
      */
     @Override
     public void setNextScreenSequenceNumber(MenuItemDTO menuItemDTO) {
-    	menuItemDTO.setNextScreenSequenceNumber(USSDSequenceNumberEnum.SEQUENCE_NUMBER_TWO.getSequenceNo());
+    	menuItemDTO.setNextScreenSequenceNumber(USSDSequenceNumberEnum.SEQUENCE_NUMBER_TWENTYFIVE.getSequenceNo());
     }
 
 	@Override

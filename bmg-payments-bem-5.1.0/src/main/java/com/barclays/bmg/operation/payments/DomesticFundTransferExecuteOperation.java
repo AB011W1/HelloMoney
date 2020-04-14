@@ -1,5 +1,6 @@
 package com.barclays.bmg.operation.payments;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.transaction.annotation.Transactional;
@@ -28,6 +29,8 @@ import com.barclays.bmg.service.response.DomesticFundTransferServiceResponse;
 import com.barclays.bmg.service.response.RetrieveIndCustBySCVIDServiceResponse;
 import com.barclays.bmg.ussd.auth.service.request.SMSDetailsServiceRequest;
 import com.barclays.bmg.ussd.service.SMSDetailsService;
+import com.barclays.ussd.dto.UssdBranchLookUpDTO;
+import com.barclays.ussd.utils.USSDInputParamsEnum;
 
 public class DomesticFundTransferExecuteOperation extends BMBPaymentsOperation {
     private DomesticFundTransferService domesticFundTransferService;
@@ -118,6 +121,13 @@ public class DomesticFundTransferExecuteOperation extends BMBPaymentsOperation {
 	    Context context = request.getContext();
 	    Map<String, Object> sysMap = context.getContextMap();
 	    String destBankCode = (String) sysMap.get(SystemParameterConstant.BUSINESS_BANK_CODE);
+	    
+	    //ZM,BW,TZ once off change
+	    if(null != transactionDTO.getBankLetter() && null != transactionDTO && null != transactionDTO.getBankCode()) {
+	    	
+	    	destBankCode = (transactionDTO.getBankCode());
+	    }
+	    
 	    transactionDTO.getBeneficiaryDTO().setDestinationBankCode(destBankCode);
 	}
 	if (transactionDTO != null) {
@@ -129,6 +139,12 @@ public class DomesticFundTransferExecuteOperation extends BMBPaymentsOperation {
 	    domesticFundTransferServiceRequest.setTxnTyp(transactionDTO.getTxnType());
 	    if(null != transactionDTO.getNib())
 	    	domesticFundTransferServiceRequest.getBeneficiaryDTO().setNib(transactionDTO.getNib());
+	    
+	    //ZMBRB,BWBRB,TZBRB one-ff
+	    if(null != transactionDTO.getBankLetter())
+	    	domesticFundTransferServiceRequest.setBankLetter(transactionDTO.getBankLetter());
+	    
+	    
 	}
 	return domesticFundTransferServiceRequest;
     }

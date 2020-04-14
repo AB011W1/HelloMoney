@@ -2,6 +2,7 @@ package com.barclays.bmg.service.accounts.impl;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -74,85 +75,58 @@ public class AllAccountServiceImpl implements AllAccountService  {
 			Context context = allAccountServiceResponse.getContext();
 
 			requesttemp.setContext(context);
-			requesttemp.setGroup("LOAN_PRODUCT_CODE");
+			requesttemp.setGroup("LOAN_PRODUCTS");
 			List<String> productCode=new ArrayList<String>();
 			ListValueResByGroupServiceResponse response = listValueResDAO.findListValueResByGroup(requesttemp);
 			if (response.getListValueCahceDTO() != null) {
 			    for (ListValueCacheDTO listVal : response.getListValueCahceDTO()) {
-				 productCode.add(listVal.getKey());
-
+			    	if("Loan Product Codes".equals(listVal.getKey())) {
+			    		String prodCodes = listVal.getLabel();
+			    		productCode = Arrays.asList(prodCodes.split("\\s*,\\s*"));
+			    		break;
+			    	}
+				 //productCode.add(listVal.getKey());
 			    }
 			}
 
 			Map<String, Object> contextMap = context.getContextMap();
-		    if (allLst != null && ussdLst != null) {
+					if (allLst != null && ussdLst != null) {
 
-			for (CustomerAccountDTO ussdDto : ussdLst) {
-			    int ussdBrCd = (ussdDto.getBranchCode() != null ? Integer.parseInt(ussdDto.getBranchCode()) : ZERO);
-			    String ussdAcctNo = (ussdDto.getAccountNumber() != null ? ussdDto.getAccountNumber() : BMGConstants.EMPTYSTR);
+						for (CustomerAccountDTO ussdDto : ussdLst) {
+							int ussdBrCd = (ussdDto.getBranchCode() != null ? Integer.parseInt(ussdDto.getBranchCode()): ZERO);
+							String ussdAcctNo = (ussdDto.getAccountNumber() != null ? ussdDto.getAccountNumber() : BMGConstants.EMPTYSTR);
 
-			    for (CustomerAccountDTO allDto : allLst) {
-			    	//for (ListValueCacheDTO listVal : response.getListValueCahceDTO()) {
-			    		if((!(productCode.indexOf(allDto.getProductCode())>-1)) && (contextMap!=null && "Y".equals(contextMap.get(SystemParameterConstant.isLoanRepayment)) && "KEBRB".equals(context.getBusinessId())))
-			    		{
-			    			if (allDto instanceof CASAAccountDTO) {
-							    int allBrCd = (allDto.getBranchCode() != null ? Integer.parseInt(allDto.getBranchCode()) : ZERO);
-							    String allAcctNo = (allDto.getAccountNumber() != null ? allDto.getAccountNumber() : BMGConstants.EMPTYSTR);
+							for (CustomerAccountDTO allDto : allLst) {
+								// for (ListValueCacheDTO listVal : response.getListValueCahceDTO()) {
+								if (((!(productCode.indexOf(allDto.getProductCode()) > -1)) && (contextMap != null && "Y".equals(contextMap.get(SystemParameterConstant.isLoanRepayment)))) || !("KEBRB".equals(context.getBusinessId()) || "TZNBC".equals(context.getBusinessId())) || (contextMap.get(SystemParameterConstant.isLoanRepayment) != null && "N".equals(contextMap.get(SystemParameterConstant.isLoanRepayment)))) {
+									if (allDto instanceof CASAAccountDTO) {
+										int allBrCd = (allDto.getBranchCode() != null ? Integer.parseInt(allDto.getBranchCode()): ZERO);
+										String allAcctNo = (allDto.getAccountNumber() != null ? allDto.getAccountNumber() : BMGConstants.EMPTYSTR);
 
-							    if (branchCodeCountryList.contains(BMBContextHolder.getContext().getBusinessId())) {
-								if (allBrCd == ussdBrCd && allAcctNo.equals(ussdAcctNo)) {
-								    CASAAccountDTO dto = (CASAAccountDTO) allDto;
-								    dto.setPriInd(ussdDto.getPriInd());
-								    consoLst.add(allDto);
-								    break;
+										if (branchCodeCountryList
+												.contains(BMBContextHolder.getContext().getBusinessId())) {
+											if (allBrCd == ussdBrCd && allAcctNo.equals(ussdAcctNo)) {
+												CASAAccountDTO dto = (CASAAccountDTO) allDto;
+												dto.setPriInd(ussdDto.getPriInd());
+												consoLst.add(allDto);
+												break;
+											}
+										} else {
+
+											if (allAcctNo.equals(ussdAcctNo)) {
+												CASAAccountDTO dto = (CASAAccountDTO) allDto;
+												dto.setPriInd(ussdDto.getPriInd());
+												consoLst.add(allDto);
+												break;
+											}
+										}
+									}
 								}
-							    } else {
-
-								if (allAcctNo.equals(ussdAcctNo)) {
-								    CASAAccountDTO dto = (CASAAccountDTO) allDto;
-								    dto.setPriInd(ussdDto.getPriInd());
-								    consoLst.add(allDto);
-								    break;
-								}
-
-							    }
-
 							}
-			    		}
-			    		else if(!("KEBRB".equals(context.getBusinessId())) || ("N".equals(contextMap.get(SystemParameterConstant.isLoanRepayment)) && "KEBRB".equals(context.getBusinessId())))
-			    		{
-
-			    			if (allDto instanceof CASAAccountDTO) {
-							    int allBrCd = (allDto.getBranchCode() != null ? Integer.parseInt(allDto.getBranchCode()) : ZERO);
-							    String allAcctNo = (allDto.getAccountNumber() != null ? allDto.getAccountNumber() : BMGConstants.EMPTYSTR);
-
-							    if (branchCodeCountryList.contains(BMBContextHolder.getContext().getBusinessId())) {
-								if (allBrCd == ussdBrCd && allAcctNo.equals(ussdAcctNo)) {
-								    CASAAccountDTO dto = (CASAAccountDTO) allDto;
-								    dto.setPriInd(ussdDto.getPriInd());
-								    consoLst.add(allDto);
-								    break;
-								}
-							    } else {
-
-								if (allAcctNo.equals(ussdAcctNo)) {
-								    CASAAccountDTO dto = (CASAAccountDTO) allDto;
-								    dto.setPriInd(ussdDto.getPriInd());
-								    consoLst.add(allDto);
-								    break;
-								}
-
-							    }
-
-							}
-
-			    		}
-			   // }
-			    }
-			}
-			if (!allLst.isEmpty())
-			    allAccountServiceResponse.setAccountList(consoLst);
-		    }
+						}
+						if (!allLst.isEmpty())
+							allAccountServiceResponse.setAccountList(consoLst);
+					}
 		}
 	    }
 }

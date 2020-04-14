@@ -54,6 +54,13 @@ public class LeadGenerationProductListJsonParser implements BmgBaseJsonParser,Sc
 						prodSubProdNameMap.put(leadGenerationDTO.getProductName(), leadGenerationDTO.getSubProductName());
 						prodNameSet.add(leadGenerationDTO.getProductName());
 					}
+					//TZNBC Menu Optimization- to remove Loans from Product list
+					if((prodNameSet.contains("Loans") || prodNameSet.contains("Mikopo")) && responseBuilderParamsDTO.getUssdSessionMgmt().getBusinessId().equalsIgnoreCase("TZNBC")){	
+						prodNameSet.remove("Loans");
+						prodSubProdNameMap.remove("Loans");
+						prodNameSet.remove("Mikopo");
+						prodSubProdNameMap.remove("Mikopo");
+					}
 					prodNameList.clear();
 					prodNameList.addAll(prodNameSet);
 				}

@@ -102,6 +102,13 @@ public class RegisterBenfExtGetBranchCodeJsonParser implements BmgBaseJsonParser
 	    ussdSessionMgmt.getUserTransactionDetails().setUserInputMap(userInputMap);
 	    // seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FIVE.getSequenceNo();
 	}
+	//ZMBRB,BWBRB,TZBRB one-off
+	if((businessId.equalsIgnoreCase("ZMBRB") && transNodeId.equals("ussd4.3.3.2")) || 
+			(businessId.equalsIgnoreCase("BWBRB") && transNodeId.equals("ussd0.3.3.2")) ||
+			(businessId.equalsIgnoreCase("TZBRB") && transNodeId.equals("ussd0.3.3.2"))) {
+		seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_TWENTY.getSequenceNo();
+	}
+	
 	return seqNo;
     }
 }

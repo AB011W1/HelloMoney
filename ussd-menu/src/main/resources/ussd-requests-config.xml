@@ -618,4 +618,8 @@
 		<bean id="authenticateCustomerRequestBuilder" class="com.barclays.ussd.bmg.auth.request.AuthenticateCustomerRequestBuilder" />
 		<bean id="ussdAuthenticationChangeRequestBuilder" class="com.barclays.ussd.bmg.auth.request.UssdAuthenticationChangeRequestBuilder" />
 		<bean id="authenticateCardChangeRequestBuilder" class="com.barclays.ussd.bmg.auth.request.AuthenticateCardChangeRequestBuilder" />
+		
+		<!-- TZNBC Menu Optimization -->
+		<bean id="onetimeBillpayCatListReqBuilder" class="com.barclays.ussd.bmg.otbp.request.OnetimeBillpayCatListReqBuilder" />
+ 
  </beans>

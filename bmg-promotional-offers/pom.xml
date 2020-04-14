@@ -5,30 +5,33 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.barclays.bmg</groupId>
 	<artifactId>bmg-promotional-offers</artifactId>
-	<name>bmg-promotional-offers</name>
-	<version>1.0</version>
+	<name>bmg-promotional-offers-${revision}</name>
+	<version>${revision}</version>
+  <properties>
+    <revision>1.0.0</revision>
+  </properties>
 	<description>Barclays Promotional Offers </description>
 
 	<dependencies>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-services</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-dao-framework</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-channel-controllers</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-response-model-2.0</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
 	<parent>

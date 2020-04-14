@@ -130,6 +130,9 @@ public class InternalNonRegFundTransferConfirmJsonParser implements BmgBaseJsonP
 	public int getCustomNextScreen(String userInput, USSDSessionManagement ussdSessionMgmt)
 			throws USSDBlockingException {
 		int seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_NINE.getSequenceNo();
+		String businessId = ussdSessionMgmt.getBusinessId();
+		String transNodeId=ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
+		
 		String nibNo = null;
 		if(null != ussdSessionMgmt.getTxSessions().get(
 				USSDInputParamsEnum.REG_BENF_GET_NIB_NO.getParamName()))
@@ -137,6 +140,11 @@ public class InternalNonRegFundTransferConfirmJsonParser implements BmgBaseJsonP
 				USSDInputParamsEnum.REG_BENF_GET_NIB_NO.getParamName()).toString();
 		if(nibNo != null)
 			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_THIRTEEN.getSequenceNo();
+		else if(businessId.equalsIgnoreCase("ZMBRB") && transNodeId.equals("ussd4.3.3.2") || 
+				businessId.equalsIgnoreCase("BWBRB") && transNodeId.equals("ussd0.3.3.2") || 
+				businessId.equalsIgnoreCase("TZBRB") && transNodeId.equals("ussd0.3.3.2")) {
+			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_TWELVE.getSequenceNo();
+		}
 		return seqNo;
 	}
 }

@@ -10,7 +10,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.barclays.ussd</groupId>
 	<artifactId>ussd-bmg-adapter</artifactId>
-	<version>1.0</version>
+	<name>ussd-bmg-adapter-${revision}</name>
+	 <version>${revision}</version>
+  <properties>
+    <revision>1.0.0</revision>
+  </properties>
 
 	<dependencies>		
 		<!-- Jackson mapper  for json-->
@@ -27,22 +31,22 @@
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-view</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-dao-framework</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-ecrime</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.barclays.bmg</groupId>
 			<artifactId>bmg-core-domain</artifactId>
-			<version>1.0</version>
+			<version>1.0.0</version>
 		</dependency>
 		</dependencies>
 </project>

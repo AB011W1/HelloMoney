@@ -29,8 +29,29 @@ public class RetrieveInternalNonRegisteredPayeeInfoOperation extends BMBPayments
 
 		BeneficiaryDTO beneficiaryDTO = new BeneficiaryDTO();
 		response.setBeneficiaryDTO(beneficiaryDTO);
+		
+		//Added for ZMBRB,BWBRB,TZBRB one-off
+		String bankLetter = null;
+		if(null != request.getContext().getBankLetter())
+			bankLetter = request.getContext().getBankLetter();
 
-		if(request.getAccountNumber().toString().length() < 21) {
+		if(request.getAccountNumber().toString().length() == 21) {
+			response.setSuccess(true);
+			response.setResCde("00000");
+		}
+		else if ((request.getContext().getBusinessId().equalsIgnoreCase("ZMBRB") && 
+				null != bankLetter) || (request.getContext().getBusinessId().equalsIgnoreCase("TZBRB") && 
+						null != bankLetter) || (request.getContext().getBusinessId().equalsIgnoreCase("BWBRB") && 
+								null != bankLetter)) {
+			CASAAccountDTO casaAcct = new CASAAccountDTO();
+			response.getBeneficiaryDTO().setBeneficiaryName(request.getBeneficiaryName());
+			response.getBeneficiaryDTO().setDestinationBranchCode(request.getBranchCode());
+			response.getBeneficiaryDTO().setDestinationAccountNumber(request.getAccountNumber());
+			
+			response.setCasaAccountDTO(casaAcct);
+		}
+		else
+		{
 			CASAAccountDTO casaAcct = getBeneficiaryInfo(request);
 			if(casaAcct !=null && (casaAcct.getAccountNumber()!= null && !casaAcct.getAccountNumber().isEmpty())){
 				response.getBeneficiaryDTO().setBeneficiaryName(request.getBeneficiaryName());
@@ -48,12 +69,7 @@ public class RetrieveInternalNonRegisteredPayeeInfoOperation extends BMBPayments
 				getMessage(response);
 			}
 		}
-		else
-		{
-				response.setSuccess(true);
-				response.setResCde("00000");
-		}
-		
+					
 		return response;
 	}
 

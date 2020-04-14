@@ -47,8 +47,18 @@ public class Context {
     private String pinStatus;
     private String usrSta;
     private String mobileUserId;// Added by Umesh
+    
+    //ZMBRB,BWBRB,TZBRB one-off
+    private String bankLetter;
 
-  //GHIPS2
+  public String getBankLetter() {
+		return bankLetter;
+	}
+	public void setBankLetter(String bankLetter) {
+		this.bankLetter = bankLetter;
+	}
+
+	//GHIPS2
     private String isFreeDialUssdFlow;
     
     //Kits Fullname. Added for KITS debtor name INC INC1009890417 

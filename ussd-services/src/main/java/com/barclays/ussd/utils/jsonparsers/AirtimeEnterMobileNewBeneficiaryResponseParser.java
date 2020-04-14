@@ -100,15 +100,18 @@ public class AirtimeEnterMobileNewBeneficiaryResponseParser implements BmgBaseJs
 			USSDSessionManagement ussdSessionMgmt) throws USSDBlockingException {
 		int seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_TEN
 				.getSequenceNo();
-		Map<String, String> userInputMap = ussdSessionMgmt
-		.getUserTransactionDetails().getUserInputMap();
-		String paymentTypeInput=	userInputMap.get(
-		USSDInputParamsEnum.AIRTIME_TOPUP_PAYMENT_TYPE.getParamName()
-		);
-		if (paymentTypeInput.equals("4")) {
-			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_TWENTY.getSequenceNo();
+		Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
+		
+		//TZNBC Menu Optimization - To fetch payment type from bene management list
+		String paymentTypeInput=null;
+		if(ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC")) 
+			paymentTypeInput=userInputMap.get(USSDInputParamsEnum.AIRTIME_TOPUP_BENE_MANAGEMENT.getParamName());
+		else
+			paymentTypeInput=userInputMap.get(USSDInputParamsEnum.AIRTIME_TOPUP_PAYMENT_TYPE.getParamName());
+				
+		if (null != paymentTypeInput && ((ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("2")) || paymentTypeInput.equals("4"))) {
+				seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_TWENTY.getSequenceNo();
 		}
-
 		return seqNo;
 	}
 }

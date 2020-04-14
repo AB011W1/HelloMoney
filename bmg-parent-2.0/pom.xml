@@ -4,7 +4,7 @@
   <artifactId>bmg-parent-2.0</artifactId>
   <version>2.0</version>
   <packaging>pom</packaging>
-  <name>bmg-parent</name>
+  <name>bmg-parent-${revision}</name>
   
   <properties>
 		<spring.version>3.0.5.RELEASE</spring.version>
@@ -12,6 +12,7 @@
 		<mcfe-logger-client.version>1.1.5.8</mcfe-logger-client.version>
 		<mcfe-audit-client.version>1.1.5.8</mcfe-audit-client.version>
 		<bank-secure.version>1.0</bank-secure.version>
+		<revision>2.0</revision>
 	</properties>
 
 	<modules>

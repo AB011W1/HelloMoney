@@ -70,8 +70,29 @@ public class REGBValidateReqBuilder implements BmgBaseRequestBuilder {
 	String billerId = StringUtils.EMPTY;
 	String countryCode = requestBuilderParamsDTO.getUssdSessionMgmt().getUserProfile().getCountryCode();
 	String billerType=StringUtils.EMPTY;;
+	
+	//TZNBC Menu Optimization
+	List<BillersListDO> blrsLst ;
+	BillersListDO biller=null;
+	String category="";
+	if (ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC")) {
+		//Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
+		List<BillersListDO> categoryLstDO = (List<BillersListDO>) ussdSessionMgmt.getTxSessions().get(
+				USSDInputParamsEnum.ONE_TIME_BILL_PYMNT_CATLIST.getTranId());
+		if(null!=categoryLstDO) { 
+			BillersListDO categoryListDO = categoryLstDO.get(Integer.parseInt(userInputMap.get(USSDInputParamsEnum.ONE_TIME_BILL_PYMNT_CATLIST
+					.getParamName())) - 1);
+			category= categoryListDO.getBillerCategoryId();
+		}
+	}
 	if (StringUtils.isNotEmpty(billerUsrInput) && StringUtils.isNumeric(billerUsrInput)) {
-		BillersListDO biller = this.billersLstService.getBillerId(Integer.parseInt(billerUsrInput), countryCode,requestBuilderParamsDTO.getMsisdnNo(),requestBuilderParamsDTO.getUssdSessionMgmt().getBusinessId());
+		if(ussdSessionMgmt.getBusinessId().equals("TZNBC") && null!=category && ""!=category) {
+			blrsLst=this.billersLstService.getBillerPerCategory(requestBuilderParamsDTO.getMsisdnNo(), ussdSessionMgmt.getBusinessId(), category);
+			if(null!=blrsLst)
+				biller=blrsLst.get(Integer.parseInt(billerUsrInput)-1);
+	}
+		else
+			biller = this.billersLstService.getBillerId(Integer.parseInt(billerUsrInput), countryCode,requestBuilderParamsDTO.getMsisdnNo(),requestBuilderParamsDTO.getUssdSessionMgmt().getBusinessId());
 		billerId= biller.getBillerId();
 		billerType = biller.getBillerCategoryId();
 	}

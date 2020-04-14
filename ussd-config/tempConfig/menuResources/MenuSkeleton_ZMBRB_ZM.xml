@@ -40,7 +40,11 @@
 					             <node id="ussd4.3.2.1" screenId="7" level="3" optionId="1" labelId="label.registered" tranId="ZM_OTHER_BARC_FND_TX_REG" />
 					             <node id="ussd4.3.2.2" screenId="7" level="3" optionId="2" labelId="label.unregistered" tranId="ZM_OTHER_BARC_FND_TX_UNREG" />
 					          </node>
-					          <node id="ussd4.3.3" screenId="5" level="2" optionId="3" labelId="menu.ft.other.bank" tranId="ZM_OT_BNK_FND_TX" />
+					          <!-- <node id="ussd4.3.3" screenId="5" level="2" optionId="3" labelId="menu.ft.other.bank" tranId="ZM_OT_BNK_FND_TX" /> -->
+					          <node id="ussd4.3.3" screenId="5" level="2" optionId="3" labelId="menu.ft.other.bank" headerId="label.select" backOptionReq="true">
+					             <node id="ussd4.3.3.1" screenId="17" level="3" optionId="1" labelId="label.registered" tranId="ZM_OT_BNK_FND_TX" />
+					             <node id="ussd4.3.3.2" screenId="17" level="3" optionId="2" labelId="label.unregistered" tranId="ZM_OTHER_BANK_FND_TX_UNREG" />
+					          </node>
 					          <node id="ussd4.3.4" screenId="5" level="2" optionId="4" labelId="menu.ft.register.benef" headerId="label.select" backOptionReq="true" >
 						          	 <node id="ussd4.3.4.1" screenId="8" level="3" optionId="1" labelId="label.barclay.acc" tranId="ZM_REG_BENF_INT" />
 						             <node id="ussd0.3.4.2" screenId="8" level="3" optionId="2" labelId="label.otherbank.acc" tranId="ZM_REG_BENF_EXT" />
