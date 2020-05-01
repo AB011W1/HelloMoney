@@ -21,6 +21,7 @@ import com.barclays.bem.OrganizationBeneficiary.OrganizationBeneficiary;
 import com.barclays.bem.PostalAddress.PostalAddress;
 import com.barclays.bem.PostalAddress.UnstructuredAddress;
 import com.barclays.bem.Product.Product;
+import com.barclays.bem.TransactionAccount.CreditCardExpiryDateType;
 import com.barclays.bem.TransactionAccount.TransactionAccount;
 import com.barclays.bem.TransactionFxRate.TransactionFxRate;
 import com.barclays.bmg.constants.CommonConstants;
@@ -64,6 +65,18 @@ public class MakePayBillPayloadAdapter {
 		TransactionAccount fromAccount = new TransactionAccount();
 		fromAccount.setAccountNumber(fromAcct.getAccountNumber());
 		fromAccount.setAccountCurrencyCode(fromAcct.getCurrency());
+		// First Vision Changes for expiry date
+		if (null != beenBeneficiaryDTO && null != beenBeneficiaryDTO.getCreditCardExpiryDate()) {
+			Date date = beenBeneficiaryDTO.getCreditCardExpiryDate();
+
+			if (date != null) {
+				// cardExpiryType.setCardExpiryMonth
+				CreditCardExpiryDateType creditCardExpiryDate = new CreditCardExpiryDateType();
+				creditCardExpiryDate.setCardExpiryMonth(DateTimeUtil.getDayMonthYearFromDate(date, "MM"));
+				creditCardExpiryDate.setCardExpiryYear(DateTimeUtil.getDayMonthYearFromDate(date, "YY"));
+				fromAccount.setCreditCardExpiryDate(creditCardExpiryDate);
+			}
+		}
 		billPayment.setDebitAccount(fromAccount);
 
 		// amount and currency
@@ -439,6 +452,13 @@ public class MakePayBillPayloadAdapter {
 			billPayment.setCreditCardAccountOrgCode(payBillServiceRequest.getOrdCode());
 
 			billPayment.setPONumber(payBillServiceRequest.getContext().getActivityRefNo());
+			// Credit Card Migration-Plan no. Addition
+			String planNumber = (String) contextMap.get(SystemParameterConstant.PLAN_NUMBER_BILL_PAYMENT);
+			if (null != planNumber) {
+				billPayment.setPlan(planNumber);
+			} else {
+				billPayment.setPlan("10002");
+			}
 			//Add routing indicator VP
 			billPayment.setEffectiveTxnDate(today);
 			billPayment.setActionCode(payBillServiceRequest.getBeneficiaryDTO().getActionCode());

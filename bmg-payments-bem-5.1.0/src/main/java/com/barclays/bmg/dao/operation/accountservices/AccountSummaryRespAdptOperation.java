@@ -12,6 +12,7 @@ import com.barclays.bem.RetrieveIndividualCustAcctList.RetrieveIndividualCustome
 import com.barclays.bmg.constants.AccountErrorCodeConstant;
 import com.barclays.bmg.constants.AccountServiceResponseCodeConstant;
 import com.barclays.bmg.constants.ErrorCodeConstant;
+import com.barclays.bmg.constants.SystemParameterConstant;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.dao.core.context.impl.DAOContext;
 import com.barclays.bmg.dto.CustomerAccountDTO;
@@ -56,12 +57,13 @@ public class AccountSummaryRespAdptOperation extends AbstractResAdptOperationAcc
 		CASAAccountMapper cASAAccountMapper = new CASAAccountMapper();
 		customerAccountList.addAll(cASAAccountMapper.mapCollection(cASAAccountSummaryArr));
 	    }
-
+	    
+	    String disableCCFlag = (String) allAccountServiceRequest.getContext().getContextMap().get(SystemParameterConstant.CREDIT_CARD_DISABLED_ALL); 
+	    
 	    CreditCardAccount[] creditCardAccountArr = accountList.getCreditCardAccountList();
-	    if (creditCardAccountArr != null && creditCardAccountArr.length > 0) {
-		CreditCardAccountMapper creditCardAccountMapper = new CreditCardAccountMapper();
-
-		customerAccountList.addAll(creditCardAccountMapper.mapCollectionVision(creditCardAccountArr));
+	    if ("N".equalsIgnoreCase(disableCCFlag) && creditCardAccountArr != null && creditCardAccountArr.length > 0) {
+			CreditCardAccountMapper creditCardAccountMapper = new CreditCardAccountMapper();
+			customerAccountList.addAll(creditCardAccountMapper.mapCollectionVision(creditCardAccountArr));
 	    }
 
 	    allAccountServiceResponse.setSuccess(true);

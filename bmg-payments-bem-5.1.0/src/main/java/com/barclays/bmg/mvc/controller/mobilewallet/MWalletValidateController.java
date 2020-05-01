@@ -33,6 +33,7 @@ import com.barclays.bmg.dto.Amount;
 import com.barclays.bmg.dto.BeneficiaryDTO;
 import com.barclays.bmg.dto.BillerDTO;
 import com.barclays.bmg.dto.CASAAccountDTO;
+import com.barclays.bmg.dto.CreditCardAccountDTO;
 import com.barclays.bmg.dto.MWalletValidateDTO;
 import com.barclays.bmg.dto.TransactionDTO;
 import com.barclays.bmg.json.model.builder.BMBJSONBuilder;
@@ -240,6 +241,12 @@ public class MWalletValidateController extends BMBAbstractCommandController {
 	    beneficiaryDTO.setDestinationBankCode(destBankCode);
 	    beneficiaryDTO.setActionCode(mWalletValidateCommand.getActionCode());
 	    beneficiaryDTO.setStoreNumber(mWalletValidateCommand.getStoreNumber());
+		// Cards Migration: Start
+		CreditCardAccountDTO cardDTO = (CreditCardAccountDTO) getSelectedAccountOperationResponse.getSelectedAcct();
+		if (cardDTO.getCardExpireDate() != null) {
+			beneficiaryDTO.setCreditCardExpiryDate(cardDTO.getCardExpireDate());
+		}
+		// Cards Migration: Ends
 
 	    transactionDTO.setBeneficiaryDTO(beneficiaryDTO);
 	    setIntoProcessMap(request, BMGProcessConstants.BILL_PAYMENT, BillPaymentConstants.TRANSACTION_DTO, transactionDTO);

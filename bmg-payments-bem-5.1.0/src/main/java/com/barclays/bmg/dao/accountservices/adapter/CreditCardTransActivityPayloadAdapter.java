@@ -4,6 +4,8 @@ import java.util.Calendar;
 
 import com.barclays.bem.AccountTransactionSearchInfo.AccountTransactionSearchInfo;
 import com.barclays.bem.RetrieveCreditcardAcctTransactionActivity.RetrieveCreditcardAccountTransactionActivityRequest;
+import com.barclays.bem.RetrieveCreditcardAcctTransactionActivity.TransActvFlagsType;
+import com.barclays.bmg.constants.CommonConstants;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.dao.core.context.impl.DAOContext;
 import com.barclays.bmg.service.accountdetails.request.CreditCardAccountActivityServiceRequest;
@@ -21,6 +23,7 @@ public class CreditCardTransActivityPayloadAdapter {
 	AccountTransactionSearchInfo accountTransactionSearchInfo = new AccountTransactionSearchInfo();
 
 	accountTransactionSearchInfo.setAccountNumber(ccTransActivityServiceReq.getAccountNumber());
+	accountTransactionSearchInfo.setTransactionTypeCode("R");
 
 	if (ccTransActivityServiceReq.isStatementTrxFlag()) {
 
@@ -32,6 +35,24 @@ public class CreditCardTransActivityPayloadAdapter {
 		accountTransactionSearchInfo.setStatementDate(cal);
 
 	    }
+	    
+	    accountTransactionSearchInfo.setStatementFlag(true);
+		//accountTransactionSearchInfo.setRequireRewardsPointsFlag(true);
+		accountTransactionSearchInfo
+				.setMerged(CommonConstants.MERGED_VALUE);
+
+		creditCardTransActivityRequest
+				.setCreditCardTransactionSearchInfo(accountTransactionSearchInfo);
+
+		//creditCardTransActivityRequest.setCreditCardAccountOrgCode(ccTransActivityServiceReq.getOrgCode());
+		//ccTransActivityServiceReq.getOrgCode()
+
+		TransActvFlagsType txnActvFlgType = new TransActvFlagsType();
+		txnActvFlgType.setStatementTxnFlag(true);
+		//txnActvFlgType.setLastFiveTxnFlag(false);
+		//txnActvFlgType.setIsStatementPointsRequired(true);
+		//txnActvFlgType.setIsBillingAddressRequired(false);
+		creditCardTransActivityRequest.setTransActvFlags(txnActvFlgType);
 
 	} else {
 

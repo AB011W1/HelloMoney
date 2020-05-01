@@ -1,19 +1,25 @@
 package com.barclays.bmg.dao.accountservices.adapter.ssa;
 
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Map;
 
 import com.barclays.bem.Branch.Branch;
 import com.barclays.bem.CreditCardBasic.CreditCardBasic;
 import com.barclays.bem.CreditCardPayment.CreditCardPayment;
 import com.barclays.bem.IndividualName.IndividualName;
+import com.barclays.bem.TransactionAccount.CreditCardExpiryDateType;
 import com.barclays.bem.TransactionAccount.TransactionAccount;
 import com.barclays.bem.TransactionFxRate.TransactionFxRate;
 import com.barclays.bmg.constants.BillPaymentConstants;
+import com.barclays.bmg.constants.SystemParameterConstant;
+import com.barclays.bmg.context.Context;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.dao.core.context.impl.DAOContext;
 import com.barclays.bmg.dto.BeneficiaryDTO;
 import com.barclays.bmg.dto.CustomerAccountDTO;
 import com.barclays.bmg.service.request.PayBillServiceRequest;
+import com.barclays.bmg.utils.DateTimeUtil;
 
 public class CreditCardPayPayloadAdapter {
 
@@ -37,7 +43,7 @@ public class CreditCardPayPayloadAdapter {
 		CustomerAccountDTO frmAct = payBillServiceRequest.getFromAccount();
 		BeneficiaryDTO beneficiaryDTO = payBillServiceRequest.getBeneficiaryDTO();
 		CreditCardPayment  creditCardPayment = new CreditCardPayment ();
-
+		Context context = payBillServiceRequest.getContext();
       TransactionAccount fromAccount= new TransactionAccount();
         //FromAccount.AccountNumber
         fromAccount.setAccountNumber(frmAct.getAccountNumber());
@@ -70,6 +76,14 @@ public class CreditCardPayPayloadAdapter {
         //creditCardPayment.setTransferAmountLCY(transactionDTO.getAmountInLCY().getAmount().doubleValue());
         creditCardPayment.setPostTo("Card");
         creditCardPayment.setHostTransactionTypeCode("LOCALINTERNETCC");
+		// Credit Card Migration-Plan no. Addition
+		Map<String, Object> contextMap = context.getContextMap();
+		String planNumber = (String) contextMap.get(SystemParameterConstant.PLAN_NUMBER_BILL_PAYMENT);
+		if (null != planNumber) {
+			creditCardPayment.setPlan(planNumber);
+		} else {
+			creditCardPayment.setPlan("10002");
+		}
 
         //Mapping Transaction Date and Value Date.
 
@@ -78,6 +92,17 @@ public class CreditCardPayPayloadAdapter {
 
         CreditCardBasic card= new CreditCardBasic();
         card.setCreditCardNumber(beneficiaryDTO.getCardNumber());
+		// First Vision Changes for expiry date
+		if (null != beneficiaryDTO && null != beneficiaryDTO.getCreditCardExpiryDate()) {
+			Date date = beneficiaryDTO.getCreditCardExpiryDate();
+
+			if (date != null) {
+				CreditCardExpiryDateType creditCardExpiryDate = new CreditCardExpiryDateType();
+				creditCardExpiryDate.setCardExpiryMonth(DateTimeUtil.getDayMonthYearFromDate(date, "MM"));
+				creditCardExpiryDate.setCardExpiryYear(DateTimeUtil.getDayMonthYearFromDate(date, "YY"));
+				card.setCreditCardExpiryDate(creditCardExpiryDate);
+			}
+		}
         // Credit card number
         creditCardPayment.setCreditCardNumber(card);
         //transaction type code

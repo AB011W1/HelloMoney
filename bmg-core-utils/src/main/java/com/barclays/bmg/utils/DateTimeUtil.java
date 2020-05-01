@@ -166,4 +166,20 @@ public class DateTimeUtil {
 		{}
 		return xgc;
     }
+    
+	public static String getDayMonthYearFromDate(final Date date, final String param) {
+		String dateStr;
+		DateFormat formatter = new SimpleDateFormat("dd-MM-yy");
+		dateStr = formatter.format(date);
+		String[] dateParam = dateStr.split("-");
+		if ("DD".equalsIgnoreCase(param)) {
+			return dateParam[0];
+		} else if ("MM".equalsIgnoreCase(param)) {
+			return dateParam[1];
+		} else if ("YY".equalsIgnoreCase(param)) {
+			return dateParam[2];
+		}
+		return dateStr;
+
+	}
 }

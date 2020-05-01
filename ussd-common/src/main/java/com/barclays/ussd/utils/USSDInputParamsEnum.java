@@ -709,7 +709,9 @@ public enum USSDInputParamsEnum {
 	CR_CARD_STAT_LIST("CCS000", "crdNo"),
 	CR_CARD_STAT_ACCT_NO("actNo", "actNo"),
 	CR_CARD_STAT_TRAN_DATE_LIST("CCS001", "tranDate"),
+	CR_CARD_ACTIVTY_DATE_LIST("CCS003", "activityDate"),
 	CR_CARD_STAT_DETAILS("CCS002", "dtls"),
+	CR_CARD_CURRENCY("currency", "currency"),
 
 	CR_CARD_PAYMENT_LIST("CCP000", "crdList"),
 	CR_CARD_PAYMENT_ACCT_NO("crActNo", "actNo"),

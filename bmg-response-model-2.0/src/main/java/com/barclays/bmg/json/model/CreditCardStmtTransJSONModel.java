@@ -35,6 +35,7 @@ public class CreditCardStmtTransJSONModel extends BMBPayloadData implements Seri
 
 	// this.actDetls = new CreditCardAccountInfoInStmtJSONModel(ccAccDto);
 	String currency = ccAccDto.getCurrency();
+	String ccAccountNo=ccAccDto.getAccountNumber();
 
 	/*
 	 * if (stmtDates != null) { for (Calendar dt : stmtDates) { this.bilDt.add(BMGFormatUtility.getShortDate(dt.getTime())); } }
@@ -44,7 +45,7 @@ public class CreditCardStmtTransJSONModel extends BMBPayloadData implements Seri
 	    for (CreditCardStmtBalanceInfoDTO creditCardStmtBalanceInfoDTO : ccStmtBalInfoList) {
 
 		if (creditCardStmtBalanceInfoDTO != null) {
-		    this.creditCardStmtBalanceInfoJSONModelList.add(new CreditCardStmtBalanceInfoJSONModel(creditCardStmtBalanceInfoDTO, currency));
+		    this.creditCardStmtBalanceInfoJSONModelList.add(new CreditCardStmtBalanceInfoJSONModel(creditCardStmtBalanceInfoDTO, currency, ccAccountNo));
 		}
 
 	    }

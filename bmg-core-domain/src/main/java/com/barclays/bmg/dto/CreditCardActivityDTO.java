@@ -34,6 +34,21 @@ public class CreditCardActivityDTO extends AccountActivityDTO implements Cloneab
     private String actionCode;
 
     private String merchantName = "";
+    
+	// First Vision credit card
+	private String qualityInd;
+
+	private String foreignTransCode;
+
+	private String transactionTypeCode;
+
+	private String logicModule;
+
+	private String creditPlan;
+
+	private Boolean mergedFlag;
+	// First Vision
+	
 
     /**
      * @return the actionCode
@@ -42,7 +57,55 @@ public class CreditCardActivityDTO extends AccountActivityDTO implements Cloneab
 	return actionCode;
     }
 
-    /**
+    public String getQualityInd() {
+		return qualityInd;
+	}
+
+	public void setQualityInd(String qualityInd) {
+		this.qualityInd = qualityInd;
+	}
+
+	public String getForeignTransCode() {
+		return foreignTransCode;
+	}
+
+	public void setForeignTransCode(String foreignTransCode) {
+		this.foreignTransCode = foreignTransCode;
+	}
+
+	public String getTransactionTypeCode() {
+		return transactionTypeCode;
+	}
+
+	public void setTransactionTypeCode(String transactionTypeCode) {
+		this.transactionTypeCode = transactionTypeCode;
+	}
+
+	public String getLogicModule() {
+		return logicModule;
+	}
+
+	public void setLogicModule(String logicModule) {
+		this.logicModule = logicModule;
+	}
+
+	public String getCreditPlan() {
+		return creditPlan;
+	}
+
+	public void setCreditPlan(String creditPlan) {
+		this.creditPlan = creditPlan;
+	}
+
+	public Boolean getMergedFlag() {
+		return mergedFlag;
+	}
+
+	public void setMergedFlag(Boolean mergedFlag) {
+		this.mergedFlag = mergedFlag;
+	}
+
+	/**
      * @param actionCode
      *            the actionCode to set
      */

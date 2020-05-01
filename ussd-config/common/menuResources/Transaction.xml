@@ -391,7 +391,7 @@
 	<tx id="tx4.1" tranId="CreditCardStatement">
 		<transaction tranDataId="CCS000" type="list" bmgOpCode="OP0950" tranDataOpCode="CCS000"  headerId="label.select"  backOptionReq="true" />
 		<transaction tranDataId="CCS001" type="list" bmgOpCode="OP0951" tranDataOpCode="CCS001"  headerId="label.select"  backOptionReq="true" />
-		<transaction tranDataId="CCS002" type="endTran" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="CCS002"  headerId="LBL9999" homeOptionReq="true" backOptionReq="true"/>
+		<transaction tranDataId="CCS002" type="endTran" bmgOpCode="OP0953" tranDataOpCode="CCS002"  headerId="LBL9999" homeOptionReq="true" backOptionReq="true"/>
 	</tx>
 
 	<tx id="tx4.2" tranId="CreditCardUnbillerTxDetails">

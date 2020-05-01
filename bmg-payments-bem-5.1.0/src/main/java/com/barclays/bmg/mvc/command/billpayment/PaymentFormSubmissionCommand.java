@@ -11,8 +11,27 @@ public class PaymentFormSubmissionCommand {
  	private String crditCardFlag;
 	private String actionCode;
 	private String storeNumber;
+	//Cards Migration
+	private String crdList;
+	private String crdNo;
 
-    public String getAmt() {
+    public String getCrdList() {
+		return crdList;
+	}
+
+	public void setCrdList(String crdList) {
+		this.crdList = crdList;
+	}
+
+	public String getCrdNo() {
+		return crdNo;
+	}
+
+	public void setCrdNo(String crdNo) {
+		this.crdNo = crdNo;
+	}
+
+	public String getAmt() {
 	return amt;
     }
 

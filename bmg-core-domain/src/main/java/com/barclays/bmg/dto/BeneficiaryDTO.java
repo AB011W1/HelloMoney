@@ -199,8 +199,20 @@ public class BeneficiaryDTO extends BaseDomainDTO {
 
   //Probase
     private InvoiceDetails invoiceDetails;
+    
+	// Cards Migration V+ to FV
+	private Date creditCardExpiryDate;
 
-    public String getNib() {
+	
+    public Date getCreditCardExpiryDate() {
+		return creditCardExpiryDate;
+	}
+
+	public void setCreditCardExpiryDate(Date creditCardExpiryDate) {
+		this.creditCardExpiryDate = creditCardExpiryDate;
+	}
+
+	public String getNib() {
 		return nib;
 	}
 

@@ -27,6 +27,7 @@ public class RetrieveIndCustBySCVIDResAdptOperation {
 	Object[] args = daoContext.getArguments();
 	RetrieveIndCustBySCVIDServiceRequest retrieveIndCustBySCVIDServiceRequest = (RetrieveIndCustBySCVIDServiceRequest) args[0];
 	RetrieveIndividualCustomerBySCVIDResponse retrieveIndividualCustomerBySCVIDResponse = (RetrieveIndividualCustomerBySCVIDResponse) obj;
+	Context context = retrieveIndCustBySCVIDServiceRequest.getContext();
 
 	if (retrieveIndividualCustomerBySCVIDResponse != null
 		&& retrieveIndividualCustomerBySCVIDResponse.getIndividualCustomerDetailsResponse() != null) {
@@ -38,7 +39,6 @@ public class RetrieveIndCustBySCVIDResAdptOperation {
 	    firstName = firstName == null ? "" : firstName;
 	    String lastName = individualCustomerDetailsResponse.getLastName();
 	    lastName = lastName == null ? "" : lastName;
-	    Context context = retrieveIndCustBySCVIDServiceRequest.getContext();
 	    // change made according to audit report data
 	    if (null!=context  && ("GHBRB").equalsIgnoreCase(context.getBusinessId())&& ("Y").equals(context.getContextMap().get(SystemParameterConstant.isGHIPS2Flag))
 				&& context.getActivityId().equals(ActivityConstant.MOBILE_WALLET_PAYEE_ACTIVITY_ID) && !context.getIsFreeDialUssdFlow().equalsIgnoreCase("TRUE")) {
@@ -81,11 +81,18 @@ public class RetrieveIndCustBySCVIDResAdptOperation {
 	ppMap.put("docType", docType);
 	ppMap.put("docCode", docCode);
 
+	//TO Disable to Enable Credit Card in Application
+	String disableCCFlag = (String) context.getContextMap().get(SystemParameterConstant.CREDIT_CARD_DISABLED_ALL);
 	// End
 	if (productProcessorDetailArray != null && productProcessorDetailArray.length > 0) {
 	    for (int i = 0; i < productProcessorDetailArray.length; i++) {
-		ppMap.put(productProcessorDetailArray[i].getProductProcessorTypeCode().getValue(), productProcessorDetailArray[i]
-			.getProductProcessorId());
+	    	String ppType = productProcessorDetailArray[i].getProductProcessorTypeCode().getValue();
+	    	if("Y".equalsIgnoreCase(disableCCFlag) && "CC".equalsIgnoreCase(ppType)) {
+	    		continue;
+	    	} else {
+	    		ppMap.put(productProcessorDetailArray[i].getProductProcessorTypeCode().getValue(), productProcessorDetailArray[i]
+	    				.getProductProcessorId());
+	    	}
 	    }
 	    retrieveIndCustBySCVIDServiceResponse.setPpMap(ppMap);
 

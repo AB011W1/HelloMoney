@@ -16,6 +16,7 @@ import com.barclays.bmg.context.Context;
 import com.barclays.bmg.context.ResponseContext;
 import com.barclays.bmg.dto.Amount;
 import com.barclays.bmg.dto.BeneficiaryDTO;
+import com.barclays.bmg.dto.CreditCardAccountDTO;
 import com.barclays.bmg.dto.TransactionDTO;
 import com.barclays.bmg.json.model.builder.BMBMultipleResponseJSONBuilder;
 import com.barclays.bmg.json.response.model.BMBBaseResponseModel;
@@ -139,6 +140,12 @@ public class BillPayFormSubmissionValidationController  extends BMBAbstractComma
 		String txnRefNo = formValidateOperationResponse.getContext().getOrgRefNo();
 		PaymentFormSubmissionCommand paymentCommand = (PaymentFormSubmissionCommand) command;
 		transactionDTO.setSourceAcct(selSourceAcctOpResp.getSelectedAcct());
+		// Cards Migration: Start
+		CreditCardAccountDTO cardDTO = (CreditCardAccountDTO) selSourceAcctOpResp.getSelectedAcct();
+		if (cardDTO.getCardExpireDate() != null) {
+			transactionDTO.getBeneficiaryDTO().setCreditCardExpiryDate(cardDTO.getCardExpireDate());
+		}
+		// Cards Migration: Ends
 		transactionDTO.setFxRateDTO(formValidateOperationResponse.getFxRateDTO());
 		transactionDTO.setTxnAmt(formValidateOperationResponse.getTxnAmt());
 		transactionDTO.setTxnNot(paymentCommand.getPmtRem());

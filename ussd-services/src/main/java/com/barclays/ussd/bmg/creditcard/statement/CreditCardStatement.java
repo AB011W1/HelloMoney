@@ -34,8 +34,31 @@ public class CreditCardStatement {
 
     @JsonProperty
     private String dueDate;
+    
+    @JsonProperty
+    private String actNo;// ccAcountNo
+    
+    @JsonProperty
+    private String currency;
+    
 
-    public Amount getPrvBal() {
+    public String getActNo() {
+		return actNo;
+	}
+
+	public void setActNo(String actNo) {
+		this.actNo = actNo;
+	}
+
+	public String getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(String currency) {
+		this.currency = currency;
+	}
+
+	public Amount getPrvBal() {
 	return prvBal;
     }
 

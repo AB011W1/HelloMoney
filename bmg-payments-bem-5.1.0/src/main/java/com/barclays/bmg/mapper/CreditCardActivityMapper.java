@@ -53,6 +53,43 @@ public class CreditCardActivityMapper {
 
 	if (source != null && source.getCreditCardTransactionHistory() != null && source.getCreditCardTransactionHistory().length == 1) {
 	    CreditCardTransactionHistory historyInfo = source.getCreditCardTransactionHistory(0);
+	    
+		// First Vision Changes
+		if (null != historyInfo.getStatementDateInfo() && 0 < historyInfo.getStatementDateInfo().length
+				&& null != historyInfo.getStatementDateInfo(0).getQualityIndicator())
+			activityDTO.setQualityInd(historyInfo.getStatementDateInfo(0).getQualityIndicator());
+
+		if (null != historyInfo.getLogicModule()) {
+			if (historyInfo.getLogicModule().length() == 1) {
+				activityDTO.setLogicModule("00" + historyInfo.getLogicModule());
+			} else if (historyInfo.getLogicModule().length() == 2) {
+				activityDTO.setLogicModule("0" + historyInfo.getLogicModule());
+			} else {
+				activityDTO.setLogicModule(historyInfo.getLogicModule());
+			}
+		}
+
+		if (null != historyInfo.getStatementDateInfo(0).getQualityIndicator())
+			activityDTO.setQualityInd(historyInfo.getStatementDateInfo(0).getQualityIndicator());
+
+		if (null != historyInfo.getTransactionTypeCode()) {
+			if (historyInfo.getTransactionTypeCode().length() == 1) {
+				activityDTO.setTransactionTypeCode("000" + historyInfo.getTransactionTypeCode());
+			} else if (historyInfo.getTransactionTypeCode().length() == 2) {
+				activityDTO.setTransactionTypeCode("00" + historyInfo.getTransactionTypeCode());
+			} else if (historyInfo.getTransactionTypeCode().length() == 3) {
+				activityDTO.setTransactionTypeCode("0" + historyInfo.getTransactionTypeCode());
+			} else {
+				activityDTO.setTransactionTypeCode(historyInfo.getTransactionTypeCode());
+			}
+		}
+
+		if (null != historyInfo.getCreditPlan())
+			activityDTO.setCreditPlan(historyInfo.getCreditPlan());
+
+		if (null != historyInfo.getStatementDateInfo(0).getForeignCurrencyCode())
+			activityDTO.setForeignTransCode(historyInfo.getStatementDateInfo(0).getForeignCurrencyCode());
+		// First Vision Changes Ends
 
 	    activityDTO.setCardNumber(historyInfo.getCreditCardNumber());
 

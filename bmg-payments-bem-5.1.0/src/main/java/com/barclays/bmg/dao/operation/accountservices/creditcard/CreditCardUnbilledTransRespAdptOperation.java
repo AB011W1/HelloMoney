@@ -9,7 +9,10 @@ import com.barclays.bem.RetrieveCreditCardUnbilledTransactions.RetrieveCreditCar
 import com.barclays.bmg.constants.AccountErrorCodeConstant;
 import com.barclays.bmg.constants.AccountServiceResponseCodeConstant;
 import com.barclays.bmg.constants.ErrorCodeConstant;
+import com.barclays.bmg.context.Context;
+import com.barclays.bmg.context.RequestContext;
 import com.barclays.bmg.dao.core.context.WorkContext;
+import com.barclays.bmg.dao.core.context.impl.DAOContext;
 import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperationAcct;
 import com.barclays.bmg.dto.CreditCardActivityDTO;
 import com.barclays.bmg.exception.BMBDataAccessException;
@@ -19,6 +22,12 @@ import com.barclays.bmg.service.accountdetails.response.CreditCardUnbilledTransS
 public class CreditCardUnbilledTransRespAdptOperation extends AbstractResAdptOperationAcct {
 
     public CreditCardUnbilledTransServiceResponse adaptResponseForCreditCardUnbilledTrans(WorkContext workContext, Object obj) throws Exception {
+    	
+	// First vision
+	DAOContext daoContext = (DAOContext) workContext;
+	Object[] args = daoContext.getArguments();
+	RequestContext request = (RequestContext) args[0];
+	Context context = request.getContext();
 
 	CreditCardUnbilledTransServiceResponse returnCCResponse = new CreditCardUnbilledTransServiceResponse();
 
@@ -38,7 +47,8 @@ public class CreditCardUnbilledTransRespAdptOperation extends AbstractResAdptOpe
 
 	    }
 
-	    returnCCResponse.setCreditCardActivityDTOList(ccActivityDTOList);
+	    // First Vision Changes
+	    returnCCResponse.setCreditCardActivityDTOList(getUpdatedTransactionActivityList(ccActivityDTOList, context));
 	    returnCCResponse.setSuccess(true);
 	} else if (respCode.equals(ErrorCodeConstant.BUSINESS_ERROR)) {
 

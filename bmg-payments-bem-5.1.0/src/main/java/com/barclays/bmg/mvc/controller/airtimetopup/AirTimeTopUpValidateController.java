@@ -280,6 +280,12 @@ airTimeTopUpValidateServiceRequest.setContext(context);
 	    beneficiaryDTO.setDestinationBankCode(destBankCode);
 	    beneficiaryDTO.setActionCode(airTimeTopUpValidateCommand.getActionCode());
 	    beneficiaryDTO.setStoreNumber(airTimeTopUpValidateCommand.getStoreNumber());
+		// Cards Migration: Start
+		CreditCardAccountDTO cardDTO = (CreditCardAccountDTO) getSelectedAccountOperationResponse.getSelectedAcct();
+		if (cardDTO.getCardExpireDate() != null) {
+			beneficiaryDTO.setCreditCardExpiryDate(cardDTO.getCardExpireDate());
+		}
+		// Cards Migration: Ends
 
 	    if(extra!=null && (extra.equals("FREEDIALAIRTEL") || extra.equals("FREEDIALAIRTELZM")))
 	    	transactionDTO.setTxnType("MobileWallet");
