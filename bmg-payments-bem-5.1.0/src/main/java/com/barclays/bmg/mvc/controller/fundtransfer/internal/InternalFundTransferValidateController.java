@@ -155,9 +155,11 @@ public class InternalFundTransferValidateController extends BMBAbstractCommandCo
 	BeneficiaryDTO beneficiaryDTO = beneResponse.getBeneficiaryDTO();
 	beneficiaryDTO.setDestinationAccount(beneResponse.getCasaAccountDTO());
 	// Cards Migration: Start
-	CreditCardAccountDTO cardDTO = (CreditCardAccountDTO) selSourceAcctOpResp.getSelectedAcct();
-	if (cardDTO.getCardExpireDate() != null) {
-		beneficiaryDTO.setCreditCardExpiryDate(cardDTO.getCardExpireDate());
+	if (selSourceAcctOpResp.getSelectedAcct() instanceof CreditCardAccountDTO) {
+		CreditCardAccountDTO cardDTO = (CreditCardAccountDTO) selSourceAcctOpResp.getSelectedAcct();
+		if (cardDTO.getCardExpireDate() != null) {
+			beneficiaryDTO.setCreditCardExpiryDate(cardDTO.getCardExpireDate());
+		}
 	}
 	// Cards Migration: Ends
 	transactionDTO.setBeneficiaryDTO(beneficiaryDTO);

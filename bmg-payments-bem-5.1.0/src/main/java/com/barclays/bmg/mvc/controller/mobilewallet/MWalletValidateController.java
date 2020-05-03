@@ -241,12 +241,14 @@ public class MWalletValidateController extends BMBAbstractCommandController {
 	    beneficiaryDTO.setDestinationBankCode(destBankCode);
 	    beneficiaryDTO.setActionCode(mWalletValidateCommand.getActionCode());
 	    beneficiaryDTO.setStoreNumber(mWalletValidateCommand.getStoreNumber());
-		// Cards Migration: Start
-		CreditCardAccountDTO cardDTO = (CreditCardAccountDTO) getSelectedAccountOperationResponse.getSelectedAcct();
-		if (cardDTO.getCardExpireDate() != null) {
-			beneficiaryDTO.setCreditCardExpiryDate(cardDTO.getCardExpireDate());
-		}
-		// Cards Migration: Ends
+	    //Cards Migration: Start
+	    if (getSelectedAccountOperationResponse.getSelectedAcct() instanceof CreditCardAccountDTO) {
+		    CreditCardAccountDTO cardDTO= (CreditCardAccountDTO) getSelectedAccountOperationResponse.getSelectedAcct();
+		    if(cardDTO.getCardExpireDate() != null) {
+		    	beneficiaryDTO.setCreditCardExpiryDate(cardDTO.getCardExpireDate());
+		    }
+	    }	    
+	    //Cards Migration: Ends
 
 	    transactionDTO.setBeneficiaryDTO(beneficiaryDTO);
 	    setIntoProcessMap(request, BMGProcessConstants.BILL_PAYMENT, BillPaymentConstants.TRANSACTION_DTO, transactionDTO);

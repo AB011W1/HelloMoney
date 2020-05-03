@@ -95,10 +95,12 @@ public class CreditCardPayFormSubmissionValidationController extends BMBAbstract
 	if (checkAllOperationResponses(selSourceAcctOpResp, null, formValidateOperationResponse)) {
 		BeneficiaryDTO beneficiaryDTO = new BeneficiaryDTO();
 		  //Cards Migration: Start
+		if (selDestAcctOpResp.getSelectedAcct() instanceof CreditCardAccountDTO) {
 			CreditCardAccountDTO cardDTO= (CreditCardAccountDTO) selDestAcctOpResp.getSelectedAcct();
 			if(cardDTO.getCardExpireDate() != null) {
 				beneficiaryDTO.setCreditCardExpiryDate(cardDTO.getCardExpireDate());
 			}
+		}
 			//Cards Migration: Ends
 		transactionDTO.setBeneficiaryDTO(beneficiaryDTO);
 	    setResponseInProcessMap(httpRequest, paymentCommand, transactionDTO, selSourceAcctOpResp, formValidateOperationResponse);

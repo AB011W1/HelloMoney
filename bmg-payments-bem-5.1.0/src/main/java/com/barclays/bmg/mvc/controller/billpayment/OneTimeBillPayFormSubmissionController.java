@@ -184,9 +184,11 @@ public class OneTimeBillPayFormSubmissionController extends BMBAbstractCommandCo
 	OneTimeBillPayFormSubmitCommand oneTimeBillPayFormSubmitCommand = (OneTimeBillPayFormSubmitCommand) command;
 	transactionDTO.setSourceAcct(selSourceAcctOpResp.getSelectedAcct());
 	// Cards Migration: Start
-	CreditCardAccountDTO cardDTO = (CreditCardAccountDTO) selSourceAcctOpResp.getSelectedAcct();
-	if (cardDTO.getCardExpireDate() != null) {
-		transactionDTO.getBeneficiaryDTO().setCreditCardExpiryDate(cardDTO.getCardExpireDate());
+	if (selSourceAcctOpResp.getSelectedAcct() instanceof CreditCardAccountDTO) {
+		CreditCardAccountDTO cardDTO = (CreditCardAccountDTO) selSourceAcctOpResp.getSelectedAcct();
+		if (cardDTO.getCardExpireDate() != null) {
+			transactionDTO.getBeneficiaryDTO().setCreditCardExpiryDate(cardDTO.getCardExpireDate());
+		}
 	}
 	// Cards Migration: Ends
 	transactionDTO.setFxRateDTO(formValidateOperationResponse.getFxRateDTO());

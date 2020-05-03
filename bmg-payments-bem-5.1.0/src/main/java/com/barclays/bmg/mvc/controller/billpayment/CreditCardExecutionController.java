@@ -65,9 +65,11 @@ public class CreditCardExecutionController extends BMBAbstractCommandController 
 	Context context = createContext(httpRequest);
 	TransactionDTO transactionDTO = (TransactionDTO) getFromProcessMap(httpRequest, BMGProcessConstants.CREDIT_CARD_PAYMENT,
 		BillPaymentConstants.TRANSACTION_DTO);
-	if(null != transactionDTO)
-		transactionDTO.setBeneficiaryDTO(new BeneficiaryDTO());
-
+	if(null != transactionDTO) {
+		BeneficiaryDTO beneficiaryDTO = new BeneficiaryDTO();
+		beneficiaryDTO.setCreditCardExpiryDate(transactionDTO.getBeneficiaryDTO().getCreditCardExpiryDate());
+		transactionDTO.setBeneficiaryDTO(beneficiaryDTO);
+	}
 	MakeBillPaymentOperationResponse makeBillPaymentOperationResponse = null;
 
 	String txnType = null;

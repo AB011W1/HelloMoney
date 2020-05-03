@@ -124,7 +124,6 @@ public class CreditCardPayPayloadAdapter {
 		creditCardPayment.setPlan("10002");
 	}
 
-	creditCardPayment.setPlan("0");
 	creditCardPayment.setEffectiveTxnDate(today);
 	creditCardPayment.setActionCode((String) payBillServiceRequest.getContext().getContextMap().get(SystemParameterConstant.CC_ACTION_CODE));
 	creditCardPayment.setStoreNumber((String) payBillServiceRequest.getContext().getContextMap().get(SystemParameterConstant.CC_STORE));

@@ -224,9 +224,11 @@ public class InternalNonRegisteredPaymentFormSubmissionController extends BMBAbs
 	BeneficiaryDTO beneficiaryDTO = retrieveInternalNonRegisteredPayeeInfoOperationResponse.getBeneficiaryDTO();
 	beneficiaryDTO.setDestinationAccount(retrieveInternalNonRegisteredPayeeInfoOperationResponse.getCasaAccountDTO());
 	// Cards Migration: Start
-	CreditCardAccountDTO cardDTO = (CreditCardAccountDTO) selSourceAcctOpResp.getSelectedAcct();
-	if (cardDTO.getCardExpireDate() != null) {
-		beneficiaryDTO.setCreditCardExpiryDate(cardDTO.getCardExpireDate());
+	if (selSourceAcctOpResp.getSelectedAcct() instanceof CreditCardAccountDTO) {
+		CreditCardAccountDTO cardDTO = (CreditCardAccountDTO) selSourceAcctOpResp.getSelectedAcct();
+		if (cardDTO.getCardExpireDate() != null) {
+			beneficiaryDTO.setCreditCardExpiryDate(cardDTO.getCardExpireDate());
+		}
 	}
 	// Cards Migration: Ends
 	transactionDTO.setBeneficiaryDTO(beneficiaryDTO);
