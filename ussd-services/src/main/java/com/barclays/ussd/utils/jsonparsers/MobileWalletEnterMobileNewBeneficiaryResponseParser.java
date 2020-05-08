@@ -99,6 +99,9 @@ public class MobileWalletEnterMobileNewBeneficiaryResponseParser implements BmgB
 		String paymentTypeInput=null;
 		if(ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC")) 
 			paymentTypeInput=userInputMap.get(USSDInputParamsEnum.MOBILE_WALLET_BENE_MANAGEMENT.getParamName());
+		//Ghana Menu Optimization
+		else if(ussdSessionMgmt.getBusinessId().equalsIgnoreCase("GHBRB"))
+			paymentTypeInput=userInputMap.get(USSDInputParamsEnum.MOBILE_WALLET_MSISDN_TYPE.getParamName());
 		else 		
 			paymentTypeInput=userInputMap.get(USSDInputParamsEnum.MOBILE_WALLET_PAYMENT_TYPE.getParamName());
 		
@@ -112,15 +115,15 @@ public class MobileWalletEnterMobileNewBeneficiaryResponseParser implements BmgB
 		SystemParameterServiceResponse response = systemParameterService.getStatusParameter(systemParameterServiceRequest);
 		if(response!=null && response.getSystemParameterDTO()!=null && response.getSystemParameterDTO().getParameterValue()!=null)
 			isGHIPS2Flag = response.getSystemParameterDTO().getParameterValue();
-
-		if (USSDConstants.BUSINESS_ID_GHBRB.equalsIgnoreCase(ussdSessionMgmt.getBusinessId()) && paymentTypeInput.equals("4") && isGHIPS2Flag.equals("Y"))  {
+		//Ghana Menu Optimization - payment input changed
+		if (USSDConstants.BUSINESS_ID_GHBRB.equalsIgnoreCase(ussdSessionMgmt.getBusinessId()) && paymentTypeInput.equals("5") && isGHIPS2Flag.equals("Y"))  {
 			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FOURTY.getSequenceNo();
 		}
-		else if(null!=paymentTypeInput && ((ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("2")) || paymentTypeInput.equals("4")) )
+		else if(null!=paymentTypeInput && ((ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("2")) || (!ussdSessionMgmt.getBusinessId().equalsIgnoreCase("GHBRB") && paymentTypeInput.equals("4"))) )
 		{
 			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_TWENTY.getSequenceNo();
 		}
-		if(USSDConstants.BUSINESS_ID_GHBRB.equalsIgnoreCase(ussdSessionMgmt.getBusinessId()) && paymentTypeInput.equals("3") && isGHIPS2Flag.equals("Y") )
+		if(USSDConstants.BUSINESS_ID_GHBRB.equalsIgnoreCase(ussdSessionMgmt.getBusinessId()) && paymentTypeInput.equals("4") && isGHIPS2Flag.equals("Y") )
 		{
 			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FOURTYTWO.getSequenceNo();
 		}

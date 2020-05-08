@@ -73,15 +73,15 @@
       
 	  <node id="ussd0.8" screenId="0" level="0" optionId="8" labelId="menu.lang"  headerId="label.select" backOptionReq="true">
 	  		<node id="ussd0.8.1" screenId="8" level="1" optionId="1" labelId="label.lang.change.select" tranId="TZN_LANG_PREF" backOptionReq="true"/>
-	   		<node id="ussd0.8.2" screenId="8" level="1" optionId="2" labelId="menu.my.account" headerId="label.select" backOptionReq="true" >
-	   			  <node id="ussd0.8.2.1" screenId="9" level="2" optionId="1" labelId="menu.send.to.phone" headerId="label.select" tranId="TZN_MOBILE_WALLET_TOP_UP_BENE" />
-	   			  <node id="ussd0.8.2.2" screenId="9" level="2" optionId="2" labelId="menu.paybills" headerId="label.select"  backOptionReq="true" >
+	   		<node id="ussd0.8.2" screenId="8" level="1" optionId="2" labelId="menu.my.account.bene" headerId="label.select.bebe.management" backOptionReq="true" >
+	   			  <node id="ussd0.8.2.1" screenId="9" level="2" optionId="1" labelId="label.bene.mobile" headerId="label.select" tranId="TZN_MOBILE_WALLET_TOP_UP_BENE" />
+	   			  <node id="ussd0.8.2.2" screenId="9" level="2" optionId="2" labelId="label.bene.billers" headerId="label.select"  backOptionReq="true" >
 	   			  		<node id="ussd0.8.2.2.1" screenId="10" level="3" optionId="1" labelId="menu.pb.register.biller" tranId="TZN_REG_BILLERS" />
             			<node id="ussd0.8.2.2.2" screenId="10" level="3" optionId="2" labelId="menu.pb.view.mybillers" tranId="TZN_VIEW_BILLERS" />
             			<node id="ussd0.8.2.2.3" screenId="10" level="3" optionId="3" labelId="menu.pb.delete.biller" tranId="TZN_DEL_BILLERS" />
      			  </node>
-	   			  <node id="ussd0.8.2.3" screenId="9" level="2" optionId="3" labelId="menu.buy.airtimetopup" headerId="label.select" tranId="TZN_AIRTIME_TOPUP_BENE" />
-	   			  <node id="ussd0.8.2.4" screenId="9" level="2" optionId="4" labelId="menu.fund.transfer" headerId="label.select" backOptionReq="true" >
+	   			  <node id="ussd0.8.2.3" screenId="9" level="2" optionId="3" labelId="label.bene.airtime" headerId="label.select" tranId="TZN_AIRTIME_TOPUP_BENE" />
+	   			  <node id="ussd0.8.2.4" screenId="9" level="2" optionId="4" labelId="label.bene.ft" headerId="label.select" backOptionReq="true" >
 	   			  		<node id="ussd0.8.2.4.1" screenId="13" level="3" optionId="1" labelId="menu.ft.register.benef" headerId="label.select" backOptionReq="true" > 
 	   			  		   	<node id="ussd0.8.2.4.1.1" screenId="14" level="4" optionId="1" labelId="label.barclay.acc" tranId="TZN_REG_BENF_INT" />
             			</node>

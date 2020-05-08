@@ -86,14 +86,21 @@ public class AirtimeTopupNewBeneficiarySrcMnosJsonParser implements BmgBaseJsonP
 		Map<String, String> userInputMap = ussdSessionManagement
 				.getUserTransactionDetails().getUserInputMap();
 		String paymentTypeInput=	null;
-
+		String transNodeId=ussdSessionManagement.getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
 		//TZNBC Menu Optimization - To fetch editbene label from Bene Management screen
 		if( ussdSessionManagement.getBusinessId().equalsIgnoreCase("TZNBC"))
 			paymentTypeInput = userInputMap.get(USSDInputParamsEnum.AIRTIME_TOPUP_BENE_MANAGEMENT.getParamName());
+		//Ghana Menu Optimization - To fetch editbene label from Bene Management 
+		else if(ussdSessionManagement.getBusinessId().equalsIgnoreCase("GHBRB") && !transNodeId.equals("ussd0.10"))
+			paymentTypeInput = userInputMap.get(USSDInputParamsEnum.AIRTIME_TOPUP_MSISDN_TYPE.getParamName());
 		else 
 			paymentTypeInput=userInputMap.get(USSDInputParamsEnum.AIRTIME_TOPUP_PAYMENT_TYPE.getParamName());
 
-		if(null!=paymentTypeInput && ((ussdSessionManagement.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("2"))||  paymentTypeInput.equals("4"))){
+		//Ghana Menu Optimization
+		if(null!=paymentTypeInput && ((ussdSessionManagement.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("2"))
+				  || (ussdSessionManagement.getBusinessId().equalsIgnoreCase("GHBRB") && !transNodeId.equalsIgnoreCase("ussd0.10") && paymentTypeInput.equals("5"))
+				  || (ussdSessionManagement.getBusinessId().equalsIgnoreCase("GHBRB") && transNodeId.equalsIgnoreCase("ussd0.10") && paymentTypeInput.equals("4"))
+				  || (!ussdSessionManagement.getBusinessId().equalsIgnoreCase("GHBRB") && paymentTypeInput.equals("4")))){
 			menuItemDTO.setPageHeader(EDIT_SELECT_MNO_LABEL);
 		}else{
 			menuItemDTO.setPageHeader(responseBuilderParamsDTO.getHeaderId());

@@ -47,13 +47,14 @@ public class MobileWalletNewBeneficiarySrcMnosJsonParser implements BmgBaseJsonP
 			}
 	    }
 	    //if(!(billerId.equalsIgnoreCase("MTNMM-4")) && !(billerId.equalsIgnoreCase("MTNZMBANKTOWALLET-2"))){
-	    if(null != mnoList){
-	    for(int i=0;i<mnoList.size();i++){
-	    	if(mnoList.get(i).getBillerId().equalsIgnoreCase("MTNMM-4") || mnoList.get(i).getBillerId().equalsIgnoreCase("MTNZMBANKTOWALLET-2")){
-	    		mnoList.remove(i);
-	    	}
-	    }
-	    }
+	    //Code commented to include Other Number MTN for ZM and UG
+//	    if(null != mnoList){
+//	    for(int i=0;i<mnoList.size();i++){
+//	    	if(mnoList.get(i).getBillerId().equalsIgnoreCase("MTNMM-4") || mnoList.get(i).getBillerId().equalsIgnoreCase("MTNZMBANKTOWALLET-2")){
+//	    		mnoList.remove(i);
+//	    	}
+//	    }
+//	    }
 	    menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, mnoList, "");
 	} catch (Exception e) {
 	    LOGGER.error("Exception : ", e);
