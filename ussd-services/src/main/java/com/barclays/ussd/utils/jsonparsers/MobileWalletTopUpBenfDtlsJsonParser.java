@@ -119,10 +119,15 @@ public class MobileWalletTopUpBenfDtlsJsonParser implements BmgBaseJsonParser, S
 			isGHIPS2Flag = response.getSystemParameterDTO().getParameterValue();
 
 		Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
-		String paymentTypeInput=userInputMap.get(USSDInputParamsEnum.MOBILE_WALLET_PAYMENT_TYPE.getParamName());
+		String paymentTypeInput=null;
+		//Ghana Menu Optimization
+		if(ussdSessionMgmt.getBusinessId().equalsIgnoreCase("GHBRB"))
+			paymentTypeInput=userInputMap.get(USSDInputParamsEnum.MOBILE_WALLET_MSISDN_TYPE.getParamName());
+		else
+			paymentTypeInput=userInputMap.get(USSDInputParamsEnum.MOBILE_WALLET_PAYMENT_TYPE.getParamName());
 
 
-		if (USSDConstants.BUSINESS_ID_GHBRB.equalsIgnoreCase(ussdSessionMgmt.getBusinessId()) && paymentTypeInput.equals("2") && isGHIPS2Flag.equals("Y") ) {
+		if (USSDConstants.BUSINESS_ID_GHBRB.equalsIgnoreCase(ussdSessionMgmt.getBusinessId()) && paymentTypeInput.equals("3") && isGHIPS2Flag.equals("Y") ) {
 			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FOURTYONE.getSequenceNo();
 		}
 		return seqNo;

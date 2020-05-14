@@ -49,8 +49,9 @@
                	<node id="ussd0.3.2.2" screenId="7" level="2" optionId="2" labelId="label.unregistered" tranId="GH_OTHER_BARC_FND_TX_UNREG" />
  	  		</node>
             <node id="ussd0.3.3" screenId="5" level="1" optionId="3" labelId="menu.ghips.ft.other.bank" headerId="label.ghips.make.realtime.pymt" backOptionReq="true">
-               	<node id="ussd0.3.3.1" screenId="14" level="2" optionId="1" labelId="label.ghips.one.off" tranId="GH_ONE_OFF_OTHER_BANK_AC" />
-               	<node id="ussd0.3.3.2" screenId="14" level="2" optionId="2" labelId="label.ghips.save.benef" tranId="GH_SAVE_BENF_OTHER_BANK_AC" />
+               	<node id="ussd0.3.3.2" screenId="14" level="2" optionId="1" labelId="label.ghips.save.benef" tranId="GH_SAVE_BENF_OTHER_BANK_AC" />
+               	<node id="ussd0.3.3.1" screenId="14" level="2" optionId="2" labelId="label.ghips.one.off" tranId="GH_ONE_OFF_OTHER_BANK_AC" />
+               	
  	  		</node>
             <node id="ussd0.3.4" screenId="5" level="1" optionId="4" labelId="menu.ft.register.benef" headerId="label.ghips.register.select.bank" backOptionReq="true" >
             	<node id="ussd0.3.4.1" screenId="15" level="2" optionId="1" labelId="label.barclay.acc" tranId="GH_REG_BENF_INT" />
@@ -66,11 +67,11 @@
 		  </node>
 	   </node>
 
- 		<node id="ussd0.9" screenId="0" level="0" optionId="8" labelId="menu.lead.generation" tranId="GH_LEAD_GENERATION" />
-
-      <node id="ussd0.4" screenId="0" level="0" optionId="9" labelId="menu.others" headerId="label.select" backOptionReq="true">
-         <node id="ussd0.4.1" screenId="13" level="1" optionId="1" labelId="menu.change.pin" tranId="GH_CHNG_PIN" />
-         <node id="ussd0.4.2" screenId="13" level="1" optionId="2" labelId="menu.contactus" tranId="GH_CONTACT_US" />
+ 		
+      <node id="ussd0.4" screenId="0" level="0" optionId="8" labelId="menu.others" headerId="label.select" backOptionReq="true">
+     	 <node id="ussd0.4.3" screenId="13" level="1" optionId="1" labelId="menu.lead.generation" tranId="GH_LEAD_GENERATION" />
+         <node id="ussd0.4.1" screenId="13" level="1" optionId="2" labelId="menu.change.pin" tranId="GH_CHNG_PIN" />
+         <node id="ussd0.4.2" screenId="13" level="1" optionId="3" labelId="menu.contactus" tranId="GH_CONTACT_US" />
       </node>
 </node>
 

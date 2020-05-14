@@ -34,6 +34,7 @@ import com.barclays.ussd.sysprefs.services.ListValueResServiceImpl;
 import com.barclays.ussd.sysprefs.services.ListValueResServiceRequest;
 import com.barclays.ussd.utils.BmgBaseJsonParser;
 import com.barclays.ussd.utils.PaginationEnum;
+import com.barclays.ussd.utils.ScreenSequenceCustomizer;
 import com.barclays.ussd.utils.SystemPreferenceConstants;
 import com.barclays.ussd.utils.SystemPreferenceValidator;
 import com.barclays.ussd.utils.USSDConstants;
@@ -48,7 +49,7 @@ import com.barclays.ussd.validation.USSDMinMaxRangeValidator;
 import com.barclays.ussd.validation.USSDMultiRangeValidator;
 
 public class OneTimeCashSendGetAmountJsonParser implements BmgBaseJsonParser, SystemPreferenceValidator
-// , ScreenSequenceCustomizer
+, ScreenSequenceCustomizer
 {
     private static final Logger LOGGER = Logger.getLogger(OneTimeCashSendGetSrcAcctJsonParser.class);
     private static final String CASH_SEND_LABEL = "label.cashsend.amount";
@@ -158,12 +159,13 @@ public class OneTimeCashSendGetAmountJsonParser implements BmgBaseJsonParser, Sy
 	Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
 	List<AccountDetails> srcAccList = (List<AccountDetails>) ussdSessionMgmt.getTxSessions().get(
 		USSDInputParamsEnum.ONE_TIME_CASH_SEND_SRC_ACCT_LIST.getTranId());
-	if (srcAccList != null && srcAccList.size() == 1) {
+	//Ghana Menu Optimization - To skip account selection when single account is present
+	if (srcAccList != null && srcAccList.size() == 1 && ussdSessionMgmt.getBusinessId().equalsIgnoreCase("GHBRB")) {
 	    userInputMap = userInputMap == null ? new HashMap<String, String>() : userInputMap;
 	    userInputMap.put(USSDInputParamsEnum.ONE_TIME_CASH_SEND_SRC_ACCT_LIST.getParamName(), USSDConstants.DEFAULT_OPTION_SELECTION);
 	    ussdSessionMgmt.getUserTransactionDetails().setUserInputMap(userInputMap);
 	    seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FOUR.getSequenceNo();
-	}
+		}
 	return seqNo;
     }
 

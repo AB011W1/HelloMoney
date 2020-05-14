@@ -76,41 +76,65 @@ public class MobileWalletTopUpBillerListJsonParser implements BmgBaseJsonParser,
 		String paymentTypeInput=null;
 		if(ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC"))
 			paymentTypeInput=userInputMap.get(USSDInputParamsEnum.MOBILE_WALLET_BENE_MANAGEMENT.getParamName());
+
+		//Ghana Menu Optimiztion - fetch the payment type
+		else if(ussdSessionMgmt.getBusinessId().equalsIgnoreCase("GHBRB"))
+			paymentTypeInput=userInputMap.get(USSDInputParamsEnum.MOBILE_WALLET_MSISDN_TYPE.getParamName());
+
 		else
 			paymentTypeInput=userInputMap.get(USSDInputParamsEnum.MOBILE_WALLET_PAYMENT_TYPE.getParamName());
 
-		if (null!=paymentTypeInput && ((ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("3")) || paymentTypeInput.equals("5"))) {
-			pageBody.append(responseBuilderParamsDTO.getUssdResourceBundle()
-					.getLabel(
-							DELETE_LABEL,
-							new Locale(ussdSessionMgmt.getUserProfile()
-									.getLanguage(), ussdSessionMgmt
-									.getUserProfile().getCountryCode())));
-		}else if((paymentTypeInput==null && ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC")) || (!ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("2"))){
-			pageBody.append(responseBuilderParamsDTO.getUssdResourceBundle()
-					.getLabel(
-							SAVE_LABEL,
-							new Locale(ussdSessionMgmt.getUserProfile()
-									.getLanguage(), ussdSessionMgmt
-									.getUserProfile().getCountryCode())));
-		}else if(null!=paymentTypeInput && ((ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("2")) || paymentTypeInput.equals("4"))){
-			pageBody.append(responseBuilderParamsDTO.getUssdResourceBundle()
-					.getLabel(
-							EDIT_LABEL,
-							new Locale(ussdSessionMgmt.getUserProfile()
-									.getLanguage(), ussdSessionMgmt
-									.getUserProfile().getCountryCode())));
-		}else{
-			pageBody.append(responseBuilderParamsDTO.getUssdResourceBundle()
-					.getLabel(
-							DEFAULT_LABEL,
-							new Locale(ussdSessionMgmt.getUserProfile()
-									.getLanguage(), ussdSessionMgmt
-									.getUserProfile().getCountryCode())));
+		//Ghana Menu Optimization
+		if(ussdSessionMgmt.getBusinessId().equalsIgnoreCase("GHBRB") && null!=paymentTypeInput) {
+			if(paymentTypeInput.equals("6")) {
+				pageBody.append(responseBuilderParamsDTO.getUssdResourceBundle().getLabel(DELETE_LABEL,
+						new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode())));
+			}else if(paymentTypeInput.equals("3")) {
+				pageBody.append(responseBuilderParamsDTO.getUssdResourceBundle().getLabel(SAVE_LABEL,
+						new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode())));
+			}else if(paymentTypeInput.equals("5")) {
+				pageBody.append(responseBuilderParamsDTO.getUssdResourceBundle().getLabel(EDIT_LABEL,
+						new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode())));
+			}else{
+				pageBody.append(responseBuilderParamsDTO.getUssdResourceBundle().getLabel(DEFAULT_LABEL,
+						new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode())));
+			}
+		}
+		else {
+			if (null!=paymentTypeInput && ((ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("3")) || paymentTypeInput.equals("5"))) {
+				pageBody.append(responseBuilderParamsDTO.getUssdResourceBundle()
+						.getLabel(
+								DELETE_LABEL,
+								new Locale(ussdSessionMgmt.getUserProfile()
+										.getLanguage(), ussdSessionMgmt
+										.getUserProfile().getCountryCode())));
+			}else if((paymentTypeInput==null && ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC")) || (!ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("2"))){
+				pageBody.append(responseBuilderParamsDTO.getUssdResourceBundle()
+						.getLabel(
+								SAVE_LABEL,
+								new Locale(ussdSessionMgmt.getUserProfile()
+										.getLanguage(), ussdSessionMgmt
+										.getUserProfile().getCountryCode())));
+			}else if(null!=paymentTypeInput && ((ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("2")) || paymentTypeInput.equals("4"))){
+				pageBody.append(responseBuilderParamsDTO.getUssdResourceBundle()
+						.getLabel(
+								EDIT_LABEL,
+								new Locale(ussdSessionMgmt.getUserProfile()
+										.getLanguage(), ussdSessionMgmt
+										.getUserProfile().getCountryCode())));
+			}else{
+				pageBody.append(responseBuilderParamsDTO.getUssdResourceBundle()
+						.getLabel(
+								DEFAULT_LABEL,
+								new Locale(ussdSessionMgmt.getUserProfile()
+										.getLanguage(), ussdSessionMgmt
+										.getUserProfile().getCountryCode())));
+			}
 		}
 
 		if (catzedPayLst != null && !catzedPayLst.isEmpty()) {
 			for (Beneficiery ele : catzedPayLst) {
+
 				pageBody.append(USSDConstants.NEW_LINE);
 				pageBody.append(index);
 				pageBody.append(USSDConstants.DOT_SEPERATOR);
@@ -140,24 +164,41 @@ public class MobileWalletTopUpBillerListJsonParser implements BmgBaseJsonParser,
 			USSDSessionManagement ussdSessionMgmt) throws USSDBlockingException {
 		int seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FOUR.getSequenceNo();
 		Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
-		
-		//TZNBC Menu Optimization- fetch the input typw based on bene management
+
+		//TZNBC Menu Optimization- fetch the input type based on bene management
 		String paymentTypeInput=null;
 		if(ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC"))
-			paymentTypeInput=userInputMap.get(USSDInputParamsEnum.MOBILE_WALLET_PAYMENT_TYPE.getParamName());
-		else 
 			paymentTypeInput=userInputMap.get(USSDInputParamsEnum.MOBILE_WALLET_BENE_MANAGEMENT.getParamName());
 
-		if (null!=paymentTypeInput && ((ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("3")) || paymentTypeInput.equals("5"))) {
-			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_SEVENTEEN.getSequenceNo();
-		}
-		if ((paymentTypeInput==null  && ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC"))|| (!ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("2"))) {
-			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_NINETEEN.getSequenceNo();
-		}		
-		if (null!=paymentTypeInput && ((ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("2")) || paymentTypeInput.equals("4"))) {
-			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FIFTEEN.getSequenceNo();
-		}
+		//Ghana Menu Optimiztion - fetch the payment type
+		else if(ussdSessionMgmt.getBusinessId().equalsIgnoreCase("GHBRB"))
+			paymentTypeInput=userInputMap.get(USSDInputParamsEnum.MOBILE_WALLET_MSISDN_TYPE.getParamName());
 
+		else 
+			paymentTypeInput=userInputMap.get(USSDInputParamsEnum.MOBILE_WALLET_PAYMENT_TYPE.getParamName());
+
+		if(ussdSessionMgmt.getBusinessId().equalsIgnoreCase("GHBRB") && null!=paymentTypeInput) {
+			if (paymentTypeInput.equals("6")) {
+				seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_SEVENTEEN.getSequenceNo();
+			}
+			if (paymentTypeInput.equals("3")) {
+				seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_NINETEEN.getSequenceNo();
+			}		
+			if (paymentTypeInput.equals("5")) {
+				seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FIFTEEN.getSequenceNo();
+			}
+		}
+		else {
+			if (null!=paymentTypeInput && ((ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("3")) || paymentTypeInput.equals("5"))) {
+				seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_SEVENTEEN.getSequenceNo();
+			}
+			if ((paymentTypeInput==null  && ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC"))|| (!ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("2"))) {
+				seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_NINETEEN.getSequenceNo();
+			}		
+			if (null!=paymentTypeInput && ((ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("2")) || paymentTypeInput.equals("4"))) {
+				seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FIFTEEN.getSequenceNo();
+			}
+		}
 		return seqNo;
 	}
 }
