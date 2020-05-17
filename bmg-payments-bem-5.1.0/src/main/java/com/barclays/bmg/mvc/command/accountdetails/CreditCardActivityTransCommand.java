@@ -7,6 +7,16 @@ public class CreditCardActivityTransCommand {
 	private String actNo;
 	private String activityDate;
 	private String currency;
+	//Cards Migration
+	private String sequenceNumber;
+
+	public String getSequenceNumber() {
+		return sequenceNumber;
+	}
+
+	public void setSequenceNumber(String sequenceNumber) {
+		this.sequenceNumber = sequenceNumber;
+	}
 
 	public String getActNo() {
 		return actNo;

@@ -34,9 +34,14 @@ public class CcStatDetailsRequestBuilder implements BmgBaseRequestBuilder {
 				.getUserInputMap();
 		String userSelection = userInputMap.get(USSDInputParamsEnum.CR_CARD_STAT_TRAN_DATE_LIST.getParamName());
 		CreditCardStatement userSelectedCreditCard = creditCardStmtList.get(Integer.parseInt(userSelection) - 1);
+		//Cards Migration
+		Map<String, Object> txSessions = requestBuilderParamsDTO.getUssdSessionMgmt().getTxSessions();
+	    txSessions.put(USSDInputParamsEnum.CR_CARD_STAT_DETAILS.getTranId(), userSelectedCreditCard);
+	  
 		requestParamMap.put(USSDInputParamsEnum.CR_CARD_STAT_ACCT_NO.getParamName(),userSelectedCreditCard.getActNo());
 		requestParamMap.put(USSDInputParamsEnum.CR_CARD_ACTIVTY_DATE_LIST.getParamName(),userSelectedCreditCard.getStatementDate());
 		requestParamMap.put(USSDInputParamsEnum.CR_CARD_CURRENCY.getParamName(),userSelectedCreditCard.getCurrency());
+		requestParamMap.put(USSDInputParamsEnum.CR_CARD_SEQUENCE_NUMBER.getParamName(),userSelectedCreditCard.getSequenceNumber());
 		request.setRequestParamMap(requestParamMap);
 	}else {
     	throw new USSDNonBlockingException(USSDExceptions.USSD_USER_INPUT_INVALID.getBmgCode());

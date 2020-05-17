@@ -36,14 +36,12 @@ public class CreditCardActivityTransController extends BMBAbstractCommandControl
 		CreditCardActivityTransCommand ccActivityTransCommand = (CreditCardActivityTransCommand) command;
 
 		CreditCardActivityTransOperationRequest ccActivityOperationReq = makeRequest(httpRequest);
-		//CreditCardAccountActivityServiceRequest check
-		//ccActivityOperationReq.setAccountNumber(getAccountNumber(ccStmtTransCommand.getActNo(), httpRequest, BMGProcessConstants.CREDIT_PAYMENT));
 
 		ccActivityOperationReq.setAccountNumber(ccActivityTransCommand.getActNo());
-		//ccActivityOperationReq.setStatementTrxFlag(true);//check with FV
+		//Cards Migration
 		ccActivityOperationReq.setStatementDate(DateTimeUtil.getDateFromStr(ccActivityTransCommand.getActivityDate(), StatementRequestConstants.SIMPLE_DATE_FORMAT));
-
-		//CreditCardAccountActivityServiceResponse
+		ccActivityOperationReq.setSequenceNumber(ccActivityTransCommand.getSequenceNumber());
+		
 		CreditCardTransActivityServiceResponse ccStmtTransOperationResp = creditCardActivityTransOperation
 			.retrieveCreditCardActivityTrans(ccActivityOperationReq);
 		ccStmtTransOperationResp.setCurrency(ccActivityTransCommand.getCurrency());

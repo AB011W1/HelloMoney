@@ -47,6 +47,7 @@ public class CreditCardActivityTransOperation extends AbstractCreditCardOperatio
 		ccActivityServiceReq.setAccountNumber(request.getAccountNumber());
 		ccActivityServiceReq.setStatementTrxFlag(true);
 		ccActivityServiceReq.setStatementDate(request.getStatementDate());
+		ccActivityServiceReq.setSequenceNumber(request.getSequenceNumber());
 		CreditCardTransActivityServiceResponse ccStmtDatesServiceResp = creditCardDetailsService
 				.retrieveCreditCardAccountActivity(ccActivityServiceReq);
 

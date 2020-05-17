@@ -12,6 +12,16 @@ public class CreditCardActivityTransOperationRequest extends RequestContext {
 	private Date endDate;
 	// ORCHARD CHANGES START
 	private String orgCode;
+	//Cards Migration
+	private String sequenceNumber;
+
+	public String getSequenceNumber() {
+		return sequenceNumber;
+	}
+
+	public void setSequenceNumber(String sequenceNumber) {
+		this.sequenceNumber = sequenceNumber;
+	}
 
 	public String getAccountNumber() {
 		return accountNumber;

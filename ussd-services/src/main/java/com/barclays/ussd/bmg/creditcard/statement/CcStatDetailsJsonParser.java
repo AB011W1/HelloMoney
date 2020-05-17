@@ -47,10 +47,20 @@ public class CcStatDetailsJsonParser implements BmgBaseJsonParser {
 		MenuItemDTO menuDTO = null;
 		ObjectMapper mapper = new ObjectMapper();
 		try {
-			CreditCardStatement creditCardStmt = mapper.readValue(responseBuilderParamsDTO.getJsonString(), CreditCardStatement.class);
+			
+			USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
+
+			CreditCardStatement creditCardStmt = (CreditCardStatement) ussdSessionMgmt.getTxSessions()
+					.get(USSDInputParamsEnum.CR_CARD_STAT_DETAILS.getTranId());
+			CreditCardActivityData creditCardStmtObj = mapper.readValue(responseBuilderParamsDTO.getJsonString(),
+					CreditCardActivityData.class);
+			CreditCardStatement creditCardActivityInfo = creditCardStmtObj.getPayData();
+
+
+//			CreditCardStatement creditCardStmt = mapper.readValue(responseBuilderParamsDTO.getJsonString(), CreditCardStatement.class);
 	
-		    if (creditCardStmt != null) {
-		    	menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, creditCardStmt);
+		    if (creditCardActivityInfo != null) {
+		    	menuDTO = renderMenuOnScreen(responseBuilderParamsDTO, creditCardActivityInfo, creditCardStmt);
 		    } else {
 		    	LOGGER.error("Invalid response got from the BMG " + responseBuilderParamsDTO.getBmgOpCode());
 		    	throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
@@ -73,7 +83,7 @@ public class CcStatDetailsJsonParser implements BmgBaseJsonParser {
      * @return MenuItemDTO
      * @throws USSDNonBlockingException
      */
-    private MenuItemDTO renderMenuOnScreen(ResponseBuilderParamsDTO responseBuilderParamsDTO, CreditCardStatement creditCardStmt)
+    private MenuItemDTO renderMenuOnScreen(ResponseBuilderParamsDTO responseBuilderParamsDTO, CreditCardStatement creditCardActivityInfo, CreditCardStatement creditCardStmt)
 	    throws USSDNonBlockingException {
 		MenuItemDTO menuItemDTO = null;
 		menuItemDTO = new MenuItemDTO();
@@ -103,15 +113,15 @@ public class CcStatDetailsJsonParser implements BmgBaseJsonParser {
 		pageBody.append(USSDConstants.NEW_LINE);
 		pageBody.append(pymtReceivedLabel);
 		pageBody.append(USSDConstants.SINGLE_WHITE_SPACE);
-		pageBody.append(creditCardStmt.getPmtRecv().getAmt());
+		pageBody.append(creditCardActivityInfo.getPmtRecv().getAmt());
 		pageBody.append(USSDConstants.NEW_LINE);
 		pageBody.append(totalTxnLabel);
 		pageBody.append(USSDConstants.SINGLE_WHITE_SPACE);
-		pageBody.append(creditCardStmt.getTotPur().getAmt());
+		pageBody.append(creditCardActivityInfo.getTotPur().getAmt());
 		pageBody.append(USSDConstants.NEW_LINE);
 		pageBody.append(feeChargeLabel);
 		pageBody.append(USSDConstants.SINGLE_WHITE_SPACE);
-		pageBody.append(creditCardStmt.getFeeAndChrg().getAmt());
+		pageBody.append(creditCardActivityInfo.getFeeAndChrg().getAmt());
 		pageBody.append(USSDConstants.NEW_LINE);
 		pageBody.append(totalOsLabel);
 		pageBody.append(USSDConstants.SINGLE_WHITE_SPACE);

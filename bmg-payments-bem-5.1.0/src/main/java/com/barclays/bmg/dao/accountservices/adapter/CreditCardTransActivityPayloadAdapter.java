@@ -28,6 +28,10 @@ public class CreditCardTransActivityPayloadAdapter {
 	if (ccTransActivityServiceReq.isStatementTrxFlag()) {
 
 	    accountTransactionSearchInfo.setStatementFlag(ccTransActivityServiceReq.isStatementTrxFlag());
+	    //Cards Migration Date Sequence Number
+	    if (null != ccTransActivityServiceReq.getSequenceNumber()) {
+	    	accountTransactionSearchInfo.setNumberTxnMonths(ccTransActivityServiceReq.getSequenceNumber());
+	    }
 
 	    if (ccTransActivityServiceReq.getStatementDate() != null) {
 		Calendar cal = Calendar.getInstance();

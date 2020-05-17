@@ -1,5 +1,6 @@
 package com.barclays.bmg.dao.operation.accountservices.creditcard;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +38,9 @@ public class CreditCardStatementDatesRespAdptOperation extends AbstractResAdptOp
 	    if (null != stmtdtList) {
 
 		StatementDateInfo[] stmt = stmtdtList.getStatementDateInfo();
-
+		
+		int sequenceIndex=0;
+		DecimalFormat numFormat = new DecimalFormat("00");
 		for (StatementDateInfo statementDateInfo : stmt) {
 		    if (statementDateInfo.getStatementDate() != null) {
 
@@ -56,6 +59,9 @@ public class CreditCardStatementDatesRespAdptOperation extends AbstractResAdptOp
 			stmtObj.setMinDue(ConvertUtils.convertAmount(statementDateInfo.getMinimumDueAmount()));
 			stmtObj.setDueDate(statementDateInfo.getDueDate());
 			stmtObj.setTotalOutsAmt(ConvertUtils.convertAmount(statementDateInfo.getStatementEndBalance()));
+			 //Cards Migration Date Sequence Number
+			stmtObj.setSequenceNumber(numFormat.format(sequenceIndex));
+			sequenceIndex++;
 			stmtObjList.add(stmtObj);
 
 		    }

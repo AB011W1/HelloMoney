@@ -239,35 +239,36 @@ public class AbstractResAdptOperationAcct {
 
 	// Added this method to suppress and merge fees with foreign transaction--First
 	// Vision Changes
-	public List<CreditCardActivityDTO> getUpdatedTransactionActivityList(List<CreditCardActivityDTO> activityList,
-			Context context) {
+	public List<CreditCardActivityDTO> getUpdatedTransactionActivityList(
+			List<CreditCardActivityDTO> activityList, Context context) {
 
 		List<CreditCardActivityDTO> creditCardActivityDTOList = new ArrayList<CreditCardActivityDTO>();
 		Map<String, CreditCardActivityDTO> feesTransactionActMap = new HashMap<String, CreditCardActivityDTO>();
 		Map<String, CreditCardActivityDTO> foreignTransactionActMap = new HashMap<String, CreditCardActivityDTO>();
 		Map<String, List<CreditCardActivityDTO>> localTransactionActMapList = new HashMap<String, List<CreditCardActivityDTO>>();
 
-		final String loanSupressPattern = getSystemParameterValueById(context,
-				SystemParameterConstant.TRANSACTION_SUPRESS_LOAN); // "[6-9][0-9][1-9][0-9]{2}";//fetch
-		// from database
-		final String transactionForignFeesCode = getSystemParameterValueById(context,
-				SystemParameterConstant.TRANSACTION_FOREIGN_FEES_CODE);
-		final String isTransactionMergeRequired = getSystemParameterValueById(context,
-				SystemParameterConstant.IS_CC_TRX_MERGE_REQD);
-		final String transactionsuppressionRow = getSystemParameterValueById(context,
-				SystemParameterConstant.TRX_SUPRS_CC_ROW_COUNT);
+		final String loanSupressPattern = getSystemParameterValueById(
+				context, SystemParameterConstant.TRANSACTION_SUPRESS_LOAN); // "[6-9][0-9][1-9][0-9]{2}";//fetch
+																// from database
+		final String transactionForignFeesCode = getSystemParameterValueById(
+				context, SystemParameterConstant.TRANSACTION_FOREIGN_FEES_CODE);
+		final String isTransactionMergeRequired = getSystemParameterValueById(
+				context, SystemParameterConstant.IS_CC_TRX_MERGE_REQD);
+		final String transactionsuppressionRow = getSystemParameterValueById(
+				context, SystemParameterConstant.TRX_SUPRS_CC_ROW_COUNT);
 
 		List<String> transactionFeesArrayList = new ArrayList<String>();
 		if (StringUtils.isNotEmpty(transactionForignFeesCode)) {
-			transactionFeesArrayList = Arrays.asList(transactionForignFeesCode.split(CommonConstants.COMMA));
+			transactionFeesArrayList = Arrays.asList(transactionForignFeesCode
+					.split(CommonConstants.COMMA));
 		}
 		List<String> transactionCodeForSuppress = new ArrayList<String>();
 		if (transactionsuppressionRow != null) {
 			int noOfRows = Integer.parseInt(transactionsuppressionRow);
 			for (int row = 0; row < noOfRows; row++) {
 				String[] supCode = null;
-				final String transactionCodeForSup = getSystemParameterValueById(context,
-						(SystemParameterConstant.TRX_SUPRS_CREDIT_CARD + row));
+				final String transactionCodeForSup = getSystemParameterValueById(
+						context, (SystemParameterConstant.TRX_SUPRS_CREDIT_CARD + row));
 				if (transactionCodeForSup != null) {
 					supCode = transactionCodeForSup.split(",");
 					transactionCodeForSuppress.addAll(Arrays.asList(supCode));
@@ -278,27 +279,36 @@ public class AbstractResAdptOperationAcct {
 		if (activityList != null) {
 			for (CreditCardActivityDTO creditCardActivityDTO : activityList) {
 				// Remove supressed transaction
-				if (isTransactionActivityBeSupressed(creditCardActivityDTO, transactionCodeForSuppress)
-						|| isLoanActivitybeSupressed(creditCardActivityDTO, loanSupressPattern)) {
+				if (isTransactionActivityBeSupressed(creditCardActivityDTO,
+						transactionCodeForSuppress)
+						|| isLoanActivitybeSupressed(creditCardActivityDTO,
+								loanSupressPattern)) {
 					// do nothing for transaction to be supreessed from
 					// calculation and also on view
 				} else {
 					if (isForeignTransaction(creditCardActivityDTO)
-							&& !isFeesTransaction(creditCardActivityDTO, transactionFeesArrayList)) {
-						foreignTransactionActMap.put(creditCardActivityDTO.getTransactoinReferenceNumber(),
+							&& !isFeesTransaction(creditCardActivityDTO,
+									transactionFeesArrayList)) {
+						foreignTransactionActMap.put(creditCardActivityDTO
+								.getTransactoinReferenceNumber(),
 								creditCardActivityDTO);
-					} else if (isFeesTransaction(creditCardActivityDTO, transactionFeesArrayList)) {
-						feesTransactionActMap.put(creditCardActivityDTO.getTransactoinReferenceNumber(),
+					} else if (isFeesTransaction(creditCardActivityDTO,
+							transactionFeesArrayList)) {
+						feesTransactionActMap.put(creditCardActivityDTO
+								.getTransactoinReferenceNumber(),
 								creditCardActivityDTO);
 					} else {
 						List<CreditCardActivityDTO> creditCardActLocalList = new ArrayList<CreditCardActivityDTO>();
 						if (localTransactionActMapList
-								.get(creditCardActivityDTO.getTransactoinReferenceNumber()) != null) {
+								.get(creditCardActivityDTO
+										.getTransactoinReferenceNumber()) != null) {
 							creditCardActLocalList = localTransactionActMapList
-									.get(creditCardActivityDTO.getTransactoinReferenceNumber());
+									.get(creditCardActivityDTO
+											.getTransactoinReferenceNumber());
 						}
 						creditCardActLocalList.add(creditCardActivityDTO);
-						localTransactionActMapList.put(creditCardActivityDTO.getTransactoinReferenceNumber(),
+						localTransactionActMapList.put(creditCardActivityDTO
+								.getTransactoinReferenceNumber(),
 								creditCardActLocalList);
 					}
 				}
@@ -307,12 +317,14 @@ public class AbstractResAdptOperationAcct {
 
 		if (CommonConstants.YES.equals(isTransactionMergeRequired)) {
 			for (String key : foreignTransactionActMap.keySet()) {
-				CreditCardActivityDTO mergedCardActivityDTO = foreignTransactionActMap.get(key);
+				CreditCardActivityDTO mergedCardActivityDTO = foreignTransactionActMap
+						.get(key);
 				BigDecimal mergedAmount = mergedCardActivityDTO.getTransactionAmount();
 				if (feesTransactionActMap.get(key) != null) {
 					// Merge fees for Foreign
 					mergedCardActivityDTO.setMergedFlag(true);
-					mergedAmount = mergedAmount.add(feesTransactionActMap.get(key).getTransactionAmount());
+					mergedAmount = mergedAmount.add(feesTransactionActMap.get(
+							key).getTransactionAmount());
 					mergedCardActivityDTO.setTransactionAmount(mergedAmount);
 				}
 				mergedCardActivityDTO.setTransactionAmount(mergedAmount);
@@ -320,7 +332,8 @@ public class AbstractResAdptOperationAcct {
 			}
 			for (String feesKey : feesTransactionActMap.keySet()) {
 				if (foreignTransactionActMap.get(feesKey) == null) {
-					CreditCardActivityDTO feesCardActivityDTO = feesTransactionActMap.get(feesKey);
+					CreditCardActivityDTO feesCardActivityDTO = feesTransactionActMap
+							.get(feesKey);
 					creditCardActivityDTOList.add(feesCardActivityDTO);
 				}
 			}
@@ -333,8 +346,9 @@ public class AbstractResAdptOperationAcct {
 			}
 		} else {
 			for (CreditCardActivityDTO crdActDTO : activityList) {
-				if (!(isTransactionActivityBeSupressed(crdActDTO, transactionCodeForSuppress)
-						|| isLoanActivitybeSupressed(crdActDTO, loanSupressPattern))) {
+				if (!(isTransactionActivityBeSupressed(crdActDTO,
+						transactionCodeForSuppress) || isLoanActivitybeSupressed(
+						crdActDTO, loanSupressPattern))) {
 					creditCardActivityDTOList.add(crdActDTO);
 				}
 			}

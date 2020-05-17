@@ -5,6 +5,7 @@ import com.barclays.bmg.context.ResponseContext;
 import com.barclays.bmg.dto.CreditCardAccountDTO;
 import com.barclays.bmg.dto.CreditCardStmtBalanceInfoDTO;
 import com.barclays.bmg.exception.BMBCustomClassCastException;
+import com.barclays.bmg.json.model.CreditCardActivityInfoJSONModel;
 import com.barclays.bmg.json.model.CreditCardStmtBalanceInfoJSONModel;
 import com.barclays.bmg.json.model.builder.BMBCommonJSONBuilder;
 import com.barclays.bmg.json.model.builder.BMBJSONBuilder;
@@ -45,14 +46,14 @@ public class CreditCardActivityTransJSONBldr extends BMBCommonJSONBuilder implem
 
 	protected void populatePayLoad(CreditCardTransActivityServiceResponse response, BMBPayload bmbPayload) {
 
-		CreditCardStmtBalanceInfoJSONModel ccStmtTransJsonModel = null;
+		CreditCardActivityInfoJSONModel ccStmtTransJsonModel = null;
 		CreditCardStmtBalanceInfoDTO ccStmtBalInfo = new CreditCardStmtBalanceInfoDTO();
 		if (response.isSuccess()) {
 			if(null != response.getCreditCardTransactionHistoryListDTO() && null != response.getCreditCardTransactionHistoryListDTO().getBalanceInfo()) {
 				ccStmtBalInfo = response.getCreditCardTransactionHistoryListDTO().getBalanceInfo();
 			}
 
-			ccStmtTransJsonModel = new CreditCardStmtBalanceInfoJSONModel(ccStmtBalInfo, response.getCurrency());
+			ccStmtTransJsonModel = new CreditCardActivityInfoJSONModel(ccStmtBalInfo, response.getCurrency());
 
 		}
 		bmbPayload.setPayData(ccStmtTransJsonModel);
