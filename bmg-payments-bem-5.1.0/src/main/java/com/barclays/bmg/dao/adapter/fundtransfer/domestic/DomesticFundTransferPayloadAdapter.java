@@ -1,21 +1,25 @@
 package com.barclays.bmg.dao.adapter.fundtransfer.domestic;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Map;
 
 import com.barclays.bem.DomesticFundTransfer.DomesticFundTransfer;
 import com.barclays.bem.IndividualBeneficiary.IndividualBeneficiary;
 import com.barclays.bem.IndividualName.IndividualName;
+import com.barclays.bem.TransactionAccount.CreditCardExpiryDateType;
 import com.barclays.bem.TransactionAccount.TransactionAccount;
 import com.barclays.bmg.constants.CommonConstants;
 import com.barclays.bmg.constants.FundTransferConstants;
 import com.barclays.bmg.constants.SystemParameterConstant;
+import com.barclays.bmg.context.Context;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.dao.core.context.impl.DAOContext;
 import com.barclays.bmg.dto.BeneficiaryDTO;
 import com.barclays.bmg.dto.CustomerAccountDTO;
 import com.barclays.bmg.service.request.DomesticFundTransferServiceRequest;
 import com.barclays.bmg.utils.BMBCommonUtility;
+import com.barclays.bmg.utils.DateTimeUtil;
 
 public class DomesticFundTransferPayloadAdapter {
 
@@ -33,7 +37,7 @@ public class DomesticFundTransferPayloadAdapter {
 		return domesticFundTransfer;
 	}
 	private DomesticFundTransfer adaptPayLoad(DomesticFundTransferServiceRequest domesticFTRequest){
-
+		Context context = domesticFTRequest.getContext();
 		DomesticFundTransfer   dest = new DomesticFundTransfer ();
 		CustomerAccountDTO sourceAcct = domesticFTRequest.getSourceAcct();
 		BeneficiaryDTO beneficiaryDTO = domesticFTRequest.getBeneficiaryDTO();
@@ -43,6 +47,16 @@ public class DomesticFundTransferPayloadAdapter {
         fromAccount.setAccountNumber(sourceAcct.getAccountNumber());
         //FromAccount.Currency
         fromAccount.setAccountCurrencyCode(sourceAcct.getCurrency());
+		// First Vision Changes for expiry date
+		if (null != beneficiaryDTO && null != beneficiaryDTO.getCreditCardExpiryDate()) {
+			Date date = beneficiaryDTO.getCreditCardExpiryDate();
+			if (date != null) {
+				CreditCardExpiryDateType creditCardExpiryDate = new CreditCardExpiryDateType();
+				creditCardExpiryDate.setCardExpiryMonth(DateTimeUtil.getDayMonthYearFromDate(date, "MM"));
+				creditCardExpiryDate.setCardExpiryYear(DateTimeUtil.getDayMonthYearFromDate(date, "YY"));
+				fromAccount.setCreditCardExpiryDate(creditCardExpiryDate);
+			}
+		}
         dest.setDebitAccount(fromAccount);
 
         dest.setDebitAccountTypeCode(sourceAcct.getProductCode());
@@ -94,6 +108,14 @@ public class DomesticFundTransferPayloadAdapter {
         beneficiaryAccount.setAccountCurrencyCode(beneficiaryDTO.getCurrency());
         //beneficiary account
         dest.setBeneficiaryAccount(beneficiaryAccount);
+		// Credit Card Migration-Plan no. Addition
+		Map<String, Object> contextMap = context.getContextMap();
+		String planNumber = (String) contextMap.get(SystemParameterConstant.PLAN_NUMBER_FUND_TRANSFER);
+		if (null != planNumber) {
+			dest.setCreditPlanNumber(planNumber);
+		} else {
+			dest.setCreditPlanNumber("10001");
+		}
 
         //
         IndividualName name= new IndividualName();

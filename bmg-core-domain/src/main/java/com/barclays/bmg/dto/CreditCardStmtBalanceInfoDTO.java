@@ -44,8 +44,18 @@ public class CreditCardStmtBalanceInfoDTO implements Serializable {
     // display Cr
 
     // Add End y Tim for CR PreviousBalanceCRChange Issue
+    //Cards Migration
+    private String sequenceNumber;
+    
+    public String getSequenceNumber() {
+		return sequenceNumber;
+	}
 
-    public BigDecimal getPrevBalance() {
+	public void setSequenceNumber(String sequenceNumber) {
+		this.sequenceNumber = sequenceNumber;
+	}
+
+	public BigDecimal getPrevBalance() {
 	return prevBalance;
     }
 

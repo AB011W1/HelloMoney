@@ -163,6 +163,7 @@
 				<entry key="OP0950" value-ref="atAGlanceController" />
 				<entry key="OP0951" value-ref="creditCardStmtTransController" />
 				<entry key="OP0952" value-ref="creditCardUnbilledTransController" />
+				<entry key="OP0953" value-ref="creditCardActivityTransController" />
 				<entry key="OP0954" value-ref="ownPaymentController" />
 				<entry key="OP0955" value-ref="creditCardValidationController" />
 				<entry key="OP0956" value-ref="ccPaymentFormvalidationController" />

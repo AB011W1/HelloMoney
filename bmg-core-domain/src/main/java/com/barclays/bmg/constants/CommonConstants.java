@@ -35,5 +35,8 @@ public interface CommonConstants {
     //	ADDED TO INCLUDE DEBIT CARD VALIDATION IN SELF REGISTRATION
     String SPRW_ROUTING_INDICATOR = "SPRW";
     // ORCHARD CHANGES END
-
+    
+    //Cards Migration Changes
+    String YES = "Y";
+    String COMMA = ",";
 }

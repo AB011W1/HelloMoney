@@ -206,6 +206,14 @@ public class OwnFundtransferValidateController extends BMBAbstractCommandControl
 		transactionDTO.setSourceAcct(selSourceAcctOpResp.getSelectedAcct());
 		CustomerAccountDTO beneAcct = selDestAcctOpResp.getSelectedAcct();
 		BeneficiaryDTO beneficiaryDTO = new BeneficiaryDTO();
+		// Cards Migration: Start
+		if (selSourceAcctOpResp.getSelectedAcct() instanceof CreditCardAccountDTO) {
+			CreditCardAccountDTO cardDTO = (CreditCardAccountDTO) selSourceAcctOpResp.getSelectedAcct();
+			if (cardDTO.getCardExpireDate() != null) {
+				beneficiaryDTO.setCreditCardExpiryDate(cardDTO.getCardExpireDate());
+			}
+		}
+		// Cards Migration: Ends
 		beneficiaryDTO.setDestinationAccount(beneAcct);
 		beneficiaryDTO.setDestinationAccountNumber(beneAcct.getAccountNumber());
 		beneficiaryDTO.setDestinationBranchCode(beneAcct.getBranchCode());

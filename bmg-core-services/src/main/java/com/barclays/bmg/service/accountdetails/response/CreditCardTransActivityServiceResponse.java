@@ -10,8 +10,17 @@ public class CreditCardTransActivityServiceResponse extends ResponseContext {
 	 */
     private static final long serialVersionUID = -5422459165448984307L;
     CreditCardTransactionHistoryListDTO creditCardTransactionHistoryListDTO;
+    private String currency;
 
-    public CreditCardTransactionHistoryListDTO getCreditCardTransactionHistoryListDTO() {
+    public String getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(String currency) {
+		this.currency = currency;
+	}
+
+	public CreditCardTransactionHistoryListDTO getCreditCardTransactionHistoryListDTO() {
 	return creditCardTransactionHistoryListDTO;
     }
 

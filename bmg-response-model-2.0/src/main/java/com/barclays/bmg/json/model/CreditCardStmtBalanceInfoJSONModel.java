@@ -1,6 +1,7 @@
 package com.barclays.bmg.json.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import com.barclays.bmg.dto.CreditCardStmtBalanceInfoDTO;
 import com.barclays.bmg.json.response.BMBPayloadData;
@@ -22,8 +23,12 @@ public class CreditCardStmtBalanceInfoJSONModel extends BMBPayloadData implement
     private String statementDate;
     private AmountJSONModel minDueAmt; //CR75
     private String dueDate;
+    private String actNo;
+	private String currency;
+	private String sequenceNumber;
 
-    public CreditCardStmtBalanceInfoJSONModel(CreditCardStmtBalanceInfoDTO ccStmtBalInfo, String currency) {
+
+	public CreditCardStmtBalanceInfoJSONModel(CreditCardStmtBalanceInfoDTO ccStmtBalInfo, String currency, String actNo) {
 	super();
 
 	this.prvBal = BMGFormatUtility.getJSONAmount(currency, BMGFormatUtility.getFormattedAmount(ccStmtBalInfo.getPrevBalance()));
@@ -35,13 +40,38 @@ public class CreditCardStmtBalanceInfoJSONModel extends BMBPayloadData implement
 	this.statementDate = BMGFormatUtility.getShortDate(ccStmtBalInfo.getStatementDate().getTime());
 	this.minDueAmt = BMGFormatUtility.getJSONAmount(currency, BMGFormatUtility.getFormattedAmount(ccStmtBalInfo.getMinDue())); ////CR75
 	this.dueDate = BMGFormatUtility.getShortDate(ccStmtBalInfo.getDueDate().getTime());
+	this.sequenceNumber = ccStmtBalInfo.getSequenceNumber();
+	this.actNo = actNo;
+	this.currency = currency;
     }
 
     public CreditCardStmtBalanceInfoJSONModel() {
 	super();
     }
 
-    public AmountJSONModel getPrvBal() {
+    public CreditCardStmtBalanceInfoJSONModel(CreditCardStmtBalanceInfoDTO ccStmtBalInfo, String currency) {
+    		super();
+
+    		this.prvBal = BMGFormatUtility.getJSONAmount(currency, BMGFormatUtility.getFormattedAmount(ccStmtBalInfo.getPrevBalance()));
+    		this.pmtRecv = BMGFormatUtility.getJSONAmount(currency, BMGFormatUtility.getFormattedAmount(ccStmtBalInfo.getPaymentReceived()));
+    		this.totPur = BMGFormatUtility.getJSONAmount(currency, BMGFormatUtility.getFormattedAmount(ccStmtBalInfo.getTotalPurchase()));
+    		this.totCshWdr = BMGFormatUtility.getJSONAmount(currency, BMGFormatUtility.getFormattedAmount(ccStmtBalInfo.getTotalCashWithdrawn()));
+    		this.feeAndChrg = BMGFormatUtility.getJSONAmount(currency, BMGFormatUtility.getFormattedAmount(ccStmtBalInfo.getFeeAndCharge()));
+    		this.actBal = BMGFormatUtility.getJSONAmount(currency, BMGFormatUtility.getFormattedAmount(ccStmtBalInfo.getTotalOutsAmt()));
+    		this.statementDate = BMGFormatUtility.getShortDate(ccStmtBalInfo.getStatementDate().getTime());
+    		this.minDueAmt = BMGFormatUtility.getJSONAmount(currency, BMGFormatUtility.getFormattedAmount(ccStmtBalInfo.getMinDue())); ////CR75
+    		this.dueDate = BMGFormatUtility.getShortDate(ccStmtBalInfo.getDueDate().getTime());
+	}
+    
+	public String getSequenceNumber() {
+		return sequenceNumber;
+	}
+
+	public void setSequenceNumber(String sequenceNumber) {
+		this.sequenceNumber = sequenceNumber;
+	}
+
+	public AmountJSONModel getPrvBal() {
 	return prvBal;
     }
 
@@ -111,6 +141,22 @@ public class CreditCardStmtBalanceInfoJSONModel extends BMBPayloadData implement
 
 	public void setDueDate(String dueDate) {
 		this.dueDate = dueDate;
+	}
+	
+	public String getActNo() {
+		return actNo;
+	}
+
+	public void setActNo(String actNo) {
+		this.actNo = actNo;
+	}
+
+	public String getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(String currency) {
+		this.currency = currency;
 	}
 
 }

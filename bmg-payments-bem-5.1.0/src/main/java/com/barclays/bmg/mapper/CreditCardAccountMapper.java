@@ -257,6 +257,10 @@ public class CreditCardAccountMapper {
 		} else {
 		    result.addSupplementary(creditCardDTO);
 		}
+		// Cards Migration
+		if (null != creditCardInfo.getCardExpiryDate()) {
+			result.setCardExpireDate(creditCardInfo.getCardExpiryDate().getTime());
+		}
 	    }
 	}
 	return result;
@@ -308,6 +312,9 @@ public class CreditCardAccountMapper {
 		creditCardDTO.setCardStatus(creditCardInfo.getCreditCardLifeCycleStatusCode());
 		creditCardDTO.setCardHolder(creditCardInfo.getEmbossedNameOnCard());
 		creditCardDTO.setPrimaryOrSupplementary(creditCardInfo.getCreditCardOwnershipTypeCode());
+		// Cards Migration
+		if (null != creditCardInfo.getCreditCardExpiryDate())
+			creditCardDTO.setCardExpireDate(creditCardInfo.getCardExpiryDate().getTime());
 
 		if (primaryVal.equals(creditCardDTO.getPrimaryOrSupplementary())) {
 		    result.setPrimary(creditCardDTO);

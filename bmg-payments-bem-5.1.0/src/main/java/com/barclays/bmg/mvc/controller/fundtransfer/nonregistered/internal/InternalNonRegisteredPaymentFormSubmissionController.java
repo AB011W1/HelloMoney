@@ -17,6 +17,7 @@ import com.barclays.bmg.context.Context;
 import com.barclays.bmg.context.ResponseContext;
 import com.barclays.bmg.dto.Amount;
 import com.barclays.bmg.dto.BeneficiaryDTO;
+import com.barclays.bmg.dto.CreditCardAccountDTO;
 import com.barclays.bmg.dto.TransactionDTO;
 import com.barclays.bmg.json.model.builder.BMBMultipleResponseJSONBuilder;
 import com.barclays.bmg.json.response.BMBPayload;
@@ -222,6 +223,14 @@ public class InternalNonRegisteredPaymentFormSubmissionController extends BMBAbs
 	transactionDTO.setTxnType(FundTransferConstants.TXN_TYPE_FUND_TRANSFER_INTERNAL);
 	BeneficiaryDTO beneficiaryDTO = retrieveInternalNonRegisteredPayeeInfoOperationResponse.getBeneficiaryDTO();
 	beneficiaryDTO.setDestinationAccount(retrieveInternalNonRegisteredPayeeInfoOperationResponse.getCasaAccountDTO());
+	// Cards Migration: Start
+	if (selSourceAcctOpResp.getSelectedAcct() instanceof CreditCardAccountDTO) {
+		CreditCardAccountDTO cardDTO = (CreditCardAccountDTO) selSourceAcctOpResp.getSelectedAcct();
+		if (cardDTO.getCardExpireDate() != null) {
+			beneficiaryDTO.setCreditCardExpiryDate(cardDTO.getCardExpireDate());
+		}
+	}
+	// Cards Migration: Ends
 	transactionDTO.setBeneficiaryDTO(beneficiaryDTO);
 	transactionDTO.setFxRateDTO(formValidateOperationResponse.getFxRateDTO());
 	transactionDTO.setTxnAmt(formValidateOperationResponse.getTxnAmt());

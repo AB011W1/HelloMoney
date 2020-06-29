@@ -39,11 +39,26 @@
 		<property name="bmbJsonBuilder" ref="creditCardStmtTransJSONBldr" />
 	</bean>
 
+	<bean id="creditCardActivityTransController"
+		class="com.barclays.bmg.mvc.controller.accountdetails.CreditCardActivityTransController"
+		parent="bmbAbstractCommandController">
+		<property name="commandName" value="accountCommand" />
+		<property name="commandClass"
+			value="com.barclays.bmg.mvc.command.accountdetails.CreditCardActivityTransCommand" />
+
+		<property name="creditCardActivityTransOperation" ref="creditCardActivityTransOperation" />
+		<property name="bmbJsonBuilder" ref="creditCardActivityTransJSONBldr" />
+	</bean>
+
 <!-- Credit Card Account Details Controller Ends  -->
 
 	<!-- Credit Card Account Details -->
 	<bean name="creditCardAccountDetailsValidator"
 		class="com.barclays.bmg.mvc.validator.accountdetails.CreditCardAccountDetailsValidator" />
+		
+	<!-- Credit Card Activity  Transaction-->
+	<bean name="creditCardActivityTransValidator"
+		class="com.barclays.bmg.mvc.validator.accountdetails.CreditCardActivityTransValidator" />
 
 
 	<!-- Credit Card Unbilled  Transaction-->
@@ -62,6 +77,8 @@
 	<bean id="creditCardUnbilledTransJSONBldr"	class="com.barclays.bmg.json.model.builder.accountdetails.CreditCardUnbilledTransJSONBldr" parent="bmbCommonJSONBuilder" />
 
 	<bean id="creditCardStmtTransJSONBldr"	class="com.barclays.bmg.json.model.builder.accountdetails.CreditCardStmtTransJSONBldr" parent="bmbCommonJSONBuilder" />
+	
+	<bean id="creditCardActivityTransJSONBldr"	class="com.barclays.bmg.json.model.builder.accountdetails.CreditCardActivityTransJSONBldr" parent="bmbCommonJSONBuilder" />
 
 	<!-- credit Card Details Operation -->
     <bean id="creditCardDetailsOperation"	class="com.barclays.bmg.operation.accountdetails.CreditCardDetailsOperation" parent="bmbCommonOperation">
@@ -80,6 +97,12 @@
 		<property name="creditCardDetailsService" ref="creditCardDetailsServiceImpl"/>
 			<property name="allAccountService" ref="allAccountService"/>
 			<property name="listValueResService" ref="listValueResService" />
+	</bean>
+	
+	<!-- credit Card Activity Transaction Operation -->
+	<bean id="creditCardActivityTransOperation"	class="com.barclays.bmg.operation.accountdetails.CreditCardActivityTransOperation" parent="bmbCommonOperation">
+    	<property name="creditCardDetailsService" ref="creditCardDetailsServiceImpl"/>
+ 
 	</bean>
 
 

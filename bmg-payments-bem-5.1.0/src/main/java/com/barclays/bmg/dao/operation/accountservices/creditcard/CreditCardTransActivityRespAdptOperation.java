@@ -2,6 +2,7 @@ package com.barclays.bmg.dao.operation.accountservices.creditcard;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.barclays.bem.BEMServiceHeader.BEMResHeader;
@@ -9,13 +10,16 @@ import com.barclays.bem.BEMServiceHeader.Error;
 import com.barclays.bem.RetrieveCreditcardAcctTransactionActivity.RetrieveCreditcardAccountTransactionActivityResponse;
 import com.barclays.bmg.constants.AccountErrorCodeConstant;
 import com.barclays.bmg.constants.AccountServiceResponseCodeConstant;
+import com.barclays.bmg.constants.ActivityConstant;
 import com.barclays.bmg.constants.ErrorCodeConstant;
+import com.barclays.bmg.context.Context;
 import com.barclays.bmg.dao.core.context.WorkContext;
 import com.barclays.bmg.dao.core.context.impl.DAOContext;
 import com.barclays.bmg.dao.operation.accountservices.AbstractResAdptOperationAcct;
 import com.barclays.bmg.dto.CreditCardActivityDTO;
 import com.barclays.bmg.dto.CreditCardStmtAccountInfoDTO;
 import com.barclays.bmg.dto.CreditCardStmtBalanceInfoDTO;
+import com.barclays.bmg.dto.CreditCardTransactionHistoryDTO;
 import com.barclays.bmg.dto.CreditCardTransactionHistoryListDTO;
 import com.barclays.bmg.exception.BMBDataAccessException;
 import com.barclays.bmg.mapper.CreditCardActivityMapper;
@@ -32,6 +36,8 @@ public class CreditCardTransActivityRespAdptOperation extends AbstractResAdptOpe
 	DAOContext daoContext = (DAOContext) workContext;
 	Object[] args = daoContext.getArguments();
 	CreditCardAccountActivityServiceRequest ccTransActivityServiceReq = (CreditCardAccountActivityServiceRequest) args[0];
+	//First Vision Changes
+	Context context = ccTransActivityServiceReq.getContext();
 
 	RetrieveCreditcardAccountTransactionActivityResponse retrieveCCTransActivityResponse = (RetrieveCreditcardAccountTransactionActivityResponse) obj;
 
@@ -45,84 +51,59 @@ public class CreditCardTransActivityRespAdptOperation extends AbstractResAdptOpe
 
 	    if (retrieveCCTransActivityResponse.getCreditCardTransactionList() != null) {
 
-		CreditCardActivityMapper ccActivityMapper = new CreditCardActivityMapper();
-
-		rstObj = ccActivityMapper.mapCollection(retrieveCCTransActivityResponse.getCreditCardTransactionList().getTransactionActivityInfo());
+			CreditCardActivityMapper ccActivityMapper = new CreditCardActivityMapper();
+	
+			rstObj = ccActivityMapper.mapCollection(retrieveCCTransActivityResponse.getCreditCardTransactionList().getTransactionActivityInfo());
 	    }
 
-	    ccTransactionHistoryListDTO.setCreditCardActivityList(rstObj);
+	    ccTransactionHistoryListDTO.setCreditCardActivityList(getUpdatedTransactionActivityList(rstObj, context));
 
 	    if (ccTransActivityServiceReq.isStatementTrxFlag()) {
-		CreditCardStmtAccountInfoDTO accountInfo = new CreditCardStmtAccountInfoDTO();
-		if (retrieveCCTransActivityResponse.getCreditCardTransactionList() != null) {
-		    accountInfo.setTotalCreditLimit(ConvertUtils.convertAmount(retrieveCCTransActivityResponse.getCreditCardTransactionList()
-			    .getCreditLimitAmount()));
-		    accountInfo.setMinPaymentDue(ConvertUtils.convertPositiveAmount(retrieveCCTransActivityResponse.getCreditCardTransactionList()
-			    .getMinimumDueAmount()));
-		    accountInfo.setPaymentDue(ConvertUtils.convertAmount(retrieveCCTransActivityResponse.getCreditCardTransactionList()
-			    .getClosingBalanceAmount()));
-		    accountInfo.setPaymentDueDate(ConvertUtils.convertDate(retrieveCCTransActivityResponse.getCreditCardTransactionList()
-			    .getDueDate()));
-		}
-		ccTransactionHistoryListDTO.setAccountInfo(accountInfo);
-
-		CreditCardStmtBalanceInfoDTO balanceInfo = new CreditCardStmtBalanceInfoDTO();
-
-		if (retrieveCCTransActivityResponse.getCreditCardTransactionList() != null) {
-		    // Account Balance
-		    // BigDecimal accountBalance =
-		    // BigDecimal.valueOf(response.getCreditCardTransactionList().getClosingBalanceAmount().doubleValue());
-		    if (null != retrieveCCTransActivityResponse.getCreditCardTransactionList().getClosingBalanceAmount()) {
-			if (retrieveCCTransActivityResponse.getCreditCardTransactionList().getClosingBalanceAmount() > 0) {
-			    balanceInfo.setAccountBalancePositiveFlag(true);
+			CreditCardStmtAccountInfoDTO accountInfo = new CreditCardStmtAccountInfoDTO();
+			if (retrieveCCTransActivityResponse.getCreditCardTransactionList() != null) {
+			    accountInfo.setTotalCreditLimit(ConvertUtils.convertAmount(retrieveCCTransActivityResponse.getCreditCardTransactionList()
+				    .getCreditLimitAmount()));
+			    accountInfo.setMinPaymentDue(ConvertUtils.convertPositiveAmount(retrieveCCTransActivityResponse.getCreditCardTransactionList()
+				    .getMinimumDueAmount()));
+			    accountInfo.setPaymentDue(ConvertUtils.convertAmount(retrieveCCTransActivityResponse.getCreditCardTransactionList()
+				    .getClosingBalanceAmount()));
+			    accountInfo.setPaymentDueDate(ConvertUtils.convertDate(retrieveCCTransActivityResponse.getCreditCardTransactionList()
+				    .getDueDate()));
 			}
-		    }
-		    balanceInfo.setAccountBalance(ConvertUtils.convertPositiveAmount(retrieveCCTransActivityResponse.getCreditCardTransactionList()
-			    .getClosingBalanceAmount()));
-		    balanceInfo.setFeeAndCharge(ConvertUtils.convertPositiveAmount(retrieveCCTransActivityResponse.getCreditCardTransactionList()
-			    .getCCAccountFeesandCharges()));
-		    balanceInfo.setPaymentReceived(ConvertUtils.convertAmount(retrieveCCTransActivityResponse.getCreditCardTransactionList()
-			    .getCCAccountPaymentsReceived()));
-
-		    // PreviousBalanceCRChange
-		    if (null != retrieveCCTransActivityResponse.getCreditCardTransactionList().getOpeningBalanceAmount()) {
-			if (retrieveCCTransActivityResponse.getCreditCardTransactionList().getOpeningBalanceAmount() > 0) {
-			    balanceInfo.setPreviousBalanceFlag(true);
+			ccTransactionHistoryListDTO.setAccountInfo(accountInfo);
+	
+			CreditCardStmtBalanceInfoDTO balanceInfo = new CreditCardStmtBalanceInfoDTO();
+	
+			if (retrieveCCTransActivityResponse.getCreditCardTransactionList() != null) {
+			    // Account Balance
+			    // BigDecimal accountBalance =
+			    // BigDecimal.valueOf(response.getCreditCardTransactionList().getClosingBalanceAmount().doubleValue());
+			    if (null != retrieveCCTransActivityResponse.getCreditCardTransactionList().getClosingBalanceAmount()) {
+					if (retrieveCCTransActivityResponse.getCreditCardTransactionList().getClosingBalanceAmount() > 0) {
+					    balanceInfo.setAccountBalancePositiveFlag(true);
+					}
+			    }
+			    balanceInfo.setAccountBalance(ConvertUtils.convertPositiveAmount(retrieveCCTransActivityResponse.getCreditCardTransactionList()
+				    .getClosingBalanceAmount()));
+	
+			    // PreviousBalanceCRChange
+			    if (null != retrieveCCTransActivityResponse.getCreditCardTransactionList().getOpeningBalanceAmount()) {
+					if (retrieveCCTransActivityResponse.getCreditCardTransactionList().getOpeningBalanceAmount() > 0) {
+					    balanceInfo.setPreviousBalanceFlag(true);
+					}
+			    }
+			    // PreviousBalanceCRChange
+			    balanceInfo.setPrevBalance(ConvertUtils.convertPositiveAmount(retrieveCCTransActivityResponse.getCreditCardTransactionList()
+				    .getOpeningBalanceAmount()));
+	
+			    BigDecimal otherDebit = new BigDecimal(0.0);
+			    if (null != retrieveCCTransActivityResponse.getCreditCardTransactionList().getOtherCreditDebitAmount()) {
+			    	otherDebit = new BigDecimal(retrieveCCTransActivityResponse.getCreditCardTransactionList().getOtherCreditDebitAmount());
+			    }
+			    balanceInfo.setOtherDrOrCr(otherDebit);
 			}
-		    }
-		    // PreviousBalanceCRChange
-		    balanceInfo.setPrevBalance(ConvertUtils.convertPositiveAmount(retrieveCCTransActivityResponse.getCreditCardTransactionList()
-			    .getOpeningBalanceAmount()));
-		    // balanceInfo.setPrevBalance(new BigDecimal(1234567890.45));
-		    balanceInfo.setTotalCashWithdrawn(ConvertUtils.convertPositiveAmount(retrieveCCTransActivityResponse
-			    .getCreditCardTransactionList().getCCAccountTotalCashWithdrawn()));
-		    BigDecimal otherDebit = new BigDecimal(0.0);
-		    if (null != retrieveCCTransActivityResponse.getCreditCardTransactionList().getOtherCreditDebitAmount()) {
-			otherDebit = new BigDecimal(retrieveCCTransActivityResponse.getCreditCardTransactionList().getOtherCreditDebitAmount());
-		    }
-		    balanceInfo.setOtherDrOrCr(otherDebit);
-		    balanceInfo.setTotalPurchase(ConvertUtils.convertPositiveAmount(retrieveCCTransActivityResponse.getCreditCardTransactionList()
-			    .getCCAccountTotalPurchases()));
-		}
-		ccTransactionHistoryListDTO.setBalanceInfo(balanceInfo);
-
-		/*
-		 * CreditCardStmtPointsInfoDTO rewardsInfo = new CreditCardStmtPointsInfoDTO();
-		 * if(retrieveCCTransActivityResponse.getCreditCardTransactionList() != null &&
-		 * retrieveCCTransActivityResponse.getCreditCardTransactionList().getCCAccountRewards() != null) { //BEM5X Initially we received
-		 * following values as int now gettting as double.
-		 * rewardsInfo.setNewBalance(retrieveCCTransActivityResponse.getCreditCardTransactionList
-		 * ().getCCAccountRewards().getNewBalance().intValue());
-		 * rewardsInfo.setPointsEarned(retrieveCCTransActivityResponse.getCreditCardTransactionList
-		 * ().getCCAccountRewards().getPointsEarned().intValue());
-		 * rewardsInfo.setPointsRedeemed(retrieveCCTransActivityResponse.getCreditCardTransactionList
-		 * ().getCCAccountRewards().getPointsRedeemed().intValue());
-		 * rewardsInfo.setPrevBalance(retrieveCCTransActivityResponse.getCreditCardTransactionList
-		 * ().getCCAccountRewards().getPreviousBalance().intValue());
-		 * 
-		 * } ccTransactionHistoryListDTO.setRewardInfo(rewardsInfo);
-		 */
-
+			getUpdatedBalanceInfo(ccTransactionHistoryListDTO.getCreditCardActivityList(),balanceInfo,context);
+			ccTransactionHistoryListDTO.setBalanceInfo(balanceInfo);
 	    }
 
 	    returnCCTransActServiceResp.setCreditCardTransactionHistoryListDTO(ccTransactionHistoryListDTO);
@@ -172,4 +153,130 @@ public class CreditCardTransActivityRespAdptOperation extends AbstractResAdptOpe
 	return returnCode;
     }
 
+    public void getUpdatedBalanceInfo(List<CreditCardActivityDTO> creditcardactivitylist, CreditCardStmtBalanceInfoDTO balanceInfo,Context context){
+
+		BigDecimal totalCashWithdrawn = new BigDecimal(0);
+		BigDecimal totalPurchase = new BigDecimal(0);
+		BigDecimal feesAndCharges = new BigDecimal(0);
+		BigDecimal totalAmount = new BigDecimal(0);
+		List<String> transactionlogModTotalAmount = new ArrayList<String>();
+		List<String> reversalLogModuleTotalAmount = new ArrayList<String>();
+		List<String> transactionlogModTotPurchase = new ArrayList<String>();
+		List<String> reversalLogModuleTotPurchase = new ArrayList<String>();
+		List<String> cashPlanLogModuleAdd = new ArrayList<String>();
+		List<String> cashPlanLogModuleSub = new ArrayList<String>();
+		List<String> feesLogModuleAdd = new ArrayList<String>();
+		List<String> feesPlanLogModuleSub = new ArrayList<String>();
+
+		String TOT_AMOUNT_LOGIC_MOD = getSystemParameterValueById(context,
+				"TOT_AMOUNT_LOGIC_MOD");
+		String TOT_AMOUNT_LOGIC_MOD_REV = getSystemParameterValueById(context,
+				"TOT_AMOUNT_LOGIC_MOD_REV");
+		String TOT_CASH_LOGIC_MOD = getSystemParameterValueById(context,
+				"TOT_CASH_LOGIC_MOD");
+		String TOT_CASH_LOGIC_MOD_REV = getSystemParameterValueById(context,
+				"TOT_CASH_LOGIC_MOD_REV");
+		String TOT_PURCH_LOGIC_MOD = getSystemParameterValueById(context,
+				"TOT_PURCH_LOGIC_MOD");
+		String TOT_PURCH_LOGIC_MOD_REV = getSystemParameterValueById(context,
+				"TOT_PURCH_LOGIC_MOD_REV");
+		String FEES_LOGIC_MOD = getSystemParameterValueById(context,
+				"FEES_LOGIC_MOD");
+		String FEES_LOGIC_MOD_REV = getSystemParameterValueById(context,
+				"FEES_LOGIC_MOD_REV");
+
+		if (TOT_AMOUNT_LOGIC_MOD != null) {
+
+			transactionlogModTotalAmount = Arrays.asList(TOT_AMOUNT_LOGIC_MOD
+					.split(","));
+		}
+		if (TOT_AMOUNT_LOGIC_MOD_REV != null) {
+			reversalLogModuleTotalAmount = Arrays
+					.asList(TOT_AMOUNT_LOGIC_MOD_REV.split(","));
+		}
+		if (TOT_PURCH_LOGIC_MOD != null) {
+			transactionlogModTotPurchase = Arrays.asList(TOT_PURCH_LOGIC_MOD
+					.split(","));
+		}
+		if (TOT_PURCH_LOGIC_MOD_REV != null) {
+			reversalLogModuleTotPurchase = Arrays
+					.asList(TOT_PURCH_LOGIC_MOD_REV.split(","));
+		}
+		if (TOT_CASH_LOGIC_MOD != null) {
+			cashPlanLogModuleAdd = Arrays.asList(TOT_CASH_LOGIC_MOD.split(","));
+		}
+		if (TOT_CASH_LOGIC_MOD_REV != null) {
+			cashPlanLogModuleSub = Arrays.asList(TOT_CASH_LOGIC_MOD_REV
+					.split(","));
+		}
+		if (FEES_LOGIC_MOD != null) {
+			feesLogModuleAdd = Arrays.asList(FEES_LOGIC_MOD.split(","));
+		}
+		if (FEES_LOGIC_MOD_REV != null) {
+			feesPlanLogModuleSub = Arrays.asList(FEES_LOGIC_MOD_REV.split(","));
+		}
+
+		for (CreditCardActivityDTO ccDTO : creditcardactivitylist) {
+
+			// Total Amount
+			if (transactionlogModTotalAmount != null
+					&& transactionlogModTotalAmount.contains(ccDTO
+							.getLogicModule())) {
+				totalAmount = totalAmount.add(ccDTO.getTransactionAmount());
+
+			} else if (reversalLogModuleTotalAmount != null
+					&& reversalLogModuleTotalAmount.contains(ccDTO
+							.getLogicModule())) {
+				totalAmount = totalAmount.subtract(ccDTO
+						.getTransactionAmount());
+
+			}
+			// Total Purchase
+			if (transactionlogModTotPurchase != null
+					&& transactionlogModTotPurchase.contains(ccDTO
+							.getLogicModule())) {
+				totalPurchase = totalPurchase.add(ccDTO
+						.getTransactionAmount());
+
+			} else if (reversalLogModuleTotPurchase != null
+					&& reversalLogModuleTotPurchase.contains(ccDTO
+							.getLogicModule())) {
+				totalPurchase = totalPurchase.subtract(ccDTO
+						.getTransactionAmount());
+
+			}
+			// Cash Withdrawn
+			if (cashPlanLogModuleSub != null
+					&& cashPlanLogModuleAdd.contains(ccDTO.getLogicModule())) {
+				totalCashWithdrawn = totalCashWithdrawn.add(ccDTO
+						.getTransactionAmount());
+
+			} else if (cashPlanLogModuleSub != null
+					&& cashPlanLogModuleSub.contains(ccDTO.getLogicModule())) {
+				totalCashWithdrawn = totalCashWithdrawn.subtract(ccDTO
+						.getTransactionAmount());
+
+			}
+
+			// Fees Calculation
+			if (feesLogModuleAdd != null
+					&& feesLogModuleAdd.contains(ccDTO.getLogicModule())) {
+				feesAndCharges = feesAndCharges.add(ccDTO
+						.getTransactionAmount());
+
+			} else if (feesPlanLogModuleSub != null
+					&& feesPlanLogModuleSub.contains(ccDTO.getLogicModule())) {
+				feesAndCharges = feesAndCharges.subtract(ccDTO
+						.getTransactionAmount());
+
+			}
+
+		}
+
+		balanceInfo.setFeeAndCharge(feesAndCharges);
+		balanceInfo.setTotalCashWithdrawn(totalCashWithdrawn);
+		balanceInfo.setTotalPurchase(totalPurchase);
+		balanceInfo.setPaymentReceived(totalAmount);
+    }
+    
 }

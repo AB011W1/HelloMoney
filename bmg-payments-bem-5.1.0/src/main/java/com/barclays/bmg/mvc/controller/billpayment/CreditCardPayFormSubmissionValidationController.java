@@ -9,11 +9,14 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.validation.BindException;
 
+import com.barclays.bmg.constants.AccountConstants;
 import com.barclays.bmg.constants.BMGProcessConstants;
 import com.barclays.bmg.constants.BillPaymentConstants;
 import com.barclays.bmg.context.Context;
 import com.barclays.bmg.context.ResponseContext;
 import com.barclays.bmg.dto.Amount;
+import com.barclays.bmg.dto.BeneficiaryDTO;
+import com.barclays.bmg.dto.CreditCardAccountDTO;
 import com.barclays.bmg.dto.TransactionDTO;
 import com.barclays.bmg.json.model.builder.BMBMultipleResponseJSONBuilder;
 import com.barclays.bmg.json.response.model.BMBBaseResponseModel;
@@ -79,8 +82,29 @@ public class CreditCardPayFormSubmissionValidationController extends BMBAbstract
 	    formValidateOperationResponse = formValidateOperation.validateForm(formValidateOperationRequest);
 	}
 
+
+	// Get Destination Account
+	Map<String, String> destAcctMap = (Map) getFromProcessMap(httpRequest, BMGProcessConstants.CREDIT_PAYMENT, AccountConstants.ACCOUNT_MAP);
+	if(null != destAcctMap && null != destAcctMap.get(paymentCommand.getCrdList())) {
+		getSelectedAccountOperationRequest.setAcctNumber(destAcctMap.get(paymentCommand.getCrdList()));
+		getSelectedAccountOperationRequest.setCreditCardNumber(paymentCommand.getCrdNo());
+		GetSelectedAccountOperationResponse selDestAcctOpResp = getSelectedAccountOperation
+				.getSelectedCreditCardAccount(getSelectedAccountOperationRequest);
+	
+
 	if (checkAllOperationResponses(selSourceAcctOpResp, null, formValidateOperationResponse)) {
+		BeneficiaryDTO beneficiaryDTO = new BeneficiaryDTO();
+		  //Cards Migration: Start
+		if (selDestAcctOpResp.getSelectedAcct() instanceof CreditCardAccountDTO) {
+			CreditCardAccountDTO cardDTO= (CreditCardAccountDTO) selDestAcctOpResp.getSelectedAcct();
+			if(cardDTO.getCardExpireDate() != null) {
+				beneficiaryDTO.setCreditCardExpiryDate(cardDTO.getCardExpireDate());
+			}
+		}
+			//Cards Migration: Ends
+		transactionDTO.setBeneficiaryDTO(beneficiaryDTO);
 	    setResponseInProcessMap(httpRequest, paymentCommand, transactionDTO, selSourceAcctOpResp, formValidateOperationResponse);
+	}
 	}
 
 	setTxnTypeInResponses(BillPaymentConstants.TXN_TYP, selSourceAcctOpResp, null, formValidateOperationResponse);

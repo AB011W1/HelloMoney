@@ -118,6 +118,18 @@ public class CreditCardAccountDTO extends CustomerAccountDTO {
     private BigDecimal totalCashLimit;
     private BigDecimal custAvailableLimit;
     private BigDecimal custAvailableCashLimit;
+    
+	// Card MIgration: Starts
+	private Date cardExpireDate;
+
+	public Date getCardExpireDate() {
+		return cardExpireDate;
+	}
+
+	public void setCardExpireDate(Date cardExpireDate) {
+		this.cardExpireDate = cardExpireDate;
+	}
+	// Card MIgration: Ends
 
     public BigDecimal getTotalCashLimit() {
 	return totalCashLimit;

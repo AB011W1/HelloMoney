@@ -60,6 +60,8 @@ public class CreditCardActivityMapper {
 		activityDTO.setCardNumber(source.getCreditCardNumber());
 
 	    }
+	    //Credit Card Migration
+  		mapFVparams(historyInfo, activityDTO);
 	    activityDTO.setCurrency(historyInfo.getTransactionCurrencyCode());
 	    activityDTO.setTransactionDate(ConvertUtils.convertDate(historyInfo.getTransactionDateTime()));
 	    // result.setTransactoinReferenceNumber(source.getCreditCardTxnReferenceNumber());
@@ -75,7 +77,7 @@ public class CreditCardActivityMapper {
 		activityDTO.setCreditDebitFlag(AccountActivityDTO.DEBIT_FLAG);
 		activityDTO.setDebitAmount(ConvertUtils.convertPositiveAmount(historyInfo.getTransactionCurrencyAmount()));
 	    }
-	    activityDTO.setTransactionAmount(ConvertUtils.convertPositiveAmount(historyInfo.getTransactionCurrencyAmount()));
+	    //activityDTO.setTransactionAmount(ConvertUtils.convertPositiveAmount(historyInfo.getTransactionCurrencyAmount()));
 	    activityDTO.setTransactionPostDate(ConvertUtils.convertDate(historyInfo.getPostingDate()));
 
 	}
@@ -93,6 +95,8 @@ public class CreditCardActivityMapper {
 
 	if (source != null && source.getCreditCardTransactionHistory() != null && source.getCreditCardTransactionHistory().length == 1) {
 	    CreditCardTransactionHistory historyInfo = source.getCreditCardTransactionHistory(0);
+	    
+	    
 
 	    activityDTO.setCardNumber(historyInfo.getCreditCardNumber());
 
@@ -100,6 +104,9 @@ public class CreditCardActivityMapper {
 		activityDTO.setCardNumber(source.getCreditCardNumber());
 
 	    }
+	    
+	    //Credit Card Migration
+		mapFVparams(historyInfo, activityDTO);
 
 	    // #1528 - EMK; This is not require; local currency is displayed
 	    // when no currency for txn.
@@ -120,7 +127,7 @@ public class CreditCardActivityMapper {
 		activityDTO.setCreditDebitFlag(AccountActivityDTO.DEBIT_FLAG);
 		activityDTO.setDebitAmount(ConvertUtils.convertPositiveAmount(historyInfo.getLCYAmount()));
 	    }
-	    activityDTO.setTransactionAmount(ConvertUtils.convertPositiveAmount(historyInfo.getLCYAmount()));
+	    //activityDTO.setTransactionAmount(ConvertUtils.convertPositiveAmount(historyInfo.getLCYAmount()));
 	    activityDTO.setTransactionPostDate(ConvertUtils.convertDate(historyInfo.getPostingDate()));
 
 	}
@@ -145,6 +152,8 @@ public class CreditCardActivityMapper {
 		activityDTO.setCardNumber(source.getCreditCardNumber());
 
 	    }
+	    //Credit Card Migration
+  		mapFVparams(historyInfo, activityDTO);
 	    activityDTO.setCurrency(historyInfo.getTransactionCurrencyCode());
 	    activityDTO.setTransactionDate(ConvertUtils.convertDate(historyInfo.getTransactionDateTime()));
 	    // result.setTransactoinReferenceNumber(source.getCreditCardTxnReferenceNumber());
@@ -160,11 +169,55 @@ public class CreditCardActivityMapper {
 		activityDTO.setCreditDebitFlag(AccountActivityDTO.DEBIT_FLAG);
 		activityDTO.setDebitAmount(ConvertUtils.convertPositiveAmount(historyInfo.getTransactionCurrencyAmount()));
 	    }
-	    activityDTO.setTransactionAmount(ConvertUtils.convertPositiveAmount(historyInfo.getTransactionCurrencyAmount()));
+	    //activityDTO.setTransactionAmount(ConvertUtils.convertPositiveAmount(historyInfo.getTransactionCurrencyAmount()));
 	    activityDTO.setTransactionPostDate(ConvertUtils.convertDate(historyInfo.getPostingDate()));
 
 	}
 	return activityDTO;
+    }
+    
+    private void mapFVparams(CreditCardTransactionHistory historyInfo,
+			CreditCardActivityDTO activityDTO) {
+    	//First Vision Changes
+	    if (null != historyInfo.getStatementDateInfo() && 0 < historyInfo.getStatementDateInfo().length && null != historyInfo.getStatementDateInfo(0).getQualityIndicator())
+		activityDTO.setQualityInd(historyInfo.getStatementDateInfo(0).getQualityIndicator());
+	    
+		if (null != historyInfo.getLogicModule()) {
+			if (historyInfo.getLogicModule().length() == 1) {
+				activityDTO.setLogicModule("00"+ historyInfo.getLogicModule());
+			} else if (historyInfo.getLogicModule().length() == 2) {
+				activityDTO.setLogicModule("0"+ historyInfo.getLogicModule());
+			} else {
+				activityDTO.setLogicModule(historyInfo.getLogicModule());
+			}
+		}
+		activityDTO.setTransactoinReferenceNumber(historyInfo
+				.getTransactionReferenceNumber());
+		activityDTO.setTransactionAmount(ConvertUtils
+				.convertPositiveAmount(historyInfo.getLCYAmount()));
+		
+		if(null !=historyInfo.getStatementDateInfo(0).getQualityIndicator())
+			activityDTO.setQualityInd(historyInfo.getStatementDateInfo(0).getQualityIndicator());
+       
+		if (null != historyInfo.getTransactionTypeCode()) {
+			if (historyInfo.getTransactionTypeCode().length() == 1) {
+				activityDTO.setTransactionTypeCode("000"+ historyInfo.getTransactionTypeCode());
+			} else if (historyInfo.getTransactionTypeCode().length() == 2) {
+				activityDTO.setTransactionTypeCode("00"+ historyInfo.getTransactionTypeCode());
+			} else if (historyInfo.getTransactionTypeCode().length() == 3) {
+				activityDTO.setTransactionTypeCode("0"+ historyInfo.getTransactionTypeCode());
+			} else {
+				activityDTO.setTransactionTypeCode(historyInfo.getTransactionTypeCode());
+			}
+		}
+		
+		if(null !=historyInfo.getCreditPlan())	
+			activityDTO.setCreditPlan(historyInfo.getCreditPlan());
+		
+		if(null !=historyInfo.getStatementDateInfo(0).getForeignCurrencyCode())	
+			activityDTO.setForeignTransCode(historyInfo.getStatementDateInfo(0).getForeignCurrencyCode());
+		//First Vision Changes Ends
+		
     }
 
 }

@@ -60,6 +60,7 @@ public class CreditCardPaymentValidateRequestBuilder implements BmgBaseRequestBu
 	requestParamMap.put(USSDInputParamsEnum.CR_CARD_PAYMENT_SRC_ACC_NO.getParamName(), selectedFrmAcct.getActNo());
 	requestParamMap.put(USSDInputParamsEnum.CR_CARD_PAYMENT_AMOUNT.getParamName(), amnt);
 	requestParamMap.put(USSDInputParamsEnum.CR_CARD_PAYMENT_LIST.getParamName(), acntDet.getActNo());
+	requestParamMap.put(USSDInputParamsEnum.CR_CARD_PAYMENT_CARD_NO.getParamName(), acntDet.getCrdNo());
 	request.setRequestParamMap(requestParamMap);
 	return request;
     }
