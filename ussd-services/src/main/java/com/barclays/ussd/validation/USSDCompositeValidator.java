@@ -38,4 +38,15 @@ public class USSDCompositeValidator implements IUSSDDataValidator {
 	}
 	return true;
     }
+    
+    //Ghana Data Bundle
+    public boolean validatedatabundleacc(String validation,String userInput) throws USSDNonBlockingException {
+    if (LOGGER.isInfoEnabled()) {
+    	    LOGGER.info("Performing validations on the user inputs...");
+    }
+    for (IUSSDDataValidator validatorObj : this.validators) {
+    	    ((USSDAccountNoLengthValidator) validatorObj).validatedatabundleacc(validation,userInput);
+    }
+    return true;
+    }
 }

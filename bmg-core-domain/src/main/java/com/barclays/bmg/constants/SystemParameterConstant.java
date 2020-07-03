@@ -218,4 +218,8 @@ public interface SystemParameterConstant {
     String TRX_SUPRS_CREDIT_CARD = "TRX_SUPRS_CREDIT_CARD";
     String CREDIT_CARD_DISABLED_ALL = "CREDIT_CARD_DISABLED_ALL";
     
+    //Ghana Data Bundle service version no for SSAMakeBillPayment 
+    String SERVICE_HEADER_SERVICE_VER_NO_DATABUNDLE="SERVICE_HEADER_SERVICE_VER_NO_DATABUNDLE";
+    
+    
 }

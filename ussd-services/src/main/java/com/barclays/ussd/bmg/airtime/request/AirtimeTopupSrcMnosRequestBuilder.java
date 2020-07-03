@@ -17,6 +17,17 @@ public class AirtimeTopupSrcMnosRequestBuilder implements BmgBaseRequestBuilder 
 	request.setOpCde(requestBuilderParamsDTO.getBmgOpCode());
 	requestParamMap.put(USSDConstants.BMG_LOCAL_KE_OPCODE_PARAM_NAME, requestBuilderParamsDTO.getBmgOpCode());
 	requestParamMap.put(USSDConstants.BMG_LOCAL_KE_SERVICE_VER_NAME, USSDConstants.BMG_SERVICE_VERSION_VALUE);
+	
+	//Ghana data bundle change
+	String transNodeId;
+	if(null != requestBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails()  && 
+			null != requestBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap() &&
+			null != requestBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap().get("TransNodeId"))
+	{
+		transNodeId = requestBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap().get("TransNodeId");
+		requestParamMap.put("TransNodeId", transNodeId);
+	}
+		
 	request.setRequestParamMap(requestParamMap);
 
 	return request;

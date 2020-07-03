@@ -37,6 +37,11 @@ public class AirtimeTopUpBillerListJsonParser implements BmgBaseJsonParser,Scree
 	private static final String EDIT_LABEL = "label.airtime.edit.mybillers";
 	private static final String DEFAULT_LABEL = "label.mybillers";
 
+	//Ghana Data bundle label
+	private static final String SAVE_DATABUNDLE_LABEL = "label.databundle.save.mybillers";
+	private static final String DELETE_DATABUNDLE_LABEL = "label.databundle.delete.mybillers";
+	private static final String EDIT_DATABUNDLE_LABEL = "label.databundle.edit.mybillers";
+
 	public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
 
 		MenuItemDTO menuDTO = null;
@@ -67,6 +72,8 @@ public class AirtimeTopUpBillerListJsonParser implements BmgBaseJsonParser,Scree
 	private MenuItemDTO renderMenuOnScreen(List<Beneficiery> catzedPayLst, ResponseBuilderParamsDTO responseBuilderParamsDTO)
 			throws USSDNonBlockingException {
 		int index = 1;
+		String business_id = responseBuilderParamsDTO.getUssdSessionMgmt().getBusinessId();
+		String transNodeId=responseBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
 		StringBuilder pageBody = new StringBuilder();
 		MenuItemDTO menuItemDTO = new MenuItemDTO();
 		USSDSessionManagement ussdSessionMgmt= responseBuilderParamsDTO.getUssdSessionMgmt();
@@ -74,17 +81,16 @@ public class AirtimeTopUpBillerListJsonParser implements BmgBaseJsonParser,Scree
 				.getUserTransactionDetails().getUserInputMap();
 
 		//TZNBC Menu Optimization - to fetch user input from Bene Management 
-		String paymentTypeInput=null;
-		String transNodeId=responseBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
-
-		if(ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC"))
+		String paymentTypeInput=null;	
+		if(business_id.equalsIgnoreCase("TZNBC"))
 			paymentTypeInput=userInputMap.get(USSDInputParamsEnum.AIRTIME_TOPUP_BENE_MANAGEMENT.getParamName());
+
 		//Ghana Menu Optimization - to fetch user input from Bene Management
-		else if (ussdSessionMgmt.getBusinessId().equalsIgnoreCase("GHBRB") && !transNodeId.equals("ussd0.10"))
+		else if (business_id.equalsIgnoreCase("GHBRB") && !transNodeId.equals("ussd0.10"))
 			paymentTypeInput=userInputMap.get(USSDInputParamsEnum.AIRTIME_TOPUP_MSISDN_TYPE.getParamName());
+
 		else
 			paymentTypeInput=userInputMap.get(USSDInputParamsEnum.AIRTIME_TOPUP_PAYMENT_TYPE.getParamName());
-
 		//Ghana Menu Optimization
 		if(ussdSessionMgmt.getBusinessId().equalsIgnoreCase("GHBRB") && null!=transNodeId && !transNodeId.equalsIgnoreCase("ussd0.10") && null!=paymentTypeInput) {
 			if(paymentTypeInput.equals("6")) {
@@ -102,27 +108,68 @@ public class AirtimeTopUpBillerListJsonParser implements BmgBaseJsonParser,Scree
 			}	
 		}
 		else {
-			if (null!=paymentTypeInput && ((ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("3")) || paymentTypeInput.equals("5"))) {
-				pageBody.append(responseBuilderParamsDTO.getUssdResourceBundle()
-						.getLabel(
-								DELETE_LABEL,
-								new Locale(ussdSessionMgmt.getUserProfile()
-										.getLanguage(), ussdSessionMgmt
-										.getUserProfile().getCountryCode())));
-			}else if((paymentTypeInput==null && ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC")) || (!ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("2"))){
-				pageBody.append(responseBuilderParamsDTO.getUssdResourceBundle()
-						.getLabel(
-								SAVE_LABEL,
-								new Locale(ussdSessionMgmt.getUserProfile()
-										.getLanguage(), ussdSessionMgmt
-										.getUserProfile().getCountryCode())));
-			}else if(null!=paymentTypeInput && ((ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("2")) || paymentTypeInput.equals("4"))){
-				pageBody.append(responseBuilderParamsDTO.getUssdResourceBundle()
-						.getLabel(
-								EDIT_LABEL,
-								new Locale(ussdSessionMgmt.getUserProfile()
-										.getLanguage(), ussdSessionMgmt
-										.getUserProfile().getCountryCode())));
+
+
+			if (null!=paymentTypeInput && ((ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && 
+					paymentTypeInput.equals("3")) || paymentTypeInput.equals("5"))) {
+				if(business_id.equalsIgnoreCase("GHBRB") && transNodeId.equals("ussd0.10")) {
+					pageBody.append(responseBuilderParamsDTO.getUssdResourceBundle()
+							.getLabel(
+									DELETE_DATABUNDLE_LABEL,
+									new Locale(ussdSessionMgmt.getUserProfile()
+											.getLanguage(), ussdSessionMgmt
+											.getUserProfile().getCountryCode())));
+				}
+				else
+				{
+					pageBody.append(responseBuilderParamsDTO.getUssdResourceBundle()
+							.getLabel(
+									DELETE_LABEL,
+									new Locale(ussdSessionMgmt.getUserProfile()
+											.getLanguage(), ussdSessionMgmt
+											.getUserProfile().getCountryCode())));
+				}
+
+			}else if((paymentTypeInput==null && ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC")) 
+					|| (!ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("2"))){
+				if(business_id.equalsIgnoreCase("GHBRB") && transNodeId.equals("ussd0.10")) {
+					pageBody.append(responseBuilderParamsDTO.getUssdResourceBundle()
+							.getLabel(
+									SAVE_DATABUNDLE_LABEL,
+									new Locale(ussdSessionMgmt.getUserProfile()
+											.getLanguage(), ussdSessionMgmt
+											.getUserProfile().getCountryCode())));
+				}
+				else
+				{
+					pageBody.append(responseBuilderParamsDTO.getUssdResourceBundle()
+							.getLabel(
+									SAVE_LABEL,
+									new Locale(ussdSessionMgmt.getUserProfile()
+											.getLanguage(), ussdSessionMgmt
+											.getUserProfile().getCountryCode())));
+				}
+
+			}else if(null!=paymentTypeInput && ((ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") 
+					&& paymentTypeInput.equals("2")) || paymentTypeInput.equals("4"))){
+				if(business_id.equalsIgnoreCase("GHBRB") && transNodeId.equals("ussd0.10")) {
+					pageBody.append(responseBuilderParamsDTO.getUssdResourceBundle()
+							.getLabel(
+									EDIT_DATABUNDLE_LABEL,
+									new Locale(ussdSessionMgmt.getUserProfile()
+											.getLanguage(), ussdSessionMgmt
+											.getUserProfile().getCountryCode())));
+				}
+				else
+				{
+					pageBody.append(responseBuilderParamsDTO.getUssdResourceBundle()
+							.getLabel(
+									EDIT_LABEL,
+									new Locale(ussdSessionMgmt.getUserProfile()
+											.getLanguage(), ussdSessionMgmt
+											.getUserProfile().getCountryCode())));
+				}
+
 			}else{
 				pageBody.append(responseBuilderParamsDTO.getUssdResourceBundle()
 						.getLabel(
@@ -167,22 +214,23 @@ public class AirtimeTopUpBillerListJsonParser implements BmgBaseJsonParser,Scree
 				.getSequenceNo();
 		Map<String, String> userInputMap = ussdSessionMgmt
 				.getUserTransactionDetails().getUserInputMap();
+		String business_id = ussdSessionMgmt.getBusinessId();
 		String transNodeId=ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
 
 		//TZNBC Menu Optimization
 		String paymentTypeInput=null;
-		if(ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC"))
+		if(business_id.equalsIgnoreCase("TZNBC"))
 			paymentTypeInput=userInputMap.get(USSDInputParamsEnum.AIRTIME_TOPUP_BENE_MANAGEMENT.getParamName());
 
 		//Ghana Menu Optimization - to fetch user input from Bene Management
-		else if (ussdSessionMgmt.getBusinessId().equalsIgnoreCase("GHBRB") && !transNodeId.equals("ussd0.10"))
+		else if (business_id.equalsIgnoreCase("GHBRB") && !transNodeId.equals("ussd0.10"))
 			paymentTypeInput=userInputMap.get(USSDInputParamsEnum.AIRTIME_TOPUP_MSISDN_TYPE.getParamName());
 
 		else 
 			paymentTypeInput=userInputMap.get(USSDInputParamsEnum.AIRTIME_TOPUP_PAYMENT_TYPE.getParamName());
 
 		//Ghana Menu Optimization
-		if(ussdSessionMgmt.getBusinessId().equalsIgnoreCase("GHBRB") && null!=transNodeId && !transNodeId.equalsIgnoreCase("ussd0.10") && null!=paymentTypeInput) {
+		if(business_id.equalsIgnoreCase("GHBRB") && null!=transNodeId && !transNodeId.equalsIgnoreCase("ussd0.10") && null!=paymentTypeInput) {
 			if(paymentTypeInput.equals("6")) {
 				seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_SEVENTEEN.getSequenceNo();
 			}
@@ -194,13 +242,14 @@ public class AirtimeTopUpBillerListJsonParser implements BmgBaseJsonParser,Scree
 			}
 		}
 		else {
-			if (null!=paymentTypeInput && ((ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("3")) || paymentTypeInput.equals("5"))) {
+
+			if (null!=paymentTypeInput && ((business_id.equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("3")) || paymentTypeInput.equals("5"))) {
 				seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_SEVENTEEN.getSequenceNo();
 			}
-			if ((paymentTypeInput==null && ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC")) || (!ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("2"))) {
+			if ((paymentTypeInput==null && business_id.equalsIgnoreCase("TZNBC")) || (!business_id.equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("2"))) {
 				seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_NINETEEN.getSequenceNo();
 			}		
-			if (null!=paymentTypeInput && ((ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("2")) || paymentTypeInput.equals("4"))) {
+			if (null!=paymentTypeInput && ((business_id.equalsIgnoreCase("TZNBC") && paymentTypeInput.equals("2")) || paymentTypeInput.equals("4"))) {
 				seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FIFTEEN.getSequenceNo();
 			}
 		}

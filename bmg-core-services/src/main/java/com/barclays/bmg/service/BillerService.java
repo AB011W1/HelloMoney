@@ -12,6 +12,9 @@ public interface BillerService {
     public BillerServiceResponse getBillerForBillerId(BillerServiceRequest request);
 
 	public BillerServiceResponse getActionCodeForBillerId(BillerServiceRequest request);
+	
+	//Data Bundle Change
+	public BillerServiceResponse getDataBundleBillerList(BillerServiceRequest request);
 
 }
 		

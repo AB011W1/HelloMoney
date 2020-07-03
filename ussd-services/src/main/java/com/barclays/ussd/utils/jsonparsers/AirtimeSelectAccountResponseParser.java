@@ -4,6 +4,8 @@
 package com.barclays.ussd.utils.jsonparsers;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -24,6 +26,7 @@ import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
 import com.barclays.ussd.utils.jsonparsers.bean.airtime.Account;
 import com.barclays.ussd.utils.jsonparsers.bean.billpay.AccountData;
+import com.barclays.ussd.utils.jsonparsers.bean.billpay.BillDetails;
 import com.barclays.ussd.utils.jsonparsers.bean.billpay.FromAcntLst;
 import com.barclays.ussd.utils.jsonparsers.bean.billpay.Payee;
 import com.barclays.ussd.utils.jsonparsers.bean.login.AuthUserData;
@@ -35,10 +38,15 @@ import com.barclays.ussd.utils.jsonparsers.bean.login.CustomerMobileRegAcct;
  */
 public class AirtimeSelectAccountResponseParser implements BmgBaseJsonParser {
 	private static final String TRANSACTION_AIRTIME_LABEL = "label.airtime.select.accnum";
-
+	private static final String TRANSACTION_DATABUNDLE_LABEL="label.databundle.select.accnum";
+	String businessId; 
+	String transNodeId;
     @Override
     public MenuItemDTO parseJsonIntoJava(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
-	return renderMenuOnScreen(responseBuilderParamsDTO);
+    	USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
+    	businessId= ussdSessionMgmt.getBusinessId();
+    	transNodeId =ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
+    	return renderMenuOnScreen(responseBuilderParamsDTO);
     }
 
     private MenuItemDTO renderMenuOnScreen(ResponseBuilderParamsDTO responseBuilderParamsDTO) throws USSDNonBlockingException {
@@ -61,6 +69,23 @@ public class AirtimeSelectAccountResponseParser implements BmgBaseJsonParser {
 			new Locale(responseBuilderParamsDTO.getUssdSessionMgmt().getUserProfile().getLanguage(),
 					responseBuilderParamsDTO.getUssdSessionMgmt().getUserProfile().getCountryCode()));
 
+	//Ghana Data Bundle Change
+	if(businessId.equalsIgnoreCase("GHBRB") && transNodeId.equals("ussd0.10")) {
+		BillDetails billDetails = new BillDetails();
+		int dataBundleInput =Integer.parseInt(userInputMap.get(USSDInputParamsEnum.DATA_BUNDLE_SEL_BUNDLE_LIST.getParamName()));
+		USSDSessionManagement ussdSessionMgmt=responseBuilderParamsDTO.getUssdSessionMgmt();
+		if(null != ussdSessionMgmt && null != ussdSessionMgmt.getTxSessions()){
+			billDetails = (BillDetails) ussdSessionMgmt.getTxSessions().get("DataBundleDetails");
+		}
+		LinkedHashMap<String, String> bundleHashMap = billDetails.getBillInvoiceDetails().getProbaseDetails();
+		List<String> dataBundleList = new ArrayList<String>(bundleHashMap.values());
+		String amount = dataBundleList.get(dataBundleInput-1);
+		 
+		airtimeTopupAmountLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(TRANSACTION_DATABUNDLE_LABEL, new Locale(responseBuilderParamsDTO.getUssdSessionMgmt().getUserProfile().getLanguage(),
+					responseBuilderParamsDTO.getUssdSessionMgmt().getUserProfile().getCountryCode()));
+		airtimeTopupAmountLabel = airtimeTopupAmountLabel + " " + amount + " from ";
+	}
+	
 	pageBody.append(airtimeTopupAmountLabel);
 	 USSDSessionManagement ussdSessionMgmt = responseBuilderParamsDTO.getUssdSessionMgmt();
 	 AuthUserData authData= ((AuthUserData)ussdSessionMgmt.getUserAuthObj());

@@ -36,5 +36,12 @@ public class BillerServiceImpl implements BillerService{
 			BillerServiceRequest request) {
 		return billerListDAO.getActionCodeForBillerId(request);
 	}
+	
+	//Ghana data bundle change
+	@Override
+	public BillerServiceResponse getDataBundleBillerList(BillerServiceRequest request) {
+		// TODO Auto-generated method stub
+		return billerListDAO.getDataBundleBillerList(request);
+	}
 
 }

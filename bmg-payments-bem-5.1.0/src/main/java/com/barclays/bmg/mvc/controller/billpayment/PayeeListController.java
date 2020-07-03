@@ -36,7 +36,7 @@ public class PayeeListController extends BMBAbstractCommandController {
 	//CR-82 Account Mapping issue fix
 	private String AIRTIME_TOPUP="AT";
 	private String M_WALLETE="WT";
-
+	private String DATA_BUNDLE ="DB";
 
 
 	@Override
@@ -48,7 +48,7 @@ public class PayeeListController extends BMBAbstractCommandController {
 		PayeeListCommand payeeListCommand = (PayeeListCommand)command;
 		String payGrp = payeeListCommand.getPayGrp();
 		//CR-82 Account mapping issue fix for Airtime and Mwallet
-		if(payGrp != null && !(payGrp.equalsIgnoreCase(AIRTIME_TOPUP) || payGrp.equalsIgnoreCase(M_WALLETE) )){
+		if(payGrp != null && !(payGrp.equalsIgnoreCase(AIRTIME_TOPUP) || payGrp.equalsIgnoreCase(M_WALLETE) || payGrp.equalsIgnoreCase(DATA_BUNDLE))){
 			cleanProcess(httpRequest, BMGProcessConstants.BILL_PAYMENT);
 		}
 

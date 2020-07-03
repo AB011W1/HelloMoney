@@ -82,6 +82,8 @@ public class AbstractReqAdptOperation {
 		     PayBillServiceRequest payBillServiceRequest = (PayBillServiceRequest)serviceRequest;
 		     if(null != payBillServiceRequest.getBeneficiaryDTO() && "Probase".equalsIgnoreCase(payBillServiceRequest.getBeneficiaryDTO().getBillAggregatorId())){
 		    	 SERVICE_VERSION_CASA_CC = "Probase";
+		     }else if(null != payBillServiceRequest.getBeneficiaryDTO() && null!=payBillServiceRequest.getBeneficiaryDTO().getBillerCategoryId() && "DataBundle".equalsIgnoreCase(payBillServiceRequest.getBeneficiaryDTO().getBillerCategoryId())) {
+		    	 SERVICE_VERSION_CASA_CC = "DataBundle";
 		     }
 		}
 
@@ -299,6 +301,9 @@ public class AbstractReqAdptOperation {
 				("Y").equals(contextMap.get(SystemParameterConstant.isGHIPS2Flag)) && !("TRUE".equalsIgnoreCase(context.getIsFreeDialUssdFlow()))) {
 				serviceContext.setServiceVersionNo(contextMap.get(SystemParameterConstant.SERVICE_HEADER_SERVICE_VER_NO_GHIPPS2).toString());
 
+			}else if(null != contextMap && "OP0603".equalsIgnoreCase(opCode)&& context!=null && context.getBusinessId().equals("GHBRB") &&
+					serviceId.equals("SSAMakeBillPayment")&& "DataBundle".equalsIgnoreCase(SERVICE_VERSION_CASA_CC)) {
+				serviceContext.setServiceVersionNo(contextMap.get(SystemParameterConstant.SERVICE_HEADER_SERVICE_VER_NO_DATABUNDLE).toString());
 			}else if(null != contextMap){
 				serviceContext.setServiceVersionNo(contextMap.get(SystemParameterConstant.SERVICE_HEADER_SERVICE_VER_NO).toString());
 			}

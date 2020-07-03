@@ -621,5 +621,7 @@
 		
 		<!-- TZNBC Menu Optimization -->
 		<bean id="onetimeBillpayCatListReqBuilder" class="com.barclays.ussd.bmg.otbp.request.OnetimeBillpayCatListReqBuilder" />
- 
+ 		<!-- Ghana data bundle change -->
+		<bean id="datatBundleAirtimeRequestBuilder" class="com.absa.ussd.bmg.databundle.DatatBundleAirtimeRequestBuilder" />
+		<bean id="dataBundleAirtimeCancelRequestBuilder" class="com.absa.ussd.bmg.databundle.DataBundleAirtimeCancelRequestBuilder" />
  </beans>

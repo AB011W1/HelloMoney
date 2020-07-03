@@ -9,5 +9,8 @@ public interface BillerListDAO {
 	public BillerServiceResponse getBillPaymentsBillerList(BillerServiceRequest request);
 	public BillerServiceResponse getBillerForBillerId(BillerServiceRequest request);
 	public BillerServiceResponse getActionCodeForBillerId(BillerServiceRequest request);
+	
+	//Ghana data bundle change
+	public BillerServiceResponse getDataBundleBillerList(BillerServiceRequest request);
 
 }

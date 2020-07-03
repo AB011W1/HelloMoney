@@ -76,6 +76,9 @@
 		<!-- CR82 -->
 		<entry key="AT" value="AT" />
 		<entry key="WT" value="WT" />
+		
+		<!-- DataBundle Change -->
+		<entry key="DB" value="DB" />
 	</util:map>
 
 	<bean id="retrievePayeeInfoOperation"

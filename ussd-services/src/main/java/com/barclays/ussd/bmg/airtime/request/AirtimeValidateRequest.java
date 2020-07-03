@@ -1,9 +1,13 @@
 package com.barclays.ussd.bmg.airtime.request;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -23,6 +27,7 @@ import com.barclays.ussd.utils.UssdResourceBundle;
 import com.barclays.ussd.utils.jsonparsers.bean.airtime.Account;
 import com.barclays.ussd.utils.jsonparsers.bean.airtime.Biller;
 import com.barclays.ussd.utils.jsonparsers.bean.billpay.AccountData;
+import com.barclays.ussd.utils.jsonparsers.bean.billpay.BillDetails;
 import com.barclays.ussd.utils.jsonparsers.bean.billpay.FromAcntLst;
 import com.barclays.ussd.utils.jsonparsers.bean.billpay.Payee;
 
@@ -50,7 +55,9 @@ public class AirtimeValidateRequest implements BmgBaseRequestBuilder {
 
 
 
-	Biller biller = mnoList.get(Integer.parseInt(billerUserIdx) - 1);
+	Biller biller = new Biller();
+	if(null != mnoList && null != billerUserIdx)
+		biller=mnoList.get(Integer.parseInt(billerUserIdx) - 1);
 
 	/*String airTimeMobileNO = userInputMap.get(USSDInputParamsEnum.AIRTIME_MOB_NUM.getParamName());
 	Integer ccvalue = msisdnDTO.getCcvalue();
@@ -90,7 +97,43 @@ public class AirtimeValidateRequest implements BmgBaseRequestBuilder {
 	requestParamMap.put(USSDConstants.BMG_LOCAL_KE_OPCODE_PARAM_NAME, requestBuilderParamsDTO.getBmgOpCode());
 	requestParamMap.put(USSDConstants.BMG_LOCAL_KE_SERVICE_VER_NAME, USSDConstants.BMG_SERVICE_VERSION_VALUE);
 	requestParamMap.put(USSDInputParamsEnum.AIRTIME_TRANSACTION_REMARKS.getParamName(), transactionRemarks);
-	requestParamMap.put(USSDInputParamsEnum.AIRTIME_AMOUNT.getParamName(), userInputMap.get(USSDInputParamsEnum.AIRTIME_AMOUNT.getParamName()));
+	
+	//Ghana Data Bundle Change
+	String business_id = session.getBusinessId();
+	String transNodeId =session.getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
+	if(null != business_id && business_id.equalsIgnoreCase("GHBRB") && null != transNodeId && transNodeId.equals("ussd0.10"))
+	{
+		
+		requestParamMap.put("isDBFlow", "Y");
+		int dataBundleInput =Integer.parseInt(userInputMap.get(USSDInputParamsEnum.DATA_BUNDLE_SEL_BUNDLE_LIST.getParamName()));
+		BillDetails billDetails = new BillDetails();
+		if(null != session && null != session.getTxSessions()){
+			billDetails = (BillDetails) session.getTxSessions().get("DataBundleDetails");
+		}
+		LinkedHashMap<String, String> bundleHashMap = billDetails.getBillInvoiceDetails().getProbaseDetails();
+		List<String> dataBundleList = new ArrayList<String>(bundleHashMap.values());
+		String amount = dataBundleList.get(dataBundleInput-1);
+		amount = (amount.split(" "))[1];
+		requestParamMap.put(USSDInputParamsEnum.AIRTIME_AMOUNT.getParamName(), amount);
+		//change for confirmation screen
+		List<String> dataBundleLife =  billDetails.getBillInvoiceDetails().getBundleLife();
+		if(null!=dataBundleLife)
+		userInputMap.put("BundleLife", dataBundleLife.get(dataBundleInput-1));
+		else
+		userInputMap.put("BundleLife", "");
+		
+		Iterator it = bundleHashMap.entrySet().iterator();
+		while (it.hasNext()) {
+		Map.Entry pair = (Map.Entry)it.next();
+		 if(pair.getValue().toString().equalsIgnoreCase(dataBundleList.get(dataBundleInput-1))) {
+			 userInputMap.put("BundleData", pair.getKey().toString());
+		 }
+		}
+	
+		userInputMap.put("BUNDLE_AMOUNT", amount);
+	}
+	else
+		requestParamMap.put(USSDInputParamsEnum.AIRTIME_AMOUNT.getParamName(), userInputMap.get(USSDInputParamsEnum.AIRTIME_AMOUNT.getParamName()));
 	//requestParamMap.put(USSDInputParamsEnum.AIRTIME_MOB_NUM.getParamName(), airTimeAccountNumber);
 
 	USSDBaseRequest request = new USSDBaseRequest();

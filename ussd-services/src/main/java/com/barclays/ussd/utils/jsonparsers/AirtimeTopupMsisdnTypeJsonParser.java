@@ -1,6 +1,7 @@
 package com.barclays.ussd.utils.jsonparsers;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
@@ -61,6 +62,7 @@ ScreenSequenceCustomizer {
 		ArrayList<String> optionList = new ArrayList<String>();
 		optionList.add("1");
 		optionList.add("2");
+
 		//Ghana Menu Optimization - Including Bene Management with Own and Other Number	
 		String businessId=responseBuilderParamsDTO.getUssdSessionMgmt().getBusinessId();
 		String transNodeId=ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
@@ -92,8 +94,16 @@ ScreenSequenceCustomizer {
 			optionList.add("5");
 			optionList.add("6");
 		}
-		Map<String, Object> txSessions = responseBuilderParamsDTO
-				.getUssdSessionMgmt().getTxSessions();
+
+		//Ghana Data bundle change
+		Map<String, Object> txSessions = new HashMap<String, Object>();			
+		if(null != responseBuilderParamsDTO
+				.getUssdSessionMgmt().getTxSessions())
+		{
+			txSessions = responseBuilderParamsDTO
+					.getUssdSessionMgmt().getTxSessions();
+		}
+
 		txSessions.put(USSDInputParamsEnum.AIRTIME_TOPUP_MSISDN_TYPE
 				.getTranId(), optionList);
 		USSDUtils
@@ -120,25 +130,53 @@ ScreenSequenceCustomizer {
 	@Override
 	public int getCustomNextScreen(String userInput,
 			USSDSessionManagement ussdSessionMgmt) throws USSDBlockingException {
-		int seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_NINE
-				.getSequenceNo();
+		int seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_NINE.getSequenceNo();
 
-		if (userInput.equals("1")) {
-			Map<String, String> userInputMap = ussdSessionMgmt
-					.getUserTransactionDetails().getUserInputMap();
-			userInputMap.put(
-					USSDInputParamsEnum.AIRTIME_MOB_NUM.getParamName(),
-					ussdSessionMgmt.getMsisdnNumber());
-			userInputMap.put(BillPaymentConstants.MWALLET_WON_NUMBER,BillPaymentConstants.MWALLET_WON_NUMBER);//CR82
-			ussdSessionMgmt.getUserTransactionDetails().setUserInputMap(
-					userInputMap);
-			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FOUR.getSequenceNo();
-		}
-		//TZNBC Menu Optimization
-		//Ghana Menu Optimization - to include one off transaction on selecting other number
+		//Ghana Data bundle change
 		String businessId = ussdSessionMgmt.getBusinessId();
 		String transNodeId=ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
 
+		if(businessId.equalsIgnoreCase("GHBRB") && transNodeId.equals("ussd0.10")) {
+			if (userInput.equals("1")) {
+				Map<String, String> userInputMap = ussdSessionMgmt
+						.getUserTransactionDetails().getUserInputMap();
+				userInputMap.put(
+						USSDInputParamsEnum.AIRTIME_MOB_NUM.getParamName(),
+						ussdSessionMgmt.getMsisdnNumber());
+				userInputMap.put(BillPaymentConstants.MWALLET_WON_NUMBER,BillPaymentConstants.MWALLET_WON_NUMBER);//CR82
+				userInputMap.put("TransNodeId", "ussd0.10GHBRB");
+				userInputMap.put("DataBundle", "DataBundleOWN");
+				ussdSessionMgmt.getUserTransactionDetails().setUserInputMap(
+						userInputMap);
+				seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_ONE.getSequenceNo();
+			}
+			else
+			{
+				Map<String, String> userInputMap = ussdSessionMgmt
+						.getUserTransactionDetails().getUserInputMap();
+				userInputMap.put("DataBundle", "DataBundleOther");
+				ussdSessionMgmt.getUserTransactionDetails().setUserInputMap(
+						userInputMap);
+				seqNo =  USSDSequenceNumberEnum.SEQUENCE_NUMBER_NINE.getSequenceNo();
+			}
+
+		}
+		else
+		{
+			if (userInput.equals("1")) {
+				Map<String, String> userInputMap = ussdSessionMgmt
+						.getUserTransactionDetails().getUserInputMap();
+				userInputMap.put(
+						USSDInputParamsEnum.AIRTIME_MOB_NUM.getParamName(),
+						ussdSessionMgmt.getMsisdnNumber());
+				userInputMap.put(BillPaymentConstants.MWALLET_WON_NUMBER,BillPaymentConstants.MWALLET_WON_NUMBER);//CR82
+				ussdSessionMgmt.getUserTransactionDetails().setUserInputMap(
+						userInputMap);
+				seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FOUR.getSequenceNo();
+			}
+		}
+		//TZNBC Menu Optimization
+		//Ghana Menu Optimization - to include one off transaction on selecting other number
 		if((businessId.equalsIgnoreCase("TZNBC") || (businessId.equalsIgnoreCase("GHBRB") && !transNodeId.equalsIgnoreCase("ussd0.10"))) && userInput.equals("2"))
 			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_THREE.getSequenceNo();
 
@@ -172,7 +210,6 @@ ScreenSequenceCustomizer {
 				seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_THIRTEEN.getSequenceNo();
 			}
 		}
-
 		return seqNo;
 	}
 

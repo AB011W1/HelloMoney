@@ -183,5 +183,18 @@
 		select * from C_BILLER_MST where C_BILLER_MST.BUSINESS_ID= #businessId# and
 		C_BILLER_MST.BILLER_ID=#billerId# AND C_BILLER_MST.PAYEE_SUPPORT = 'N'
 	</select>
+	
+	<!-- Ghana data bundle query  -->
+	<select id="getDataBundleBilelrList" resultMap="fullBillerInfo">
+		SELECT * from
+		C_BILLER_MST
+		WHERE C_BILLER_MST.BUSINESS_ID = #businessId#
+
+		and C_BILLER_MST.BILLER_CATEGORY_ID = 'DataBundle'
+		AND C_BILLER_MST.STATUS= #status#
+		AND C_BILLER_MST.SHM_FLG='Y'
+		AND C_BILLER_MST.PRESENTMENT_FLG = 'Y'
+	</select>
+	
 <!-- Other Countries End -->
 </sqlMap>

@@ -665,16 +665,42 @@
 	<!-- ZM Other Bank one off start -->
 	
 	<!-- Ghana Data Bundle Change -->
-	<!-- <tx id="tx6.3" tranId="DataBundle">
+	<<!-- Ghana Data Bundle Change -->
+	<tx id="tx6.3" tranId="DataBundle">
 		<transaction tranDataId="ATT000" type="NA" bmgOpCode="OP0660" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true"  />
 		<transaction tranDataId="ATT0021" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT0021"  headerId="label.select.aritime.db.won.oth.option"  backOptionReq="true" />
 		<transaction tranDataId="ATT0022" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT0022"  headerId="label.select.payment.option"  backOptionReq="true" />		
 		<transaction tranDataId="ATT000" type="NA" bmgOpCode="OP0660" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true"  />
-		<transaction tranDataId="ATT001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT001"  headerId="label.select.airtime.youroperator"  backOptionReq="true" />
-		<transaction tranDataId="ATT002" type="msisdn" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT002"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="ATT001" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT001"  headerId="label.select.databundle.youroperator"  backOptionReq="true" />
+		<transaction tranDataId="ATT002" type="accountMobileNo" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT002"  headerId="LBL9999"  backOptionReq="true" />
 		<transaction tranDataId="GHDBAT001" type="amount" bmgOpCode="OP0850" tranDataOpCode="GHDBAT001"  headerId="LBL9999" backOptionReq="true"/>
 		<transaction tranDataId="ATT004" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT004"  headerId="LBL9999"  backOptionReq="true" />
-		<transaction tranDataId="ATT005" type="confirm" bmgOpCode="OP0661" tranDataOpCode="ATT005"  headerId="LBL9999" backOptionReq="true" />
-	</tx> -->
+		<transaction tranDataId="ATT005" type="confirmcancel" bmgOpCode="OP0661" tranDataOpCode="ATT005"  headerId="LBL9999" backOptionReq="true" />
+		<transaction tranDataId="ATT006" type="confirm" bmgOpCode="OP0603" tranDataOpCode="ATT006"  headerId="LBL9999" homeOptionReq="true"/>
+		<transaction tranDataId="GHDBCT001" type="endTran" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="GHDBCT001"  headerId="LBL9999" homeOptionReq="true"/>
+		<!-- New bene starts -->
+		<transaction tranDataId="ATT000" type="NA" bmgOpCode="OP0660" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true"  />
+		<transaction tranDataId="ATT1022" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT1022"  headerId="label.select.new.beneficiary.youroperator"  backOptionReq="true"  />
+		<transaction tranDataId="ATT1023" type="accountMobileNo" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT1023"  headerId="LBL9999"  backOptionReq="true"  />
+		<transaction tranDataId="ATT0023" type="NA" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT0023"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="ATT0024" type="confirm" bmgOpCode="OP0612" tranDataOpCode="ATT0024"  headerId="LBL9999"  backOptionReq="true" />
+      	<transaction tranDataId="ATT0025" type="endTran" bmgOpCode="OP0613" tranDataOpCode="ATT0025"  headerId="LBL9999" homeOptionReq="true" />
+      	<!-- New bene ends -->
+      	<!-- Edit bene starts -->      	
+      	<transaction tranDataId="ATT0026" type="NA" bmgOpCode="OP0600" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999" />
+      	<transaction tranDataId="ATT1026" type="confirm" bmgOpCode="OP0612" tranDataOpCode="ATT1026"  headerId="LBL9999"  backOptionReq="true" />
+		<transaction tranDataId="ATT1027" type="endTran" bmgOpCode="OP0613" tranDataOpCode="ATT1027"  headerId="LBL9999" homeOptionReq="true"  />
+      	<!-- Edit bene ends  -->
+      	<!--Delete bene starts  -->
+      	<transaction tranDataId="ATT0027" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT0027"  headerId="LBL9999"  backOptionReq="true" />
+      	<transaction tranDataId="ATT1024" type="confirm" bmgOpCode="OP0601" tranDataOpCode="ATT1024"  headerId="label.airtime.biller.deletion.askconfirm"  backOptionReq="true" homeOptionReq="true"/>
+		<transaction tranDataId="ATT1025" type="endTran" bmgOpCode="OP0640" tranDataOpCode="ATT1025"  headerId="LBL9999" homeOptionReq="true"  />
+      	<!-- Delete bene ends  -->
+      	<!-- Saved Bene -->
+      	<transaction tranDataId="ATT0028" type="NA" bmgOpCode="OP0601" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999" />
+      	
+      	<!-- Saved Bene -->
+	</tx>
+	<!-- Ghana Data Bundle Change -->
 	<!-- Ghana Data Bundle Change -->
 </transactionItems>

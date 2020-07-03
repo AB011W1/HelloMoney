@@ -49,6 +49,10 @@ public class BillerListDAOImpl extends BaseDAOImpl implements BillerListDAO {
 	private static final String OTHER_COUNTRIES_GET_BILER_LISTAS_PER_CATEGID_FOR_GHANAANDZAMBIA="otherCountriesGetBilerListAsPerCategIdForGhanaandZambia";
 	private static final String PROBASE_GET_BILLER_ASPER_BILLERID="probaseGetBillerAsPerBillerId";
 	//Other Countries Biller End
+	
+	
+	//Ghana data bundle change
+	private static final String DATABUNDLE_GET_BILLERS="getDataBundleBilelrList";
 
 	private static final Logger LOGGER = Logger.getLogger(BillerListDAOImpl.class);
 	// End
@@ -258,6 +262,22 @@ public class BillerListDAOImpl extends BaseDAOImpl implements BillerListDAO {
 	BillerCreditDTO creditBiller = (BillerCreditDTO) this.queryForObject(ACTION_CODE_FOR_BILLER_ID, parameterMap);
 	response.setBillerCreditDTO(creditBiller);
 	return response;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public BillerServiceResponse getDataBundleBillerList(BillerServiceRequest request) {
+		// TODO Auto-generated method stub
+		BillerServiceResponse response = new BillerServiceResponse();
+		Map<String, String> parameterMap = new HashMap<String, String>();
+		String businessId=request.getContext().getBusinessId();
+		parameterMap.put(BUSINESS_ID, businessId);
+		parameterMap.put(STATUS, "ACTIVE");
+		List<BillerDTO> billerList = null;
+		billerList = this.queryForList(DATABUNDLE_GET_BILLERS,
+				parameterMap);
+		response.setBillerList(billerList);
+		return response;
 	}
 
 }

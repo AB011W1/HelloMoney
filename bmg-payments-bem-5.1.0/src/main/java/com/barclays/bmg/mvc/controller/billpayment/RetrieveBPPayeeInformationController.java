@@ -48,6 +48,9 @@ public class RetrieveBPPayeeInformationController extends
 	//CR-82 Account Mapping issue fix
 	private String AIRTIME_TOPUP="AT";
 	private String M_WALLETE="WT";
+	
+	//Data bundle change
+	private String DATA_BUNDLE="DB";
 
 	@Override
 	protected String getActivityId(Object command) {
@@ -64,7 +67,7 @@ public class RetrieveBPPayeeInformationController extends
 				.setActivityId(activityId);
 		//CR-82 Account mapping issue fix for Airtime and Mwallet
 		String  airTimeMwallet= httpRequest.getParameter("BP_AT_WT");
-		if(airTimeMwallet!= null && !(airTimeMwallet.equalsIgnoreCase(AIRTIME_TOPUP)|| airTimeMwallet.equalsIgnoreCase(M_WALLETE))){
+		if(airTimeMwallet!= null && !(airTimeMwallet.equalsIgnoreCase(AIRTIME_TOPUP)|| airTimeMwallet.equalsIgnoreCase(M_WALLETE) || airTimeMwallet.equalsIgnoreCase(DATA_BUNDLE))){
 			clearCorrelationIds(httpRequest, BMGProcessConstants.BILL_PAYMENT);
 		}
 		PayeeInformationCommand payeeInformationCommand = (PayeeInformationCommand) command;
@@ -107,7 +110,7 @@ public class RetrieveBPPayeeInformationController extends
 					beneficiaryDTO.setTopupService(payeeInformationCommand.getPaySer());
 				}
 
-				if(beneficiaryDTO.getPresentmentFlag()){
+				if(beneficiaryDTO.getPresentmentFlag() && null != airTimeMwallet && !(airTimeMwallet.equals(DATA_BUNDLE))){
 					// Check the inquery Bill.
 
 					CheckInqueryBillOperationRequest checkInqueryBillOperationRequest = new CheckInqueryBillOperationRequest();

@@ -138,8 +138,24 @@ public class AirTimeTopUpInItController extends BMBAbstractController{
 		airTimeTopUpOperationRequest.setBillerCatId(getBillerCatId());
 
 		// get the biller List
-		AirTimeTopUpOperationResponse airTimeTopUpOperationResponse = airTimeTopUpInitOperation
-				.getBillPaymentsBillerList(airTimeTopUpOperationRequest);
+		//Ghana databundle condition
+		String transNodeId = null;
+		AirTimeTopUpOperationResponse airTimeTopUpOperationResponse;
+		if(null != httpRequest.getParameter("TransNodeId"))
+		{
+			transNodeId = httpRequest.getParameter("TransNodeId");			
+		}
+		if(null != transNodeId && transNodeId.equalsIgnoreCase("ussd0.10GHBRB")) {
+			 airTimeTopUpOperationResponse = airTimeTopUpInitOperation
+					.getDataBundleBillerList(airTimeTopUpOperationRequest);
+		}
+		else
+		{
+			 airTimeTopUpOperationResponse = airTimeTopUpInitOperation
+					.getBillPaymentsBillerList(airTimeTopUpOperationRequest);
+		}
+		/*AirTimeTopUpOperationResponse airTimeTopUpOperationResponse = airTimeTopUpInitOperation
+				.getBillPaymentsBillerList(airTimeTopUpOperationRequest);*/
 		BranchLookUpOperationResponse branchLookUpOperationResponse= null;
 		if(retrieveAcctListOperationResponse.isSuccess() && airTimeTopUpOperationResponse.isSuccess())
 		{

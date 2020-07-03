@@ -582,6 +582,9 @@
 	    <entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_BENE_MANAGEMENT.getTranId()}" value-ref="mobileWalletTopUpBeneMngmtJsonParser" />
 	   	<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).LEAD_GENERATION_LOANS.getTranId()}" value-ref="leadGenerationLoansJsonParser" />
 		
+		<!-- Ghana DataBundle Change -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).DATA_BUNDLE_SEL_BUNDLE_LIST.getTranId()}" value-ref="dataBundleAirtimeJsonParser" />
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).DATA_BUNDLE_CANCEL_TRANS.getTranId()}" value-ref="dataBundleAirtimeCancelJsonParser" />		
 	    </util:map>
 
 </beans>

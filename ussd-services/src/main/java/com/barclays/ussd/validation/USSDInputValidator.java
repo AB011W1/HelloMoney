@@ -304,6 +304,13 @@ public final class USSDInputValidator {
 			}else if (USSDConstants.DATA_TYPE_MZ_REF_NO.equalsIgnoreCase(type) && ussdSessionMgmt.getBusinessId().equals("MZBRB")) {
 				blnResult = validateMZRefNo(userInput, errorCodes);
 			}
+			//Ghana Databundle confirm/cancel
+			else if (USSDConstants.DATA_TYPE_CONFIRM_CANCEL.equalsIgnoreCase(type)) {
+				blnResult = validateConfirmationCancel(userInput, errorCodes, currentTransaction);
+			}
+			else if(USSDConstants.DATA_TYPE_ACCTNO_MSISDN.equalsIgnoreCase(type)) {
+				blnResult = validateMobileAccountNo(userInput, errorCodes, ussdSessionMgmt);
+			}
 
 		}
 
@@ -585,6 +592,7 @@ public final class USSDInputValidator {
 
 	private static boolean validateConfirmation(final String userInput, final List<String> errorCodes,CurrentRunningTransaction currentTransaction) {
 		boolean returnVal = true;
+		
 		//CR-86
 		if (StringUtils.isEmpty(userInput) || !IntegerValidator.getInstance().isValid(userInput)
 				|| !USSDConstants.CONFIRM_ACTION_OPTION_CODE.equalsIgnoreCase(userInput.trim())) {
@@ -598,6 +606,7 @@ public final class USSDInputValidator {
     			returnVal = false;
     		}*/
 			//FreeDialUSSD
+			
 			if(currentTransaction != null && isBackErrorScreen(currentTransaction)){
 				errorCodes.add(USSDExceptions.USSD_INVALID_OPT_SELECTED_AT_MW.getUssdErrorCode());
 				returnVal = false;
@@ -608,6 +617,46 @@ public final class USSDInputValidator {
 		}
 		return returnVal;
 	}
+	
+	//Ghana databundle change
+	private static boolean validateConfirmationCancel(final String userInput, final List<String> errorCodes,CurrentRunningTransaction currentTransaction) {
+		boolean returnVal = true;
+		
+		//CR-86
+		if (StringUtils.isEmpty(userInput) || !IntegerValidator.getInstance().isValid(userInput)
+				||( !USSDConstants.CONFIRM_ACTION_OPTION_CODE.equalsIgnoreCase(userInput.trim()) 
+				&& !USSDConstants.CANCEL_ACTION_OPTION_CODE.equalsIgnoreCase(userInput.trim()))) {			
+			
+			if(currentTransaction != null && isBackErrorScreen(currentTransaction)){
+				errorCodes.add(USSDExceptions.USSD_INVALID_OPT_SELECTED_AT_MW.getUssdErrorCode());
+				returnVal = false;
+			}else {
+				errorCodes.add(USSDExceptions.USSD_INVALID_OPT_SELECTED.getUssdErrorCode());
+				returnVal = false;
+			}
+		}
+		return returnVal;
+	}
+	
+	private static boolean validateMobileAccountNo(final String userInput, final List<String> errorCodes,USSDSessionManagement ussdSessionMgmt) {
+		boolean returnVal = true;		
+		String mobileActLabel = ussdSessionMgmt.getPreviousRenderedScreen().getPageBody();
+		if(mobileActLabel.toLowerCase().contains("account")) {
+			if (StringUtils.isEmpty(userInput) || !StringUtils.isNumeric(userInput)) {
+				errorCodes.add(USSDExceptions.USSD_INVALID_ACCT_NO.getUssdErrorCode());
+				returnVal = false;
+			}
+		}
+		else if(mobileActLabel.toLowerCase().contains("mobile")) {
+			if (StringUtils.isEmpty(userInput) || !StringUtils.isNumeric(userInput)) {
+				errorCodes.add(USSDExceptions.USSD_MSISDN_INVALID.getUssdErrorCode());
+				returnVal = false;
+			}
+		}
+		return returnVal;
+	}
+
+	
 
 	//FreeDialUSSD
 	private static boolean isBackErrorScreen(CurrentRunningTransaction currentTransaction) {

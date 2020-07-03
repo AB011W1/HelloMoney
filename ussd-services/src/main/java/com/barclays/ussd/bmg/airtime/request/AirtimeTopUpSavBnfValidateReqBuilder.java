@@ -90,7 +90,11 @@ public class AirtimeTopUpSavBnfValidateReqBuilder implements BmgBaseRequestBuild
 
 	requestParamMap.put(USSDInputParamsEnum.AIRTIME_MOB_NUM.getParamName(),userInputMap.get(USSDInputParamsEnum.AIRTIME_MOB_NUM.getParamName()));
 
-	requestParamMap.put(PAY_GRP, "AT");
+	//DataBundle Change
+	if(billerType.toUpperCase().equals("DATABUNDLE"))
+		requestParamMap.put(PAY_GRP, "DB");
+	else
+		requestParamMap.put(PAY_GRP, "AT");
 	request.setRequestParamMap(requestParamMap);
 
 	return request;

@@ -14,6 +14,8 @@ import com.barclays.bem.OrganizationBeneficiary.OrganizationBeneficiary;
 import com.barclays.bem.PostalAddress.PostalAddress;
 import com.barclays.bem.PostalAddress.UnstructuredAddress;
 import com.barclays.bem.Product.Product;
+import com.barclays.bem.RetrieveAcctStandingInstructionList.NotificationInfo;
+import com.barclays.bem.TelephoneAddress.TelephoneAddress;
 import com.barclays.bem.TransactionAccount.TransactionAccount;
 import com.barclays.bem.TransactionFxRate.TransactionFxRate;
 import com.barclays.bmg.constants.ActivityConstant;
@@ -127,7 +129,12 @@ public class PayBillPayloadAdapter {
 
 	// biller category code and biller code
 	OrganizationBeneficiary billerDetails = new OrganizationBeneficiary();
+	/*if(null !=beenBeneficiaryDTO && null !=beenBeneficiaryDTO.getBillerCategoryId() && null!=beenBeneficiaryDTO.getInvoiceDetails().getInvoiceRefNo().get("InvoiceReferenceNo") && beenBeneficiaryDTO.getBillerCategoryId().equalsIgnoreCase("DataBundle"))//Ghana Data Bundle
+		billerDetails.setOrganizationCategoryCode(beenBeneficiaryDTO.getInvoiceDetails().getInvoiceRefNo().get("InvoiceReferenceNo"));	
+	else*/
 	billerDetails.setOrganizationCategoryCode(beenBeneficiaryDTO.getBillerCategoryId());
+	if(null !=beenBeneficiaryDTO && null !=beenBeneficiaryDTO.getBillerCategoryId() && beenBeneficiaryDTO.getBillerCategoryId().equalsIgnoreCase("DataBundle"))
+		billerDetails.setOrganizationCategoryName(beenBeneficiaryDTO.getInvoiceDetails().getInvoiceRefNo().get("InvoiceReferenceNo"));
 	billerDetails.setOrganizationCode(beenBeneficiaryDTO.getBillerId());
 	billPayment.setBillerDetails(billerDetails);
 
@@ -164,8 +171,19 @@ public class PayBillPayloadAdapter {
 			billPayment.setSecondaryReferenceNumber(billRefNo2);
 		}
 	}
+	//Ghana Data Bundle
+	/*if(null !=beenBeneficiaryDTO && null !=beenBeneficiaryDTO.getBillerCategoryId() && beenBeneficiaryDTO.getBillerCategoryId().equalsIgnoreCase("DataBundle")){
+		Map<String, Object> sysparam=payBillServiceRequest.getContext().getContextMap();
+		String biller = (String) sysparam.get("DATA_BUNDLE_GLO_BILLER");
+		if(null!=biller) {
+		if(biller.contains(beenBeneficiaryDTO.getBillerId()))
+			billPayment.setRemarks(beenBeneficiaryDTO.getInvoiceDetails().getInvoiceRefNo().get("InvoiceReferenceNo"));
+		else 
+			billPayment.setRemarks("Bundle Purchase");//TODO
+		}
+	}else*/
 	billPayment.setRemarks(billPayment.getPrimaryReferenceNumber());// changed as per requirement from UBP: 04 Aug 2015
-
+		
 	billPayment.getBillerDetails().setOrganizationName(beenBeneficiaryDTO.getTopupService());
 
 	if (payBillServiceRequest.getFromAccount() instanceof CreditCardAccountDTO) {
@@ -232,7 +250,12 @@ public class PayBillPayloadAdapter {
 		|| ActivityIdConstantBean.BILL_PAYMENT_ONETIME_ACTIVITY_ID.equals(payBillServiceRequest.getContext().getActivityId())) {
 	    billPayment.setTransactionSubCategoryCode(PAYMENT_SUB_CATEGORY_BP);
 	} else if (ActivityConstant.MOBILE_TOPUP_PAYEE_ACTIVITY_ID.equals(payBillServiceRequest.getContext().getActivityId())) {
-	    billPayment.setTransactionSubCategoryCode(PAYMENT_SUB_CATEGORY_TUP);
+	    //Condition added for Ghana DataBundle
+		if(beenBeneficiaryDTO.getBillerCategoryId().equalsIgnoreCase("DataBundle")) {
+			billPayment.setTransactionSubCategoryCode(PAYMENT_SUB_CATEGORY_BP);
+		}
+		else
+			billPayment.setTransactionSubCategoryCode(PAYMENT_SUB_CATEGORY_TUP);
 	} else if (ActivityConstant.MOBILE_WALLET_PAYEE_ACTIVITY_ID.equals(payBillServiceRequest.getContext().getActivityId())) {
 	    billPayment.setTransactionSubCategoryCode(PAYMENT_SUB_CATEGORY_MW);
 	}
@@ -291,6 +314,20 @@ public class PayBillPayloadAdapter {
 	    }
 		billPayment.setBillTransactionReferenceDetails(billTransactionReferenceDetailsArray);
 	}
+	
+	//Ghana Data Bundle TODO
+	if(null !=beenBeneficiaryDTO && null !=beenBeneficiaryDTO.getBillerCategoryId() && beenBeneficiaryDTO.getBillerCategoryId().equalsIgnoreCase("DataBundle")) {
+	TelephoneAddress[] telephoneDetails=new TelephoneAddress[1];
+	telephoneDetails[0] = new TelephoneAddress();
+	telephoneDetails[0].setSolicitThroughPhone(false);
+	telephoneDetails[0].setPhoneNumber(payBillServiceRequest.getContext().getMobilePhone());
+	
+	NotificationInfo[] custNotificationInfo = new NotificationInfo[1];
+	custNotificationInfo[0] = new NotificationInfo();
+	custNotificationInfo[0].setTelephoneDetails(telephoneDetails);
+	billPayment.setCustNotificationInfo(custNotificationInfo);
+	}
+	
 	return billPayment;
     }
 }

@@ -79,5 +79,11 @@ public class BillersLstServiceImpl implements IBillersLstService {
 	public List<BillersListDO> getBillerPerCategory(String mobileNumber, String businessId, String category) throws USSDNonBlockingException {
 		return billersLstDAOImpl.getBillerPerCategory(mobileNumber, businessId, category);
 	}
-
+	
+	//Ghana Data Bundle
+	 @Override
+	 public BillersListDO getBillerInfoDataBundleAcc(String billerId,String businessId) throws USSDNonBlockingException {
+	    	return billersLstDAOImpl.getBillerInfoDataBundleAcc(billerId,businessId);
+	 }
+	 
 }

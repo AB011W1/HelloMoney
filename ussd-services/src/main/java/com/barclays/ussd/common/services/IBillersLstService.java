@@ -40,4 +40,8 @@ public interface IBillersLstService {
 
     public List<BillersListDO> getBillerPerCategory(String mobileNumber,String businessId, String category) throws USSDNonBlockingException;
     
+    //Ghana Data Bundle
+    public BillersListDO getBillerInfoDataBundleAcc(String billerId,String businessId) throws USSDNonBlockingException;
+    
+    
 }

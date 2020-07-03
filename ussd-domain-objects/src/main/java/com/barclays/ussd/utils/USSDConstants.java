@@ -140,6 +140,9 @@ public final class USSDConstants {
 
     /** The confirm action option code. */
     public static final String CONFIRM_ACTION_OPTION_CODE = "1";
+    
+    /** The cancel action option code Ghana data bundle change */
+    public static final String CANCEL_ACTION_OPTION_CODE = "2";
 
     public static final String DEFAULT_OPTION_SELECTION = "1";
 
@@ -490,6 +493,12 @@ public final class USSDConstants {
 
     /** The data type confirm. */
     public static final String DATA_TYPE_CONFIRM = "confirm";
+    
+    /** The data type Ghana Databundle confirm/cancel */
+    public static final String DATA_TYPE_CONFIRM_CANCEL = "confirmcancel";
+    
+    /** The account/mobile Ghana Databundle */
+    public static final String DATA_TYPE_ACCTNO_MSISDN = "accountMobileNo";
 
     /** The data type na. */
     public static final String DATA_TYPE_NA = "na";

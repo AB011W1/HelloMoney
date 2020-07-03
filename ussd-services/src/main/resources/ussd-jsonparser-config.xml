@@ -544,5 +544,7 @@
 	<bean id="onetimeBillpayCatListJsonParser" class="com.barclays.ussd.utils.jsonparsers.OnetimeBillpayCatListJsonParser" />
 	<bean id="mobileWalletTopUpBeneMngmtJsonParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletTopUpBeneMngmtJsonParser" />
 	<bean id="leadGenerationLoansJsonParser" class="com.barclays.ussd.utils.jsonparsers.LeadGenerationLoansJsonParser" />
-	
+	<!-- Ghana Data Bundle Change -->	
+	<bean id="dataBundleAirtimeJsonParser" class="com.barclays.ussd.utils.jsonparsers.DataBundleAirtimeJsonParser" />
+	<bean id="dataBundleAirtimeCancelJsonParser" class="com.barclays.ussd.utils.jsonparsers.DataBundleAirtimeCancelJsonParser" />	
 </beans>

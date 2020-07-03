@@ -2,7 +2,9 @@ package com.barclays.bmg.dao.operation.accountservices;
 
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 
 import com.barclays.bem.BEMServiceHeader.BEMResHeader;
 import com.barclays.bem.Bill.Bill;
@@ -13,7 +15,10 @@ import com.barclays.bmg.constants.ErrorCodeConstant;
 import com.barclays.bmg.constants.ResponseCodeConstants;
 import com.barclays.bmg.constants.ServiceErrorCodeConstant;
 import com.barclays.bmg.constants.ServiceIdConstants;
+import com.barclays.bmg.context.Context;
+import com.barclays.bmg.context.RequestContext;
 import com.barclays.bmg.dao.core.context.WorkContext;
+import com.barclays.bmg.dao.core.context.impl.DAOContext;
 import com.barclays.bmg.dto.Amount;
 import com.barclays.bmg.dto.InvoiceDetails;
 import com.barclays.bmg.exception.BMBDataAccessException;
@@ -32,6 +37,15 @@ public class RetrieveBillDetailsRespAdptOperation {
         }
 
        response.setSuccess(checkResHeader(bemResponse.getResponseHeader()));
+       
+       //Ghana DataBundle change
+       DAOContext daoContext = (DAOContext) workContext;
+
+		Object[] args = daoContext.getArguments();
+
+		RequestContext request = (RequestContext) args[0];
+		Context context = request.getContext();
+		String businessId = context.getBusinessId().toString();
 
        if (response.isSuccess()) {
 
@@ -54,7 +68,7 @@ public class RetrieveBillDetailsRespAdptOperation {
 				}
 
 				//Probase
-				if (null!= billDetail.getBillInvoiceDetails()) {
+				if (null!= billDetail.getBillInvoiceDetails() && businessId.equalsIgnoreCase("ZMBRB")) {
 					InvoiceDetails invoiceDetails = new InvoiceDetails();
 					int refSize = billDetail.getBillInvoiceDetails(0).getInvoiceReferenceDetails().length;
 					LinkedHashMap<String, String> temp = new LinkedHashMap<String, String>();
@@ -64,6 +78,32 @@ public class RetrieveBillDetailsRespAdptOperation {
 					}
 					invoiceDetails.setProbaseDetails(temp);
 					response.setBillInvoiceDetails(invoiceDetails);
+				}
+				
+				//Ghana Databundle change
+				//TODO add condition 
+				if(null != businessId && businessId.equalsIgnoreCase("GHBRB"))
+				{
+					if (null!= billDetail.getBillInvoiceDetails()) {
+						InvoiceDetails invoiceDetails = new InvoiceDetails();
+						LinkedHashMap<String, String> temp = new LinkedHashMap<String, String>();
+						List<String> bundleLife = new ArrayList<String>();
+						LinkedHashMap<String, String> referenceDataBundle = new LinkedHashMap<String, String>(); //SSAMakeBillPayment Ghana Data Bundle
+						for(int i=0;i<billDetail.getBillInvoiceDetails().length;i++) {
+							if(null!= billDetail.getBillInvoiceDetails(i).getInvoiceReferenceDetails(0)) {
+							temp.put(billDetail.getBillInvoiceDetails(i).getInvoiceReferenceDetails(0).getReferenceTypeCode(),
+									billDetail.getBillInvoiceDetails(i).getInvoiceReferenceDetails(0).getReferenceValue());
+							//SSAMakeBillPayment Ghana Data Bundle
+							referenceDataBundle.put(billDetail.getBillInvoiceDetails(i).getInvoiceReferenceDetails(0).getReferenceValue(),billDetail.getBillInvoiceDetails(i).getInvoiceReferenceNumber());
+							}
+							if(null != billDetail.getBillInvoiceDetails(i).getInvoiceReferenceDetails(0).getReferenceID())
+								bundleLife.add(billDetail.getBillInvoiceDetails(i).getInvoiceReferenceDetails(0).getReferenceID());
+						}
+						invoiceDetails.setProbaseDetails(temp);
+						invoiceDetails.setBundleLife(bundleLife);
+						invoiceDetails.setInvoiceRefNo(referenceDataBundle);//SSAMakeBillPayment Ghana Data Bundle
+						response.setBillInvoiceDetails(invoiceDetails);
+					}
 				}
 
 				BillInvoiceDetails[] invDetail = billDetail.getBillInvoiceDetails();
@@ -88,6 +128,9 @@ public class RetrieveBillDetailsRespAdptOperation {
 						response.setResCde(error.getPPErrorCode());
 						response.setResMsg(error.getPPErrorDesc());
 
+					}else if (ErrorCodeConstant.DATA_BUNDLE_BILL_INFO.equals(error.getPPErrorCode())) {
+						String errorCode = ErrorCodeConstant.MW_MESSAGE_PREFIX + error.getPPErrorCode();
+						response.setResCde(errorCode);
 					}
 				}
 			}
@@ -99,21 +142,24 @@ public class RetrieveBillDetailsRespAdptOperation {
 
     private boolean checkResHeader(BEMResHeader resHeader) {
 		String resCode = null;
+		
 		if(null != resHeader && null != resHeader.getServiceResStatus())
 			resCode = resHeader.getServiceResStatus().getServiceResCode();
 		boolean valid = false;
+		
 		if (ResponseCodeConstants.SUCCESS_RES_CODE.equals(resCode)
-				|| ResponseCodeConstants.SUBMITTED_TXN_RES_CODE.equals(resCode)) {
+				|| ResponseCodeConstants.SUBMITTED_TXN_RES_CODE.equals(resCode)){
 			valid = true;
 		}
 
 		//URA Biller Changes
-		if(ErrorCodeConstant.BUSINESS_ERROR.equals(resCode) && resHeader.getErrorList() != null && resHeader.getErrorList().length > 0){
+		if(ErrorCodeConstant.BUSINESS_ERROR.equals(resCode) && resHeader.getErrorList() != null && resHeader.getErrorList().length > 0)
+			{
 			for (com.barclays.bem.BEMServiceHeader.Error error : resHeader
 					.getErrorList()) {
 				if(ErrorCodeConstant.MUBS_ERROR
 						.equals(error.getPPErrorCode())|| ErrorCodeConstant.URA_ERROR
-						.equals(error.getPPErrorCode())){
+						.equals(error.getPPErrorCode())||ErrorCodeConstant.DATA_BUNDLE_BILL_INFO.equals("309")){
 					return false;
 				}
 			}

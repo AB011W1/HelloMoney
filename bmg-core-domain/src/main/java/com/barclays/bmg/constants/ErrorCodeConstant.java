@@ -76,4 +76,7 @@ public interface ErrorCodeConstant {
     String THM_CONNECTIVITY = "009";
     String URA_ERROR="219";
     String MUBS_ERROR = "218";
+    
+    //Data Bundle TODO Create a list
+    String DATA_BUNDLE_BILL_INFO = "309";
 }

@@ -51,8 +51,11 @@ public class AirTimeTopUpOperationService  extends BMBPaymentsOperation
 			billerServiceRequest.setBillerCategoryId(request.getBillerCatId());
 			//billerServiceRequest.setBillerName(request.getBillerId());
 			AirTimeTopUpOperationResponse airTimeTopUpOperationResponse  = new AirTimeTopUpOperationResponse();
-
-			BillerServiceResponse billerServiceResponse = super.getBillerService().getBillPaymentsBillerList(billerServiceRequest);
+			BillerServiceResponse billerServiceResponse = null;
+			if(null != request.getBillerCatId() && request.getBillerCatId().equals("DataBundle"))
+				 billerServiceResponse = super.getBillerService().getDataBundleBillerList(billerServiceRequest);
+			else	
+				 billerServiceResponse = super.getBillerService().getBillPaymentsBillerList(billerServiceRequest);
 
 			if(billerServiceResponse.isSuccess() && (billerServiceResponse.getBillerList() != null))
 			{

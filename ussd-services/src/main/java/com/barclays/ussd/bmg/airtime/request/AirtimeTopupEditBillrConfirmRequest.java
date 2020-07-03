@@ -49,6 +49,18 @@ public class AirtimeTopupEditBillrConfirmRequest implements BmgBaseRequestBuilde
 		requestParamMap.put(USSDConstants.BMG_LOCAL_KE_OPCODE_PARAM_NAME, requestBuilderParamsDTO.getBmgOpCode());
 		requestParamMap.put(USSDConstants.BMG_LOCAL_KE_SERVICE_VER_NAME, USSDConstants.BMG_SERVICE_VERSION_VALUE);
 		requestParamMap.put(PAY_GRP, "AT");
+		
+		//Data Bundle change
+		String transNodeId;
+		if(null != requestBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails()  && 
+		   null != requestBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap() &&
+		   null != requestBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap().get("TransNodeId"))
+		{
+			transNodeId = requestBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap().get("TransNodeId");
+			if(transNodeId.equals("ussd0.10GHBRB"))
+				requestParamMap.put(PAY_GRP, "DB");
+		}
+		
 		requestParamMap.put(IS_EDIT_FLOW,"true");
 		requestParamMap.put(USSDInputParamsEnum.DEL_BILLER_CONFIRM.getParamName(), payeeId);
 		request.setRequestParamMap(requestParamMap);

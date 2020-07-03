@@ -125,6 +125,7 @@ public class BillersLstDAOImpl extends SqlMapClientDaoSupport implements IBiller
 	    List<PilotUserDTO> pilotUserDTOList = null;
 	    List<BillersListDO> billersList;
 	    String statementName = USSDConstants.GET_BILLER_INFO;
+	    
 
 	    if(ubpBusinessIdsDTO!=null && ubpBusinessIdsDTO.size()>0) {
     		UBP_BUSINESS_IDS=ubpBusinessIdsDTO.get(0).getParamValue();
@@ -216,4 +217,22 @@ public class BillersLstDAOImpl extends SqlMapClientDaoSupport implements IBiller
   		}
   		return billerPerCategoryList;
   	}
+  	
+  	//Ghana Data Bundle
+	@Override
+	public BillersListDO getBillerInfoDataBundleAcc(String billerId, String businessId)
+			throws USSDNonBlockingException {
+		// TODO Auto-generated method stub
+		BillersListDO biller=null;
+		Map<String, String> params = new HashMap<String, String>(1);
+		params.put(COUNTRY_CD, "GH");
+  		params.put(BILLER_ID, billerId);
+  		params.put(BUSINESS_ID, businessId);
+  		params.put(STATUS, "ACTIVE");
+  		
+  		biller=(BillersListDO) this.getSqlMapClientTemplate().queryForObject(USSDConstants.GET_BILLER_INFO, params);
+		return biller;
+	}
+  	 	
+  	
 }

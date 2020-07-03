@@ -46,6 +46,7 @@ public class RetrievePayeeListOperation extends BMBPaymentsOperation {
     private static final String AIR_TIME = "AT";
     private static final String M_WALLET = "WT";
     private static final String GHIPPSPAY = "GHIPPSPAY";
+    private String DATA_BUNDLE ="DB";
 
     @AuditSupport(auditType = AuditConstant.AUDIT_TYPE_TRANSACTION, activityState = AuditConstant.SRC_COM_SSC, activityId = "PMT_PAYEE_LIST", serviceDescription = "SD_RETRIEVE_IND_BENE_LIST", stepId = "1", activityType = "auditPayeeList")
     public RetrievePayeeListOperationResponse retrievePayeeList(RetrievePayeeListOperationRequest request) {
@@ -77,7 +78,7 @@ public class RetrievePayeeListOperation extends BMBPaymentsOperation {
 		List<ListValueCacheDTO> payeeTypeGroup = getPayeeTypeGroup(request);
 
 		//CR82
-		if(payGrp != null &&(payGrp.equalsIgnoreCase(AIR_TIME)|| payGrp.equalsIgnoreCase(M_WALLET))){
+		if(payGrp != null &&(payGrp.equalsIgnoreCase(AIR_TIME)|| payGrp.equalsIgnoreCase(M_WALLET) || payGrp.equalsIgnoreCase(DATA_BUNDLE))){
 			payeeTypeGroup = getPayeeTypeGroupAtWt(request);
 		}
 

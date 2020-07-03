@@ -92,6 +92,18 @@ public class AirtimeTopUpEditBnfValidateReqBuilder implements BmgBaseRequestBuil
 	requestParamMap.put(USSDInputParamsEnum.AIRTIME_MOB_NUM.getParamName(),userInputMap.get(USSDInputParamsEnum.AIRTIME_MOB_NUM.getParamName()));
 
 	requestParamMap.put(PAY_GRP, "AT");
+	
+	//Data Bundle change
+	String transNodeId;
+	if(null != requestBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails()  && 
+			null != requestBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap() &&
+			null != requestBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap().get("TransNodeId"))
+	{
+			transNodeId = requestBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap().get("TransNodeId");
+			if(transNodeId.equals("ussd0.10GHBRB"))
+				requestParamMap.put(PAY_GRP, "DB");
+	}
+	
 	requestParamMap.put(BILLER_TYPE, billerType);
 	request.setRequestParamMap(requestParamMap);
 

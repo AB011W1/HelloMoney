@@ -125,6 +125,17 @@ public class AirtimeTopUpPaymentTypeJsonParser implements BmgBaseJsonParser,
 		userInputMap.put(BillPaymentConstants.AT_MW_SAVED_BENEF,BillPaymentConstants.AT_MW_DEFAULT);//CR82
 		int seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_THREE
 				.getSequenceNo();
+		
+		//Data bundle change
+		String businessId = ussdSessionMgmt.getBusinessId();
+		String transNodeId=ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
+		if(userInput.equals("1")) {
+			if(businessId.equalsIgnoreCase("GHBRB") && transNodeId.equals("ussd0.10"))
+				seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_THIRTY
+				.getSequenceNo();
+			userInputMap.put("TransNodeId", "ussd0.10GHBRB");
+			ussdSessionMgmt.getUserTransactionDetails().setUserInputMap(userInputMap);
+		}
 
 		if (userInput.equals("3")) {
 			userInputMap.put(
@@ -132,31 +143,55 @@ public class AirtimeTopUpPaymentTypeJsonParser implements BmgBaseJsonParser,
 					ussdSessionMgmt.getMsisdnNumber());
 			ussdSessionMgmt.getUserTransactionDetails().setUserInputMap(
 					userInputMap);
-			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FIFTEEN.getSequenceNo();
+			if(businessId.equalsIgnoreCase("GHBRB") && transNodeId.equals("ussd0.10")) {
+				seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_THIRTYTWO.getSequenceNo();
+				userInputMap.put("TransNodeId", "ussd0.10GHBRB");
+				ussdSessionMgmt.getUserTransactionDetails().setUserInputMap(userInputMap);
+			}				
+			else	
+				seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FIFTEEN.getSequenceNo();
 		}
 		if (userInput.equals("2")) {
 			userInputMap.put(
 					USSDInputParamsEnum.AIRTIME_MOB_NUM.getParamName(),
 					ussdSessionMgmt.getMsisdnNumber());
 			userInputMap.put(BillPaymentConstants.AT_MW_SAVED_BENEF,BillPaymentConstants.AT_MW_SAVED_BENEF);//CR82
+			
+			if(businessId.equalsIgnoreCase("GHBRB") && transNodeId.equals("ussd0.10")) 
+			{
+				userInputMap.put("TransNodeId", "ussd0.10GHBRB");
+				seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_THIRTYTHREE.getSequenceNo();
+			}				
+			else
+				seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_THIRTEEN.getSequenceNo();
+			
 			ussdSessionMgmt.getUserTransactionDetails().setUserInputMap(
 					userInputMap);
-			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_THIRTEEN.getSequenceNo();
 		}
 		//DeleteBeneficary
 		if (userInput.equals("5")) {
 			userInputMap.put(
 					USSDInputParamsEnum.AIRTIME_MOB_NUM.getParamName(),
 					ussdSessionMgmt.getMsisdnNumber());
+			
+			if(businessId.equalsIgnoreCase("GHBRB") && transNodeId.equals("ussd0.10")) 
+			{
+				userInputMap.put("TransNodeId", "ussd0.10GHBRB");
+				seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_THIRTYTHREE.getSequenceNo();
+			}
+			else
+				seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_THIRTEEN.getSequenceNo();
+			
 			ussdSessionMgmt.getUserTransactionDetails().setUserInputMap(
 					userInputMap);
-			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_THIRTEEN.getSequenceNo();
 		}
 		//EditBeneficary
 		if (userInput.equals("4")) {
 			userInputMap.put(
 					USSDInputParamsEnum.AIRTIME_MOB_NUM.getParamName(),
 					ussdSessionMgmt.getMsisdnNumber());
+			userInputMap.put("TransNodeId", "ussd0.10GHBRB");
+			
 			ussdSessionMgmt.getUserTransactionDetails().setUserInputMap(
 					userInputMap);
 			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_THIRTEEN.getSequenceNo();

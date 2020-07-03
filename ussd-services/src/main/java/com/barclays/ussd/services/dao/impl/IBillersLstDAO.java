@@ -20,5 +20,8 @@ public interface IBillersLstDAO {
     public List<BillersListDO> getCategoryList(String countryCd, String mobileNumber,String businessId) throws USSDNonBlockingException;
     
     public List<BillersListDO> getBillerPerCategory(String mobileNumber, String businessId,String category) throws USSDNonBlockingException;
-    	
+    
+    //Ghana Data Bundle 
+    public BillersListDO getBillerInfoDataBundleAcc(String billerId,String businessId) throws USSDNonBlockingException;
+    
 }

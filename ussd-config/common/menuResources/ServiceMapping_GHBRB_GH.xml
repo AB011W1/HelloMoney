@@ -37,6 +37,9 @@
 	<srv tranId="GH_BAL_ENQ_MAIN_ACCT" importTran="BalanceEnquiryMainAccount"  firstScreenSequencerId="1"/>
 	<srv tranId="GH_MINI_STMT_MAIN_ACCT" importTran="MiniStatementMainAccount"  firstScreenSequencerId="1"/>
 	<srv tranId="GH_AIRTIME_TOPUP" importTran="AirtimeTopup"  firstScreenSequencerId="1"/>
+	<!-- Ghana Data Bundle Change -->
+	<srv tranId="GH_AIRTIME_DATABUNDLE" importTran="DataBundle"  firstScreenSequencerId="1"/>	
+	<!-- GhanaData Bundle Change  -->
 	<srv tranId="GH_SELF_REG" importTran="SelfRegistration"  firstScreenSequencerId="1"/>
 	<srv tranId="GH_TWO_FACTOR" importTran="TwoFactorVerify"  firstScreenSequencerId="1"/>
 	<srv tranId="GH_WELCOME_BAL_ENQ" importTran="WelcomeScreenBalanceEnquiry"  firstScreenSequencerId="1"/>

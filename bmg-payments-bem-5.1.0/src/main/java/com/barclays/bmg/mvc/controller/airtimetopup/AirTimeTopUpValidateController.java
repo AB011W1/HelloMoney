@@ -124,12 +124,19 @@ public class AirTimeTopUpValidateController extends BMBAbstractCommandController
 	    throws Exception {
 	Context context = buildContext(request);
 
+	//DataBundle Change
+	String isDBFlow=null;//DataBundle Flow
+	if(null != request.getParameter("isDBFlow"))
+		isDBFlow = request.getParameter("isDBFlow");
 	AirTimeTopUpValidateCommand airTimeTopUpValidateCommand = (AirTimeTopUpValidateCommand) command;
 	String extra=airTimeTopUpValidateCommand.getExtra();
 	if((airTimeTopUpValidateCommand.getBillerId().equals("AIRTELCR-5") || airTimeTopUpValidateCommand.getBillerId().equals("AIRTELZMBANKTOWALLET-2")) && extra!=null && (extra.equals("FREEDIALAIRTEL") || extra.equals("FREEDIALAIRTELZM"))){
 		billerCatId="MobileMoney";
 		context.setActivityId("PMT_BP_MOBILE_WALLET_ONETIME");
-	}else
+	}
+	else if(null != isDBFlow && isDBFlow.equalsIgnoreCase("Y"))
+		billerCatId="DataBundle";
+	else
 		billerCatId="Telephone";
 // Get Credit card Flag from USSD Request
 		String creditCardFlag = null;
@@ -205,7 +212,11 @@ airTimeTopUpValidateResponse = airTimeTopUpValidate.validateRequest(context, air
 
 	AirTimeTopUpValidateServiceResopnse res = null;
 	FormValidateOperationResponse formValidateOperationResponse = new FormValidateOperationResponse();
-
+	
+    //Ghana Data Bundle change
+	if(billerCatId.equalsIgnoreCase("DataBundle"))
+		context.addEntry("billerCatId", "DataBundle");
+      
 	if (getSelectedAccountOperationResponse.isSuccess() && airTimeTopUpValidateResponse.isSuccess()) {
 	    FormValidateOperationRequest formValidateOperationRequest = new FormValidateOperationRequest();
 	    formValidateOperationRequest.setContext(context);

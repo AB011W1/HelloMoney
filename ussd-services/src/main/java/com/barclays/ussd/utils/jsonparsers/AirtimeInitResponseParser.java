@@ -29,7 +29,7 @@ import com.barclays.ussd.utils.jsonparsers.bean.airtime.Biller;
  * @author BTCI
  *
  */
-public class AirtimeInitResponseParser implements BmgBaseJsonParser, ScreenSequenceCustomizer {
+public class AirtimeInitResponseParser implements BmgBaseJsonParser,ScreenSequenceCustomizer {
     private static final Logger LOGGER = Logger.getLogger(AirtimeInitResponseParser.class);
 
     @Override
@@ -176,18 +176,49 @@ public class AirtimeInitResponseParser implements BmgBaseJsonParser, ScreenSeque
       return list;
     }
 
-  //TZNBC Menu Optimization
-    @Override
-    public int getCustomNextScreen(String userInput, USSDSessionManagement ussdSessionMgmt) throws USSDBlockingException {
-    	
-    	int seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_EIGHT.getSequenceNo();
-    	String tranDataId=ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
-    	if(null!=tranDataId && tranDataId.equalsIgnoreCase("ussd0.3.2") && ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC")) {
+	@Override
+	public int getCustomNextScreen(String userInput, USSDSessionManagement ussdSessionMgmt)
+			throws USSDBlockingException {
+		// TODO Auto-generated method stub
+		int seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_EIGHT
+				.getSequenceNo();
+		
+		//Ghana Data bundle change
+		String businessId = ussdSessionMgmt.getBusinessId();
+		String transNodeId=ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
+		if(businessId.equalsIgnoreCase("GHBRB") && transNodeId.equals("ussd0.10"))
+		{
+			Map<String, String> userInputMap = ussdSessionMgmt
+					.getUserTransactionDetails().getUserInputMap();
+			String dataBundle = null;
+			if(null != userInputMap.get("DataBundle"))
+				dataBundle = userInputMap.get("DataBundle");
+			if(null != dataBundle && dataBundle.equals("DataBundleOWN"))
+			{
+				seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FOUR
+						.getSequenceNo();
+				ArrayList<Biller> sBlr=(ArrayList<Biller>) ussdSessionMgmt.getTxSessions().get("ATT001");
+	        	int loc=Integer.parseInt(userInput);
+	        	Biller biller = new Biller();
+	    		if(null != sBlr){			
+	    			biller = sBlr.get(loc-1);
+	    		}
+	    		
+	    			ussdSessionMgmt.getTxSessions().put("BundleBiller", biller);
+	    			
+	    		if(biller.getBillerId().equalsIgnoreCase("BusyInternet-2") || biller.getBillerId().equalsIgnoreCase("Surflinegh-2"))
+	    			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_EIGHT
+					.getSequenceNo();
+			}
+				
+		}
+		if(null!=transNodeId && transNodeId.equalsIgnoreCase("ussd0.3.2") && ussdSessionMgmt.getBusinessId().equalsIgnoreCase("TZNBC")) {
     		Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
 			userInputMap.put(BillPaymentConstants.AT_MW_SAVED_BENEF,BillPaymentConstants.AT_MW_SAVED_BENEF);
     		seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_THIRTEEN.getSequenceNo();
     	}
+		
 		return seqNo;
-    }
+	}
 
 }

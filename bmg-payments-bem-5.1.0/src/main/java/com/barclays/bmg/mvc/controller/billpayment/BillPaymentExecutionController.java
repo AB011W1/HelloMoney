@@ -1,5 +1,6 @@
 package com.barclays.bmg.mvc.controller.billpayment;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -10,17 +11,20 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.validation.BindException;
 
+import com.barclays.bem.TelephoneAddress.TelephoneAddress;
 import com.barclays.bmg.constants.ActivityConstant;
 import com.barclays.bmg.constants.ActivityIdConstantBean;
 import com.barclays.bmg.constants.BMGProcessConstants;
 import com.barclays.bmg.constants.BillPaymentConstants;
 import com.barclays.bmg.constants.BillPaymentResponseCodeConstants;
 import com.barclays.bmg.constants.SessionConstant;
+import com.barclays.bmg.constants.SystemParameterConstant;
 import com.barclays.bmg.context.Context;
 import com.barclays.bmg.context.RequestContext;
 import com.barclays.bmg.context.ResponseContext;
 import com.barclays.bmg.dto.Charge;
 import com.barclays.bmg.dto.InvoiceDetails;
+import com.barclays.bmg.dto.SystemParameterDTO;
 import com.barclays.bmg.dto.TransactionDTO;
 import com.barclays.bmg.json.model.builder.BMBJSONBuilder;
 import com.barclays.bmg.json.model.builder.BMBMultipleResponseJSONBuilder;
@@ -40,6 +44,9 @@ import com.barclays.bmg.operation.response.SQAGenerateAuthenticationOperationRes
 import com.barclays.bmg.operation.response.billpayment.MakeBillPaymentOperationResponse;
 import com.barclays.bmg.operation.response.secondauth.TxnSecondAuthOTPOperationResponse;
 import com.barclays.bmg.operation.response.secondauth.TxnSecondAuthSQAOperationResponse;
+import com.barclays.bmg.service.SystemParameterService;
+import com.barclays.bmg.service.request.SystemParameterServiceRequest;
+import com.barclays.bmg.service.response.SystemParameterServiceResponse;
 
 public class BillPaymentExecutionController extends BMBAbstractCommandController {
 
@@ -50,6 +57,7 @@ public class BillPaymentExecutionController extends BMBAbstractCommandController
     private BMBJSONBuilder txnSQASecondAuthJSONBldr;
     private BMBMultipleResponseJSONBuilder bmbJSONBuilder;
     private ManageFundtransferStatusOperation manageFundtransferStatusOperation;
+    private SystemParameterService systemParameterService;
 
     @Override
     protected String getActivityId(Object command) {
@@ -76,7 +84,7 @@ public class BillPaymentExecutionController extends BMBAbstractCommandController
 	TransactionDTO transactionDTO = (TransactionDTO) getFromProcessMap(httpRequest, BMGProcessConstants.BILL_PAYMENT,
 		BillPaymentConstants.TRANSACTION_DTO);
 
-
+	
 	String isGHMWFreeDialUssdFlow= String.valueOf(httpRequest.getParameter("isGHMWFreeDialUssdFlow"));
 	if(null != context && context.getBusinessId().equals("GHBRB") && isGHMWFreeDialUssdFlow!=null && isGHMWFreeDialUssdFlow.equals("TRUE")){
 		if(transactionDTO!=null){
@@ -168,7 +176,21 @@ public class BillPaymentExecutionController extends BMBAbstractCommandController
 	    	transactionDTO.getBeneficiaryDTO().setInvoiceDetails(invoiceDetails);
 			}
 	    }
-
+	    
+	    //Ghana Data Bundle
+	    String transNodeId=null;
+	    if(null != httpRequest.getParameter("TransNodeId"))
+		{
+			transNodeId = httpRequest.getParameter("TransNodeId");			
+		}
+		if(null != transNodeId && transNodeId.equalsIgnoreCase("ussd0.10GHBRB")){
+		InvoiceDetails invoiceDetails1= new InvoiceDetails();	
+		LinkedHashMap<String, String> invoiceRefNo = new LinkedHashMap<String, String>();
+		String invoiceRefNo1 = httpRequest.getParameter("InvoiceReferenceNo");
+		invoiceRefNo.put("InvoiceReferenceNo",invoiceRefNo1);
+		invoiceDetails1.setInvoiceRefNo(invoiceRefNo);
+		transactionDTO.getBeneficiaryDTO().setInvoiceDetails(invoiceDetails1);
+	    }
 
 	    MakeBillPaymentOperationRequest makeBillPaymentOperationRequest = new MakeBillPaymentOperationRequest();
 	    makeBillPaymentOperationRequest.setContext(context);
@@ -182,6 +204,7 @@ public class BillPaymentExecutionController extends BMBAbstractCommandController
 	    	transactionDTO.getBeneficiaryDTO().setBillRefNo2(httpRequest.getParameter("contractBillerRef2"));
 	    }
 
+	    	
 	    makeBillPaymentOperationRequest.setTransactionDTO(transactionDTO);
 	    makeBillPaymentOperationResponse = makeBillPaymentOperation.makeBillPayment(makeBillPaymentOperationRequest);
 
@@ -219,7 +242,7 @@ public class BillPaymentExecutionController extends BMBAbstractCommandController
 	     */
 	    /* Code ends for SMS */
 
-	} else {
+	} else {//TODO
 	    makeBillPaymentOperationResponse = new MakeBillPaymentOperationResponse();
 	    makeBillPaymentOperationResponse.setResCde(BillPaymentResponseCodeConstants.BILL_PAY_NEVER_INITIATED);
 	    makeBillPaymentOperationResponse.setContext(context);

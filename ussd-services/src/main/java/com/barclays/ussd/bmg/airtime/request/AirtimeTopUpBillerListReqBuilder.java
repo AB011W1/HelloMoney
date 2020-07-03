@@ -17,6 +17,19 @@ public class AirtimeTopUpBillerListReqBuilder implements BmgBaseRequestBuilder {
 	requestParamMap.put(USSDConstants.BMG_LOCAL_KE_OPCODE_PARAM_NAME, requestBuilderParamsDTO.getBmgOpCode());
 	requestParamMap.put(USSDConstants.BMG_LOCAL_KE_SERVICE_VER_NAME, USSDConstants.BMG_SERVICE_VERSION_VALUE);
 	requestParamMap.put(USSDInputParamsEnum.AIRTIME_TOPUP_PAYEE_LIST.getParamName(), USSDConstants.AIRTIME_PAY);
+	
+	//Data bundle change
+	String transNodeId;
+	if(null != requestBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails()  && 
+			null != requestBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap() &&
+			null != requestBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap().get("TransNodeId"))
+	{
+		transNodeId = requestBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap().get("TransNodeId");
+		if(transNodeId.equals("ussd0.10GHBRB"))
+			requestParamMap.put(USSDInputParamsEnum.AIRTIME_TOPUP_PAYEE_LIST.getParamName(), "DB");
+	}
+	
+	
 	request.setRequestParamMap(requestParamMap);
 	return request;
     }

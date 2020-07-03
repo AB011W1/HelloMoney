@@ -73,4 +73,37 @@ public class AirTimeTopUpInitOperation extends BMBPaymentsOperation {
 
 		return airTimeTopUpOperationResponse;
 	}
+	
+	
+	//Added method for Ghana data bundle
+	public AirTimeTopUpOperationResponse getDataBundleBillerList(
+			AirTimeTopUpOperationRequest request) {
+		BillerServiceRequest billerServiceRequest = new BillerServiceRequest();
+		billerServiceRequest.setContext(request.getContext());
+		billerServiceRequest.setBillerCategoryId(request.getBillerCatId());
+		//billerServiceRequest.setBillerName(request.getBillerId());
+		AirTimeTopUpOperationResponse airTimeTopUpOperationResponse  = new AirTimeTopUpOperationResponse();
+
+		BillerServiceResponse billerServiceResponse = super.getBillerService()
+				.getDataBundleBillerList(billerServiceRequest);
+
+		if(billerServiceResponse.isSuccess() && (billerServiceResponse.getBillerList() != null)){
+
+			airTimeTopUpOperationResponse.setBillerServiceResponse(billerServiceResponse);
+		}else {
+
+			airTimeTopUpOperationResponse.setSuccess(false);
+
+			airTimeTopUpOperationResponse.setResCde(BillPaymentResponseCodeConstants.NO_BILLER_FOUND_FOR_USER);
+		}
+		if(!billerServiceResponse.isSuccess() && (billerServiceResponse.getBillerList() == null)){
+
+			getMessage(airTimeTopUpOperationResponse);
+		}
+
+		return airTimeTopUpOperationResponse;
+	}
+	
+	
+	
 }
