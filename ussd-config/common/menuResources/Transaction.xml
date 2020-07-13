@@ -665,8 +665,8 @@
 	<!-- ZM Other Bank one off start -->
 	
 	<!-- Ghana Data Bundle Change -->
-	<<!-- Ghana Data Bundle Change -->
-	<tx id="tx6.3" tranId="DataBundle">
+	<!-- Ghana Data Bundle Change -->
+	<tx id="tx6.4" tranId="DataBundle">
 		<transaction tranDataId="ATT000" type="NA" bmgOpCode="OP0660" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true"  />
 		<transaction tranDataId="ATT0021" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT0021"  headerId="label.select.aritime.db.won.oth.option"  backOptionReq="true" />
 		<transaction tranDataId="ATT0022" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="ATT0022"  headerId="label.select.payment.option"  backOptionReq="true" />		
