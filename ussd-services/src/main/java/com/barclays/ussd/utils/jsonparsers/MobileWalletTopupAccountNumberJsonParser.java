@@ -1,5 +1,6 @@
 package com.barclays.ussd.utils.jsonparsers;
 
+import java.util.ArrayList;
 import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,7 @@ import com.barclays.ussd.utils.USSDSequenceNumberEnum;
 import com.barclays.ussd.utils.USSDUtils;
 import com.barclays.ussd.utils.UssdMenuBuilder;
 import com.barclays.ussd.utils.UssdResourceBundle;
+import com.barclays.ussd.utils.jsonparsers.bean.mobilewallettopup.MobileWalletProvider;
 import com.barclays.ussd.validation.USSDCompositeValidator;
 import com.barclays.ussd.validation.USSDMobileLengthValidator;
 
@@ -53,6 +55,17 @@ public class MobileWalletTopupAccountNumberJsonParser implements BmgBaseJsonPars
 	menuItemDTO.setPageHeader(responseBuilderParamsDTO.getHeaderId());
 	menuItemDTO.setStatus(USSDConstants.STATUS_CONTINUE);
 	menuItemDTO.setPaginationType(PaginationEnum.NOT_REQD);
+	// Mobile Number Validation
+	int userInputNumber = 0;
+	String provider = null;
+	if(ussdSessionMgmt.getUserTransactionDetails() != null && ussdSessionMgmt.getUserTransactionDetails().getUserInputMap() != null && ussdSessionMgmt.getUserTransactionDetails().getUserInputMap().containsKey("billerId"))
+		userInputNumber  = Integer.parseInt(ussdSessionMgmt.getUserTransactionDetails().getUserInputMap().get("billerId"));
+	if(ussdSessionMgmt.getTxSessions() != null && ussdSessionMgmt.getTxSessions().containsKey("MWTU001") && userInputNumber != 0 && !((ArrayList) ussdSessionMgmt.getTxSessions().get("MWTU001")).isEmpty() )
+	provider = ((MobileWalletProvider) ((ArrayList) ussdSessionMgmt.getTxSessions().get("MWTU001")).get(userInputNumber - 1)).getBillerId();
+
+	if(ussdSessionMgmt.getBusinessId().equals("UGBRB") && provider.contains(ussdSessionMgmt.getMobileValidationBiller()) && ussdSessionMgmt.isMobileValidation())
+	menuItemDTO.setNextScreenSequenceNumber(USSDSequenceNumberEnum.SEQUNCE_NUMBER_FOURTYFIVE.getSequenceNo());
+	else
 	setNextScreenSequenceNumber(menuItemDTO);
 	return menuItemDTO;
     }
@@ -85,7 +98,15 @@ public class MobileWalletTopupAccountNumberJsonParser implements BmgBaseJsonPars
 			USSDSessionManagement ussdSessionMgmt) throws USSDBlockingException {
 
 		int seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FIVE.getSequenceNo();
+		int userInputNumber = 0;
+		String provider = null;
+		if(ussdSessionMgmt.getUserTransactionDetails() != null && ussdSessionMgmt.getUserTransactionDetails().getUserInputMap() != null && ussdSessionMgmt.getUserTransactionDetails().getUserInputMap().containsKey("billerId"))
+			userInputNumber  = Integer.parseInt(ussdSessionMgmt.getUserTransactionDetails().getUserInputMap().get("billerId"));
+		if(ussdSessionMgmt.getTxSessions() != null && ussdSessionMgmt.getTxSessions().containsKey("MWTU001") && userInputNumber != 0 && !((ArrayList) ussdSessionMgmt.getTxSessions().get("MWTU001")).isEmpty() )
+		provider = ((MobileWalletProvider) ((ArrayList) ussdSessionMgmt.getTxSessions().get("MWTU001")).get(userInputNumber - 1)).getBillerId();
 
+		if(ussdSessionMgmt.getBusinessId().equals("UGBRB") && provider.contains(ussdSessionMgmt.getMobileValidationBiller()) && ussdSessionMgmt.isMobileValidation())
+		seqNo=USSDSequenceNumberEnum.SEQUNCE_NUMBER_FOURTYFIVE.getSequenceNo();
 		SystemParameterDTO systemParameterDTO = new SystemParameterDTO();
     	SystemParameterServiceRequest systemParameterServiceRequest = new SystemParameterServiceRequest();
     	systemParameterServiceRequest.setSystemParameterDTO(systemParameterDTO);

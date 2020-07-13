@@ -83,6 +83,20 @@ public class MwaletValidateJSONModel extends BMBPayloadData {
 	private String typeCode;
 	private String value;
 
+	/* Mobile Number Validation */
+	private String payeeName;
+
+	
+
+	public String getPayeeName() {
+		return payeeName;
+	}
+
+	public void setPayeeName(String payeeName) {
+		this.payeeName = payeeName;
+	}
+
+	
 	/**
 	 * Gets the txn amt.
 	 *

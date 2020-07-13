@@ -63,6 +63,19 @@ public class MWalletValidateServiceResopnse extends ResponseContext {
      * The instance variable named "amount" is created.
      */
     private String amount;
+    
+
+    /* Mobile Number Validation */
+    private String PayeeName;
+
+    public String getPayeeName() {
+		return PayeeName;
+	}
+
+	public void setPayeeName(String payeeName) {
+		PayeeName = payeeName;
+	}
+
 
     /**
      * Gets the account.

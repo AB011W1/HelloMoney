@@ -43,6 +43,20 @@ public class MWalletValidateServiceRequest extends RequestContext {
      * The instance variable named "billerDTO" is created.
      */
     private BillerDTO billerDTO;
+    
+    
+    /* Mobile Number Validation */
+	private String PayeeNumber;
+	
+	
+	public String getPayeeNumber() {
+		return PayeeNumber;
+	}
+
+	public void setPayeeNumber(String payeeNumber) {
+		PayeeNumber = payeeNumber;
+	}
+	
 
     /**
      * Gets the account.

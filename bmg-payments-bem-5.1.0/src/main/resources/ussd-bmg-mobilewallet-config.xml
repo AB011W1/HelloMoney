@@ -51,6 +51,75 @@
 	</bean>
 
 	<bean id="mWalletValidateValidation" class="com.barclays.bmg.mvc.validator.mobilewallet.MWalletValidateValidation" />
+	
+	
+	<!--  Mobile Number Validation Start  -->  
+	<bean id="mWalletPayeeValidateController"
+		class="com.barclays.bmg.mvc.controller.mobilewallet.MWalletPayeeValidateController" parent="bmbAbstractCommandController">				
+		<property name="commandName" value="mWalletPayeeValidateCommand" />
+		<property name="commandClass" value="com.barclays.bmg.mvc.command.mobilewallet.MWalletValidateCommand" />
+		<property name="validator" ref="mWalletPayeeValidateValidation" />
+		<property name="activityId" value="PMT_BP_MOBILE_VALIDATE_PAYEE" />		
+		
+		<property name="mWalletValidateOperation" ref="mWalletPayeeValidateOperation" />
+		<property name="bmbJSONBuilder" ref="mwaletPayeeValidateJSONBldr" />
+	</bean>
+
+	 <bean id="mwaletPayeeValidateJSONBldr"
+		class="com.barclays.bmg.json.model.builder.mobilewallet.MwaletPayeeValidateJSONBldr" parent="bmbCommonJSONBuilder">
+	</bean>
+	<bean id="mWalletPayeeValidateOperation"
+		class="com.barclays.bmg.operation.MWalletPayeeValidateOperation"  parent="bmbPaymentsOperation">
+	     	<property name="validateService" ref="validateService"/>
+	</bean>
+
+	<bean id="mWalletPayeeValidateValidation"
+		class="com.barclays.bmg.mvc.validator.mobilewallet.MWalletPayeeValidateValidation"/>
+		
+	 <bean id="validateService" class="com.barclays.bmg.service.impl.PayeeValidateServiceImpl">
+		<property name="payeeValidateDAO" ref="payeeValidateDAO" />
+	</bean>
+	
+		<bean id="payeeValidateDAO"
+		class="com.barclays.bmg.dao.core.proxy.DaoProxyFactoryBean">
+		<property name="serviceInterface" value="com.barclays.bmg.dao.PayeeValidateDAO" />
+		<property name="daoFrontController" ref="mWalletDaoFrontControllerImpl" />
+	</bean>
+
+	<bean id="payeeValidateDAOController"
+		class="com.barclays.bmg.dao.processing.accountservices.PayeeValidateDAOController">
+        <property name="validateMobileDetailsReqAdptOperation" ref="validateMobileDetailsReqAdptOperation" />
+		<property name="validateMobileDetailsTransmissionOperation" ref="ValidateMobileDetailsTransmissionOperation" />
+		<property name="validateMobileDetailsResAdptOperation" ref="validateMobileDetailsRespAdptOperation" /> 
+	</bean>
+
+	<bean id="ValidateMobileDetailsTransmissionOperation" class="com.barclays.bmg.dao.operation.TransmissionOperation">
+		<property name="transmissionService" ref="ValidateMobileDetailsTransmissionService" />
+	</bean>
+
+	<bean id="ValidateMobileDetailsTransmissionService"
+		class="com.barclays.bmg.dao.service.impl.ValidateMobileDetailsTransmissionService">
+		<property name="remoteService" ref="retrieveAllCustAcctWebService" />
+	</bean>
+
+	 <bean id="validateMobileDetailsReqAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.ValidateMobileDetailsReqAdptOperation">
+		<property name="validateMobileDetailsHeaderAdapter" ref="validateMobileDetailsHeaderAdapter" />
+		<property name="validateMobileDetailsPayLoadAdapter" ref="validateMobileDetailsPayloadAdapter" />
+	</bean>
+	<bean id="validateMobileDetailsHeaderAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.ValidateMobileDetailsHeaderAdapter">
+	</bean>
+	<bean id="validateMobileDetailsPayloadAdapter"
+		class="com.barclays.bmg.dao.accountservices.adapter.ValidateMobileDetailsPayLoadAdapter">
+	</bean>
+
+	<bean id="validateMobileDetailsRespAdptOperation"
+		class="com.barclays.bmg.dao.operation.accountservices.ValidateMobileDetailsResAdptOperation" >
+	</bean> 
+	<!--  Mobile Number Validation End --> 
+	
+	
 
 <bean id="mWalletDaoFrontControllerImpl"
 		class="com.barclays.bmg.dao.core.frontcontroller.impl.DaoFrontControllerImpl">
@@ -59,6 +128,8 @@
 				<!--<entry key="RETREIVEPAYEELIST" value-ref="retreivePayeeListDAOController" />
 				<entry key="RETREIVEORGANIZATIONBENEFICIARYDETAILS" value-ref="retreiveOrganizationBeneficiaryDetailsDAOController" />
 				--><entry key="RETREIVEMWALLETBENEFICIARYDETAILS" value-ref="retreiveOrgBeneficiaryMWalletDAOController" />
+				<!--  Mobile Number Validation  -->
+				<entry key="VALIDATEPAYEE" value-ref="payeeValidateDAOController" />
 				<!--<entry key="INQUERYBILL" value-ref="inqueryBillDAOController" />
 				<entry key="RETREIVECHARGEDETAILS" value-ref="retreiveChargeDetailsDAOController" />
 				<entry key="PAYBILL" value-ref="payBillDAOController" />

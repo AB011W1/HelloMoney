@@ -27,6 +27,10 @@ public class MobileWalletTxValidatePayData {
 	private String mblNo;
 
 
+	// Mobile Number Validation
+		@JsonProperty
+		private  String payeeName;
+	
 	// CPB - MakeBillPaymentRequest Fields
     @JsonProperty
     private Double chargeAmount;
@@ -44,6 +48,16 @@ public class MobileWalletTxValidatePayData {
 	private String typeCode;
     @JsonProperty
 	private String value;
+
+    
+    
+	public String getPayeeName() {
+		return payeeName;
+	}
+
+	public void setPayeeName(String payeeName) {
+		this.payeeName = payeeName;
+	}
 
 	public String getTxnRefNo() {
 		return this.txnRefNo;

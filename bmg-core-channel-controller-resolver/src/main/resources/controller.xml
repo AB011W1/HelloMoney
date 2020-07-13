@@ -579,6 +579,12 @@
 		<cr:controller op-code="OP0671" svc-ver="1.0" ref="mWalletValidateController" default="true" />
 		<cr:controller op-code="OP0671" svc-ver="2.0" ref="mWalletValidateController" default="false" />
 		<cr:controller op-code="OP0671" ref="mWalletValidateController" />
+		
+		<!-- Mobile Number Validation -->
+		<cr:controller op-code="OP0675" svc-ver="1.0" ref="mWalletPayeeValidateController" default="true" />
+		<cr:controller op-code="OP0675" svc-ver="2.0" ref="mWalletPayeeValidateController" default="false" />
+		<cr:controller op-code="OP0675" ref="mWalletPayeeValidateController" />
+		<!-- Mobile Number Validation -->
 		<!-- Mobile Wallet Top up -->
 
 		<!-- FreeDialUSSD STARTS -->

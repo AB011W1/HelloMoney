@@ -465,6 +465,9 @@ public enum USSDInputParamsEnum {
 
 	/** The mobile wallet account number. */
 	MOBILE_WALLET_ACCOUNT_NUMBER("MWTU002", "mblNo"),
+	
+	/** Mobile Number Validation */
+	MOBILE_WALLET_MVALIDATION("MWTU045", "payeeName"),
 
 	/** CR#47 implementation*/
 	MOBILE_WALLET_MSISDN_TYPE("MWTU0021", "list"),

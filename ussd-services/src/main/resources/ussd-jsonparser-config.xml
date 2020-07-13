@@ -160,6 +160,9 @@
 	<bean id="mobileWalletMsisdnTypeJsonParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletMsisdnTypeJsonParser" />
 	<!--CR#47 -->
 	<!-- Kadi Kope Credit Card -->
+	<!-- Mobile Number Validation -->
+	<bean id="mobileWalletPayeeValidationJsonParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletPayeeValidationJsonParser" />
+	<!-- Mobile Number Validation -->
 	<bean id="mobileWalletTopupAmountJsonParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletTopupAmountJsonParser" />
 	<bean id="mobileWalletTopupCreditCardORCasaJsonParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletTopupCreditCardORCasaJsonParser" />
     <bean id="mobileWalletTopupCreditCardListJsonParser" class="com.barclays.ussd.utils.jsonparsers.MobileWalletTopupCreditCardListJsonParser" />

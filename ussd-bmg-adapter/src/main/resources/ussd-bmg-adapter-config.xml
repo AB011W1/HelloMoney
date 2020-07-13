@@ -215,6 +215,9 @@
 				<entry key="OP0674" value-ref="freeDilaAirTopUpPaymentExecutionController" />
 				<!-- FreeDialUSSD ENDs -->
 
+				<!-- Mobile Number Validation start-->
+				<entry key="OP0675" value-ref="mWalletPayeeValidateController" />
+				<!-- Mobile Number Validation end-->
 
 				<!-- CPB Starts -->
 				<entry key="OP0797" value-ref="cpbPesaLinkSendToPhoneAccountController" />

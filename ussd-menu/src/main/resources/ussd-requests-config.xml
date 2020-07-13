@@ -210,6 +210,9 @@
 		<!--CR#47 -->
 	<bean id="mobileWalletMsisdnTypeRequest" class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletMsisdnTypeRequest" />
 	 <!--CR#47 -->
+	 <!-- Mobile Number Validation -->
+	 <bean id="mobileWalletPayeeValidationRequest"   class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletPayeeValidationRequest"/>
+		<!-- Mobile Number Validation -->
 		<bean id="mobileWalletTopupAmountRequest"   class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletTopupAmountRequest"/>
 		<!-- Kadi Kope Credit Card -->
 		<bean id="mobileWalletTopupCreditCardORCasaRequest" class="com.barclays.ussd.bmg.mobilewallettopup.request.MobileWalletTopupCreditCardORCasaRequest" />

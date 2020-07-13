@@ -12,6 +12,7 @@ import org.apache.commons.validator.routines.LongValidator;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.barclays.bmg.constants.BillPaymentConstants;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.bean.CurrentRunningTransaction;
 import com.barclays.ussd.utils.USSDConstants;
@@ -208,7 +209,9 @@ public final class USSDInputValidator {
 			if (StringUtils.equalsIgnoreCase(currentTransaction.getOptional(), TRUE)
 					&& (StringUtils.equalsIgnoreCase(userInputTrimmed, USSDConstants.SKIP_SCREEN_INPUT) || StringUtils.isEmpty(userInputTrimmed))) {
 				blnResult = true;
-			} else if (homeOption.equalsIgnoreCase(userInputTrimmed) || backOption.equalsIgnoreCase(userInputTrimmed)) {
+			}else if (USSDConstants.DATA_TYPE_CONFIRM.equalsIgnoreCase(type) && ussdSessionMgmt.getBusinessId().equals("UGBRB") && currentTransaction.getTranDataId().equals("MWTU006")) {
+				blnResult = validateConfirmationInput(userInput, errorCodes, ussdSessionMgmt);//CR-86
+			}else if (homeOption.equalsIgnoreCase(userInputTrimmed) || backOption.equalsIgnoreCase(userInputTrimmed)) {
 				blnResult = validateHomeBackOptions(userInput, currentTransaction, errorCodes, backOption, homeOption);
 
 			} else if (USSDConstants.DATA_TYPE_LIST.equalsIgnoreCase(type)) {
@@ -315,6 +318,32 @@ public final class USSDInputValidator {
 		}
 
 		return blnResult;
+	}
+
+	private static boolean validateConfirmationInput(String userInput, List<String> errorCodes,
+			USSDSessionManagement ussdSessionMgmt) {
+		boolean returnVal = true;
+		// TODO Auto-generated method stub
+		Map<String, String> userInputMap = ussdSessionMgmt.getUserTransactionDetails().getUserInputMap();
+		String mWalletWon=userInputMap.get(BillPaymentConstants.MWALLET_WON_NUMBER)== null?"":(String) userInputMap.get(BillPaymentConstants.MWALLET_WON_NUMBER);
+		String mAtWtSaveBenf=userInputMap.get(BillPaymentConstants.AT_MW_SAVED_BENEF)== null?"":(String) userInputMap.get(BillPaymentConstants.AT_MW_SAVED_BENEF);
+		if((mWalletWon.equals(BillPaymentConstants.MWALLET_WON_NUMBER)|| mAtWtSaveBenf.equalsIgnoreCase(BillPaymentConstants.AT_MW_SAVED_BENEF))) {
+			
+			if (StringUtils.isEmpty(userInput) || IntegerValidator.getInstance().isValid(userInput)) {				
+				if(ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction() != null ){
+				errorCodes.add(USSDExceptions.USSD_INVALID_OPT_SELECTED.getUssdErrorCode());
+				returnVal = false;
+				}			
+			}	
+		}else {
+			if (StringUtils.isEmpty(userInput) || !IntegerValidator.getInstance().isValid(userInput)
+					|| !USSDConstants.CONFIRM_ACTION_OPTION_CODE.equalsIgnoreCase(userInput.trim())) {	
+				errorCodes.add(USSDExceptions.USSD_INVALID_OPT_SELECTED.getUssdErrorCode());
+				returnVal = false;
+			}
+			
+		}
+		return returnVal;
 	}
 
 	private static boolean validateNoSpecialCharsReason(String userInput,

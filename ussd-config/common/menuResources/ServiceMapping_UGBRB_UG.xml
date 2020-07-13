@@ -144,7 +144,9 @@
 
 			<!-- CR82 End -->
 			<transaction tranDataId="MWTU002" type="msisdn" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU002" headerId="LBL9999"  backOptionReq="true" />
-
+			<!-- Mobile Number Validation -->
+			<transaction tranDataId="MWTU045" type="NA" bmgOpCode="OP0675" tranDataOpCode="NEGUIRENDER"  headerId="LBL9999"  backOptionReq="true" />
+			<!-- Mobile Number Validation -->
 			<transaction tranDataId="MWTU003" type="amount" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU003"  headerId="LBL9999"  backOptionReq="true" />
 			<transaction tranDataId="MWTU004" type="list" bmgOpCode="BMGCALLNTREQ" tranDataOpCode="MWTU004"  headerId="LBL9999"  backOptionReq="true" />
 			<!-- CR#60 -->

@@ -203,6 +203,17 @@ public class MobileWalletMsisdnTypeJsonParser implements BmgBaseJsonParser,Scree
 			userInputMap.put(USSDInputParamsEnum.MOBILE_WALLET_ACCOUNT_NUMBER.getParamName(),ussdSessionMgmt.getMsisdnNumber());
 			userInputMap.put(BillPaymentConstants.MWALLET_WON_NUMBER,BillPaymentConstants.MWALLET_WON_NUMBER);//CR82
 			ussdSessionMgmt.getUserTransactionDetails().setUserInputMap(userInputMap);
+			
+			int userInputNumber = 0;
+			String provider = null;
+			if(ussdSessionMgmt.getUserTransactionDetails() != null && ussdSessionMgmt.getUserTransactionDetails().getUserInputMap() != null && ussdSessionMgmt.getUserTransactionDetails().getUserInputMap().containsKey("billerId"))
+				userInputNumber  = Integer.parseInt(ussdSessionMgmt.getUserTransactionDetails().getUserInputMap().get("billerId"));
+			if(ussdSessionMgmt.getTxSessions() != null && ussdSessionMgmt.getTxSessions().containsKey("MWTU001") && userInputNumber != 0 && !((ArrayList) ussdSessionMgmt.getTxSessions().get("MWTU001")).isEmpty() )
+			provider = ((MobileWalletProvider) ((ArrayList) ussdSessionMgmt.getTxSessions().get("MWTU001")).get(userInputNumber - 1)).getBillerId();
+
+			if(ussdSessionMgmt.getBusinessId().equals("UGBRB") && provider.contains(ussdSessionMgmt.getMobileValidationBiller()) && ussdSessionMgmt.isMobileValidation())
+			seqNo=USSDSequenceNumberEnum.SEQUNCE_NUMBER_FOURTYFIVE.getSequenceNo();
+				else
 			seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FIVE.getSequenceNo();
 
 		} else if (userInput.equals("3") && !ussdSessionMgmt.getBusinessId().equalsIgnoreCase("GHBRB")){

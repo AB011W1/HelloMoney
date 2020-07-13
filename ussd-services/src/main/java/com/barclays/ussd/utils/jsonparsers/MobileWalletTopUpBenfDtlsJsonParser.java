@@ -4,6 +4,7 @@
 package com.barclays.ussd.utils.jsonparsers;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Map;
@@ -35,6 +36,7 @@ import com.barclays.ussd.utils.jsonparsers.bean.billpay.AccountData;
 import com.barclays.ussd.utils.jsonparsers.bean.billpay.BillPayFrmAccntLst;
 import com.barclays.ussd.utils.jsonparsers.bean.billpay.Payee;
 import com.barclays.ussd.utils.jsonparsers.bean.delbillers.DelBillersValidate;
+import com.barclays.ussd.utils.jsonparsers.bean.mobilewallettopup.MobileWalletProvider;
 
 /**
  * @author BTCI
@@ -68,6 +70,8 @@ public class MobileWalletTopUpBenfDtlsJsonParser implements BmgBaseJsonParser, S
 			ussdSessionMgmt.getTxSessions().put(USSDInputParamsEnum.MOBILE_WALLET_BENF_DTlS.getTranId(), payee);
 			Collections.sort(billPayFromAcct.getPayData().getFrActLst(), new MobileWalletCustomerAccountComparator());//issue fix for primary account top on list
 			ussdSessionMgmt.getTxSessions().put("AccountListSaved", billPayFromAcct.getPayData());
+			if(ussdSessionMgmt.getBusinessId().equals("UGBRB"))
+			ussdSessionMgmt.getUserTransactionDetails().getUserInputMap().put(USSDConstants.MW_MBL_NO, payee.getRefNo().getPhNo());
 		} else if (billPayFromAcct.getPayHdr() != null) {
 		    LOGGER.error("Error while servicing " + responseBuilderParamsDTO.getBmgOpCode());
 		    throw new USSDNonBlockingException(delBillrVal.getPayHdr().getResCde());
@@ -90,7 +94,21 @@ public class MobileWalletTopUpBenfDtlsJsonParser implements BmgBaseJsonParser, S
 		throw new USSDNonBlockingException(USSDExceptions.USSD_TECH_ISSUE.getBmgCode());
 	    }
 	}
-	setNextScreenSequenceNumber(menuDTO);
+	
+
+	int userInputNumber = 0;
+	String provider = null;
+	if(ussdSessionMgmt.getUserTransactionDetails() != null && ussdSessionMgmt.getUserTransactionDetails().getUserInputMap() != null && ussdSessionMgmt.getUserTransactionDetails().getUserInputMap().containsKey("billerId"))
+		userInputNumber  = Integer.parseInt(ussdSessionMgmt.getUserTransactionDetails().getUserInputMap().get("billerId"));
+	if(ussdSessionMgmt.getTxSessions() != null && ussdSessionMgmt.getTxSessions().containsKey("MWTU001") && userInputNumber != 0 && !((ArrayList) ussdSessionMgmt.getTxSessions().get("MWTU001")).isEmpty() )
+	provider = ((MobileWalletProvider) ((ArrayList) ussdSessionMgmt.getTxSessions().get("MWTU001")).get(userInputNumber - 1)).getBillerId();
+
+	if(ussdSessionMgmt.getBusinessId().equals("UGBRB") && provider.contains(ussdSessionMgmt.getMobileValidationBiller()) && ussdSessionMgmt.isMobileValidation())
+		menuDTO.setNextScreenSequenceNumber(USSDSequenceNumberEnum.SEQUNCE_NUMBER_FOURTYFIVE.getSequenceNo());
+			else
+				setNextScreenSequenceNumber(menuDTO);
+
+		
 	return menuDTO;
 
     }
@@ -105,7 +123,17 @@ public class MobileWalletTopUpBenfDtlsJsonParser implements BmgBaseJsonParser, S
 	public int getCustomNextScreen(String userInput,
 			USSDSessionManagement ussdSessionMgmt) throws USSDBlockingException {
 		int seqNo = USSDSequenceNumberEnum.SEQUENCE_NUMBER_FIVE.getSequenceNo();
+		
+		int userInputNumber = 0;
+		String provider = null;
+		if(ussdSessionMgmt.getUserTransactionDetails() != null && ussdSessionMgmt.getUserTransactionDetails().getUserInputMap() != null && ussdSessionMgmt.getUserTransactionDetails().getUserInputMap().containsKey("billerId"))
+			userInputNumber  = Integer.parseInt(ussdSessionMgmt.getUserTransactionDetails().getUserInputMap().get("billerId"));
+		if(ussdSessionMgmt.getTxSessions() != null && ussdSessionMgmt.getTxSessions().containsKey("MWTU001") && userInputNumber != 0 && !((ArrayList) ussdSessionMgmt.getTxSessions().get("MWTU001")).isEmpty() )
+		provider = ((MobileWalletProvider) ((ArrayList) ussdSessionMgmt.getTxSessions().get("MWTU001")).get(userInputNumber - 1)).getBillerId();
 
+		if(ussdSessionMgmt.getBusinessId().equals("UGBRB") && provider.contains(ussdSessionMgmt.getMobileValidationBiller()) && ussdSessionMgmt.isMobileValidation())
+			seqNo=USSDSequenceNumberEnum.SEQUNCE_NUMBER_FOURTYFIVE.getSequenceNo();
+				
 
 		SystemParameterDTO systemParameterDTO = new SystemParameterDTO();
     	SystemParameterServiceRequest systemParameterServiceRequest = new SystemParameterServiceRequest();

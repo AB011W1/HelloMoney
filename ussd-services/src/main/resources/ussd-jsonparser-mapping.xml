@@ -161,6 +161,9 @@
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_MSISDN_TYPE.getTranId()}" value-ref="mobileWalletMsisdnTypeJsonParser" />
 		<!--CR#47 -->
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_AMOUNT.getTranId()}" value-ref="mobileWalletTopupAmountJsonParser" />
+			<!-- Mobile Number Validation -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_MVALIDATION.getTranId()}" value-ref="mobileWalletPayeeValidationJsonParser" />
+		<!-- Mobile Number Validation -->
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_FROM_ACCOUNT.getTranId()}" value-ref="mobileWalletTopupFromAccountJsonParser" />
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_CREDIT_CARD.getTranId()}" value-ref="mobileWalletTopupCreditCardORCasaJsonParser" />
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_CREDIT_CARD_LIST.getTranId()}" value-ref="mobileWalletTopupCreditCardListJsonParser" />

@@ -77,5 +77,8 @@ public interface ServiceIdConstants {
     String MANAGE_FUND_TRANSFER_STATUS = "ManageFundTransferStatus";
     String RETRIEVE_CASA_ACCOUNT_TRANSACTION_ACTIVITY = "RetrieveCASAAcctTransactionActivity";
     String SEND_MULTIPLE_NOTIFICATIONS_ONEWAY = "SendMultipleNotifications";
+    
+  //Retrieve Mobile Details Service
+    String RETRIEVE_MOBILE_DETAILS="RetrieveMobileDetails";
 
 }

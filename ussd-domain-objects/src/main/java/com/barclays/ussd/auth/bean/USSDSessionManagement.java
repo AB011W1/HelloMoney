@@ -116,7 +116,25 @@ public class USSDSessionManagement implements Serializable {
 
 	List transactionList;
 	Set<String> finalTransactionList;
+	
+	private boolean isMobileValidation = false;	
+	
+	private String mobileValidationBiller = "";
+	
+	
 
+	public boolean isMobileValidation() {
+		return isMobileValidation;
+	}
+	public void setMobileValidation(boolean isMobileValidation) {
+		this.isMobileValidation = isMobileValidation;
+	}
+	public String getMobileValidationBiller() {
+		return mobileValidationBiller;
+	}
+	public void setMobileValidationBiller(String mobileValidationBiller) {
+		this.mobileValidationBiller = mobileValidationBiller;
+	}
 	public Set<String> getFinalTransactionList() {
 		return finalTransactionList;
 	}

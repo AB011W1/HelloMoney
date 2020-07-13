@@ -173,6 +173,9 @@
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_MSISDN_TYPE.getTranId()}" value-ref="mobileWalletMsisdnTypeRequest" />
 		<!--CR#47 -->
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_AMOUNT.getTranId()}" value-ref="mobileWalletTopupAmountRequest"/>
+		<!-- Mobile Number Validation -->
+		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_MVALIDATION.getTranId()}" value-ref="mobileWalletPayeeValidationRequest"/>
+		<!-- Mobile Number Validation -->
 		<!-- Kadi Kope Credit Card -->
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_CREDIT_CARD.getTranId()}" value-ref="mobileWalletTopupCreditCardORCasaRequest" />
 		<entry key="#{T(com.barclays.ussd.utils.USSDInputParamsEnum).MOBILE_WALLET_CREDIT_CARD_LIST.getTranId()}" value-ref="mobileWalletTopupCreditCardListRequest" />

@@ -13,6 +13,8 @@ import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
+import com.barclays.bmg.context.BMGContextHolder;
+import com.barclays.bmg.context.BMGGlobalContext;
 import com.barclays.ussd.auth.bean.CasaAccount;
 import com.barclays.ussd.auth.bean.USSDSessionManagement;
 import com.barclays.ussd.auth.bean.UserProfile;
@@ -41,7 +43,15 @@ public class AuthenticateUserJsonParser implements BmgBaseJsonParser {
 	ObjectMapper mapper = new ObjectMapper();
 	try {
 
-	    AuthUserData userAuthObj = mapper.readValue(responseBuilderParamsDTO.getJsonString(), AuthUserData.class);
+		BMGGlobalContext logContext = BMGContextHolder.getLogContext();
+		if((logContext.getContextMap() != null || !logContext.getContextMap().isEmpty()) && logContext.getContextMap().containsKey("MobileValidation")) {
+		if(logContext.getContextMap().get("MobileValidation").equals("Y")) 
+		responseBuilderParamsDTO.getUssdSessionMgmt().setMobileValidation(true);	
+		}
+		if((logContext.getContextMap() != null || !logContext.getContextMap().isEmpty()) && logContext.getContextMap().containsKey("MobileValidationBiller")) 
+		responseBuilderParamsDTO.getUssdSessionMgmt().setMobileValidationBiller((String)logContext.getContextMap().get("MobileValidationBiller"));
+	   
+		AuthUserData userAuthObj = mapper.readValue(responseBuilderParamsDTO.getJsonString(), AuthUserData.class);
 	    if (userAuthObj != null) {
 		String resCode = userAuthObj.getPayHdr().getResCde();
 		if (userAuthObj.getPayHdr() != null
