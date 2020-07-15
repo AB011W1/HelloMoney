@@ -122,20 +122,20 @@ public class AirtimeValidateResponseParser implements BmgBaseJsonParser,ScreenSe
 		String airtimeTopupAmountLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(TRANSACTION_AIRTIME_LABEL, paramArray,
 				new Locale(responseBuilderParamsDTO.getUssdSessionMgmt().getUserProfile().getLanguage(),
 						responseBuilderParamsDTO.getUssdSessionMgmt().getUserProfile().getCountryCode()));
-		
+		String dataBundleDetails = null;
 		//Data Bundle change for amount
-		/*if(ussdSessionMgmt.getBusinessId().equalsIgnoreCase("GHBRB") && 
+		if(ussdSessionMgmt.getBusinessId().equalsIgnoreCase("GHBRB") && 
 		ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId().equals("ussd0.10"))
 		{
 			if(null != userInputMap.get("BUNDLE_AMOUNT"))	{
 				airtimeTopupAmountLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(TRANSACTION_DATABUNDLE_LABEL, 
 						new Locale(responseBuilderParamsDTO.getUssdSessionMgmt().getUserProfile().getLanguage(),
 								responseBuilderParamsDTO.getUssdSessionMgmt().getUserProfile().getCountryCode()));
+				dataBundleDetails = userInputMap.get("BUNDLE_AMOUNT").toString();
 				
-				airtimeTopupAmountLabel = airtimeTopupAmountLabel + " " + userInputMap.get("BUNDLE_AMOUNT").toString();
 			}
 			
-		 }*/
+		 }
 
 	    String language = ussdSessionMgmt.getUserProfile().getLanguage();
 	    String countryCode = ussdSessionMgmt.getUserProfile().getCountryCode();
@@ -144,16 +144,23 @@ public class AirtimeValidateResponseParser implements BmgBaseJsonParser,ScreenSe
 	    String fromAccLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel(DEBIACCNUM_LABEL, locale);
 	    String mobileNumLabel = ussdResourceBundle.getLabel(USSDConstants.USSD_TRANSACTION_MWALLETE_MOBILE, locale);
 	    String airtimeServiceLabel = responseBuilderParamsDTO.getUssdResourceBundle().getLabel("label.transaction.service", locale);
-	    userInputMap.put("BillerName", airtimeValidatePayData.getPrvder().getBillerName());
 	    String mbNum = userInputMap.get(USSDInputParamsEnum.AIRTIME_MOB_NUM.getParamName());
+	    userInputMap.put("BillerName", airtimeValidatePayData.getPrvder().getBillerName());
 	    Account account = airtimeValidatePayData.getSrcAcct();
-	    //change for confirmation page Data Bundle
+	    
 	    if(ussdSessionMgmt.getBusinessId().equalsIgnoreCase("GHBRB") && 
-		ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId().equals("ussd0.10")) {
-	    	airtimeTopupAmountLabel = userInputMap.get("BillerName").toString() + " " + "Data Bundle for" + " " + mbNum + " " + userInputMap.get("BundleData").toString() + " " +
-	    	userInputMap.get("BUNDLE_AMOUNT").toString()+"GHS "+userInputMap.get("BundleLife").toString();
+	    		ussdSessionMgmt.getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId().equals("ussd0.10"))
+	     {
+	    	pageBody.append(airtimeValidatePayData.getPrvder().getBillerName());
+	    	pageBody.append(USSDConstants.SINGLE_WHITE_SPACE);
 	    	pageBody.append(airtimeTopupAmountLabel);
-	    	
+	    	pageBody.append(USSDConstants.SINGLE_WHITE_SPACE);
+	    	pageBody.append(mbNum);
+	    	pageBody.append(USSDConstants.NEW_LINE);
+	    	pageBody.append(dataBundleDetails);
+	    	pageBody.append(USSDConstants.NEW_LINE);
+	    	pageBody.append(fromAccLabel);
+		    pageBody.append(account.getMkdActNo());
 	    }else {
 	    pageBody.append(airtimeTopupAmountLabel);
 	    pageBody.append(USSDConstants.NEW_LINE);
@@ -169,12 +176,11 @@ public class AirtimeValidateResponseParser implements BmgBaseJsonParser,ScreenSe
 	    pageBody.append(USSDConstants.NEW_LINE);
 	    pageBody.append(airtimeServiceLabel);
 	    pageBody.append(airtimeValidatePayData.getPrvder().getBillerName());
-	    }
+
 	    pageBody.append(USSDConstants.NEW_LINE);
 	    pageBody.append(fromAccLabel);
 	    pageBody.append(account.getMkdActNo());
-	   
-
+	    }
 	    if (!responseBuilderParamsDTO.isErrorneousPage()) {
 		pageBody.append(USSDConstants.NEW_LINE);
 		pageBody.append(confirmLabel);

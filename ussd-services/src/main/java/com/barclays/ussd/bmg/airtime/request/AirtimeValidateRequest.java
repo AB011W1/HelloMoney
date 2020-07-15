@@ -2,12 +2,11 @@ package com.barclays.ussd.bmg.airtime.request;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Set;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -99,6 +98,8 @@ public class AirtimeValidateRequest implements BmgBaseRequestBuilder {
 	requestParamMap.put(USSDInputParamsEnum.AIRTIME_TRANSACTION_REMARKS.getParamName(), transactionRemarks);
 	
 	//Ghana Data Bundle Change
+	String data = "";	
+	String validity  = "";
 	String business_id = session.getBusinessId();
 	String transNodeId =session.getUserTransactionDetails().getCurrentRunningTransaction().getTranNodeId();
 	if(null != business_id && business_id.equalsIgnoreCase("GHBRB") && null != transNodeId && transNodeId.equals("ussd0.10"))
@@ -113,24 +114,22 @@ public class AirtimeValidateRequest implements BmgBaseRequestBuilder {
 		LinkedHashMap<String, String> bundleHashMap = billDetails.getBillInvoiceDetails().getProbaseDetails();
 		List<String> dataBundleList = new ArrayList<String>(bundleHashMap.values());
 		String amount = dataBundleList.get(dataBundleInput-1);
+		
+		
+		if(!billDetails.getBillInvoiceDetails().getBundleLife().isEmpty() && billDetails.getBillInvoiceDetails().getBundleLife() != null && billDetails.getBillInvoiceDetails() != null && billDetails != null) {
+		validity = billDetails.getBillInvoiceDetails().getBundleLife().get(dataBundleInput-1) != null ? billDetails.getBillInvoiceDetails().getBundleLife().get(dataBundleInput-1): "" ;
+		}
+		
+		if(!billDetails.getBillInvoiceDetails().getProbaseDetails().isEmpty() && billDetails.getBillInvoiceDetails().getProbaseDetails() != null && billDetails.getBillInvoiceDetails() != null && billDetails != null) {
+		for(Map.Entry<String, String> entry : billDetails.getBillInvoiceDetails().getProbaseDetails().entrySet()) {
+			if(entry.getValue().equals(amount)) {
+				 data = entry.getKey();		
+			}
+		}
+		}
 		amount = (amount.split(" "))[1];
 		requestParamMap.put(USSDInputParamsEnum.AIRTIME_AMOUNT.getParamName(), amount);
-		//change for confirmation screen
-		List<String> dataBundleLife =  billDetails.getBillInvoiceDetails().getBundleLife();
-		if(null!=dataBundleLife)
-		userInputMap.put("BundleLife", dataBundleLife.get(dataBundleInput-1));
-		else
-		userInputMap.put("BundleLife", "");
-		
-		Iterator it = bundleHashMap.entrySet().iterator();
-		while (it.hasNext()) {
-		Map.Entry pair = (Map.Entry)it.next();
-		 if(pair.getValue().toString().equalsIgnoreCase(dataBundleList.get(dataBundleInput-1))) {
-			 userInputMap.put("BundleData", pair.getKey().toString());
-		 }
-		}
-	
-		userInputMap.put("BUNDLE_AMOUNT", amount);
+		userInputMap.put("BUNDLE_AMOUNT", data+" "+amount+"GHS "+validity);
 	}
 	else
 		requestParamMap.put(USSDInputParamsEnum.AIRTIME_AMOUNT.getParamName(), userInputMap.get(USSDInputParamsEnum.AIRTIME_AMOUNT.getParamName()));

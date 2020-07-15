@@ -119,7 +119,7 @@ public class DataBundleAirtimeJsonParser implements BmgBaseJsonParser,ScreenSequ
 		Locale locale = new Locale(ussdSessionMgmt.getUserProfile().getLanguage(), ussdSessionMgmt.getUserProfile().getCountryCode());
 		Map<String, String> userInputMap = responseBuilderParamsDTO.getUssdSessionMgmt().getUserTransactionDetails().getUserInputMap();
 		String accountMobileLabel = ussdResourceBundle.getLabel(DATA_BUNDLE_ACCOUNT, locale);
-		/*String dataBundleSelect =  ussdResourceBundle.getLabel(DATA_BUNDLE_SELECT, locale);*/
+		String dataBundleSelect =  ussdResourceBundle.getLabel(DATA_BUNDLE_SELECT, locale);
 			
 		/*String account_Mobile = null;
 		if(null != ussdSessionMgmt.getTxSessions().get("label"))
@@ -133,16 +133,18 @@ public class DataBundleAirtimeJsonParser implements BmgBaseJsonParser,ScreenSequ
 		if(null != ussdSessionMgmt && null != ussdSessionMgmt.getTxSessions()){
 			billDetails = (BillDetails) ussdSessionMgmt.getTxSessions().get("DataBundleDetails");
 		}
-		/*if(null != account_Mobile) {*/
+		if(!ussdSessionMgmt.getUserTransactionDetails().getUserInputMap().get("AT_MW_SAVED_BENEF").contains("SAVED")) {
+	//	if(null != account_Mobile) {
 			pageBody.append(accountMobileLabel);
 			pageBody.append(USSDConstants.SPACE);
-			/*pageBody.append(account_Mobile);
-			pageBody.append(USSDConstants.SPACE);*/
+		//	pageBody.append(account_Mobile);
+		//	pageBody.append(USSDConstants.SPACE);
 			pageBody.append(userInputMap.get(USSDInputParamsEnum.AIRTIME_MOB_NUM.getParamName()) + ".");
 			pageBody.append(USSDConstants.SPACE);
+	//	}
+		}else
+		pageBody.append(dataBundleSelect);
 		
-		
-		/*pageBody.append(dataBundleSelect);*/
 		pageBody.append(USSDConstants.NEW_LINE);
 		if(null != billDetails)
 		{
@@ -164,7 +166,7 @@ public class DataBundleAirtimeJsonParser implements BmgBaseJsonParser,ScreenSequ
 			menuItemDTO.setPageFooter(menuItemDTO.getPageFooter());
 			menuItemDTO.setPageHeader(responseBuilderParamsDTO.getHeaderId());
 			menuItemDTO.setStatus(USSDConstants.STATUS_CONTINUE);
-			menuItemDTO.setPaginationType(PaginationEnum.SPACED);
+			menuItemDTO.setPaginationType(PaginationEnum.LISTED);
 			setNextScreenSequenceNumber(menuItemDTO);
 		}
 		return menuItemDTO;
