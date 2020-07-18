@@ -133,8 +133,15 @@ public class DataBundleAirtimeJsonParser implements BmgBaseJsonParser,ScreenSequ
 		if(null != ussdSessionMgmt && null != ussdSessionMgmt.getTxSessions()){
 			billDetails = (BillDetails) ussdSessionMgmt.getTxSessions().get("DataBundleDetails");
 		}
-		if(!ussdSessionMgmt.getUserTransactionDetails().getUserInputMap().get("AT_MW_SAVED_BENEF").contains("SAVED")) {
-	//	if(null != account_Mobile) {
+		
+		if (!(ussdSessionMgmt.getUserTransactionDetails().getUserInputMap().isEmpty())
+				&& null != ussdSessionMgmt.getUserTransactionDetails().getUserInputMap()
+				&& null != ussdSessionMgmt.getUserTransactionDetails().getUserInputMap().get("AT_MW_SAVED_BENEF")
+				&& ussdSessionMgmt.getUserTransactionDetails().getUserInputMap().get("AT_MW_SAVED_BENEF")
+						.contains("SAVED")) { 
+			pageBody.append(dataBundleSelect);
+		}else {
+		//	if(null != account_Mobile) {
 			pageBody.append(accountMobileLabel);
 			pageBody.append(USSDConstants.SPACE);
 		//	pageBody.append(account_Mobile);
@@ -142,8 +149,8 @@ public class DataBundleAirtimeJsonParser implements BmgBaseJsonParser,ScreenSequ
 			pageBody.append(userInputMap.get(USSDInputParamsEnum.AIRTIME_MOB_NUM.getParamName()) + ".");
 			pageBody.append(USSDConstants.SPACE);
 	//	}
-		}else
-		pageBody.append(dataBundleSelect);
+		}
+		
 		
 		pageBody.append(USSDConstants.NEW_LINE);
 		if(null != billDetails)

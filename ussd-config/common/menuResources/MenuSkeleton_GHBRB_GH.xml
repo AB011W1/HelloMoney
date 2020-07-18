@@ -13,10 +13,10 @@
       <node id="ussd0.6" screenId="0" level="0" optionId="3" labelId="menu.buy.airtimetopup" tranId="GH_AIRTIME_TOPUP" />
       
       <!-- Ghana Data Bundle Change -->
-      <node id="ussd0.10" screenId="0" level="0" optionId="4" labelId="menu.buy.databundle" tranId="GH_AIRTIME_DATABUNDLE" />
+      <!-- <node id="ussd0.10" screenId="0" level="0" optionId="4" labelId="menu.buy.databundle" tranId="GH_AIRTIME_DATABUNDLE" />-->
       <!-- Ghana Data Bundle Change -->
 
-      <node id="ussd0.2" screenId="0" level="0" optionId="5" labelId="menu.account.services" headerId="label.select" backOptionReq="true">
+      <node id="ussd0.2" screenId="0" level="0" optionId="4" labelId="menu.account.services" headerId="label.select" backOptionReq="true">
       		<node id="ussd0.2.1" screenId="2" level="1" optionId="1" labelId="menu.bkg.balance.enquirey" tranId="GH_BAL_ENQ" />
             <node id="ussd0.2.2" screenId="2" level="1" optionId="2" labelId="menu.bkg.mini.stmt" tranId="GH_MINI_STMT" />
             <node id="ussd0.2.3" screenId="2" level="1" optionId="3" labelId="menu.bkg.request" headerId="label.select" backOptionReq="true">
@@ -26,7 +26,7 @@
             <node id="ussd0.2.4" screenId="2" level="1" optionId="4" labelId="menu.foreign.exchange" headerId="label.select" tranId="GH_VIEW_FX_RATE" />
 	 </node>
 
-	 <node id="ussd0.5" screenId="0" level="0" optionId="6" labelId="menu.pay.bills" headerId="label.select" backOptionReq="true">
+	 <node id="ussd0.5" screenId="0" level="0" optionId="5" labelId="menu.pay.bills" headerId="label.select" backOptionReq="true">
             <node id="ussd0.5.1" screenId="6" level="1" optionId="1" labelId="menu.pb.registered.biller" tranId="GH_PAY_BILLS" backOptionReq="true" />
             <node id="ussd0.5.2" screenId="6" level="1" optionId="2" labelId="menu.pb.onetime.payement" tranId="GH_ONE_TIME_PAYMNTS" backOptionReq="true" />
             <node id="ussd0.5.3" screenId="6" level="1" optionId="3" labelId="menu.pb.view.lastpaid.bills" tranId="GH_VIEW_LAST_PAID_BILLS" />
@@ -35,7 +35,7 @@
             <node id="ussd0.5.6" screenId="6" level="1" optionId="6" labelId="menu.pb.delete.biller" tranId="GH_DEL_BILLERS" />
       </node>
        <!-- Credit Card changes -->
- 		<node id="ussd0.7" screenId="0" level="0" optionId="7" labelId="menu.credit.card.services" headerId="label.select" backOptionReq="true">
+ 		<node id="ussd0.7" screenId="0" level="0" optionId="6" labelId="menu.credit.card.services" headerId="label.select" backOptionReq="true">
         	 <node id="ussd0.7.1" screenId="11" level="1" optionId="1" labelId="menu.at.glance" tranId="GH_AT_GLANCE" />
          	 <node id="ussd0.7.2" screenId="11" level="1" optionId="2" labelId="menu.card.statement" tranId="GH_CARD_STATEMENT" />
          	 <node id="ussd0.7.3" screenId="11" level="1" optionId="3" labelId="menu.unbilled.transaction" tranId="GH_UNBILLED_TRANSACTION" />
@@ -46,7 +46,7 @@
      	 </node>
 		<!-- Credit Card changes -->
 
-	 <node id="ussd0.3" screenId="0" level="0" optionId="8" labelId="menu.fund.transfer" headerId="label.select" backOptionReq="true">
+	 <node id="ussd0.3" screenId="0" level="0" optionId="7" labelId="menu.fund.transfer" headerId="label.select" backOptionReq="true">
             <node id="ussd0.3.1" screenId="5" level="1" optionId="1" labelId="menu.ft.own.account" tranId="GH_OWN_LNK_FND_TX" />
             <node id="ussd0.3.2" screenId="5" level="1" optionId="2" labelId="menu.ft.other.barclay" headerId="label.select" backOptionReq="true">
                	<node id="ussd0.3.2.1" screenId="7" level="2" optionId="1" labelId="label.registered" tranId="GH_OTHER_BARC_FND_TX_REG" />
@@ -71,7 +71,7 @@
 	   </node>
 
  		<!-- Ghana Menu Optimization - Combine option 9 and 10 -->
-      <node id="ussd0.4" screenId="0" level="0" optionId="9" labelId="menu.others" headerId="label.select" backOptionReq="true">
+      <node id="ussd0.4" screenId="0" level="0" optionId="8" labelId="menu.others" headerId="label.select" backOptionReq="true">
       	 <node id="ussd0.4.3" screenId="13" level="1" optionId="1" labelId="menu.lead.generation" tranId="GH_LEAD_GENERATION" />
          <node id="ussd0.4.1" screenId="13" level="1" optionId="2" labelId="menu.change.pin" tranId="GH_CHNG_PIN" />
          <node id="ussd0.4.2" screenId="13" level="1" optionId="3" labelId="menu.contactus" tranId="GH_CONTACT_US" />

@@ -75,10 +75,12 @@ public class FormValidateOperation extends BMBPaymentsOperation {
 	    response.setSuccess(false);
 	}
 	if (response.isSuccess()) {
-	    if(null != context.getValue("billerCatId") && !(context.getValue("billerCatId").toString().equalsIgnoreCase("DataBundle"))) {
-			if (!checkTransactionLimit(request, response)) {
-				response.setSuccess(false);
-			    }
+		boolean checkLimit = true;
+	    if(null != context.getValue("billerCatId") && (context.getValue("billerCatId").toString().equalsIgnoreCase("DataBundle"))) {
+	    	checkLimit = false;
+	    }
+		if (checkLimit && !checkTransactionLimit(request, response)) {
+			response.setSuccess(false);
 		}
 	}
 
